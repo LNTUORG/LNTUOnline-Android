@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="action_bar_btn_text_normal">#FFFFFFFF</color>
+    <color name="action_bar_btn_text_pressed">#FF0A3E68</color>
+    
+    <color name="button_text_normal">#FFFFFFFF</color>
+    <color name="button_text_pressed">#FF0A3E68</color>
+    
+    <color name="check_box_text_normal">#FF000000</color>
+    <color name="check_box_text_checked">#FF0A3E68</color>
+    
+    <color name="sliding_menu_btn_normal">#CCFFFFFF</color>
+    <color name="sliding_menu_btn_pressed">#FFFFFFFF</color>
+    
+    <color name="spinner_text_normal">#FF666666</color>
+    <color name="spinner_text_disabled">#FF000000</color>
+    
+    <color name="container_background">#FFEFEFEF</color>
+    
+    <color name="curriculum_title_1">#22111111</color>
+    <color name="curriculum_title_2">#11111111</color>
+    <color name="curriculum_content_1">#FFFFFFFF</color>
+    <color name="curriculum_content_2">#FFEFEFEF</color>
+
+</resources>

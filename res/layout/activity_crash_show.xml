@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+	<!-- ActionBar -->
+    <FrameLayout style="@style/BlueFlor.ActionBar">
+
+        <TextView style="@style/BlueFlor.ActionBar.Title"
+            android:text="@string/app_crash" />
+
+    </FrameLayout><!-- End With ActionBar -->
+
+    <!-- Container -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/container_background">
+        
+        <ScrollView
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:paddingTop="10dp"
+	        android:layout_above="@+id/crash_show_btn_send">
+	
+	        <TextView
+	            android:id="@+id/crash_show_tv_info"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingLeft="10dp"
+	            android:paddingRight="10dp"
+	            android:textSize="@dimen/text_normal_size"
+	            android:textColor="#FF000000" />
+	
+	    </ScrollView>
+
+        <Button
+            android:id="@+id/crash_show_btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/send_crash_log"
+            android:textSize="@dimen/button_text_size"
+            android:textColor="@drawable/button_text_color"
+            android:background="@drawable/button_image"
+            android:onClick="onBtnSend" />
+
+    </RelativeLayout>
+
+</LinearLayout>

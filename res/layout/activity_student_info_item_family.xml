@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingTop="5dp"
+	android:paddingBottom="5dp"
+	android:orientation="vertical"
+	android:background="#FFFFFFFF">
+    
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:orientation="horizontal">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20dp"
+			android:paddingRight="10dp"
+			android:text="@string/name"
+			android:textSize="18sp"
+			android:textColor="#FF555555"
+			android:gravity="left" />
+	
+		<TextView
+		    android:id="@+id/student_info_item_family_tv_name"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="20dp"
+		    android:text="@string/test_text"
+		    android:textColor="#FF000000"
+		    android:textSize="18sp"
+		    android:gravity="right" />
+	
+	</LinearLayout>
+    
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:orientation="horizontal">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20dp"
+			android:paddingRight="10dp"
+			android:text="@string/relationship"
+			android:textSize="18sp"
+			android:textColor="#FF555555"
+			android:gravity="left" />
+	
+		<TextView
+		    android:id="@+id/student_info_item_family_tv_relationship"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="20dp"
+		    android:text="@string/test_text"
+		    android:textColor="#FF000000"
+		    android:textSize="18sp"
+		    android:gravity="right" />
+	
+	</LinearLayout>
+    
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:orientation="horizontal">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20dp"
+			android:paddingRight="10dp"
+			android:text="@string/political_affiliation"
+			android:textSize="18sp"
+			android:textColor="#FF555555"
+			android:gravity="left" />
+	
+		<TextView
+		    android:id="@+id/student_info_item_family_tv_political_affiliation"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="20dp"
+		    android:text="@string/test_text"
+		    android:textColor="#FF000000"
+		    android:textSize="18sp"
+		    android:gravity="right" />
+	
+	</LinearLayout>
+    
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:orientation="horizontal">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20dp"
+			android:paddingRight="10dp"
+			android:text="@string/job"
+			android:textSize="18sp"
+			android:textColor="#FF555555"
+			android:gravity="left" />
+	
+		<TextView
+		    android:id="@+id/student_info_item_family_tv_job"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="20dp"
+		    android:text="@string/test_text"
+		    android:textColor="#FF000000"
+		    android:textSize="18sp"
+		    android:gravity="right" />
+	
+	</LinearLayout>
+	
+		<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:orientation="horizontal">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20dp"
+			android:paddingRight="10dp"
+			android:text="@string/post"
+			android:textSize="18sp"
+			android:textColor="#FF555555"
+			android:gravity="left" />
+	
+		<TextView
+		    android:id="@+id/student_info_item_family_tv_post"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="20dp"
+		    android:text="@string/test_text"
+		    android:textColor="#FF000000"
+		    android:textSize="18sp"
+		    android:gravity="right" />
+	
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:orientation="horizontal">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20dp"
+			android:paddingRight="10dp"
+			android:text="@string/work_location"
+			android:textSize="18sp"
+			android:textColor="#FF555555"
+			android:gravity="left" />
+	
+		<TextView
+		    android:id="@+id/student_info_item_family_tv_work_location"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="20dp"
+		    android:text="@string/test_text"
+		    android:textColor="#FF000000"
+		    android:textSize="18sp"
+		    android:gravity="right" />
+	
+	</LinearLayout>
+	
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:paddingTop="5dp"
+	    android:paddingBottom="5dp"
+	    android:orientation="horizontal">
+	
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:paddingLeft="20dp"
+			android:paddingRight="10dp"
+			android:text="@string/tel"
+			android:textSize="18sp"
+			android:textColor="#FF555555"
+			android:gravity="left" />
+	
+		<TextView
+		    android:id="@+id/student_info_item_family_tv_tel"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:paddingLeft="10dp"
+		    android:paddingRight="20dp"
+		    android:text="@string/test_text"
+		    android:textColor="#FF000000"
+		    android:textSize="18sp"
+		    android:gravity="right" />
+	
+	</LinearLayout>
+    
+</LinearLayout>

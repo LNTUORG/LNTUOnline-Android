@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <!-- ActionBar -->
+    <FrameLayout style="@style/BlueFlor.ActionBar">
+
+        <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
+            android:onClick="onActionBarBtnLeft" />
+
+        <TextView style="@style/BlueFlor.ActionBar.Title"
+            android:text="@string/unpass_query" />
+
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="match_parent"
+		    android:layout_gravity="right"
+            android:gravity="center"
+		    android:orientation="horizontal">
+		    
+		    <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/merge_the_same"
+                android:textColor="@drawable/action_bar_btn_text_color" />
+ 
+		    <CheckBox 
+		        android:id="@+id/unpass_course_cb_merge"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_margin="5dp"
+		        android:button="@drawable/check_box_image" />
+		    
+		</LinearLayout>
+
+    </FrameLayout><!-- End With ActionBar -->
+    
+	<ListView
+	    android:id="@+id/unpass_course_lv_root"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:background="@color/container_background" />
+
+</LinearLayout>

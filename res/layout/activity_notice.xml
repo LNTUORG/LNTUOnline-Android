@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/container_background">
+    
+    <!-- ActionBar -->
+    <FrameLayout style="@style/BlueFlor.ActionBar">
+
+        <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
+            android:onClick="onActionBarBtnLeft" />
+
+        <TextView style="@style/BlueFlor.ActionBar.Title"
+            android:text="@string/senate_notice" />
+
+    </FrameLayout><!-- End With ActionBar -->
+    
+    <WebView
+        android:id="@+id/notice_wv"
+		android:layout_width="match_parent"
+    	android:layout_height="match_parent" />
+
+</LinearLayout>

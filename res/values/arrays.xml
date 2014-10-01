@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="years_test">
+        <item>全部</item>
+        <item>2014</item>
+        <item>2013</item>
+    </string-array>
+
+	<string-array name="terms">
+		<item>春</item>
+		<item>秋</item>
+	</string-array>
+
+</resources>

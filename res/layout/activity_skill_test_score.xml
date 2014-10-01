@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- ActionBar -->
+    <FrameLayout style="@style/BlueFlor.ActionBar">
+
+        <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
+            android:onClick="onActionBarBtnLeft" />
+
+        <TextView style="@style/BlueFlor.ActionBar.Title"
+            android:text="@string/skill_test" />
+
+    </FrameLayout><!-- End With ActionBar -->
+    
+    <ListView
+	    android:id="@+id/skill_test_score_lv_root"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:background="@color/container_background" />
+
+</LinearLayout>
+
+

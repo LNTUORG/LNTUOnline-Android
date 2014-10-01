@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFFFF">
+    
+    <!-- ActionBar -->
+    <FrameLayout style="@style/BlueFlor.ActionBar">
+
+        <TextView style="@style/BlueFlor.ActionBar.Title"
+            android:text="@string/user_login" />
+
+    </FrameLayout><!-- End With ActionBar -->
+    
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:background="@color/container_background">
+        
+	   <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="5dp">
+	
+	        <EditText
+	            android:id="@+id/login_edt_user_id"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingLeft="70sp"
+	            android:layout_centerVertical="true"
+	            android:hint="@string/user_id_input_hint"
+	            android:textSize="@dimen/text_normal_size"
+	            android:inputType="number"
+	            android:maxLength="20"
+	            android:background="@drawable/edit_text_normal" />
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="10sp"
+	            android:text="@string/user_id_input_title"
+	            android:textSize="@dimen/text_normal_size"
+	            android:textColor="#FF333333" />
+	
+	    </RelativeLayout>
+	
+	    <RelativeLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="5dp">
+	
+	        <EditText
+	            android:id="@+id/login_edt_pwd"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:paddingLeft="70sp"
+	            android:layout_centerVertical="true"
+	            android:hint="@string/pwd_input_hint"
+	            android:textSize="@dimen/text_normal_size"
+	            android:inputType="textPassword"
+	            android:maxLength="20" 
+	            android:background="@drawable/edit_text_normal" />
+	
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_marginLeft="10sp"
+	            android:text="@string/pwd_input_title"
+	            android:textSize="@dimen/text_normal_size"
+	            android:textColor="#FF333333" />
+	
+	    </RelativeLayout>
+	
+	    <CheckBox
+	        android:id="@+id/login_cb_auto_login"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="5dp"
+	        android:text="@string/auto_login"
+	        android:textSize="@dimen/text_normal_size"
+	        android:textColor="@drawable/check_box_text_color"
+	        android:button="@drawable/check_box_image"
+	        android:checked="false" />
+
+	    <Button
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="5dp"
+	        android:text="@string/login"
+	        android:textSize="@dimen/button_text_size"
+            android:textColor="@drawable/button_text_color"
+            android:background="@drawable/button_image"
+	        android:onClick="onBtnLogin" />        
+
+    </LinearLayout><!-- End With Content -->
+
+</LinearLayout>

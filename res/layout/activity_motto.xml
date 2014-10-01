@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/container_background">
+    
+    <!-- ActionBar -->
+    <FrameLayout style="@style/BlueFlor.ActionBar">
+
+        <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
+            android:onClick="onActionBarBtnLeft" />
+
+        <TextView style="@style/BlueFlor.ActionBar.Title"
+            android:text="@string/remember_motto" />
+
+    </FrameLayout><!-- End With ActionBar -->
+    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/motto"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/motto" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:padding="4dp"
+    	android:orientation="horizontal">
+        
+        <Button
+        	android:layout_width="0dp"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="1"
+    		android:layout_margin="4dp"
+    		android:text="@string/male_voice"
+            android:textSize="@dimen/button_text_size"
+            android:textColor="@drawable/button_text_color"
+            android:background="@drawable/button_image"
+    		android:onClick="onBtnMaleVoice" />
+
+        <Button
+        	android:layout_width="0dp"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="1"
+    		android:layout_margin="4dp"
+    		android:text="@string/female_voice"
+            android:textSize="@dimen/button_text_size"
+            android:textColor="@drawable/button_text_color"
+            android:background="@drawable/button_image"
+    		android:onClick="onBtnFemaleVoice" />
+        
+    </LinearLayout>
+
+</LinearLayout>

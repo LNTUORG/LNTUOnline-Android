@@ -1,0 +1,90 @@
+package com.lntu.online.http;
+
+import java.io.IOException;
+import java.net.SocketTimeoutException;
+
+import org.apache.http.Header;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
+
+import com.lntu.online.LoginActivity;
+
+public class RetryAuthListener extends BaseListener {
+
+    public RetryAuthListener(Context context) {
+        super(context, true);
+    }
+
+    @Override
+    public void onCancel() {
+        ((Activity) getContext()).finish();
+    }
+
+    @Override
+	public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+    	if (statusCode == 500) {
+        	showErrorDialog("网络错误", "0x03010500", "服务器内部错误，请重试");
+    	}
+    	else if (statusCode == 502) {
+        	showErrorDialog("网络错误", "0x03010502", "服务器网关错误，请重试");
+    	}
+    	else if (throwable instanceof SocketTimeoutException) {
+        	showErrorDialog("网络错误", "0x03010002", "服务器连接超时，请重试");
+    	}
+    	else if (throwable instanceof IOException) {
+    		showErrorDialog("网络错误", "0x03010001", "网络通信失败，请检查网络连接");
+    	} else {
+        	showErrorDialog("网络错误", "0x03010" + statusCode, "网络访问错误，请重试");
+    	}
+	}
+
+    protected void showErrorDialog(String title, String code, String message) {
+        if (code.equals("0x02010001")) { //用户会话未激活
+            new AlertDialog.Builder(getContext())    
+            .setTitle(title)
+            .setMessage("用户会话已过期，请重新登录" + "\n" + "错误代码：" + code)
+            .setCancelable(false)
+            .setPositiveButton("确定", new OnClickListener() {
+                
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    getContext().startActivity(new Intent(getContext(), LoginActivity.class));
+                    ((Activity) getContext()).finish();
+                }
+
+            })
+            .show();
+        } else {
+            new AlertDialog.Builder(getContext())    
+            .setTitle(title)
+            .setMessage(message + "\n" + "错误代码：" + code)
+            .setCancelable(false)
+            .setPositiveButton("重试", new OnClickListener() {
+                
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    onBtnRetry();
+                }
+    
+            })
+            .setNegativeButton("取消", new OnClickListener() {
+    
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    ((Activity) getContext()).finish();
+                }
+                
+            })
+            .show();
+        }
+    }
+    
+    public void onBtnRetry() {
+    }
+
+}
