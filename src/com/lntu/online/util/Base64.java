@@ -4,11 +4,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-/**
- * Base64×ªÂë¹¤¾ß
- * @author TakWolf
- * update : 2013-5-1
- */
 public class Base64 {
 
     private static final char[] legalChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/".toCharArray();

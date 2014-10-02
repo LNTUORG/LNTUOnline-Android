@@ -6,11 +6,6 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 
-/**
- * 3des加密工具类
- * @author TakWolf
- * update : 2013-5-1
- */
 public class Des3Util {
 
     private final static String IV = "01234567";

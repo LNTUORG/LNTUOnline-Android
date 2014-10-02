@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="4dp"
-        android:src="@drawable/profle"
+        android:src="@drawable/main_icon_profle"
         android:scaleType="fitCenter"
         android:contentDescription="@string/test_icon" />
     

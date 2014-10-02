@@ -1,10 +1,5 @@
 package com.lntu.online.util;
 
-/**
- * sha摘要工具类
- * @author TakWolf
- * update : 2013-5-1
- */
 public class ShaUtil {
 
     private static DigestCoder coder = new DigestCoder("SHA-256");

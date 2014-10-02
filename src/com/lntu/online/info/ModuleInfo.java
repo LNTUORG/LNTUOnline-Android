@@ -14,15 +14,15 @@ import com.lntu.online.UnpassCourseActivity;
 public class ModuleInfo {
 
     private static final int[] icons = { 
-        R.drawable.profle,
-        R.drawable.clock2,
-        R.drawable.calendar,
-        R.drawable.right2,
-        R.drawable.colorwheel,
-        R.drawable.stop,
-        R.drawable.trophy,
-        R.drawable.megaphone,
-        R.drawable.chat
+        R.drawable.main_icon_profle,
+        R.drawable.main_icon_clock2,
+        R.drawable.main_icon_calendar,
+        R.drawable.main_icon_right2,
+        R.drawable.main_icon_colorwheel,
+        R.drawable.main_icon_stop,
+        R.drawable.main_icon_trophy,
+        R.drawable.main_icon_megaphone,
+        R.drawable.main_icon_chat
     };
 
     private static final String[] titles = { 
