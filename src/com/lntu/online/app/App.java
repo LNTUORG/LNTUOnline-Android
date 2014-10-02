@@ -22,7 +22,7 @@ public class App extends Application {
     }
     
     public static Application getApplication() {
-    	return context;
+        return context;
     }
 
 }

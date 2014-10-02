@@ -375,7 +375,7 @@ public class StudentInfoActivity extends Activity {
     }
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }

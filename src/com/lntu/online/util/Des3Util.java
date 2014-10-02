@@ -38,7 +38,7 @@ public class Des3Util {
      * @throws Exception
      */
     public static String encode(String secretKey, String plainText) throws Exception {
-    	return encode(IV, secretKey, plainText);
+        return encode(IV, secretKey, plainText);
     }
 
     /**
@@ -68,7 +68,7 @@ public class Des3Util {
      * @throws Exception
      */
     public static String decode(String secretKey, String encryptText) throws Exception {
-    	return decode(IV, secretKey, encryptText);
+        return decode(IV, secretKey, encryptText);
     }
 
 }

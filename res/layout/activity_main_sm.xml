@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="#FFAAAAAA">
-        
+
         <TextView style="@style/BlueFlor.SlidingMenu.Button"
             android:id="@+id/action_main_browser"
             android:text="@string/action_browser"
@@ -29,12 +29,12 @@
             android:id="@+id/action_main_feedback"
             android:text="@string/action_feddback"
             android:onClick="onSlidingMenuItemClick" />
-        
+
         <TextView style="@style/BlueFlor.SlidingMenu.Button"
             android:id="@+id/action_main_logout"
             android:text="@string/action_logout"
             android:onClick="onSlidingMenuItemClick" />
-        
+
         <TextView style="@style/BlueFlor.SlidingMenu.Button"
             android:id="@+id/action_main_exit"
             android:text="@string/action_exit"

@@ -26,22 +26,22 @@ public class RetryAuthListener extends BaseListener {
     }
 
     @Override
-	public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-    	if (statusCode == 500) {
-        	showErrorDialog("网络错误", "0x03010500", "服务器内部错误，请重试");
-    	}
-    	else if (statusCode == 502) {
-        	showErrorDialog("网络错误", "0x03010502", "服务器网关错误，请重试");
-    	}
-    	else if (throwable instanceof SocketTimeoutException) {
-        	showErrorDialog("网络错误", "0x03010002", "服务器连接超时，请重试");
-    	}
-    	else if (throwable instanceof IOException) {
-    		showErrorDialog("网络错误", "0x03010001", "网络通信失败，请检查网络连接");
-    	} else {
-        	showErrorDialog("网络错误", "0x03010" + statusCode, "网络访问错误，请重试");
-    	}
-	}
+    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+        if (statusCode == 500) {
+            showErrorDialog("网络错误", "0x03010500", "服务器内部错误，请重试");
+        }
+        else if (statusCode == 502) {
+            showErrorDialog("网络错误", "0x03010502", "服务器网关错误，请重试");
+        }
+        else if (throwable instanceof SocketTimeoutException) {
+            showErrorDialog("网络错误", "0x03010002", "服务器连接超时，请重试");
+        }
+        else if (throwable instanceof IOException) {
+            showErrorDialog("网络错误", "0x03010001", "网络通信失败，请检查网络连接");
+        } else {
+            showErrorDialog("网络错误", "0x03010" + statusCode, "网络访问错误，请重试");
+        }
+    }
 
     protected void showErrorDialog(String title, String code, String message) {
         if (code.equals("0x02010001")) { //用户会话未激活

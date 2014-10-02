@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
     }
 
     public void onActionBarIconMenu(View view) {
-    	toggleSidebar();
+        toggleSidebar();
     }
 
     @Override
@@ -152,8 +152,8 @@ public class MainActivity extends Activity {
             checkUpdate();
             break;
         case R.id.action_main_feedback:
-        	startActivity(new Intent(this, AdviceActivity.class));
-        	break;
+            startActivity(new Intent(this, AdviceActivity.class));
+            break;
         case R.id.action_main_logout:
             showLogoutDialog();
             break;
@@ -203,19 +203,19 @@ public class MainActivity extends Activity {
     }
     
     private void checkUpdate() {
-    	RequestParams params = new RequestParams();
+        RequestParams params = new RequestParams();
         params.put("platform", "android");
         HttpUtil.post(this, NetworkInfo.serverUrl + "version/stable", params, new NormalAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {       
                 try {
-                	ClientVersion cv = ClientVersion.dao.fromJson(responseString);
-                	if (cv.getBuild() > AppInfo.getVersionCode()) { //有更新
-                		showUpdateDialog(cv);
-                	} else { //无更新
-                		showNoUpdateDialog();
-                	}
+                    ClientVersion cv = ClientVersion.dao.fromJson(responseString);
+                    if (cv.getBuild() > AppInfo.getVersionCode()) { //有更新
+                        showUpdateDialog(cv);
+                    } else { //无更新
+                        showNoUpdateDialog();
+                    }
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
                     showErrorDialog("提示", msgs[0], msgs[1]);
@@ -226,30 +226,30 @@ public class MainActivity extends Activity {
     }
     
     private void checkUpdateBackground() {
-    	RequestParams params = new RequestParams();
+        RequestParams params = new RequestParams();
         params.put("platform", "android");
         HttpUtil.baseGet(this, NetworkInfo.serverUrl + "version/stable", params, new TextHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {       
                 try {
-                	ClientVersion cv = ClientVersion.dao.fromJson(responseString);
-                	if (cv.getBuild() > AppInfo.getVersionCode()) { //有更新
-                		if (cv.isForced()) { //强制更新
-                    		showForcedUpdateDialog(cv);
-                		} else { //非强制更新
-                    		showUpdateDialog(cv);
-                		}
-                	}
+                    ClientVersion cv = ClientVersion.dao.fromJson(responseString);
+                    if (cv.getBuild() > AppInfo.getVersionCode()) { //有更新
+                        if (cv.isForced()) { //强制更新
+                            showForcedUpdateDialog(cv);
+                        } else { //非强制更新
+                            showUpdateDialog(cv);
+                        }
+                    }
                 } catch(Exception e) {
-                	//后台更新检查不提示错误
+                    //后台更新检查不提示错误
                 }
             }
 
-			@Override
-			public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-				//错误不处理
-			}
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                //错误不处理
+            }
 
         });
     }
@@ -270,7 +270,7 @@ public class MainActivity extends Activity {
         .show();
     }
 
-    public void showForcedUpdateDialog(final ClientVersion cv) {    	
+    public void showForcedUpdateDialog(final ClientVersion cv) {        
         new AlertDialog.Builder(this)
         .setTitle("更新提示")
         .setMessage("有新版本：v" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
@@ -284,12 +284,12 @@ public class MainActivity extends Activity {
             }
         })
         .setNegativeButton("退出", new OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				finish();
-			}
-		})
-		.setCancelable(false)
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        })
+        .setCancelable(false)
         .show();
     }
 

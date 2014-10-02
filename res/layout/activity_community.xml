@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#FF000000">
-    
+
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
@@ -27,9 +27,9 @@
         android:textSize="14sp"
         android:textColor="#FFFFFFFF"
         android:gravity="center" />
-    
+
     <ImageView
-		android:layout_width="match_parent"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/community_temp_1"
         android:scaleType="fitEnd"

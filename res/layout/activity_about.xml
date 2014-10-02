@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    
+
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
@@ -16,97 +16,97 @@
     </FrameLayout><!-- End With ActionBar -->
 
     <ScrollView
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:background="@color/container_background">
-	
-	    <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical">
-	
-	        <ImageView
-	            android:layout_width="match_parent"
-	            android:layout_height="200dp"
-	            android:src="@drawable/logo"
-	            android:scaleType="fitCenter"
-	            android:contentDescription="@string/app_name" />
-	
-	        <TextView
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:text="@string/version_name"
-	            android:textSize="18sp"
-	            android:textColor="#FF000000"
-	            android:gravity="center"/>
-	
-	        <TextView
-	            android:id="@+id/about_tv_version_name"
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:padding="6dp"
-	            android:text="@string/version_name_content"
-	            android:textSize="16sp"
-	            android:textColor="#99000000"
-	            android:gravity="center"/>
-	
-	        <TextView
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:layout_marginTop="12dp"
-	            android:text="@string/development_team"
-	            android:textSize="18sp"
-	            android:textColor="#FF000000"
-	            android:gravity="center"/>
-	
-	        <TextView
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:padding="6dp"
-	            android:text="@string/development_team_content"
-	            android:textSize="16sp"
-	            android:textColor="#99000000"
-	            android:gravity="center"/>
-	
-	        <TextView
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:layout_marginTop="12dp"
-	            android:text="@string/author_email"
-	            android:textSize="18sp"
-	            android:textColor="#FF000000"
-	            android:gravity="center"/>
-	
-	        <TextView
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:padding="6dp"
-	            android:text="@string/author_email_content"
-	            android:textSize="16sp"
-	            android:textColor="#99000000"
-	            android:gravity="center"/>
-	
-	        <TextView
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:layout_marginTop="12dp"
-	            android:text="@string/author_homepage"
-	            android:textSize="18sp"
-	            android:textColor="#FF000000"
-	            android:gravity="center"/>
-	
-	        <TextView
-	            android:layout_width="match_parent"
-	            android:layout_height="match_parent"
-	            android:layout_marginBottom="12dp"
-	            android:padding="6dp"
-	            android:text="@string/author_homepage_content"
-	            android:textSize="16sp"
-	            android:autoLink="web"
-	            android:gravity="center"/>
-	
-	    </LinearLayout>
-	
-	</ScrollView>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/container_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/logo"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/app_name" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/version_name"
+                android:textSize="18sp"
+                android:textColor="#FF000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/about_tv_version_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:text="@string/version_name_content"
+                android:textSize="16sp"
+                android:textColor="#99000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:text="@string/development_team"
+                android:textSize="18sp"
+                android:textColor="#FF000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:text="@string/development_team_content"
+                android:textSize="16sp"
+                android:textColor="#99000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:text="@string/author_email"
+                android:textSize="18sp"
+                android:textColor="#FF000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp"
+                android:text="@string/author_email_content"
+                android:textSize="16sp"
+                android:textColor="#99000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:text="@string/author_homepage"
+                android:textSize="18sp"
+                android:textColor="#FF000000"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="12dp"
+                android:padding="6dp"
+                android:text="@string/author_homepage_content"
+                android:textSize="16sp"
+                android:autoLink="web"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

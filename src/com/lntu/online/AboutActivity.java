@@ -18,7 +18,7 @@ public class AboutActivity extends Activity {
     }
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }

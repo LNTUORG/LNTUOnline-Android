@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/container_background">
-    
+
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
@@ -18,76 +18,76 @@
 
     <TextView
         android:id="@+id/grades_tv_ava_of_credit"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:paddingLeft="15dp"
-		android:paddingRight="15dp"
-		android:paddingTop="4dp"
-		android:paddingBottom="4dp"
-		android:textSize="14sp"
-		android:textColor="#FF222222"
-		android:gravity="left"
-		android:background="#FFFFFFFF" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:textSize="14sp"
+        android:textColor="#FF222222"
+        android:gravity="left"
+        android:background="#FFFFFFFF" />
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="4dp"
-	    android:orientation="horizontal"
-	    android:gravity="center">
+        android:orientation="horizontal"
+        android:gravity="center">
  
-	    <Spinner
-	        android:id="@+id/grades_spn_year"
-	        android:layout_width="0dp"
-	        android:layout_height="40dp"
-	        android:layout_weight="1"
-	        android:layout_margin="4dp"
-	        android:paddingLeft="8dp"
-	        android:entries="@array/years_test"
-	        android:gravity="center"
-	        android:background="@drawable/spinner_image" />
-
-	    <Spinner
-	        android:id="@+id/grades_spn_term"
-	        android:layout_width="0dp"
-	        android:layout_height="40dp"
-	        android:layout_weight="1"
-	        android:layout_margin="4dp"
+        <Spinner
+            android:id="@+id/grades_spn_year"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
             android:paddingLeft="8dp"
-	        android:entries="@array/terms"
-	        android:gravity="center"
-	        android:background="@drawable/spinner_image" />
+            android:entries="@array/years_test"
+            android:gravity="center"
+            android:background="@drawable/spinner_image" />
 
-	    <Button
-	        android:layout_width="0dp"
-	        android:layout_height="wrap_content"
-	        android:layout_weight="1"
-	        android:layout_margin="4dp"
-	        android:text="@string/query"
-	        android:textColor="@drawable/button_text_color"
-	        android:background="@drawable/button_image"
-	        android:onClick="onBtnQuery" />    
+        <Spinner
+            android:id="@+id/grades_spn_term"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:paddingLeft="8dp"
+            android:entries="@array/terms"
+            android:gravity="center"
+            android:background="@drawable/spinner_image" />
 
-	</LinearLayout>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:text="@string/query"
+            android:textColor="@drawable/button_text_color"
+            android:background="@drawable/button_image"
+            android:onClick="onBtnQuery" />    
 
-	<TextView
-	    android:id="@+id/grades_tv_title"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:paddingLeft="15dp"
-		android:paddingTop="4dp"
-		android:paddingBottom="4dp"
-		android:text="@string/nothing"
-		android:textSize="16sp"
-		android:textColor="#FFFFFFFF"
-		android:gravity="left"
-		android:background="#FF17ACAE" />
+    </LinearLayout>
 
-	<ListView
-	    android:id="@+id/grades_lv_info"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:orientation="vertical"
-	    android:background="@color/container_background" />
+    <TextView
+        android:id="@+id/grades_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:text="@string/nothing"
+        android:textSize="16sp"
+        android:textColor="#FFFFFFFF"
+        android:gravity="left"
+        android:background="#FF17ACAE" />
+
+    <ListView
+        android:id="@+id/grades_lv_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/container_background" />
 
 </LinearLayout>

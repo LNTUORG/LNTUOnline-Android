@@ -77,7 +77,7 @@ public class LoginActivity extends Activity {
                         if (cbAutoLogin.isChecked()) {
                             UserInfo.setSavedPwd(edtPwd.getText().toString());
                         } else {
-                        	UserInfo.setSavedPwd("");
+                            UserInfo.setSavedPwd("");
                         }
                         if (getIntent().getBooleanExtra("gotoMain", false) == true) {
                             startActivity(new Intent(getContext(), MainActivity.class));    

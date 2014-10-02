@@ -18,8 +18,8 @@ import com.loopj.android.http.RequestParams;
 
 public class AdviceActivity extends Activity {
 
-	private EditText edtInfo;
-	private EditText edtContact;
+    private EditText edtInfo;
+    private EditText edtContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,25 +30,25 @@ public class AdviceActivity extends Activity {
     }
 
     public void onActionBarBtnLeft(View view) {
-    	showExitTip();
+        showExitTip();
     }
 
     @Override
-	public void onBackPressed() {
-    	showExitTip();
-	}
+    public void onBackPressed() {
+        showExitTip();
+    }
     
     public void showExitTip() {
-    	if (edtInfo.getText().toString().equals("")) {
-    		finish();
-    		return;
-    	}
-		new AlertDialog.Builder(this)    
+        if (edtInfo.getText().toString().equals("")) {
+            finish();
+            return;
+        }
+        new AlertDialog.Builder(this)    
         .setTitle("提示")
         .setMessage("亲，您的建议还没有提交呢！确定要离开吗？")
         .setPositiveButton("确定", new OnClickListener() {
                 
-        	@Override
+            @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
@@ -58,38 +58,38 @@ public class AdviceActivity extends Activity {
          .show();
     }
 
-	public void onBtnSubmit(View view) {
-    	if (edtInfo.getText().toString().equals("")) {
-    		Toast.makeText(this, "亲，您还没吐槽呢~~", Toast.LENGTH_SHORT).show();
-    		return;
-    	}
+    public void onBtnSubmit(View view) {
+        if (edtInfo.getText().toString().equals("")) {
+            Toast.makeText(this, "亲，您还没吐槽呢~~", Toast.LENGTH_SHORT).show();
+            return;
+        }
         RequestParams params = new RequestParams();
         params.put("info", edtInfo.getText().toString() + "");
         params.put("contact", edtContact.getText().toString() + "");
-    	HttpUtil.post(this, NetworkInfo.serverUrl + "feedback/advice", params, new NormalAuthListener(this) {
+        HttpUtil.post(this, NetworkInfo.serverUrl + "feedback/advice", params, new NormalAuthListener(this) {
 
-			@Override
-			public void onSuccess(int statusCode, Header[] headers, String responseString) {
-				if ((responseString + "").equals("OK")) {
-					new AlertDialog.Builder(getContext())    
-			        .setTitle("提示")
-			        .setMessage("您的建议已经提交成功了，非常感谢呢亲~~")
-			        .setCancelable(false)
-			        .setPositiveButton("确定", new OnClickListener() {
-			                
-			        	@Override
-			            public void onClick(DialogInterface dialog, int which) {
-			                finish();
-			            }
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                if ((responseString + "").equals("OK")) {
+                    new AlertDialog.Builder(getContext())    
+                    .setTitle("提示")
+                    .setMessage("您的建议已经提交成功了，非常感谢呢亲~~")
+                    .setCancelable(false)
+                    .setPositiveButton("确定", new OnClickListener() {
+                            
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
 
-			         }).show();
-				} else {
+                     }).show();
+                } else {
                     String[] msgs = responseString.split("\n");
                     showErrorDialog("提示", msgs[0], msgs[1]);
                 }
-			}
+            }
 
-    	});
+        });
     }
 
 }

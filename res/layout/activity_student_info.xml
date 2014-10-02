@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    
+
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
@@ -14,12 +14,12 @@
             android:text="@string/student_info" />
 
     </FrameLayout><!-- End With ActionBar -->
-    
+
     <ListView
-	    android:id="@+id/student_info_lv_root"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent"
-	    android:orientation="vertical"
-	    android:background="@color/container_background" />
-    
+        android:id="@+id/student_info_lv_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/container_background" />
+
 </LinearLayout>

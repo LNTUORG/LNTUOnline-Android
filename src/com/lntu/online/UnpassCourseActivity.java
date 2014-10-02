@@ -64,9 +64,9 @@ public class UnpassCourseActivity extends Activity {
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
                     if (msgs[0].equals("0x01050003")) {
-                    	showNothingDialog();
+                        showNothingDialog();
                     } else {
-                    	showErrorDialog("提示", msgs[0], msgs[1]);
+                        showErrorDialog("提示", msgs[0], msgs[1]);
                     }
                 }
             }
@@ -80,7 +80,7 @@ public class UnpassCourseActivity extends Activity {
     }
 
     private void showNothingDialog() {
-    	new AlertDialog.Builder(this)    
+        new AlertDialog.Builder(this)    
         .setTitle("提示")
         .setMessage("没有挂科，学霸啊，给你跪了~~ Orz")
         .setCancelable(false)
@@ -88,7 +88,7 @@ public class UnpassCourseActivity extends Activity {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
-            	finish();
+                finish();
             }
 
         })
@@ -185,7 +185,7 @@ public class UnpassCourseActivity extends Activity {
     }
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }

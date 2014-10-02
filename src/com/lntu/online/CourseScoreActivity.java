@@ -37,7 +37,7 @@ public class CourseScoreActivity extends Activity {
     private TextView tvAvaOfCredit;
     private TextView tvTitle;
     private ListView lvInfo;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,7 +84,7 @@ public class CourseScoreActivity extends Activity {
         tvTitle = (TextView) findViewById(R.id.grades_tv_title);
         lvInfo = (ListView) findViewById(R.id.grades_lv_info);
     }
-    
+
     private void startNetwork() {
         HttpUtil.get(this, NetworkInfo.serverUrl + "grades/averageOfCreditPointInfo", new RetryAuthListener(this) {
 

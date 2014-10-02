@@ -6,6 +6,6 @@
     android:numColumns="3"
     android:stretchMode="columnWidth"
     android:padding="2dp"
-	android:verticalSpacing="2dp"         
-	android:horizontalSpacing="2dp"
-	android:background="@color/container_background" />
+    android:verticalSpacing="2dp"         
+    android:horizontalSpacing="2dp"
+    android:background="@color/container_background" />

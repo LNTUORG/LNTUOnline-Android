@@ -46,9 +46,9 @@ public class ExamPlanActivity extends Activity {
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
                     if (msgs[0].equals("0x01040003")) {
-                    	showNothingDialog();
+                        showNothingDialog();
                     } else {
-                    	showErrorDialog("提示", msgs[0], msgs[1]);
+                        showErrorDialog("提示", msgs[0], msgs[1]);
                     }
                 }
             }
@@ -62,7 +62,7 @@ public class ExamPlanActivity extends Activity {
     }
 
     private void showNothingDialog() {
-    	new AlertDialog.Builder(this)    
+        new AlertDialog.Builder(this)    
         .setTitle("提示")
         .setMessage("哇塞，没有考试耶~~")
         .setCancelable(false)
@@ -70,7 +70,7 @@ public class ExamPlanActivity extends Activity {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
-            	finish();
+                finish();
             }
 
         })
@@ -122,7 +122,7 @@ public class ExamPlanActivity extends Activity {
     }
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }

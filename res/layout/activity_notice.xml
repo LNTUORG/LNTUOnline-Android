@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/container_background">
-    
+
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
@@ -15,10 +15,10 @@
             android:text="@string/senate_notice" />
 
     </FrameLayout><!-- End With ActionBar -->
-    
+
     <WebView
         android:id="@+id/notice_wv"
-		android:layout_width="match_parent"
-    	android:layout_height="match_parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -22,7 +22,7 @@
         <item name="android:layout_height">@dimen/action_bar_height</item>
         <item name="android:background">@drawable/action_bar_backgroud</item>
     </style>
-    
+
     <style name="BlueFlor.ActionBar.Title" parent="BlueFlor">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
@@ -47,7 +47,7 @@
         <item name="android:textSize">@dimen/action_bar_btn_text_size</item>
         <item name="android:clickable">true</item>
     </style>
-    
+
     <style name="BlueFlor.ActionBar.BtnRight" parent="BlueFlor">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
@@ -81,7 +81,7 @@
         <item name="android:padding">@dimen/action_bar_icon_padding</item>
         <item name="android:clickable">true</item>
     </style>
-    
+
     <style name="BlueFlor.ActionBar.ContainerLeft" parent="BlueFlor">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
@@ -97,7 +97,7 @@
         <item name="android:gravity">center</item>
         <item name="android:orientation">horizontal</item>
     </style>
-    
+
     <!-- SlidingMenu -->
     <style name="BlueFlor.SlidingMenu.Button" parent="BlueFlor">
         <item name="android:layout_width">match_parent</item>

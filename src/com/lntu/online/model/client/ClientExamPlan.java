@@ -3,27 +3,27 @@ package com.lntu.online.model.client;
 public class ClientExamPlan extends ClientModel<ClientExamPlan> {
 
     public static final ClientExamPlan dao = new ClientExamPlan();
-    
+
     private String course;
     private String time;
     private String location;
-    
+
     public String getCourse() {
         return course;
     }
-    
+
     public void setCourse(String course) {
         this.course = course;
     }
-    
+
     public String getTime() {
         return time;
     }
-    
+
     public void setTime(String time) {
         this.time = time;
     }
-    
+
     public String getLocation() {
         return location;
     }

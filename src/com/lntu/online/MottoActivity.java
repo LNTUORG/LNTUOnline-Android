@@ -71,7 +71,7 @@ public class MottoActivity extends Activity {
     }    
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }

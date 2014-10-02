@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 public class CommunityActivity extends Activity {
 
-	String info = "" +
-			"该模块还在建设中，设计的主要目的是为学校学生组织和社团组团提供一个自我展示，活动消息推送平台。实施方式目前正在讨论中。如果各位有好的建议和意见，欢迎通过以下方式联系我们：" +
+    String info = "" +
+            "该模块还在建设中，设计的主要目的是为学校学生组织和社团组团提供一个自我展示，活动消息推送平台。实施方式目前正在讨论中。如果各位有好的建议和意见，欢迎通过以下方式联系我们：" +
             "\n" +
             "QQ：10771533\n" +
             "QQ：2318805370\n" +
@@ -27,7 +27,7 @@ public class CommunityActivity extends Activity {
     }
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }

@@ -56,13 +56,13 @@ public class CurriculumActivity extends Activity {
         //读取本地课表
         SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE);
         try {
-			ClientCurriculum cc = ClientCurriculum.dao.fromJson(Des3Util.decode(SecretKey.SP_KEY, sp.getString("json", "")));
+            ClientCurriculum cc = ClientCurriculum.dao.fromJson(Des3Util.decode(SecretKey.SP_KEY, sp.getString("json", "")));
             vpRoot.setAdapter(new ViewPagerAdapter(this, cc));
             vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
-			Toast.makeText(this, "上次更新时间为：" + sp.getString("update_time", "未知"), Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "上次更新时间为：" + sp.getString("update_time", "未知"), Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-			startNetwork();
-		}
+            startNetwork();
+        }
     }
 
     private void startNetwork() {
@@ -119,7 +119,7 @@ public class CurriculumActivity extends Activity {
     }
     
     public void onActionBarIconRefresh(View view) {
-    	updateNetwork();
+        updateNetwork();
     }
 
     private class ViewPagerAdapter extends PagerAdapter {
@@ -161,8 +161,8 @@ public class CurriculumActivity extends Activity {
 
         @Override  
         public Object instantiateItem(ViewGroup container, int position) {    
-        	View view = views.get(position);
-        	container.addView(view);  
+            View view = views.get(position);
+            container.addView(view);  
             return view;
         }
 
@@ -173,7 +173,7 @@ public class CurriculumActivity extends Activity {
 
         @Override
         public int getCount() {
-        	return weekdayNames.length;
+            return weekdayNames.length;
         }
 
         @Override
@@ -189,42 +189,42 @@ public class CurriculumActivity extends Activity {
     }
     
     private class ViewPagerPageChangeListener implements OnPageChangeListener {
-    	
-    	private int current = 0;
-    	
-		@Override
-		public void onPageScrollStateChanged(int state) {
-		}
 
-		@Override
-		public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-			//判断current
-			if (positionOffset == 0.0f) { //静止
-				current = position;
-			}
-			else if (position >= current) {
-				current = position;
-			} 
-			else if (current - position >= 2) {
-				current = position + 1;
-			}
-			//根据current跳转
-			if (current == 1) { //周日
-				vpRoot.setCurrentItem(8, false);
-			}
-			else if (current == 9) { //周一
-				vpRoot.setCurrentItem(2, false);
-			}			
-		}
+        private int current = 0;
 
-		@Override
-		public void onPageSelected(int position) {			
-		}
+        @Override
+        public void onPageScrollStateChanged(int state) {
+        }
+
+        @Override
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            //判断current
+            if (positionOffset == 0.0f) { //静止
+                current = position;
+            }
+            else if (position >= current) {
+                current = position;
+            } 
+            else if (current - position >= 2) {
+                current = position + 1;
+            }
+            //根据current跳转
+            if (current == 1) { //周日
+                vpRoot.setCurrentItem(8, false);
+            }
+            else if (current == 9) { //周一
+                vpRoot.setCurrentItem(2, false);
+            }            
+        }
+
+        @Override
+        public void onPageSelected(int position) {            
+        }
 
     }
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }
