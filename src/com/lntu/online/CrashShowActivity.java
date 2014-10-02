@@ -27,9 +27,9 @@ import android.widget.TextView;
 public class CrashShowActivity extends Activity {
 
 	private String sorry = "" +
-		"·Ç³£±§Ç¸£¬³ÌĞòÔËĞĞ¹ı³ÌÖĞ³öÏÖÁËÒ»¸öÎŞ·¨±ÜÃâµÄ´íÎó¡£" +
-		"Äú¿ÉÒÔ½«¸ÃÎÊÌâ·¢ËÍ¸øÎÒÃÇ£¬´Ë¾Ù½«ÓĞÖúÓÚÎÒÃÇ¸ÄÉÆÓ¦ÓÃÌåÑé¡£" +
-		"ÓÉ´Ë¸øÄú´øÀ´µÄÖî¶à²»±ã£¬ÎÒÃÇÉî±íÇ¸Òâ£¬¾´ÇëÁÂ½â¡£\n" +
+		"éå¸¸æŠ±æ­‰ï¼Œç¨‹åºè¿è¡Œè¿‡ç¨‹ä¸­å‡ºç°äº†ä¸€ä¸ªæ— æ³•é¿å…çš„é”™è¯¯ã€‚" +
+		"æ‚¨å¯ä»¥å°†è¯¥é—®é¢˜å‘é€ç»™æˆ‘ä»¬ï¼Œæ­¤ä¸¾å°†æœ‰åŠ©äºæˆ‘ä»¬æ”¹å–„åº”ç”¨ä½“éªŒã€‚" +
+		"ç”±æ­¤ç»™æ‚¨å¸¦æ¥çš„è¯¸å¤šä¸ä¾¿ï¼Œæˆ‘ä»¬æ·±è¡¨æ­‰æ„ï¼Œæ•¬è¯·è°…è§£ã€‚\n" +
 		"----------------\n";
 
 	private String crashLog;
@@ -38,26 +38,26 @@ public class CrashShowActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_crash_show);
-		//½ÓÊÕÒì³£¶ÔÏó
+		//æ¥æ”¶å¼‚å¸¸å¯¹è±¡
 		Intent intent = getIntent();
 		Throwable e = (Throwable) intent.getSerializableExtra("e");
-		//¹¹½¨×Ö·û´®
+		//æ„å»ºå­—ç¬¦ä¸²
 		StringBuffer sb = new StringBuffer();
-		sb.append("Éú²ú³§ÉÌ£º\n");
+		sb.append("ç”Ÿäº§å‚å•†ï¼š\n");
         sb.append(Build.MANUFACTURER + "\n\n");
-        sb.append("ÊÖ»úĞÍºÅ£º\n");
+        sb.append("æ‰‹æœºå‹å·ï¼š\n");
         sb.append(Build.MODEL + "\n\n");
-        sb.append("ÏµÍ³°æ±¾£º\n");
+        sb.append("ç³»ç»Ÿç‰ˆæœ¬ï¼š\n");
         sb.append(Build.VERSION.RELEASE + "\n\n");
-		sb.append("Òì³£Ê±¼ä£º\n");
+		sb.append("å¼‚å¸¸æ—¶é—´ï¼š\n");
 		Time time = new Time();
 		time.setToNow();
 		sb.append(time.toString() + "\n\n");
-		sb.append("Òì³£ÀàĞÍ£º\n");
+		sb.append("å¼‚å¸¸ç±»å‹ï¼š\n");
 		sb.append(e.getClass().getName() + "\n\n");
-		sb.append("Òì³£ĞÅÏ¢£º\n");
+		sb.append("å¼‚å¸¸ä¿¡æ¯ï¼š\n");
 		sb.append(e.getMessage() + "\n\n");
-		sb.append("Òì³£¶ÑÕ»£º\n" );
+		sb.append("å¼‚å¸¸å †æ ˆï¼š\n" );
 		Writer writer = new StringWriter();
 		PrintWriter printWriter = new PrintWriter(writer);
 		e.printStackTrace(printWriter);
@@ -69,7 +69,7 @@ public class CrashShowActivity extends Activity {
 		printWriter.close();
 		sb.append(writer.toString());
 		crashLog = sb.toString();
-		//ÏÔÊ¾ĞÅÏ¢
+		//æ˜¾ç¤ºä¿¡æ¯
 		TextView tvInfo = (TextView) findViewById(R.id.crash_show_tv_info);
 		tvInfo.setText(sorry + crashLog);
 	}
@@ -88,10 +88,10 @@ public class CrashShowActivity extends Activity {
 			public void onSuccess(int statusCode, Header[] headers, String responseString) {
 				if ((responseString + "").equals("OK")) {
 					new AlertDialog.Builder(getContext())    
-			        .setTitle("ÌáÊ¾")
-			        .setMessage("ÎÊÌâÒÑ¾­Ìá½»£¬·Ç³£¸ĞĞ»")
+			        .setTitle("æç¤º")
+			        .setMessage("é—®é¢˜å·²ç»æäº¤ï¼Œéå¸¸æ„Ÿè°¢")
 			        .setCancelable(false)
-			        .setPositiveButton("È·¶¨", new OnClickListener() {
+			        .setPositiveButton("ç¡®å®š", new OnClickListener() {
 			                
 			        	@Override
 			            public void onClick(DialogInterface dialog, int which) {
@@ -101,7 +101,7 @@ public class CrashShowActivity extends Activity {
 			         }).show();
 				} else {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("ÌáÊ¾", msgs[0], msgs[1]);
+                    showErrorDialog("æç¤º", msgs[0], msgs[1]);
                 }
 			}
 

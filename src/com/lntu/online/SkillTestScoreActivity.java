@@ -48,7 +48,7 @@ public class SkillTestScoreActivity extends Activity {
                     if (msgs[0].equals("0x01050003")) {
                     	showNothingDialog();
                     } else {
-                    	showErrorDialog("提示", msgs[0], msgs[1]);
+                    	showErrorDialog("鎻愮ず", msgs[0], msgs[1]);
                     }
                 }
             }
@@ -63,10 +63,10 @@ public class SkillTestScoreActivity extends Activity {
     
     private void showNothingDialog() {
     	new AlertDialog.Builder(this)    
-        .setTitle("提示")
-        .setMessage("您还没有参加过技能考试呢，赶快去报名啊~~")
+        .setTitle("鎻愮ず")
+        .setMessage("鎮ㄨ繕娌℃湁鍙傚姞杩囨妧鑳借�冭瘯鍛紝璧跺揩鍘绘姤鍚嶅晩~~")
         .setCancelable(false)
-        .setPositiveButton("确定", new OnClickListener() {
+        .setPositiveButton("纭畾", new OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -86,7 +86,7 @@ public class SkillTestScoreActivity extends Activity {
             itemViews = new ArrayList<View>();
             for (int n = 0; n < cstss.size(); n++) {
                 ClientSkillTestScore csts = cstss.get(n);
-                //布局
+                //甯冨眬
                 View itemView = inflater.inflate(R.layout.activity_skill_test_score_item, null);
                 TextView tvName = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_name);
                 TextView tvTime = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_time);
@@ -94,7 +94,7 @@ public class SkillTestScoreActivity extends Activity {
                 tvName.setText(csts.getName() + "");
                 tvTime.setText(csts.getTime() + "");
                 tvScore.setText(csts.getScore() + "");
-                //填充布局
+                //濉厖甯冨眬
                 itemViews.add(itemView);
             }
         }

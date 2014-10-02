@@ -10,18 +10,18 @@ import android.os.Bundle;
 
 public class CrashHandler implements UncaughtExceptionHandler {
 
-	private static CrashHandler instance; //µ±Ç°Òì³£´¦ÀíÆ÷-µ¥ÀıÄ£Ê½
+	private static CrashHandler instance; //å½“å‰å¼‚å¸¸å¤„ç†å™¨-å•ä¾‹æ¨¡å¼
 	@SuppressWarnings("unused")
-	private UncaughtExceptionHandler defaultHandler; //ÏµÍ³Ä¬ÈÏÎ´²¶»ñÒì³£´¦ÀíÆ÷
-	private Context context; //Ó¦ÓÃÉÏÏÂÎÄ
+	private UncaughtExceptionHandler defaultHandler; //ç³»ç»Ÿé»˜è®¤æœªæ•è·å¼‚å¸¸å¤„ç†å™¨
+	private Context context; //åº”ç”¨ä¸Šä¸‹æ–‡
 
 	/**
-	 * Òş²Ø¹¹ÔìÆ÷
+	 * éšè—æ„é€ å™¨
 	 */
 	private CrashHandler() {}
 	
 	/**
-	 * »ñÈ¡Òì³£´¦ÀíÆ÷µ¥Àı
+	 * è·å–å¼‚å¸¸å¤„ç†å™¨å•ä¾‹
 	 */
 	public static synchronized CrashHandler getInstance() {
 		if (instance == null) {
@@ -31,7 +31,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	}
 	
 	/**
-	 * ¼¤»î´¦ÀíÆ÷
+	 * æ¿€æ´»å¤„ç†å™¨
 	 * @param context
 	 */
 	public void active(Context context) {
@@ -41,14 +41,14 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	}
 	
 	/**
-	 * Î´±»²¶»ñµÄÒì³££¬»áµ÷ÓÃ¸Ã·½·¨´¦Àí
+	 * æœªè¢«æ•è·çš„å¼‚å¸¸ï¼Œä¼šè°ƒç”¨è¯¥æ–¹æ³•å¤„ç†
 	 */
 	@Override
 	public void uncaughtException(Thread thread, final Throwable e) {
-		//ÏµÍ³Ä¬ÈÏ´¦ÀíÒì³£
+		//ç³»ç»Ÿé»˜è®¤å¤„ç†å¼‚å¸¸
 		//defaultHandler.uncaughtException(thread, e);
 
-		//Æô¶¯ErrorShowActivity
+		//å¯åŠ¨ErrorShowActivity
         Intent intent = new Intent(context, CrashShowActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
         Bundle bundle = new Bundle();
@@ -56,7 +56,7 @@ public class CrashHandler implements UncaughtExceptionHandler {
         intent.putExtras(bundle);
         context.startActivity(intent);
 
-		//ÍË³ö³ÌĞò
+		//é€€å‡ºç¨‹åº
 		android.os.Process.killProcess(android.os.Process.myPid());
 		System.exit(1);
 	}

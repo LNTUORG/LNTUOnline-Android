@@ -11,10 +11,10 @@ public class DigestCoder {
     private final Charset charset;
 
     /**
-     * ¹¹Ôìº¯Êı
-     * @param algorithm ÕªÒªËã·¨
-     * ¿ÉÑ¡ÖµÎª£ºMD2,MD5,SHA-1,SHA-256,SHA-384,SHA-512
-     * @param charsetName ±àÂëÀàĞÍ
+     * æ„é€ å‡½æ•°
+     * @param algorithm æ‘˜è¦ç®—æ³•
+     * å¯é€‰å€¼ä¸ºï¼šMD2,MD5,SHA-1,SHA-256,SHA-384,SHA-512
+     * @param charsetName ç¼–ç ç±»å‹
      */
     public DigestCoder(String algorithm, String charsetName) {
         if (algorithm == null || charsetName == null) {
@@ -34,18 +34,18 @@ public class DigestCoder {
     }
 
     /**
-     * ¹¹Ôìº¯Êı
-     * @param alogrithm ÕªÒªËã·¨
-     * ¿ÉÑ¡ÖµÎª£ºMD2,MD5,SHA-1,SHA-256,SHA-384,SHA-512
+     * æ„é€ å‡½æ•°
+     * @param alogrithm æ‘˜è¦ç®—æ³•
+     * å¯é€‰å€¼ä¸ºï¼šMD2,MD5,SHA-1,SHA-256,SHA-384,SHA-512
      */
     public DigestCoder(String alogrithm) {
         this(alogrithm, "UTF-8");
     }
 
     /**
-     * »ñÈ¡ÕªÒªÌØÕ÷
-     * @param plainText Ã÷ÎÄ
-     * @return ÕªÒªÌØÕ÷
+     * è·å–æ‘˜è¦ç‰¹å¾
+     * @param plainText æ˜æ–‡
+     * @return æ‘˜è¦ç‰¹å¾
      */
     public String getDigest(String plainText) {
         if (plainText == null) {
@@ -65,10 +65,10 @@ public class DigestCoder {
     }
 
     /**
-     * »ñÈ¡ÕªÒªÌØÕ÷
-     * @param plainText Ã÷ÎÄ
-     * @param isUpperCase ÊÇ·ñÎª´óĞ´
-     * @return ÕªÒªÌØÕ÷
+     * è·å–æ‘˜è¦ç‰¹å¾
+     * @param plainText æ˜æ–‡
+     * @param isUpperCase æ˜¯å¦ä¸ºå¤§å†™
+     * @return æ‘˜è¦ç‰¹å¾
      */
     public String getDigest(String plainText, boolean isUpperCase) {
         String digest = getDigest(plainText);
@@ -80,10 +80,10 @@ public class DigestCoder {
     }
 
     /**
-     * ±È½ÏÕªÒªÌØÕ÷
-     * @param plainText Ã÷ÎÄ
-     * @param digest ÕªÒªÌØÕ÷
-     * @return ÊÇ·ñÏàÍ¬
+     * æ¯”è¾ƒæ‘˜è¦ç‰¹å¾
+     * @param plainText æ˜æ–‡
+     * @param digest æ‘˜è¦ç‰¹å¾
+     * @return æ˜¯å¦ç›¸åŒ
      */
     public boolean compare(String plainText, String digest) {
         if (plainText == null || digest == null) {

@@ -52,7 +52,7 @@ public class CourseScoreActivity extends Activity {
         spnTerm = (Spinner) findViewById(R.id.grades_spn_term);
         spnTerm.setSelection((time.month >= 3 && time.month < 9 ? 0 : 1));
         String[] strsYear = {
-            "È«²¿",
+            "å…¨éƒ¨",
             time.year + "",
             time.year - 1 + "",
             time.year - 2 + "",
@@ -94,7 +94,7 @@ public class CourseScoreActivity extends Activity {
                 if ((msgs[0] + "").equals("0x00000000")) {
                     tvAvaOfCredit.setText(msgs[1] + "");
                 } else {
-                    showErrorDialog("ÌáÊ¾", msgs[0], msgs[1]);
+                    showErrorDialog("æç¤º", msgs[0], msgs[1]);
                 }
             }
 
@@ -107,7 +107,7 @@ public class CourseScoreActivity extends Activity {
     }
 
     public void onBtnQuery(View view) {
-        //¹¹½¨¼àÌıÆ÷
+        //æ„å»ºç›‘å¬å™¨
         BaseListener listener = new NormalAuthListener(this) {
             
             @Override
@@ -116,21 +116,21 @@ public class CourseScoreActivity extends Activity {
                     List<ClientCourseScore> ccss = JsonUtil.fromJson(responseString, new TypeToken<List<ClientCourseScore>>(){}.getType());
                     lvInfo.setAdapter(new ListViewAdapter(getContext(), ccss));
                     if (spnYear.getSelectedItemPosition() == 0) {
-                        tvTitle.setText("È«²¿¿Î³Ì³É¼¨");
+                        tvTitle.setText("å…¨éƒ¨è¯¾ç¨‹æˆç»©");
                     } else {
-                        tvTitle.setText(spnYear.getSelectedItem().toString() + "Äê " + spnTerm.getSelectedItem().toString() + " ¿Î³Ì³É¼¨");
+                        tvTitle.setText(spnYear.getSelectedItem().toString() + "å¹´ " + spnTerm.getSelectedItem().toString() + " è¯¾ç¨‹æˆç»©");
                     }
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("ÌáÊ¾", msgs[0], msgs[1]);
+                    showErrorDialog("æç¤º", msgs[0], msgs[1]);
                 }
             }
             
         };
-        //ÅĞ¶ÏÊÇ·ñÑ¡ÔñÈ«²¿
-        if (spnYear.getSelectedItemPosition() == 0) { //Ñ¡ÔñÈ«²¿
+        //åˆ¤æ–­æ˜¯å¦é€‰æ‹©å…¨éƒ¨
+        if (spnYear.getSelectedItemPosition() == 0) { //é€‰æ‹©å…¨éƒ¨
             HttpUtil.get(this, NetworkInfo.serverUrl + "grades/allCourseScoresInfo", listener);
-        } else { //Ã»Ñ¡ÔñÈ«²¿
+        } else { //æ²¡é€‰æ‹©å…¨éƒ¨
             RequestParams params = new RequestParams();
             params.put("year", spnYear.getSelectedItem().toString());
             params.put("term", (spnTerm.getSelectedItemPosition() == 0 ? 1 : 2) + "");
@@ -147,7 +147,7 @@ public class CourseScoreActivity extends Activity {
             itemViews = new ArrayList<View>();
             for (int n = 0; n < ccss.size(); n++) {
                 ClientCourseScore ccs = ccss.get(n);
-                //²¼¾Ö
+                //å¸ƒå±€
                 View itemView = inflater.inflate(R.layout.activity_course_score_item, null);
                 TextView tvNum = (TextView) itemView.findViewById(R.id.course_score_item_tv_num);
                 TextView tvName = (TextView) itemView.findViewById(R.id.course_score_item_tv_name);
@@ -163,7 +163,7 @@ public class CourseScoreActivity extends Activity {
                 tvName.setText(ccs.getName() + "");
                 tvIndex.setText(ccs.getIndex() + "");
                 tvScore.setText(ccs.getScore() + "");
-                { //µÃ·ÖºìÉ«±ê¼Ç
+                { //å¾—åˆ†çº¢è‰²æ ‡è®°
                     try {
                         float s = Float.valueOf(ccs.getScore());
                         if (s < 60.0f) {
@@ -178,7 +178,7 @@ public class CourseScoreActivity extends Activity {
                 tvRemarks.setText(ccs.getRemarks() + "");
                 tvExamType.setText(ccs.getExamType() + "");
                 tvSemester.setText(ccs.getSemester() + "");
-                //Ìî³ä²¼¾Ö
+                //å¡«å……å¸ƒå±€
                 itemViews.add(itemView);
             }
         }

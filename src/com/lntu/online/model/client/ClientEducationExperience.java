@@ -5,10 +5,10 @@ public class ClientEducationExperience extends ClientModel<ClientEducationExperi
 
     public static final ClientEducationExperience dao = new ClientEducationExperience();
 
-    private String dateOfStart; //�?始日�?
+    private String dateOfStart; //开始日期
     private String dateOfEnd; //结束日期
     private String schoolName; //学校名称
-    private String witness; //证明�?
+    private String witness; //证明人
 
     public String getDateOfStart() {
         return dateOfStart;

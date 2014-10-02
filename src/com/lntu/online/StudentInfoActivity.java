@@ -48,7 +48,7 @@ public class StudentInfoActivity extends Activity {
                     lvRoot.setAdapter(new ListViewAdapter(getContext(), cs));
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("Ã· æ", msgs[0], msgs[1]);
+                    showErrorDialog("ÊèêÁ§∫", msgs[0], msgs[1]);
                 }
             }
 
@@ -67,18 +67,18 @@ public class StudentInfoActivity extends Activity {
         public ListViewAdapter(Context context, ClientStudent cs) {
             LayoutInflater inflater = LayoutInflater.from(context);
             itemViews = new ArrayList<View>();
-            //’’∆¨
+            //ÁÖßÁâá
             {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_photo, null);
                 ImageView ivPhoto = (ImageView) itemView.findViewById(R.id.student_info_item_iv_photo);
                 startPhotoDownload(cs.getPhotoUrl(), ivPhoto);
                 itemViews.add(itemView);
             }
-            //ª˘±æ–≈œ¢
+            //Âü∫Êú¨‰ø°ÊÅØ
             {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
                 TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
-                tvCategory.setText("ª˘±æ–≈œ¢");
+                tvCategory.setText("Âü∫Êú¨‰ø°ÊÅØ");
                 itemViews.add(itemView);
             }
             for (int n = 0; n < 34; n++) {
@@ -87,182 +87,182 @@ public class StudentInfoActivity extends Activity {
                 TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_tv_value);
                 switch(n) {
                 case 0:
-                    tvTitle.setText("—ß∫≈");
+                    tvTitle.setText("Â≠¶Âè∑");
                     tvValue.setText(cs.getUserId() + "");
                     break;
                 case 1:
-                    tvTitle.setText("–’√˚");
+                    tvTitle.setText("ÂßìÂêç");
                     tvValue.setText(cs.getName() + "");
                     break;
                 case 2:
-                    tvTitle.setText("”¢Œƒ√˚");
+                    tvTitle.setText("Ëã±ÊñáÂêç");
                     tvValue.setText(cs.getEnglishName() + "");
                     break;
                 case 3:
-                    tvTitle.setText("–‘±");
+                    tvTitle.setText("ÊÄßÂà´");
                     tvValue.setText(cs.getSex() + "");
                     break;
                 case 4:
-                    tvTitle.setText("π˙ºÆ");
+                    tvTitle.setText("ÂõΩÁ±ç");
                     tvValue.setText(cs.getNationality() + "");
                     break;
                 case 5:
-                    tvTitle.setText("√Ò◊Â");
+                    tvTitle.setText("Ê∞ëÊóè");
                     tvValue.setText(cs.getNation() + "");
                     break;
                 case 6:
-                    tvTitle.setText("’˛÷Œ√Ê√≤");
+                    tvTitle.setText("ÊîøÊ≤ªÈù¢Ë≤å");
                     tvValue.setText(cs.getPoliticalAffiliation() + "");
                     break;
                 case 7:
-                    tvTitle.setText("÷§º˛¿‡–Õ");
+                    tvTitle.setText("ËØÅ‰ª∂Á±ªÂûã");
                     tvValue.setText(cs.getIdCardType() + "");
                     break;
                 case 8:
-                    tvTitle.setText("÷§º˛∫≈¬Î");
+                    tvTitle.setText("ËØÅ‰ª∂Âè∑Á†Å");
                     tvValue.setText(cs.getIdCardNum() + "");
                     break;
                 case 9:
-                    tvTitle.setText("≥ˆ…˙»’∆⁄");
+                    tvTitle.setText("Âá∫ÁîüÊó•Êúü");
                     tvValue.setText(cs.getDateOfBirth() + "");
                     break;
                 case 10:
-                    tvTitle.setText("ºÆπ·");
+                    tvTitle.setText("Á±çË¥Ø");
                     tvValue.setText(cs.getBirthplace() + "");
                     break;
                 case 11:
-                    tvTitle.setText("—ß‘∫");
+                    tvTitle.setText("Â≠¶Èô¢");
                     tvValue.setText(cs.getCollege() + "");
                     break;
                 case 12:
-                    tvTitle.setText("◊®“µ");
+                    tvTitle.setText("‰∏ì‰∏ö");
                     tvValue.setText(cs.getMajor() + "");
                     break;
                 case 13:
-                    tvTitle.setText("∞‡º∂");
+                    tvTitle.setText("Áè≠Á∫ß");
                     tvValue.setText(cs.getClassInfo() + "");
                     break;
                 case 14:
-                    tvTitle.setText("—ß…˙¿‡–Õ");
+                    tvTitle.setText("Â≠¶ÁîüÁ±ªÂûã");
                     tvValue.setText(cs.getStudentType() + "");
                     break;
                 case 15:
-                    tvTitle.setText("—ßºÆ±Ì∫≈");
+                    tvTitle.setText("Â≠¶Á±çË°®Âè∑");
                     tvValue.setText(cs.getStudentInfoTableNum() + "");
                     break;
                 case 16:
-                    tvTitle.setText("øº«¯");
+                    tvTitle.setText("ËÄÉÂå∫");
                     tvValue.setText(cs.getEntranceExamArea() + "");
                     break;
                 case 17:
-                    tvTitle.setText("◊ºøº÷§∫≈¬Î");
+                    tvTitle.setText("ÂáÜËÄÉËØÅÂè∑Á†Å");
                     tvValue.setText(cs.getEntranceExamNum() + "");
                     break;
                 case 18:
-                    tvTitle.setText("Õ‚”Ô”Ô÷÷");
+                    tvTitle.setText("Â§ñËØ≠ËØ≠Áßç");
                     tvValue.setText(cs.getForeignLanguage() + "");
                     break;
                 case 19:
-                    tvTitle.setText("≈‡—¯∑Ω Ω");
+                    tvTitle.setText("ÂüπÂÖªÊñπÂºè");
                     tvValue.setText(cs.getEducationType() + "");
                     break;
                 case 20:
-                    tvTitle.setText("¬º»°÷§∫≈");
+                    tvTitle.setText("ÂΩïÂèñËØÅÂè∑");
                     tvValue.setText(cs.getAdmissionNum() + "");
                     break;
                 case 21:
-                    tvTitle.setText("¬º»°∑Ω Ω");
+                    tvTitle.setText("ÂΩïÂèñÊñπÂºè");
                     tvValue.setText(cs.getAdmissionType() + "");
                     break;    
                 case 22:
-                    tvTitle.setText("—ß…˙¿¥‘¥");
+                    tvTitle.setText("Â≠¶ÁîüÊù•Ê∫ê");
                     tvValue.setText(cs.getSourceOfStudent() + "");
                     break;
                 case 23:
-                    tvTitle.setText("±œ“µ—ß–£");
+                    tvTitle.setText("ÊØï‰∏öÂ≠¶Ê†°");
                     tvValue.setText(cs.getGraduateSchool() + "");
                     break;
                 case 24:
-                    tvTitle.setText("∏ﬂøº◊‹∑÷");
+                    tvTitle.setText("È´òËÄÉÊÄªÂàÜ");
                     tvValue.setText(cs.getEntranceExamScore() + "");
                     break;
                 case 25:
-                    tvTitle.setText("»Î—ß»’∆⁄");
+                    tvTitle.setText("ÂÖ•Â≠¶Êó•Êúü");
                     tvValue.setText(cs.getDateOfAdmission() + "");
                     break;
                 case 26:
-                    tvTitle.setText("±œ“µ»’∆⁄");
+                    tvTitle.setText("ÊØï‰∏öÊó•Êúü");
                     tvValue.setText(cs.getDateOfGraduation() + "");
                     break;
                 case 27:
-                    tvTitle.setText("±œ“µ»•œÚ");
+                    tvTitle.setText("ÊØï‰∏öÂéªÂêë");
                     tvValue.setText(cs.getWhereaboutsAftergraduation() + "");
                     break;
                 case 28:
-                    tvTitle.setText("º“Õ•µÿ÷∑");
+                    tvTitle.setText("ÂÆ∂Â∫≠Âú∞ÂùÄ");
                     tvValue.setText(cs.getHomeAddress() + "");
                     break;
                 case 29:
-                    tvTitle.setText("≥À≥µ«¯º‰");
+                    tvTitle.setText("‰πòËΩ¶Âå∫Èó¥");
                     tvValue.setText(cs.getTravelRange() + "");
                     break;
                 case 30:
-                    tvTitle.setText("¡™œµµÁª∞");
+                    tvTitle.setText("ËÅîÁ≥ªÁîµËØù");
                     tvValue.setText(cs.getContactTel() + "");
                     break;
                 case 31:
-                    tvTitle.setText("” ’˛±‡¬Î");
+                    tvTitle.setText("ÈÇÆÊîøÁºñÁ†Å");
                     tvValue.setText(cs.getZipCode() + "");
                     break;
                 case 32:
-                    tvTitle.setText("µÁ◊”” º˛");
+                    tvTitle.setText("ÁîµÂ≠êÈÇÆ‰ª∂");
                     tvValue.setText(cs.getEmail() + "");
                     break;
                 case 33:
-                    tvTitle.setText("±∏◊¢");
+                    tvTitle.setText("Â§áÊ≥®");
                     tvValue.setText(cs.getRemarks() + "");
                     break;
                 }
-                //ÃÌº”µΩ≤ºæ÷÷–
+                //Ê∑ªÂä†Âà∞Â∏ÉÂ±Ä‰∏≠
                 itemViews.add(itemView);
             }
-            //∏ﬂøºø∆ƒø
+            //È´òËÄÉÁßëÁõÆ
             {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
                 TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
-                tvCategory.setText("∏ﬂøºø∆ƒø");
+                tvCategory.setText("È´òËÄÉÁßëÁõÆ");
                 itemViews.add(itemView);
             }
             for (int n = 0; n < cs.getEntranceExams().size(); n++) {
                 ClientEntranceExam ee = cs.getEntranceExams().get(n);
-                //≤ºæ÷
+                //Â∏ÉÂ±Ä
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_hor, null);
                 TextView tvTitle = (TextView) itemView.findViewById(R.id.student_info_item_tv_title);
                 TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_tv_value);
                 tvTitle.setText(ee.getName() + "");
                 tvValue.setText(ee.getScore() + "");
-                //ÃÌº”µΩ≤ºæ÷
+                //Ê∑ªÂä†Âà∞Â∏ÉÂ±Ä
                 itemViews.add(itemView);
             }
-            //√ª”–∏ﬂøºø∆ƒø
+            //Ê≤°ÊúâÈ´òËÄÉÁßëÁõÆ
             if (cs.getEntranceExams().size() == 0) {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_hor, null);
                 TextView tvTitle = (TextView) itemView.findViewById(R.id.student_info_item_tv_title);
                 TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_tv_value);
-                tvTitle.setText("‘›Œﬁ–≈œ¢");
+                tvTitle.setText("ÊöÇÊó†‰ø°ÊÅØ");
                 tvValue.setText("");
                 itemViews.add(itemView);
             }
-            //ΩÃ”˝æ≠¿˙
+            //ÊïôËÇ≤ÁªèÂéÜ
             {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
                 TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
-                tvCategory.setText("ΩÃ”˝æ≠¿˙");
+                tvCategory.setText("ÊïôËÇ≤ÁªèÂéÜ");
                 itemViews.add(itemView);
             }
             for (int n = 0; n < cs.getEducationExperiences().size(); n++) {
                 ClientEducationExperience ee = cs.getEducationExperiences().get(n);
-                //≤ºæ÷
+                //Â∏ÉÂ±Ä
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_edex, null);
                 TextView tvDateOfStart = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_start);
                 TextView tvDateOfEnd = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_end);
@@ -272,28 +272,28 @@ public class StudentInfoActivity extends Activity {
                 tvDateOfEnd.setText(ee.getDateOfEnd() + "");
                 tvSchoolName.setText(ee.getSchoolName() + "");
                 tvWitness.setText(ee.getWitness() + "");
-                //ÃÓ≥‰
+                //Â°´ÂÖÖ
                 itemViews.add(itemView);
             }
-            //√ª”–ΩÃ”˝æ≠¿˙
+            //Ê≤°ÊúâÊïôËÇ≤ÁªèÂéÜ
             if (cs.getEducationExperiences().size() == 0) {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_hor, null);
                 TextView tvTitle = (TextView) itemView.findViewById(R.id.student_info_item_tv_title);
                 TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_tv_value);
-                tvTitle.setText("‘›Œﬁ–≈œ¢");
+                tvTitle.setText("ÊöÇÊó†‰ø°ÊÅØ");
                 tvValue.setText("");
                 itemViews.add(itemView);
             }
-            //º“Õ•–≈œ¢
+            //ÂÆ∂Â∫≠‰ø°ÊÅØ
             {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
                 TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
-                tvCategory.setText("º“Õ•–≈œ¢");
+                tvCategory.setText("ÂÆ∂Â∫≠‰ø°ÊÅØ");
                 itemViews.add(itemView);
             }
             for (int n = 0; n < cs.getFamilys().size(); n++) {
                 ClientFamily f = cs.getFamilys().get(n);
-                //≤ºæ÷
+                //Â∏ÉÂ±Ä
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_family, null);
                 TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_name);
                 TextView tvRelationship = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_relationship);
@@ -309,15 +309,15 @@ public class StudentInfoActivity extends Activity {
                 tvPost.setText(f.getPost() + "");
                 tvWorkLocation.setText(f.getWorkLocation() + "");
                 tvTel.setText(f.getTel() + "");
-                //ÃÓ≥‰
+                //Â°´ÂÖÖ
                 itemViews.add(itemView);
             }
-            //√ª”–º“Õ•–≈œ¢
+            //Ê≤°ÊúâÂÆ∂Â∫≠‰ø°ÊÅØ
             if (cs.getFamilys().size() == 0) {
                 View itemView = inflater.inflate(R.layout.activity_student_info_item_hor, null);
                 TextView tvTitle = (TextView) itemView.findViewById(R.id.student_info_item_tv_title);
                 TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_tv_value);
-                tvTitle.setText("‘›Œﬁ–≈œ¢");
+                tvTitle.setText("ÊöÇÊó†‰ø°ÊÅØ");
                 tvValue.setText("");
                 itemViews.add(itemView);
             }
@@ -363,13 +363,13 @@ public class StudentInfoActivity extends Activity {
                 Bitmap bmp = BitmapFactory.decodeByteArray(responseBody, 0, responseBody.length);
                 imageView.setImageBitmap(bmp);
             } catch(Exception e) {
-                Toast.makeText(imageView.getContext(), "”√ªßÕ∑œÒΩ‚Œˆ ß∞‹", Toast.LENGTH_SHORT).show();
+                Toast.makeText(imageView.getContext(), "Áî®Êà∑Â§¥ÂÉèËß£ÊûêÂ§±Ë¥•", Toast.LENGTH_SHORT).show();
             }
         }
 
         @Override
         public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-            Toast.makeText(imageView.getContext(), "”√ªßÕ∑œÒªÒ»° ß∞‹", Toast.LENGTH_SHORT).show();
+            Toast.makeText(imageView.getContext(), "Áî®Êà∑Â§¥ÂÉèËé∑ÂèñÂ§±Ë¥•", Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -26,15 +26,15 @@ public class ModuleInfo {
     };
 
     private static final String[] titles = { 
-        "ѧ����Ϣ",
-        "ѧ�ڿα�",
-        "���԰���",
-        "�ɼ���ѯ",
-        "���Ŵ�����",
-        "�ҿƲ�ѯ",
-        "���ܿ���",
-        "���񹫸�",
-        "�μ�Уѵ"
+        "学籍信息",
+        "学期课表",
+        "考试安排",
+        "成绩查询",
+        "社团大联盟",
+        "挂科查询",
+        "技能考试",
+        "教务公告",
+        "牢记校训"
     };
 
     private static final Class<?>[] clzs = {

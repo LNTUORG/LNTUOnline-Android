@@ -32,7 +32,7 @@ import com.lntu.online.util.Des3Util;
 public class CurriculumActivity extends Activity {
 
     private static final String[] weekdayNames = {
-        "ÖÜÁù", "ÖÜÈÕ", "ÖÜÒ»", "ÖÜ¶ş", "ÖÜÈı", "ÖÜËÄ", "ÖÜÎå", "ÖÜÁù", "ÖÜÈÕ", "ÖÜÒ»", "ÖÜ¶ş"
+        "å‘¨å…­", "å‘¨æ—¥", "å‘¨ä¸€", "å‘¨äºŒ", "å‘¨ä¸‰", "å‘¨å››", "å‘¨äº”", "å‘¨å…­", "å‘¨æ—¥", "å‘¨ä¸€", "å‘¨äºŒ"
     };
 
     private Time time;
@@ -43,23 +43,23 @@ public class CurriculumActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curriculum);
-        //¶¨ÒåÊ±¼ä¿Ø¼ş
+        //å®šä¹‰æ—¶é—´æ§ä»¶
         time = new Time();
         time.setToNow();
-        strTime = time.year + "-" + (time.month + 1) + "-" + time.monthDay + " £¨" + weekdayNames[(time.weekDay == 0 ? 7 : time.weekDay) + 1] + "£©";
-        //ActionBarÏÔÊ¾ÈÕÆÚ
+        strTime = time.year + "-" + (time.month + 1) + "-" + time.monthDay + " ï¼ˆ" + weekdayNames[(time.weekDay == 0 ? 7 : time.weekDay) + 1] + "ï¼‰";
+        //ActionBaræ˜¾ç¤ºæ—¥æœŸ
         TextView tvActionBar = (TextView) findViewById(R.id.actionbar_title);
         tvActionBar.setText(strTime);
         //ViewPager
         vpRoot = (ViewPager) findViewById(R.id.curriculum_vp_root);
         vpRoot.setOnPageChangeListener(new ViewPagerPageChangeListener());
-        //¶ÁÈ¡±¾µØ¿Î±í
+        //è¯»å–æœ¬åœ°è¯¾è¡¨
         SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE);
         try {
 			ClientCurriculum cc = ClientCurriculum.dao.fromJson(Des3Util.decode(SecretKey.SP_KEY, sp.getString("json", "")));
             vpRoot.setAdapter(new ViewPagerAdapter(this, cc));
             vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
-			Toast.makeText(this, "ÉÏ´Î¸üĞÂÊ±¼äÎª£º" + sp.getString("update_time", "Î´Öª"), Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "ä¸Šæ¬¡æ›´æ–°æ—¶é—´ä¸ºï¼š" + sp.getString("update_time", "æœªçŸ¥"), Toast.LENGTH_LONG).show();
         } catch (Exception e) {
 			startNetwork();
 		}
@@ -74,14 +74,14 @@ public class CurriculumActivity extends Activity {
                     ClientCurriculum cc = ClientCurriculum.dao.fromJson(responseString);
                     vpRoot.setAdapter(new ViewPagerAdapter(getContext(), cc));
                     vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
-                    //±£´æÔÚ±¾µØ
+                    //ä¿å­˜åœ¨æœ¬åœ°
                     Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
                     editer.putString("json", Des3Util.encode(SecretKey.SP_KEY, responseString));
                     editer.putString("update_time", strTime);
                     editer.commit();
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("ÌáÊ¾", msgs[0], msgs[1]);
+                    showErrorDialog("æç¤º", msgs[0], msgs[1]);
                 }
             }
 
@@ -102,16 +102,16 @@ public class CurriculumActivity extends Activity {
                     ClientCurriculum cc = ClientCurriculum.dao.fromJson(responseString);
                     vpRoot.setAdapter(new ViewPagerAdapter(getContext(), cc));
                     vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
-                    //±£´æÔÚ±¾µØ
+                    //ä¿å­˜åœ¨æœ¬åœ°
                     Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
                     editer.putString("json", Des3Util.encode(SecretKey.SP_KEY, responseString));
                     editer.putString("update_time", strTime);
                     editer.commit();
                     //Toast
-                    Toast.makeText(getContext(), "Êı¾İ¸üĞÂ³É¹¦", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "æ•°æ®æ›´æ–°æˆåŠŸ", Toast.LENGTH_SHORT).show();
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("ÌáÊ¾", msgs[0], msgs[1]);
+                    showErrorDialog("æç¤º", msgs[0], msgs[1]);
                 }
             }
 
@@ -131,18 +131,18 @@ public class CurriculumActivity extends Activity {
             views = new ArrayList<View>();
             for (int n = 0; n < weekdayNames.length; n++) {
                 View view = inflater.inflate(R.layout.activity_curriculum_item, null);
-                //Ê±¼ä
+                //æ—¶é—´
                 TextView tvTime1 = (TextView) view.findViewById(R.id.curriculum_tv_time1);
                 TextView tvTime2 = (TextView) view.findViewById(R.id.curriculum_tv_time2);
                 TextView tvTime3 = (TextView) view.findViewById(R.id.curriculum_tv_time3);
                 TextView tvTime4 = (TextView) view.findViewById(R.id.curriculum_tv_time4);
                 TextView tvTime5 = (TextView) view.findViewById(R.id.curriculum_tv_time5);
-                tvTime1.setText("µÚ1½Ú\n" + cc.getTimes().get(1) + "\nµÚ2½Ú\n" + cc.getTimes().get(2));
-                tvTime2.setText("µÚ3½Ú\n" + cc.getTimes().get(3) + "\nµÚ4½Ú\n" + cc.getTimes().get(4));
-                tvTime3.setText("µÚ5½Ú\n" + cc.getTimes().get(5) + "\nµÚ6½Ú\n" + cc.getTimes().get(6));
-                tvTime4.setText("µÚ7½Ú\n" + cc.getTimes().get(7) + "\nµÚ8½Ú\n" + cc.getTimes().get(8));
-                tvTime5.setText("µÚ9½Ú\n" + cc.getTimes().get(9) + "\nµÚ10½Ú\n" + cc.getTimes().get(10));
-                //¿Î³Ì
+                tvTime1.setText("ç¬¬1èŠ‚\n" + cc.getTimes().get(1) + "\nç¬¬2èŠ‚\n" + cc.getTimes().get(2));
+                tvTime2.setText("ç¬¬3èŠ‚\n" + cc.getTimes().get(3) + "\nç¬¬4èŠ‚\n" + cc.getTimes().get(4));
+                tvTime3.setText("ç¬¬5èŠ‚\n" + cc.getTimes().get(5) + "\nç¬¬6èŠ‚\n" + cc.getTimes().get(6));
+                tvTime4.setText("ç¬¬7èŠ‚\n" + cc.getTimes().get(7) + "\nç¬¬8èŠ‚\n" + cc.getTimes().get(8));
+                tvTime5.setText("ç¬¬9èŠ‚\n" + cc.getTimes().get(9) + "\nç¬¬10èŠ‚\n" + cc.getTimes().get(10));
+                //è¯¾ç¨‹
                 TextView tvCourse1 = (TextView) view.findViewById(R.id.curriculum_tv_course1);
                 TextView tvCourse2 = (TextView) view.findViewById(R.id.curriculum_tv_course2);
                 TextView tvCourse3 = (TextView) view.findViewById(R.id.curriculum_tv_course3);
@@ -154,7 +154,7 @@ public class CurriculumActivity extends Activity {
                 tvCourse3.setText(cc.getCourses().get(w + "-3"));
                 tvCourse4.setText(cc.getCourses().get(w + "-4"));
                 tvCourse5.setText(cc.getCourses().get(w + "-5"));
-                //Ìî³ä²¼¾Ö
+                //å¡«å……å¸ƒå±€
                 views.add(view);
             }
         }
@@ -198,8 +198,8 @@ public class CurriculumActivity extends Activity {
 
 		@Override
 		public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-			//ÅĞ¶Ïcurrent
-			if (positionOffset == 0.0f) { //¾²Ö¹
+			//åˆ¤æ–­current
+			if (positionOffset == 0.0f) { //é™æ­¢
 				current = position;
 			}
 			else if (position >= current) {
@@ -208,11 +208,11 @@ public class CurriculumActivity extends Activity {
 			else if (current - position >= 2) {
 				current = position + 1;
 			}
-			//¸ù¾İcurrentÌø×ª
-			if (current == 1) { //ÖÜÈÕ
+			//æ ¹æ®currentè·³è½¬
+			if (current == 1) { //å‘¨æ—¥
 				vpRoot.setCurrentItem(8, false);
 			}
-			else if (current == 9) { //ÖÜÒ»
+			else if (current == 9) { //å‘¨ä¸€
 				vpRoot.setCurrentItem(2, false);
 			}			
 		}

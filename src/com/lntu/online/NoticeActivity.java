@@ -28,7 +28,7 @@ public class NoticeActivity extends Activity {
         });
         
         // TODO
-        Toast.makeText(this, "¸Ã°å¿é½ÌÎñÔÚÏß×öµÄÌ«ÀÃ£¬¿ª·¢ÕßÒ²ÎŞÄÜÎªÁ¦ÁË¡£ ¨r(¨s¨Œ¨t)¨q", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "è¯¥æ¿å—æ•™åŠ¡åœ¨çº¿åšçš„å¤ªçƒ‚ï¼Œå¼€å‘è€…ä¹Ÿæ— èƒ½ä¸ºåŠ›äº†ã€‚ â•®(â•¯â–½â•°)â•­", Toast.LENGTH_LONG).show();
     }
     
     @Override

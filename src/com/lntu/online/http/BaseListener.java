@@ -19,7 +19,7 @@ public abstract class BaseListener extends TextHttpResponseHandler {
     public BaseListener(Context context, boolean cancelable) {
         this.context = context;
         progressDialog = new ProgressDialog(context);  
-        progressDialog.setMessage("·ÃÎÊÍøÂçÖĞ£¬ÇëÉÔºó...");
+        progressDialog.setMessage("è®¿é—®ç½‘ç»œä¸­ï¼Œè¯·ç¨å...");
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setCancelable(cancelable);
         if (cancelable) {

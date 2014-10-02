@@ -44,9 +44,9 @@ public class AdviceActivity extends Activity {
     		return;
     	}
 		new AlertDialog.Builder(this)    
-        .setTitle("提示")
-        .setMessage("亲，您的建议还没有提交呢！确定要离开吗？")
-        .setPositiveButton("确定", new OnClickListener() {
+        .setTitle("鎻愮ず")
+        .setMessage("浜诧紝鎮ㄧ殑寤鸿杩樻病鏈夋彁浜ゅ憿锛佺‘瀹氳绂诲紑鍚楋紵")
+        .setPositiveButton("纭畾", new OnClickListener() {
                 
         	@Override
             public void onClick(DialogInterface dialog, int which) {
@@ -54,13 +54,13 @@ public class AdviceActivity extends Activity {
             }
 
          })
-         .setNegativeButton("取消", null)
+         .setNegativeButton("鍙栨秷", null)
          .show();
     }
 
 	public void onBtnSubmit(View view) {
     	if (edtInfo.getText().toString().equals("")) {
-    		Toast.makeText(this, "亲，您还没吐槽呢~~", Toast.LENGTH_SHORT).show();
+    		Toast.makeText(this, "浜诧紝鎮ㄨ繕娌″悙妲藉憿~~", Toast.LENGTH_SHORT).show();
     		return;
     	}
         RequestParams params = new RequestParams();
@@ -72,10 +72,10 @@ public class AdviceActivity extends Activity {
 			public void onSuccess(int statusCode, Header[] headers, String responseString) {
 				if ((responseString + "").equals("OK")) {
 					new AlertDialog.Builder(getContext())    
-			        .setTitle("提示")
-			        .setMessage("您的建议已经提交成功了，非常感谢呢亲~~")
+			        .setTitle("鎻愮ず")
+			        .setMessage("鎮ㄧ殑寤鸿宸茬粡鎻愪氦鎴愬姛浜嗭紝闈炲父鎰熻阿鍛翰~~")
 			        .setCancelable(false)
-			        .setPositiveButton("确定", new OnClickListener() {
+			        .setPositiveButton("纭畾", new OnClickListener() {
 			                
 			        	@Override
 			            public void onClick(DialogInterface dialog, int which) {
@@ -85,7 +85,7 @@ public class AdviceActivity extends Activity {
 			         }).show();
 				} else {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("提示", msgs[0], msgs[1]);
+                    showErrorDialog("鎻愮ず", msgs[0], msgs[1]);
                 }
 			}
 

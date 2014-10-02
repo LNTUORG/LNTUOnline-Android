@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 
     private DrawerLayout drawerLayout;
     private GridView gridView;
-    private long firstBackKeyTime = 0; //Ê×´Î·µ»Ø¼ü°´ÏÂÊ±¼ä´Á
+    private long firstBackKeyTime = 0; //é¦–æ¬¡è¿”å›é”®æŒ‰ä¸‹æ—¶é—´æˆ³
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,8 +100,8 @@ public class MainActivity extends Activity {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Class<?> clz = ModuleInfo.getClassAt(position);
-            if (clz == null) { //¹¦ÄÜÎ´ÊµÏÖ
-                Toast.makeText(MainActivity.this, "¹¦ÄÜÔİÎ´ÊµÏÖ£¬¾´ÇëÆÚ´ı...", Toast.LENGTH_SHORT).show();
+            if (clz == null) { //åŠŸèƒ½æœªå®ç°
+                Toast.makeText(MainActivity.this, "åŠŸèƒ½æš‚æœªå®ç°ï¼Œæ•¬è¯·æœŸå¾…...", Toast.LENGTH_SHORT).show();
             } else {
                 startActivity(new Intent(MainActivity.this, clz));
             }
@@ -116,13 +116,13 @@ public class MainActivity extends Activity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
-        case KeyEvent.KEYCODE_BACK: //·µ»Ø¼ü
+        case KeyEvent.KEYCODE_BACK: //è¿”å›é”®
             if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
                 drawerLayout.closeDrawer(Gravity.RIGHT);
-            } else { //Á½´ÎÍË³ö
+            } else { //ä¸¤æ¬¡é€€å‡º
                 long secondBackKeyTime = System.currentTimeMillis();
                 if (secondBackKeyTime - firstBackKeyTime >2000) {
-                    Toast.makeText(this, "ÔÙ°´Ò»´Î·µ»Ø×ÀÃæ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "å†æŒ‰ä¸€æ¬¡è¿”å›æ¡Œé¢", Toast.LENGTH_SHORT).show();
                     firstBackKeyTime = secondBackKeyTime;
                 } else {
                     moveTaskToBack(true);
@@ -130,7 +130,7 @@ public class MainActivity extends Activity {
                 }
             }
             return true;
-        case KeyEvent.KEYCODE_MENU: //²Ëµ¥¼ü
+        case KeyEvent.KEYCODE_MENU: //èœå•é”®
             toggleSidebar();
             return true;
         default:
@@ -173,9 +173,9 @@ public class MainActivity extends Activity {
 
     public void showLogoutDialog() {
         new AlertDialog.Builder(this)
-        .setTitle("×¢Ïú")
-        .setMessage("ÄúÈ·¶¨Òª×¢Ïúµ±Ç°ÓÃ»§Âğ£¿")
-        .setPositiveButton("È·¶¨", new OnClickListener() {
+        .setTitle("æ³¨é”€")
+        .setMessage("æ‚¨ç¡®å®šè¦æ³¨é”€å½“å‰ç”¨æˆ·å—ï¼Ÿ")
+        .setPositiveButton("ç¡®å®š", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -184,21 +184,21 @@ public class MainActivity extends Activity {
                 finish();
             }
         })
-        .setNegativeButton("È¡Ïû", null)
+        .setNegativeButton("å–æ¶ˆ", null)
         .show();
     }
 
     public void showExitDialog() {
         new AlertDialog.Builder(this)    
-        .setTitle("ÍË³ö")
-        .setMessage("ÄúÈ·¶¨ÒªÍË³öÓ¦ÓÃÂğ£¿")
-        .setPositiveButton("È·¶¨", new OnClickListener() {
+        .setTitle("é€€å‡º")
+        .setMessage("æ‚¨ç¡®å®šè¦é€€å‡ºåº”ç”¨å—ï¼Ÿ")
+        .setPositiveButton("ç¡®å®š", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
             }
         })
-        .setNegativeButton("È¡Ïû", null)
+        .setNegativeButton("å–æ¶ˆ", null)
         .show();
     }
     
@@ -211,14 +211,14 @@ public class MainActivity extends Activity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {       
                 try {
                 	ClientVersion cv = ClientVersion.dao.fromJson(responseString);
-                	if (cv.getBuild() > AppInfo.getVersionCode()) { //ÓĞ¸üĞÂ
+                	if (cv.getBuild() > AppInfo.getVersionCode()) { //æœ‰æ›´æ–°
                 		showUpdateDialog(cv);
-                	} else { //ÎŞ¸üĞÂ
+                	} else { //æ— æ›´æ–°
                 		showNoUpdateDialog();
                 	}
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("ÌáÊ¾", msgs[0], msgs[1]);
+                    showErrorDialog("æç¤º", msgs[0], msgs[1]);
                 }
             }
 
@@ -234,21 +234,21 @@ public class MainActivity extends Activity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {       
                 try {
                 	ClientVersion cv = ClientVersion.dao.fromJson(responseString);
-                	if (cv.getBuild() > AppInfo.getVersionCode()) { //ÓĞ¸üĞÂ
-                		if (cv.isForced()) { //Ç¿ÖÆ¸üĞÂ
+                	if (cv.getBuild() > AppInfo.getVersionCode()) { //æœ‰æ›´æ–°
+                		if (cv.isForced()) { //å¼ºåˆ¶æ›´æ–°
                     		showForcedUpdateDialog(cv);
-                		} else { //·ÇÇ¿ÖÆ¸üĞÂ
+                		} else { //éå¼ºåˆ¶æ›´æ–°
                     		showUpdateDialog(cv);
                 		}
                 	}
                 } catch(Exception e) {
-                	//ºóÌ¨¸üĞÂ¼ì²é²»ÌáÊ¾´íÎó
+                	//åå°æ›´æ–°æ£€æŸ¥ä¸æç¤ºé”™è¯¯
                 }
             }
 
 			@Override
 			public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-				//´íÎó²»´¦Àí
+				//é”™è¯¯ä¸å¤„ç†
 			}
 
         });
@@ -256,9 +256,9 @@ public class MainActivity extends Activity {
 
     public void showUpdateDialog(final ClientVersion cv) {
         new AlertDialog.Builder(this)
-        .setTitle("¸üĞÂÌáÊ¾")
-        .setMessage("ÓĞĞÂ°æ±¾£ºv" + cv.getName() + "\n¸üĞÂÈÕÖ¾£º\n" + cv.getMessage())
-        .setPositiveButton("ÏÂÔØ", new OnClickListener() {
+        .setTitle("æ›´æ–°æç¤º")
+        .setMessage("æœ‰æ–°ç‰ˆæœ¬ï¼šv" + cv.getName() + "\næ›´æ–°æ—¥å¿—ï¼š\n" + cv.getMessage())
+        .setPositiveButton("ä¸‹è½½", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Uri uri = Uri.parse(cv.getPublishUrl());
@@ -266,15 +266,15 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         })
-        .setNegativeButton("ºöÂÔ", null)
+        .setNegativeButton("å¿½ç•¥", null)
         .show();
     }
 
     public void showForcedUpdateDialog(final ClientVersion cv) {    	
         new AlertDialog.Builder(this)
-        .setTitle("¸üĞÂÌáÊ¾")
-        .setMessage("ÓĞĞÂ°æ±¾£ºv" + cv.getName() + "\n¸üĞÂÈÕÖ¾£º\n" + cv.getMessage())
-        .setPositiveButton("ÏÂÔØ", new OnClickListener() {
+        .setTitle("æ›´æ–°æç¤º")
+        .setMessage("æœ‰æ–°ç‰ˆæœ¬ï¼šv" + cv.getName() + "\næ›´æ–°æ—¥å¿—ï¼š\n" + cv.getMessage())
+        .setPositiveButton("ä¸‹è½½", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Uri uri = Uri.parse(cv.getPublishUrl());
@@ -283,7 +283,7 @@ public class MainActivity extends Activity {
                 finish();
             }
         })
-        .setNegativeButton("ÍË³ö", new OnClickListener() {
+        .setNegativeButton("é€€å‡º", new OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				finish();
@@ -295,9 +295,9 @@ public class MainActivity extends Activity {
 
     public void showNoUpdateDialog() {
         new AlertDialog.Builder(this)
-        .setTitle("ÌáÊ¾")
-        .setMessage("µ±Ç°ÒÑÊÇ×îĞÂ°æ±¾")
-        .setPositiveButton("È·¶¨", null)
+        .setTitle("æç¤º")
+        .setMessage("å½“å‰å·²æ˜¯æœ€æ–°ç‰ˆæœ¬")
+        .setPositiveButton("ç¡®å®š", null)
         .show();
     }
 

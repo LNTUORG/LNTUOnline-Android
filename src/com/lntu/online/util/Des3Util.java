@@ -12,11 +12,11 @@ public class Des3Util {
     private final static String CHARSET = "utf-8";
 
     /**
-     * ¼ÓÃÜ
-     * @param iv ¼ÓÃÜÏòÁ¿
-     * @param secretKey ÃÜÔ¿
-     * @param plainText Ô­ÎÄ
-     * @return ÃÜÎÄ
+     * åŠ å¯†
+     * @param iv åŠ å¯†å‘é‡
+     * @param secretKey å¯†é’¥
+     * @param plainText åŸæ–‡
+     * @return å¯†æ–‡
      * @throws Exception
      */
     public static String encode(String iv, String secretKey, String plainText) throws Exception {
@@ -31,10 +31,10 @@ public class Des3Util {
     }
 
     /**
-     * ¼ÓÃÜ²¢Ê¹ÓÃÄ¬ÈÏÏòÁ¿
-     * @param secretKey ÃÜÔ¿
-     * @param plainText Ô­ÎÄ
-     * @return ÃÜÎÄ
+     * åŠ å¯†å¹¶ä½¿ç”¨é»˜è®¤å‘é‡
+     * @param secretKey å¯†é’¥
+     * @param plainText åŸæ–‡
+     * @return å¯†æ–‡
      * @throws Exception
      */
     public static String encode(String secretKey, String plainText) throws Exception {
@@ -42,11 +42,11 @@ public class Des3Util {
     }
 
     /**
-     * ½âÃÜ
-     * @param iv ÏòÁ¿
-     * @param secretKey ÃÜÔ¿
-     * @param encryptText ÃÜÎÄ
-     * @return Ô­ÎÄ
+     * è§£å¯†
+     * @param iv å‘é‡
+     * @param secretKey å¯†é’¥
+     * @param encryptText å¯†æ–‡
+     * @return åŸæ–‡
      * @throws Exception
      */
     public static String decode(String iv, String secretKey, String encryptText) throws Exception {
@@ -61,10 +61,10 @@ public class Des3Util {
     }
     
     /**
-     * ½âÃÜ²¢Ê¹ÓÃÄ¬ÈÏÏòÁ¿
-     * @param secretKey ÃÜÔ¿
-     * @param encryptText ÃÜÎÄ
-     * @return Ô­ÎÄ
+     * è§£å¯†å¹¶ä½¿ç”¨é»˜è®¤å‘é‡
+     * @param secretKey å¯†é’¥
+     * @param encryptText å¯†æ–‡
+     * @return åŸæ–‡
      * @throws Exception
      */
     public static String decode(String secretKey, String encryptText) throws Exception {

@@ -4,16 +4,16 @@ public class ClientCourseScore extends ClientModel<ClientCourseScore> {
 
     public static final ClientCourseScore dao = new ClientCourseScore();
     
-    private String num; //¿Î³ÌºÅ
-    private String name; //¿Î³ÌÃû
-    private int index; //¿ÎĞòºÅ
-    private String score; //·ÖÊı
-    private float credit; //Ñ§·Ö
-    private String testMode; //¿¼ºË·½Ê½
-    private String selectType; //Ñ¡¿ÎÀàĞÍ
-    private String remarks; //±¸×¢
-    private String examType; //¿¼ÊÔÀàĞÍ
-    private String semester; //Ñ§ÆÚ
+    private String num; //è¯¾ç¨‹å·
+    private String name; //è¯¾ç¨‹å
+    private int index; //è¯¾åºå·
+    private String score; //åˆ†æ•°
+    private float credit; //å­¦åˆ†
+    private String testMode; //è€ƒæ ¸æ–¹å¼
+    private String selectType; //é€‰è¯¾ç±»å‹
+    private String remarks; //å¤‡æ³¨
+    private String examType; //è€ƒè¯•ç±»å‹
+    private String semester; //å­¦æœŸ
     
     public String getNum() {
         return num;

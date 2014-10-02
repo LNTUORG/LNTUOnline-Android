@@ -48,7 +48,7 @@ public class ExamPlanActivity extends Activity {
                     if (msgs[0].equals("0x01040003")) {
                     	showNothingDialog();
                     } else {
-                    	showErrorDialog("提示", msgs[0], msgs[1]);
+                    	showErrorDialog("鎻愮ず", msgs[0], msgs[1]);
                     }
                 }
             }
@@ -63,10 +63,10 @@ public class ExamPlanActivity extends Activity {
 
     private void showNothingDialog() {
     	new AlertDialog.Builder(this)    
-        .setTitle("提示")
-        .setMessage("哇塞，没有考试耶~~")
+        .setTitle("鎻愮ず")
+        .setMessage("鍝囧锛屾病鏈夎�冭瘯鑰秪~")
         .setCancelable(false)
-        .setPositiveButton("确定", new OnClickListener() {
+        .setPositiveButton("纭畾", new OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -86,7 +86,7 @@ public class ExamPlanActivity extends Activity {
             itemViews = new ArrayList<View>();
             for (int n = 0; n < ceps.size(); n++) {
                 ClientExamPlan cep = ceps.get(n);
-                //布局
+                //甯冨眬
                 View itemView = inflater.inflate(R.layout.activity_exam_plan_item, null);
                 TextView tvCourse = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_course);
                 TextView tvTime = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_time);
@@ -94,7 +94,7 @@ public class ExamPlanActivity extends Activity {
                 tvCourse.setText(cep.getCourse() + "");
                 tvTime.setText(cep.getTime() + "");
                 tvLocation.setText(cep.getLocation() + "");
-                //填充布局
+                //濉厖甯冨眬
                 itemViews.add(itemView);
             }
         }

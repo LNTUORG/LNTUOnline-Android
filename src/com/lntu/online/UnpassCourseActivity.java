@@ -66,7 +66,7 @@ public class UnpassCourseActivity extends Activity {
                     if (msgs[0].equals("0x01050003")) {
                     	showNothingDialog();
                     } else {
-                    	showErrorDialog("提示", msgs[0], msgs[1]);
+                    	showErrorDialog("鎻愮ず", msgs[0], msgs[1]);
                     }
                 }
             }
@@ -81,10 +81,10 @@ public class UnpassCourseActivity extends Activity {
 
     private void showNothingDialog() {
     	new AlertDialog.Builder(this)    
-        .setTitle("提示")
-        .setMessage("没有挂科，学霸啊，给你跪了~~ Orz")
+        .setTitle("鎻愮ず")
+        .setMessage("娌℃湁鎸傜锛屽闇稿晩锛岀粰浣犺藩浜唦~ Orz")
         .setCancelable(false)
-        .setPositiveButton("确定", new OnClickListener() {
+        .setPositiveButton("纭畾", new OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -112,7 +112,7 @@ public class UnpassCourseActivity extends Activity {
             itemViews = new ArrayList<View>();
             for (int n = 0; n < cucs.size(); n++) {
                 ClientUnpassCourse cuc = cucs.get(n);
-                //布局
+                //甯冨眬
                 View itemView = inflater.inflate(R.layout.activity_unpass_course_item, null);
                 TextView tvNum = (TextView) itemView.findViewById(R.id.unpass_course_item_tv_num);
                 TextView tvName = (TextView) itemView.findViewById(R.id.unpass_course_item_tv_name);
@@ -134,7 +134,7 @@ public class UnpassCourseActivity extends Activity {
                 tvRemarks.setText(cuc.getRemarks() + "");
                 tvExamType.setText(cuc.getExamType() + "");
                 tvSemester.setText(cuc.getSemester() + "");
-                //填充布局
+                //濉厖甯冨眬
                 itemViews.add(itemView);
             }
         }
@@ -144,10 +144,10 @@ public class UnpassCourseActivity extends Activity {
             itemViews = new ArrayList<View>();
             for (int n = 0; n < cucs.size(); n++) {
                 ClientUnpassCourse cuc = cucs.get(n);
-                if (!(cuc.getExamType() + "").equals("正常考试")) {
+                if (!(cuc.getExamType() + "").equals("姝ｅ父鑰冭瘯")) {
                     continue;
                 }
-                //布局
+                //甯冨眬
                 View itemView = inflater.inflate(R.layout.activity_unpass_course_item_simple, null);
                 TextView tvNum = (TextView) itemView.findViewById(R.id.unpass_course_item_tv_num);
                 TextView tvName = (TextView) itemView.findViewById(R.id.unpass_course_item_tv_name);
@@ -157,7 +157,7 @@ public class UnpassCourseActivity extends Activity {
                 tvName.setText(cuc.getName() + "");
                 tvCredit.setText(cuc.getCredit() + "");
                 tvSelectType.setText(cuc.getSelectType() + "");
-                //填充布局
+                //濉厖甯冨眬
                 itemViews.add(itemView);
             }
         }

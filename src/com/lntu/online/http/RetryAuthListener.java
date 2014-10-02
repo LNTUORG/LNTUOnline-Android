@@ -28,28 +28,28 @@ public class RetryAuthListener extends BaseListener {
     @Override
 	public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
     	if (statusCode == 500) {
-        	showErrorDialog("ÍøÂç´íÎó", "0x03010500", "·şÎñÆ÷ÄÚ²¿´íÎó£¬ÇëÖØÊÔ");
+        	showErrorDialog("ç½‘ç»œé”™è¯¯", "0x03010500", "æœåŠ¡å™¨å†…éƒ¨é”™è¯¯ï¼Œè¯·é‡è¯•");
     	}
     	else if (statusCode == 502) {
-        	showErrorDialog("ÍøÂç´íÎó", "0x03010502", "·şÎñÆ÷Íø¹Ø´íÎó£¬ÇëÖØÊÔ");
+        	showErrorDialog("ç½‘ç»œé”™è¯¯", "0x03010502", "æœåŠ¡å™¨ç½‘å…³é”™è¯¯ï¼Œè¯·é‡è¯•");
     	}
     	else if (throwable instanceof SocketTimeoutException) {
-        	showErrorDialog("ÍøÂç´íÎó", "0x03010002", "·şÎñÆ÷Á¬½Ó³¬Ê±£¬ÇëÖØÊÔ");
+        	showErrorDialog("ç½‘ç»œé”™è¯¯", "0x03010002", "æœåŠ¡å™¨è¿æ¥è¶…æ—¶ï¼Œè¯·é‡è¯•");
     	}
     	else if (throwable instanceof IOException) {
-    		showErrorDialog("ÍøÂç´íÎó", "0x03010001", "ÍøÂçÍ¨ĞÅÊ§°Ü£¬Çë¼ì²éÍøÂçÁ¬½Ó");
+    		showErrorDialog("ç½‘ç»œé”™è¯¯", "0x03010001", "ç½‘ç»œé€šä¿¡å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œè¿æ¥");
     	} else {
-        	showErrorDialog("ÍøÂç´íÎó", "0x03010" + statusCode, "ÍøÂç·ÃÎÊ´íÎó£¬ÇëÖØÊÔ");
+        	showErrorDialog("ç½‘ç»œé”™è¯¯", "0x03010" + statusCode, "ç½‘ç»œè®¿é—®é”™è¯¯ï¼Œè¯·é‡è¯•");
     	}
 	}
 
     protected void showErrorDialog(String title, String code, String message) {
-        if (code.equals("0x02010001")) { //ÓÃ»§»á»°Î´¼¤»î
+        if (code.equals("0x02010001")) { //ç”¨æˆ·ä¼šè¯æœªæ¿€æ´»
             new AlertDialog.Builder(getContext())    
             .setTitle(title)
-            .setMessage("ÓÃ»§»á»°ÒÑ¹ıÆÚ£¬ÇëÖØĞÂµÇÂ¼" + "\n" + "´íÎó´úÂë£º" + code)
+            .setMessage("ç”¨æˆ·ä¼šè¯å·²è¿‡æœŸï¼Œè¯·é‡æ–°ç™»å½•" + "\n" + "é”™è¯¯ä»£ç ï¼š" + code)
             .setCancelable(false)
-            .setPositiveButton("È·¶¨", new OnClickListener() {
+            .setPositiveButton("ç¡®å®š", new OnClickListener() {
                 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -62,9 +62,9 @@ public class RetryAuthListener extends BaseListener {
         } else {
             new AlertDialog.Builder(getContext())    
             .setTitle(title)
-            .setMessage(message + "\n" + "´íÎó´úÂë£º" + code)
+            .setMessage(message + "\n" + "é”™è¯¯ä»£ç ï¼š" + code)
             .setCancelable(false)
-            .setPositiveButton("ÖØÊÔ", new OnClickListener() {
+            .setPositiveButton("é‡è¯•", new OnClickListener() {
                 
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -72,7 +72,7 @@ public class RetryAuthListener extends BaseListener {
                 }
     
             })
-            .setNegativeButton("È¡Ïû", new OnClickListener() {
+            .setNegativeButton("å–æ¶ˆ", new OnClickListener() {
     
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

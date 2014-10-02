@@ -39,7 +39,7 @@ public class LoginActivity extends Activity {
                 UserInfo.setAutoLogin(isChecked);
             }
         });
-        //»ñÈ¡ÓÃ»§ID
+        //è·å–ç”¨æˆ·ID
         String userId = UserInfo.getSavedUserId();
         String pwd = UserInfo.getSavedPwd();
         if (UserInfo.isAutoLogin() && !userId.equals("") && !pwd.equals("")) {
@@ -54,25 +54,25 @@ public class LoginActivity extends Activity {
 
     public void onBtnLogin(View view) {
         if (edtUserId.getText().toString().equals("")) {
-            Toast.makeText(this, "ÓÃ»§Ãû²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "ç”¨æˆ·åä¸èƒ½ä¸ºç©º", Toast.LENGTH_SHORT).show();
         } 
         else if (edtPwd.getText().toString().equals("")) {
-            Toast.makeText(this, "ÃÜÂë²»ÄÜÎª¿Õ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "å¯†ç ä¸èƒ½ä¸ºç©º", Toast.LENGTH_SHORT).show();
         } else {
             RequestParams params = new RequestParams();
             params.put("userId", edtUserId.getText().toString());
             params.put("pwd", edtPwd.getText().toString());
-            params.put("platform", "android"); //Æ½Ì¨²ÎÊı
-            params.put("version", AppInfo.getVersionCode()); //°æ±¾ĞÅÏ¢
-            params.put("osVer", Build.VERSION.RELEASE); //ÏµÍ³°æ±¾
-            params.put("manufacturer", Build.MANUFACTURER); //Éú²ú³§ÉÌ
-            params.put("model", Build.MODEL); //ÊÖ»úĞÍºÅ
+            params.put("platform", "android"); //å¹³å°å‚æ•°
+            params.put("version", AppInfo.getVersionCode()); //ç‰ˆæœ¬ä¿¡æ¯
+            params.put("osVer", Build.VERSION.RELEASE); //ç³»ç»Ÿç‰ˆæœ¬
+            params.put("manufacturer", Build.MANUFACTURER); //ç”Ÿäº§å‚å•†
+            params.put("model", Build.MODEL); //æ‰‹æœºå‹å·
             HttpUtil.post(this, NetworkInfo.serverUrl + "user/login", params, new NormalAuthListener(this) {
 
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, String responseString) {
                     if ((responseString + "").equals("OK")) {
-                        Toast.makeText(getContext(), "µÇÂ¼³É¹¦", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "ç™»å½•æˆåŠŸ", Toast.LENGTH_SHORT).show();
                         UserInfo.setSavedUserId(edtUserId.getText().toString());
                         if (cbAutoLogin.isChecked()) {
                             UserInfo.setSavedPwd(edtPwd.getText().toString());
@@ -85,7 +85,7 @@ public class LoginActivity extends Activity {
                         finish();
                     } else {
                         String[] msgs = responseString.split("\n");
-                        showErrorDialog("ÌáÊ¾", msgs[0], msgs[1]);
+                        showErrorDialog("æç¤º", msgs[0], msgs[1]);
                     }
                 }
 

@@ -10,9 +10,9 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        //×¢ÈëÈ«¾ÖÉÏÏÂÎÄ
+        //æ³¨å…¥å…¨å±€ä¸Šä¸‹æ–‡
         context = this;
-        //×¢²áÈ«¾ÖÒì³£²¶»ñÆ÷
+        //æ³¨å†Œå…¨å±€å¼‚å¸¸æ•è·å™¨
         CrashHandler crashHandler = CrashHandler.getInstance();
         crashHandler.active(this);
     }

@@ -6,47 +6,47 @@ public class ClientStudent extends ClientModel<ClientStudent> {
 
     public static final ClientStudent dao = new ClientStudent();
 
-    private String userId; //Ñ§ºÅ
-    private String name; //ĞÕÃû
-    private String englishName; //Ó¢ÎÄÃû
-    private String idCardType; //Ö¤¼şÀàĞÍ
-    private String idCardNum;  //Ö¤¼şºÅÂë
-    private String sex; //ĞÔ±ğ
-    private String college; //Ñ§Ôº
-    private String classInfo; //°à¼¶
-    private String entranceExamArea; //¿¼Çø
-    private String entranceExamNum; //ÈëÑ§×¼¿¼Ö¤ºÅÂë
-    private String foreignLanguage; //ÍâÓïÓïÖÖ
-    private String dateOfAdmission; //ÈëÑ§ÈÕÆÚ
-    private String dateOfGraduation; //±ÏÒµÈÕÆÚ
-    private String homeAddress; //¼ÒÍ¥×¡Ö·
-    private String contactTel; //ÁªÏµµç»°
-    private String studentInfoTableNum; //Ñ§¼®±íºÅ
-    private String whereaboutsAftergraduation; //±ÏÒµÈ¥Ïò
+    private String userId; //å­¦å·
+    private String name; //å§“å
+    private String englishName; //è‹±æ–‡å
+    private String idCardType; //è¯ä»¶ç±»å‹
+    private String idCardNum;  //è¯ä»¶å·ç 
+    private String sex; //æ€§åˆ«
+    private String college; //å­¦é™¢
+    private String classInfo; //ç­çº§
+    private String entranceExamArea; //è€ƒåŒº
+    private String entranceExamNum; //å…¥å­¦å‡†è€ƒè¯å·ç 
+    private String foreignLanguage; //å¤–è¯­è¯­ç§
+    private String dateOfAdmission; //å…¥å­¦æ—¥æœŸ
+    private String dateOfGraduation; //æ¯•ä¸šæ—¥æœŸ
+    private String homeAddress; //å®¶åº­ä½å€
+    private String contactTel; //è”ç³»ç”µè¯
+    private String studentInfoTableNum; //å­¦ç±è¡¨å·
+    private String whereaboutsAftergraduation; //æ¯•ä¸šå»å‘
 
-    private String nationality; //¹ú¼®
-    private String birthplace; //¼®¹á
-    private String dateOfBirth; //³öÉúÄêÔÂÈÕ
-    private String politicalAffiliation; //ÕşÖÎÃæÃ²
-    private String travelRange; //³Ë³µÇø¼ä
-    private String nation; //Ãñ×å
-    private String major; //×¨Òµ
-    private String studentType; //Ñ§ÉúÀàĞÍ
-    private String entranceExamScore; //¸ß¿¼×Ü·Ö
-    private String graduateSchool; //±ÏÒµÑ§Ğ£
-    private String admissionNum; //ÈëÑ§Â¼È¡Ö¤ºÅ
-    private String admissionType; //ÈëÑ§·½Ê½
-    private String educationType; //ÅàÑø·½Ê½
-    private String zipCode; //ÓÊÕş±àÂë
-    private String email; //µç×ÓÓÊ¼ş
-    private String sourceOfStudent; //Ñ§ÉúÀ´Ô´
+    private String nationality; //å›½ç±
+    private String birthplace; //ç±è´¯
+    private String dateOfBirth; //å‡ºç”Ÿå¹´æœˆæ—¥
+    private String politicalAffiliation; //æ”¿æ²»é¢è²Œ
+    private String travelRange; //ä¹˜è½¦åŒºé—´
+    private String nation; //æ°‘æ—
+    private String major; //ä¸“ä¸š
+    private String studentType; //å­¦ç”Ÿç±»å‹
+    private String entranceExamScore; //é«˜è€ƒæ€»åˆ†
+    private String graduateSchool; //æ¯•ä¸šå­¦æ ¡
+    private String admissionNum; //å…¥å­¦å½•å–è¯å·
+    private String admissionType; //å…¥å­¦æ–¹å¼
+    private String educationType; //åŸ¹å…»æ–¹å¼
+    private String zipCode; //é‚®æ”¿ç¼–ç 
+    private String email; //ç”µå­é‚®ä»¶
+    private String sourceOfStudent; //å­¦ç”Ÿæ¥æº
 
-    private String remarks; //±¸×¢
-    private String photoUrl; //Í·ÏñÕÕÆ¬url
+    private String remarks; //å¤‡æ³¨
+    private String photoUrl; //å¤´åƒç…§ç‰‡url
 
-    private List<ClientEntranceExam> entranceExams; //¸ß¿¼¿ÆÄ¿
-    private List<ClientEducationExperience> educationExperiences; //½ÌÓı¾­Àú
-    private List<ClientFamily> familys; //¼ÒÈË
+    private List<ClientEntranceExam> entranceExams; //é«˜è€ƒç§‘ç›®
+    private List<ClientEducationExperience> educationExperiences; //æ•™è‚²ç»å†
+    private List<ClientFamily> familys; //å®¶äºº
     
     public String getUserId() {
         return userId;

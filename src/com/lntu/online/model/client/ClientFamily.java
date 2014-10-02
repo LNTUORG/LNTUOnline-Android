@@ -5,7 +5,7 @@ public class ClientFamily extends ClientModel<ClientFamily> {
     public static final ClientFamily dao = new ClientFamily();
 
     private String name; //姓名
-    private String relationship; //与本人关�?
+    private String relationship; //与本人关系
     private String politicalAffiliation; //政治面貌
     private String job; //职业
     private String post; //职务
