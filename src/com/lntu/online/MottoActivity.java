@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MottoActivity extends Activity {
-    
+
     private MediaPlayer maleVoice;
     private MediaPlayer femaleVoice;
 
@@ -63,12 +63,12 @@ public class MottoActivity extends Activity {
             maleVoice.start();
         }
     }
-    
+
     public void onBtnFemaleVoice(View view) {
         if (femaleVoice != null) {
             femaleVoice.start();
         }
-    }    
+    }
 
     public void onActionBarBtnLeft(View view) {
         finish();

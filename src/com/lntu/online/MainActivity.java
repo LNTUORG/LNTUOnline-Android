@@ -121,7 +121,7 @@ public class MainActivity extends Activity {
                 drawerLayout.closeDrawer(Gravity.RIGHT);
             } else { //两次退出
                 long secondBackKeyTime = System.currentTimeMillis();
-                if (secondBackKeyTime - firstBackKeyTime >2000) {
+                if (secondBackKeyTime - firstBackKeyTime > 2000) {
                     Toast.makeText(this, "再按一次返回桌面", Toast.LENGTH_SHORT).show();
                     firstBackKeyTime = secondBackKeyTime;
                 } else {
