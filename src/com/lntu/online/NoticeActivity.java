@@ -26,7 +26,7 @@ public class NoticeActivity extends Activity {
             }
 
         });
-        
+
         // TODO
         Toast.makeText(this, "该板块教务在线做的太烂，开发者也无能为力了。 ╮(╯▽╰)╭", Toast.LENGTH_LONG).show();
     }
