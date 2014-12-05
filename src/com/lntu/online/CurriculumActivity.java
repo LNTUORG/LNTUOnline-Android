@@ -187,7 +187,7 @@ public class CurriculumActivity extends Activity {
         }
 
     }
-    
+
     private class ViewPagerPageChangeListener implements OnPageChangeListener {
 
         private int current = 0;
@@ -218,7 +218,7 @@ public class CurriculumActivity extends Activity {
         }
 
         @Override
-        public void onPageSelected(int position) {            
+        public void onPageSelected(int position) {
         }
 
     }

@@ -31,6 +31,16 @@
             android:onClick="onSlidingMenuItemClick" />
 
         <TextView style="@style/BlueFlor.SlidingMenu.Button"
+            android:id="@+id/action_main_market"
+            android:text="@string/action_market"
+            android:onClick="onSlidingMenuItemClick" />
+
+        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+            android:id="@+id/action_main_more_app"
+            android:text="@string/action_more_app"
+            android:onClick="onSlidingMenuItemClick" />
+
+        <TextView style="@style/BlueFlor.SlidingMenu.Button"
             android:id="@+id/action_main_logout"
             android:text="@string/action_logout"
             android:onClick="onSlidingMenuItemClick" />
