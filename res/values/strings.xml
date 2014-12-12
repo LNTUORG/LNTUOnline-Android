@@ -60,8 +60,8 @@
     <string name="development_team_content">葫芦岛华慧科技</string>
     <string name="author_email">开发者邮件</string>
     <string name="author_email_content">takwolf@foxmail.com</string>
-    <string name="author_homepage">开发者主页</string>
-    <string name="author_homepage_content">http://takwolf.com</string>
+    <string name="official_homepage">官方主页</string>
+    <string name="official_homepage_content">http://app.pupboss.com/</string>
 
     <string name="male_voice">男声朗读</string>
     <string name="female_voice">女生朗读</string>

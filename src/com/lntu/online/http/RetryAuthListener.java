@@ -12,7 +12,7 @@ import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 
-import com.lntu.online.LoginActivity;
+import com.lntu.online.MainActivity;
 
 public class RetryAuthListener extends BaseListener {
 
@@ -45,27 +45,30 @@ public class RetryAuthListener extends BaseListener {
 
     protected void showErrorDialog(String title, String code, String message) {
         if (code.equals("0x02010001")) { //用户会话未激活
-            new AlertDialog.Builder(getContext())    
+            new AlertDialog.Builder(getContext())
             .setTitle(title)
             .setMessage("用户会话已过期，请重新登录" + "\n" + "错误代码：" + code)
             .setCancelable(false)
             .setPositiveButton("确定", new OnClickListener() {
-                
+
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    getContext().startActivity(new Intent(getContext(), LoginActivity.class));
-                    ((Activity) getContext()).finish();
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    intent.putExtra("is_goback_login", true);
+                    getContext().startActivity(intent);
                 }
 
             })
             .show();
         } else {
-            new AlertDialog.Builder(getContext())    
+            new AlertDialog.Builder(getContext())
             .setTitle(title)
             .setMessage(message + "\n" + "错误代码：" + code)
             .setCancelable(false)
             .setPositiveButton("重试", new OnClickListener() {
-                
+
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     onBtnRetry();
@@ -78,12 +81,12 @@ public class RetryAuthListener extends BaseListener {
                 public void onClick(DialogInterface dialog, int which) {
                     ((Activity) getContext()).finish();
                 }
-                
+
             })
             .show();
         }
     }
-    
+
     public void onBtnRetry() {
     }
 

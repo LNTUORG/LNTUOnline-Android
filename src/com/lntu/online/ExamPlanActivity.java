@@ -76,7 +76,7 @@ public class ExamPlanActivity extends Activity {
         })
         .show();
     }
-    
+
     private class ListViewAdapter extends BaseAdapter {
 
         private List<View> itemViews;

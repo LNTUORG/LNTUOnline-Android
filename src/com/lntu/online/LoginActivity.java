@@ -79,9 +79,7 @@ public class LoginActivity extends Activity {
                         } else {
                             UserInfo.setSavedPwd("");
                         }
-                        if (getIntent().getBooleanExtra("gotoMain", false) == true) {
-                            startActivity(new Intent(getContext(), MainActivity.class));    
-                        }
+                        startActivity(new Intent(getContext(), MainActivity.class));
                         finish();
                     } else {
                         String[] msgs = responseString.split("\n");

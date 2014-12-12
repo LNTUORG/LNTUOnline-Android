@@ -56,6 +56,14 @@ public class MainActivity extends Activity {
         checkUpdateBackground();        
     }
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        if (intent.getBooleanExtra("is_goback_login", false)) { //返回登陆页面
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
+    }
+
     private class GridViewAdapter extends BaseAdapter {
 
         private List<View> itemViews;

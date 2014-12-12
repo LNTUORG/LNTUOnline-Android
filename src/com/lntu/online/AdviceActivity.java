@@ -37,7 +37,7 @@ public class AdviceActivity extends Activity {
     public void onBackPressed() {
         showExitTip();
     }
-    
+
     public void showExitTip() {
         if (edtInfo.getText().toString().equals("")) {
             finish();

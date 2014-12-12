@@ -14,7 +14,7 @@ public class AboutActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         TextView tvVersionName= (TextView) findViewById(R.id.about_tv_version_name);
-        tvVersionName.setText("v" + AppInfo.getVersionName() + "-build " + AppInfo.getVersionCode());
+        tvVersionName.setText("v" + AppInfo.getVersionName() + "-build-" + AppInfo.getVersionCode());
     }
 
     public void onActionBarBtnLeft(View view) {

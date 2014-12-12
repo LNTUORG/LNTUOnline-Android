@@ -53,4 +53,8 @@ public class UserInfo {
         }
     }
 
+    public static void logout() {
+        getSharedPreferences().edit().clear().commit();
+    }
+
 }

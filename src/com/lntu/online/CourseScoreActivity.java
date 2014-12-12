@@ -125,7 +125,7 @@ public class CourseScoreActivity extends Activity {
                     showErrorDialog("提示", msgs[0], msgs[1]);
                 }
             }
-            
+
         };
         //判断是否选择全部
         if (spnYear.getSelectedItemPosition() == 0) { //选择全部
@@ -206,7 +206,7 @@ public class CourseScoreActivity extends Activity {
     }
 
     public void onActionBarBtnLeft(View view) {
-    	finish();
+        finish();
     }
 
 }

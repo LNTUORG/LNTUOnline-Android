@@ -348,7 +348,7 @@ public class StudentInfoActivity extends Activity {
     private void startPhotoDownload(String url, ImageView imageView) {
         HttpUtil.baseGet(this, url, new PhotoDownloadHandler(imageView));
     }
-    
+
     private class PhotoDownloadHandler extends AsyncHttpResponseHandler {
 
         private ImageView imageView;

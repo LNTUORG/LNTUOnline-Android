@@ -12,14 +12,14 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.lntu.online.LoginActivity;
+import com.lntu.online.MainActivity;
 
 public class NormalAuthListener extends BaseListener {
 
     public NormalAuthListener(Context context) {
         super(context, true);
     }
-    
+
     @Override
     public void onCancel() {
         Toast.makeText(getContext(), "网络任务被取消", Toast.LENGTH_SHORT).show();
@@ -45,21 +45,25 @@ public class NormalAuthListener extends BaseListener {
 
     protected void showErrorDialog(String title, String code, String message) {
         if (code.equals("0x02010001")) { //用户会话未激活
-            new AlertDialog.Builder(getContext())    
+            new AlertDialog.Builder(getContext())
             .setTitle(title)
             .setMessage("用户会话已过期，请重新登录" + "\n" + "错误代码：" + code)
             .setCancelable(false)
             .setPositiveButton("确定", new OnClickListener() {
-                
+
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    getContext().startActivity(new Intent(getContext(), LoginActivity.class));
+                    Intent intent = new Intent(getContext(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                    intent.putExtra("is_goback_login", true);
+                    getContext().startActivity(intent);
                 }
 
             })
             .show();
         } else {
-            new AlertDialog.Builder(getContext())    
+            new AlertDialog.Builder(getContext())
             .setTitle(title)
             .setMessage(message + "\n" + "错误代码：" + code)
             .setPositiveButton("确定", null)

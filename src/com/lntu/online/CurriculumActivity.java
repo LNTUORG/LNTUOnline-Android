@@ -90,7 +90,7 @@ public class CurriculumActivity extends Activity {
                 startNetwork();
             }
 
-        });    
+        });
     }
     
     private void updateNetwork() {
@@ -115,9 +115,9 @@ public class CurriculumActivity extends Activity {
                 }
             }
 
-        });    
+        });
     }
-    
+
     public void onActionBarIconRefresh(View view) {
         updateNetwork();
     }

@@ -22,7 +22,6 @@ public class LogoActivity extends Activity {
                 if (!isFinishing()) {
                     Intent intent = new Intent(LogoActivity.this, LoginActivity.class);
                     intent.putExtra("autoLogin", true);
-                    intent.putExtra("gotoMain", true);
                     startActivity(intent);
                     finish();
                 }
