@@ -16,7 +16,7 @@ public class NoticeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
         webView = (WebView) findViewById(R.id.notice_wv);
-        webView.loadUrl("http://60.18.131.131/lntu//pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100");
+        webView.loadUrl("http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100");
         webView.setWebViewClient(new WebViewClient() {
 
             @Override
@@ -26,8 +26,6 @@ public class NoticeActivity extends Activity {
             }
 
         });
-
-        // TODO
         Toast.makeText(this, "该板块教务在线做的太烂，开发者也无能为力了。 ╮(╯▽╰)╭", Toast.LENGTH_LONG).show();
     }
 

@@ -141,7 +141,7 @@ public class MainActivity extends Activity {
     public void onSlidingMenuItemClick(View view) {
         switch (view.getId()) {
         case R.id.action_main_browser: {
-            Uri uri = Uri.parse("http://60.18.131.133:11180/academic/index.html");
+            Uri uri = Uri.parse("http://60.18.131.131:11180/academic/index.html");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
             break;
@@ -156,28 +156,22 @@ public class MainActivity extends Activity {
             startActivity(new Intent(this, AdviceActivity.class));
             break;
         case R.id.action_main_market: {//跳转到市场
-	        	//这里开始执行一个应用市场跳转逻辑，默认this为Context上下文对象
-	        	Intent intent = new Intent(Intent.ACTION_VIEW);
-	        	intent.setData(Uri.parse("market://details?id=" + getPackageName())); //跳转到应用市场，非Google Play市场一般情况也实现了这个接口
-	        	//存在手机里没安装应用市场的情况，跳转会包异常，做一个接收判断
-	        	if (intent.resolveActivity(getPackageManager()) != null) { //可以接收
-	        	    startActivity(intent);
-	        	} else { //没有应用市场，我们通过浏览器跳转到Google Play
-	        	    intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
-	        	    //这里存在一个极端情况就是有些用户浏览器也没有，在判断一次
-	        	    if (intent.resolveActivity(getPackageManager()) != null) { //有浏览器
-	        	        startActivity(intent);
-	        	    } else { //天哪，这还是智能手机吗？
-	        	        Toast.makeText(this, "您没应用市场，也没浏览器，您买个手机干啥？", Toast.LENGTH_SHORT).show();
-	        	    }
-	        	}
-        	}
-            break;
-        case R.id.action_main_more_app: //市场搜索更多
-        	// TODO
-			Intent intentMore = new Intent(Intent.ACTION_VIEW);
-			intentMore.setData(Uri.parse("market://search?q=pub:幻影狼人"));
-			startActivity(intentMore);
+                //这里开始执行一个应用市场跳转逻辑，默认this为Context上下文对象
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("market://details?id=" + getPackageName())); //跳转到应用市场，非Google Play市场一般情况也实现了这个接口
+                //存在手机里没安装应用市场的情况，跳转会包异常，做一个接收判断
+                if (intent.resolveActivity(getPackageManager()) != null) { //可以接收
+                    startActivity(intent);
+                } else { //没有应用市场，我们通过浏览器跳转到Google Play
+                    intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
+                    //这里存在一个极端情况就是有些用户浏览器也没有，在判断一次
+                    if (intent.resolveActivity(getPackageManager()) != null) { //有浏览器
+                        startActivity(intent);
+                    } else { //天哪，这还是智能手机吗？
+                        Toast.makeText(this, "您没应用市场，也没浏览器，开发者给您跪了...", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
             break;
         case R.id.action_main_logout:
             showLogoutDialog();
@@ -249,7 +243,7 @@ public class MainActivity extends Activity {
 
         });
     }
-    
+
     private void checkUpdateBackground() {
         RequestParams params = new RequestParams();
         params.put("platform", "android");
