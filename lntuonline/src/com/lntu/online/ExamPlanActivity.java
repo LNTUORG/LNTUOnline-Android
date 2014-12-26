@@ -39,7 +39,7 @@ public class ExamPlanActivity extends Activity {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                try {                    
+                try {
                     List<ClientExamPlan> ceps = JsonUtil.fromJson(responseString, new TypeToken<List<ClientExamPlan>>(){}.getType());
                     ListView lvRoot = (ListView) findViewById(R.id.exam_plan_lv_root);
                     lvRoot.setAdapter(new ListViewAdapter(getContext(), ceps));
@@ -62,9 +62,9 @@ public class ExamPlanActivity extends Activity {
     }
 
     private void showNothingDialog() {
-        new AlertDialog.Builder(this)    
+        new AlertDialog.Builder(this)
         .setTitle("提示")
-        .setMessage("哇塞，没有考试耶~~")
+        .setMessage("暂时没有考试信息，过一个月再看吧")
         .setCancelable(false)
         .setPositiveButton("确定", new OnClickListener() {
             

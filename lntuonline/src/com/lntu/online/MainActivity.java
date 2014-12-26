@@ -171,7 +171,7 @@ public class MainActivity extends Activity {
                 if (intent.resolveActivity(getPackageManager()) != null) { //可以接收
                     startActivity(intent);
                 } else { //没有应用市场，我们通过浏览器跳转到Google Play
-                    intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
+                    intent.setData(Uri.parse("http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF"));
                     //这里存在一个极端情况就是有些用户浏览器也没有，在判断一次
                     if (intent.resolveActivity(getPackageManager()) != null) { //有浏览器
                         startActivity(intent);

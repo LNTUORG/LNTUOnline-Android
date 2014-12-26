@@ -16,6 +16,10 @@ import com.lntu.online.MainActivity;
 
 public class NormalAuthListener extends BaseListener {
 
+    public NormalAuthListener(Context context, String message) {
+        super(context, true, message);
+    }
+
     public NormalAuthListener(Context context) {
         super(context, true);
     }

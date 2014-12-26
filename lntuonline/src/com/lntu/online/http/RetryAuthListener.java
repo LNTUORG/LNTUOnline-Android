@@ -16,6 +16,10 @@ import com.lntu.online.MainActivity;
 
 public class RetryAuthListener extends BaseListener {
 
+    public RetryAuthListener(Context context, String message) {
+        super(context, true, message);
+    }
+
     public RetryAuthListener(Context context) {
         super(context, true);
     }

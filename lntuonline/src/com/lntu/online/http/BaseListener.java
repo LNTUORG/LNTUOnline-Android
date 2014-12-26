@@ -16,24 +16,28 @@ public abstract class BaseListener extends TextHttpResponseHandler {
     private RequestHandle requestHandle;
     private ProgressDialog progressDialog;
 
-    public BaseListener(Context context, boolean cancelable) {
+    public BaseListener(Context context, boolean cancelable, String message) {
         this.context = context;
         progressDialog = new ProgressDialog(context);  
-        progressDialog.setMessage("访问网络中，请稍后...");
+        progressDialog.setMessage(message);
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setCancelable(cancelable);
         if (cancelable) {
-            progressDialog.setOnCancelListener(new OnCancelListener() {            
-                
+            progressDialog.setOnCancelListener(new OnCancelListener() {
+
                 @Override
                 public void onCancel(DialogInterface dialog) {
                     if (getRequestHandle() != null) {
                         getRequestHandle().cancel(true);
-                    }    
+                    }
                 }
-                
+
             });
         }
+    }
+
+    public BaseListener(Context context, boolean cancelable) {
+        this(context, cancelable, "网络访问中,请稍后...");
     }
 
     public BaseListener(Context context) {

@@ -47,7 +47,7 @@
     <string name="senate_notice">教务公告</string>
     <string name="remember_motto">牢记校训</string>
 
-    <string name="eva——i">评课信息</string>
+    <string name="eva_info">评课信息</string>
 
     <string name="user_id_input_title">学号：</string>
     <string name="pwd_input_title">密码：</string>
@@ -81,6 +81,7 @@
     <string name="work_location">工作地点</string>
     <string name="tel">联系电话</string>
 
+    <string name="course">课程</string>
     <string name="course_name">课程名</string>
     <string name="course_name_content">高等数学</string>
     <string name="course_num">课程号</string>
@@ -110,6 +111,8 @@
     <string name="skill_test_name">科目</string>
     <string name="grades">成绩</string>
     <string name="merge_the_same">合并相同</string>
+    <string name="state">状态</string>
+    <string name="teacher">教师</string>
 
 </resources>
 

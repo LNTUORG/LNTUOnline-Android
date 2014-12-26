@@ -4,13 +4,15 @@
     android:layout_height="match_parent">
 
     <!-- ActionBar -->
-    <FrameLayout style="@style/BlueFlor.ActionBar">
+    <FrameLayout style="@style/BlueFlor.ActionBar"
+        android:id="@+id/action_bar"
+        android:layout_alignParentTop="true">
 
         <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
             android:onClick="onActionBarBtnLeft" />
 
         <TextView style="@style/BlueFlor.ActionBar.Title"
-            android:text="@string/one_key" />
+            android:text="@string/eva_info" />
 
     </FrameLayout><!-- End With ActionBar -->
 
@@ -18,17 +20,20 @@
         android:id="@+id/one_key_lv_root"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/action_bar"
+        android:layout_above="@+id/one_key_btn_start"
         android:background="@color/container_background" />
 
-	<Button
-	    android:id="@+id/one_key_btn_start"
+    <Button
+        android:id="@+id/one_key_btn_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:text="@string/click_to_one_key_eva"
+        android:layout_alignParentBottom="true"
+        android:text="@string/one_key"
         android:textSize="@dimen/button_text_size"
         android:textColor="@drawable/button_text_color"
         android:background="@drawable/button_image"
-        android:onClick="onBtnLogin" />
+        android:onClick="onBtnStart" />
 
 </RelativeLayout>
