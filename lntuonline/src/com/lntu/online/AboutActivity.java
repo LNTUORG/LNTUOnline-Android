@@ -22,7 +22,7 @@ public class AboutActivity extends Activity {
         finish();
     }
 
-    public void onBtnThank() {
+    public void onBtnThank(View view) {
         startActivity(new Intent(this, ThankActivity.class));
     }
 
