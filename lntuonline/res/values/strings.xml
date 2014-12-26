@@ -65,7 +65,7 @@
     <string name="official_homepage">官方主页</string>
     <string name="official_homepage_content">http://app.pupboss.com/</string>
 
-    <string name="thank_content">感谢以下童鞋对我们的帮助和支持</string>
+    <string name="thank_content">感谢以下童鞋对我们的帮助和支持\n（排名不分先后）</string>
     <string name="wanted_content">我们正在招募小伙伴，\n没有兴趣来参加吗？</string>
     <string name="wanted_url">http://pupboss.com/wanted.html</string>
 
