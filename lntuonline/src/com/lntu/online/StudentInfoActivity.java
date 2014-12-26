@@ -22,10 +22,10 @@ import android.widget.Toast;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkInfo;
-import com.lntu.online.model.client.ClientEducationExperience;
-import com.lntu.online.model.client.ClientEntranceExam;
-import com.lntu.online.model.client.ClientFamily;
-import com.lntu.online.model.client.ClientStudent;
+import com.lntu.online.model.ClientEducationExperience;
+import com.lntu.online.model.ClientEntranceExam;
+import com.lntu.online.model.ClientFamily;
+import com.lntu.online.model.ClientStudent;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class StudentInfoActivity extends Activity {

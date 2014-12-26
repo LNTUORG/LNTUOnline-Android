@@ -41,11 +41,13 @@
     <string name="curriculum">学期课表</string>
     <string name="exam_plan">考试安排</string>
     <string name="grades_query">成绩查询</string>
-    <string name="community_meng">社团大联盟</string>
+    <string name="one_key">一键评课</string>
     <string name="unpass_query">挂科查询</string>
     <string name="skill_test">技能考试</string>
     <string name="senate_notice">教务公告</string>
     <string name="remember_motto">牢记校训</string>
+
+    <string name="eva——i">评课信息</string>
 
     <string name="user_id_input_title">学号：</string>
     <string name="pwd_input_title">密码：</string>

@@ -26,7 +26,7 @@ import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkInfo;
-import com.lntu.online.model.client.ClientCourseScore;
+import com.lntu.online.model.ClientCourseScore;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 

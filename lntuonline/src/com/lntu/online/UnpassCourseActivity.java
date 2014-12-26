@@ -25,7 +25,7 @@ import com.google.gson.reflect.TypeToken;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkInfo;
-import com.lntu.online.model.client.ClientUnpassCourse;
+import com.lntu.online.model.ClientUnpassCourse;
 import com.lntu.online.util.JsonUtil;
 
 public class UnpassCourseActivity extends Activity {

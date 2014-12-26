@@ -1,4 +1,4 @@
-package com.lntu.online.model.client;
+package com.lntu.online.model;
 
 public class ClientExamPlan extends ClientModel<ClientExamPlan> {
 

@@ -26,7 +26,7 @@ import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkInfo;
 import com.lntu.online.info.SecretKey;
 import com.lntu.online.info.UserInfo;
-import com.lntu.online.model.client.ClientCurriculum;
+import com.lntu.online.model.ClientCurriculum;
 import com.lntu.online.util.Des3Util;
 
 public class CurriculumActivity extends Activity {

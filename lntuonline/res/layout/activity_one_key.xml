@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ActionBar -->
+    <FrameLayout style="@style/BlueFlor.ActionBar">
+
+        <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
+            android:onClick="onActionBarBtnLeft" />
+
+        <TextView style="@style/BlueFlor.ActionBar.Title"
+            android:text="@string/one_key" />
+
+    </FrameLayout><!-- End With ActionBar -->
+
+    <ListView
+        android:id="@+id/one_key_lv_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/container_background" />
+
+	<Button
+	    android:id="@+id/one_key_btn_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/click_to_one_key_eva"
+        android:textSize="@dimen/button_text_size"
+        android:textColor="@drawable/button_text_color"
+        android:background="@drawable/button_image"
+        android:onClick="onBtnLogin" />
+
+</RelativeLayout>

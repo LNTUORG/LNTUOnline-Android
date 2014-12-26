@@ -32,7 +32,7 @@ import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.AppInfo;
 import com.lntu.online.info.ModuleInfo;
 import com.lntu.online.info.NetworkInfo;
-import com.lntu.online.model.client.ClientVersion;
+import com.lntu.online.model.ClientVersion;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 

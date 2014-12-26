@@ -1,6 +1,6 @@
 package com.lntu.online.info;
 
-import com.lntu.online.CommunityActivity;
+import com.lntu.online.OneKeyActivity;
 import com.lntu.online.CurriculumActivity;
 import com.lntu.online.ExamPlanActivity;
 import com.lntu.online.CourseScoreActivity;
@@ -18,7 +18,7 @@ public class ModuleInfo {
         R.drawable.main_icon_clock2,
         R.drawable.main_icon_calendar,
         R.drawable.main_icon_right2,
-        R.drawable.main_icon_colorwheel,
+        R.drawable.main_icon_gps,
         R.drawable.main_icon_stop,
         R.drawable.main_icon_trophy,
         R.drawable.main_icon_megaphone,
@@ -30,7 +30,7 @@ public class ModuleInfo {
         "学期课表",
         "考试安排",
         "成绩查询",
-        "社团大联盟",
+        "一键评课",
         "挂科查询",
         "技能考试",
         "教务公告",
@@ -42,7 +42,7 @@ public class ModuleInfo {
         CurriculumActivity.class,
         ExamPlanActivity.class,
         CourseScoreActivity.class,
-        CommunityActivity.class,
+        OneKeyActivity.class,
         UnpassCourseActivity.class,
         SkillTestScoreActivity.class,
         NoticeActivity.class,

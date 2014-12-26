@@ -77,8 +77,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="com.lntu.online.CommunityActivity"
-            android:label="@string/community_meng"
+            android:name="com.lntu.online.OneKeyActivity"
+            android:label="@string/one_key"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
