@@ -65,6 +65,10 @@
     <string name="official_homepage">官方主页</string>
     <string name="official_homepage_content">http://app.pupboss.com/</string>
 
+    <string name="thank_content">感谢以下童鞋对我们的帮助和支持</string>
+    <string name="wanted_content">我们正在招募小伙伴，\n没有兴趣来参加吗？</string>
+    <string name="wanted_url">http://pupboss.com/wanted.html</string>
+
     <string name="male_voice">男声朗读</string>
     <string name="female_voice">女生朗读</string>
 
@@ -113,6 +117,7 @@
     <string name="merge_the_same">合并相同</string>
     <string name="state">状态</string>
     <string name="teacher">教师</string>
+    <string name="thank">感谢</string>
 
 </resources>
 

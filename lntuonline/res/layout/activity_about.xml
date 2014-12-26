@@ -13,6 +13,11 @@
         <TextView style="@style/BlueFlor.ActionBar.Title"
             android:text="@string/about_app" />
 
+        <TextView style="@style/BlueFlor.ActionBar.BtnText"
+            android:layout_gravity="right"
+            android:text="@string/thank"
+            android:onClick="onBtnThank" />
+
     </FrameLayout><!-- End With ActionBar -->
 
     <ScrollView

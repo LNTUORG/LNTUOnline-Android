@@ -1,6 +1,7 @@
 package com.lntu.online;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -19,6 +20,10 @@ public class AboutActivity extends Activity {
 
     public void onActionBarBtnLeft(View view) {
         finish();
+    }
+
+    public void onBtnThank() {
+        startActivity(new Intent(this, ThankActivity.class));
     }
 
 }
