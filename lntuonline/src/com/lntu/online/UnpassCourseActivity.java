@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -58,13 +59,37 @@ public class UnpassCourseActivity extends Activity {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                try {                    
+                try {
                     cucs = JsonUtil.fromJson(responseString, new TypeToken<List<ClientUnpassCourse>>(){}.getType());
                     lvRoot.setAdapter(new ListViewAdapter(getContext(), cucs, false));
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    if (msgs[0].equals("0x01050003")) {
+                    if (msgs[0].equals("0x01050003")) { //没信息
                         showNothingDialog();
+                    }
+                    else if ((msgs[0] + "").equals("0x01050004")) { //需要评课
+                        new AlertDialog.Builder(getContext())
+                        .setTitle("提示")
+                        .setMessage("您本学期课程没有参加评教，不能查看成绩。马上去评课？")
+                        .setPositiveButton("评课", new OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                startActivity(new Intent(getContext(), OneKeyActivity.class));
+                                finish();
+                            }
+
+                        })
+                        .setNegativeButton("取消", new OnClickListener() {
+
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+
+                        })
+                        .setCancelable(false)
+                        .show();
                     } else {
                         showErrorDialog("提示", msgs[0], msgs[1]);
                     }
@@ -80,9 +105,9 @@ public class UnpassCourseActivity extends Activity {
     }
 
     private void showNothingDialog() {
-        new AlertDialog.Builder(this)    
+        new AlertDialog.Builder(this)
         .setTitle("提示")
-        .setMessage("没有挂科，学霸啊，给你跪了~~ Orz")
+        .setMessage("暂时没有挂科信息，暂时")
         .setCancelable(false)
         .setPositiveButton("确定", new OnClickListener() {
             

@@ -6,7 +6,11 @@ import java.util.List;
 import org.apache.http.Header;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.view.LayoutInflater;
@@ -93,6 +97,30 @@ public class CourseScoreActivity extends Activity {
                 String[] msgs = responseString.split("\n");
                 if ((msgs[0] + "").equals("0x00000000")) {
                     tvAvaOfCredit.setText(msgs[1] + "");
+                }
+                else if ((msgs[0] + "").equals("0x01050004")) { //需要评课
+                    new AlertDialog.Builder(getContext())
+                    .setTitle("提示")
+                    .setMessage("您本学期课程没有参加评教，不能查看成绩。马上去评课？")
+                    .setPositiveButton("评课", new OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivity(new Intent(getContext(), OneKeyActivity.class));
+                            finish();
+                        }
+
+                    })
+                    .setNegativeButton("取消", new OnClickListener() {
+
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+
+                    })
+                    .setCancelable(false)
+                    .show();
                 } else {
                     showErrorDialog("提示", msgs[0], msgs[1]);
                 }

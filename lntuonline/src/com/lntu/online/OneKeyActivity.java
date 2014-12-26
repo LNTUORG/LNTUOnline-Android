@@ -160,7 +160,7 @@ public class OneKeyActivity extends Activity {
                 .setCancelable(false)
                 .show();
             } else { //需要评估
-                new AlertDialog.Builder(this)    
+                new AlertDialog.Builder(this)
                 .setTitle("提示")
                 .setMessage("您有" + n + "门课程评价失败，您可以再试一次。")
                 .setPositiveButton("确定", null)
