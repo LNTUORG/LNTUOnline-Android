@@ -72,9 +72,12 @@ public class CrashShowActivity extends Activity {
         //显示信息
         TextView tvInfo = (TextView) findViewById(R.id.crash_show_tv_info);
         tvInfo.setText(sorry + crashLog);
+
+        //强制提交错误信息
+        onBtnSend(null);
     }
 
-    public void onBtnSend(View view) {
+    public void onBtnSend(final View view) {
         RequestParams params = new RequestParams();
         params.put("info", crashLog);
         params.put("platform", "android");
@@ -86,6 +89,9 @@ public class CrashShowActivity extends Activity {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
+                if (view == null) {
+                    return; //强制提交的不提示
+                }
                 if ((responseString + "").equals("OK")) {
                     new AlertDialog.Builder(getContext())    
                     .setTitle("提示")
