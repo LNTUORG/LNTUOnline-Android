@@ -1,6 +1,7 @@
 package com.lntu.online;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.http.Header;
@@ -83,6 +84,7 @@ public class ExamPlanActivity extends Activity {
 
         public ListViewAdapter(Context context, List<ClientExamPlan> ceps) {
             LayoutInflater inflater = LayoutInflater.from(context);
+            Collections.sort(ceps);
             itemViews = new ArrayList<View>();
             for (int n = 0; n < ceps.size(); n++) {
                 ClientExamPlan cep = ceps.get(n);

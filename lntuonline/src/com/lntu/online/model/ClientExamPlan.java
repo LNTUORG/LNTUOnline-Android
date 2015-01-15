@@ -1,6 +1,11 @@
 package com.lntu.online.model;
 
-public class ClientExamPlan extends ClientModel<ClientExamPlan> {
+import java.util.Calendar;
+import java.util.Date;
+
+import com.lntu.online.util.TimeUtil;
+
+public class ClientExamPlan extends ClientModel<ClientExamPlan> implements Comparable<ClientExamPlan> {
 
     public static final ClientExamPlan dao = new ClientExamPlan();
 
@@ -30,6 +35,28 @@ public class ClientExamPlan extends ClientModel<ClientExamPlan> {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Date getDateTime() {
+        String[] arr = getTime().split(" ");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(TimeUtil.getTime(arr[0]));
+        String[] arr2 = arr[1].split("--");
+        String[] arrStart = arr2[0].split(":");
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        calendar.set(Calendar.HOUR, Integer.parseInt(arrStart[0]));
+        calendar.set(Calendar.MINUTE, Integer.parseInt(arrStart[1]));
+        return calendar.getTime();
+    }
+
+    @Override
+    public int compareTo(ClientExamPlan another) {
+        if (another.getDateTime().after(getDateTime())) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 
 }
