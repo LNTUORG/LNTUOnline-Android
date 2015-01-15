@@ -2,6 +2,7 @@ package com.lntu.online;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.http.Header;
@@ -86,6 +87,7 @@ public class ExamPlanActivity extends Activity {
             LayoutInflater inflater = LayoutInflater.from(context);
             Collections.sort(ceps);
             itemViews = new ArrayList<View>();
+            Date nowDate = new Date();
             for (int n = 0; n < ceps.size(); n++) {
                 ClientExamPlan cep = ceps.get(n);
                 //布局
@@ -93,9 +95,11 @@ public class ExamPlanActivity extends Activity {
                 TextView tvCourse = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_course);
                 TextView tvTime = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_time);
                 TextView tvLocation = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_location);
+                View iconFinish = itemView.findViewById(R.id.exam_plan_item_icon_finish);
                 tvCourse.setText(cep.getCourse() + "");
                 tvTime.setText(cep.getTime() + "");
                 tvLocation.setText(cep.getLocation() + "");
+                iconFinish.setVisibility(cep.getDateTime().before(nowDate) ? View.VISIBLE : View.GONE);
                 //填充布局
                 itemViews.add(itemView);
             }
