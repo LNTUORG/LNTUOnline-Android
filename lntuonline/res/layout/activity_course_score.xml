@@ -47,16 +47,30 @@
             android:gravity="center"
             android:background="@drawable/spinner_image" />
 
-        <Spinner
-            android:id="@+id/grades_spn_term"
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:paddingLeft="8dp"
-            android:entries="@array/terms"
-            android:gravity="center"
-            android:background="@drawable/spinner_image" />
+            android:layout_margin="4dp">
+
+            <Spinner
+                android:id="@+id/grades_spn_term"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:entries="@array/terms"
+                android:gravity="center"
+                android:background="@drawable/spinner_image" />
+
+            <Spinner
+                android:id="@+id/grades_spn_term_non"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="8dp"
+                android:gravity="center"
+                android:background="@drawable/spinner_image" />
+
+        </FrameLayout>
 
         <Button
             android:layout_width="0dp"

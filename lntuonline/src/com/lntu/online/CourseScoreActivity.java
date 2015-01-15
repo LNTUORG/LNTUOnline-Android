@@ -9,8 +9,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.view.LayoutInflater;
@@ -30,6 +30,7 @@ import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkInfo;
+import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.ClientCourseScore;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
@@ -38,9 +39,13 @@ public class CourseScoreActivity extends Activity {
 
     private Spinner spnYear;
     private Spinner spnTerm;
+    private Spinner spnTermNon;
     private TextView tvAvaOfCredit;
     private TextView tvTitle;
     private ListView lvInfo;
+
+    private Time time;
+    private String[] strsYear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,18 +56,30 @@ public class CourseScoreActivity extends Activity {
     }
 
     private void initWidgets() {
-        Time time = new Time();
+        //初始化时间
+        time = new Time();
         time.setToNow();
+        //绑定下拉控件
         spnTerm = (Spinner) findViewById(R.id.grades_spn_term);
-        spnTerm.setSelection((time.month >= 3 && time.month < 9 ? 0 : 1));
-        String[] strsYear = {
-            "全部",
-            time.year + "",
-            time.year - 1 + "",
-            time.year - 2 + "",
-            time.year - 3 + "",
-            time.year - 4 + ""
-        };
+        spnTerm.setSelection((time.month >= 2 && time.month < 8 ? 0 : 1)); //选择春还是秋
+        spnTermNon = (Spinner) findViewById(R.id.grades_spn_term_non);
+        spnTermNon.setVisibility(View.GONE);
+        spnTermNon.setEnabled(false);
+        //计算年数
+        String userId = UserInfo.getSavedUserId();
+        int startYear = Integer.parseInt("20" + userId.substring(0, 2));
+        int endYear = time.year;
+        if (time.month >= 0 && time.month < 2) {
+            endYear--;
+        }
+        if (endYear < startYear) { //容错处理
+            endYear = 3000;
+        }
+        strsYear = new String[endYear - startYear + 2];
+        strsYear[0] = "全部";
+        for (int n = 0; n < endYear - startYear + 1; n++) {
+            strsYear[n + 1] = endYear - n + "";
+        }
         spnYear = (Spinner) findViewById(R.id.grades_spn_year);
         ArrayAdapter<String> spnYearAdp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, strsYear);
         spnYearAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -74,8 +91,20 @@ public class CourseScoreActivity extends Activity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
                     spnTerm.setEnabled(false);
+                }
+                else if (position == strsYear.length - 1) {
+                    spnTerm.setSelection(1);
+                    spnTerm.setEnabled(false);
                 } else {
                     spnTerm.setEnabled(true);
+                }
+
+                if (position == 0) {
+                    spnTermNon.setVisibility(View.VISIBLE);
+                    spnTerm.setVisibility(View.GONE);
+                } else {
+                    spnTermNon.setVisibility(View.GONE);
+                    spnTerm.setVisibility(View.VISIBLE);
                 }
             }
 

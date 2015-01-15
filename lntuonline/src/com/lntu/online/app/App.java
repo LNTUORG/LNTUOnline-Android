@@ -14,7 +14,7 @@ public class App extends Application {
         context = this;
         //注册全局异常捕获器
         CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.active(this);
+        //crashHandler.active(this);
     }
 
     public static Context getContext() {
