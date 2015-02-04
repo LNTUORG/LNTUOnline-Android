@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
         gridView.setAdapter(new GridViewAdapter(this));
         gridView.setOnItemClickListener(new GridViewItemClickListener());
         //checkUpdate
-        checkUpdateBackground();        
+        checkUpdateBackground();
     }
 
     @Override
@@ -284,7 +284,7 @@ public class MainActivity extends Activity {
     public void showUpdateDialog(final ClientVersion cv) {
         new AlertDialog.Builder(this)
         .setTitle("更新提示")
-        .setMessage("有新版本：v" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
+        .setMessage("有新版本：" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
         .setPositiveButton("下载", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -300,7 +300,7 @@ public class MainActivity extends Activity {
     public void showForcedUpdateDialog(final ClientVersion cv) {        
         new AlertDialog.Builder(this)
         .setTitle("更新提示")
-        .setMessage("有新版本：v" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
+        .setMessage("有新版本：" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
         .setPositiveButton("下载", new OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
