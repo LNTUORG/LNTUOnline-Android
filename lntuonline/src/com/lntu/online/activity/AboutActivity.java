@@ -1,4 +1,4 @@
-package com.lntu.online;
+package com.lntu.online.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.lntu.online.R;
 import com.lntu.online.info.AppInfo;
 
 public class AboutActivity extends Activity {

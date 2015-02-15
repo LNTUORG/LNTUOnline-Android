@@ -1,4 +1,6 @@
-package com.lntu.online;
+package com.lntu.online.activity;
+
+import com.lntu.online.R;
 
 import android.app.Activity;
 import android.os.Bundle;

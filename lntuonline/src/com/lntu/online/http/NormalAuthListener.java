@@ -12,7 +12,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.widget.Toast;
 
-import com.lntu.online.MainActivity;
+import com.lntu.online.activity.MainActivity;
 
 public class NormalAuthListener extends BaseListener {
 

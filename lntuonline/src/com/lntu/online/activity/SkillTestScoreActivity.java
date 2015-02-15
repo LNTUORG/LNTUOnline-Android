@@ -1,8 +1,6 @@
-package com.lntu.online;
+package com.lntu.online.activity;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 import org.apache.http.Header;
@@ -21,33 +19,34 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
+import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkInfo;
-import com.lntu.online.model.ClientExamPlan;
+import com.lntu.online.model.ClientSkillTestScore;
 import com.lntu.online.util.JsonUtil;
 
-public class ExamPlanActivity extends Activity {
+public class SkillTestScoreActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exam_plan);
+        setContentView(R.layout.activity_skill_test_score);
         startNetwork();
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "examPlan/info", new RetryAuthListener(this) {
+        HttpUtil.get(this, NetworkInfo.serverUrl + "grades/skillTestScoresInfo", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                try {
-                    List<ClientExamPlan> ceps = JsonUtil.fromJson(responseString, new TypeToken<List<ClientExamPlan>>(){}.getType());
-                    ListView lvRoot = (ListView) findViewById(R.id.exam_plan_lv_root);
-                    lvRoot.setAdapter(new ListViewAdapter(getContext(), ceps));
+                try {                    
+                    List<ClientSkillTestScore> cstss = JsonUtil.fromJson(responseString, new TypeToken<List<ClientSkillTestScore>>(){}.getType());
+                    ListView lvRoot = (ListView) findViewById(R.id.skill_test_score_lv_root);
+                    lvRoot.setAdapter(new ListViewAdapter(getContext(), cstss));
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    if (msgs[0].equals("0x01040003")) {
+                    if (msgs[0].equals("0x01050003")) {
                         showNothingDialog();
                     } else {
                         showErrorDialog("提示", msgs[0], msgs[1]);
@@ -62,11 +61,11 @@ public class ExamPlanActivity extends Activity {
 
         });
     }
-
+    
     private void showNothingDialog() {
-        new AlertDialog.Builder(this)
+        new AlertDialog.Builder(this)    
         .setTitle("提示")
-        .setMessage("暂时没有考试信息，过一个月再看吧")
+        .setMessage("您还没有参加过技能考试呢，赶快去报名啊~~")
         .setCancelable(false)
         .setPositiveButton("确定", new OnClickListener() {
             
@@ -83,23 +82,19 @@ public class ExamPlanActivity extends Activity {
 
         private List<View> itemViews;
 
-        public ListViewAdapter(Context context, List<ClientExamPlan> ceps) {
+        public ListViewAdapter(Context context, List<ClientSkillTestScore> cstss) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            Collections.sort(ceps);
             itemViews = new ArrayList<View>();
-            Date nowDate = new Date();
-            for (int n = 0; n < ceps.size(); n++) {
-                ClientExamPlan cep = ceps.get(n);
+            for (int n = 0; n < cstss.size(); n++) {
+                ClientSkillTestScore csts = cstss.get(n);
                 //布局
-                View itemView = inflater.inflate(R.layout.activity_exam_plan_item, null);
-                TextView tvCourse = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_course);
-                TextView tvTime = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_time);
-                TextView tvLocation = (TextView) itemView.findViewById(R.id.exam_plan_item_tv_location);
-                View iconFinish = itemView.findViewById(R.id.exam_plan_item_icon_finish);
-                tvCourse.setText(cep.getCourse() + "");
-                tvTime.setText(cep.getTime() + "");
-                tvLocation.setText(cep.getLocation() + "");
-                iconFinish.setVisibility(cep.getDateTime().before(nowDate) ? View.VISIBLE : View.GONE);
+                View itemView = inflater.inflate(R.layout.activity_skill_test_score_item, null);
+                TextView tvName = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_name);
+                TextView tvTime = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_time);
+                TextView tvScore = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_score);
+                tvName.setText(csts.getName() + "");
+                tvTime.setText(csts.getTime() + "");
+                tvScore.setText(csts.getScore() + "");
                 //填充布局
                 itemViews.add(itemView);
             }

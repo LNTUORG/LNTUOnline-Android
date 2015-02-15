@@ -1,4 +1,4 @@
-package com.lntu.online;
+package com.lntu.online.activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.reflect.TypeToken;
+import com.lntu.online.R;
 import com.lntu.online.adapter.ItemViewsAdapter;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;

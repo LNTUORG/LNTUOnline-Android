@@ -2,7 +2,7 @@ package com.lntu.online.app;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 
-import com.lntu.online.CrashShowActivity;
+import com.lntu.online.activity.CrashShowActivity;
 
 import android.content.Context;
 import android.content.Intent;

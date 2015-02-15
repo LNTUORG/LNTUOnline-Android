@@ -1,4 +1,4 @@
-package com.lntu.online;
+package com.lntu.online.activity;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

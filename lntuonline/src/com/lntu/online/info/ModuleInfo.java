@@ -1,15 +1,15 @@
 package com.lntu.online.info;
 
-import com.lntu.online.OneKeyActivity;
-import com.lntu.online.CurriculumActivity;
-import com.lntu.online.ExamPlanActivity;
-import com.lntu.online.CourseScoreActivity;
-import com.lntu.online.MottoActivity;
-import com.lntu.online.NoticeActivity;
 import com.lntu.online.R;
-import com.lntu.online.SkillTestScoreActivity;
-import com.lntu.online.StudentInfoActivity;
-import com.lntu.online.UnpassCourseActivity;
+import com.lntu.online.activity.CourseScoreActivity;
+import com.lntu.online.activity.CurriculumActivity;
+import com.lntu.online.activity.ExamPlanActivity;
+import com.lntu.online.activity.MottoActivity;
+import com.lntu.online.activity.NoticeActivity;
+import com.lntu.online.activity.OneKeyActivity;
+import com.lntu.online.activity.SkillTestScoreActivity;
+import com.lntu.online.activity.StudentInfoActivity;
+import com.lntu.online.activity.UnpassCourseActivity;
 
 public class ModuleInfo {
 

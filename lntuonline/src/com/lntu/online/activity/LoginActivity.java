@@ -1,4 +1,4 @@
-package com.lntu.online;
+package com.lntu.online.activity;
 
 import org.apache.http.Header;
 
@@ -13,6 +13,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.AppInfo;
