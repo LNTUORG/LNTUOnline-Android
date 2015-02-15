@@ -25,8 +25,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
                 android:text="@string/merge_the_same"
-                android:textColor="@drawable/action_bar_btn_text_color" />
+                android:textColor="#FFFFFF" />
 
             <CheckBox 
                 android:id="@+id/unpass_course_cb_merge"
