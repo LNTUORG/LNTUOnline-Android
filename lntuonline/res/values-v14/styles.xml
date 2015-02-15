@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- API 14 -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+</resources>

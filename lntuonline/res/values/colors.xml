@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="textColorPrimary">@android:color/white</color>
+    <color name="windowBackground">@android:color/white</color>
+
+    
+    
+    
+    
     <color name="action_bar_btn_text_normal">#FFFFFFFF</color>
     <color name="action_bar_btn_text_pressed">#FF0A3E68</color>
 
