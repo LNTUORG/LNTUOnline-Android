@@ -10,37 +10,37 @@
         android:orientation="vertical"
         android:background="#FFAAAAAA">
 
-        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+        <TextView style="@style/BlueFlor.SlidingMenuButton"
             android:id="@+id/action_main_browser"
             android:text="@string/action_browser"
             android:onClick="onSlidingMenuItemClick" />
 
-        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+        <TextView style="@style/BlueFlor.SlidingMenuButton"
             android:id="@+id/action_main_about"
             android:text="@string/action_about"
             android:onClick="onSlidingMenuItemClick" />
 
-        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+        <TextView style="@style/BlueFlor.SlidingMenuButton"
             android:id="@+id/action_main_update"
             android:text="@string/action_update"
             android:onClick="onSlidingMenuItemClick" />
 
-        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+        <TextView style="@style/BlueFlor.SlidingMenuButton"
             android:id="@+id/action_main_feedback"
             android:text="@string/action_feddback"
             android:onClick="onSlidingMenuItemClick" />
 
-        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+        <TextView style="@style/BlueFlor.SlidingMenuButton"
             android:id="@+id/action_main_market"
             android:text="@string/action_market"
             android:onClick="onSlidingMenuItemClick" />
 
-        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+        <TextView style="@style/BlueFlor.SlidingMenuButton"
             android:id="@+id/action_main_logout"
             android:text="@string/action_logout"
             android:onClick="onSlidingMenuItemClick" />
 
-        <TextView style="@style/BlueFlor.SlidingMenu.Button"
+        <TextView style="@style/BlueFlor.SlidingMenuButton"
             android:id="@+id/action_main_exit"
             android:text="@string/action_exit"
             android:onClick="onSlidingMenuItemClick" />

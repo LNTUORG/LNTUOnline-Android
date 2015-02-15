@@ -12,7 +12,7 @@
             android:layout_gravity="left"
             android:onClick="onActionBarBtnLeft" />
 
-        <TextView style="@style/BlueFlor.ActionBar.Title"
+        <TextView style="@style/BlueFlor.ActionBarTitle"
             android:text="@string/student_info" />
 
     </FrameLayout><!-- End With ActionBar -->

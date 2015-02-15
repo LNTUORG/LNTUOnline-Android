@@ -8,7 +8,7 @@
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
-        <TextView style="@style/BlueFlor.ActionBar.Title"
+        <TextView style="@style/BlueFlor.ActionBarTitle"
             android:text="@string/app_name" />
 
         <TextView style="@style/BlueFlor.ActionBarIcon"

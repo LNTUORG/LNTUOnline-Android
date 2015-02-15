@@ -18,13 +18,13 @@
     <style name="BlueFlor" parent="AppTheme">
     </style>
 
-    <style name="BlueFlor.ActionBar" parent="BlueFlor">
+    <style name="BlueFlor.ActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/action_bar_height</item>
         <item name="android:background">@drawable/action_bar_backgroud</item>
     </style>
 
-    <style name="BlueFlor.ActionBar.Title" parent="BlueFlor">
+    <style name="BlueFlor.ActionBarTitle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_gravity">center</item>
@@ -42,7 +42,7 @@
         <item name="android:clickable">true</item>
     </style>
 
-    <style name="BlueFlor.ActionBar.BtnText" parent="BlueFlor">
+    <style name="BlueFlor.ActionBarBtnText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
@@ -56,7 +56,7 @@
     </style>
 
     <!-- SlidingMenu -->
-    <style name="BlueFlor.SlidingMenu.Button" parent="BlueFlor">
+    <style name="BlueFlor.SlidingMenuButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">0.5dp</item>

@@ -8,7 +8,7 @@
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
-        <TextView style="@style/BlueFlor.ActionBar.Title"
+        <TextView style="@style/BlueFlor.ActionBarTitle"
             android:text="@string/user_login" />
 
     </FrameLayout><!-- End With ActionBar -->
