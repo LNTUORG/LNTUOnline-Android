@@ -1,12 +1,8 @@
 package com.lntu.online.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.http.Header;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
@@ -14,24 +10,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lntu.online.R;
+import com.lntu.online.adapter.MainAdapter;
+import com.lntu.online.adapter.MainItemClickListener;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.AppInfo;
-import com.lntu.online.info.ModuleInfo;
 import com.lntu.online.info.NetworkInfo;
 import com.lntu.online.model.ClientVersion;
 import com.loopj.android.http.RequestParams;
@@ -54,8 +43,8 @@ public class MainActivity extends ActionBarActivity {
 
         //GridView
         gridView = (GridView) findViewById(R.id.main_grid_view);
-        gridView.setAdapter(new GridViewAdapter(this));
-        gridView.setOnItemClickListener(new GridViewItemClickListener());
+        gridView.setAdapter(new MainAdapter(this));
+        gridView.setOnItemClickListener(new MainItemClickListener());
         //checkUpdate
         checkUpdateBackground();
     }
@@ -118,7 +107,6 @@ public class MainActivity extends ActionBarActivity {
             firstBackKeyTime = secondBackKeyTime;
         } else {
             moveTaskToBack(true);
-            //finish();
         }
     }
 
@@ -128,59 +116,6 @@ public class MainActivity extends ActionBarActivity {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         }
-    }
-
-    private class GridViewAdapter extends BaseAdapter {
-
-        private List<View> itemViews;
-
-        public GridViewAdapter(Context context) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            itemViews = new ArrayList<View>();
-            for (int n = 0; n < ModuleInfo.getCount(); n++) {
-                View itemView = inflater.inflate(R.layout.activity_main_gv_item, null);
-                ImageView iv = (ImageView) itemView.findViewById(R.id.main_gv_item_iv_icon);
-                iv.setImageResource(ModuleInfo.getIconResAt(n));
-                TextView tv = (TextView) itemView.findViewById(R.id.main_gv_item_tv_title);
-                tv.setText(ModuleInfo.getTitleAt(n));
-                itemViews.add(itemView);
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return itemViews.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return itemViews.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return itemViews.get(position).getId();
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            return itemViews.get(position);
-        }
-
-    }
-
-    private class GridViewItemClickListener implements OnItemClickListener {
-
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Class<?> clz = ModuleInfo.getClassAt(position);
-            if (clz == null) { //功能未实现
-                Toast.makeText(MainActivity.this, "功能暂未实现，敬请期待...", Toast.LENGTH_SHORT).show();
-            } else {
-                startActivity(new Intent(MainActivity.this, clz));
-            }
-        }
-
     }
 
     public void showLogoutDialog() {
