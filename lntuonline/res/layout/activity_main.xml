@@ -11,7 +11,7 @@
         <TextView style="@style/BlueFlor.ActionBar.Title"
             android:text="@string/app_name" />
 
-        <TextView style="@style/BlueFlor.ActionBar.Icon"
+        <TextView style="@style/BlueFlor.ActionBarIcon"
             android:drawableRight="@drawable/action_bar_icon_menu"
             android:layout_gravity="right"
             android:onClick="onActionBarIconMenu" />

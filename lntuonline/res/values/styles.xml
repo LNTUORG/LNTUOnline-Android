@@ -34,33 +34,11 @@
         <item name="android:textColor">#FFFFFFFF</item>
     </style>
 
-    <style name="BlueFlor.ActionBar.BtnLeft" parent="BlueFlor">
+    <style name="BlueFlor.ActionBarIcon">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:drawableLeft">@drawable/action_bar_btn_left_image</item>
-        <item name="android:layout_gravity">left</item>
-        <item name="android:gravity">center</item>
-        <item name="android:paddingLeft">@dimen/action_bar_btn_padding_outside</item>
-        <item name="android:paddingRight">@dimen/action_bar_btn_padding_inside</item>
-        <item name="android:drawablePadding">@dimen/action_bar_btn_drawable_padding</item>
-        <item name="android:text">@string/backward</item>
-        <item name="android:textColor">@drawable/action_bar_btn_text_color</item>
-        <item name="android:textSize">@dimen/action_bar_btn_text_size</item>
-        <item name="android:clickable">true</item>
-    </style>
-
-    <style name="BlueFlor.ActionBar.BtnRight" parent="BlueFlor">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:drawableRight">@drawable/action_bar_btn_right_image</item>
-        <item name="android:layout_gravity">right</item>
-        <item name="android:gravity">center</item>
-        <item name="android:paddingLeft">@dimen/action_bar_btn_padding_inside</item>
-        <item name="android:paddingRight">@dimen/action_bar_btn_padding_outside</item>
-        <item name="android:drawablePadding">@dimen/action_bar_btn_drawable_padding</item>
-        <item name="android:text">@string/forward</item>
-        <item name="android:textColor">@drawable/action_bar_btn_text_color</item>
-        <item name="android:textSize">@dimen/action_bar_btn_text_size</item>
+        <item name="android:padding">@dimen/action_bar_icon_padding</item>
+        <item name="android:background">@drawable/action_bar_btn_background</item>
         <item name="android:clickable">true</item>
     </style>
 
@@ -73,13 +51,6 @@
         <item name="android:text">@string/menu</item>
         <item name="android:textColor">@drawable/action_bar_btn_text_color</item>
         <item name="android:textSize">@dimen/action_bar_btn_text_size</item>
-        <item name="android:clickable">true</item>
-    </style>
-
-    <style name="BlueFlor.ActionBar.Icon" parent="BlueFlor">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:padding">@dimen/action_bar_icon_padding</item>
         <item name="android:clickable">true</item>
     </style>
 

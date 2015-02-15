@@ -8,7 +8,9 @@
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
-        <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
+        <TextView style="@style/BlueFlor.ActionBarIcon"
+            android:drawableLeft="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+            android:layout_gravity="left"
             android:onClick="onActionBarBtnLeft" />
 
         <TextView style="@style/BlueFlor.ActionBar.Title"

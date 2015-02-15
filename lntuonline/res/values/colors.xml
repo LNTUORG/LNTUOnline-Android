@@ -6,10 +6,12 @@
     <color name="textColorPrimary">@android:color/white</color>
     <color name="windowBackground">@android:color/white</color>
 
-    
-    
-    
-    
+
+
+    <color name="action_bar_btn_background_normal">#00FFFFFF</color>
+    <color name="action_bar_btn_background_pressed">#30FFFFFF</color>
+
+
     <color name="action_bar_btn_text_normal">#FFFFFFFF</color>
     <color name="action_bar_btn_text_pressed">#FF0A3E68</color>
 

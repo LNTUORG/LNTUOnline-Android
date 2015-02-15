@@ -7,14 +7,16 @@
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">
 
-        <TextView style="@style/BlueFlor.ActionBar.BtnLeft"
+        <TextView style="@style/BlueFlor.ActionBarIcon"
+            android:drawableLeft="@drawable/abc_ic_ab_back_mtrl_am_alpha"
+            android:layout_gravity="left"
             android:onClick="onActionBarBtnLeft" />
 
         <TextView style="@style/BlueFlor.ActionBar.Title"
             android:id="@+id/actionbar_title"
             android:text="@string/curriculum" />
 
-        <TextView style="@style/BlueFlor.ActionBar.Icon"
+        <TextView style="@style/BlueFlor.ActionBarIcon"
             android:drawableRight="@drawable/action_bar_icon_refresh"
             android:layout_gravity="right"
             android:onClick="onActionBarIconRefresh" />
