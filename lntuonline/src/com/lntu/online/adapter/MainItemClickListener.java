@@ -11,7 +11,7 @@ import com.lntu.online.activity.ExamPlanActivity;
 import com.lntu.online.activity.MottoActivity;
 import com.lntu.online.activity.NoticeActivity;
 import com.lntu.online.activity.OneKeyActivity;
-import com.lntu.online.activity.SkillTestScoreActivity;
+import com.lntu.online.activity.SkillTestActivity;
 import com.lntu.online.activity.StudentInfoActivity;
 import com.lntu.online.activity.UnpassCourseActivity;
 
@@ -24,7 +24,7 @@ public class MainItemClickListener implements OnItemClickListener {
         CourseScoreActivity.class,
         OneKeyActivity.class,
         UnpassCourseActivity.class,
-        SkillTestScoreActivity.class,
+        SkillTestActivity.class,
         NoticeActivity.class,
         MottoActivity.class
     };

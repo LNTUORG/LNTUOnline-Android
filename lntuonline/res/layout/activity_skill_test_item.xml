@@ -25,7 +25,7 @@
             android:gravity="left" />
 
         <TextView
-            android:id="@+id/skill_test_score_item_tv_name"
+            android:id="@+id/skill_test_item_tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
@@ -55,7 +55,7 @@
             android:gravity="left" />
 
         <TextView
-            android:id="@+id/skill_test_score_item_tv_time"
+            android:id="@+id/skill_test_item_tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
@@ -85,7 +85,7 @@
             android:gravity="left" />
 
         <TextView
-            android:id="@+id/skill_test_score_item_tv_score"
+            android:id="@+id/skill_test_item_tv_score"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"

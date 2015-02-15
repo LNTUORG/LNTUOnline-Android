@@ -5,13 +5,15 @@ import java.util.List;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -26,13 +28,32 @@ import com.lntu.online.info.NetworkInfo;
 import com.lntu.online.model.ClientSkillTestScore;
 import com.lntu.online.util.JsonUtil;
 
-public class SkillTestScoreActivity extends Activity {
+public class SkillTestActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_skill_test_score);
+        setContentView(R.layout.activity_skill_test);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        
         startNetwork();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void startNetwork() {
@@ -42,7 +63,7 @@ public class SkillTestScoreActivity extends Activity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {                    
                     List<ClientSkillTestScore> cstss = JsonUtil.fromJson(responseString, new TypeToken<List<ClientSkillTestScore>>(){}.getType());
-                    ListView lvRoot = (ListView) findViewById(R.id.skill_test_score_lv_root);
+                    ListView lvRoot = (ListView) findViewById(R.id.skill_test_lv_root);
                     lvRoot.setAdapter(new ListViewAdapter(getContext(), cstss));
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
@@ -88,10 +109,10 @@ public class SkillTestScoreActivity extends Activity {
             for (int n = 0; n < cstss.size(); n++) {
                 ClientSkillTestScore csts = cstss.get(n);
                 //布局
-                View itemView = inflater.inflate(R.layout.activity_skill_test_score_item, null);
-                TextView tvName = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_name);
-                TextView tvTime = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_time);
-                TextView tvScore = (TextView) itemView.findViewById(R.id.skill_test_score_item_tv_score);
+                View itemView = inflater.inflate(R.layout.activity_skill_test_item, null);
+                TextView tvName = (TextView) itemView.findViewById(R.id.skill_test_item_tv_name);
+                TextView tvTime = (TextView) itemView.findViewById(R.id.skill_test_item_tv_time);
+                TextView tvScore = (TextView) itemView.findViewById(R.id.skill_test_item_tv_score);
                 tvName.setText(csts.getName() + "");
                 tvTime.setText(csts.getTime() + "");
                 tvScore.setText(csts.getScore() + "");
@@ -120,10 +141,6 @@ public class SkillTestScoreActivity extends Activity {
             return itemViews.get(position);
         }
 
-    }
-
-    public void onActionBarBtnLeft(View view) {
-        finish();
     }
 
 }
