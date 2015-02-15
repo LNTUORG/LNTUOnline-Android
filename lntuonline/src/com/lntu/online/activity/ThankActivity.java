@@ -1,18 +1,27 @@
 package com.lntu.online.activity;
 
-import com.lntu.online.R;
-
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.TextView;
 
-public class ThankActivity extends Activity {
+import com.lntu.online.R;
+
+public class ThankActivity extends ActionBarActivity {
+
+	private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thank);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+
         TextView tvNames = (TextView) findViewById(R.id.thank_tv_names);
         String names = "" +
                 "小马哥\n\n" +
@@ -27,8 +36,15 @@ public class ThankActivity extends Activity {
         tvNames.setText(names);
     }
 
-    public void onActionBarBtnLeft(View view) {
-        finish();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
 }

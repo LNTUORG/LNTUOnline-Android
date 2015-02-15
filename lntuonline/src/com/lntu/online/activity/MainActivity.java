@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -13,10 +12,11 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.widget.DrawerLayout;
-import android.view.Gravity;
-import android.view.KeyEvent;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -37,9 +37,10 @@ import com.lntu.online.model.ClientVersion;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
-    private DrawerLayout drawerLayout;
+    private Toolbar toolbar;
+
     private GridView gridView;
     private long firstBackKeyTime = 0; //首次返回键按下时间戳
 
@@ -47,8 +48,10 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //drawerLayout
-        drawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         //GridView
         gridView = (GridView) findViewById(R.id.main_grid_view);
         gridView.setAdapter(new GridViewAdapter(this));
@@ -58,6 +61,68 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case R.id.action_main_browser: {
+            Uri uri = Uri.parse("http://60.18.131.131:11180/academic/index.html");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+            return true;
+        }
+        case R.id.action_main_about:
+            startActivity(new Intent(this, AboutActivity.class));
+            return true;
+        case R.id.action_main_update:
+            checkUpdate();
+            return true;
+        case R.id.action_main_feedback:
+            startActivity(new Intent(this, AdviceActivity.class));
+            return true;
+        case R.id.action_main_market: {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("market://details?id=" + getPackageName()));
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    intent.setData(Uri.parse("http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF"));
+                    if (intent.resolveActivity(getPackageManager()) != null) {
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(this, "您的手机没有安装应用商店程序", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+            return true;
+        case R.id.action_main_logout:
+            showLogoutDialog();
+            return true;
+        case R.id.action_main_exit:
+            showExitDialog();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+	public void onBackPressed() {
+        long secondBackKeyTime = System.currentTimeMillis();
+        if (secondBackKeyTime - firstBackKeyTime > 2000) {
+            Toast.makeText(this, "再按一次返回桌面", Toast.LENGTH_SHORT).show();
+            firstBackKeyTime = secondBackKeyTime;
+        } else {
+            moveTaskToBack(true);
+            //finish();
+        }
+	}
+
+	@Override
     protected void onNewIntent(Intent intent) {
         if (intent.getBooleanExtra("is_goback_login", false)) { //返回登陆页面
             startActivity(new Intent(this, LoginActivity.class));
@@ -73,7 +138,7 @@ public class MainActivity extends Activity {
             LayoutInflater inflater = LayoutInflater.from(context);
             itemViews = new ArrayList<View>();
             for (int n = 0; n < ModuleInfo.getCount(); n++) {
-                View itemView = inflater.inflate(R.layout.activity_main_body_gv_item, null);
+                View itemView = inflater.inflate(R.layout.activity_main_gv_item, null);
                 ImageView iv = (ImageView) itemView.findViewById(R.id.main_gv_item_iv_icon);
                 iv.setImageResource(ModuleInfo.getIconResAt(n));
                 TextView tv = (TextView) itemView.findViewById(R.id.main_gv_item_tv_title);
@@ -116,87 +181,6 @@ public class MainActivity extends Activity {
             }
         }
 
-    }
-
-    public void onActionBarIconMenu(View view) {
-        toggleSidebar();
-    }
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-        case KeyEvent.KEYCODE_BACK: //返回键
-            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-                drawerLayout.closeDrawer(Gravity.RIGHT);
-            } else { //两次退出
-                long secondBackKeyTime = System.currentTimeMillis();
-                if (secondBackKeyTime - firstBackKeyTime > 2000) {
-                    Toast.makeText(this, "再按一次返回桌面", Toast.LENGTH_SHORT).show();
-                    firstBackKeyTime = secondBackKeyTime;
-                } else {
-                    moveTaskToBack(true);
-                    //finish();
-                }
-            }
-            return true;
-        case KeyEvent.KEYCODE_MENU: //菜单键
-            toggleSidebar();
-            return true;
-        default:
-            return super.onKeyDown(keyCode, event);
-        }
-    }
-
-    public void onSlidingMenuItemClick(View view) {
-        switch (view.getId()) {
-        case R.id.action_main_browser: {
-            Uri uri = Uri.parse("http://60.18.131.131:11180/academic/index.html");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            break;
-        }
-        case R.id.action_main_about:
-            startActivity(new Intent(this, AboutActivity.class));
-            break;
-        case R.id.action_main_update:
-            checkUpdate();
-            break;
-        case R.id.action_main_feedback:
-            startActivity(new Intent(this, AdviceActivity.class));
-            break;
-        case R.id.action_main_market: {//跳转到市场
-                //这里开始执行一个应用市场跳转逻辑，默认this为Context上下文对象
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("market://details?id=" + getPackageName())); //跳转到应用市场，非Google Play市场一般情况也实现了这个接口
-                //存在手机里没安装应用市场的情况，跳转会包异常，做一个接收判断
-                if (intent.resolveActivity(getPackageManager()) != null) { //可以接收
-                    startActivity(intent);
-                } else { //没有应用市场，我们通过浏览器跳转到Google Play
-                    intent.setData(Uri.parse("http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF"));
-                    //这里存在一个极端情况就是有些用户浏览器也没有，在判断一次
-                    if (intent.resolveActivity(getPackageManager()) != null) { //有浏览器
-                        startActivity(intent);
-                    } else { //天哪，这还是智能手机吗？
-                        Toast.makeText(this, "您没应用市场，也没浏览器，开发者给您跪了...", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-            break;
-        case R.id.action_main_logout:
-            showLogoutDialog();
-            break;
-        case R.id.action_main_exit:
-            showExitDialog();
-            break;
-        }
-    }
-
-    public void toggleSidebar() {
-        if (drawerLayout.isDrawerOpen(Gravity.RIGHT)) {
-            drawerLayout.closeDrawer(Gravity.RIGHT);
-        } else {
-            drawerLayout.openDrawer(Gravity.RIGHT);
-        }
     }
 
     public void showLogoutDialog() {
@@ -298,7 +282,7 @@ public class MainActivity extends Activity {
         .show();
     }
 
-    public void showForcedUpdateDialog(final ClientVersion cv) {        
+    public void showForcedUpdateDialog(final ClientVersion cv) {
         new AlertDialog.Builder(this)
         .setTitle("更新提示")
         .setMessage("有新版本：" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
