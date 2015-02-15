@@ -59,14 +59,26 @@ public class MainAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
+        ViewHolder holder;
+    	if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_main_gv_item, parent, false);
-            ImageView img = (ImageView) convertView.findViewById(R.id.main_gv_item_iv_icon);
-            img.setImageResource(icons[position]);
-            TextView tv = (TextView) convertView.findViewById(R.id.main_gv_item_tv_title);
-            tv.setText(titles[position]);
+            holder = new ViewHolder();
+            holder.imgIcon  = (ImageView) convertView.findViewById(R.id.main_gv_item_iv_icon);
+            holder.tvTitle = (TextView) convertView.findViewById(R.id.main_gv_item_tv_title);
+            convertView.setTag(holder);
+        } else {
+        	holder = (ViewHolder) convertView.getTag();
         }
+    	holder.imgIcon.setImageResource(icons[position]);
+        holder.tvTitle.setText(titles[position]);
         return convertView;
+    }
+
+    private static class ViewHolder {
+
+        ImageView imgIcon;
+        TextView tvTitle;
+
     }
 
 }
