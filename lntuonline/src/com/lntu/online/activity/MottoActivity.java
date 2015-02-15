@@ -2,15 +2,19 @@ package com.lntu.online.activity;
 
 import java.io.IOException;
 
-import com.lntu.online.R;
-
-import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 
-public class MottoActivity extends Activity {
+import com.lntu.online.R;
+
+public class MottoActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     private MediaPlayer maleVoice;
     private MediaPlayer femaleVoice;
@@ -19,6 +23,12 @@ public class MottoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motto);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+
         //init media
         maleVoice = new MediaPlayer();
         try {
@@ -35,6 +45,17 @@ public class MottoActivity extends Activity {
             femaleVoice.prepare();
         } catch (IOException e) {
             femaleVoice = null;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
         }
     }
 
@@ -70,10 +91,6 @@ public class MottoActivity extends Activity {
         if (femaleVoice != null) {
             femaleVoice.start();
         }
-    }
-
-    public void onActionBarBtnLeft(View view) {
-        finish();
     }
 
 }

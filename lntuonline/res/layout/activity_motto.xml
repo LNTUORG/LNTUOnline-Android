@@ -5,18 +5,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <!-- ActionBar -->
-    <FrameLayout style="@style/BlueFlor.ActionBar">
-
-        <TextView style="@style/BlueFlor.ActionBarIcon"
-            android:drawableLeft="@drawable/abc_ic_ab_back_mtrl_am_alpha"
-            android:layout_gravity="left"
-            android:onClick="onActionBarBtnLeft" />
-
-        <TextView style="@style/BlueFlor.ActionBarTitle"
-            android:text="@string/remember_motto" />
-
-    </FrameLayout><!-- End With ActionBar -->
+    <include layout="@layout/activity_action_bar" />
 
     <ImageView
         android:layout_width="match_parent"
