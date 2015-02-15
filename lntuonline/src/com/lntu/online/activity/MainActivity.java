@@ -111,7 +111,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     @Override
-	public void onBackPressed() {
+    public void onBackPressed() {
         long secondBackKeyTime = System.currentTimeMillis();
         if (secondBackKeyTime - firstBackKeyTime > 2000) {
             Toast.makeText(this, "再按一次返回桌面", Toast.LENGTH_SHORT).show();
@@ -120,9 +120,9 @@ public class MainActivity extends ActionBarActivity {
             moveTaskToBack(true);
             //finish();
         }
-	}
+    }
 
-	@Override
+    @Override
     protected void onNewIntent(Intent intent) {
         if (intent.getBooleanExtra("is_goback_login", false)) { //返回登陆页面
             startActivity(new Intent(this, LoginActivity.class));
