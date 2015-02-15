@@ -2,11 +2,13 @@ package com.lntu.online.activity;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,7 +19,9 @@ import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.NetworkInfo;
 import com.loopj.android.http.RequestParams;
 
-public class AdviceActivity extends Activity {
+public class AdviceActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     private EditText edtInfo;
     private EditText edtContact;
@@ -26,12 +30,25 @@ public class AdviceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+
         edtInfo = (EditText) findViewById(R.id.feedback_edt_info);
         edtContact = (EditText) findViewById(R.id.feedback_edt_contact);
     }
 
-    public void onActionBarBtnLeft(View view) {
-        showExitTip();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+        	showExitTip();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

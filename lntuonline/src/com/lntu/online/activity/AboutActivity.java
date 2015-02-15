@@ -1,10 +1,8 @@
 package com.lntu.online.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -13,7 +11,7 @@ import com.lntu.online.info.AppInfo;
 
 public class AboutActivity extends ActionBarActivity {
 
-	private Toolbar toolbar;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
