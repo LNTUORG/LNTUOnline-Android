@@ -79,7 +79,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="@string/submit"
-                android:textColor="@drawable/button_text_color"
+                android:textColor="@color/button_text_color"
                 android:textSize="@dimen/button_text_size"
                 android:background="@drawable/button_image"
                 android:onClick="onBtnSubmit" />

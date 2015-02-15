@@ -34,7 +34,7 @@
         android:layout_alignParentBottom="true"
         android:text="@string/one_key"
         android:textSize="@dimen/button_text_size"
-        android:textColor="@drawable/button_text_color"
+        android:textColor="@color/button_text_color"
         android:background="@drawable/button_image"
         android:onClick="onBtnStart" />
 

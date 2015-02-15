@@ -80,7 +80,7 @@
             android:layout_weight="1"
             android:layout_margin="4dp"
             android:text="@string/query"
-            android:textColor="@drawable/button_text_color"
+            android:textColor="@color/button_text_color"
             android:background="@drawable/button_image"
             android:onClick="onBtnQuery" />    
 

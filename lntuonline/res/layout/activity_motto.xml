@@ -39,7 +39,7 @@
             android:layout_margin="4dp"
             android:text="@string/male_voice"
             android:textSize="@dimen/button_text_size"
-            android:textColor="@drawable/button_text_color"
+            android:textColor="@color/button_text_color"
             android:background="@drawable/button_image"
             android:onClick="onBtnMaleVoice" />
 
@@ -50,7 +50,7 @@
             android:layout_margin="4dp"
             android:text="@string/female_voice"
             android:textSize="@dimen/button_text_size"
-            android:textColor="@drawable/button_text_color"
+            android:textColor="@color/button_text_color"
             android:background="@drawable/button_image"
             android:onClick="onBtnFemaleVoice" />
 
