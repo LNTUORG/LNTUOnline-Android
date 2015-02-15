@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -29,13 +31,32 @@ import com.lntu.online.model.ClientFamily;
 import com.lntu.online.model.ClientStudent;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
-public class StudentInfoActivity extends Activity {
+public class StudentInfoActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_info);
+        
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+
         startNetwork();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void startNetwork() {
@@ -373,10 +394,6 @@ public class StudentInfoActivity extends Activity {
             Toast.makeText(imageView.getContext(), "用户头像获取失败", Toast.LENGTH_SHORT).show();
         }
 
-    }
-
-    public void onActionBarBtnLeft(View view) {
-        finish();
     }
 
 }
