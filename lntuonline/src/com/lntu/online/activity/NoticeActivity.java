@@ -1,15 +1,18 @@
 package com.lntu.online.activity;
 
-import com.lntu.online.R;
-
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
 
-public class NoticeActivity extends Activity {
+import com.lntu.online.R;
+
+public class NoticeActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     private WebView webView;
 
@@ -17,6 +20,12 @@ public class NoticeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+
         webView = (WebView) findViewById(R.id.notice_wv);
         webView.loadUrl("http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100");
         webView.setWebViewClient(new WebViewClient() {
@@ -32,16 +41,23 @@ public class NoticeActivity extends Activity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public void onBackPressed() {
         if (webView.canGoBack()) {
             webView.goBack();
         } else {
             super.onBackPressed();
         }
-    }
-
-    public void onActionBarBtnLeft(View view) {
-        finish();
     }
 
 }
