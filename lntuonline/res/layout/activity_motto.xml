@@ -3,8 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:background="@color/container_background">
+    android:gravity="center_horizontal">
 
     <!-- ActionBar -->
     <FrameLayout style="@style/BlueFlor.ActionBar">

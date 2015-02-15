@@ -17,8 +17,6 @@
     <color name="spinner_text_normal">#FF666666</color>
     <color name="spinner_text_disabled">#FF000000</color>
 
-    <color name="container_background">#FFEFEFEF</color>
-
     <color name="curriculum_title_1">#22111111</color>
     <color name="curriculum_title_2">#11111111</color>
     <color name="curriculum_content_1">#FFFFFFFF</color>

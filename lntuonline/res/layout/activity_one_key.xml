@@ -23,8 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/action_bar"
-        android:layout_above="@+id/one_key_btn_start"
-        android:background="@color/container_background" />
+        android:layout_above="@+id/one_key_btn_start" />
 
     <Button
         android:id="@+id/one_key_btn_start"
