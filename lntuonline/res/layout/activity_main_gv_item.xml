@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="8dp"
     android:orientation="vertical"
     android:gravity="center_horizontal">
 
-    <ImageView 
+    <ImageView
         android:id="@+id/main_gv_item_iv_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
         android:src="@drawable/main_icon_profle"
         android:scaleType="fitCenter"
         android:contentDescription="@string/test_icon" />
@@ -18,10 +18,10 @@
         android:id="@+id/main_gv_item_tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:layout_marginTop="8dp"
         android:text="@string/test_title"
         android:textSize="18sp"
-        android:textColor="#FF000000"
+        android:textColor="?attr/android:textColorPrimary"
         android:gravity="center" />
 
 </LinearLayout>

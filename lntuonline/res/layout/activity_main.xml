@@ -11,10 +11,10 @@
         android:id="@+id/main_grid_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="8dp"
+        android:verticalSpacing="8dp"
+        android:horizontalSpacing="8dp"
         android:numColumns="3"
-        android:stretchMode="columnWidth"
-        android:padding="2dp"
-        android:verticalSpacing="2dp"
-        android:horizontalSpacing="2dp" />
+        android:stretchMode="columnWidth" />
 
 </LinearLayout>
