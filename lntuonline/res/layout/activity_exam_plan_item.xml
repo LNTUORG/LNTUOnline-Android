@@ -1,117 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
-    android:background="#FFFFFFFF">
+    android:padding="8dp"
+    android:background="#FFFFFF">
 
     <LinearLayout
+        android:id="@+id/exam_plan_item_layout_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_toStartOf="@+id/exam_plan_item_layout_end"
+        android:layout_toLeftOf="@+id/exam_plan_item_layout_end"
+        android:padding="8dp"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/exam_plan_item_tv_course"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:orientation="horizontal">
+            android:text="@string/test_text"
+            android:textColor="?attr/android:textColorPrimary"
+            android:textSize="18sp"
+            android:gravity="start|center_vertical" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:text="@string/course_name"
-                android:textSize="18sp"
-                android:textColor="#FF555555"
-                android:gravity="left" />
-
-            <TextView
-                android:id="@+id/exam_plan_item_tv_course"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="20dp"
-                android:text="@string/test_text"
-                android:textColor="#FF000000"
-                android:textSize="18sp"
-                android:gravity="right" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/exam_plan_item_tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+            android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+            android:drawablePadding="14dp"
+            android:text="@string/test_text"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:text="@string/time"
-                android:textSize="18sp"
-                android:textColor="#FF555555"
-                android:gravity="left" />
-
-            <TextView
-                android:id="@+id/exam_plan_item_tv_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="20dp"
-                android:text="@string/test_text"
-                android:textColor="#FF000000"
-                android:textSize="18sp"
-                android:gravity="right" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/exam_plan_item_tv_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:paddingRight="10dp"
-                android:text="@string/location"
-                android:textSize="18sp"
-                android:textColor="#FF555555"
-                android:gravity="left" />
-
-            <TextView
-                android:id="@+id/exam_plan_item_tv_location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="20dp"
-                android:text="@string/test_text"
-                android:textColor="#FF000000"
-                android:textSize="18sp"
-                android:gravity="right" />
-
-        </LinearLayout>
+            android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_location_on_grey600_18dp"
+            android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
+            android:drawablePadding="14dp"
+            android:text="@string/test_text"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical" />
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/exam_plan_item_icon_finish"
+    <FrameLayout
+        android:id="@+id/exam_plan_item_layout_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="40dp"
-        android:src="@drawable/icon_exam_finish"
-        android:scaleType="centerInside"
-        android:contentDescription="@string/exam_plan"
-        android:adjustViewBounds="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/exam_plan_item_layout_start"
+        android:layout_alignBottom="@+id/exam_plan_item_layout_start"
+        android:padding="8dp">
 
-</FrameLayout>
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/exam_plan_item_icon_finish"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_exam_finish"
+            android:scaleType="fitCenter"
+            android:contentDescription="@string/exam_plan"
+            android:adjustViewBounds="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/have_left"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100天"
+            android:textSize="16sp"
+            android:gravity="start|center_vertical" />
+
+    </FrameLayout>
+
+</RelativeLayout>

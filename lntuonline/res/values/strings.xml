@@ -114,5 +114,6 @@
     <string name="state">状态</string>
     <string name="teacher">教师</string>
 
-</resources>
+    <string name="have_left">还剩</string>
 
+</resources>
