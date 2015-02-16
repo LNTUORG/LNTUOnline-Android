@@ -31,7 +31,7 @@ public class MainAdapter extends BaseAdapter {
         "成绩查询",
         "一键评课",
         "挂科查询",
-        "技能考试",
+        "等级考试",
         "教务公告",
         "牢记校训"
     };
