@@ -49,7 +49,9 @@ public class ExamPlanAdapter extends BaseAdapter {
             holder.tvCourse = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_course);
             holder.tvTime = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_time);
             holder.tvLocation = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_location);
+            holder.iconCountdown = convertView.findViewById(R.id.exam_plan_item_icon_countdown);
             holder.iconFinish = convertView.findViewById(R.id.exam_plan_item_icon_finish);
+            holder.tvDayLeft = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_day_left);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -58,7 +60,25 @@ public class ExamPlanAdapter extends BaseAdapter {
         holder.tvCourse.setText(plan.getCourse() + "");
         holder.tvTime.setText(plan.getTime() + "");
         holder.tvLocation.setText(plan.getLocation() + "");
-        holder.iconFinish.setVisibility(plan.getDateTime().before(nowDate) ? View.VISIBLE : View.GONE);
+        if (plan.getDateTime().before(nowDate)) {
+            holder.iconFinish.setVisibility(View.VISIBLE);
+            holder.iconCountdown.setVisibility(View.INVISIBLE);
+        } else {
+            holder.iconFinish.setVisibility(View.INVISIBLE);
+            holder.iconCountdown.setVisibility(View.VISIBLE);
+            long diff = plan.getDateTime().getTime() - nowDate.getTime();
+            long days = diff / (1000 * 60 * 60 * 24);
+            if (days == 0) {
+                holder.tvDayLeft.setText("< 1");
+            } else {
+                holder.tvDayLeft.setText(days + "");
+            }
+            if (days <= 7) {
+                holder.tvDayLeft.setTextColor(0xFFFF0000);
+            } else {
+                holder.tvDayLeft.setTextColor(0xFF00FF00);
+            }
+        }
         return convertView;
     }
 
@@ -68,6 +88,8 @@ public class ExamPlanAdapter extends BaseAdapter {
         TextView tvTime;
         TextView tvLocation;
         View iconFinish;
+        View iconCountdown;
+        TextView tvDayLeft;
 
     }
 
