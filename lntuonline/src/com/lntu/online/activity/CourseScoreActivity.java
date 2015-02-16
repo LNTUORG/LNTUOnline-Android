@@ -5,15 +5,17 @@ import java.util.List;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.format.Time;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -36,7 +38,9 @@ import com.lntu.online.model.ClientCourseScore;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 
-public class CourseScoreActivity extends Activity {
+public class CourseScoreActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     private Spinner spnYear;
     private Spinner spnTerm;
@@ -52,8 +56,25 @@ public class CourseScoreActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_score);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+
         initWidgets();
         startNetwork();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void initWidgets() {
@@ -261,10 +282,6 @@ public class CourseScoreActivity extends Activity {
             return itemViews.get(position);
         }
 
-    }
-
-    public void onActionBarBtnLeft(View view) {
-        finish();
     }
 
 }

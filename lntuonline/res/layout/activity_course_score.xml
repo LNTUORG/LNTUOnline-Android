@@ -4,18 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- ActionBar -->
-    <FrameLayout style="@style/BlueFlor.ActionBar">
-
-        <TextView style="@style/BlueFlor.ActionBarIcon"
-            android:drawableLeft="@drawable/abc_ic_ab_back_mtrl_am_alpha"
-            android:layout_gravity="left"
-            android:onClick="onActionBarBtnLeft" />
-
-        <TextView style="@style/BlueFlor.ActionBarTitle"
-            android:text="@string/grades_query" />
-
-    </FrameLayout><!-- End With ActionBar -->
+    <include layout="@layout/activity_action_bar" />
 
     <TextView
         android:id="@+id/grades_tv_ava_of_credit"
