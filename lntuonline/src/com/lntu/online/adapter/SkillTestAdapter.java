@@ -24,7 +24,7 @@ public class SkillTestAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return scoreList.size();
+        return scoreList == null ? 0 : scoreList.size();
     }
 
     @Override

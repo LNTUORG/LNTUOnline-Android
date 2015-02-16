@@ -27,7 +27,7 @@ public class ExamPlanAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return planList.size();
+        return planList == null ? 0 : planList.size();
     }
 
     @Override
