@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-public class ItemViewsAdapter extends BaseAdapter {
+public class OneKeyAdapter extends BaseAdapter {
 
     private List<View> itemViews;
 
-    public ItemViewsAdapter(List<View> itemViews) {
+    public OneKeyAdapter(List<View> itemViews) {
         this.itemViews = itemViews;
     }
 

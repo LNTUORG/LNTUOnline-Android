@@ -12,8 +12,11 @@ import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,7 +24,7 @@ import android.widget.Toast;
 
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
-import com.lntu.online.adapter.ItemViewsAdapter;
+import com.lntu.online.adapter.OneKeyAdapter;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
@@ -30,26 +33,41 @@ import com.lntu.online.model.ClientEvaInfo;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 
-public class OneKeyActivity extends Activity {
+public class OneKeyActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     private ListView lvRoot;
     private List<View> itemViews;
-    private ItemViewsAdapter adapter;
+    private OneKeyAdapter adapter;
     private List<ClientEvaInfo> evaInfos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_key);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+
         lvRoot = (ListView) findViewById(R.id.one_key_lv_root);
         itemViews = new ArrayList<View>();
-        adapter = new ItemViewsAdapter(itemViews);
+        adapter = new OneKeyAdapter(itemViews);
         lvRoot.setAdapter(adapter);
         startNetwork();
     }
 
-    public void onActionBarBtnLeft(View view) {
-        finish();
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void startNetwork() {
