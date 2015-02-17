@@ -5,13 +5,7 @@
     android:orientation="vertical"
     android:background="#FFFFFFFF">
 
-    <!-- ActionBar -->
-    <FrameLayout style="@style/BlueFlor.ActionBar">
-
-        <TextView style="@style/BlueFlor.ActionBarTitle"
-            android:text="@string/user_login" />
-
-    </FrameLayout><!-- End With ActionBar -->
+    <include layout="@layout/activity_action_bar" />
 
     <!-- Content -->
     <LinearLayout

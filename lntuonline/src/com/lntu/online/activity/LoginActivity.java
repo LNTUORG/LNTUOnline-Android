@@ -2,10 +2,11 @@ package com.lntu.online.activity;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -21,7 +22,9 @@ import com.lntu.online.info.NetworkInfo;
 import com.lntu.online.info.UserInfo;
 import com.loopj.android.http.RequestParams;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     private EditText edtUserId;
     private EditText edtPwd;
@@ -31,6 +34,10 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         edtUserId = (EditText) findViewById(R.id.login_edt_user_id);
         edtPwd = (EditText) findViewById(R.id.login_edt_pwd);
         cbAutoLogin = (CheckBox) findViewById(R.id.login_cb_auto_login);

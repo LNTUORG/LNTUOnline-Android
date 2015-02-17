@@ -6,6 +6,18 @@ import java.io.Writer;
 
 import org.apache.http.Header;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
+import android.text.format.Time;
+import android.view.View;
+import android.widget.TextView;
+
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
@@ -13,18 +25,9 @@ import com.lntu.online.info.AppInfo;
 import com.lntu.online.info.NetworkInfo;
 import com.loopj.android.http.RequestParams;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.DialogInterface.OnClickListener;
-import android.os.Build;
-import android.os.Bundle;
-import android.text.format.Time;
-import android.view.View;
-import android.widget.TextView;
+public class CrashShowActivity extends ActionBarActivity {
 
-public class CrashShowActivity extends Activity {
+    private Toolbar toolbar;
 
     private String sorry = "" +
         "非常抱歉，程序运行过程中出现了一个无法避免的错误。" +
@@ -38,6 +41,10 @@ public class CrashShowActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crash_show);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         //接收异常对象
         Intent intent = getIntent();
         Throwable e = (Throwable) intent.getSerializableExtra("e");

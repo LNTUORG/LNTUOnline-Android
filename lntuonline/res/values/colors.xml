@@ -10,8 +10,7 @@
     <color name="fab_accent">#ff4081</color>
     <color name="fab_accent_pressed">#f50057</color>
     
-    <color name="action_bar_btn_background_normal">#00FFFFFF</color>
-    <color name="action_bar_btn_background_pressed">#30FFFFFF</color>
+    
 
     <color name="button_text_color">#FFFFFFFF</color>
 

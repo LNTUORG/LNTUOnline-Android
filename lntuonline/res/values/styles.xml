@@ -11,48 +11,4 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
-
-
-
-    <!-- Blue Flor Theme -->
-    <style name="BlueFlor" parent="AppTheme">
-    </style>
-
-    <style name="BlueFlor.ActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">?attr/actionBarSize</item>
-        <item name="android:background">?attr/colorPrimary</item>
-    </style>
-
-    <style name="BlueFlor.ActionBarTitle">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:gravity">center</item>
-        <item name="android:text">@string/title</item>
-        <item name="android:textSize">@dimen/action_bar_title_text_size</item>
-        <item name="android:textColor">#FFFFFFFF</item>
-    </style>
-
-    <style name="BlueFlor.ActionBarIcon">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:padding">@dimen/action_bar_icon_padding</item>
-        <item name="android:background">@drawable/action_bar_btn_background</item>
-        <item name="android:clickable">true</item>
-    </style>
-
-    <style name="BlueFlor.ActionBarBtnText">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:gravity">center</item>
-        <item name="android:paddingLeft">@dimen/action_bar_btn_padding_outside</item>
-        <item name="android:paddingRight">@dimen/action_bar_btn_padding_outside</item>
-        <item name="android:text">@string/menu</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">@dimen/action_bar_btn_text_size</item>
-        <item name="android:background">@drawable/action_bar_btn_background</item>
-        <item name="android:clickable">true</item>
-    </style>
-
 </resources>

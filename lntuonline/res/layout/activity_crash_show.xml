@@ -4,13 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- ActionBar -->
-    <FrameLayout style="@style/BlueFlor.ActionBar">
-
-        <TextView style="@style/BlueFlor.ActionBarTitle"
-            android:text="@string/app_crash" />
-
-    </FrameLayout><!-- End With ActionBar -->
+    <include layout="@layout/activity_action_bar" />
 
     <!-- Container -->
     <RelativeLayout
