@@ -121,4 +121,6 @@
     <string name="have_left">还剩</string>
     <string name="day">天</string>
 
+    <string name="have_unfold_less_same_course">已合并相同科目</string>
+    
 </resources>

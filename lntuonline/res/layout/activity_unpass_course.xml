@@ -11,11 +11,30 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ListView
-            android:id="@+id/unpass_course_lv_root"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/unpass_course_icon_unfold_less"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:text="@string/have_unfold_less_same_course"
+                android:textSize="14sp"
+                android:background="#BBDEFB" />
+
+            <ListView
+                android:id="@+id/unpass_course_lv_root"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" />
+
+        </LinearLayout>
 
         <com.melnykov.fab.FloatingActionButton
             android:id="@+id/fab"

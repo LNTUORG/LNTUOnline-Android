@@ -20,7 +20,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
@@ -39,7 +38,8 @@ public class UnpassCourseActivity extends ActionBarActivity {
     private List<ClientUnpassCourse> cucs;
 
     private FloatingActionButton fab;
-    private boolean isUnfold = true; 
+    private boolean isUnfold = true;
+    private View iconUnfoldLess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,9 @@ public class UnpassCourseActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+
+        iconUnfoldLess = findViewById(R.id.unpass_course_icon_unfold_less);
+        iconUnfoldLess.setVisibility(View.GONE);
 
         listView = (ListView) findViewById(R.id.unpass_course_lv_root);
         fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -62,9 +65,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
                     isUnfold = !isUnfold;
                     listView.setAdapter(new ListViewAdapter(UnpassCourseActivity.this, cucs, !isUnfold));
                     fab.setImageResource(isUnfold ? R.drawable.ic_unfold_less_white_24dp : R.drawable.ic_unfold_more_white_24dp);
-                    if (!isUnfold) {
-                    	Toast.makeText(UnpassCourseActivity.this, "已合并相同科目", Toast.LENGTH_SHORT).show();
-                    }
+                    iconUnfoldLess.setVisibility(isUnfold ? View.GONE : View.VISIBLE);
                 }
             }
 
