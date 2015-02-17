@@ -31,7 +31,7 @@
             android:drawableStart="@drawable/ic_schedule_grey600_18dp"
             android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
             android:drawablePadding="16dp"
-            android:text="@string/date_sample"
+            android:text="@string/date_time_sample"
             android:textSize="14sp"
             android:gravity="start|center_vertical" />
 

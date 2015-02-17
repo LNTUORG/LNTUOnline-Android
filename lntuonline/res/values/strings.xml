@@ -60,15 +60,9 @@
 
     <string name="name">姓名</string>
     <string name="name_content_test">李四</string>
-    <string name="date_of_start">开始日期</string>
-    <string name="date_of_end">结束日期</string>
-    <string name="school_name">学校名称</string>
-    <string name="witness">证明人</string>
-    <string name="relationship">与本人关系</string>
     <string name="political_affiliation">政治面貌</string>
-    <string name="job">职业</string>
-    <string name="post">职位</string>
-    <string name="work_location">工作地点</string>
+    <string name="job_and_post">职业职位</string>
+    <string name="work_location">工作单位</string>
     <string name="tel">联系电话</string>
 
     <string name="course">课程</string>
@@ -105,11 +99,15 @@
     <string name="teacher">教师</string>
 
     <string name="course_sample">概率论与数理统计</string>
-    <string name="date_sample">2015&#8211;03&#8211;07&#160;09:00&#8211;11:00</string>
+    <string name="date_time_sample">2015&#8211;03&#8211;07&#160;09:00&#8211;11:00</string>
+    <string name="date_sample">2015&#8211;03&#8211;07</string>
     <string name="location_sample">静远118</string>
     <string name="_100">100</string>
     <string name="have_left">还剩</string>
     <string name="day">天</string>
+    <string name="from_to">至</string>
+    <string name="school_name">所在地</string>
+    <string name="witness">证明人</string>
 
     <string name="have_unfold_less_same_course">已合并相同科目</string>
 

@@ -248,7 +248,7 @@ public class StudentInfoAdapter extends BaseAdapter {
             TextView tvWorkLocation = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_work_location);
             TextView tvTel = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_tel);
             tvName.setText(f.getName() + "");
-            tvRelationship.setText(f.getRelationship() + "");
+            tvRelationship.setText("（" + f.getRelationship() + "）");
             tvPolAff.setText(f.getPoliticalAffiliation() + "");
             tvJob.setText(f.getJob() + "");
             tvPost.setText(f.getPost() + "");

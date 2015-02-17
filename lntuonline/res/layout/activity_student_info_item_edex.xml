@@ -2,128 +2,87 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
+    android:padding="16dp"
     android:orientation="vertical"
-    android:background="#FFFFFFFF">
+    android:background="#FFFFFF">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
         android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:text="@string/date_of_start"
-            android:textSize="18sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
 
         <TextView
             android:id="@+id/student_info_item_edex_tv_date_of_start"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:text="@string/test_text"
-            android:textColor="#FF000000"
-            android:textSize="18sp"
-            android:gravity="right" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
+            android:text="@string/date_sample"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:text="@string/date_of_end"
-            android:textSize="18sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/from_to"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/student_info_item_edex_tv_date_of_end"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:text="@string/test_text"
-            android:textColor="#FF000000"
-            android:textSize="18sp"
-            android:gravity="right" />
+            android:text="@string/date_sample"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:layout_marginTop="4dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:text="@string/school_name"
-            android:textSize="18sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/student_info_item_edex_tv_school_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:text="@string/test_text"
-            android:textColor="#FF000000"
-            android:textSize="18sp"
-            android:gravity="right" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="4dp"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:text="@string/witness"
-            android:textSize="18sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/student_info_item_edex_tv_witness"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:text="@string/test_text"
-            android:textColor="#FF000000"
-            android:textSize="18sp"
-            android:gravity="right" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 
