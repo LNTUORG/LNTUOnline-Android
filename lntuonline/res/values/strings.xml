@@ -60,10 +60,10 @@
 
     <string name="name">姓名</string>
     <string name="name_content_test">李四</string>
-    <string name="political_affiliation">政治面貌</string>
-    <string name="job_and_post">职业职位</string>
-    <string name="work_location">工作单位</string>
-    <string name="tel">联系电话</string>
+    <string name="political_affiliation">政治面貌：</string>
+    <string name="job_and_post">职业职位：</string>
+    <string name="work_location">工作单位：</string>
+    <string name="tel">联系电话：</string>
 
     <string name="course">课程</string>
     <string name="course_name">课程名</string>
@@ -106,8 +106,8 @@
     <string name="have_left">还剩</string>
     <string name="day">天</string>
     <string name="from_to">至</string>
-    <string name="school_name">所在地</string>
-    <string name="witness">证明人</string>
+    <string name="school_name">所在地：</string>
+    <string name="witness">证明人：</string>
 
     <string name="have_unfold_less_same_course">已合并相同科目</string>
 

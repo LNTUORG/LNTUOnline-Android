@@ -39,7 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/political_affiliation"
-            android:textColor="?android:attr/textColorPrimary"
             android:textSize="14sp" />
 
         <TextView
@@ -63,7 +62,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/job_and_post"
-            android:textColor="?android:attr/textColorPrimary"
             android:textSize="14sp" />
 
         <TextView
@@ -94,7 +92,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/work_location"
-            android:textColor="?android:attr/textColorPrimary"
             android:textSize="14sp" />
 
         <TextView
@@ -118,7 +115,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tel"
-            android:textColor="?android:attr/textColorPrimary"
             android:textSize="14sp" />
 
         <TextView
