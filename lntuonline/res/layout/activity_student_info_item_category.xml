@@ -9,4 +9,4 @@
     android:text="@string/name"
     android:textSize="16sp"
     android:textColor="#FFFFFF"
-    android:background="#17ACAE" />
+    android:background="#009688" />
