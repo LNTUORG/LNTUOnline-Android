@@ -60,6 +60,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
                 if (cucs != null) {
                     isUnfold = !isUnfold;
                     listView.setAdapter(new ListViewAdapter(UnpassCourseActivity.this, cucs, !isUnfold));
+                    fab.setImageResource(isUnfold ? R.drawable.ic_unfold_less_white_24dp : R.drawable.ic_unfold_more_white_24dp);
                 }
             }
 
