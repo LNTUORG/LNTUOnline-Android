@@ -58,7 +58,7 @@ public class ExamPlanAdapter extends BaseAdapter {
         }
         ClientExamPlan plan = planList.get(position);
         holder.tvCourse.setText(plan.getCourse() + "");
-        holder.tvTime.setText(plan.getTime() + "");
+        holder.tvTime.setText(plan.getTime().replace("--", "-") + "");
         holder.tvLocation.setText(plan.getLocation() + "");
         if (plan.getDateTime().before(nowDate)) {
             holder.iconFinish.setVisibility(View.VISIBLE);
