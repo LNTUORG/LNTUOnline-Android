@@ -2,31 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:orientation="horizontal"
-    android:background="#FFFFFFFF">
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/student_info_item_tv_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="10dp"
         android:text="@string/name"
-        android:textSize="18sp"
-        android:textColor="#FF555555"
-        android:gravity="left" />
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/student_info_item_tv_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="20dp"
+        android:layout_marginTop="4dp"
         android:text="@string/name_content_test"
-        android:textColor="#FF000000"
-        android:textSize="18sp"
-        android:gravity="right" />
+        android:textSize="14sp" />
 
 </LinearLayout>

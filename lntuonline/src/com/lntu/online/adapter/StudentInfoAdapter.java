@@ -25,10 +25,9 @@ public class StudentInfoAdapter extends BaseAdapter {
         itemViews = new ArrayList<View>();
         //基本信息
         {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
-            TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
+            TextView tvCategory = (TextView) inflater.inflate(R.layout.activity_student_info_item_category, null);
             tvCategory.setText("基本信息");
-            itemViews.add(itemView);
+            itemViews.add(tvCategory);
         }
         for (int n = 0; n < 34; n++) {
             View itemView = inflater.inflate(R.layout.activity_student_info_item_hor, null);
@@ -177,10 +176,9 @@ public class StudentInfoAdapter extends BaseAdapter {
         }
         //高考科目
         {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
-            TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
+            TextView tvCategory = (TextView) inflater.inflate(R.layout.activity_student_info_item_category, null);
             tvCategory.setText("高考科目");
-            itemViews.add(itemView);
+            itemViews.add(tvCategory);
         }
         for (int n = 0; n < cs.getEntranceExams().size(); n++) {
             ClientEntranceExam ee = cs.getEntranceExams().get(n);
@@ -204,10 +202,9 @@ public class StudentInfoAdapter extends BaseAdapter {
         }
         //教育经历
         {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
-            TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
+            TextView tvCategory = (TextView) inflater.inflate(R.layout.activity_student_info_item_category, null);
             tvCategory.setText("教育经历");
-            itemViews.add(itemView);
+            itemViews.add(tvCategory);
         }
         for (int n = 0; n < cs.getEducationExperiences().size(); n++) {
             ClientEducationExperience ee = cs.getEducationExperiences().get(n);
@@ -235,10 +232,9 @@ public class StudentInfoAdapter extends BaseAdapter {
         }
         //家庭信息
         {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_category, null);
-            TextView tvCategory = (TextView) itemView.findViewById(R.id.student_info_item_tv_category);
+            TextView tvCategory = (TextView) inflater.inflate(R.layout.activity_student_info_item_category, null);
             tvCategory.setText("家庭信息");
-            itemViews.add(itemView);
+            itemViews.add(tvCategory);
         }
         for (int n = 0; n < cs.getFamilys().size(); n++) {
             ClientFamily f = cs.getFamilys().get(n);
