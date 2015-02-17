@@ -75,11 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:paddingLeft="20dp"
             android:text="@string/auto_login"
-            android:textSize="@dimen/text_normal_size"
-            android:textColor="@drawable/check_box_text_color"
-            android:button="@drawable/check_box_image"
             android:checked="false" />
 
         <Button
