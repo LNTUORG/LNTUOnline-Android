@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
@@ -61,6 +62,9 @@ public class UnpassCourseActivity extends ActionBarActivity {
                     isUnfold = !isUnfold;
                     listView.setAdapter(new ListViewAdapter(UnpassCourseActivity.this, cucs, !isUnfold));
                     fab.setImageResource(isUnfold ? R.drawable.ic_unfold_less_white_24dp : R.drawable.ic_unfold_more_white_24dp);
+                    if (!isUnfold) {
+                    	Toast.makeText(UnpassCourseActivity.this, "已合并相同科目", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
 
