@@ -17,14 +17,17 @@
     <string name="test_icon">测试图标</string>
 
     <string name="menu">菜单</string>
-    <string name="action_browser">教务在线</string>
-    <string name="action_about">关于应用</string>
+    <string name="action_browser">浏览器访问教务在线</string>
+    <string name="action_about">关于</string>
     <string name="action_update">更新检查</string>
     <string name="action_feddback">意见反馈</string>
-    <string name="action_market">应用评分</string>
+    <string name="action_share">分享给好友</string>
+    <string name="action_market">为应用评分</string>
     <string name="action_more_app">更多应用</string>
-    <string name="action_logout">注销账户</string>
-    <string name="action_exit">退出应用</string>
+    <string name="action_logout">切换/注销账户</string>
+    <string name="action_settings">设置</string>
+    <string name="action_help">帮助</string>
+    <string name="action_exit">退出</string>
 
     <string name="your_suggestion_title">您的意见与建议：</string>
     <string name="your_suggestion_hint">请输入您要反馈的问题，我们将以此为动力不断改进</string>

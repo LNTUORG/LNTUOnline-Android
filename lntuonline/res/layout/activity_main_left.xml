@@ -11,15 +11,67 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <View style="@style/AppTheme.DrawerItemGap" />
 
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_open_in_browser_black_24dp"
+            android:drawableLeft="@drawable/ic_open_in_browser_black_24dp"
+            android:text="@string/action_browser" />
 
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_group_black_24dp"
+            android:drawableLeft="@drawable/ic_group_black_24dp"
+            android:text="@string/action_logout" />
 
+        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.DeepLine" />
+        <View style="@style/AppTheme.DrawerItemGap" />
 
-        
-        
-        
-        
-        
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_grade_black_24dp"
+            android:drawableLeft="@drawable/ic_grade_black_24dp"
+            android:text="@string/action_market" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_comment_black_24dp"
+            android:drawableLeft="@drawable/ic_comment_black_24dp"
+            android:text="@string/action_feddback" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_share_black_24dp"
+            android:drawableLeft="@drawable/ic_share_black_24dp"
+            android:text="@string/action_share" />
+
+        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.DeepLine" />
+        <View style="@style/AppTheme.DrawerItemGap" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_sync_black_24dp"
+            android:drawableLeft="@drawable/ic_sync_black_24dp"
+            android:text="@string/action_update" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_settings_black_24dp"
+            android:drawableLeft="@drawable/ic_settings_black_24dp"
+            android:text="@string/action_settings" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_info_black_24dp"
+            android:drawableLeft="@drawable/ic_info_black_24dp"
+            android:text="@string/action_about" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_help_black_24dp"
+            android:drawableLeft="@drawable/ic_help_black_24dp"
+            android:text="@string/action_help" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:drawableStart="@drawable/ic_exit_to_app_black_24dp"
+            android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
+            android:text="@string/action_exit" />
+
+        <View style="@style/AppTheme.DrawerItemGap" />
 
     </LinearLayout>
 
