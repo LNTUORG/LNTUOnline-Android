@@ -5,20 +5,18 @@ import java.util.List;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -29,29 +27,43 @@ import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkInfo;
 import com.lntu.online.model.ClientUnpassCourse;
 import com.lntu.online.util.JsonUtil;
+import com.melnykov.fab.FloatingActionButton;
 
-public class UnpassCourseActivity extends Activity {
+public class UnpassCourseActivity extends ActionBarActivity {
 
-    private ListView lvRoot;
-    private CheckBox cbMerge;
+    private Toolbar toolbar;
+
+    private ListView listView;
     private List<ClientUnpassCourse> cucs;
+
+    private FloatingActionButton fab;
+    private boolean isUnfold = true; 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unpass_course);
-        lvRoot = (ListView) findViewById(R.id.unpass_course_lv_root);
-        cbMerge = (CheckBox) findViewById(R.id.unpass_course_cb_merge);
-        cbMerge.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+
+        listView = (ListView) findViewById(R.id.unpass_course_lv_root);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.attachToListView(listView);
+        fab.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onCheckedChanged(CompoundButton button, boolean isChecked) {
+            public void onClick(View v) {
                 if (cucs != null) {
-                    lvRoot.setAdapter(new ListViewAdapter(UnpassCourseActivity.this, cucs, isChecked));
+                    isUnfold = !isUnfold;
+                    listView.setAdapter(new ListViewAdapter(UnpassCourseActivity.this, cucs, !isUnfold));
                 }
             }
 
         });
+
         startNetwork();
     }
 
@@ -62,7 +74,7 @@ public class UnpassCourseActivity extends Activity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
                     cucs = JsonUtil.fromJson(responseString, new TypeToken<List<ClientUnpassCourse>>(){}.getType());
-                    lvRoot.setAdapter(new ListViewAdapter(getContext(), cucs, false));
+                    listView.setAdapter(new ListViewAdapter(getContext(), cucs, false));
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
                     if (msgs[0].equals("0x01050003")) { //没信息

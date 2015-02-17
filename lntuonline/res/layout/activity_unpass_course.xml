@@ -1,49 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- ActionBar -->
-    <FrameLayout style="@style/BlueFlor.ActionBar">
+    <include layout="@layout/activity_action_bar" />
 
-        <TextView style="@style/BlueFlor.ActionBarIcon"
-            android:drawableLeft="@drawable/abc_ic_ab_back_mtrl_am_alpha"
-            android:layout_gravity="left"
-            android:onClick="onActionBarBtnLeft" />
-
-        <TextView style="@style/BlueFlor.ActionBarTitle"
-            android:text="@string/unpass_query" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="right"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="@string/merge_the_same"
-                android:textColor="#FFFFFF" />
-
-            <CheckBox 
-                android:id="@+id/unpass_course_cb_merge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:button="@drawable/check_box_image" />
-
-        </LinearLayout>
-
-    </FrameLayout><!-- End With ActionBar -->
-
-    <ListView
-        android:id="@+id/unpass_course_lv_root"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" />
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/unpass_course_lv_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" />
+
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_refresh_white_24dp"
+            fab:fab_colorNormal="@color/fab_accent"
+            fab:fab_colorPressed="@color/fab_accent_pressed"
+            fab:fab_colorRipple="@color/fab_ripple" />
+
+    </FrameLayout>
 
 </LinearLayout>
