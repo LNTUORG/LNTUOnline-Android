@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:text="@string/course_sample"
             android:textColor="?attr/android:textColorPrimary"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:gravity="start|center_vertical" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
             android:drawablePadding="14dp"
             android:text="@string/date_sample"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:gravity="start|center_vertical" />
 
         <TextView
@@ -44,7 +44,7 @@
             android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
             android:drawablePadding="14dp"
             android:text="@string/location_sample"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:gravity="start|center_vertical" />
 
     </LinearLayout>
@@ -89,7 +89,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:text="@string/have_left"
-                    android:textSize="16sp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/exam_plan_item_tv_day_left"
@@ -99,7 +99,7 @@
                     android:layout_marginRight="4dp"
                     android:text="@string/_100"
                     android:textColor="#FF0000"
-                    android:textSize="38sp" />
+                    android:textSize="34sp" />
 
             </LinearLayout>
 
@@ -108,7 +108,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:text="@string/day"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:gravity="bottom" />
 
         </LinearLayout>
