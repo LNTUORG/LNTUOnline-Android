@@ -13,8 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -60,53 +59,53 @@ public class MainActivity extends ActionBarActivity {
         checkUpdateBackground();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-        case R.id.action_main_browser: {
+    public void onDrawerItemSelected(View view) {
+        switch (view.getId()) {
+        case R.id.action_browser: {
             Uri uri = Uri.parse("http://60.18.131.131:11180/academic/index.html");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
-            return true;
+            break;
         }
-        case R.id.action_main_about:
-            startActivity(new Intent(this, AboutActivity.class));
-            return true;
-        case R.id.action_main_update:
-            checkUpdate();
-            return true;
-        case R.id.action_main_feedback:
-            startActivity(new Intent(this, AdviceActivity.class));
-            return true;
-        case R.id.action_main_market: {
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("market://details?id=" + getPackageName()));
+        case R.id.action_logout:
+            showLogoutDialog();
+            break;
+        case R.id.action_market: {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("market://details?id=" + getPackageName()));
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                intent.setData(Uri.parse("http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF"));
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
                 } else {
-                    intent.setData(Uri.parse("http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF"));
-                    if (intent.resolveActivity(getPackageManager()) != null) {
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(this, "您的手机没有安装应用商店程序", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(this, "您的手机没有安装应用商店程序", Toast.LENGTH_SHORT).show();
                 }
             }
-            return true;
-        case R.id.action_main_logout:
-            showLogoutDialog();
-            return true;
-        case R.id.action_main_exit:
+            break;
+        }
+        case R.id.action_feedback:
+            startActivity(new Intent(this, AdviceActivity.class));
+            break;
+        case R.id.action_share:
+            // TODO
+            break;
+        case R.id.action_update:
+            checkUpdate();
+            break;
+        case R.id.action_settings:
+            // TODO
+            break;
+        case R.id.action_about:
+            startActivity(new Intent(this, AboutActivity.class));
+            break;
+        case R.id.action_help:
+            // TODO
+            break;
+        case R.id.action_exit:
             showExitDialog();
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
+            break;
         }
     }
 
