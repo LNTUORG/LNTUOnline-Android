@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -65,6 +66,17 @@ public class UnpassCourseActivity extends ActionBarActivity {
         });
 
         startNetwork();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+        }
     }
 
     private void startNetwork() {
@@ -123,7 +135,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
         .setMessage("暂时没有挂科信息，暂时")
         .setCancelable(false)
         .setPositiveButton("确定", new OnClickListener() {
-            
+
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
@@ -220,10 +232,6 @@ public class UnpassCourseActivity extends ActionBarActivity {
             return itemViews.get(position);
         }
 
-    }
-
-    public void onActionBarBtnLeft(View view) {
-        finish();
     }
 
 }
