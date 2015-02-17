@@ -30,7 +30,7 @@
             android:layout_marginTop="8dp"
             android:drawableStart="@drawable/ic_schedule_grey600_18dp"
             android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-            android:drawablePadding="14dp"
+            android:drawablePadding="16dp"
             android:text="@string/date_sample"
             android:textSize="14sp"
             android:gravity="start|center_vertical" />
@@ -42,7 +42,7 @@
             android:layout_marginTop="8dp"
             android:drawableStart="@drawable/ic_location_on_grey600_18dp"
             android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
-            android:drawablePadding="14dp"
+            android:drawablePadding="16dp"
             android:text="@string/location_sample"
             android:textSize="14sp"
             android:gravity="start|center_vertical" />
