@@ -23,7 +23,7 @@
                 android:layout_margin="5dp"
                 android:text="@string/your_suggestion_title"
                 android:textColor="#FF000000"
-                android:textSize="@dimen/text_normal_size" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/feedback_edt_info"
@@ -34,7 +34,7 @@
                 android:hint="@string/your_suggestion_hint"
                 android:inputType="textMultiLine"
                 android:gravity="start"
-                android:textSize="@dimen/text_normal_size"
+                android:textSize="16sp"
                 android:maxLength="500"
                 android:minLines="4"
                 android:background="@drawable/edit_text_normal" />
@@ -45,7 +45,7 @@
                 android:layout_margin="5dp"
                 android:text="@string/your_contact_title"
                 android:textColor="#FF000000"
-                android:textSize="@dimen/text_normal_size" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/feedback_edt_contact"
@@ -55,7 +55,7 @@
                 android:padding="5dp"
                 android:hint="@string/your_contact_hint"
                 android:inputType="textMultiLine"
-                android:textSize="@dimen/text_normal_size"
+                android:textSize="16sp"
                 android:maxLength="100"
                 android:background="@drawable/edit_text_normal" />
 

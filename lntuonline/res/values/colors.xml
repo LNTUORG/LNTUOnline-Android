@@ -6,16 +6,15 @@
     <color name="textColorPrimary">@android:color/white</color>
     <color name="windowBackground">@android:color/white</color>
 
-    <color name="fab_ripple">#ff80ab</color>
-    <color name="fab_accent">#ff4081</color>
-    <color name="fab_accent_pressed">#f50057</color>
+    <color name="fab_ripple">#FF5252</color>
+    <color name="fab_accent">#F44336</color>
+    <color name="fab_accent_pressed">#D32F2F</color>
+
+
 
 
 
     <color name="button_text_color">#FFFFFFFF</color>
-
-    <color name="spinner_text_normal">#FF666666</color>
-    <color name="spinner_text_disabled">#FF000000</color>
 
     <color name="curriculum_title_1">#22111111</color>
     <color name="curriculum_title_2">#11111111</color>

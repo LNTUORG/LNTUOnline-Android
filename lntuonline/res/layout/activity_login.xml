@@ -26,7 +26,7 @@
                 android:paddingLeft="70sp"
                 android:layout_centerVertical="true"
                 android:hint="@string/user_id_input_hint"
-                android:textSize="@dimen/text_normal_size"
+                android:textSize="16sp"
                 android:inputType="number"
                 android:maxLength="20"
                 android:background="@drawable/edit_text_normal" />
@@ -37,7 +37,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10sp"
                 android:text="@string/user_id_input_title"
-                android:textSize="@dimen/text_normal_size"
+                android:textSize="16sp"
                 android:textColor="#FF333333" />
 
         </RelativeLayout>
@@ -54,7 +54,7 @@
                 android:paddingLeft="70sp"
                 android:layout_centerVertical="true"
                 android:hint="@string/pwd_input_hint"
-                android:textSize="@dimen/text_normal_size"
+                android:textSize="16sp"
                 android:inputType="textPassword"
                 android:maxLength="20" 
                 android:background="@drawable/edit_text_normal" />
@@ -65,7 +65,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10sp"
                 android:text="@string/pwd_input_title"
-                android:textSize="@dimen/text_normal_size"
+                android:textSize="16sp"
                 android:textColor="#FF333333" />
 
         </RelativeLayout>
