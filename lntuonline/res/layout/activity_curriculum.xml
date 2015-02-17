@@ -4,24 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- ActionBar -->
-    <FrameLayout style="@style/BlueFlor.ActionBar">
-
-        <TextView style="@style/BlueFlor.ActionBarIcon"
-            android:drawableLeft="@drawable/abc_ic_ab_back_mtrl_am_alpha"
-            android:layout_gravity="left"
-            android:onClick="onActionBarBtnLeft" />
-
-        <TextView style="@style/BlueFlor.ActionBarTitle"
-            android:id="@+id/actionbar_title"
-            android:text="@string/curriculum" />
-
-        <TextView style="@style/BlueFlor.ActionBarIcon"
-            android:drawableRight="@drawable/action_bar_icon_refresh"
-            android:layout_gravity="right"
-            android:onClick="onActionBarIconRefresh" />
-
-    </FrameLayout><!-- End With ActionBar -->
+    <include layout="@layout/activity_action_bar" />
 
     <android.support.v4.view.ViewPager 
         android:id="@+id/curriculum_vp_root"

@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -13,8 +12,12 @@ import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.format.Time;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -30,7 +33,9 @@ import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.ClientCurriculum;
 import com.lntu.online.util.Des3Util;
 
-public class CurriculumActivity extends Activity {
+public class CurriculumActivity extends ActionBarActivity {
+
+    private Toolbar toolbar;
 
     private static final String[] weekdayNames = {
         "周六", "周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日", "周一", "周二"
@@ -44,13 +49,18 @@ public class CurriculumActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curriculum);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+
         //定义时间控件
         time = new Time();
         time.setToNow();
         strTime = time.year + "-" + (time.month + 1) + "-" + time.monthDay + " （" + weekdayNames[(time.weekDay == 0 ? 7 : time.weekDay) + 1] + "）";
         //ActionBar显示日期
-        TextView tvActionBar = (TextView) findViewById(R.id.actionbar_title);
-        tvActionBar.setText(strTime);
+        getSupportActionBar().setTitle(strTime);
         //ViewPager
         vpRoot = (ViewPager) findViewById(R.id.curriculum_vp_root);
         vpRoot.setOnPageChangeListener(new ViewPagerPageChangeListener());
@@ -63,6 +73,26 @@ public class CurriculumActivity extends Activity {
             Toast.makeText(this, "上次更新时间为：" + sp.getString("update_time", "未知"), Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             startNetwork();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.curriculum, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+        case android.R.id.home:
+            finish();
+            return true;
+        case R.id.action_refresh:
+            updateNetwork();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
         }
     }
 
@@ -117,10 +147,6 @@ public class CurriculumActivity extends Activity {
             }
 
         });
-    }
-
-    public void onActionBarIconRefresh(View view) {
-        updateNetwork();
     }
 
     private class ViewPagerAdapter extends PagerAdapter {
@@ -222,10 +248,6 @@ public class CurriculumActivity extends Activity {
         public void onPageSelected(int position) {
         }
 
-    }
-
-    public void onActionBarBtnLeft(View view) {
-        finish();
     }
 
 }
