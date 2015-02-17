@@ -2,99 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
+    android:padding="16dp"
     android:orientation="vertical"
-    android:background="#FFFFFFFF">
+    android:background="#FFFFFF">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/one_key_item_tv_teacher"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
+        android:drawableStart="@drawable/ic_person_grey600_18dp"
+        android:drawableLeft="@drawable/ic_person_grey600_18dp"
+        android:drawablePadding="22dp"
+        android:text="@string/name_content_test"
+        android:textSize="14sp"
+        android:gravity="start|center_vertical" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:text="@string/teacher"
-            android:textSize="18sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
-
-        <TextView
-            android:id="@+id/one_key_item_tv_teacher"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:text="@string/test_text"
-            android:textColor="#FF000000"
-            android:textSize="18sp"
-            android:gravity="right" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/one_key_item_tv_course"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
+        android:layout_marginTop="4dp"
+        android:drawableStart="@drawable/ic_class_grey600_18dp"
+        android:drawableLeft="@drawable/ic_class_grey600_18dp"
+        android:drawablePadding="22dp"
+        android:text="@string/course_sample"
+        android:textSize="14sp"
+        android:gravity="start|center_vertical" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:text="@string/course"
-            android:textSize="18sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
-
-        <TextView
-            android:id="@+id/one_key_item_tv_course"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:text="@string/test_text"
-            android:textColor="#FF000000"
-            android:textSize="18sp"
-            android:gravity="right" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/one_key_item_tv_state"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:paddingRight="10dp"
-            android:text="@string/state"
-            android:textSize="18sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
-
-        <TextView
-            android:id="@+id/one_key_item_tv_state"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:text="@string/test_text"
-            android:textColor="#FF000000"
-            android:textSize="18sp"
-            android:gravity="right" />
-
-    </LinearLayout>
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_local_offer_grey600_24dp"
+        android:drawableLeft="@drawable/ic_local_offer_grey600_24dp"
+        android:drawablePadding="16dp"
+        android:text="@string/test_text"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="24sp" />
 
 </LinearLayout>
