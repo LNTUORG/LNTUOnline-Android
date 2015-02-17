@@ -7,14 +7,15 @@
 
     <include layout="@layout/activity_action_bar" />
 
-    <GridView
-        android:id="@+id/main_grid_view"
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/main_drawer_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"
-        android:verticalSpacing="8dp"
-        android:horizontalSpacing="8dp"
-        android:numColumns="3"
-        android:stretchMode="columnWidth" />
+        android:layout_height="match_parent">
+
+        <include layout="@layout/activity_main_center" />
+
+        <include layout="@layout/activity_main_left" />
+
+    </android.support.v4.widget.DrawerLayout>
 
 </LinearLayout>

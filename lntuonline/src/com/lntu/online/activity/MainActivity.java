@@ -8,7 +8,10 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +32,8 @@ import com.loopj.android.http.TextHttpResponseHandler;
 public class MainActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle drawerToggle;
 
     private GridView gridView;
     private long firstBackKeyTime = 0; //首次返回键按下时间戳
@@ -39,7 +44,13 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        drawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu, R.string.app_name);
+        drawerToggle.syncState();
+        drawerLayout.setDrawerListener(drawerToggle);
+        drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 
         //GridView
         gridView = (GridView) findViewById(R.id.main_grid_view);
@@ -148,7 +159,7 @@ public class MainActivity extends ActionBarActivity {
         .setNegativeButton("取消", null)
         .show();
     }
-    
+
     private void checkUpdate() {
         RequestParams params = new RequestParams();
         params.put("platform", "android");

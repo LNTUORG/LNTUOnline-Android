@@ -7,7 +7,7 @@
     android:gravity="center_horizontal">
 
     <ImageView
-        android:id="@+id/main_gv_item_iv_icon"
+        android:id="@+id/main_center_item_img_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/main_icon_profle"
@@ -15,7 +15,7 @@
         android:contentDescription="@string/test_icon" />
 
     <TextView
-        android:id="@+id/main_gv_item_tv_title"
+        android:id="@+id/main_center_item_tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
