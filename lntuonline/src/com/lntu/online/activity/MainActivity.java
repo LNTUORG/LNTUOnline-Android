@@ -28,6 +28,7 @@ import com.lntu.online.info.NetworkInfo;
 import com.lntu.online.model.ClientVersion;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
+import com.xiaomi.market.sdk.XiaomiUpdateAgent;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -61,8 +62,10 @@ public class MainActivity extends ActionBarActivity {
         gridView = (GridView) findViewById(R.id.main_grid_view);
         gridView.setAdapter(new MainAdapter(this));
         gridView.setOnItemClickListener(new MainItemClickListener());
+        
         //checkUpdate
         checkUpdateBackground();
+        XiaomiUpdateAgent.update(this);
     }
 
     public void onDrawerItemSelected(View view) {
