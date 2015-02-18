@@ -1,7 +1,5 @@
 package com.lntu.online.activity;
 
-import org.apache.http.Header;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -21,13 +19,7 @@ import android.widget.Toast;
 import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
 import com.lntu.online.adapter.MainItemClickListener;
-import com.lntu.online.http.HttpUtil;
-import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.AppInfo;
-import com.lntu.online.info.NetworkInfo;
-import com.lntu.online.model.ClientVersion;
-import com.loopj.android.http.RequestParams;
-import com.loopj.android.http.TextHttpResponseHandler;
 import com.xiaomi.market.sdk.XiaomiUpdateAgent;
 
 public class MainActivity extends ActionBarActivity {
@@ -64,7 +56,6 @@ public class MainActivity extends ActionBarActivity {
         gridView.setOnItemClickListener(new MainItemClickListener());
         
         //checkUpdate
-        checkUpdateBackground();
         XiaomiUpdateAgent.update(this);
     }
 
@@ -107,7 +98,7 @@ public class MainActivity extends ActionBarActivity {
             break;
         }
         case R.id.action_update:
-            checkUpdate();
+            XiaomiUpdateAgent.update(this);
             break;
         case R.id.action_settings:
             // TODO
@@ -171,105 +162,6 @@ public class MainActivity extends ActionBarActivity {
             }
         })
         .setNegativeButton("取消", null)
-        .show();
-    }
-
-    private void checkUpdate() {
-        RequestParams params = new RequestParams();
-        params.put("platform", "android");
-        HttpUtil.post(this, NetworkInfo.serverUrl + "version/stable", params, new NormalAuthListener(this) {
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, String responseString) {       
-                try {
-                    ClientVersion cv = ClientVersion.dao.fromJson(responseString);
-                    if (cv.getBuild() > AppInfo.getVersionCode()) { //有更新
-                        showUpdateDialog(cv);
-                    } else { //无更新
-                        showNoUpdateDialog();
-                    }
-                } catch(Exception e) {
-                    String[] msgs = responseString.split("\n");
-                    showErrorDialog("提示", msgs[0], msgs[1]);
-                }
-            }
-
-        });
-    }
-
-    private void checkUpdateBackground() {
-        RequestParams params = new RequestParams();
-        params.put("platform", "android");
-        HttpUtil.baseGet(this, NetworkInfo.serverUrl + "version/stable", params, new TextHttpResponseHandler() {
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, String responseString) {       
-                try {
-                    ClientVersion cv = ClientVersion.dao.fromJson(responseString);
-                    if (cv.getBuild() > AppInfo.getVersionCode()) { //有更新
-                        if (cv.isForced()) { //强制更新
-                            showForcedUpdateDialog(cv);
-                        } else { //非强制更新
-                            showUpdateDialog(cv);
-                        }
-                    }
-                } catch(Exception e) {
-                    //后台更新检查不提示错误
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-                //错误不处理
-            }
-
-        });
-    }
-
-    public void showUpdateDialog(final ClientVersion cv) {
-        new AlertDialog.Builder(this)
-        .setTitle("更新提示")
-        .setMessage("有新版本：" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
-        .setPositiveButton("下载", new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Uri uri = Uri.parse(cv.getPublishUrl());
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
-        })
-        .setNegativeButton("忽略", null)
-        .show();
-    }
-
-    public void showForcedUpdateDialog(final ClientVersion cv) {
-        new AlertDialog.Builder(this)
-        .setTitle("更新提示")
-        .setMessage("有新版本：" + cv.getName() + "\n更新日志：\n" + cv.getMessage())
-        .setPositiveButton("下载", new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Uri uri = Uri.parse(cv.getPublishUrl());
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-                finish();
-            }
-        })
-        .setNegativeButton("退出", new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        })
-        .setCancelable(false)
-        .show();
-    }
-
-    public void showNoUpdateDialog() {
-        new AlertDialog.Builder(this)
-        .setTitle("提示")
-        .setMessage("当前已是最新版本")
-        .setPositiveButton("确定", null)
         .show();
     }
 
