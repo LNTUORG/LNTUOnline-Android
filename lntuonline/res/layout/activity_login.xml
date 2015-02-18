@@ -7,87 +7,45 @@
 
     <include layout="@layout/activity_action_bar" />
 
-    <!-- Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="5dp"
+        android:padding="16dp"
         android:orientation="vertical">
 
-       <RelativeLayout
+        <EditText
+            android:id="@+id/login_edt_user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
+            android:hint="@string/user_id_input_hint"
+            android:inputType="number"
+            android:maxLength="10" />
 
-            <EditText
-                android:id="@+id/login_edt_user_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="70sp"
-                android:layout_centerVertical="true"
-                android:hint="@string/user_id_input_hint"
-                android:textSize="16sp"
-                android:inputType="number"
-                android:maxLength="20"
-                android:background="@drawable/edit_text_normal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10sp"
-                android:text="@string/user_id_input_title"
-                android:textSize="16sp"
-                android:textColor="#FF333333" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
+        <EditText
+            android:id="@+id/login_edt_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp">
-
-            <EditText
-                android:id="@+id/login_edt_pwd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="70sp"
-                android:layout_centerVertical="true"
-                android:hint="@string/pwd_input_hint"
-                android:textSize="16sp"
-                android:inputType="textPassword"
-                android:maxLength="20" 
-                android:background="@drawable/edit_text_normal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10sp"
-                android:text="@string/pwd_input_title"
-                android:textSize="16sp"
-                android:textColor="#FF333333" />
-
-        </RelativeLayout>
+            android:layout_marginTop="16dp"
+            android:hint="@string/pwd_input_hint"
+            android:inputType="textPassword" />
 
         <CheckBox
             android:id="@+id/login_cb_auto_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginTop="16dp"
             android:text="@string/auto_login"
             android:checked="false" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginTop="16dp"
             android:text="@string/login"
-            android:textSize="@dimen/button_text_size"
             android:textColor="@color/button_text_color"
             android:background="@drawable/button_image"
             android:onClick="onBtnLogin" />
 
-    </LinearLayout><!-- End With Content -->
+    </LinearLayout>
 
 </LinearLayout>

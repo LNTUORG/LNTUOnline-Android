@@ -39,10 +39,8 @@
 
     <string name="eva_info">评课信息</string>
 
-    <string name="user_id_input_title">学号：</string>
-    <string name="pwd_input_title">密码：</string>
-    <string name="user_id_input_hint">请输入学号</string>
-    <string name="pwd_input_hint">请输入密码</string>
+    <string name="user_id_input_hint">学号：</string>
+    <string name="pwd_input_hint">密码：</string>
     <string name="auto_login">自动登录</string>
     <string name="login">登录</string>
 

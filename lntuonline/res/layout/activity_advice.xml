@@ -14,61 +14,50 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
+            android:padding="16dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
                 android:text="@string/your_suggestion_title"
-                android:textColor="#FF000000"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/feedback_edt_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:padding="5dp"
+                android:layout_marginTop="8dp"
                 android:hint="@string/your_suggestion_hint"
                 android:inputType="textMultiLine"
                 android:gravity="start"
-                android:textSize="16sp"
                 android:maxLength="500"
-                android:minLines="4"
-                android:background="@drawable/edit_text_normal" />
+                android:minLines="4" />
 
-            <TextView 
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/your_contact_title"
-                android:textColor="#FF000000"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/feedback_edt_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:padding="5dp"
+                android:layout_marginTop="8dp"
                 android:hint="@string/your_contact_hint"
                 android:inputType="textMultiLine"
-                android:textSize="16sp"
-                android:maxLength="100"
-                android:background="@drawable/edit_text_normal" />
+                android:maxLength="100" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/submit"
                 android:textColor="@color/button_text_color"
-                android:textSize="@dimen/button_text_size"
                 android:background="@drawable/button_image"
                 android:onClick="onBtnSubmit" />
 

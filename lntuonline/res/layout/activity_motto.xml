@@ -17,16 +17,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="4dp"
+        android:padding="8dp"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="4dp"
+            android:layout_margin="8dp"
             android:text="@string/male_voice"
-            android:textSize="@dimen/button_text_size"
             android:textColor="@color/button_text_color"
             android:background="@drawable/button_image"
             android:onClick="onBtnMaleVoice" />
@@ -35,9 +34,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_margin="4dp"
+            android:layout_margin="8dp"
             android:text="@string/female_voice"
-            android:textSize="@dimen/button_text_size"
             android:textColor="@color/button_text_color"
             android:background="@drawable/button_image"
             android:onClick="onBtnFemaleVoice" />
