@@ -68,7 +68,6 @@
                 android:layout_gravity="end|center_vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="v1.5.0"
                 android:textSize="16sp" />
 
         </FrameLayout>
