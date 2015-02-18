@@ -15,6 +15,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lntu.online.R;
@@ -34,6 +35,8 @@ public class MainActivity extends ActionBarActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawerToggle;
 
+    private TextView tvVersion;
+
     private GridView gridView;
     private long firstBackKeyTime = 0; //首次返回键按下时间戳
 
@@ -50,6 +53,9 @@ public class MainActivity extends ActionBarActivity {
         drawerToggle.syncState();
         drawerLayout.setDrawerListener(drawerToggle);
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
+
+        tvVersion = (TextView) findViewById(R.id.main_left_tv_version);
+        tvVersion.setText("v" + AppInfo.getVersionName());
 
         //GridView
         gridView = (GridView) findViewById(R.id.main_grid_view);
