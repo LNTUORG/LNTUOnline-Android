@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <include layout="@layout/activity_action_bar"
-        android:id="@+id/toolbar" />
+    <include layout="@layout/activity_action_bar" />
 
-    <ListView
-        android:id="@+id/one_key_lv_root"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:layout_above="@+id/one_key_btn_start" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/one_key_btn_start"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_alignParentBottom="true"
-        android:text="@string/one_key"
-        android:textSize="@dimen/button_text_size"
-        android:textColor="@color/button_text_color"
-        android:background="@drawable/button_image"
-        android:onClick="onBtnStart" />
+        <ListView
+            android:id="@+id/one_key_lv_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-</RelativeLayout>
+        <com.melnykov.fab.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_done_all_white_24dp"
+            android:onClick="onBtnStart"
+            fab:fab_colorNormal="@color/fab_accent"
+            fab:fab_colorPressed="@color/fab_accent_pressed"
+            fab:fab_colorRipple="@color/fab_ripple" />
+
+    </FrameLayout>
+
+</LinearLayout>

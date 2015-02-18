@@ -5,11 +5,10 @@ import java.util.List;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -32,11 +31,13 @@ import com.lntu.online.info.NetworkInfo;
 import com.lntu.online.model.ClientEvaInfo;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
+import com.melnykov.fab.FloatingActionButton;
 
 public class OneKeyActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
 
+    private FloatingActionButton fab;
     private ListView lvRoot;
     private List<View> itemViews;
     private OneKeyAdapter adapter;
@@ -53,6 +54,9 @@ public class OneKeyActivity extends ActionBarActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
 
         lvRoot = (ListView) findViewById(R.id.one_key_lv_root);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.attachToListView(lvRoot);
+
         itemViews = new ArrayList<View>();
         adapter = new OneKeyAdapter(itemViews);
         lvRoot.setAdapter(adapter);
@@ -77,6 +81,15 @@ public class OneKeyActivity extends ActionBarActivity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
                     evaInfos = JsonUtil.fromJson(responseString, new TypeToken<List<ClientEvaInfo>>(){}.getType());
+
+                    // TODO 测试代码
+                    /*
+                    for (ClientEvaInfo info : evaInfos) {
+                        info.setState("未评估");
+                        info.setUrl("http://takwolf.com");
+                    }
+                    */
+
                     updateListView(evaInfos);
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
@@ -192,7 +205,7 @@ public class OneKeyActivity extends ActionBarActivity {
             } else { //需要评价
                 RequestParams params = new RequestParams();
                 params.put("url", evaInfo.getUrl());
-                HttpUtil.post(this, NetworkInfo.serverUrl + "oneKey/evaluateOne", params, new NormalAuthListener(this, "正在评价：" + evaInfo.getCourse()) {
+                HttpUtil.post(this, NetworkInfo.serverUrl + "oneKey/evaluateOne", params, new NormalAuthListener(this, "正在评价：\n" + evaInfo.getCourse()) {
 
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, String responseString) {
@@ -220,19 +233,16 @@ public class OneKeyActivity extends ActionBarActivity {
     }
 
     private void youAreGood() {
-        //这里开始执行一个应用市场跳转逻辑，默认this为Context上下文对象
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("market://details?id=" + getPackageName())); //跳转到应用市场，非Google Play市场一般情况也实现了这个接口
-        //存在手机里没安装应用市场的情况，跳转会包异常，做一个接收判断
-        if (intent.resolveActivity(getPackageManager()) != null) { //可以接收
+        intent.setData(Uri.parse("market://details?id=" + getPackageName()));
+        if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
-        } else { //没有应用市场，我们通过浏览器跳转到Google Play
+        } else {
             intent.setData(Uri.parse("http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF"));
-            //这里存在一个极端情况就是有些用户浏览器也没有，在判断一次
-            if (intent.resolveActivity(getPackageManager()) != null) { //有浏览器
+            if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
-            } else { //天哪，这还是智能手机吗？
-                Toast.makeText(this, "您没应用市场，也没浏览器，开发者给您跪了...", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "您的手机没有安装应用商店程序", Toast.LENGTH_SHORT).show();
             }
         }
     }
