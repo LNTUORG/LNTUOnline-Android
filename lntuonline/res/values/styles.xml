@@ -18,6 +18,12 @@
         <item name="android:background">#CCCCCC</item>
     </style>
 
+    <!-- Gap -->
+    <style name="AppTheme.ItemGap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">8dp</item>
+    </style>
+
     <!-- Drawer Item -->
     <style name="AppTheme.DrawerItem">
         <item name="android:layout_width">match_parent</item>
@@ -31,11 +37,6 @@
         <item name="android:background">?android:attr/selectableItemBackground</item>
         <item name="android:clickable">true</item>
         <item name="android:onClick">onDrawerItemSelected</item>
-    </style>
-
-    <style name="AppTheme.DrawerItemGap">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">8dp</item>
     </style>
 
 </resources>

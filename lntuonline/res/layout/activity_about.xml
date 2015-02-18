@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/activity_action_bar" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,82 +25,63 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/logo"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:src="@drawable/logo_2"
                 android:scaleType="fitCenter"
-                android:contentDescription="@string/app_name" />
+                android:contentDescription="@string/app_name"
+                android:background="@color/colorPrimary"
+                android:elevation="2dp" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/version_name"
-                android:textSize="18sp"
-                android:textColor="#FF000000"
-                android:gravity="center"/>
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:background="#FFFFFF">
 
-            <TextView
-                android:id="@+id/about_tv_version_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="6dp"
-                android:text="@string/version_name_content"
-                android:textSize="16sp"
-                android:textColor="#99000000"
-                android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/version_name"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="12dp"
-                android:text="@string/development_team"
-                android:textSize="18sp"
-                android:textColor="#FF000000"
-                android:gravity="center"/>
+                <TextView
+                    android:id="@+id/about_tv_version_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/version_name_content"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="6dp"
-                android:text="@string/development_team_content"
-                android:textSize="16sp"
-                android:textColor="#99000000"
-                android:gravity="center"/>
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="12dp"
-                android:text="@string/author_email"
-                android:textSize="18sp"
-                android:textColor="#FF000000"
-                android:gravity="center"/>
+            <View style="@style/AppTheme.DeepLine" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="6dp"
-                android:text="@string/author_email_content"
-                android:textSize="16sp"
-                android:textColor="#99000000"
-                android:gravity="center"/>
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:background="#FFFFFF">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="12dp"
-                android:text="@string/official_homepage"
-                android:textSize="18sp"
-                android:textColor="#FF000000"
-                android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/official_homepage"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="12dp"
-                android:padding="6dp"
-                android:text="@string/official_homepage_content"
-                android:textSize="16sp"
-                android:autoLink="web"
-                android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/official_homepage_content"
+                    android:textSize="14sp"
+                    android:autoLink="web" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

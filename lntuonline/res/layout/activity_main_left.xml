@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.ItemGap" />
 
         <TextView style="@style/AppTheme.DrawerItem"
             android:id="@+id/action_browser"
@@ -25,9 +25,9 @@
             android:drawableLeft="@drawable/ic_group_black_24dp"
             android:text="@string/action_logout" />
 
-        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.ItemGap" />
         <View style="@style/AppTheme.DeepLine" />
-        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.ItemGap" />
 
         <TextView style="@style/AppTheme.DrawerItem"
             android:id="@+id/action_market"
@@ -47,9 +47,9 @@
             android:drawableLeft="@drawable/ic_share_black_24dp"
             android:text="@string/action_share" />
 
-        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.ItemGap" />
         <View style="@style/AppTheme.DeepLine" />
-        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.ItemGap" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -68,6 +68,7 @@
                 android:layout_gravity="end|center_vertical"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:text="@string/version_name_content"
                 android:textSize="16sp" />
 
         </FrameLayout>
@@ -96,7 +97,7 @@
             android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
             android:text="@string/action_exit" />
 
-        <View style="@style/AppTheme.DrawerItemGap" />
+        <View style="@style/AppTheme.ItemGap" />
 
     </LinearLayout>
 
