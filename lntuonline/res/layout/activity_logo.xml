@@ -3,6 +3,7 @@
     android:id="@+id/logo_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="40dp"
     android:src="@drawable/logo"
     android:scaleType="fitStart"
     android:contentDescription="@string/app_name"
