@@ -6,9 +6,16 @@
 
     <include layout="@layout/activity_action_bar" />
 
-    <ListView
-        android:id="@+id/student_info_lv_root"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/student_info_layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
 
 </LinearLayout>
