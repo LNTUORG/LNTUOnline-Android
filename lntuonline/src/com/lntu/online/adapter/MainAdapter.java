@@ -62,9 +62,7 @@ public class MainAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_main_center_item, parent, false);
-            holder = new ViewHolder();
-            holder.imgIcon  = (ImageView) convertView.findViewById(R.id.main_center_item_img_icon);
-            holder.tvTitle = (TextView) convertView.findViewById(R.id.main_center_item_tv_title);
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -76,8 +74,13 @@ public class MainAdapter extends BaseAdapter {
 
     private static class ViewHolder {
 
-        ImageView imgIcon;
-        TextView tvTitle;
+        public final ImageView imgIcon;
+        public final TextView tvTitle;
+
+        public ViewHolder(View convertView) {
+            imgIcon  = (ImageView) convertView.findViewById(R.id.main_center_item_img_icon);
+            tvTitle = (TextView) convertView.findViewById(R.id.main_center_item_tv_title);
+        }
 
     }
 

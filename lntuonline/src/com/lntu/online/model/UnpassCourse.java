@@ -6,10 +6,8 @@ public class UnpassCourse extends Model<UnpassCourse> {
 
     private String num; //课程号
     private String name; //课程名
-    private int index; //课序号
     private String score; //分数
     private float credit; //学分
-    private float creditPoint; //学分绩点
     private String selectType; //选课类型
     private String remarks; //备注
     private String examType; //考试类型
@@ -31,14 +29,6 @@ public class UnpassCourse extends Model<UnpassCourse> {
         this.name = name;
     }
 
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
-    }
-
     public String getScore() {
         return score;
     }
@@ -53,14 +43,6 @@ public class UnpassCourse extends Model<UnpassCourse> {
 
     public void setCredit(float credit) {
         this.credit = credit;
-    }
-
-    public float getCreditPoint() {
-        return creditPoint;
-    }
-
-    public void setCreditPoint(float creditPoint) {
-        this.creditPoint = creditPoint;
     }
 
     public String getRemarks() {

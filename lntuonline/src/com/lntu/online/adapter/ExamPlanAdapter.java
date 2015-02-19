@@ -45,13 +45,7 @@ public class ExamPlanAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_exam_plan_item, parent, false);
-            holder = new ViewHolder();
-            holder.tvCourse = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_course);
-            holder.tvTime = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_time);
-            holder.tvLocation = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_location);
-            holder.iconCountdown = convertView.findViewById(R.id.exam_plan_item_icon_countdown);
-            holder.iconFinish = convertView.findViewById(R.id.exam_plan_item_icon_finish);
-            holder.tvDayLeft = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_day_left);
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -84,12 +78,21 @@ public class ExamPlanAdapter extends BaseAdapter {
 
     private static class ViewHolder {
 
-        TextView tvCourse;
-        TextView tvTime;
-        TextView tvLocation;
-        View iconFinish;
-        View iconCountdown;
-        TextView tvDayLeft;
+        public final TextView tvCourse;
+        public final TextView tvTime;
+        public final TextView tvLocation;
+        public final View iconFinish;
+        public final View iconCountdown;
+        public final TextView tvDayLeft;
+
+        public ViewHolder(View convertView) {
+            tvCourse = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_course);
+            tvTime = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_time);
+            tvLocation = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_location);
+            iconCountdown = convertView.findViewById(R.id.exam_plan_item_icon_countdown);
+            iconFinish = convertView.findViewById(R.id.exam_plan_item_icon_finish);
+            tvDayLeft = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_day_left);
+        }
 
     }
 

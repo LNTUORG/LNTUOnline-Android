@@ -51,7 +51,6 @@ public class CourseScoreAdapter extends BaseAdapter {
         CourseScore score = scoreList.get(position);
         holder.tvNum.setText(score.getNum() + "");
         holder.tvName.setText(score.getName() + "");
-        holder.tvIndex.setText(score.getIndex() + "");
         holder.tvScore.setText(score.getScore() + "");
         holder.tvCredit.setText(score.getCredit() + "");
         holder.tvTestMode.setText(score.getTestMode() + "");
@@ -70,7 +69,6 @@ public class CourseScoreAdapter extends BaseAdapter {
 
         public final TextView tvNum;
         public final TextView tvName;
-        public final TextView tvIndex;
         public final TextView tvScore;
         public final TextView tvCredit;
         public final TextView tvTestMode;
@@ -83,7 +81,6 @@ public class CourseScoreAdapter extends BaseAdapter {
         public ViewHolder(View convertView) {
             tvNum = (TextView) convertView.findViewById(R.id.course_score_item_tv_num);
             tvName = (TextView) convertView.findViewById(R.id.course_score_item_tv_name);
-            tvIndex = (TextView) convertView.findViewById(R.id.course_score_item_tv_index);
             tvScore = (TextView) convertView.findViewById(R.id.course_score_item_tv_score);
             tvCredit = (TextView) convertView.findViewById(R.id.course_score_item_tv_credit);
             tvTestMode = (TextView) convertView.findViewById(R.id.course_score_item_tv_test_mode);

@@ -9,79 +9,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="top|end"
+        android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
-        android:src="@drawable/icon_very_good" />
+        android:src="@drawable/icon_very_good"
+        android:contentDescription="@string/course" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/course_score_item_tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:orientation="horizontal">
+            android:text="@string/course_name_content"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="15dp"
-                android:paddingRight="5dp"
-                android:text="@string/course_name"
-                android:textSize="16sp"
-                android:textColor="#FF555555"
-                android:gravity="left" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:paddingLeft="5dp"
-                android:paddingRight="10dp"
-                android:text="@string/course_name_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
-                android:gravity="left" />
-
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/course_score_item_tv_num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingLeft="15dp"
-                android:paddingRight="5dp"
-                android:text="@string/course_num"
-                android:textSize="16sp"
-                android:textColor="#FF555555"
-                android:gravity="left" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_num"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:paddingLeft="5dp"
-                android:paddingRight="10dp"
-                android:text="@string/course_num_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
-                android:gravity="left" />
-
-        </LinearLayout>
+            android:text="@string/course_num_content"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -97,7 +51,7 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="5dp"
                 android:text="@string/overall_score"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -109,8 +63,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/overall_score_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
             <TextView
@@ -120,7 +74,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="5dp"
                 android:text="@string/credit"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -132,8 +86,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/credit_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
         </LinearLayout>
@@ -152,7 +106,7 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="5dp"
                 android:text="@string/course_index"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -164,8 +118,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/course_index_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
             <TextView
@@ -175,7 +129,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="5dp"
                 android:text="@string/select_type"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -187,8 +141,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/select_type_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
         </LinearLayout>
@@ -207,7 +161,7 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="5dp"
                 android:text="@string/semester"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -219,8 +173,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/semester_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
             <TextView
@@ -230,7 +184,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="5dp"
                 android:text="@string/test_mode"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -242,8 +196,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/test_mode_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
         </LinearLayout>
@@ -262,7 +216,7 @@
                 android:paddingLeft="15dp"
                 android:paddingRight="5dp"
                 android:text="@string/remarks"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -274,8 +228,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/remarks_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
             <TextView
@@ -285,7 +239,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="5dp"
                 android:text="@string/exam_type"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textColor="#FF555555"
                 android:gravity="left" />
 
@@ -297,8 +251,8 @@
                 android:paddingLeft="5dp"
                 android:paddingRight="10dp"
                 android:text="@string/exam_type_content"
-                android:textColor="#FF000000"
-                android:textSize="16sp"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="14sp"
                 android:gravity="left" />
 
         </LinearLayout>

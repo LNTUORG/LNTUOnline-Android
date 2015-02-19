@@ -6,7 +6,6 @@ public class CourseScore extends Model<CourseScore> {
 
     private String num; //课程号
     private String name; //课程名
-    private int index; //课序号
     private String score; //分数
     private float credit; //学分
     private String testMode; //考核方式
@@ -29,14 +28,6 @@ public class CourseScore extends Model<CourseScore> {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
     }
 
     public String getScore() {

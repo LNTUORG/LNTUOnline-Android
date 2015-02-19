@@ -139,61 +139,6 @@
             android:layout_weight="1"
             android:paddingLeft="15dp"
             android:paddingRight="5dp"
-            android:text="@string/course_index"
-            android:textSize="16sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
-
-        <TextView
-            android:id="@+id/unpass_course_item_tv_index"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="5dp"
-            android:paddingRight="10dp"
-            android:text="@string/course_index_content"
-            android:textColor="#FF000000"
-            android:textSize="16sp"
-            android:gravity="left" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="10dp"
-            android:paddingRight="5dp"
-            android:text="@string/credit_point"
-            android:textSize="16sp"
-            android:textColor="#FF555555"
-            android:gravity="left" />
-
-        <TextView
-            android:id="@+id/unpass_course_item_tv_credit_point"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="5dp"
-            android:paddingRight="10dp"
-            android:text="@string/credit_point_content"
-            android:textColor="#FF000000"
-            android:textSize="16sp"
-            android:gravity="left" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingLeft="15dp"
-            android:paddingRight="5dp"
             android:text="@string/semester"
             android:textSize="16sp"
             android:textColor="#FF555555"

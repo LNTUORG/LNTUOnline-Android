@@ -42,10 +42,7 @@ public class SkillTestAdapter extends BaseAdapter {
         ViewHolder holder;
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_skill_test_item, parent, false);
-            holder = new ViewHolder();
-            holder.tvName = (TextView) convertView.findViewById(R.id.skill_test_item_tv_name);
-            holder.tvTime = (TextView) convertView.findViewById(R.id.skill_test_item_tv_time);
-            holder.tvScore = (TextView) convertView.findViewById(R.id.skill_test_item_tv_score);
+            holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -59,9 +56,15 @@ public class SkillTestAdapter extends BaseAdapter {
 
     private static class ViewHolder {
 
-        TextView tvName;
-        TextView tvTime;
-        TextView tvScore;
+        public final TextView tvName;
+        public final TextView tvTime;
+        public final TextView tvScore;
+
+        public ViewHolder(View convertView) {
+            tvName = (TextView) convertView.findViewById(R.id.skill_test_item_tv_name);
+            tvTime = (TextView) convertView.findViewById(R.id.skill_test_item_tv_time);
+            tvScore = (TextView) convertView.findViewById(R.id.skill_test_item_tv_score);
+        }
 
     }
 
