@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -20,11 +21,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_chat_grey600_18dp"
+                android:drawableLeft="@drawable/ic_chat_grey600_18dp"
+                android:drawablePadding="16dp"
                 android:text="@string/your_suggestion_title"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
-            <EditText
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/feedback_edt_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,25 +35,32 @@
                 android:hint="@string/your_suggestion_hint"
                 android:inputType="textMultiLine"
                 android:gravity="start"
-                android:maxLength="500"
-                android:minLines="4" />
+                android:maxLength="200"
+                android:minLines="4"
+                android:maxLines="10"
+                app:floatingLabel="highlight"
+                app:maxCharacters="200" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_email_grey600_18dp"
+                android:drawableLeft="@drawable/ic_email_grey600_18dp"
+                android:drawablePadding="16dp"
                 android:text="@string/your_contact_title"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="16sp" />
+                android:textSize="14sp" />
 
-            <EditText
+            <com.rengwuxian.materialedittext.MaterialEditText
                 android:id="@+id/feedback_edt_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:hint="@string/your_contact_hint"
                 android:inputType="textMultiLine"
-                android:maxLength="100" />
+                android:maxLength="50"
+                app:floatingLabel="highlight"
+                app:singleLineEllipsis="true" />
 
             <Button
                 android:layout_width="match_parent"
