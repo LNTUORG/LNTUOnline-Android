@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.info.AppInfo;
+import com.lntu.online.util.AppUtil;
 
 public class AboutActivity extends ActionBarActivity {
 
@@ -23,7 +23,7 @@ public class AboutActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView tvVersionName= (TextView) findViewById(R.id.about_tv_version_name);
-        tvVersionName.setText("v" + AppInfo.getVersionName() + "-build-" + AppInfo.getVersionCode());
+        tvVersionName.setText("v" + AppUtil.getVersionName(this) + "-build-" + AppUtil.getVersionCode(this));
     }
 
     @Override

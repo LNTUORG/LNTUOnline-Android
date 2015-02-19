@@ -21,8 +21,8 @@ import android.widget.TextView;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
-import com.lntu.online.info.AppInfo;
-import com.lntu.online.info.NetworkInfo;
+import com.lntu.online.info.NetworkConfig;
+import com.lntu.online.util.AppUtil;
 import com.loopj.android.http.RequestParams;
 
 public class CrashShowActivity extends ActionBarActivity {
@@ -87,11 +87,11 @@ public class CrashShowActivity extends ActionBarActivity {
         RequestParams params = new RequestParams();
         params.put("info", crashLog);
         params.put("platform", "android");
-        params.put("version", AppInfo.getVersionCode());
+        params.put("version", AppUtil.getVersionCode(this));
         params.put("osVer", Build.VERSION.RELEASE);
         params.put("manufacturer", Build.MANUFACTURER);
         params.put("model", Build.MODEL);
-        HttpUtil.post(this, NetworkInfo.serverUrl + "feedback/crashLog", params, new NormalAuthListener(this) {
+        HttpUtil.post(this, NetworkConfig.serverUrl + "feedback/crashLog", params, new NormalAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

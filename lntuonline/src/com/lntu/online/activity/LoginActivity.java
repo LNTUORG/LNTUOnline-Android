@@ -17,9 +17,9 @@ import android.widget.Toast;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
-import com.lntu.online.info.AppInfo;
-import com.lntu.online.info.NetworkInfo;
+import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.UserInfo;
+import com.lntu.online.util.AppUtil;
 import com.loopj.android.http.RequestParams;
 
 public class LoginActivity extends ActionBarActivity {
@@ -73,11 +73,11 @@ public class LoginActivity extends ActionBarActivity {
             params.put("userId", edtUserId.getText().toString());
             params.put("pwd", edtPwd.getText().toString());
             params.put("platform", "android"); //平台参数
-            params.put("version", AppInfo.getVersionCode()); //版本信息
+            params.put("version", AppUtil.getVersionCode(this)); //版本信息
             params.put("osVer", Build.VERSION.RELEASE); //系统版本
             params.put("manufacturer", Build.MANUFACTURER); //生产厂商
             params.put("model", Build.MODEL); //手机型号
-            HttpUtil.post(this, NetworkInfo.serverUrl + "user/login", params, new NormalAuthListener(this) {
+            HttpUtil.post(this, NetworkConfig.serverUrl + "user/login", params, new NormalAuthListener(this) {
 
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, String responseString) {

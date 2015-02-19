@@ -27,7 +27,7 @@ import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
-import com.lntu.online.info.NetworkInfo;
+import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.SecretKey;
 import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.ClientCurriculum;
@@ -96,7 +96,7 @@ public class CurriculumActivity extends ActionBarActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "curriculum/info", new RetryAuthListener(this) {
+        HttpUtil.get(this, NetworkConfig.serverUrl + "curriculum/info", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
@@ -124,7 +124,7 @@ public class CurriculumActivity extends ActionBarActivity {
     }
     
     private void updateNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "curriculum/info", new NormalAuthListener(this) {
+        HttpUtil.get(this, NetworkConfig.serverUrl + "curriculum/info", new NormalAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

@@ -30,7 +30,7 @@ import com.lntu.online.http.BaseListener;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
-import com.lntu.online.info.NetworkInfo;
+import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.ClientCourseScore;
 import com.lntu.online.util.JsonUtil;
@@ -145,7 +145,7 @@ public class CourseScoreActivity extends ActionBarActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "grades/averageOfCreditPointInfo", new RetryAuthListener(this) {
+        HttpUtil.get(this, NetworkConfig.serverUrl + "grades/averageOfCreditPointInfo", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
@@ -215,12 +215,12 @@ public class CourseScoreActivity extends ActionBarActivity {
         };
         //判断是否选择全部
         if (spnYear.getSelectedItemPosition() == 0) { //选择全部
-            HttpUtil.get(this, NetworkInfo.serverUrl + "grades/allCourseScoresInfo", listener);
+            HttpUtil.get(this, NetworkConfig.serverUrl + "grades/allCourseScoresInfo", listener);
         } else { //没选择全部
             RequestParams params = new RequestParams();
             params.put("year", spnYear.getSelectedItem().toString());
             params.put("term", (spnTerm.getSelectedItemPosition() == 0 ? 1 : 2) + "");
-            HttpUtil.get(this, NetworkInfo.serverUrl + "grades/courseScoresInfo", params, listener);
+            HttpUtil.get(this, NetworkConfig.serverUrl + "grades/courseScoresInfo", params, listener);
         }
     }
 

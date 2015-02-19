@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
 import com.lntu.online.adapter.MainItemClickListener;
-import com.lntu.online.info.AppInfo;
+import com.lntu.online.util.AppUtil;
 import com.xiaomi.market.sdk.XiaomiUpdateAgent;
 
 public class MainActivity extends ActionBarActivity {
@@ -48,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 
         tvVersion = (TextView) findViewById(R.id.main_left_tv_version);
-        tvVersion.setText("v" + AppInfo.getVersionName());
+        tvVersion.setText("v" + AppUtil.getVersionName(this));
 
         //GridView
         gridView = (GridView) findViewById(R.id.main_grid_view);

@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
-import com.lntu.online.info.NetworkInfo;
+import com.lntu.online.info.NetworkConfig;
 import com.loopj.android.http.RequestParams;
 
 public class AdviceActivity extends ActionBarActivity {
@@ -83,7 +83,7 @@ public class AdviceActivity extends ActionBarActivity {
         RequestParams params = new RequestParams();
         params.put("info", edtInfo.getText().toString() + "");
         params.put("contact", edtContact.getText().toString() + "");
-        HttpUtil.post(this, NetworkInfo.serverUrl + "feedback/advice", params, new NormalAuthListener(this) {
+        HttpUtil.post(this, NetworkConfig.serverUrl + "feedback/advice", params, new NormalAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

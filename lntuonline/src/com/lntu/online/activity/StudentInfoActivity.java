@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
-import com.lntu.online.info.NetworkInfo;
+import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.model.ClientEducationExperience;
 import com.lntu.online.model.ClientEntranceExam;
 import com.lntu.online.model.ClientFamily;
@@ -61,7 +61,7 @@ public class StudentInfoActivity extends ActionBarActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "student/info", new RetryAuthListener(this) {
+        HttpUtil.get(this, NetworkConfig.serverUrl + "student/info", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
