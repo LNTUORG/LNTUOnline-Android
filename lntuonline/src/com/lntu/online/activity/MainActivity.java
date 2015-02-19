@@ -117,12 +117,16 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public void onBackPressed() {
-        long secondBackKeyTime = System.currentTimeMillis();
-        if (secondBackKeyTime - firstBackKeyTime > 2000) {
-            Toast.makeText(this, "再按一次返回桌面", Toast.LENGTH_SHORT).show();
-            firstBackKeyTime = secondBackKeyTime;
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            moveTaskToBack(true);
+            long secondBackKeyTime = System.currentTimeMillis();
+            if (secondBackKeyTime - firstBackKeyTime > 2000) {
+                Toast.makeText(this, "再按一次返回桌面", Toast.LENGTH_SHORT).show();
+                firstBackKeyTime = secondBackKeyTime;
+            } else {
+                moveTaskToBack(true);
+            }
         }
     }
 

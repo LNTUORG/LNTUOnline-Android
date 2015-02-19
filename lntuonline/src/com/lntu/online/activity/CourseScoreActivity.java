@@ -188,10 +188,10 @@ public class CourseScoreActivity extends ActionBarActivity {
     public void onBtnQuery(View view) {
         //构建监听器
         BaseListener listener = new NormalAuthListener(this) {
-            
+
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                try {                    
+                try {
                     List<ClientCourseScore> ccss = JsonUtil.fromJson(responseString, new TypeToken<List<ClientCourseScore>>(){}.getType());
                     lvInfo.setAdapter(new ListViewAdapter(getContext(), ccss));
                     if (spnYear.getSelectedItemPosition() == 0) {
