@@ -60,7 +60,15 @@ public class CourseScoreAdapter extends BaseAdapter {
         holder.tvSemester.setText(score.getSemester() + "");
         //得分红色标记
         CourseScore.Level level = score.getLevel();
-        holder.tvScore.setTextColor(level == Level.bad ? 0xFFFF0000 : 0xFF000000);
+        if (level == Level.veryGood) {
+            holder.tvScore.setTextColor(0xFFFFD700);
+        }
+        else if (level == Level.bad) {
+            holder.tvScore.setTextColor(0xFFFF0000);
+        }
+        else {
+            holder.tvScore.setTextColor(0xFF0000FF);
+        }
         holder.iconVeryGood.setVisibility(level == Level.veryGood ? View.VISIBLE : View.GONE);
         return convertView;
     }
