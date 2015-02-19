@@ -95,4 +95,44 @@ public class ClientCourseScore extends ClientModel<ClientCourseScore> {
         this.semester = semester;
     }
 
+    public static enum Level {
+        veryGood,
+        normal,
+        bad
+    }
+
+    public Level getLevel() {
+        try {
+            float s = Float.parseFloat(getScore());
+            if (s >= 90) {
+                return Level.veryGood;
+            }
+            else if (s >= 60) {
+                return Level.normal;
+            } else {
+                return Level.bad;
+            }
+        } catch(Exception e) {
+            if (
+                "优".equals(getScore())
+             || "优秀".equals(getScore())
+             || "上".equals(getScore())
+             || "好".equals(getScore())
+            ) {
+                return Level.veryGood;
+            }
+            else if (
+                "差".equals(getScore())
+             || "下".equals(getScore())
+             || "不及格".equals(getScore())
+             || "不合格".equals(getScore())
+            ) {
+                return Level.bad;
+            }
+            else {
+                return Level.normal;
+            }
+        }
+    }
+
 }

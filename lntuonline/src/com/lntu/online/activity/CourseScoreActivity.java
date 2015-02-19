@@ -6,7 +6,6 @@ import java.util.List;
 import org.apache.http.Header;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
@@ -14,10 +13,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.Time;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -28,6 +25,7 @@ import android.widget.TextView;
 
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
+import com.lntu.online.adapter.CourseScoreAdapter;
 import com.lntu.online.http.BaseListener;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
@@ -47,7 +45,10 @@ public class CourseScoreActivity extends ActionBarActivity {
     private Spinner spnTermNon;
     private TextView tvAvaOfCredit;
     private TextView tvTitle;
-    private ListView lvInfo;
+
+    private ListView listView;
+    private BaseAdapter adapter;
+    private List<ClientCourseScore> scoreList;
 
     private Time time;
     private String[] strsYear;
@@ -137,7 +138,11 @@ public class CourseScoreActivity extends ActionBarActivity {
         });
         tvAvaOfCredit = (TextView) findViewById(R.id.grades_tv_ava_of_credit);
         tvTitle = (TextView) findViewById(R.id.grades_tv_title);
-        lvInfo = (ListView) findViewById(R.id.grades_lv_info);
+
+        listView = (ListView) findViewById(R.id.grades_list_view);
+        scoreList = new ArrayList<ClientCourseScore>();
+        adapter = new CourseScoreAdapter(this, scoreList);
+        listView.setAdapter(adapter);
     }
 
     private void startNetwork() {
@@ -192,8 +197,10 @@ public class CourseScoreActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    List<ClientCourseScore> ccss = JsonUtil.fromJson(responseString, new TypeToken<List<ClientCourseScore>>(){}.getType());
-                    lvInfo.setAdapter(new ListViewAdapter(getContext(), ccss));
+                    List<ClientCourseScore> newList = JsonUtil.fromJson(responseString, new TypeToken<List<ClientCourseScore>>(){}.getType());
+                    scoreList.clear();
+                    scoreList.addAll(newList);
+                    adapter.notifyDataSetChanged();
                     if (spnYear.getSelectedItemPosition() == 0) {
                         tvTitle.setText("全部课程成绩");
                     } else {
@@ -215,73 +222,6 @@ public class CourseScoreActivity extends ActionBarActivity {
             params.put("term", (spnTerm.getSelectedItemPosition() == 0 ? 1 : 2) + "");
             HttpUtil.get(this, NetworkInfo.serverUrl + "grades/courseScoresInfo", params, listener);
         }
-    }
-
-    private class ListViewAdapter extends BaseAdapter {
-
-        private List<View> itemViews;
-
-        public ListViewAdapter(Context context, List<ClientCourseScore> ccss) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            itemViews = new ArrayList<View>();
-            for (int n = 0; n < ccss.size(); n++) {
-                ClientCourseScore ccs = ccss.get(n);
-                //布局
-                View itemView = inflater.inflate(R.layout.activity_course_score_item, null);
-                TextView tvNum = (TextView) itemView.findViewById(R.id.course_score_item_tv_num);
-                TextView tvName = (TextView) itemView.findViewById(R.id.course_score_item_tv_name);
-                TextView tvIndex = (TextView) itemView.findViewById(R.id.course_score_item_tv_index);
-                TextView tvScore = (TextView) itemView.findViewById(R.id.course_score_item_tv_score);
-                TextView tvCredit = (TextView) itemView.findViewById(R.id.course_score_item_tv_credit);
-                TextView tvTestMode = (TextView) itemView.findViewById(R.id.course_score_item_tv_test_mode);
-                TextView tvSelectType = (TextView) itemView.findViewById(R.id.course_score_item_tv_select_type);
-                TextView tvRemarks = (TextView) itemView.findViewById(R.id.course_score_item_tv_remarks);
-                TextView tvExamType = (TextView) itemView.findViewById(R.id.course_score_item_tv_exam_type);
-                TextView tvSemester = (TextView) itemView.findViewById(R.id.course_score_item_tv_semester);
-                tvNum.setText(ccs.getNum() + "");
-                tvName.setText(ccs.getName() + "");
-                tvIndex.setText(ccs.getIndex() + "");
-                tvScore.setText(ccs.getScore() + "");
-                { //得分红色标记
-                    try {
-                        float s = Float.valueOf(ccs.getScore());
-                        if (s < 60.0f) {
-                            tvScore.setTextColor(0xFFFF0000);
-                        }
-                    } catch(Exception e) {    
-                    }
-                }
-                tvCredit.setText(ccs.getCredit() + "");
-                tvTestMode.setText(ccs.getTestMode() + "");
-                tvSelectType.setText(ccs.getSelectType() + "");
-                tvRemarks.setText(ccs.getRemarks() + "");
-                tvExamType.setText(ccs.getExamType() + "");
-                tvSemester.setText(ccs.getSemester() + "");
-                //填充布局
-                itemViews.add(itemView);
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return itemViews.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return itemViews.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return itemViews.get(position).getId();
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            return itemViews.get(position);
-        }
-
     }
 
 }
