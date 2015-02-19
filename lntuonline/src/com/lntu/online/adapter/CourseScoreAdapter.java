@@ -3,6 +3,7 @@ package com.lntu.online.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +52,7 @@ public class CourseScoreAdapter extends BaseAdapter {
         CourseScore score = scoreList.get(position);
         holder.tvNum.setText(score.getNum() + "");
         holder.tvName.setText(score.getName() + "");
-        holder.tvScore.setText(score.getScore() + "");
+        holder.tvScore.setText(TextUtils.isEmpty(score.getScore()) ? "无成绩" : score.getScore());
         holder.tvCredit.setText(score.getCredit() + "");
         holder.tvTestMode.setText(score.getTestMode() + "");
         holder.tvSelectType.setText(score.getSelectType() + "");

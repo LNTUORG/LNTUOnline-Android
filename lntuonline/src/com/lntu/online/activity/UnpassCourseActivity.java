@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -179,7 +180,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
                 TextView tvSemester = (TextView) itemView.findViewById(R.id.unpass_course_item_tv_semester);
                 tvNum.setText(cuc.getNum() + "");
                 tvName.setText(cuc.getName() + "");
-                tvScore.setText(cuc.getScore() + "");
+                tvScore.setText(TextUtils.isEmpty(cuc.getScore()) ? "无成绩" : cuc.getScore());
                 tvCredit.setText(cuc.getCredit() + "");
                 tvSelectType.setText(cuc.getSelectType() + "");
                 tvRemarks.setText(cuc.getRemarks() + "");

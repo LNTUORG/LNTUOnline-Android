@@ -1,5 +1,7 @@
 package com.lntu.online.model;
 
+import android.text.TextUtils;
+
 public class CourseScore extends Model<CourseScore> {
 
     public static final CourseScore dao = new CourseScore();
@@ -117,6 +119,7 @@ public class CourseScore extends Model<CourseScore> {
              || "下".equals(getScore())
              || "不及格".equals(getScore())
              || "不合格".equals(getScore())
+             || TextUtils.isEmpty(getScore())
             ) {
                 return Level.bad;
             }
