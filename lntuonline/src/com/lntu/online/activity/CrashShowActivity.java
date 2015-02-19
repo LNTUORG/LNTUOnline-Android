@@ -44,6 +44,8 @@ public class CrashShowActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_error_white_24dp);
 
         //接收异常对象
         Intent intent = getIntent();
