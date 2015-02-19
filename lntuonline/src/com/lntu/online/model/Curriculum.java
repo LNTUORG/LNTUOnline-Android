@@ -2,9 +2,9 @@ package com.lntu.online.model;
 
 import java.util.HashMap;
 
-public class ClientCurriculum extends ClientModel<ClientCurriculum> {
+public class Curriculum extends Model<Curriculum> {
 
-    public static final ClientCurriculum dao = new ClientCurriculum();
+    public static final Curriculum dao = new Curriculum();
     
     private HashMap<Integer, String> times;
     private HashMap<String, String> courses;

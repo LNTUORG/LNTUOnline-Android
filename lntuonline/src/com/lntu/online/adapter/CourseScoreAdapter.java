@@ -10,15 +10,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.model.ClientCourseScore;
-import com.lntu.online.model.ClientCourseScore.Level;
+import com.lntu.online.model.CourseScore;
+import com.lntu.online.model.CourseScore.Level;
 
 public class CourseScoreAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private List<ClientCourseScore> scoreList;
+    private List<CourseScore> scoreList;
 
-    public CourseScoreAdapter(Context context, List<ClientCourseScore> scoreList) {
+    public CourseScoreAdapter(Context context, List<CourseScore> scoreList) {
         inflater = LayoutInflater.from(context);
         this.scoreList = scoreList;
     }
@@ -48,7 +48,7 @@ public class CourseScoreAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        ClientCourseScore score = scoreList.get(position);
+        CourseScore score = scoreList.get(position);
         holder.tvNum.setText(score.getNum() + "");
         holder.tvName.setText(score.getName() + "");
         holder.tvIndex.setText(score.getIndex() + "");
@@ -60,7 +60,7 @@ public class CourseScoreAdapter extends BaseAdapter {
         holder.tvExamType.setText(score.getExamType() + "");
         holder.tvSemester.setText(score.getSemester() + "");
         //得分红色标记
-        ClientCourseScore.Level level = score.getLevel();
+        CourseScore.Level level = score.getLevel();
         holder.tvScore.setTextColor(level == Level.bad ? 0xFFFF0000 : 0xFF000000);
         holder.iconVeryGood.setVisibility(level == Level.veryGood ? View.VISIBLE : View.GONE);
         return convertView;

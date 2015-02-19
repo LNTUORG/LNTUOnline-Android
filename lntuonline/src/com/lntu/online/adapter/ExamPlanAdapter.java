@@ -11,15 +11,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.model.ClientExamPlan;
+import com.lntu.online.model.ExamPlan;
 
 public class ExamPlanAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private List<ClientExamPlan> planList;
+    private List<ExamPlan> planList;
     private Date nowDate;
 
-    public ExamPlanAdapter(Context context, List<ClientExamPlan> planList) {
+    public ExamPlanAdapter(Context context, List<ExamPlan> planList) {
         inflater = LayoutInflater.from(context);
         this.planList = planList;
         nowDate = new Date();
@@ -56,7 +56,7 @@ public class ExamPlanAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        ClientExamPlan plan = planList.get(position);
+        ExamPlan plan = planList.get(position);
         holder.tvCourse.setText(plan.getCourse() + "");
         holder.tvTime.setText(plan.getTime().replace("--", "-") + "");
         holder.tvLocation.setText(plan.getLocation() + "");

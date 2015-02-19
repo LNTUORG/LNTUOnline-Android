@@ -1,8 +1,8 @@
 package com.lntu.online.model;
 
-public class ClientEvaInfo extends ClientModel<ClientEvaInfo> {
+public class EvaInfo extends Model<EvaInfo> {
 
-    public static final ClientEvaInfo dao = new ClientEvaInfo();
+    public static final EvaInfo dao = new EvaInfo();
 
     private String teacher;
     private String course;

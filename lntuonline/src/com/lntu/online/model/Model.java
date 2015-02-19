@@ -4,7 +4,7 @@ import java.lang.reflect.ParameterizedType;
 
 import com.lntu.online.util.JsonUtil;
 
-public abstract class ClientModel<M extends ClientModel<?>> {
+public abstract class Model<M extends Model<?>> {
 
     public String toJson() {
         return JsonUtil.toJson(this);

@@ -28,7 +28,7 @@ import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.model.ClientEvaInfo;
+import com.lntu.online.model.EvaInfo;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 import com.melnykov.fab.FloatingActionButton;
@@ -41,7 +41,7 @@ public class OneKeyActivity extends ActionBarActivity {
     private ListView lvRoot;
     private List<View> itemViews;
     private OneKeyAdapter adapter;
-    private List<ClientEvaInfo> evaInfos;
+    private List<EvaInfo> evaInfos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class OneKeyActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    evaInfos = JsonUtil.fromJson(responseString, new TypeToken<List<ClientEvaInfo>>(){}.getType());
+                    evaInfos = JsonUtil.fromJson(responseString, new TypeToken<List<EvaInfo>>(){}.getType());
 
                     // TODO 测试代码
                     /*
@@ -104,11 +104,11 @@ public class OneKeyActivity extends ActionBarActivity {
         });
     }
 
-    private void updateListView(List<ClientEvaInfo> evaInfos) {
+    private void updateListView(List<EvaInfo> evaInfos) {
         LayoutInflater inflater = LayoutInflater.from(this);
         itemViews.clear();
         for (int n = 0; n < evaInfos.size(); n++) {
-            ClientEvaInfo evaInfo = evaInfos.get(n);
+            EvaInfo evaInfo = evaInfos.get(n);
             //布局
             View itemView = inflater.inflate(R.layout.activity_one_key_item, null);
             TextView tvTeacher = (TextView) itemView.findViewById(R.id.one_key_item_tv_teacher);
@@ -130,7 +130,7 @@ public class OneKeyActivity extends ActionBarActivity {
 
     public void onBtnStart(View view) {
         int n = 0;
-        for (ClientEvaInfo evaInfo : evaInfos) {
+        for (EvaInfo evaInfo : evaInfos) {
             if ("未评估".equals(evaInfo.getState())) {
                 n++;
             }
@@ -160,10 +160,10 @@ public class OneKeyActivity extends ActionBarActivity {
         }
     }
 
-    private void startEvaAsyncTask(final List<ClientEvaInfo> evaInfos, final int current) {
+    private void startEvaAsyncTask(final List<EvaInfo> evaInfos, final int current) {
         if (current == evaInfos.size()) { //评价已经完成
             int n = 0;
-            for (ClientEvaInfo evaInfo : evaInfos) {
+            for (EvaInfo evaInfo : evaInfos) {
                 if ("未评估".equals(evaInfo.getState())) {
                     n++;
                 }
@@ -198,7 +198,7 @@ public class OneKeyActivity extends ActionBarActivity {
                 .show();
             }
         } else { //没评完
-            final ClientEvaInfo evaInfo = evaInfos.get(current);
+            final EvaInfo evaInfo = evaInfos.get(current);
             if (TextUtils.isEmpty(evaInfo.getUrl())) { //不需要评价，跳过
                 startEvaAsyncTask(evaInfos, current + 1);
             } else { //需要评价

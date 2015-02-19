@@ -1,8 +1,8 @@
 package com.lntu.online.model;
 
-public class ClientFamily extends ClientModel<ClientFamily> {
+public class Family extends Model<Family> {
 
-    public static final ClientFamily dao = new ClientFamily();
+    public static final Family dao = new Family();
 
     private String name; //姓名
     private String relationship; //与本人关系

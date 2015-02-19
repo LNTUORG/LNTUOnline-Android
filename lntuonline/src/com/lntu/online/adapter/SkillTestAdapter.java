@@ -10,14 +10,14 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.model.ClientSkillTestScore;
+import com.lntu.online.model.SkillTestScore;
 
 public class SkillTestAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private List<ClientSkillTestScore> scoreList;
+    private List<SkillTestScore> scoreList;
 
-    public SkillTestAdapter(Context context, List<ClientSkillTestScore> scoreList) {
+    public SkillTestAdapter(Context context, List<SkillTestScore> scoreList) {
         inflater = LayoutInflater.from(context);
         this.scoreList = scoreList;
     }
@@ -50,7 +50,7 @@ public class SkillTestAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        ClientSkillTestScore score = scoreList.get(position);
+        SkillTestScore score = scoreList.get(position);
         holder.tvName.setText(score.getName() + "");
         holder.tvTime.setText(score.getTime() + "");
         holder.tvScore.setText(score.getScore() + "");

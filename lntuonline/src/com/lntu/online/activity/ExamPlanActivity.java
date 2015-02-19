@@ -20,7 +20,7 @@ import com.lntu.online.adapter.ExamPlanAdapter;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.model.ClientExamPlan;
+import com.lntu.online.model.ExamPlan;
 import com.lntu.online.util.JsonUtil;
 
 public class ExamPlanActivity extends ActionBarActivity {
@@ -56,7 +56,7 @@ public class ExamPlanActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    List<ClientExamPlan> ceps = JsonUtil.fromJson(responseString, new TypeToken<List<ClientExamPlan>>(){}.getType());
+                    List<ExamPlan> ceps = JsonUtil.fromJson(responseString, new TypeToken<List<ExamPlan>>(){}.getType());
                     Collections.sort(ceps);
                     ListView lvRoot = (ListView) findViewById(R.id.exam_plan_lv_root);
                     lvRoot.setAdapter(new ExamPlanAdapter(getContext(), ceps));

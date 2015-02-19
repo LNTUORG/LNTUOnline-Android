@@ -1,8 +1,8 @@
 package com.lntu.online.model;
 
-public class ClientUnpassCourse extends ClientModel<ClientUnpassCourse> {
+public class UnpassCourse extends Model<UnpassCourse> {
     
-    public static final ClientUnpassCourse dao = new ClientUnpassCourse();
+    public static final UnpassCourse dao = new UnpassCourse();
 
     private String num; //课程号
     private String name; //课程名

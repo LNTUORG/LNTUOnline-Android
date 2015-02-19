@@ -1,11 +1,10 @@
 package com.lntu.online.model;
 
-public class ClientSkillTestScore extends ClientModel<ClientSkillTestScore> {
+public class EntranceExam extends Model<EntranceExam> {
 
-    public static final ClientSkillTestScore dao = new ClientSkillTestScore();
+    public static final EntranceExam dao = new EntranceExam();
 
     private String name;
-    private String time;
     private String score;
 
     public String getName() {
@@ -14,14 +13,6 @@ public class ClientSkillTestScore extends ClientModel<ClientSkillTestScore> {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 
     public String getScore() {

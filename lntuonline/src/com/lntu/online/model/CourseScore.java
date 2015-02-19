@@ -1,8 +1,8 @@
 package com.lntu.online.model;
 
-public class ClientCourseScore extends ClientModel<ClientCourseScore> {
+public class CourseScore extends Model<CourseScore> {
 
-    public static final ClientCourseScore dao = new ClientCourseScore();
+    public static final CourseScore dao = new CourseScore();
 
     private String num; //课程号
     private String name; //课程名

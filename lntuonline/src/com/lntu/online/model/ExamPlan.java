@@ -5,9 +5,9 @@ import java.util.Date;
 
 import com.lntu.online.util.TimeUtil;
 
-public class ClientExamPlan extends ClientModel<ClientExamPlan> implements Comparable<ClientExamPlan> {
+public class ExamPlan extends Model<ExamPlan> implements Comparable<ExamPlan> {
 
-    public static final ClientExamPlan dao = new ClientExamPlan();
+    public static final ExamPlan dao = new ExamPlan();
 
     private String course;
     private String time;
@@ -51,7 +51,7 @@ public class ClientExamPlan extends ClientModel<ClientExamPlan> implements Compa
     }
 
     @Override
-    public int compareTo(ClientExamPlan another) {
+    public int compareTo(ExamPlan another) {
         if (another.getDateTime().after(getDateTime())) {
             return -1;
         } else {

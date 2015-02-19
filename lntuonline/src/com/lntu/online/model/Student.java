@@ -2,9 +2,9 @@ package com.lntu.online.model;
 
 import java.util.List;
 
-public class ClientStudent extends ClientModel<ClientStudent> {
+public class Student extends Model<Student> {
 
-    public static final ClientStudent dao = new ClientStudent();
+    public static final Student dao = new Student();
 
     private String userId; //学号
     private String name; //姓名
@@ -44,9 +44,9 @@ public class ClientStudent extends ClientModel<ClientStudent> {
     private String remarks; //备注
     private String photoUrl; //头像照片url
 
-    private List<ClientEntranceExam> entranceExams; //高考科目
-    private List<ClientEducationExperience> educationExperiences; //教育经历
-    private List<ClientFamily> familys; //家人
+    private List<EntranceExam> entranceExams; //高考科目
+    private List<EducationExperience> educationExperiences; //教育经历
+    private List<Family> familys; //家人
 
     public String getUserId() {
         return userId;
@@ -328,32 +328,32 @@ public class ClientStudent extends ClientModel<ClientStudent> {
         this.photoUrl = photoUrl;
     }
 
-    public List<ClientEntranceExam> getEntranceExams() {
+    public List<EntranceExam> getEntranceExams() {
         return entranceExams;
     }
 
-    public void setEntranceExams(List<ClientEntranceExam> entranceExams) {
+    public void setEntranceExams(List<EntranceExam> entranceExams) {
         this.entranceExams = entranceExams;
     }
 
-    public List<ClientEducationExperience> getEducationExperiences() {
+    public List<EducationExperience> getEducationExperiences() {
         return educationExperiences;
     }
 
     public void setEducationExperiences(
-            List<ClientEducationExperience> educationExperiences) {
+            List<EducationExperience> educationExperiences) {
         this.educationExperiences = educationExperiences;
     }
 
-    public List<ClientFamily> getFamilys() {
+    public List<Family> getFamilys() {
         return familys;
     }
 
-    public void setFamilys(List<ClientFamily> familys) {
+    public void setFamilys(List<Family> familys) {
         this.familys = familys;
     }
 
-    public static ClientStudent getDao() {
+    public static Student getDao() {
         return dao;
     }
 

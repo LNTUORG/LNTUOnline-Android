@@ -26,7 +26,7 @@ import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.model.ClientUnpassCourse;
+import com.lntu.online.model.UnpassCourse;
 import com.lntu.online.util.JsonUtil;
 import com.melnykov.fab.FloatingActionButton;
 
@@ -35,7 +35,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
     private Toolbar toolbar;
 
     private ListView listView;
-    private List<ClientUnpassCourse> cucs;
+    private List<UnpassCourse> cucs;
 
     private FloatingActionButton fab;
     private boolean isUnfold = true;
@@ -90,7 +90,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    cucs = JsonUtil.fromJson(responseString, new TypeToken<List<ClientUnpassCourse>>(){}.getType());
+                    cucs = JsonUtil.fromJson(responseString, new TypeToken<List<UnpassCourse>>(){}.getType());
                     listView.setAdapter(new ListViewAdapter(getContext(), cucs, false));
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
@@ -154,7 +154,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
 
         private List<View> itemViews;
 
-        public ListViewAdapter(Context context, List<ClientUnpassCourse> cucs, boolean isSimple) {
+        public ListViewAdapter(Context context, List<UnpassCourse> cucs, boolean isSimple) {
             if (isSimple) {
                 initSimpleViews(context, cucs);
             } else {
@@ -162,11 +162,11 @@ public class UnpassCourseActivity extends ActionBarActivity {
             }
         }
 
-        private void initViews(Context context, List<ClientUnpassCourse> cucs) {
+        private void initViews(Context context, List<UnpassCourse> cucs) {
             LayoutInflater inflater = LayoutInflater.from(context);
             itemViews = new ArrayList<View>();
             for (int n = 0; n < cucs.size(); n++) {
-                ClientUnpassCourse cuc = cucs.get(n);
+                UnpassCourse cuc = cucs.get(n);
                 //布局
                 View itemView = inflater.inflate(R.layout.activity_unpass_course_item, null);
                 TextView tvNum = (TextView) itemView.findViewById(R.id.unpass_course_item_tv_num);
@@ -194,11 +194,11 @@ public class UnpassCourseActivity extends ActionBarActivity {
             }
         }
 
-        private void initSimpleViews(Context context, List<ClientUnpassCourse> cucs) {
+        private void initSimpleViews(Context context, List<UnpassCourse> cucs) {
             LayoutInflater inflater = LayoutInflater.from(context);
             itemViews = new ArrayList<View>();
             for (int n = 0; n < cucs.size(); n++) {
-                ClientUnpassCourse cuc = cucs.get(n);
+                UnpassCourse cuc = cucs.get(n);
                 if (!(cuc.getExamType() + "").equals("正常考试")) {
                     continue;
                 }

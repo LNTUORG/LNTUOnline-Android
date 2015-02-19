@@ -19,7 +19,7 @@ import com.lntu.online.adapter.SkillTestAdapter;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.model.ClientSkillTestScore;
+import com.lntu.online.model.SkillTestScore;
 import com.lntu.online.util.JsonUtil;
 
 public class SkillTestActivity extends ActionBarActivity {
@@ -55,7 +55,7 @@ public class SkillTestActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {                    
-                    List<ClientSkillTestScore> cstss = JsonUtil.fromJson(responseString, new TypeToken<List<ClientSkillTestScore>>(){}.getType());
+                    List<SkillTestScore> cstss = JsonUtil.fromJson(responseString, new TypeToken<List<SkillTestScore>>(){}.getType());
                     ListView lvRoot = (ListView) findViewById(R.id.skill_test_lv_root);
                     lvRoot.setAdapter(new SkillTestAdapter(getContext(), cstss));
                 } catch(Exception e) {

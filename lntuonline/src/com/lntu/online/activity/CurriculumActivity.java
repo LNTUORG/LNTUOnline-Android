@@ -30,7 +30,7 @@ import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.SecretKey;
 import com.lntu.online.info.UserInfo;
-import com.lntu.online.model.ClientCurriculum;
+import com.lntu.online.model.Curriculum;
 import com.takwolf.util.crypto.DES3Util;
 
 public class CurriculumActivity extends ActionBarActivity {
@@ -66,7 +66,7 @@ public class CurriculumActivity extends ActionBarActivity {
         //读取本地课表
         SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE);
         try {
-            ClientCurriculum cc = ClientCurriculum.dao.fromJson(DES3Util.decrypt(SecretKey.SP_KEY, sp.getString("json", "")));
+            Curriculum cc = Curriculum.dao.fromJson(DES3Util.decrypt(SecretKey.SP_KEY, sp.getString("json", "")));
             vpRoot.setAdapter(new ViewPagerAdapter(this, cc));
             vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
             Toast.makeText(this, "上次更新时间为：" + sp.getString("update_time", "未知"), Toast.LENGTH_LONG).show();
@@ -101,7 +101,7 @@ public class CurriculumActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    ClientCurriculum cc = ClientCurriculum.dao.fromJson(responseString);
+                    Curriculum cc = Curriculum.dao.fromJson(responseString);
                     vpRoot.setAdapter(new ViewPagerAdapter(getContext(), cc));
                     vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
                     //保存在本地
@@ -129,7 +129,7 @@ public class CurriculumActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    ClientCurriculum cc = ClientCurriculum.dao.fromJson(responseString);
+                    Curriculum cc = Curriculum.dao.fromJson(responseString);
                     vpRoot.setAdapter(new ViewPagerAdapter(getContext(), cc));
                     vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
                     //保存在本地
@@ -152,7 +152,7 @@ public class CurriculumActivity extends ActionBarActivity {
 
         private List<View> views;
 
-        public ViewPagerAdapter(Context context, ClientCurriculum cc) {
+        public ViewPagerAdapter(Context context, Curriculum cc) {
             LayoutInflater inflater = LayoutInflater.from(context);
             views = new ArrayList<View>();
             for (int n = 0; n < weekdayNames.length; n++) {

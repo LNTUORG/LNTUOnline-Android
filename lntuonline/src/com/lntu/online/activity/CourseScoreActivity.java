@@ -32,7 +32,7 @@ import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.UserInfo;
-import com.lntu.online.model.ClientCourseScore;
+import com.lntu.online.model.CourseScore;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 
@@ -48,7 +48,7 @@ public class CourseScoreActivity extends ActionBarActivity {
 
     private ListView listView;
     private BaseAdapter adapter;
-    private List<ClientCourseScore> scoreList;
+    private List<CourseScore> scoreList;
 
     private Time time;
     private String[] strsYear;
@@ -139,7 +139,7 @@ public class CourseScoreActivity extends ActionBarActivity {
         tvTitle = (TextView) findViewById(R.id.grades_tv_title);
 
         listView = (ListView) findViewById(R.id.grades_list_view);
-        scoreList = new ArrayList<ClientCourseScore>();
+        scoreList = new ArrayList<CourseScore>();
         adapter = new CourseScoreAdapter(this, scoreList);
         listView.setAdapter(adapter);
     }
@@ -196,7 +196,7 @@ public class CourseScoreActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    List<ClientCourseScore> newList = JsonUtil.fromJson(responseString, new TypeToken<List<ClientCourseScore>>(){}.getType());
+                    List<CourseScore> newList = JsonUtil.fromJson(responseString, new TypeToken<List<CourseScore>>(){}.getType());
                     scoreList.clear();
                     scoreList.addAll(newList);
                     adapter.notifyDataSetChanged();

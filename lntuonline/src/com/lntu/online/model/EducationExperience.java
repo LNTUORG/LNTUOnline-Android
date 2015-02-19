@@ -1,9 +1,9 @@
 package com.lntu.online.model;
 
 
-public class ClientEducationExperience extends ClientModel<ClientEducationExperience> {
+public class EducationExperience extends Model<EducationExperience> {
 
-    public static final ClientEducationExperience dao = new ClientEducationExperience();
+    public static final EducationExperience dao = new EducationExperience();
 
     private String dateOfStart; //开始日期
     private String dateOfEnd; //结束日期

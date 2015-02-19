@@ -19,10 +19,10 @@ import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.model.ClientEducationExperience;
-import com.lntu.online.model.ClientEntranceExam;
-import com.lntu.online.model.ClientFamily;
-import com.lntu.online.model.ClientStudent;
+import com.lntu.online.model.EducationExperience;
+import com.lntu.online.model.EntranceExam;
+import com.lntu.online.model.Family;
+import com.lntu.online.model.Student;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
 public class StudentInfoActivity extends ActionBarActivity {
@@ -66,7 +66,7 @@ public class StudentInfoActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
-                    ClientStudent student = ClientStudent.dao.fromJson(responseString);
+                    Student student = Student.dao.fromJson(responseString);
                     updateContentView(student);
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
@@ -82,7 +82,7 @@ public class StudentInfoActivity extends ActionBarActivity {
         });
     }
 
-    private void updateContentView(ClientStudent student) {
+    private void updateContentView(Student student) {
         //头像信息
         {
             ImageView imgPhoto = (ImageView) inflater.inflate(R.layout.activity_student_info_item_photo, layoutContent, false);
@@ -250,7 +250,7 @@ public class StudentInfoActivity extends ActionBarActivity {
             layoutContent.addView(tvCategory);
         }
         for (int n = 0; n < student.getEntranceExams().size(); n++) {
-            ClientEntranceExam ee = student.getEntranceExams().get(n);
+            EntranceExam ee = student.getEntranceExams().get(n);
             //布局
             View itemView = inflater.inflate(R.layout.activity_student_info_item_hor, layoutContent, false);
             TextView tvTitle = (TextView) itemView.findViewById(R.id.student_info_item_tv_title);
@@ -279,7 +279,7 @@ public class StudentInfoActivity extends ActionBarActivity {
             layoutContent.addView(tvCategory);
         }
         for (int n = 0; n < student.getEducationExperiences().size(); n++) {
-            ClientEducationExperience ee = student.getEducationExperiences().get(n);
+            EducationExperience ee = student.getEducationExperiences().get(n);
             //布局
             View itemView = inflater.inflate(R.layout.activity_student_info_item_edex, layoutContent, false);
             TextView tvDateOfStart = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_start);
@@ -312,7 +312,7 @@ public class StudentInfoActivity extends ActionBarActivity {
             layoutContent.addView(tvCategory);
         }
         for (int n = 0; n < student.getFamilys().size(); n++) {
-            ClientFamily f = student.getFamilys().get(n);
+            Family f = student.getFamilys().get(n);
             //布局
             View itemView = inflater.inflate(R.layout.activity_student_info_item_family, layoutContent, false);
             TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_name);

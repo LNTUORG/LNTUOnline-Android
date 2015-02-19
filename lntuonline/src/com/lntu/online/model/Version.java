@@ -1,8 +1,8 @@
 package com.lntu.online.model;
 
-public class ClientVersion extends ClientModel<ClientVersion> {
+public class Version extends Model<Version> {
 
-    public static final ClientVersion dao = new ClientVersion();
+    public static final Version dao = new Version();
 
     private String name;
     private int build;
