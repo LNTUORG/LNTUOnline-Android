@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import com.lntu.online.R;
@@ -21,13 +20,14 @@ import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.UserInfo;
 import com.lntu.online.util.AppUtil;
 import com.loopj.android.http.RequestParams;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 public class LoginActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
 
-    private EditText edtUserId;
-    private EditText edtPwd;
+    private MaterialEditText edtUserId;
+    private MaterialEditText edtPwd;
     private CheckBox cbAutoLogin;
 
     @Override
@@ -40,14 +40,16 @@ public class LoginActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_account_circle_white_24dp);
 
-        edtUserId = (EditText) findViewById(R.id.login_edt_user_id);
-        edtPwd = (EditText) findViewById(R.id.login_edt_pwd);
+        edtUserId = (MaterialEditText) findViewById(R.id.login_edt_user_id);
+        edtPwd = (MaterialEditText) findViewById(R.id.login_edt_pwd);
         cbAutoLogin = (CheckBox) findViewById(R.id.login_cb_auto_login);
         cbAutoLogin.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 UserInfo.setAutoLogin(isChecked);
             }
+
         });
         //获取用户ID
         String userId = UserInfo.getSavedUserId();
@@ -64,10 +66,10 @@ public class LoginActivity extends ActionBarActivity {
 
     public void onBtnLogin(View view) {
         if (edtUserId.getText().toString().equals("")) {
-            Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
+            edtUserId.setError("学号不能为空");
         } 
         else if (edtPwd.getText().toString().equals("")) {
-            Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
+            edtPwd.setError("密码不能为空");
         } else {
             RequestParams params = new RequestParams();
             params.put("userId", edtUserId.getText().toString());
@@ -93,7 +95,11 @@ public class LoginActivity extends ActionBarActivity {
                         finish();
                     } else {
                         String[] msgs = responseString.split("\n");
-                        showErrorDialog("提示", msgs[0], msgs[1]);
+                        if ("0x02020002".equals(msgs[0])) {
+                            edtPwd.setError("密码未通过验证");
+                        } else {
+                            showErrorDialog("提示", msgs[0], msgs[1]);
+                        }
                     }
                 }
 

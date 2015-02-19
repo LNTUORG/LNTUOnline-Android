@@ -27,7 +27,7 @@
             android:id="@+id/login_edt_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:hint="@string/pwd_input_hint"
             android:inputType="textPassword"
             app:floatingLabel="highlight" />
@@ -36,7 +36,7 @@
             android:id="@+id/login_cb_auto_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="@string/auto_login"
             android:checked="false" />
 
