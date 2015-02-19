@@ -79,9 +79,6 @@ public class CrashShowActivity extends ActionBarActivity {
         //显示信息
         TextView tvInfo = (TextView) findViewById(R.id.crash_show_tv_info);
         tvInfo.setText(sorry + crashLog);
-
-        //强制提交错误信息
-        onBtnSend(null);
     }
 
     public void onBtnSend(final View view) {
