@@ -65,10 +65,10 @@ public class CourseScoreAdapter extends BaseAdapter {
             holder.tvScore.setTextColor(0xFFFFD700);
         }
         else if (level == Level.bad) {
-            holder.tvScore.setTextColor(0xFFFF0000);
+            holder.tvScore.setTextColor(0xFFF44336);
         }
         else {
-            holder.tvScore.setTextColor(0xFF00FF00);
+            holder.tvScore.setTextColor(0xFF4CAF50);
         }
         holder.iconVeryGood.setVisibility(level == Level.veryGood ? View.VISIBLE : View.GONE);
         return convertView;

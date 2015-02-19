@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/overall_score_content"
-            android:textColor="#FFFF0000"
+            android:textColor="#FFF44336"
             android:textSize="20sp" />
 
         <TextView

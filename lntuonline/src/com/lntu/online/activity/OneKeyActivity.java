@@ -118,9 +118,9 @@ public class OneKeyActivity extends ActionBarActivity {
             tvCourse.setText(evaInfo.getCourse() + "");
             tvState.setText(evaInfo.getState() + "");
             if ("已评估".equals(evaInfo.getState())) {
-                tvState.setTextColor(0xff00ff00);
+                tvState.setTextColor(0xFF4CAF50);
             } else {
-                tvState.setTextColor(0xffff0000);
+                tvState.setTextColor(0xFFF44336);
             }
             //填充布局
             itemViews.add(itemView);

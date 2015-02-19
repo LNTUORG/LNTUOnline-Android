@@ -68,9 +68,9 @@ public class ExamPlanAdapter extends BaseAdapter {
                 holder.tvDayLeft.setText(days + "");
             }
             if (days <= 7) {
-                holder.tvDayLeft.setTextColor(0xFFFF0000);
+                holder.tvDayLeft.setTextColor(0xFFF44336);
             } else {
-                holder.tvDayLeft.setTextColor(0xFF00FF00);
+                holder.tvDayLeft.setTextColor(0xFF4CAF50);
             }
         }
         return convertView;
