@@ -37,7 +37,6 @@
                 android:gravity="start"
                 android:maxLength="200"
                 android:minLines="4"
-                android:maxLines="10"
                 app:floatingLabel="highlight"
                 app:maxCharacters="200" />
 
