@@ -49,7 +49,6 @@ public class UnpassCourseActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
 
         iconUnfoldLess = findViewById(R.id.unpass_course_icon_unfold_less);
         iconUnfoldLess.setVisibility(View.GONE);

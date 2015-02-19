@@ -51,7 +51,6 @@ public class OneKeyActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
 
         lvRoot = (ListView) findViewById(R.id.one_key_lv_root);
         fab = (FloatingActionButton) findViewById(R.id.fab);

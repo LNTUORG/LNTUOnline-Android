@@ -41,7 +41,6 @@ public class StudentInfoActivity extends ActionBarActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
 
         layoutContent = (ViewGroup) findViewById(R.id.student_info_layout_content);
 

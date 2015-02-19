@@ -37,6 +37,8 @@ public class LoginActivity extends ActionBarActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
 
         edtUserId = (EditText) findViewById(R.id.login_edt_user_id);
         edtPwd = (EditText) findViewById(R.id.login_edt_pwd);
