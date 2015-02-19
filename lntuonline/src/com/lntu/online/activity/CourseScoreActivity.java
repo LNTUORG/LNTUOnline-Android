@@ -201,6 +201,7 @@ public class CourseScoreActivity extends ActionBarActivity {
                     scoreList.clear();
                     scoreList.addAll(newList);
                     adapter.notifyDataSetChanged();
+                    listView.setSelection(0); //返回ListView顶部
                     if (spnYear.getSelectedItemPosition() == 0) {
                         tvTitle.setText("全部课程成绩");
                     } else {

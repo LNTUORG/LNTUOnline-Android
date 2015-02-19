@@ -62,6 +62,7 @@ public class CourseScoreAdapter extends BaseAdapter {
         //得分红色标记
         ClientCourseScore.Level level = score.getLevel();
         holder.tvScore.setTextColor(level == Level.bad ? 0xFFFF0000 : 0xFF000000);
+        holder.iconVeryGood.setVisibility(level == Level.veryGood ? View.VISIBLE : View.GONE);
         return convertView;
     }
 
@@ -77,6 +78,7 @@ public class CourseScoreAdapter extends BaseAdapter {
         public final TextView tvRemarks;
         public final TextView tvExamType;
         public final TextView tvSemester;
+        public final View iconVeryGood;
 
         public ViewHolder(View convertView) {
             tvNum = (TextView) convertView.findViewById(R.id.course_score_item_tv_num);
@@ -89,6 +91,7 @@ public class CourseScoreAdapter extends BaseAdapter {
             tvRemarks = (TextView) convertView.findViewById(R.id.course_score_item_tv_remarks);
             tvExamType = (TextView) convertView.findViewById(R.id.course_score_item_tv_exam_type);
             tvSemester = (TextView) convertView.findViewById(R.id.course_score_item_tv_semester);
+            iconVeryGood = convertView.findViewById(R.id.course_score_item_icon_very_good);
         }
 
     }
