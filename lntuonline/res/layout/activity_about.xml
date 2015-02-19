@@ -25,7 +25,8 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:padding="16dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="20dp"
                 android:src="@drawable/logo"
                 android:scaleType="fitCenter"
                 android:contentDescription="@string/app_name"
