@@ -36,6 +36,7 @@
     <string name="skill_test">等级考试</string>
     <string name="senate_notice">教务公告</string>
     <string name="remember_motto">牢记校训</string>
+    <string name="user_agreement">用户协议</string>
 
     <string name="eva_info">评课信息</string>
 
@@ -116,5 +117,8 @@
     <string name="action_about">关于</string>
     <string name="action_help">帮助</string>
     <string name="action_exit">退出</string>
+
+    <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
+    <string name="user_agreement_link_style"><u>用户协议</u></string>
 
 </resources>

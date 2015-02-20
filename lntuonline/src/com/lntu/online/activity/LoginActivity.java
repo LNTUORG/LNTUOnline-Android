@@ -107,4 +107,8 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+    public void onBtnAgreement(View view) {
+        startActivity(new Intent(this, AgreementActivity.class));
+    }
+
 }
