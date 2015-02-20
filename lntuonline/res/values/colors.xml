@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#2196F3</color>
-    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorPrimary">#FF2196F3</color>
+    <color name="colorPrimaryDark">#FF1976D2</color>
 
     <color name="fab_ripple">#FF5252</color>
     <color name="fab_accent">#F44336</color>
     <color name="fab_accent_pressed">#D32F2F</color>
-
-
-
-
-
-    <color name="button_text_color">#FFFFFFFF</color>
 
     <color name="curriculum_title_1">#22111111</color>
     <color name="curriculum_title_2">#11111111</color>

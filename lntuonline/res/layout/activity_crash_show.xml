@@ -35,7 +35,7 @@
             android:layout_margin="10dp"
             android:layout_alignParentBottom="true"
             android:text="@string/send_crash_log"
-            android:textColor="@color/button_text_color"
+            android:textColor="#FFFFFF"
             android:background="@drawable/button_image"
             android:onClick="onBtnSend" />
 
