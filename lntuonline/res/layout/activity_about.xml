@@ -78,8 +78,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/official_homepage_content"
+                    android:textColor="@drawable/text_view_link_text_color"
                     android:textSize="14sp"
-                    android:autoLink="web" />
+                    android:clickable="true"
+                    android:onClick="onBtnHomePage" />
 
             </LinearLayout>
 
