@@ -74,7 +74,6 @@
         </FrameLayout>
 
         <TextView style="@style/AppTheme.DrawerItem"
-            android:visibility="gone"
             android:id="@+id/action_settings"
             android:drawableStart="@drawable/ic_settings_black_24dp"
             android:drawableLeft="@drawable/ic_settings_black_24dp"
