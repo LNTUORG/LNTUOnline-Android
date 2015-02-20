@@ -24,7 +24,7 @@ public class AgreementActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         webView = (WebView) findViewById(R.id.agreement_web_view);
-        webView.loadUrl("http://takwolf.com/test/lntuonline/agreement.html");
+        webView.loadUrl("http://app.pupboss.com/agreement/");
     }
 
     @Override
