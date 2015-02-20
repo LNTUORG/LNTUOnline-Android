@@ -107,7 +107,8 @@ public class MainActivity extends ActionBarActivity {
             startActivity(new Intent(this, AboutActivity.class));
             break;
         case R.id.action_help:
-            // TODO
+            // TODO 这里应该是帮助，暂时链接为用户协议
+            startActivity(new Intent(this, AgreementActivity.class));
             break;
         case R.id.action_exit:
             showExitDialog();

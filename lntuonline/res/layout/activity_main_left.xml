@@ -89,7 +89,7 @@
             android:id="@+id/action_help"
             android:drawableStart="@drawable/ic_help_black_24dp"
             android:drawableLeft="@drawable/ic_help_black_24dp"
-            android:text="@string/action_help" />
+            android:text="@string/user_agreement" />
 
         <TextView style="@style/AppTheme.DrawerItem"
             android:id="@+id/action_exit"
