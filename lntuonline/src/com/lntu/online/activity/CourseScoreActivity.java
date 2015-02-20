@@ -42,7 +42,7 @@ public class CourseScoreActivity extends ActionBarActivity {
 
     private Spinner spnYear;
     private Spinner spnTerm;
-    private Spinner spnTermNon;
+
     private TextView tvAvaOfCredit;
     private TextView tvTitle;
 
@@ -84,9 +84,6 @@ public class CourseScoreActivity extends ActionBarActivity {
         //绑定下拉控件
         spnTerm = (Spinner) findViewById(R.id.grades_spn_term);
         spnTerm.setSelection((time.month >= 2 && time.month < 8 ? 0 : 1)); //选择春还是秋
-        spnTermNon = (Spinner) findViewById(R.id.grades_spn_term_non);
-        spnTermNon.setVisibility(View.GONE);
-        spnTermNon.setEnabled(false);
         //计算年数
         String userId = UserInfo.getSavedUserId();
         int startYear = Integer.parseInt("20" + userId.substring(0, 2));
@@ -119,14 +116,6 @@ public class CourseScoreActivity extends ActionBarActivity {
                     spnTerm.setEnabled(false);
                 } else {
                     spnTerm.setEnabled(true);
-                }
-
-                if (position == 0) {
-                    spnTermNon.setVisibility(View.VISIBLE);
-                    spnTerm.setVisibility(View.GONE);
-                } else {
-                    spnTermNon.setVisibility(View.GONE);
-                    spnTerm.setVisibility(View.VISIBLE);
                 }
             }
 
