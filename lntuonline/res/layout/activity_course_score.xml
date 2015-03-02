@@ -73,7 +73,7 @@
             android:text="@string/query"
             android:textColor="#FFFFFF"
             android:background="@drawable/button_image"
-            android:onClick="onBtnQuery" />    
+            android:onClick="onBtnQuery" />
 
     </LinearLayout>
 

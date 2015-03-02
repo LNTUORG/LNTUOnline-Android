@@ -3,7 +3,7 @@
 
     <!-- API 21 -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:navigationBarColor">@color/colorPrimaryDark</item>
+
     </style>
 
 </resources>
