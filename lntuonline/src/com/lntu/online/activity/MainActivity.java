@@ -54,7 +54,7 @@ public class MainActivity extends ActionBarActivity {
         gridView = (GridView) findViewById(R.id.main_grid_view);
         gridView.setAdapter(new MainAdapter(this));
         gridView.setOnItemClickListener(new MainItemClickListener());
-        
+
         //checkUpdate
         XiaomiUpdateAgent.update(this);
     }
