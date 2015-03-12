@@ -1,6 +1,4 @@
-include ':app'
-include ':xiaomi-update'
-include ':crypto-and-digest-utils-library'
-include ':material-design-icons'
-
-include ':umeng-push'
+include ':app',
+        ':xiaomi-update',
+        ':material-design-icons',
+        ':crypto-and-digest-utils-library'
