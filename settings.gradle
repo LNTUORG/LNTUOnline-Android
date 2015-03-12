@@ -1,0 +1,4 @@
+include ':app'
+include ':Xiaomi-App-Update-SDK'
+include ':crypto-and-digest-utils-library'
+include ':material-design-icons'
