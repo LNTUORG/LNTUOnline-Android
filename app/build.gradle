@@ -7,7 +7,7 @@ dependencies {
     compile 'com.melnykov:floatingactionbutton:1.2.0'
     compile 'com.rengwuxian.materialedittext:library:1.8.3'
 
-    compile project(':Xiaomi-App-Update-SDK')
+    compile project(':xiaomi-update')
     compile project(':material-design-icons')
     compile project(':crypto-and-digest-utils-library')
 }
