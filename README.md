@@ -16,12 +16,17 @@
 
 有好的建议可以通过反馈给我们留言呢。别忘了留下你的联系方式，开发者可能还会给你回复呢！
 
-![](/screenshot/t1.png)
-![](/screenshot/t2.png)
-![](/screenshot/t3.png)
+![](/n (1).png)
+![](/n (2).png)
+![](/n (3).png)
 
-![](/screenshot/t4.png)
-![](/screenshot/t5.png)
+![](/n (4).png)
+![](/n (5).png)
+![](/n (6).png)
+
+![](/n (7).png)
+![](/n (8).png)
+![](/n (9).png)
 
 ### 下载地址： ###
 
