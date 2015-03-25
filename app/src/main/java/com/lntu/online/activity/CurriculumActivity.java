@@ -31,7 +31,7 @@ import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.SecretKey;
 import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.Curriculum;
-import com.takwolf.util.crypto.DES3Util;
+import com.takwolf.util.crypto.DES3;
 
 import butterknife.ButterKnife;
 
@@ -69,7 +69,7 @@ public class CurriculumActivity extends ActionBarActivity {
         //读取本地课表
         SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE);
         try {
-            Curriculum cc = Curriculum.dao.fromJson(DES3Util.decrypt(SecretKey.SP_KEY, sp.getString("json", "")));
+            Curriculum cc = Curriculum.dao.fromJson(DES3.decrypt(SecretKey.SP_KEY, sp.getString("json", "")));
             vpRoot.setAdapter(new ViewPagerAdapter(this, cc));
             vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
             Toast.makeText(this, "上次更新时间为：" + sp.getString("update_time", "未知"), Toast.LENGTH_LONG).show();
@@ -109,7 +109,7 @@ public class CurriculumActivity extends ActionBarActivity {
                     vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
                     //保存在本地
                     Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
-                    editer.putString("json", DES3Util.encrypt(SecretKey.SP_KEY, responseString));
+                    editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
                     editer.putString("update_time", strTime);
                     editer.commit();
                 } catch(Exception e) {
@@ -137,7 +137,7 @@ public class CurriculumActivity extends ActionBarActivity {
                     vpRoot.setCurrentItem((time.weekDay == 0 ? 7 : time.weekDay) + 1);
                     //保存在本地
                     Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
-                    editer.putString("json", DES3Util.encrypt(SecretKey.SP_KEY, responseString));
+                    editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
                     editer.putString("update_time", strTime);
                     editer.commit();
                     //Toast
