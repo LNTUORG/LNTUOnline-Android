@@ -7,15 +7,15 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.GridView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
-import com.lntu.online.adapter.MainItemClickListener;
 import com.lntu.online.util.ShipUtils;
 import com.xiaomi.market.sdk.XiaomiUpdateAgent;
 
@@ -31,8 +31,8 @@ public class MainActivity extends ActionBarActivity {
     @InjectView(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
-    @InjectView(R.id.main_grid_view)
-    protected GridView gridView;
+    @InjectView(R.id.main_recycler_view)
+    protected RecyclerView recyclerView;
 
     private long firstBackKeyTime = 0; //首次返回键按下时间戳
 
@@ -50,13 +50,10 @@ public class MainActivity extends ActionBarActivity {
         drawerLayout.setDrawerListener(drawerToggle);
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 
-        //GridView
-        gridView.setAdapter(new MainAdapter(this));
-        gridView.setOnItemClickListener(new MainItemClickListener());
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
+        recyclerView.setAdapter(new MainAdapter(this));
 
-        //checkUpdate
         XiaomiUpdateAgent.update(this);
-
     }
 
     @OnClick({
