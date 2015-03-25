@@ -33,13 +33,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class OneKeyActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
-    private FloatingActionButton fab;
-    private ListView lvRoot;
+    @InjectView(R.id.one_key_lv_root)
+    protected ListView lvRoot;
+
+    @InjectView(R.id.fab)
+    protected FloatingActionButton fab;
+
     private List<View> itemViews;
     private OneKeyAdapter adapter;
     private List<EvaInfo> evaInfos;
@@ -50,12 +57,9 @@ public class OneKeyActivity extends ActionBarActivity {
         setContentView(R.layout.activity_one_key);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        lvRoot = (ListView) findViewById(R.id.one_key_lv_root);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.attachToListView(lvRoot);
 
         itemViews = new ArrayList<View>();
@@ -130,6 +134,7 @@ public class OneKeyActivity extends ActionBarActivity {
         adapter.notifyDataSetChanged();
     }
 
+    @OnClick(R.id.fab)
     public void onBtnStart(View view) {
         int n = 0;
         for (EvaInfo evaInfo : evaInfos) {

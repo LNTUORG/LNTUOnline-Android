@@ -11,12 +11,15 @@ import android.widget.Toast;
 import com.lntu.online.R;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 public class NoticeActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
-    private WebView webView;
+    @InjectView(R.id.notice_wv)
+    protected WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +27,9 @@ public class NoticeActivity extends ActionBarActivity {
         setContentView(R.layout.activity_notice);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        webView = (WebView) findViewById(R.id.notice_wv);
         webView.loadUrl("http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100");
         webView.setWebViewClient(new WebViewClient() {
 

@@ -27,12 +27,15 @@ import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 public class StudentInfoActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
-    private ViewGroup layoutContent;
+    @InjectView(R.id.student_info_layout_content)
+    protected ViewGroup layoutContent;
 
     private LayoutInflater inflater;
 
@@ -42,11 +45,9 @@ public class StudentInfoActivity extends ActionBarActivity {
         setContentView(R.layout.activity_student_info);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        layoutContent = (ViewGroup) findViewById(R.id.student_info_layout_content);
 
         inflater = getLayoutInflater();
 

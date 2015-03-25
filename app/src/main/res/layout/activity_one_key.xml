@@ -23,7 +23,6 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
             android:src="@drawable/ic_done_all_white_24dp"
-            android:onClick="onBtnStart"
             fab:fab_colorNormal="@color/fab_accent"
             fab:fab_colorPressed="@color/fab_accent_pressed"
             fab:fab_colorRipple="@color/fab_ripple" />

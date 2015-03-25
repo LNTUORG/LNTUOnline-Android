@@ -30,17 +30,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class UnpassCourseActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
-    private ListView listView;
+    @InjectView(R.id.unpass_course_lv_root)
+    protected ListView listView;
     private List<UnpassCourse> cucs;
 
-    private FloatingActionButton fab;
+    @InjectView(R.id.fab)
+    protected FloatingActionButton fab;
     private boolean isUnfold = true;
-    private View iconUnfoldLess;
+
+    @InjectView(R.id.unpass_course_icon_unfold_less)
+    protected View iconUnfoldLess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,29 +55,10 @@ public class UnpassCourseActivity extends ActionBarActivity {
         setContentView(R.layout.activity_unpass_course);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        iconUnfoldLess = findViewById(R.id.unpass_course_icon_unfold_less);
-        iconUnfoldLess.setVisibility(View.GONE);
-
-        listView = (ListView) findViewById(R.id.unpass_course_lv_root);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.attachToListView(listView);
-        fab.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                if (cucs != null) {
-                    isUnfold = !isUnfold;
-                    listView.setAdapter(new ListViewAdapter(UnpassCourseActivity.this, cucs, !isUnfold));
-                    fab.setImageResource(isUnfold ? R.drawable.ic_unfold_less_white_24dp : R.drawable.ic_unfold_more_white_24dp);
-                    iconUnfoldLess.setVisibility(isUnfold ? View.GONE : View.VISIBLE);
-                }
-            }
-
-        });
 
         startNetwork();
     }
@@ -151,6 +139,16 @@ public class UnpassCourseActivity extends ActionBarActivity {
 
                 })
                 .show();
+    }
+
+    @OnClick(R.id.fab)
+    public void onBtnUnfoldClick(View v) {
+        if (cucs != null) {
+            isUnfold = !isUnfold;
+            listView.setAdapter(new ListViewAdapter(UnpassCourseActivity.this, cucs, !isUnfold));
+            fab.setImageResource(isUnfold ? R.drawable.ic_unfold_less_white_24dp : R.drawable.ic_unfold_more_white_24dp);
+            iconUnfoldLess.setVisibility(isUnfold ? View.GONE : View.VISIBLE);
+        }
     }
 
     private class ListViewAdapter extends BaseAdapter {

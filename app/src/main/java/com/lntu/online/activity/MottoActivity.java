@@ -13,10 +13,13 @@ import android.view.View;
 import com.lntu.online.R;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class MottoActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
     private MediaPlayer maleVoice;
     private MediaPlayer femaleVoice;
@@ -27,7 +30,6 @@ public class MottoActivity extends ActionBarActivity {
         setContentView(R.layout.activity_motto);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -83,12 +85,14 @@ public class MottoActivity extends ActionBarActivity {
         super.onDestroy();
     }
 
+    @OnClick(R.id.motto_btn_male_voice)
     public void onBtnMaleVoice(View view) {
         if (maleVoice != null) {
             maleVoice.start();
         }
     }
 
+    @OnClick(R.id.motto_btn_female_voice)
     public void onBtnFemaleVoice(View view) {
         if (femaleVoice != null) {
             femaleVoice.start();

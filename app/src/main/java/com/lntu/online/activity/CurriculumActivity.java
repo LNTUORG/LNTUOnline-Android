@@ -1,17 +1,11 @@
 package com.lntu.online.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.Header;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.Time;
@@ -32,6 +26,11 @@ import com.lntu.online.info.SecretKey;
 import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.Curriculum;
 import com.takwolf.util.crypto.DES3;
+
+import org.apache.http.Header;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

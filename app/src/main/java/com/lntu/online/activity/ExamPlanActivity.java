@@ -22,10 +22,12 @@ import java.util.Collections;
 import java.util.List;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 public class ExamPlanActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,6 @@ public class ExamPlanActivity extends ActionBarActivity {
         setContentView(R.layout.activity_exam_plan);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

@@ -21,10 +21,12 @@ import org.apache.http.Header;
 import java.util.List;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
 
 public class SkillTestActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,6 @@ public class SkillTestActivity extends ActionBarActivity {
         setContentView(R.layout.activity_skill_test);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

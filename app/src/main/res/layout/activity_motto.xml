@@ -21,24 +21,24 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/motto_btn_male_voice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:text="@string/male_voice"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_image"
-            android:onClick="onBtnMaleVoice" />
+            android:background="@drawable/button_image" />
 
         <Button
+            android:id="@+id/motto_btn_female_voice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:text="@string/female_voice"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_image"
-            android:onClick="onBtnFemaleVoice" />
+            android:background="@drawable/button_image" />
 
     </LinearLayout>
 
