@@ -22,9 +22,8 @@ public abstract class BaseListener extends TextHttpResponseHandler {
         progressDialog = new MaterialDialog.Builder(context)
                 .content(message)
                 .progress(true, 0)
+                .cancelable(cancelable)
                 .build();
-        progressDialog.setCanceledOnTouchOutside(false);
-        progressDialog.setCancelable(cancelable);
         if (cancelable) {
             progressDialog.setOnCancelListener(new OnCancelListener() {
 

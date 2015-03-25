@@ -1,14 +1,5 @@
 package com.lntu.online.activity;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.io.Writer;
-
-import org.apache.http.Header;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,12 +9,19 @@ import android.text.format.Time;
 import android.view.View;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.util.AppUtil;
 import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -107,18 +105,21 @@ public class CrashShowActivity extends ActionBarActivity {
                     return; //强制提交的不提示
                 }
                 if ((responseString + "").equals("OK")) {
-                    new AlertDialog.Builder(getContext())    
-                    .setTitle("提示")
-                    .setMessage("问题已经提交，非常感谢")
-                    .setCancelable(false)
-                    .setPositiveButton("确定", new OnClickListener() {
-                            
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
+                    new MaterialDialog.Builder(getContext())
+                            .title("提示")
+                            .content("问题已经提交，非常感谢")
+                            .cancelable(false)
+                            .positiveText("确定")
+                            .positiveColorRes(R.color.colorPrimary)
+                            .callback(new MaterialDialog.ButtonCallback() {
 
-                     }).show();
+                                @Override
+                                public void onPositive(MaterialDialog dialog) {
+                                    finish();
+                                }
+
+                            })
+                            .show();
                 } else {
                     String[] msgs = responseString.split("\n");
                     showErrorDialog("提示", msgs[0], msgs[1]);

@@ -1,13 +1,5 @@
 package com.lntu.online.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.Header;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
 import com.lntu.online.adapter.OneKeyAdapter;
@@ -32,6 +25,11 @@ import com.lntu.online.model.EvaInfo;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 import com.melnykov.fab.FloatingActionButton;
+
+import org.apache.http.Header;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -139,27 +137,33 @@ public class OneKeyActivity extends ActionBarActivity {
             }
         }
         if (n <= 0) { //不需要评估
-            new AlertDialog.Builder(this)    
-            .setTitle("提示")
-            .setMessage("您的课程都已经评价完成了，棒棒哒~")
-            .setPositiveButton("确定", null)
-            .show();
+            new MaterialDialog.Builder(this)
+                    .title("提示")
+                    .content("您的课程都已经评价完成了，棒棒哒~")
+                    .positiveText("确定")
+                    .positiveColorRes(R.color.colorPrimary)
+                    .show();
         } else { //需要评估
-            new AlertDialog.Builder(this)    
-            .setTitle("提示")
-            .setMessage("您有" + n + "门课程需要评价，评价之后才能够正常查询成绩信息。点击【评价】按钮将会授权应用为您自动全部评价为好评。\n" +
-                        "您也可以在浏览器登录教务在线手动评价。\n\n" +
-                        "您是否授权应用为您自动评价呢？")
-            .setPositiveButton("评价", new OnClickListener() {
+            new MaterialDialog.Builder(this)
+                    .title("提示")
+                    .content("" +
+                            "您有" + n + "门课程需要评价，评价之后才能够正常查询成绩信息。点击【评价】按钮将会授权应用为您自动全部评价为好评。\n" +
+                            "您也可以在浏览器登录教务在线手动评价。\n\n" +
+                            "您是否授权应用为您自动评价呢？" +
+                            "")
+                    .positiveText("评价")
+                    .negativeText("取消")
+                    .positiveColorRes(R.color.colorPrimary)
+                    .negativeColorRes(R.color.textColorSecondary)
+                    .callback(new MaterialDialog.ButtonCallback() {
 
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    startEvaAsyncTask(evaInfos, 0);
-                }
+                        @Override
+                        public void onPositive(MaterialDialog dialog) {
+                            startEvaAsyncTask(evaInfos, 0);
+                        }
 
-            })
-            .setNegativeButton("取消", null)
-            .show();
+                    })
+                    .show();
         }
     }
 
@@ -172,33 +176,35 @@ public class OneKeyActivity extends ActionBarActivity {
                 }
             }
             if (n <= 0) { //不需要评估
-                new AlertDialog.Builder(this)    
-                .setTitle("提示")
-                .setMessage("您的课程都已经评价完成了，棒棒哒~\n不给我们一个好评吗？")
-                .setPositiveButton("好评！", new OnClickListener() {
+                new MaterialDialog.Builder(this)
+                        .title("提示")
+                        .content("您的课程都已经评价完成了，棒棒哒~\n不给我们一个好评吗？")
+                        .cancelable(false)
+                        .positiveText("给好评")
+                        .negativeText("不评价")
+                        .positiveColorRes(R.color.colorPrimary)
+                        .negativeColorRes(R.color.textColorSecondary)
+                        .callback(new MaterialDialog.ButtonCallback() {
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        youAreGood();
-                    }
+                            @Override
+                            public void onPositive(MaterialDialog dialog) {
+                                youAreGood();
+                            }
 
-                })
-                .setNegativeButton("不给！", new OnClickListener() {
+                            @Override
+                            public void onNegative(MaterialDialog dialog) {
+                                youAreBad();
+                            }
 
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        youAreBad();
-                    }
-
-                })
-                .setCancelable(false)
-                .show();
+                        })
+                        .show();
             } else { //需要评估
-                new AlertDialog.Builder(this)
-                .setTitle("提示")
-                .setMessage("您有" + n + "门课程评价失败，您可以再试一次。")
-                .setPositiveButton("确定", null)
-                .show();
+                new MaterialDialog.Builder(this)
+                        .title("提示")
+                        .content("您有" + n + "门课程评价失败，您可以再试一次。")
+                        .positiveText("确定")
+                        .positiveColorRes(R.color.colorPrimary)
+                        .show();
             }
         } else { //没评完
             final EvaInfo evaInfo = evaInfos.get(current);
@@ -250,11 +256,12 @@ public class OneKeyActivity extends ActionBarActivity {
     }
 
     private void youAreBad() {
-        new AlertDialog.Builder(this)    
-        .setTitle("~~o(>_<)o ~~")
-        .setMessage("呜呜呜呜呜~~")
-        .setPositiveButton(".....", null)
-        .show();
+        new MaterialDialog.Builder(this)
+                .title("~~o(>_<)o ~~")
+                .content("呜呜呜呜呜~~")
+                .positiveText(".....")
+                .positiveColorRes(R.color.colorPrimary)
+                .show();
     }
 
 }

@@ -1,10 +1,5 @@
 package com.lntu.online.activity;
 
-import org.apache.http.Header;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,11 +8,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -65,19 +63,22 @@ public class AdviceActivity extends ActionBarActivity {
             finish();
             return;
         }
-        new AlertDialog.Builder(this)    
-        .setTitle("提示")
-        .setMessage("亲，您的建议还没有提交呢！确定要离开吗？")
-        .setPositiveButton("确定", new OnClickListener() {
-                
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
+        new MaterialDialog.Builder(this)
+                .title("提示")
+                .content("您的建议还没有提交呢！确定要离开吗？")
+                .positiveText("确定")
+                .negativeText("取消")
+                .positiveColorRes(R.color.colorPrimary)
+                .negativeColorRes(R.color.textColorSecondary)
+                .callback(new MaterialDialog.ButtonCallback() {
 
-         })
-         .setNegativeButton("取消", null)
-         .show();
+                    @Override
+                    public void onPositive(MaterialDialog dialog) {
+                        finish();
+                    }
+
+                })
+                .show();
     }
 
     @OnClick(R.id.advice_btn_submit)
@@ -94,18 +95,21 @@ public class AdviceActivity extends ActionBarActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 if ((responseString + "").equals("OK")) {
-                    new AlertDialog.Builder(getContext())    
-                    .setTitle("提示")
-                    .setMessage("您的建议已经提交成功了，非常感谢呢亲~~")
-                    .setCancelable(false)
-                    .setPositiveButton("确定", new OnClickListener() {
-                            
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
+                    new MaterialDialog.Builder(getContext())
+                            .title("提交成功")
+                            .content("非常感谢您的建议")
+                            .cancelable(false)
+                            .positiveText("确定")
+                            .positiveColorRes(R.color.colorPrimary)
+                            .callback(new MaterialDialog.ButtonCallback() {
 
-                     }).show();
+                                @Override
+                                public void onPositive(MaterialDialog dialog) {
+                                    finish();
+                                }
+
+                            })
+                            .show();
                 } else {
                     String[] msgs = responseString.split("\n");
                     showErrorDialog("提示", msgs[0], msgs[1]);

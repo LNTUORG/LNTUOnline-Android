@@ -1,18 +1,17 @@
 package com.lntu.online.http;
 
-import java.io.IOException;
-import java.net.SocketTimeoutException;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.lntu.online.R;
+import com.lntu.online.activity.MainActivity;
 
 import org.apache.http.Header;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-import android.content.Intent;
-
-import com.lntu.online.activity.MainActivity;
+import java.io.IOException;
+import java.net.SocketTimeoutException;
 
 public class RetryAuthListener extends BaseListener {
 
@@ -49,45 +48,47 @@ public class RetryAuthListener extends BaseListener {
 
     protected void showErrorDialog(String title, String code, String message) {
         if (code.equals("0x02010001")) { //用户会话未激活
-            new AlertDialog.Builder(getContext())
-            .setTitle(title)
-            .setMessage("用户会话已过期，请重新登录" + "\n" + "错误代码：" + code)
-            .setCancelable(false)
-            .setPositiveButton("确定", new OnClickListener() {
+            new MaterialDialog.Builder(getContext())
+                    .title(title)
+                    .content("用户会话已过期，请重新登录" + "\n" + "错误代码：" + code)
+                    .cancelable(false)
+                    .positiveText("确定")
+                    .positiveColorRes(R.color.colorPrimary)
+                    .callback(new MaterialDialog.ButtonCallback() {
 
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    Intent intent = new Intent(getContext(), MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    intent.putExtra("is_goback_login", true);
-                    getContext().startActivity(intent);
-                }
+                        @Override
+                        public void onPositive(MaterialDialog dialog) {
+                            Intent intent = new Intent(getContext(), MainActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                            intent.putExtra("is_goback_login", true);
+                            getContext().startActivity(intent);
+                        }
 
-            })
-            .show();
+                    })
+                    .show();
         } else {
-            new AlertDialog.Builder(getContext())
-            .setTitle(title)
-            .setMessage(message + "\n" + "错误代码：" + code)
-            .setCancelable(false)
-            .setPositiveButton("重试", new OnClickListener() {
+            new MaterialDialog.Builder(getContext())
+                    .title(title)
+                    .content(message + "\n" + "错误代码：" + code)
+                    .cancelable(false)
+                    .positiveText("重试")
+                    .negativeText("取消")
+                    .positiveColorRes(R.color.colorPrimary)
+                    .negativeColorRes(R.color.textColorSecondary)
+                    .callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(MaterialDialog dialog) {
+                            onBtnRetry();
+                        }
 
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    onBtnRetry();
-                }
-    
-            })
-            .setNegativeButton("取消", new OnClickListener() {
-    
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    ((Activity) getContext()).finish();
-                }
+                        @Override
+                        public void onNegative(MaterialDialog dialog) {
+                            ((Activity) getContext()).finish();
+                        }
 
-            })
-            .show();
+                    })
+                    .show();
         }
     }
 

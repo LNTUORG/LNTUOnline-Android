@@ -1,18 +1,12 @@
 package com.lntu.online.activity;
 
-import java.util.List;
-
-import org.apache.http.Header;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
 import com.lntu.online.adapter.SkillTestAdapter;
@@ -21,6 +15,10 @@ import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.model.SkillTestScore;
 import com.lntu.online.util.JsonUtil;
+
+import org.apache.http.Header;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 
@@ -80,19 +78,21 @@ public class SkillTestActivity extends ActionBarActivity {
     }
     
     private void showNothingDialog() {
-        new AlertDialog.Builder(this)    
-        .setTitle("提示")
-        .setMessage("您还没有参加过技能考试呢，赶快去报名啊~~")
-        .setCancelable(false)
-        .setPositiveButton("确定", new OnClickListener() {
-            
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
+        new MaterialDialog.Builder(this)
+                .title("提示")
+                .content("您还没有参加过技能考试呢，赶快去报名啊~~")
+                .cancelable(false)
+                .positiveText("确定")
+                .positiveColorRes(R.color.colorPrimary)
+                .callback(new MaterialDialog.ButtonCallback() {
 
-        })
-        .show();
+                    @Override
+                    public void onPositive(MaterialDialog dialog) {
+                        finish();
+                    }
+
+                })
+                .show();
     }
 
 }

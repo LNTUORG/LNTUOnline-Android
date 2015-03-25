@@ -1,10 +1,7 @@
 package com.lntu.online.activity;
 
-import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.app.DownloadManager.Request;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,6 +15,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
 import com.lntu.online.adapter.MainItemClickListener;
@@ -186,34 +184,44 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void showLogoutDialog() {
-        new AlertDialog.Builder(this)
-        .setTitle("注销")
-        .setMessage("您确定要注销当前用户吗？")
-        .setPositiveButton("确定", new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.putExtra("gotoMain", true);
-                startActivity(intent);
-                finish();
-            }
-        })
-        .setNegativeButton("取消", null)
-        .show();
+        new MaterialDialog.Builder(this)
+                .title("注销")
+                .content("您确定要注销当前用户吗？")
+                .positiveText("确定")
+                .negativeText("取消")
+                .positiveColorRes(R.color.colorPrimary)
+                .negativeColorRes(R.color.textColorSecondary)
+                .callback(new MaterialDialog.ButtonCallback() {
+
+                    @Override
+                    public void onPositive(MaterialDialog dialog) {
+                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                        intent.putExtra("gotoMain", true);
+                        startActivity(intent);
+                        finish();
+                    }
+
+                })
+                .show();
     }
 
     public void showExitDialog() {
-        new AlertDialog.Builder(this)    
-        .setTitle("退出")
-        .setMessage("您确定要退出应用吗？")
-        .setPositiveButton("确定", new OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        })
-        .setNegativeButton("取消", null)
-        .show();
+        new MaterialDialog.Builder(this)
+                .title("退出")
+                .content("您确定要退出应用吗？")
+                .positiveText("确定")
+                .negativeText("取消")
+                .positiveColorRes(R.color.colorPrimary)
+                .negativeColorRes(R.color.textColorSecondary)
+                .callback(new MaterialDialog.ButtonCallback() {
+
+                    @Override
+                    public void onPositive(MaterialDialog dialog) {
+                        finish();
+                    }
+
+                })
+                .show();
     }
 
 }

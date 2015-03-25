@@ -1,13 +1,5 @@
 package com.lntu.online.activity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.http.Header;
-
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -23,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
 import com.lntu.online.adapter.CourseScoreAdapter;
@@ -35,6 +28,11 @@ import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.CourseScore;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
+
+import org.apache.http.Header;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -151,28 +149,29 @@ public class CourseScoreActivity extends ActionBarActivity {
                     tvAvaOfCredit.setText(msgs[1] + "");
                 }
                 else if ((msgs[0] + "").equals("0x01050004")) { //需要评课
-                    new AlertDialog.Builder(getContext())
-                    .setTitle("提示")
-                    .setMessage("您本学期课程没有参加评教，不能查看成绩。马上去评课？")
-                    .setPositiveButton("评课", new OnClickListener() {
+                    new MaterialDialog.Builder(getContext())
+                            .title("提示")
+                            .content("您本学期课程没有参加评教，不能查看成绩。马上去评课？")
+                            .positiveText("评课")
+                            .negativeText("取消")
+                            .positiveColorRes(R.color.colorPrimary)
+                            .negativeColorRes(R.color.textColorSecondary)
+                            .callback(new MaterialDialog.ButtonCallback() {
 
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            startActivity(new Intent(getContext(), OneKeyActivity.class));
-                            finish();
-                        }
+                                @Override
+                                public void onPositive(MaterialDialog dialog) {
+                                    startActivity(new Intent(getContext(), OneKeyActivity.class));
+                                    finish();
+                                }
 
-                    })
-                    .setNegativeButton("取消", new OnClickListener() {
+                                @Override
+                                public void onNegative(MaterialDialog dialog) {
+                                    finish();
+                                }
 
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-
-                    })
-                    .setCancelable(false)
-                    .show();
+                            })
+                            .cancelable(false)
+                            .show();
                 } else {
                     showErrorDialog("提示", msgs[0], msgs[1]);
                 }
