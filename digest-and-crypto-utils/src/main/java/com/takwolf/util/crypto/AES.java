@@ -7,7 +7,7 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-public class AESUtil {
+public class AES {
 
     /**
      * 加密

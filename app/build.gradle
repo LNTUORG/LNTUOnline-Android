@@ -30,7 +30,8 @@ dependencies {
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
 
+    compile project(':android-utils')
     compile project(':xiaomi-update')
     compile project(':material-design-icons')
-    compile project(':crypto-and-digest-utils-library')
+
 }

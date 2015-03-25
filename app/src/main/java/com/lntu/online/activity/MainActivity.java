@@ -20,6 +20,7 @@ import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
 import com.lntu.online.adapter.MainItemClickListener;
 import com.lntu.online.util.AppUtil;
+import com.lntu.online.util.ShipUtils;
 import com.xiaomi.market.sdk.UpdateResponse;
 import com.xiaomi.market.sdk.UpdateStatus;
 import com.xiaomi.market.sdk.XiaomiUpdateAgent;
@@ -115,13 +116,7 @@ public class MainActivity extends ActionBarActivity {
             showLogoutDialog();
             break;
         case R.id.action_market: {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("market://details?id=" + getPackageName()));
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            } else {
-                Toast.makeText(this, "您的手机没有安装应用商店", Toast.LENGTH_SHORT).show();
-            }
+            ShipUtils.appStore(this);
             break;
         }
         case R.id.action_feedback:

@@ -23,6 +23,7 @@ import com.lntu.online.http.RetryAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.model.EvaInfo;
 import com.lntu.online.util.JsonUtil;
+import com.lntu.online.util.ShipUtils;
 import com.loopj.android.http.RequestParams;
 import com.melnykov.fab.FloatingActionButton;
 
@@ -241,18 +242,7 @@ public class OneKeyActivity extends ActionBarActivity {
     }
 
     private void youAreGood() {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("market://details?id=" + getPackageName()));
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            intent.setData(Uri.parse("http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF"));
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            } else {
-                Toast.makeText(this, "您的手机没有安装应用商店程序", Toast.LENGTH_SHORT).show();
-            }
-        }
+        ShipUtils.appStore(this);
     }
 
     private void youAreBad() {

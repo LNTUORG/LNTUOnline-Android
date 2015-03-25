@@ -1,4 +1,8 @@
-package com.takwolf.util.crypto;
+/*
+ * Copyright (C) 2014-2016 Coloshine Inc. All Rights Reserved.
+ */
+
+package com.takwolf.util;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

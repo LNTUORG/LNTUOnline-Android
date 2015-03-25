@@ -9,7 +9,7 @@ import javax.crypto.spec.IvParameterSpec;
 
 import com.takwolf.util.coder.Base64;
 
-public class DES3Util {
+public class DES3 {
 
     private final static String IV = "01234567";
     private final static String CHARSET = "utf-8";
