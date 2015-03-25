@@ -29,16 +29,16 @@ import butterknife.OnClick;
 public class LoginActivity extends ActionBarActivity {
 
     @InjectView(R.id.toolbar)
-    Toolbar toolbar;
+    protected Toolbar toolbar;
 
     @InjectView(R.id.login_edt_user_id)
-    MaterialEditText edtUserId;
+    protected MaterialEditText edtUserId;
 
     @InjectView(R.id.login_edt_pwd)
-    MaterialEditText edtPwd;
+    protected MaterialEditText edtPwd;
 
     @InjectView(R.id.login_cb_auto_login)
-    CheckBox cbAutoLogin;
+    protected CheckBox cbAutoLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.loopj.android.http.RequestHandle;
 import com.loopj.android.http.TextHttpResponseHandler;
 
@@ -14,12 +15,14 @@ public abstract class BaseListener extends TextHttpResponseHandler {
 
     private Context context;
     private RequestHandle requestHandle;
-    private ProgressDialog progressDialog;
+    private MaterialDialog progressDialog;
 
     public BaseListener(Context context, boolean cancelable, String message) {
         this.context = context;
-        progressDialog = new ProgressDialog(context);  
-        progressDialog.setMessage(message);
+        progressDialog = new MaterialDialog.Builder(context)
+                .content(message)
+                .progress(true, 0)
+                .build();
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setCancelable(cancelable);
         if (cancelable) {

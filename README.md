@@ -50,6 +50,8 @@
 
 [DiskLruCache](https://github.com/JakeWharton/DiskLruCache)
 
-[Shape Image View](https://github.com/siyamed/android-shape-imageview)
+[MaterialEditText](https://github.com/rengwuxian/MaterialEditText)
+
+[Material Dialogs](https://github.com/afollestad/material-dialogs)
 
 
