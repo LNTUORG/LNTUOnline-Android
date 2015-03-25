@@ -23,6 +23,8 @@ import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.model.ExamPlan;
 import com.lntu.online.util.JsonUtil;
 
+import butterknife.ButterKnife;
+
 public class ExamPlanActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -31,6 +33,7 @@ public class ExamPlanActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_plan);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

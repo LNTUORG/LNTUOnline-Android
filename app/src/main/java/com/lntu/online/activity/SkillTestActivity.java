@@ -22,6 +22,8 @@ import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.model.SkillTestScore;
 import com.lntu.online.util.JsonUtil;
 
+import butterknife.ButterKnife;
+
 public class SkillTestActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -30,6 +32,7 @@ public class SkillTestActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_test);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

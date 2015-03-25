@@ -12,20 +12,27 @@ import android.widget.TextView;
 import com.lntu.online.R;
 import com.lntu.online.util.AppUtil;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class AboutActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
+
+    @InjectView(R.id.about_tv_version_name)
+    protected TextView tvVersionName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+        ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView tvVersionName= (TextView) findViewById(R.id.about_tv_version_name);
         tvVersionName.setText("v" + AppUtil.getVersionName(this) + "-build-" + AppUtil.getVersionCode(this));
     }
 
@@ -40,6 +47,7 @@ public class AboutActivity extends ActionBarActivity {
         }
     }
 
+    @OnClick(R.id.about_btn_home_page)
     public void onBtnHomePage(View view) {
         TextView tv = (TextView) view;
         Uri uri = Uri.parse(tv.getText().toString() + "");

@@ -25,6 +25,8 @@ import com.lntu.online.model.Family;
 import com.lntu.online.model.Student;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
+import butterknife.ButterKnife;
+
 public class StudentInfoActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -37,6 +39,7 @@ public class StudentInfoActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_info);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

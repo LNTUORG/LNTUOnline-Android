@@ -22,27 +22,34 @@ import com.lntu.online.util.AppUtil;
 import com.loopj.android.http.RequestParams;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class LoginActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    Toolbar toolbar;
 
-    private MaterialEditText edtUserId;
-    private MaterialEditText edtPwd;
-    private CheckBox cbAutoLogin;
+    @InjectView(R.id.login_edt_user_id)
+    MaterialEditText edtUserId;
+
+    @InjectView(R.id.login_edt_pwd)
+    MaterialEditText edtPwd;
+
+    @InjectView(R.id.login_cb_auto_login)
+    CheckBox cbAutoLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_account_circle_white_24dp);
 
-        edtUserId = (MaterialEditText) findViewById(R.id.login_edt_user_id);
-        edtPwd = (MaterialEditText) findViewById(R.id.login_edt_pwd);
-        cbAutoLogin = (CheckBox) findViewById(R.id.login_cb_auto_login);
         cbAutoLogin.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
             @Override
@@ -64,6 +71,7 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+    @OnClick(R.id.login_btn_login)
     public void onBtnLogin(View view) {
         if (edtUserId.getText().toString().equals("")) {
             edtUserId.setError("学号不能为空");
@@ -107,6 +115,7 @@ public class LoginActivity extends ActionBarActivity {
         }
     }
 
+    @OnClick(R.id.login_btn_agreement)
     public void onBtnAgreement(View view) {
         startActivity(new Intent(this, AgreementActivity.class));
     }

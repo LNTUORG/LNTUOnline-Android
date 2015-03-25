@@ -25,9 +25,17 @@ import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.util.AppUtil;
 import com.loopj.android.http.RequestParams;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class CrashShowActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
+
+    @InjectView(R.id.crash_show_tv_info)
+    protected TextView tvInfo;
 
     private String sorry = "" +
         "非常抱歉，程序运行过程中出现了一个无法避免的错误。" +
@@ -41,8 +49,8 @@ public class CrashShowActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crash_show);
+        ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_error_white_24dp);
@@ -79,10 +87,10 @@ public class CrashShowActivity extends ActionBarActivity {
         sb.append(writer.toString());
         crashLog = sb.toString();
         //显示信息
-        TextView tvInfo = (TextView) findViewById(R.id.crash_show_tv_info);
         tvInfo.setText(sorry + crashLog);
     }
 
+    @OnClick(R.id.crash_show_btn_send)
     public void onBtnSend(final View view) {
         RequestParams params = new RequestParams();
         params.put("info", crashLog);

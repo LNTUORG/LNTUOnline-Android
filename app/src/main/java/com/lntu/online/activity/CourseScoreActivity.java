@@ -36,17 +36,30 @@ import com.lntu.online.model.CourseScore;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class CourseScoreActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
-    private Spinner spnYear;
-    private Spinner spnTerm;
+    @InjectView(R.id.grades_spn_year)
+    protected Spinner spnYear;
 
-    private TextView tvAvaOfCredit;
-    private TextView tvTitle;
+    @InjectView(R.id.grades_spn_term)
+    protected Spinner spnTerm;
 
-    private ListView listView;
+    @InjectView(R.id.grades_tv_ava_of_credit)
+    protected TextView tvAvaOfCredit;
+
+    @InjectView(R.id.grades_tv_title)
+    protected TextView tvTitle;
+
+    @InjectView(R.id.grades_list_view)
+    protected ListView listView;
+
     private BaseAdapter adapter;
     private List<CourseScore> scoreList;
 
@@ -57,8 +70,8 @@ public class CourseScoreActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_score);
+        ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -82,7 +95,6 @@ public class CourseScoreActivity extends ActionBarActivity {
         time = new Time();
         time.setToNow();
         //绑定下拉控件
-        spnTerm = (Spinner) findViewById(R.id.grades_spn_term);
         spnTerm.setSelection((time.month >= 2 && time.month < 8 ? 0 : 1)); //选择春还是秋
         //计算年数
         String userId = UserInfo.getSavedUserId();
@@ -99,7 +111,6 @@ public class CourseScoreActivity extends ActionBarActivity {
         for (int n = 0; n < endYear - startYear + 1; n++) {
             strsYear[n + 1] = endYear - n + "";
         }
-        spnYear = (Spinner) findViewById(R.id.grades_spn_year);
         ArrayAdapter<String> spnYearAdp = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, strsYear);
         spnYearAdp.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnYear.setAdapter(spnYearAdp);
@@ -124,10 +135,7 @@ public class CourseScoreActivity extends ActionBarActivity {
             }
 
         });
-        tvAvaOfCredit = (TextView) findViewById(R.id.grades_tv_ava_of_credit);
-        tvTitle = (TextView) findViewById(R.id.grades_tv_title);
 
-        listView = (ListView) findViewById(R.id.grades_list_view);
         scoreList = new ArrayList<CourseScore>();
         adapter = new CourseScoreAdapter(this, scoreList);
         listView.setAdapter(adapter);
@@ -178,6 +186,7 @@ public class CourseScoreActivity extends ActionBarActivity {
         });
     }
 
+    @OnClick(R.id.grades_btn_query)
     public void onBtnQuery(View view) {
         //构建监听器
         BaseListener listener = new NormalAuthListener(this) {

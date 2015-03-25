@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.lntu.online.R;
 
+import butterknife.ButterKnife;
+
 public class NoticeActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -20,6 +22,7 @@ public class NoticeActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

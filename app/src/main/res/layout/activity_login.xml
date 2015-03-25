@@ -41,13 +41,13 @@
             android:checked="false" />
 
         <Button
+            android:id="@+id/login_btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/login"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_image"
-            android:onClick="onBtnLogin" />
+            android:background="@drawable/button_image" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,6 +63,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/login_btn_agreement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
@@ -70,8 +71,7 @@
                 android:text="@string/user_agreement_link_style"
                 android:textColor="@drawable/text_view_link_text_color"
                 android:textSize="14sp"
-                android:clickable="true"
-                android:onClick="onBtnAgreement" />
+                android:clickable="true" />
 
         </LinearLayout>
 

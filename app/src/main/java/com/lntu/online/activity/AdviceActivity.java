@@ -19,24 +19,29 @@ import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.loopj.android.http.RequestParams;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
+
 public class AdviceActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
-    private EditText edtInfo;
-    private EditText edtContact;
+    @InjectView(R.id.feedback_edt_info)
+    protected EditText edtInfo;
+
+    @InjectView(R.id.feedback_edt_contact)
+    protected EditText edtContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice);
+        ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        edtInfo = (EditText) findViewById(R.id.feedback_edt_info);
-        edtContact = (EditText) findViewById(R.id.feedback_edt_contact);
     }
 
     @Override
@@ -75,6 +80,7 @@ public class AdviceActivity extends ActionBarActivity {
          .show();
     }
 
+    @OnClick(R.id.advice_btn_submit)
     public void onBtnSubmit(View view) {
         if (edtInfo.getText().toString().equals("")) {
             Toast.makeText(this, "亲，您还没吐槽呢~~", Toast.LENGTH_SHORT).show();

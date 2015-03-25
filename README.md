@@ -35,3 +35,21 @@
 - 搜狗手机助手（暂无Web链接）
 
 在应用市场渠道下载的同学们，记得给好评哟~~O(∩_∩)O
+
+## Libraries used ##
+
+[Butter Knife](https://github.com/JakeWharton/butterknife)
+
+[Picasso](https://github.com/square/picasso)
+
+[Gson](https://code.google.com/p/google-gson)
+
+[Joda-Time](http://www.joda.org/joda-time)
+
+[Volley](https://github.com/mcxiaoke/android-volley)
+
+[DiskLruCache](https://github.com/JakeWharton/DiskLruCache)
+
+[Shape Image View](https://github.com/siyamed/android-shape-imageview)
+
+

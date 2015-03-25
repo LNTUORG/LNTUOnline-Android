@@ -74,14 +74,14 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/about_btn_home_page"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/official_homepage_content"
                     android:textColor="@drawable/text_view_link_text_color"
                     android:textSize="14sp"
-                    android:clickable="true"
-                    android:onClick="onBtnHomePage" />
+                    android:clickable="true" />
 
             </LinearLayout>
 

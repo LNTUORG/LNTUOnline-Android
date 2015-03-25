@@ -12,6 +12,8 @@ import android.view.View;
 
 import com.lntu.online.R;
 
+import butterknife.ButterKnife;
+
 public class MottoActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -23,6 +25,7 @@ public class MottoActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_motto);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

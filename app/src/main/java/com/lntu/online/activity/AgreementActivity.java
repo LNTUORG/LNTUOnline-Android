@@ -8,22 +8,26 @@ import android.webkit.WebView;
 
 import com.lntu.online.R;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class AgreementActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
 
-    private WebView webView;
+    @InjectView(R.id.agreement_web_view)
+    protected WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agreement);
+        ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        webView = (WebView) findViewById(R.id.agreement_web_view);
         webView.loadUrl("http://app.pupboss.com/agreement/");
     }
 

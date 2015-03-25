@@ -33,6 +33,8 @@ import com.lntu.online.info.UserInfo;
 import com.lntu.online.model.Curriculum;
 import com.takwolf.util.crypto.DES3Util;
 
+import butterknife.ButterKnife;
+
 public class CurriculumActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -49,6 +51,7 @@ public class CurriculumActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_curriculum);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

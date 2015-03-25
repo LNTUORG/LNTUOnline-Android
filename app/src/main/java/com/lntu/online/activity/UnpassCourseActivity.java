@@ -31,6 +31,8 @@ import com.lntu.online.model.UnpassCourse;
 import com.lntu.online.util.JsonUtil;
 import com.melnykov.fab.FloatingActionButton;
 
+import butterknife.ButterKnife;
+
 public class UnpassCourseActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -46,6 +48,7 @@ public class UnpassCourseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unpass_course);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

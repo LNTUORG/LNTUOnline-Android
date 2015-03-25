@@ -36,8 +36,7 @@
             android:layout_alignParentBottom="true"
             android:text="@string/send_crash_log"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_image"
-            android:onClick="onBtnSend" />
+            android:background="@drawable/button_image" />
 
     </RelativeLayout>
 

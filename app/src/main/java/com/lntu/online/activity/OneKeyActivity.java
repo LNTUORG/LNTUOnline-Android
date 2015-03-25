@@ -33,6 +33,8 @@ import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 import com.melnykov.fab.FloatingActionButton;
 
+import butterknife.ButterKnife;
+
 public class OneKeyActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
@@ -47,6 +49,7 @@ public class OneKeyActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_key);
+        ButterKnife.inject(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

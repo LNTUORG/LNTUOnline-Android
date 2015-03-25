@@ -66,14 +66,14 @@
         </FrameLayout>
 
         <Button
+            android:id="@+id/grades_btn_query"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight="1"
             android:layout_margin="4dp"
             android:text="@string/query"
             android:textColor="#FFFFFF"
-            android:background="@drawable/button_image"
-            android:onClick="onBtnQuery" />
+            android:background="@drawable/button_image" />
 
     </LinearLayout>
 
