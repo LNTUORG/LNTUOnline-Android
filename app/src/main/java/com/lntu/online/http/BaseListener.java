@@ -24,6 +24,7 @@ public abstract class BaseListener extends TextHttpResponseHandler {
                 .progress(true, 0)
                 .cancelable(cancelable)
                 .build();
+        progressDialog.setCanceledOnTouchOutside(false);
         if (cancelable) {
             progressDialog.setOnCancelListener(new OnCancelListener() {
 

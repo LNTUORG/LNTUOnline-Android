@@ -24,6 +24,7 @@ import com.lntu.online.model.EntranceExam;
 import com.lntu.online.model.Family;
 import com.lntu.online.model.Student;
 import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 
@@ -89,7 +90,7 @@ public class StudentInfoActivity extends ActionBarActivity {
         //头像信息
         {
             ImageView imgPhoto = (ImageView) inflater.inflate(R.layout.activity_student_info_item_photo, layoutContent, false);
-            startPhotoDownload(imgPhoto, student.getPhotoUrl());
+            Picasso.with(this).load(student.getPhotoUrl()).into(imgPhoto);
             layoutContent.addView(imgPhoto);
         }
         //基本信息
@@ -347,28 +348,6 @@ public class StudentInfoActivity extends ActionBarActivity {
             tvValue.setText("");
             layoutContent.addView(itemView);
         }
-    }
-
-    private void startPhotoDownload(final ImageView img, String url) {
-        HttpUtil.baseGet(this, url, new AsyncHttpResponseHandler() {
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                try {
-                    Bitmap bmp = BitmapFactory.decodeByteArray(responseBody, 0, responseBody.length);
-                    img.setImageBitmap(bmp);
-                } catch(Exception e) {
-                    Toast.makeText(StudentInfoActivity.this, "用户头像解析失败", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                Toast.makeText(StudentInfoActivity.this, "用户头像获取失败", Toast.LENGTH_SHORT).show();
-            }
-
-        });
-
     }
 
 }
