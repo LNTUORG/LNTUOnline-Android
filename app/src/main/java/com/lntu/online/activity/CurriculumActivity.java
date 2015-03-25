@@ -34,10 +34,16 @@ import com.lntu.online.model.Curriculum;
 import com.takwolf.util.crypto.DES3;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnPageChange;
 
 public class CurriculumActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
+
+    @InjectView(R.id.curriculum_vp_root)
+    protected ViewPager vpRoot;
 
     private static final String[] weekdayNames = {
         "周六", "周日", "周一", "周二", "周三", "周四", "周五", "周六", "周日", "周一", "周二"
@@ -45,7 +51,6 @@ public class CurriculumActivity extends ActionBarActivity {
 
     private Time time;
     private String strTime;
-    private ViewPager vpRoot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +58,6 @@ public class CurriculumActivity extends ActionBarActivity {
         setContentView(R.layout.activity_curriculum);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -63,9 +67,6 @@ public class CurriculumActivity extends ActionBarActivity {
         strTime = time.year + "-" + (time.month + 1) + "-" + time.monthDay + " （" + weekdayNames[(time.weekDay == 0 ? 7 : time.weekDay) + 1] + "）";
         //ActionBar显示日期
         getSupportActionBar().setTitle(strTime);
-        //ViewPager
-        vpRoot = (ViewPager) findViewById(R.id.curriculum_vp_root);
-        vpRoot.setOnPageChangeListener(new ViewPagerPageChangeListener());
         //读取本地课表
         SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE);
         try {
@@ -217,39 +218,27 @@ public class CurriculumActivity extends ActionBarActivity {
 
     }
 
-    private class ViewPagerPageChangeListener implements OnPageChangeListener {
+    private int current = 0;
 
-        private int current = 0;
-
-        @Override
-        public void onPageScrollStateChanged(int state) {
+    @OnPageChange(value = R.id.curriculum_vp_root, callback = OnPageChange.Callback.PAGE_SCROLLED)
+    public void onPageChange(int position, float positionOffset, int positionOffsetPixels) {
+        //判断current
+        if (positionOffset == 0.0f) { //静止
+            current = position;
         }
-
-        @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            //判断current
-            if (positionOffset == 0.0f) { //静止
-                current = position;
-            }
-            else if (position >= current) {
-                current = position;
-            } 
-            else if (current - position >= 2) {
-                current = position + 1;
-            }
-            //根据current跳转
-            if (current == 1) { //周日
-                vpRoot.setCurrentItem(8, false);
-            }
-            else if (current == 9) { //周一
-                vpRoot.setCurrentItem(2, false);
-            }            
+        else if (position >= current) {
+            current = position;
         }
-
-        @Override
-        public void onPageSelected(int position) {
+        else if (current - position >= 2) {
+            current = position + 1;
         }
-
+        //根据current跳转
+        if (current == 1) { //周日
+            vpRoot.setCurrentItem(8, false);
+        }
+        else if (current == 9) { //周一
+            vpRoot.setCurrentItem(2, false);
+        }
     }
 
 }
