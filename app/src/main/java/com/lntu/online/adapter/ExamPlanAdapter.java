@@ -89,11 +89,11 @@ public class ExamPlanAdapter extends BaseAdapter {
         
         @InjectView(R.id.exam_plan_item_tv_location)
         protected TextView tvLocation;
-        
-        @InjectView(R.id.exam_plan_item_icon_countdown)
-        protected View iconFinish;
-        
+
         @InjectView(R.id.exam_plan_item_icon_finish)
+        protected View iconFinish;
+
+        @InjectView(R.id.exam_plan_item_icon_countdown)
         protected View iconCountdown;
         
         @InjectView(R.id.exam_plan_item_tv_day_left)
