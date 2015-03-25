@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.lntu.online.R;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class MainAdapter extends BaseAdapter {
 
     private static final int[] icons = { 
@@ -72,14 +75,16 @@ public class MainAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private static class ViewHolder {
+    protected static class ViewHolder {
 
-        public final ImageView imgIcon;
-        public final TextView tvTitle;
+        @InjectView(R.id.main_center_item_img_icon)
+        protected ImageView imgIcon;
+
+        @InjectView(R.id.main_center_item_tv_title)
+        protected TextView tvTitle;
 
         public ViewHolder(View convertView) {
-            imgIcon  = (ImageView) convertView.findViewById(R.id.main_center_item_img_icon);
-            tvTitle = (TextView) convertView.findViewById(R.id.main_center_item_tv_title);
+            ButterKnife.inject(this, convertView);
         }
 
     }

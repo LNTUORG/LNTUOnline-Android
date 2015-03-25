@@ -14,6 +14,9 @@ import com.lntu.online.R;
 import com.lntu.online.model.CourseScore;
 import com.lntu.online.model.CourseScore.Level;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class CourseScoreAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
@@ -74,30 +77,40 @@ public class CourseScoreAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private static class ViewHolder {
+    protected static class ViewHolder {
 
-        public final TextView tvNum;
-        public final TextView tvName;
-        public final TextView tvScore;
-        public final TextView tvCredit;
-        public final TextView tvTestMode;
-        public final TextView tvSelectType;
-        public final TextView tvRemarks;
-        public final TextView tvExamType;
-        public final TextView tvSemester;
-        public final View iconVeryGood;
+        @InjectView(R.id.course_score_item_tv_num)
+        protected TextView tvNum;
+
+        @InjectView(R.id.course_score_item_tv_name)
+        protected TextView tvName;
+
+        @InjectView(R.id.course_score_item_tv_score)
+        protected TextView tvScore;
+
+        @InjectView(R.id.course_score_item_tv_credit)
+        protected TextView tvCredit;
+
+        @InjectView(R.id.course_score_item_tv_test_mode)
+        protected TextView tvTestMode;
+
+        @InjectView(R.id.course_score_item_tv_select_type)
+        protected TextView tvSelectType;
+
+        @InjectView(R.id.course_score_item_tv_remarks)
+        protected TextView tvRemarks;
+
+        @InjectView(R.id.course_score_item_tv_exam_type)
+        protected TextView tvExamType;
+
+        @InjectView(R.id.course_score_item_tv_semester)
+        protected TextView tvSemester;
+
+        @InjectView(R.id.course_score_item_icon_very_good)
+        protected View iconVeryGood;
 
         public ViewHolder(View convertView) {
-            tvNum = (TextView) convertView.findViewById(R.id.course_score_item_tv_num);
-            tvName = (TextView) convertView.findViewById(R.id.course_score_item_tv_name);
-            tvScore = (TextView) convertView.findViewById(R.id.course_score_item_tv_score);
-            tvCredit = (TextView) convertView.findViewById(R.id.course_score_item_tv_credit);
-            tvTestMode = (TextView) convertView.findViewById(R.id.course_score_item_tv_test_mode);
-            tvSelectType = (TextView) convertView.findViewById(R.id.course_score_item_tv_select_type);
-            tvRemarks = (TextView) convertView.findViewById(R.id.course_score_item_tv_remarks);
-            tvExamType = (TextView) convertView.findViewById(R.id.course_score_item_tv_exam_type);
-            tvSemester = (TextView) convertView.findViewById(R.id.course_score_item_tv_semester);
-            iconVeryGood = convertView.findViewById(R.id.course_score_item_icon_very_good);
+            ButterKnife.inject(this, convertView);
         }
 
     }

@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.lntu.online.R;
 import com.lntu.online.model.SkillTestScore;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class SkillTestAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
@@ -54,16 +57,19 @@ public class SkillTestAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private static class ViewHolder {
+    protected static class ViewHolder {
 
-        public final TextView tvName;
-        public final TextView tvTime;
-        public final TextView tvScore;
+        @InjectView(R.id.skill_test_item_tv_name)
+        protected TextView tvName;
+
+        @InjectView(R.id.skill_test_item_tv_time)
+        protected TextView tvTime;
+
+        @InjectView(R.id.skill_test_item_tv_score)
+        protected TextView tvScore;
 
         public ViewHolder(View convertView) {
-            tvName = (TextView) convertView.findViewById(R.id.skill_test_item_tv_name);
-            tvTime = (TextView) convertView.findViewById(R.id.skill_test_item_tv_time);
-            tvScore = (TextView) convertView.findViewById(R.id.skill_test_item_tv_score);
+            ButterKnife.inject(this, convertView);
         }
 
     }

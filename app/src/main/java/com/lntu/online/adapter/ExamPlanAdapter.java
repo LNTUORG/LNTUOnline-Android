@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.lntu.online.R;
 import com.lntu.online.model.ExamPlan;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class ExamPlanAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
@@ -76,22 +79,28 @@ public class ExamPlanAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private static class ViewHolder {
+    protected static class ViewHolder {
 
-        public final TextView tvCourse;
-        public final TextView tvTime;
-        public final TextView tvLocation;
-        public final View iconFinish;
-        public final View iconCountdown;
-        public final TextView tvDayLeft;
+        @InjectView(R.id.exam_plan_item_tv_course)
+        protected TextView tvCourse;
+        
+        @InjectView(R.id.exam_plan_item_tv_time)
+        protected TextView tvTime;
+        
+        @InjectView(R.id.exam_plan_item_tv_location)
+        protected TextView tvLocation;
+        
+        @InjectView(R.id.exam_plan_item_icon_countdown)
+        protected View iconFinish;
+        
+        @InjectView(R.id.exam_plan_item_icon_finish)
+        protected View iconCountdown;
+        
+        @InjectView(R.id.exam_plan_item_tv_day_left)
+        protected TextView tvDayLeft;
 
         public ViewHolder(View convertView) {
-            tvCourse = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_course);
-            tvTime = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_time);
-            tvLocation = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_location);
-            iconCountdown = convertView.findViewById(R.id.exam_plan_item_icon_countdown);
-            iconFinish = convertView.findViewById(R.id.exam_plan_item_icon_finish);
-            tvDayLeft = (TextView) convertView.findViewById(R.id.exam_plan_item_tv_day_left);
+            ButterKnife.inject(this, convertView);
         }
 
     }
