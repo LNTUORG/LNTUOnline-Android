@@ -31,8 +31,6 @@ public class MainActivity extends ActionBarActivity {
     @InjectView(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
-    private ActionBarDrawerToggle drawerToggle;
-
     @InjectView(R.id.main_grid_view)
     protected GridView gridView;
 
@@ -47,7 +45,7 @@ public class MainActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu, R.string.app_name);
+        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu, R.string.app_name);
         drawerToggle.syncState();
         drawerLayout.setDrawerListener(drawerToggle);
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
