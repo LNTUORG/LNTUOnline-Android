@@ -18,9 +18,9 @@ import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.NetworkConfig;
 import com.lntu.online.info.UserInfo;
-import com.lntu.online.util.AppUtil;
 import com.loopj.android.http.RequestParams;
 import com.rengwuxian.materialedittext.MaterialEditText;
+import com.takwolf.android.util.AppUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -83,7 +83,7 @@ public class LoginActivity extends ActionBarActivity {
             params.put("userId", edtUserId.getText().toString());
             params.put("pwd", edtPwd.getText().toString());
             params.put("platform", "android"); //平台参数
-            params.put("version", AppUtil.getVersionCode(this)); //版本信息
+            params.put("version", AppUtils.getVersionCode(this)); //版本信息
             params.put("osVer", Build.VERSION.RELEASE); //系统版本
             params.put("manufacturer", Build.MANUFACTURER); //生产厂商
             params.put("model", Build.MODEL); //手机型号

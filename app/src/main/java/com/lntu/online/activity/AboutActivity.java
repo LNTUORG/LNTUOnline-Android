@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.util.AppUtil;
+import com.takwolf.android.util.AppUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -33,7 +33,7 @@ public class AboutActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        tvVersionName.setText("v" + AppUtil.getVersionName(this) + "-build-" + AppUtil.getVersionCode(this));
+        tvVersionName.setText("v" + AppUtils.getVersionName(this) + "-build-" + AppUtils.getVersionCode(this));
     }
 
     @Override

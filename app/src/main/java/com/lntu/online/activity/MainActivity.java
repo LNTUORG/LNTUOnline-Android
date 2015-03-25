@@ -19,8 +19,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
 import com.lntu.online.adapter.MainItemClickListener;
-import com.lntu.online.util.AppUtil;
 import com.lntu.online.util.ShipUtils;
+import com.takwolf.android.util.AppUtils;
 import com.xiaomi.market.sdk.UpdateResponse;
 import com.xiaomi.market.sdk.UpdateStatus;
 import com.xiaomi.market.sdk.XiaomiUpdateAgent;
@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 
         tvVersion = (TextView) findViewById(R.id.main_left_tv_version);
-        tvVersion.setText("v" + AppUtil.getVersionName(this));
+        tvVersion.setText("v" + AppUtils.getVersionName(this));
 
         //GridView
         gridView = (GridView) findViewById(R.id.main_grid_view);

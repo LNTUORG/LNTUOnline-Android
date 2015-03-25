@@ -14,8 +14,9 @@ import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.util.AppUtil;
+
 import com.loopj.android.http.RequestParams;
+import com.takwolf.android.util.AppUtils;
 
 import org.apache.http.Header;
 
@@ -93,7 +94,7 @@ public class CrashShowActivity extends ActionBarActivity {
         RequestParams params = new RequestParams();
         params.put("info", crashLog);
         params.put("platform", "android");
-        params.put("version", AppUtil.getVersionCode(this));
+        params.put("version", AppUtils.getVersionCode(this));
         params.put("osVer", Build.VERSION.RELEASE);
         params.put("manufacturer", Build.MANUFACTURER);
         params.put("model", Build.MODEL);
