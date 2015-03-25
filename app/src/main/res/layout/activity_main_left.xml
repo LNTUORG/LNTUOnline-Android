@@ -51,27 +51,11 @@
         <View style="@style/AppTheme.DeepLine" />
         <View style="@style/AppTheme.ItemGap" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView style="@style/AppTheme.DrawerItem"
-                android:id="@+id/action_update"
-                android:drawableStart="@drawable/ic_sync_black_24dp"
-                android:drawableLeft="@drawable/ic_sync_black_24dp"
-                android:text="@string/action_update" />
-
-            <TextView
-                android:id="@+id/main_left_tv_version"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/version_name_content"
-                android:textSize="16sp" />
-
-        </FrameLayout>
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/action_update"
+            android:drawableStart="@drawable/ic_sync_black_24dp"
+            android:drawableLeft="@drawable/ic_sync_black_24dp"
+            android:text="@string/action_update" />
 
         <TextView style="@style/AppTheme.DrawerItem"
             android:id="@+id/action_settings"

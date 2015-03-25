@@ -1,7 +1,5 @@
 package com.lntu.online.activity;
 
-import android.app.DownloadManager;
-import android.app.DownloadManager.Request;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,7 +10,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.GridView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -20,23 +17,25 @@ import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
 import com.lntu.online.adapter.MainItemClickListener;
 import com.lntu.online.util.ShipUtils;
-import com.takwolf.android.util.AppUtils;
-import com.xiaomi.market.sdk.UpdateResponse;
-import com.xiaomi.market.sdk.UpdateStatus;
 import com.xiaomi.market.sdk.XiaomiUpdateAgent;
-import com.xiaomi.market.sdk.XiaomiUpdateListener;
 
 import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class MainActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
-    private DrawerLayout drawerLayout;
+    @InjectView(R.id.toolbar)
+    protected Toolbar toolbar;
+
+    @InjectView(R.id.main_drawer_layout)
+    protected DrawerLayout drawerLayout;
+
     private ActionBarDrawerToggle drawerToggle;
 
-    private TextView tvVersion;
+    @InjectView(R.id.main_grid_view)
+    protected GridView gridView;
 
-    private GridView gridView;
     private long firstBackKeyTime = 0; //首次返回键按下时间戳
 
     @Override
@@ -45,65 +44,35 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        drawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu, R.string.app_name);
         drawerToggle.syncState();
         drawerLayout.setDrawerListener(drawerToggle);
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 
-        tvVersion = (TextView) findViewById(R.id.main_left_tv_version);
-        tvVersion.setText("v" + AppUtils.getVersionName(this));
-
         //GridView
-        gridView = (GridView) findViewById(R.id.main_grid_view);
         gridView.setAdapter(new MainAdapter(this));
         gridView.setOnItemClickListener(new MainItemClickListener());
 
         //checkUpdate
-        XiaomiUpdateAgent.setUpdateAutoPopup(false);
-        XiaomiUpdateAgent.setUpdateListener(new XiaomiUpdateListener() {
-
-            @Override
-            public void onUpdateReturned(int updateStatus, UpdateResponse updateInfo) {
-                switch (updateStatus) {
-                    case UpdateStatus.STATUS_UPDATE:
-                        // 有更新， UpdateResponse为本次更新的详细信息
-                    	
-                    	DownloadManager downloadManager = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
-                    	Uri uri = Uri.parse(updateInfo.path);
-                    	Request request = new Request(uri);
-                    	downloadManager.enqueue(request);
-                    	
-                    	
-                        break;
-                    case UpdateStatus.STATUS_NO_UPDATE:
-                        // 无更新， UpdateResponse为null
-                        break;
-                    case UpdateStatus.STATUS_NO_WIFI:
-                        // 设置了只在WiFi下更新，且WiFi不可用时， UpdateResponse为null
-                        break;
-                    case UpdateStatus.STATUS_NO_NET:
-                        // 没有网络， UpdateResponse为null
-                        break;
-                    case UpdateStatus.STATUS_FAILED:
-                        // 检查更新与服务器通讯失败，可稍后再试， UpdateResponse为null
-                        break;
-                    case UpdateStatus.STATUS_LOCAL_APP_FAILED:
-                        // 检查更新获取本地安装应用信息失败， UpdateResponse为null
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-        });
         XiaomiUpdateAgent.update(this);
 
     }
 
+    @OnClick({
+            R.id.action_browser,
+            R.id.action_logout,
+            R.id.action_market,
+            R.id.action_feedback,
+            R.id.action_share,
+            R.id.action_update,
+            R.id.action_settings,
+            R.id.action_about,
+            R.id.action_help,
+            R.id.action_exit
+    })
     public void onDrawerItemSelected(View view) {
         switch (view.getId()) {
         case R.id.action_browser: {
