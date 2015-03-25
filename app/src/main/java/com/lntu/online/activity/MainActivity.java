@@ -123,12 +123,7 @@ public class MainActivity extends ActionBarActivity {
             startActivity(new Intent(this, AdviceActivity.class));
             break;
         case R.id.action_share: {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_TITLE, "辽工大教务在线客户端");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "辽工大教务在线客户端");
-            intent.putExtra(Intent.EXTRA_TEXT, "辽工大的童鞋，推荐给你一个APP：辽工大教务在线客户端，查课表、查成绩、一键评课没有验证码，还有更多好玩的功能！我们工大人自己的掌上教务在线，下载地址：http://app.pupboss.com");
-            startActivity(Intent.createChooser(intent, "分享给好友"));
+            ShipUtils.share(this);
             break;
         }
         case R.id.action_update:
