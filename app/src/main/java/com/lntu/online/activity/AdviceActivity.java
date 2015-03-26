@@ -69,7 +69,7 @@ public class AdviceActivity extends ActionBarActivity {
                 .positiveText("确定")
                 .negativeText("取消")
                 .positiveColorRes(R.color.colorPrimary)
-                .negativeColorRes(R.color.textColorSecondary)
+                .negativeColorRes(R.color.textColorPrimary)
                 .callback(new MaterialDialog.ButtonCallback() {
 
                     @Override

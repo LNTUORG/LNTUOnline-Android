@@ -160,7 +160,7 @@ public class OneKeyActivity extends ActionBarActivity {
                     .positiveText("评价")
                     .negativeText("取消")
                     .positiveColorRes(R.color.colorPrimary)
-                    .negativeColorRes(R.color.textColorSecondary)
+                    .negativeColorRes(R.color.textColorPrimary)
                     .callback(new MaterialDialog.ButtonCallback() {
 
                         @Override
@@ -189,7 +189,7 @@ public class OneKeyActivity extends ActionBarActivity {
                         .positiveText("给好评")
                         .negativeText("不评价")
                         .positiveColorRes(R.color.colorPrimary)
-                        .negativeColorRes(R.color.textColorSecondary)
+                        .negativeColorRes(R.color.textColorPrimary)
                         .callback(new MaterialDialog.ButtonCallback() {
 
                             @Override

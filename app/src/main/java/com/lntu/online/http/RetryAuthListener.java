@@ -75,7 +75,7 @@ public class RetryAuthListener extends BaseListener {
                     .positiveText("重试")
                     .negativeText("取消")
                     .positiveColorRes(R.color.colorPrimary)
-                    .negativeColorRes(R.color.textColorSecondary)
+                    .negativeColorRes(R.color.textColorPrimary)
                     .callback(new MaterialDialog.ButtonCallback() {
                         @Override
                         public void onPositive(MaterialDialog dialog) {

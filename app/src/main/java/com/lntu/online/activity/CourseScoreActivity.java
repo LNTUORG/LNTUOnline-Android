@@ -155,7 +155,7 @@ public class CourseScoreActivity extends ActionBarActivity {
                             .positiveText("评课")
                             .negativeText("取消")
                             .positiveColorRes(R.color.colorPrimary)
-                            .negativeColorRes(R.color.textColorSecondary)
+                            .negativeColorRes(R.color.textColorPrimary)
                             .callback(new MaterialDialog.ButtonCallback() {
 
                                 @Override
