@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#FF2196F3</color>
-    <color name="colorPrimaryDark">#FF1976D2</color>
-    <color name="textColorPrimary">#212121</color>
-    <color name="textColorSecondary">#757575</color>
+    <color name="colorPrimary">#ff2196f3</color>
+    <color name="colorPrimaryDark">#ff1976d2</color>
+    <color name="textColorPrimary">#ff212121</color>
+    <color name="textColorSecondary">#ff757575</color>
 
     <color name="fab_ripple">#FF5252</color>
     <color name="fab_accent">#F44336</color>
@@ -14,5 +14,8 @@
     <color name="curriculum_title_2">#11111111</color>
     <color name="curriculum_content_1">#FFFFFFFF</color>
     <color name="curriculum_content_2">#FFEFEFEF</color>
+
+    <color name="rect_btn_background_normal">#ffffffff</color>
+    <color name="rect_btn_background_pressed">#ffeeeeee</color>
 
 </resources>
