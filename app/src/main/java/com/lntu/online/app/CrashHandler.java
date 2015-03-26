@@ -1,53 +1,40 @@
 package com.lntu.online.app;
 
-import java.lang.Thread.UncaughtExceptionHandler;
-
-import com.lntu.online.activity.CrashShowActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-public class CrashHandler implements UncaughtExceptionHandler {
+import com.lntu.online.activity.CrashShowActivity;
 
-    private static CrashHandler instance; //当前异常处理器-单例模式
-    @SuppressWarnings("unused")
-    private UncaughtExceptionHandler defaultHandler; //系统默认未捕获异常处理器
-    private Context context; //应用上下文
+import java.lang.Thread.UncaughtExceptionHandler;
 
-    /**
-     * 隐藏构造器
-     */
+public final class CrashHandler implements UncaughtExceptionHandler {
+
+    private volatile static CrashHandler singleton;
+
+    private static CrashHandler getInstance() {
+        if (singleton == null) {
+            synchronized (CrashHandler.class) {
+                if (singleton == null) {
+                    singleton = new CrashHandler();
+                }
+            }
+        }
+        return singleton;
+    }
+
+    public static void active(Context context) {
+        CrashHandler handler = getInstance();
+        handler.context = context;
+        Thread.setDefaultUncaughtExceptionHandler(handler);
+    }
+
+    private Context context;
+
     private CrashHandler() {}
 
-    /**
-     * 获取异常处理器单例
-     */
-    public static synchronized CrashHandler getInstance() {
-        if (instance == null) {
-            instance = new CrashHandler();
-        }
-        return instance;
-    }
-
-    /**
-     * 激活处理器
-     * @param context
-     */
-    public void active(Context context) {
-        this.context = context; 
-        defaultHandler = Thread.getDefaultUncaughtExceptionHandler();
-        Thread.setDefaultUncaughtExceptionHandler(this);
-    }
-
-    /**
-     * 未被捕获的异常，会调用该方法处理
-     */
     @Override
     public void uncaughtException(Thread thread, final Throwable e) {
-        //系统默认处理异常
-        //defaultHandler.uncaughtException(thread, e);
-
         //启动ErrorShowActivity
         Intent intent = new Intent(context, CrashShowActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);

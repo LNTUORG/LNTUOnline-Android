@@ -10,7 +10,7 @@
     <uses-permission android:name="com.xiaomi.market.sdk.UPDATE" />
 
     <application
-        android:name="com.lntu.online.app.App"
+        android:name="com.lntu.online.app.AppController"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"

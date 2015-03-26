@@ -3,9 +3,9 @@ package com.lntu.online.app;
 import android.app.Application;
 import android.content.Context;
 
-public class App extends Application {
+public class AppController extends Application {
 
-    private static App context;
+    private static AppController context;
 
     @Override
     public void onCreate() {
@@ -13,8 +13,7 @@ public class App extends Application {
         //注入全局上下文
         context = this;
         //注册全局异常捕获器
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.active(this);
+        CrashHandler.active(this);
     }
 
     public static Context getContext() {

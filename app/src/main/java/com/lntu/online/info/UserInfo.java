@@ -3,14 +3,14 @@ package com.lntu.online.info;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.lntu.online.app.App;
+import com.lntu.online.app.AppController;
 import com.takwolf.util.crypto.DES3;
 import com.takwolf.util.digest.MD5;
 
 public class UserInfo {
 
     private static SharedPreferences getSharedPreferences() {
-        return App.getContext().getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        return AppController.getContext().getSharedPreferences("user_info", Context.MODE_PRIVATE);
     }
 
     public static boolean isAutoLogin() {
