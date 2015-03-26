@@ -3,7 +3,7 @@ package com.lntu.online.model;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.lntu.online.util.TimeUtil;
+import com.lntu.online.util.TimeUtils;
 
 public class ExamPlan extends Model<ExamPlan> implements Comparable<ExamPlan> {
 
@@ -40,7 +40,7 @@ public class ExamPlan extends Model<ExamPlan> implements Comparable<ExamPlan> {
     public Date getDateTime() {
         String[] arr = getTime().split(" ");
         Calendar calendar = Calendar.getInstance();
-        calendar.setTime(TimeUtil.getTime(arr[0]));
+        calendar.setTime(TimeUtils.getTime(arr[0]));
         String[] arr2 = arr[1].split("--");
         String[] arrEnd = arr2[1].split(":");
         calendar.set(Calendar.SECOND, 0);
