@@ -3,7 +3,7 @@ package com.lntu.online.util;
 import java.util.Calendar;
 import java.util.Date;
 
-public class TimeUtil {
+public class TimeUtils {
 
     /**
      * Format 1991-5-13
