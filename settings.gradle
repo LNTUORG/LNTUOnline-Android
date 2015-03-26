@@ -2,5 +2,4 @@ include ':app',
         ':android-utils',
         ':digest-and-crypto-utils',
         ':xiaomi-update',
-        ':material-design-icons',
-        ':crypto-and-digest-utils-library'
+        ':material-design-icons'
