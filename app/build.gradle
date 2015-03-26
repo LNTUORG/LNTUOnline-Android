@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.lntu.online"
-        minSdkVersion 14
+        minSdkVersion 9
         targetSdkVersion 22
         versionCode 45
         versionName "1.5.0"
@@ -30,7 +30,7 @@ dependencies {
     compile 'com.afollestad:material-dialogs:0.6.5.2'
     compile 'com.jakewharton:butterknife:6.1.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
-    compile 'com.balysv:material-ripple:1.0.1'
+    // compile 'com.balysv:material-ripple:1.0.1'
 
     compile project(':android-utils')
     compile project(':xiaomi-update')

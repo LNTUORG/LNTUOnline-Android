@@ -29,6 +29,9 @@ public class ExamPlanActivity extends ActionBarActivity {
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
 
+    @InjectView(R.id.exam_plan_lv_root)
+    protected ListView listView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,8 +63,7 @@ public class ExamPlanActivity extends ActionBarActivity {
                 try {
                     List<ExamPlan> ceps = JsonUtil.fromJson(responseString, new TypeToken<List<ExamPlan>>(){}.getType());
                     Collections.sort(ceps);
-                    ListView lvRoot = (ListView) findViewById(R.id.exam_plan_lv_root);
-                    lvRoot.setAdapter(new ExamPlanAdapter(getContext(), ceps));
+                    listView.setAdapter(new ExamPlanAdapter(getContext(), ceps));
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
                     if (msgs[0].equals("0x01040003")) {
