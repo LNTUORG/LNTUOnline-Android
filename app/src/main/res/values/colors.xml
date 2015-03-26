@@ -10,12 +10,7 @@
     <color name="fab_accent">#F44336</color>
     <color name="fab_accent_pressed">#D32F2F</color>
 
-    <color name="curriculum_title_1">#22111111</color>
-    <color name="curriculum_title_2">#11111111</color>
-    <color name="curriculum_content_1">#FFFFFFFF</color>
-    <color name="curriculum_content_2">#FFEFEFEF</color>
-
     <color name="rect_btn_background_normal">#ffffffff</color>
-    <color name="rect_btn_background_pressed">#ffaaaaaa</color>
+    <color name="rect_btn_background_pressed">#ffdddddd</color>
 
 </resources>
