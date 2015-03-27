@@ -45,10 +45,7 @@ public class CurriculumActivity extends ActionBarActivity {
     @InjectView(R.id.curriculum_vp_root)
     protected ViewPager viewPager;
 
-
-
     private Time time;
-    private String strTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +56,7 @@ public class CurriculumActivity extends ActionBarActivity {
         //定义时间控件
         time = new Time();
         time.setToNow();
-        strTime = time.year + "-" + (time.month + 1) + "-" + time.monthDay + " （" + CurriculumAdapter.weekdayNames[time.weekDay] + "）";
+        String strTime = time.year + "-" + (time.month + 1) + "-" + time.monthDay + " （" + CurriculumAdapter.weekdayNames[time.weekDay] + "）";
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -71,7 +68,6 @@ public class CurriculumActivity extends ActionBarActivity {
             Curriculum cc = Curriculum.dao.fromJson(DES3.decrypt(SecretKey.SP_KEY, sp.getString("json", "")));
             viewPager.setAdapter(new CurriculumAdapter(this, cc));
             viewPager.setCurrentItem(time.weekDay);
-            Toast.makeText(this, "上次更新时间为：" + sp.getString("update_time", "未知"), Toast.LENGTH_LONG).show();
         } catch (Exception e) {
             startNetwork();
         }
@@ -109,7 +105,6 @@ public class CurriculumActivity extends ActionBarActivity {
                     //保存在本地
                     Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
                     editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
-                    editer.putString("update_time", strTime);
                     editer.commit();
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
@@ -137,7 +132,6 @@ public class CurriculumActivity extends ActionBarActivity {
                     //保存在本地
                     Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
                     editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
-                    editer.putString("update_time", strTime);
                     editer.commit();
                     //Toast
                     Toast.makeText(getContext(), "数据更新成功", Toast.LENGTH_SHORT).show();
