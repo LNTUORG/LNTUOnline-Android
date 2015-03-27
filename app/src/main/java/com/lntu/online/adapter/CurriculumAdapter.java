@@ -34,11 +34,11 @@ public class CurriculumAdapter extends PagerAdapter {
             TextView tvTime3 = (TextView) view.findViewById(R.id.curriculum_tv_time3);
             TextView tvTime4 = (TextView) view.findViewById(R.id.curriculum_tv_time4);
             TextView tvTime5 = (TextView) view.findViewById(R.id.curriculum_tv_time5);
-            tvTime1.setText("第1 - 2节");
-            tvTime2.setText("第3 - 4节");
-            tvTime3.setText("第5 - 6节");
-            tvTime4.setText("第7 - 8节");
-            tvTime5.setText("第9 - 10节");
+            tvTime1.setText("第1节 " + cc.getTimes().get(1) + "\n\n第2节 " + cc.getTimes().get(2));
+            tvTime2.setText("第3节 " + cc.getTimes().get(3) + "\n\n第4节 " + cc.getTimes().get(4));
+            tvTime3.setText("第5节 " + cc.getTimes().get(5) + "\n\n第6节 " + cc.getTimes().get(6));
+            tvTime4.setText("第7节 " + cc.getTimes().get(7) + "\n\n第8节 " + cc.getTimes().get(8));
+            tvTime5.setText("第9节 " + cc.getTimes().get(9) + "\n\n第10节 " + cc.getTimes().get(10));
             //课程
             TextView tvCourse1 = (TextView) view.findViewById(R.id.curriculum_tv_course1);
             TextView tvCourse2 = (TextView) view.findViewById(R.id.curriculum_tv_course2);
