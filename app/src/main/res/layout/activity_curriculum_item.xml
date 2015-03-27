@@ -1,166 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#FFFFFFFF">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <!-- 早上 -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/curriculum_tv_time1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorSecondary"
-                android:textSize="14sp"
-                android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                android:drawablePadding="8dp"
-                android:gravity="center" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_morning"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
 
-            <TextView
-                android:id="@+id/curriculum_tv_course1"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="14sp"
-                android:gravity="center" />
+                android:padding="8dp"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="上午"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColorSecondary"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16sp"
+                    android:gravity="center_vertical" />
 
-        <View style="@style/AppTheme.DeepLine" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-        <LinearLayout
+                    <TextView
+                        android:id="@+id/curriculum_tv_time1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                    <TextView
+                        android:id="@+id/curriculum_tv_course1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/curriculum_tv_time2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                    <TextView
+                        android:id="@+id/curriculum_tv_course2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- 下午 -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/curriculum_tv_time2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorSecondary"
-                android:textSize="14sp"
-                android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                android:drawablePadding="8dp"
-                android:gravity="center" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_afternoon"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
 
-            <TextView
-                android:id="@+id/curriculum_tv_course2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="14sp"
-                android:gravity="center" />
+                android:padding="8dp"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="下午"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColorSecondary"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16sp"
+                    android:gravity="center_vertical" />
 
-        <View style="@style/AppTheme.DeepLine" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-        <LinearLayout
+                    <TextView
+                        android:id="@+id/curriculum_tv_time3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                    <TextView
+                        android:id="@+id/curriculum_tv_course3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/curriculum_tv_time4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                    <TextView
+                        android:id="@+id/curriculum_tv_course4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="@color/textColorPrimary"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!-- 晚上 -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/curriculum_tv_time3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorSecondary"
-                android:textSize="14sp"
-                android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                android:drawablePadding="8dp"
-                android:gravity="center" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_night"
+                android:scaleType="centerCrop"
+                android:adjustViewBounds="true" />
 
-            <TextView
-                android:id="@+id/curriculum_tv_course3"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="14sp"
-                android:gravity="center" />
+                android:padding="8dp"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:text="晚自习"
+                    android:textSize="16sp"
+                    android:textColor="#ffffffff"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16sp"
+                    android:gravity="center_vertical" />
 
-        <View style="@style/AppTheme.DeepLine" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
+                    <TextView
+                        android:id="@+id/curriculum_tv_time5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
 
-            <TextView
-                android:id="@+id/curriculum_tv_time4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorSecondary"
-                android:textSize="14sp"
-                android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                android:drawablePadding="8dp"
-                android:gravity="center" />
+                    <TextView
+                        android:id="@+id/curriculum_tv_course5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:textColor="#ffffffff"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        tools:text="@string/curriculum_test" />
 
-            <TextView
-                android:id="@+id/curriculum_tv_course4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="14sp"
-                android:gravity="center" />
+                </LinearLayout>
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <View style="@style/AppTheme.DeepLine" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/curriculum_tv_time5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorSecondary"
-                android:textSize="14sp"
-                android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                android:drawablePadding="8dp"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/curriculum_tv_course5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textColor="@color/textColorPrimary"
-                android:textSize="14sp"
-                android:gravity="center" />
-
-        </LinearLayout>
+        </FrameLayout>
 
     </LinearLayout>
 

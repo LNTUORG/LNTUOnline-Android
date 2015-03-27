@@ -123,4 +123,6 @@
     <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
     <string name="user_agreement_link_style"><u>用户协议</u></string>
 
+    <string name="curriculum_test">第一行\n第二行\n第三行\n第四行</string>
+
 </resources>
