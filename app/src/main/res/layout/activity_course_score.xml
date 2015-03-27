@@ -40,8 +40,7 @@
                 android:id="@+id/grades_spn_year"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:entries="@array/years_test"
-                android:gravity="center" />
+                android:entries="@array/years_test" />
 
         </FrameLayout>
 
@@ -60,8 +59,7 @@
                 android:id="@+id/grades_spn_term"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:entries="@array/terms"
-                android:gravity="center" />
+                android:entries="@array/terms" />
 
         </FrameLayout>
 

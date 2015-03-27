@@ -4,17 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.format.Time;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lntu.online.R;
@@ -30,12 +25,8 @@ import com.takwolf.util.crypto.DES3;
 
 import org.apache.http.Header;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnPageChange;
 
 public class CurriculumActivity extends ActionBarActivity {
 
@@ -56,11 +47,10 @@ public class CurriculumActivity extends ActionBarActivity {
         //定义时间控件
         time = new Time();
         time.setToNow();
-        String strTime = time.year + "-" + (time.month + 1) + "-" + time.monthDay + " （" + CurriculumAdapter.weekdayNames[time.weekDay] + "）";
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(strTime);
+
 
         //读取本地课表
         SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE);
