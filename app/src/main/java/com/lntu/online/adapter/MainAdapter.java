@@ -80,8 +80,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.imgIcon.setImageResource(icons[position]);
         holder.tvTitle.setText(titles[position]);
-        System.out.println("layout : " + holder.getLayoutPosition());
-        System.out.println("adapter : " + holder.getAdapterPosition());
     }
 
     @Override
