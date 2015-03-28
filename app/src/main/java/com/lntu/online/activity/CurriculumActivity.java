@@ -1,5 +1,6 @@
 package com.lntu.online.activity;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -10,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.text.format.Time;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.lntu.online.R;
@@ -25,8 +27,11 @@ import com.takwolf.util.crypto.DES3;
 
 import org.apache.http.Header;
 
+import java.util.Calendar;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class CurriculumActivity extends ActionBarActivity {
 
@@ -50,6 +55,7 @@ public class CurriculumActivity extends ActionBarActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
 
         //读取本地课表
         SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(this), Context.MODE_PRIVATE);
@@ -81,6 +87,27 @@ public class CurriculumActivity extends ActionBarActivity {
             return super.onOptionsItemSelected(item);
         }
     }
+
+
+
+
+    @OnClick(R.id.grades_tv_date)
+    public void onBtnDateClick() {
+
+        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Toast.makeText(CurriculumActivity.this, "new date:" + year + "-" + monthOfYear + "-" + dayOfMonth, Toast.LENGTH_LONG).show();
+            }
+
+        };
+        final Calendar calendar = Calendar.getInstance();
+        final DatePickerDialog datePickerDialog = new DatePickerDialog(this, listener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
+
+
 
     private void startNetwork() {
         HttpUtil.get(this, NetworkConfig.serverUrl + "curriculum/info", new RetryAuthListener(this) {

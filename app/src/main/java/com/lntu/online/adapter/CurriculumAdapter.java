@@ -18,7 +18,7 @@ import java.util.List;
 public class CurriculumAdapter extends PagerAdapter {
 
     public static final String[] weekdayNames = {
-            "周日", "周一", "周二", "周三", "周四", "周五", "周六"
+            "周日", "周一", "周二", "周三（今天）", "周四", "周五", "周六"
     };
 
     private List<View> views;
