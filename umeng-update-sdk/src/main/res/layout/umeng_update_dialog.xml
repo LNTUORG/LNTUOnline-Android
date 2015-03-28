@@ -52,44 +52,35 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/umeng_update_id_ok"
+            android:visibility="gone"
+            android:id="@+id/umeng_update_id_ignore"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/umeng_update_button_ok_bg_selector"
-            android:gravity="center"
-            android:padding="12dp"
-            android:text="@string/UMUpdateNow"
-            android:focusable="true"
-            android:textColor="#FFFFFF" />
+            android:layout_margin="8dp"
+            android:text="@string/UMIgnore"
+            android:textColor="@color/umeng_textColorPrimary"
+            android:background="@drawable/umeng_update_button_cancel_bg_selector" />
 
         <Button
             android:id="@+id/umeng_update_id_cancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/umeng_update_button_cancel_bg_selector"
-            android:gravity="center"
-            android:padding="12dp"
+            android:layout_margin="8dp"
             android:text="@string/UMNotNow"
-            android:focusable="true"
-            android:textColor="#000" />
+            android:textColor="@color/umeng_textColorPrimary"
+            android:background="@drawable/umeng_update_button_cancel_bg_selector" />
 
         <Button
-            android:id="@+id/umeng_update_id_ignore"
-            android:visibility="gone"
+            android:id="@+id/umeng_update_id_ok"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@drawable/umeng_update_button_cancel_bg_selector"
-            android:gravity="center"
-            android:padding="12dp"
-            android:text="@string/UMIgnore"
-            android:focusable="true"
-            android:textColor="#AAABAF" />
+            android:layout_margin="8dp"
+            android:text="@string/UMUpdateNow"
+            android:textColor="#ffffffff"
+            android:background="@drawable/umeng_update_button_ok_bg_selector" />
 
     </LinearLayout>
 
