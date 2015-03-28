@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="umeng_colorPrimary">#ff2196f3</color>
+    <color name="umeng_colorPrimaryDark">#ff1976d2</color>
+    <color name="umeng_textColorPrimary">#ff212121</color>
+    <color name="umeng_textColorSecondary">#ff757575</color>
+
+</resources>
