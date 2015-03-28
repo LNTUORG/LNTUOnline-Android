@@ -13,10 +13,9 @@
     </string-array>
 
     <string-array name="weeks">
-        <item>全部</item>
         <item>第1周</item>
         <item>第2周</item>
-        <item>第3周（当前）</item>
+        <item>第3周</item>
         <item>第4周</item>
         <item>第5周</item>
         <item>第6周</item>

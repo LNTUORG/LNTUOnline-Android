@@ -91,7 +91,7 @@ public class CurriculumActivity extends ActionBarActivity {
 
 
 
-    @OnClick(R.id.grades_tv_date)
+    @OnClick(R.id.curriculum_tv_date)
     public void onBtnDateClick() {
 
         DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
