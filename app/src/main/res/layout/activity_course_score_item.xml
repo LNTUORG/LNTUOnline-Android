@@ -1,182 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#FFFFFF">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/course_score_item_icon_very_good"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/icon_very_good"
-        android:contentDescription="@string/course" />
-
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:orientation="vertical">
+        android:layout_marginTop="@dimen/card_view_margin_vertical"
+        android:layout_marginBottom="@dimen/card_view_margin_vertical"
+        android:layout_marginLeft="@dimen/card_view_margin_horizontal"
+        android:layout_marginRight="@dimen/card_view_margin_horizontal">
 
-        <TextView
-            android:id="@+id/course_score_item_tv_name"
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/course_score_item_icon_very_good"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/course_name_content"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/course_score_item_tv_num"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:drawableStart="@drawable/ic_class_grey600_18dp"
-            android:drawableLeft="@drawable/ic_class_grey600_18dp"
-            android:drawablePadding="16dp"
-            android:text="@string/course_num_content"
-            android:textSize="14sp" />
+            android:layout_gravity="top|end"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/icon_very_good"
+            android:contentDescription="@string/course" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal">
+            android:padding="16dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/course_score_item_tv_semester"
-                android:layout_width="wrap_content"
+                android:id="@+id/course_score_item_tv_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                android:text="@string/course_name_content"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/course_score_item_tv_num"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableStart="@drawable/ic_class_grey600_18dp"
+                android:drawableLeft="@drawable/ic_class_grey600_18dp"
                 android:drawablePadding="16dp"
-                android:text="@string/semester_content"
-                android:textSize="14sp"
-                android:gravity="start|center_vertical" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_exam_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/exam_type_content"
+                android:text="@string/course_num_content"
                 android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/course_score_item_tv_semester"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16dp"
+                    android:text="@string/semester_content"
+                    android:textSize="14sp"
+                    android:gravity="start|center_vertical" />
+
+                <TextView
+                    android:id="@+id/course_score_item_tv_exam_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/exam_type_content"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/overall_score"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/course_score_item_tv_score"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/overall_score_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/credit"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/course_score_item_tv_credit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/credit_content"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_type"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/course_score_item_tv_select_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/select_type_content"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_mode"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/course_score_item_tv_test_mode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/test_mode_content"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/remarks"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/course_score_item_tv_remarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/remarks_content"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:orientation="horizontal"
-            android:gravity="bottom">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/overall_score"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_score"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/overall_score_content"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="22sp" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/credit"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_credit"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/credit_content"
-                android:textColor="?android:attr/textColorPrimary"
-                android:textSize="22sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/select_type"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_select_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/select_type_content"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/test_mode"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_test_mode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/test_mode_content"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/remarks"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/course_score_item_tv_remarks"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:text="@string/remarks_content"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </FrameLayout>

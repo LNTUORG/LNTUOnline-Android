@@ -14,17 +14,12 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-
-
-
         <Spinner
             android:id="@+id/grades_spn_term"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:entries="@array/years_test"
             android:gravity="center" />
-
-
 
     </android.support.v7.widget.Toolbar>
 
