@@ -71,42 +71,36 @@ public class MainActivity extends ActionBarActivity {
     })
     public void onDrawerItemSelected(View view) {
         switch (view.getId()) {
-        case R.id.action_browser: {
-            Uri uri = Uri.parse("http://60.18.131.131:11180/academic/index.html");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
-            break;
-        }
-        case R.id.action_logout:
-            showLogoutDialog();
-            break;
-        case R.id.action_market: {
-            ShipUtils.appStore(this);
-            break;
-        }
-        case R.id.action_feedback:
-            startActivity(new Intent(this, AdviceActivity.class));
-            break;
-        case R.id.action_share: {
-            ShipUtils.share(this);
-            break;
-        }
-        case R.id.action_update:
-            UpdateUtils.forceUpdate(this);
-            break;
-        case R.id.action_settings:
-            // TODO
-            break;
-        case R.id.action_about:
-            startActivity(new Intent(this, AboutActivity.class));
-            break;
-        case R.id.action_help:
-            // TODO 这里应该是帮助，暂时链接为用户协议
-            startActivity(new Intent(this, AgreementActivity.class));
-            break;
-        case R.id.action_exit:
-            showExitDialog();
-            break;
+            case R.id.action_browser:
+                ShipUtils.webOnline(this);
+                break;
+            case R.id.action_logout:
+                showLogoutDialog();
+                break;
+            case R.id.action_market:
+                ShipUtils.appStore(this);
+                break;
+            case R.id.action_feedback:
+                startActivity(new Intent(this, AdviceActivity.class));
+                break;
+            case R.id.action_share:
+                ShipUtils.share(this);
+                break;
+            case R.id.action_update:
+                UpdateUtils.forceUpdate(this);
+                break;
+            case R.id.action_settings:
+                // TODO
+                break;
+            case R.id.action_about:
+                startActivity(new Intent(this, AboutActivity.class));
+                break;
+            case R.id.action_help:
+                startActivity(new Intent(this, AgreementActivity.class));
+                break;
+            case R.id.action_exit:
+                showExitDialog();
+                break;
         }
     }
 

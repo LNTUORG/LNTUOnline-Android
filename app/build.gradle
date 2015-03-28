@@ -8,7 +8,7 @@ android {
         applicationId "com.lntu.online"
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 50
+        versionCode 40
         versionName "1.5.2"
     }
     buildTypes {
