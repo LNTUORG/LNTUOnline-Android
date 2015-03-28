@@ -19,7 +19,9 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_margin="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/umeng_colorPrimary" />
 
     <!-- Content -->
