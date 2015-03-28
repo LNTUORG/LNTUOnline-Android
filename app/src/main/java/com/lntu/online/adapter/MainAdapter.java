@@ -38,16 +38,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             R.drawable.main_icon_chat
     };
 
-    private static final String[] titles = {
-            "学籍信息",
-            "学期课表",
-            "考试安排",
-            "成绩查询",
-            "一键评课",
-            "挂科查询",
-            "等级考试",
-            "教务公告",
-            "牢记校训"
+    private static final int[] titles = {
+            R.string.student_info,
+            R.string.curriculum,
+            R.string.exam_plan,
+            R.string.grades_query,
+            R.string.one_key,
+            R.string.unpass_query,
+            R.string.skill_test,
+            R.string.senate_notice,
+            R.string.remember_motto
     };
 
     private static final Class<?>[] clzs = {
