@@ -1,4 +1,4 @@
-include ':app',
+include ':app', ':umeng-update-sdk',
         ':android-utils',
         ':digest-and-crypto-utils',
         ':xiaomi-update',

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
+import com.umeng.update.UmengUpdateAgent;
+
 public final class ShipUtils {
 
     private ShipUtils() {}

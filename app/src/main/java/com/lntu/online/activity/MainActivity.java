@@ -17,7 +17,8 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.adapter.MainAdapter;
 import com.lntu.online.util.ShipUtils;
-import com.xiaomi.market.sdk.XiaomiUpdateAgent;
+import com.lntu.online.util.UpdateUtils;
+import com.umeng.update.UmengUpdateAgent;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -53,7 +54,7 @@ public class MainActivity extends ActionBarActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new MainAdapter(this));
 
-        XiaomiUpdateAgent.update(this);
+        UpdateUtils.update(this);
     }
 
     @OnClick({
@@ -91,7 +92,7 @@ public class MainActivity extends ActionBarActivity {
             break;
         }
         case R.id.action_update:
-            XiaomiUpdateAgent.update(this);
+            UpdateUtils.forceUpdate(this);
             break;
         case R.id.action_settings:
             // TODO
