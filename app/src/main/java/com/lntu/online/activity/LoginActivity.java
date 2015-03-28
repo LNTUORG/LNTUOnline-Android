@@ -54,15 +54,15 @@ public class LoginActivity extends ActionBarActivity {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                UserInfo.setAutoLogin(isChecked);
+                UserInfo.setAutoLogin(LoginActivity.this, isChecked);
             }
 
         });
         //获取用户ID
-        String userId = UserInfo.getSavedUserId();
-        String pwd = UserInfo.getSavedPwd();
-        if (UserInfo.isAutoLogin() && !userId.equals("") && !pwd.equals("")) {
-            cbAutoLogin.setChecked(UserInfo.isAutoLogin());
+        String userId = UserInfo.getSavedUserId(this);
+        String pwd = UserInfo.getSavedPwd(this);
+        if (UserInfo.isAutoLogin(this) && !userId.equals("") && !pwd.equals("")) {
+            cbAutoLogin.setChecked(UserInfo.isAutoLogin(this));
             edtUserId.setText(userId);
             edtPwd.setText(pwd);
             if (getIntent().getBooleanExtra("autoLogin", false) == true) {    
@@ -93,11 +93,11 @@ public class LoginActivity extends ActionBarActivity {
                 public void onSuccess(int statusCode, Header[] headers, String responseString) {
                     if ((responseString + "").equals("OK")) {
                         Toast.makeText(getContext(), "登录成功", Toast.LENGTH_SHORT).show();
-                        UserInfo.setSavedUserId(edtUserId.getText().toString());
+                        UserInfo.setSavedUserId(getContext(), edtUserId.getText().toString());
                         if (cbAutoLogin.isChecked()) {
-                            UserInfo.setSavedPwd(edtPwd.getText().toString());
+                            UserInfo.setSavedPwd(getContext(), edtPwd.getText().toString());
                         } else {
-                            UserInfo.setSavedPwd("");
+                            UserInfo.setSavedPwd(getContext(), "");
                         }
                         startActivity(new Intent(getContext(), MainActivity.class));
                         finish();

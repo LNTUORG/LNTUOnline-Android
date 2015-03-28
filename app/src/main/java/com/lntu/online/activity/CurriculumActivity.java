@@ -51,9 +51,8 @@ public class CurriculumActivity extends ActionBarActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         //读取本地课表
-        SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(this), Context.MODE_PRIVATE);
         try {
             Curriculum cc = Curriculum.dao.fromJson(DES3.decrypt(SecretKey.SP_KEY, sp.getString("json", "")));
             viewPager.setAdapter(new CurriculumAdapter(this, cc));
@@ -93,7 +92,7 @@ public class CurriculumActivity extends ActionBarActivity {
                     viewPager.setAdapter(new CurriculumAdapter(getContext(), cc));
                     viewPager.setCurrentItem(time.weekDay);
                     //保存在本地
-                    Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
+                    Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(getContext()), Context.MODE_PRIVATE).edit();
                     editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
                     editer.commit();
                 } catch(Exception e) {
@@ -120,7 +119,7 @@ public class CurriculumActivity extends ActionBarActivity {
                     viewPager.setAdapter(new CurriculumAdapter(getContext(), cc));
                     viewPager.setCurrentItem(time.weekDay);
                     //保存在本地
-                    Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(), Context.MODE_PRIVATE).edit();
+                    Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(getContext()), Context.MODE_PRIVATE).edit();
                     editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
                     editer.commit();
                     //Toast

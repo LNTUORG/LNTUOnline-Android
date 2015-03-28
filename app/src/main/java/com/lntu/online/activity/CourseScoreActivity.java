@@ -95,7 +95,7 @@ public class CourseScoreActivity extends ActionBarActivity {
         //绑定下拉控件
         spnTerm.setSelection((time.month >= 2 && time.month < 8 ? 0 : 1)); //选择春还是秋
         //计算年数
-        String userId = UserInfo.getSavedUserId();
+        String userId = UserInfo.getSavedUserId(this);
         int startYear = Integer.parseInt("20" + userId.substring(0, 2));
         int endYear = time.year;
         if (time.month >= 0 && time.month < 2) {

@@ -115,6 +115,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <!-- 友盟参数 -->
+        <!--
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="548fa73efd98c5ebda00035b" />
@@ -122,6 +123,9 @@
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="LntuOnline" />
+        -->
+
+
 
         <!-- 友盟自动更新 -->
         <service

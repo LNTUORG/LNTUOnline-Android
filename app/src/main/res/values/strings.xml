@@ -28,7 +28,7 @@
     <string name="advice">意见反馈</string>
     <string name="app_crash">程序崩溃</string>
     <string name="student_info">学籍信息</string>
-    <string name="curriculum">学期课表</string>
+    <string name="curriculum">我的课表</string>
     <string name="exam_plan">考试安排</string>
     <string name="grades_query">成绩查询</string>
     <string name="one_key">一键评课</string>

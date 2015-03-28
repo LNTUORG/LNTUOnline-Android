@@ -9,52 +9,52 @@ import com.takwolf.util.digest.MD5;
 
 public class UserInfo {
 
-    private static SharedPreferences getSharedPreferences() {
-        return AppController.getContext().getSharedPreferences("user_info", Context.MODE_PRIVATE);
+    private static SharedPreferences getSharedPreferences(Context context) {
+        return context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
     }
 
-    public static boolean isAutoLogin() {
-        return getSharedPreferences().getBoolean("auto_login", false);
+    public static boolean isAutoLogin(Context context) {
+        return getSharedPreferences(context).getBoolean("auto_login", false);
     }
 
-    public static void setAutoLogin(boolean flag) {
-        getSharedPreferences().edit().putBoolean("auto_login", flag).commit();
+    public static void setAutoLogin(Context context, boolean flag) {
+        getSharedPreferences(context).edit().putBoolean("auto_login", flag).commit();
     }
 
-    public static void setSavedUserId(String userId) {
+    public static void setSavedUserId(Context context, String userId) {
         try {
-            getSharedPreferences().edit().putString("user_id", DES3.encrypt(MD5.getMessageDigest(SecretKey.SP_KEY), userId)).commit();
+            getSharedPreferences(context).edit().putString("user_id", DES3.encrypt(MD5.getMessageDigest(SecretKey.SP_KEY), userId)).commit();
         } catch(Exception e) {
-            getSharedPreferences().edit().putString("user_id", "").commit();
+            getSharedPreferences(context).edit().putString("user_id", "").commit();
         }
     }
 
-    public static void setSavedPwd(String pwd) {
+    public static void setSavedPwd(Context context, String pwd) {
         try {
-            getSharedPreferences().edit().putString("pwd", DES3.encrypt(MD5.getMessageDigest(SecretKey.SP_KEY), pwd)).commit();
+            getSharedPreferences(context).edit().putString("pwd", DES3.encrypt(MD5.getMessageDigest(SecretKey.SP_KEY), pwd)).commit();
         } catch(Exception e) {
-            getSharedPreferences().edit().putString("pwd", "").commit();
+            getSharedPreferences(context).edit().putString("pwd", "").commit();
         }
     }
 
-    public static String getSavedUserId() {
+    public static String getSavedUserId(Context context) {
         try {
-            return DES3.decrypt(MD5.getMessageDigest(SecretKey.SP_KEY), getSharedPreferences().getString("user_id", ""));
-        } catch(Exception e) {
-            return "";
-        }
-    }
-
-    public static String getSavedPwd() {
-        try {
-            return DES3.decrypt(MD5.getMessageDigest(SecretKey.SP_KEY), getSharedPreferences().getString("pwd", ""));
+            return DES3.decrypt(MD5.getMessageDigest(SecretKey.SP_KEY), getSharedPreferences(context).getString("user_id", ""));
         } catch(Exception e) {
             return "";
         }
     }
 
-    public static void logout() {
-        getSharedPreferences().edit().clear().commit();
+    public static String getSavedPwd(Context context) {
+        try {
+            return DES3.decrypt(MD5.getMessageDigest(SecretKey.SP_KEY), getSharedPreferences(context).getString("pwd", ""));
+        } catch(Exception e) {
+            return "";
+        }
+    }
+
+    public static void logout(Context context) {
+        getSharedPreferences(context).edit().clear().commit();
     }
 
 }
