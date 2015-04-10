@@ -1,9 +1,6 @@
 package com.lntu.online.ui.activity;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -15,15 +12,14 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.lntu.online.R;
-import com.lntu.online.ui.adapter.CurriculumAdapter;
+import com.lntu.online.config.NetworkInfo;
+import com.lntu.online.model.entity.Curriculum;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.model.http.RetryAuthListener;
-import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.shared.SecretKey;
-import com.lntu.online.shared.UserInfo;
-import com.lntu.online.model.entity.Curriculum;
-import com.takwolf.util.crypto.DES3;
+import com.lntu.online.shared.SharedWrapper;
+import com.lntu.online.shared.UserInfoShared;
+import com.lntu.online.ui.adapter.CurriculumAdapter;
 
 import org.apache.http.Header;
 
@@ -33,7 +29,10 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
+
 public class CurriculumActivity extends ActionBarActivity {
+
+    private final static String TAG = CurriculumActivity.class.getSimpleName();
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
@@ -58,14 +57,14 @@ public class CurriculumActivity extends ActionBarActivity {
         getSupportActionBar().setTitle("");
 
         //读取本地课表
-        SharedPreferences sp = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(this), Context.MODE_PRIVATE);
-        try {
-            Curriculum cc = Curriculum.dao.fromJson(DES3.decrypt(SecretKey.SP_KEY, sp.getString("json", "")));
+        Curriculum cc = SharedWrapper.with(this, TAG).getObject(UserInfoShared.getSavedUserId(this), Curriculum.class);
+        if (cc != null) {
             viewPager.setAdapter(new CurriculumAdapter(this, cc));
             viewPager.setCurrentItem(time.weekDay);
-        } catch (Exception e) {
+        } else {
             startNetwork();
         }
+
     }
 
     @Override
@@ -88,9 +87,6 @@ public class CurriculumActivity extends ActionBarActivity {
         }
     }
 
-
-
-
     @OnClick(R.id.curriculum_tv_date)
     public void onBtnDateClick() {
 
@@ -107,8 +103,6 @@ public class CurriculumActivity extends ActionBarActivity {
         datePickerDialog.show();
     }
 
-
-
     private void startNetwork() {
         HttpUtil.get(this, NetworkInfo.serverUrl + "curriculum/info", new RetryAuthListener(this) {
 
@@ -118,10 +112,7 @@ public class CurriculumActivity extends ActionBarActivity {
                     Curriculum cc = Curriculum.dao.fromJson(responseString);
                     viewPager.setAdapter(new CurriculumAdapter(getContext(), cc));
                     viewPager.setCurrentItem(time.weekDay);
-                    //保存在本地
-                    Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(getContext()), Context.MODE_PRIVATE).edit();
-                    editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
-                    editer.commit();
+                    SharedWrapper.with(getContext(), TAG).setObject(UserInfoShared.getSavedUserId(getContext()), cc);
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
                     showErrorDialog("提示", msgs[0], msgs[1]);
@@ -145,11 +136,7 @@ public class CurriculumActivity extends ActionBarActivity {
                     Curriculum cc = Curriculum.dao.fromJson(responseString);
                     viewPager.setAdapter(new CurriculumAdapter(getContext(), cc));
                     viewPager.setCurrentItem(time.weekDay);
-                    //保存在本地
-                    Editor editer = getSharedPreferences("curriculum_" + UserInfo.getSavedUserId(getContext()), Context.MODE_PRIVATE).edit();
-                    editer.putString("json", DES3.encrypt(SecretKey.SP_KEY, responseString));
-                    editer.commit();
-                    //Toast
+                    SharedWrapper.with(getContext(), TAG).setObject(UserInfoShared.getSavedUserId(getContext()), cc);
                     Toast.makeText(getContext(), "数据更新成功", Toast.LENGTH_SHORT).show();
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");

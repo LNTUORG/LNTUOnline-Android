@@ -17,7 +17,7 @@ import com.lntu.online.R;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.shared.UserInfo;
+import com.lntu.online.shared.UserInfoShared;
 import com.loopj.android.http.RequestParams;
 import com.rengwuxian.materialedittext.MaterialEditText;
 import com.lntu.online.util.AppUtils;
@@ -54,15 +54,15 @@ public class LoginActivity extends ActionBarActivity {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                UserInfo.setAutoLogin(LoginActivity.this, isChecked);
+                UserInfoShared.setAutoLogin(LoginActivity.this, isChecked);
             }
 
         });
         //获取用户ID
-        String userId = UserInfo.getSavedUserId(this);
-        String pwd = UserInfo.getSavedPwd(this);
-        if (UserInfo.isAutoLogin(this) && !userId.equals("") && !pwd.equals("")) {
-            cbAutoLogin.setChecked(UserInfo.isAutoLogin(this));
+        String userId = UserInfoShared.getSavedUserId(this);
+        String pwd = UserInfoShared.getSavedPwd(this);
+        if (UserInfoShared.isAutoLogin(this) && !userId.equals("") && !pwd.equals("")) {
+            cbAutoLogin.setChecked(UserInfoShared.isAutoLogin(this));
             edtUserId.setText(userId);
             edtPwd.setText(pwd);
             if (getIntent().getBooleanExtra("autoLogin", false) == true) {    
@@ -93,11 +93,11 @@ public class LoginActivity extends ActionBarActivity {
                 public void onSuccess(int statusCode, Header[] headers, String responseString) {
                     if ((responseString + "").equals("OK")) {
                         Toast.makeText(getContext(), "登录成功", Toast.LENGTH_SHORT).show();
-                        UserInfo.setSavedUserId(getContext(), edtUserId.getText().toString());
+                        UserInfoShared.setSavedUserId(getContext(), edtUserId.getText().toString());
                         if (cbAutoLogin.isChecked()) {
-                            UserInfo.setSavedPwd(getContext(), edtPwd.getText().toString());
+                            UserInfoShared.setSavedPwd(getContext(), edtPwd.getText().toString());
                         } else {
-                            UserInfo.setSavedPwd(getContext(), "");
+                            UserInfoShared.setSavedPwd(getContext(), "");
                         }
                         startActivity(new Intent(getContext(), MainActivity.class));
                         finish();

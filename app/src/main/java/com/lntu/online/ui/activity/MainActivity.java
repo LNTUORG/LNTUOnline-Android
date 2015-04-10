@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
+import com.lntu.online.shared.UserInfoShared;
 import com.lntu.online.ui.adapter.MainAdapter;
 import com.lntu.online.util.ShipUtils;
 import com.lntu.online.util.UpdateUtils;
@@ -137,6 +138,7 @@ public class MainActivity extends ActionBarActivity {
 
                     @Override
                     public void onPositive(MaterialDialog dialog) {
+                        UserInfoShared.logout(MainActivity.this); // 清除用户信息
                         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                         intent.putExtra("gotoMain", true);
                         startActivity(intent);
