@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
+import com.lntu.online.shared.CacheShared;
 import com.lntu.online.ui.adapter.CourseScoreAdapter;
 import com.lntu.online.model.http.BaseListener;
 import com.lntu.online.model.http.HttpUtil;
@@ -27,7 +28,9 @@ import com.lntu.online.config.NetworkInfo;
 import com.lntu.online.shared.UserInfoShared;
 import com.lntu.online.model.entity.CourseScore;
 import com.lntu.online.util.JsonUtil;
+import com.loopj.android.http.AsyncHttpRequest;
 import com.loopj.android.http.RequestParams;
+import com.loopj.android.http.TextHttpResponseHandler;
 
 import org.apache.http.Header;
 
@@ -37,6 +40,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+
 
 public class CourseScoreActivity extends ActionBarActivity {
 
@@ -74,6 +78,7 @@ public class CourseScoreActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initWidgets();
+        tvAvaOfCredit.setText(CacheShared.getAvaOfCredit(this, UserInfoShared.getSavedUserId(this)));
         startNetwork();
     }
 
@@ -139,53 +144,25 @@ public class CourseScoreActivity extends ActionBarActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "grades/averageOfCreditPointInfo", new RetryAuthListener(this) {
+        HttpUtil.baseGet(this, NetworkInfo.serverUrl + "grades/averageOfCreditPointInfo", new TextHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 String[] msgs = responseString.split("\n");
                 if ((msgs[0] + "").equals("0x00000000")) {
                     tvAvaOfCredit.setText(msgs[1] + "");
-                }
-                else if ((msgs[0] + "").equals("0x01050004")) { //需要评课
-                    new MaterialDialog.Builder(getContext())
-                            .title("提示")
-                            .content("您本学期课程没有参加评教，不能查看成绩。马上去评课？")
-                            .positiveText("评课")
-                            .negativeText("取消")
-                            .positiveColorRes(R.color.colorPrimary)
-                            .negativeColorRes(R.color.textColorPrimary)
-                            .callback(new MaterialDialog.ButtonCallback() {
-
-                                @Override
-                                public void onPositive(MaterialDialog dialog) {
-                                    startActivity(new Intent(getContext(), OneKeyActivity.class));
-                                    finish();
-                                }
-
-                                @Override
-                                public void onNegative(MaterialDialog dialog) {
-                                    finish();
-                                }
-
-                            })
-                            .cancelable(false)
-                            .show();
-                } else {
-                    showErrorDialog("提示", msgs[0], msgs[1]);
+                    CacheShared.setAvaOfCredit(CourseScoreActivity.this, UserInfoShared.getSavedUserId(CourseScoreActivity.this), msgs[1] + "");
                 }
             }
 
             @Override
-            public void onBtnRetry() {
-                startNetwork();
-            }
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {}
 
         });
     }
 
     @OnClick(R.id.grades_btn_query)
-    public void onBtnQuery(View view) {
+    public void onBtnQuery() {
         //构建监听器
         BaseListener listener = new NormalAuthListener(this) {
 
@@ -204,7 +181,33 @@ public class CourseScoreActivity extends ActionBarActivity {
                     }
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
-                    showErrorDialog("提示", msgs[0], msgs[1]);
+                    if ((msgs[0] + "").equals("0x01050004")) { //需要评课
+                        new MaterialDialog.Builder(getContext())
+                                .title("提示")
+                                .content("您本学期课程没有参加评教，不能查看成绩。马上去评课？")
+                                .positiveText("评课")
+                                .negativeText("取消")
+                                .positiveColorRes(R.color.colorPrimary)
+                                .negativeColorRes(R.color.textColorPrimary)
+                                .callback(new MaterialDialog.ButtonCallback() {
+
+                                    @Override
+                                    public void onPositive(MaterialDialog dialog) {
+                                        startActivity(new Intent(getContext(), OneKeyActivity.class));
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onNegative(MaterialDialog dialog) {
+                                        finish();
+                                    }
+
+                                })
+                                .cancelable(false)
+                                .show();
+                    } else {
+                        showErrorDialog("提示", msgs[0], msgs[1]);
+                    }
                 }
             }
 

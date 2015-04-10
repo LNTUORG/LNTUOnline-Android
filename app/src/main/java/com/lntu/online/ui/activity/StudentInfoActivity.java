@@ -25,6 +25,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
+
 public class StudentInfoActivity extends ActionBarActivity {
 
     @InjectView(R.id.toolbar)
@@ -68,7 +69,7 @@ public class StudentInfoActivity extends ActionBarActivity {
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
                 try {
                     Student student = Student.dao.fromJson(responseString);
-                    updateContentView(student);
+                    updateViews(student);
                 } catch(Exception e) {
                     String[] msgs = responseString.split("\n");
                     showErrorDialog("提示", msgs[0], msgs[1]);
@@ -83,7 +84,7 @@ public class StudentInfoActivity extends ActionBarActivity {
         });
     }
 
-    private void updateContentView(Student student) {
+    private void updateViews(Student student) {
         //头像信息
         {
             ImageView imgPhoto = (ImageView) inflater.inflate(R.layout.activity_student_info_item_photo, layoutContent, false);
