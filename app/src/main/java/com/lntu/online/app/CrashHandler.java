@@ -4,9 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.lntu.online.activity.CrashShowActivity;
+import com.lntu.online.ui.activity.CrashShowActivity;
 
 import java.lang.Thread.UncaughtExceptionHandler;
+
 
 public final class CrashHandler implements UncaughtExceptionHandler {
 

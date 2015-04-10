@@ -1,7 +1,3 @@
-/*
- * Copyright (C) 2014-2016 ColoShine Inc. All Rights Reserved.
- */
-
 package com.lntu.online.shared;
 
 import android.content.Context;
@@ -9,8 +5,8 @@ import android.content.SharedPreferences;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
+import com.lntu.online.util.gson.GsonWrapper;
 import com.takwolf.util.crypto.DES3;
-import com.takwolf.util.digest.MD5;
 import com.takwolf.util.digest.SHA256;
 
 
@@ -33,7 +29,7 @@ public final class SharedWrapper {
     private SharedPreferences sp;
 
     private SharedWrapper(Context context, String name) {
-        sp = context.getSharedPreferences(MD5.getMessageDigest(name), Context.MODE_PRIVATE);
+        sp = context.getSharedPreferences(getDigestKey(name), Context.MODE_PRIVATE);
     }
 
     private String getDigestKey(String key) {
@@ -41,7 +37,7 @@ public final class SharedWrapper {
     }
 
     private String getSecretKey() {
-        return SHA256.getMessageDigest(MD5.getMessageDigest(SECRET_KEY));
+        return SHA256.getMessageDigest(SECRET_KEY);
     }
 
     private String get(String key, String defValue) {
