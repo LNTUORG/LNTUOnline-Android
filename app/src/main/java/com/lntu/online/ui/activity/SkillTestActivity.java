@@ -23,6 +23,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
+
 public class SkillTestActivity extends ActionBarActivity {
 
     @InjectView(R.id.toolbar)
