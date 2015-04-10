@@ -12,7 +12,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
-import com.lntu.online.info.NetworkConfig;
+import com.lntu.online.config.NetworkConfig;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;

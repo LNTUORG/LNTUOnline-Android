@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.takwolf.android.util.AppUtils;
+import com.lntu.online.util.AppUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

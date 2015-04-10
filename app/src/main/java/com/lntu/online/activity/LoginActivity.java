@@ -16,11 +16,11 @@ import android.widget.Toast;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
-import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.info.UserInfo;
+import com.lntu.online.config.NetworkConfig;
+import com.lntu.online.config.UserInfo;
 import com.loopj.android.http.RequestParams;
 import com.rengwuxian.materialedittext.MaterialEditText;
-import com.takwolf.android.util.AppUtils;
+import com.lntu.online.util.AppUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

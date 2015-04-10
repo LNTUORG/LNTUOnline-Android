@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
-import com.lntu.online.info.NetworkConfig;
+import com.lntu.online.config.NetworkConfig;
 import com.lntu.online.model.UnpassCourse;
 import com.lntu.online.util.JsonUtil;
 import com.melnykov.fab.FloatingActionButton;

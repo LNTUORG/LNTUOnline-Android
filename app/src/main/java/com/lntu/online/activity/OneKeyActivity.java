@@ -1,7 +1,5 @@
 package com.lntu.online.activity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -11,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.reflect.TypeToken;
@@ -20,7 +17,7 @@ import com.lntu.online.adapter.OneKeyAdapter;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
-import com.lntu.online.info.NetworkConfig;
+import com.lntu.online.config.NetworkConfig;
 import com.lntu.online.model.EvaInfo;
 import com.lntu.online.util.JsonUtil;
 import com.lntu.online.util.ShipUtils;

@@ -2,7 +2,7 @@
  * Copyright (C) 2014-2016 ColoShine Inc. All Rights Reserved.
  */
 
-package com.takwolf.android.util;
+package com.lntu.online.util;
 
 import android.content.Context;
 import android.os.Environment;

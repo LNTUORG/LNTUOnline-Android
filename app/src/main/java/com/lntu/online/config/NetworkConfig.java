@@ -1,4 +1,4 @@
-package com.lntu.online.info;
+package com.lntu.online.config;
 
 public class NetworkConfig {
 

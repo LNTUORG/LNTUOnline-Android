@@ -19,9 +19,9 @@ import com.lntu.online.adapter.CurriculumAdapter;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.NormalAuthListener;
 import com.lntu.online.http.RetryAuthListener;
-import com.lntu.online.info.NetworkConfig;
-import com.lntu.online.info.SecretKey;
-import com.lntu.online.info.UserInfo;
+import com.lntu.online.config.NetworkConfig;
+import com.lntu.online.config.SecretKey;
+import com.lntu.online.config.UserInfo;
 import com.lntu.online.model.Curriculum;
 import com.takwolf.util.crypto.DES3;
 

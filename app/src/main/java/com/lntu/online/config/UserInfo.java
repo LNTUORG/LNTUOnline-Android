@@ -1,9 +1,8 @@
-package com.lntu.online.info;
+package com.lntu.online.config;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.lntu.online.app.AppController;
 import com.takwolf.util.crypto.DES3;
 import com.takwolf.util.digest.MD5;
 

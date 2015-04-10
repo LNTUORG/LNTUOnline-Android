@@ -114,6 +114,18 @@
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
+        <!-- 课表桌面插件 -->
+        <receiver
+            android:name="com.lntu.online.widget.ClassTableWidget"
+            android:icon="@drawable/ic_launcher">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/class_table_appwidget_info" />
+        </receiver>
+
         <!-- 友盟参数 -->
         <meta-data
             android:name="UMENG_APPKEY"

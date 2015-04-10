@@ -2,8 +2,6 @@ package com.lntu.online.activity;
 
 import org.apache.http.Header;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -13,17 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lntu.online.R;
 import com.lntu.online.http.HttpUtil;
 import com.lntu.online.http.RetryAuthListener;
-import com.lntu.online.info.NetworkConfig;
+import com.lntu.online.config.NetworkConfig;
 import com.lntu.online.model.EducationExperience;
 import com.lntu.online.model.EntranceExam;
 import com.lntu.online.model.Family;
 import com.lntu.online.model.Student;
-import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
