@@ -23,7 +23,7 @@ public class LogoActivity extends ActionBarActivity implements Runnable {
     @Override
     public void run() {
         if (!isFinishing()) {
-            if (TextUtils.isEmpty(LoginShared.getLoginToken(this))) { // 未登录
+            if (TextUtils.isEmpty(LoginShared.getLoginToken(this))) {
                 startActivity(new Intent(this, LoginActivity.class));
             } else {
                 startActivity(new Intent(this, MainActivity.class));
