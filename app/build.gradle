@@ -36,4 +36,5 @@ dependencies {
     compile project(':material-design-icons')
 
     compile project(':umeng-update-sdk')
+    compile 'com.umeng.analytics:analytics:5.4.2'
 }

@@ -11,6 +11,10 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
+    <style name="AppTheme.LogoPage" parent="AppBaseTheme">
+        <item name="colorPrimaryDark">@android:color/black</item>
+    </style>
+
     <!-- Deep Line -->
     <style name="AppTheme.DeepLine">
         <item name="android:layout_width">match_parent</item>

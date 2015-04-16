@@ -1,12 +1,22 @@
 package com.lntu.online.model.entity;
 
-public class SkillTestScore extends Model<SkillTestScore> {
+public class SkillTestScore {
 
-    public static final SkillTestScore dao = new SkillTestScore();
+    private String studentId;
 
     private String name;
+
     private String time;
+
     private String score;
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
 
     public String getName() {
         return name;

@@ -18,11 +18,9 @@ import java.util.Locale;
 
 public class DateTypeAdapter implements JsonSerializer<Date>, JsonDeserializer<Date> {
 
-    private final static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.CHINA);
-
     @Override
     public JsonElement serialize(Date src, Type typeOfSrc, JsonSerializationContext context) {
-        return new JsonPrimitive(dateFormat.format(src));
+        return new JsonPrimitive(new DateTime(src).toString());
     }
 
     @Override

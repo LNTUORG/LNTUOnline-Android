@@ -1,4 +1,4 @@
-package com.lntu.online.model.entity;
+package com.lntu.online.model.entityOld;
 
 import java.lang.reflect.ParameterizedType;
 

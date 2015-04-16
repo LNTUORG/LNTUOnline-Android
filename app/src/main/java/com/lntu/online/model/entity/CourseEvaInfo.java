@@ -1,13 +1,24 @@
 package com.lntu.online.model.entity;
 
-public class EvaInfo extends Model<EvaInfo> {
+public class CourseEvaInfo {
 
-    public static final EvaInfo dao = new EvaInfo();
+    private String studentId;
 
     private String teacher;
+
     private String course;
+
     private String state;
-    private String url;
+
+    private String evaKey;
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
 
     public String getTeacher() {
         return teacher;
@@ -33,12 +44,12 @@ public class EvaInfo extends Model<EvaInfo> {
         this.state = state;
     }
 
-    public String getUrl() {
-        return url;
+    public String getEvaKey() {
+        return evaKey;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setEvaKey(String evaKey) {
+        this.evaKey = evaKey;
     }
 
 }

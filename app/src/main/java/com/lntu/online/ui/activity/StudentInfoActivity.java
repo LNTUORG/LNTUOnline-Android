@@ -16,10 +16,10 @@ import com.lntu.online.R;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
 import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.model.entity.EducationExperience;
-import com.lntu.online.model.entity.EntranceExam;
-import com.lntu.online.model.entity.Family;
-import com.lntu.online.model.entity.Student;
+import com.lntu.online.model.entityOld.EducationExperience;
+import com.lntu.online.model.entityOld.EntranceExam;
+import com.lntu.online.model.entityOld.Family;
+import com.lntu.online.model.entityOld.Student;
 import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;

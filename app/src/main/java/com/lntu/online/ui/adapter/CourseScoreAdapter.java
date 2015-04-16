@@ -11,8 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.model.entity.CourseScore;
-import com.lntu.online.model.entity.CourseScore.Level;
+import com.lntu.online.model.entityOld.CourseScore;
+import com.lntu.online.model.entityOld.CourseScore.Level;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

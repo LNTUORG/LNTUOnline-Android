@@ -20,7 +20,7 @@ import com.lntu.online.R;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
 import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.model.entity.UnpassCourse;
+import com.lntu.online.model.entityOld.UnpassCourse;
 import com.lntu.online.util.JsonUtil;
 import com.melnykov.fab.FloatingActionButton;
 

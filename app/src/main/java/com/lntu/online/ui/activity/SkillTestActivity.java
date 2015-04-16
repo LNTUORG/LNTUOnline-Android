@@ -13,7 +13,7 @@ import com.lntu.online.ui.adapter.SkillTestAdapter;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
 import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.model.entity.SkillTestScore;
+import com.lntu.online.model.entityOld.SkillTestScore;
 import com.lntu.online.util.JsonUtil;
 
 import org.apache.http.Header;

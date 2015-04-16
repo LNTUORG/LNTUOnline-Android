@@ -3,7 +3,7 @@ package com.lntu.online.shared;
 
 import android.content.Context;
 
-import com.lntu.online.model.entity.Student;
+import com.lntu.online.model.entityOld.Student;
 
 public final class CacheShared {
 

@@ -1,59 +1,94 @@
 package com.lntu.online.model.entity;
 
+import java.util.Date;
 import java.util.List;
 
-public class Student extends Model<Student> {
+public class Student {
 
-    public static final Student dao = new Student();
+    private String id; // 学号
 
-    private String userId; //学号
-    private String name; //姓名
-    private String englishName; //英文名
-    private String idCardType; //证件类型
-    private String idCardNum;  //证件号码
-    private String sex; //性别
-    private String college; //学院
-    private String classInfo; //班级
-    private String entranceExamArea; //考区
-    private String entranceExamNum; //入学准考证号码
-    private String foreignLanguage; //外语语种
-    private String dateOfAdmission; //入学日期
-    private String dateOfGraduation; //毕业日期
-    private String homeAddress; //家庭住址
-    private String contactTel; //联系电话
-    private String studentInfoTableNum; //学籍表号
-    private String whereaboutsAftergraduation; //毕业去向
+    private String name; // 姓名
 
-    private String nationality; //国籍
-    private String birthplace; //籍贯
-    private String dateOfBirth; //出生年月日
-    private String politicalAffiliation; //政治面貌
-    private String travelRange; //乘车区间
-    private String nation; //民族
-    private String major; //专业
-    private String studentType; //学生类型
-    private String entranceExamScore; //高考总分
-    private String graduateSchool; //毕业学校
-    private String admissionNum; //入学录取证号
-    private String admissionType; //入学方式
-    private String educationType; //培养方式
-    private String zipCode; //邮政编码
-    private String email; //电子邮件
-    private String sourceOfStudent; //学生来源
+    private String englishName; // 英文名
 
-    private String remarks; //备注
-    private String photoUrl; //头像照片url
+    private String idCardType; // 证件类型
 
-    private List<EntranceExam> entranceExams; //高考科目
-    private List<EducationExperience> educationExperiences; //教育经历
-    private List<Family> familys; //家人
+    private String idCardNum; // 证件号码
 
-    public String getUserId() {
-        return userId;
+    private String sex; // 性别
+
+    private String college; // 学院
+
+    private String classInfo; // 班级
+
+    private String entranceExamArea; // 考区
+
+    private String entranceExamNum; // 入学准考证号码
+
+    private String foreignLanguage; // 外语语种
+
+    private Date   admissionTime; // 入学日期
+
+    private Date   graduationTime; // 毕业日期
+
+    private String homeAddress; // 家庭住址
+
+    private String tel; // 联系电话
+
+    private String studentInfoTableNum; // 学籍表号
+
+    private String whereaboutsAftergraduation; // 毕业去向
+
+    private String nationality; // 国籍
+
+    private String birthplace; // 籍贯
+
+    private Date   birthday; // 出生年月日
+
+    private String politicalAffiliation; // 政治面貌
+
+    private String travelRange; // 乘车区间
+
+    private String nation; // 民族
+
+    private String major; // 专业
+
+    private String studentType; // 学生类型
+
+    private String entranceExamScore; // 高考总分
+
+    private String graduateSchool; // 毕业学校
+
+    private String admissionNum; // 入学录取证号
+
+    private String admissionType; // 入学方式
+
+    private String educationType; // 培养方式
+
+    private String zipCode; // 邮政编码
+
+    private String email; // 电子邮件
+
+    private String sourceOfStudent; // 学生来源
+
+    private String remarks; // 备注
+
+    private String photoUrl; // 头像照片url
+
+    private List<EntranceExam> entranceExams; // 高考科目
+
+    private List<EducationExperience> educationExperiences; // 教育经历
+
+    private List<Family> familys; // 家人
+
+    private List<DisciplinaryAction> disciplinaryActions; // 处分
+
+    public String getId() {
+        return id;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -136,20 +171,20 @@ public class Student extends Model<Student> {
         this.foreignLanguage = foreignLanguage;
     }
 
-    public String getDateOfAdmission() {
-        return dateOfAdmission;
+    public Date getAdmissionTime() {
+        return admissionTime;
     }
 
-    public void setDateOfAdmission(String dateOfAdmission) {
-        this.dateOfAdmission = dateOfAdmission;
+    public void setAdmissionTime(Date admissionTime) {
+        this.admissionTime = admissionTime;
     }
 
-    public String getDateOfGraduation() {
-        return dateOfGraduation;
+    public Date getGraduationTime() {
+        return graduationTime;
     }
 
-    public void setDateOfGraduation(String dateOfGraduation) {
-        this.dateOfGraduation = dateOfGraduation;
+    public void setGraduationTime(Date graduationTime) {
+        this.graduationTime = graduationTime;
     }
 
     public String getHomeAddress() {
@@ -160,12 +195,12 @@ public class Student extends Model<Student> {
         this.homeAddress = homeAddress;
     }
 
-    public String getContactTel() {
-        return contactTel;
+    public String getTel() {
+        return tel;
     }
 
-    public void setContactTel(String contactTel) {
-        this.contactTel = contactTel;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
     public String getStudentInfoTableNum() {
@@ -180,8 +215,8 @@ public class Student extends Model<Student> {
         return whereaboutsAftergraduation;
     }
 
-    public void setWhereaboutsAftergraduation(String whereabouts) {
-        this.whereaboutsAftergraduation = whereabouts;
+    public void setWhereaboutsAftergraduation(String whereaboutsAftergraduation) {
+        this.whereaboutsAftergraduation = whereaboutsAftergraduation;
     }
 
     public String getNationality() {
@@ -200,12 +235,12 @@ public class Student extends Model<Student> {
         this.birthplace = birthplace;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public Date getBirthday() {
+        return birthday;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getPoliticalAffiliation() {
@@ -340,8 +375,7 @@ public class Student extends Model<Student> {
         return educationExperiences;
     }
 
-    public void setEducationExperiences(
-            List<EducationExperience> educationExperiences) {
+    public void setEducationExperiences(List<EducationExperience> educationExperiences) {
         this.educationExperiences = educationExperiences;
     }
 
@@ -353,8 +387,228 @@ public class Student extends Model<Student> {
         this.familys = familys;
     }
 
-    public static Student getDao() {
-        return dao;
+    public List<DisciplinaryAction> getDisciplinaryActions() {
+        return disciplinaryActions;
+    }
+
+    public void setDisciplinaryActions(List<DisciplinaryAction> disciplinaryActions) {
+        this.disciplinaryActions = disciplinaryActions;
+    }
+
+    public static class EntranceExam {
+
+        private String name;
+
+        private String score;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getScore() {
+            return score;
+        }
+
+        public void setScore(String score) {
+            this.score = score;
+        }
+
+    }
+
+    public static class EducationExperience {
+
+        private Date startTime;
+
+        private Date endTime;
+
+        private String schoolInfo;
+
+        private String witness; // 证明人
+
+        public Date getStartTime() {
+            return startTime;
+        }
+
+        public void setStartTime(Date startTime) {
+            this.startTime = startTime;
+        }
+
+        public Date getEndTime() {
+            return endTime;
+        }
+
+        public void setEndTime(Date endTime) {
+            this.endTime = endTime;
+        }
+
+        public String getSchoolInfo() {
+            return schoolInfo;
+        }
+
+        public void setSchoolInfo(String schoolInfo) {
+            this.schoolInfo = schoolInfo;
+        }
+
+        public String getWitness() {
+            return witness;
+        }
+
+        public void setWitness(String witness) {
+            this.witness = witness;
+        }
+
+    }
+
+    public static class Family {
+
+        private String name;
+
+        private String relationship;
+
+        private String politicalAffiliation; // 政治面貌
+
+        private String job; // 职业
+
+        private String post; // 职务
+
+        private String workLocation; // 工作地点
+
+        private String tel;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getRelationship() {
+            return relationship;
+        }
+
+        public void setRelationship(String relationship) {
+            this.relationship = relationship;
+        }
+
+        public String getPoliticalAffiliation() {
+            return politicalAffiliation;
+        }
+
+        public void setPoliticalAffiliation(String politicalAffiliation) {
+            this.politicalAffiliation = politicalAffiliation;
+        }
+
+        public String getJob() {
+            return job;
+        }
+
+        public void setJob(String job) {
+            this.job = job;
+        }
+
+        public String getPost() {
+            return post;
+        }
+
+        public void setPost(String post) {
+            this.post = post;
+        }
+
+        public String getWorkLocation() {
+            return workLocation;
+        }
+
+        public void setWorkLocation(String workLocation) {
+            this.workLocation = workLocation;
+        }
+
+        public String getTel() {
+            return tel;
+        }
+
+        public void setTel(String tel) {
+            this.tel = tel;
+        }
+
+    }
+
+    public static class DisciplinaryAction {
+
+        private String level; // 处分级别
+
+        private Date createTime; // 处分日期
+
+        private String createReason; // 处分原因
+
+        private Date cancelTime; // 撤销时间
+
+        private String cancelReason; // 撤销原因
+
+        private String state; // 状态
+
+        private String remarks; // 备注
+
+        public String getLevel() {
+            return level;
+        }
+
+        public void setLevel(String level) {
+            this.level = level;
+        }
+
+        public Date getCreateTime() {
+            return createTime;
+        }
+
+        public void setCreateTime(Date createTime) {
+            this.createTime = createTime;
+        }
+
+        public String getCreateReason() {
+            return createReason;
+        }
+
+        public void setCreateReason(String createReason) {
+            this.createReason = createReason;
+        }
+
+        public Date getCancelTime() {
+            return cancelTime;
+        }
+
+        public void setCancelTime(Date cancelTime) {
+            this.cancelTime = cancelTime;
+        }
+
+        public String getCancelReason() {
+            return cancelReason;
+        }
+
+        public void setCancelReason(String cancelReason) {
+            this.cancelReason = cancelReason;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public String getRemarks() {
+            return remarks;
+        }
+
+        public void setRemarks(String remarks) {
+            this.remarks = remarks;
+        }
+
     }
 
 }

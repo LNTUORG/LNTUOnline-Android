@@ -18,7 +18,7 @@ import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.model.http.RetryAuthListener;
 import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.model.entity.EvaInfo;
+import com.lntu.online.model.entityOld.EvaInfo;
 import com.lntu.online.util.JsonUtil;
 import com.lntu.online.util.ShipUtils;
 import com.loopj.android.http.RequestParams;

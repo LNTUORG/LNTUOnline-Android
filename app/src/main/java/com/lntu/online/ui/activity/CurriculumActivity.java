@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.lntu.online.R;
 import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.model.entity.Curriculum;
+import com.lntu.online.model.entityOld.Curriculum;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.model.http.RetryAuthListener;

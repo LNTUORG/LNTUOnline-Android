@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.model.entity.ExamPlan;
+import com.lntu.online.model.entityOld.ExamPlan;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;

@@ -19,7 +19,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
 import com.lntu.online.config.NetworkInfo;
-import com.lntu.online.model.entity.CourseScore;
+import com.lntu.online.model.entityOld.CourseScore;
 import com.lntu.online.model.http.BaseListener;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;

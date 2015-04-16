@@ -1,20 +1,46 @@
 package com.lntu.online.model.entity;
 
-import android.text.TextUtils;
+public class CourseScore {
 
-public class CourseScore extends Model<CourseScore> {
+    public enum Level {
+        GREAT,
+        NORMAL,
+        UNPASS
+    }
 
-    public static final CourseScore dao = new CourseScore();
+    private String studentId;
 
-    private String num; //课程号
-    private String name; //课程名
-    private String score; //分数
-    private float credit; //学分
-    private String testMode; //考核方式
-    private String selectType; //选课类型
-    private String remarks; //备注
-    private String examType; //考试类型
-    private String semester; //学期
+    private String num; // 课程号
+
+    private String name; // 课程名
+
+    private int serialNum; // 课序号
+
+    private String score; // 分数
+
+    private float credit; // 学分
+
+    private String testMode; // 考核方式
+
+    private String selectType; // 选课类型
+
+    private String remarks; // 备注
+
+    private String examType; // 考试类型
+
+    private int year; // 2014
+
+    private String term; // 春\秋
+
+    private Level level; // 得分等级
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
 
     public String getNum() {
         return num;
@@ -30,6 +56,14 @@ public class CourseScore extends Model<CourseScore> {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getSerialNum() {
+        return serialNum;
+    }
+
+    public void setSerialNum(int serialNum) {
+        this.serialNum = serialNum;
     }
 
     public String getScore() {
@@ -80,53 +114,28 @@ public class CourseScore extends Model<CourseScore> {
         this.examType = examType;
     }
 
-    public String getSemester() {
-        return semester;
+    public int getYear() {
+        return year;
     }
 
-    public void setSemester(String semester) {
-        this.semester = semester;
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    public static enum Level {
-        veryGood,
-        normal,
-        bad
+    public String getTerm() {
+        return term;
+    }
+
+    public void setTerm(String term) {
+        this.term = term;
     }
 
     public Level getLevel() {
-        try {
-            float s = Float.parseFloat(getScore());
-            if (s >= 90) {
-                return Level.veryGood;
-            }
-            else if (s >= 60) {
-                return Level.normal;
-            } else {
-                return Level.bad;
-            }
-        } catch(Exception e) {
-            if (
-                "优".equals(getScore())
-             || "优秀".equals(getScore())
-             || "上".equals(getScore())
-             || "好".equals(getScore())
-            ) {
-                return Level.veryGood;
-            }
-            else if (
-                "差".equals(getScore())
-             || "下".equals(getScore())
-             || "不及格".equals(getScore())
-             || "不合格".equals(getScore())
-             || TextUtils.isEmpty(getScore())
-            ) {
-                return Level.bad;
-            }
-            else {
-                return Level.normal;
-            }
-        }
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
     }
 
 }

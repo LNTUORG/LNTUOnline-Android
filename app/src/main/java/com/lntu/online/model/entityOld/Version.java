@@ -1,4 +1,4 @@
-package com.lntu.online.model.entity;
+package com.lntu.online.model.entityOld;
 
 public class Version extends Model<Version> {
 

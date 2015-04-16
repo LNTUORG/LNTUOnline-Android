@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.lntu.online.R;
-import com.lntu.online.model.entity.Curriculum;
+import com.lntu.online.model.entityOld.Curriculum;
 
 import java.util.ArrayList;
 import java.util.List;
