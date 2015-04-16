@@ -58,29 +58,22 @@
             android:text="@string/action_update" />
 
         <TextView style="@style/AppTheme.DrawerItem"
-            android:visibility="gone"
             android:id="@+id/action_settings"
             android:drawableStart="@drawable/ic_settings_black_24dp"
             android:drawableLeft="@drawable/ic_settings_black_24dp"
             android:text="@string/action_settings" />
 
         <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/action_help"
+            android:drawableStart="@drawable/ic_help_black_24dp"
+            android:drawableLeft="@drawable/ic_help_black_24dp"
+            android:text="@string/action_help" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
             android:id="@+id/action_about"
             android:drawableStart="@drawable/ic_info_black_24dp"
             android:drawableLeft="@drawable/ic_info_black_24dp"
             android:text="@string/action_about" />
-
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/action_help"
-            android:drawableStart="@drawable/ic_help_black_24dp"
-            android:drawableLeft="@drawable/ic_help_black_24dp"
-            android:text="@string/user_agreement" />
-
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/action_exit"
-            android:drawableStart="@drawable/ic_exit_to_app_black_24dp"
-            android:drawableLeft="@drawable/ic_exit_to_app_black_24dp"
-            android:text="@string/action_exit" />
 
         <View style="@style/AppTheme.ItemGap" />
 

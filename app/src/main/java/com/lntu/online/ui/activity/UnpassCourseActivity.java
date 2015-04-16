@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.model.entityOld.UnpassCourse;
 import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
@@ -76,7 +76,7 @@ public class UnpassCourseActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "grades/unpassCoursesInfo", new RetryAuthListener(this) {
+        HttpUtil.get(this, "grades/unpassCoursesInfo", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

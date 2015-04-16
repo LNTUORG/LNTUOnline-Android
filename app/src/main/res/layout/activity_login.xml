@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFFFF">
+    android:orientation="vertical">
 
     <include layout="@layout/activity_action_bar" />
 
@@ -33,11 +32,11 @@
             app:floatingLabel="highlight" />
 
         <CheckBox
-            android:id="@+id/login_cb_auto_login"
-            android:layout_width="match_parent"
+            android:id="@+id/login_cb_hold_online"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/auto_login"
+            android:text="@string/hold_online"
             android:checked="false" />
 
         <Button

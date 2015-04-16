@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,7 +13,7 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
-import com.lntu.online.shared.UserInfoShared;
+import com.lntu.online.shared.LoginShared;
 import com.lntu.online.ui.adapter.MainAdapter;
 import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.ShipUtils;
@@ -25,6 +24,8 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
+
+    public final static String KEY_BACK_TO_ENTRY = "backToEntry";
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
@@ -55,6 +56,21 @@ public class MainActivity extends BaseActivity {
         recyclerView.setAdapter(new MainAdapter(this));
 
         UpdateUtils.update(this);
+
+        handleIntent(getIntent());
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+        super.onNewIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        if (intent.getBooleanExtra(KEY_BACK_TO_ENTRY, false)) { // 返回登陆页面
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
     }
 
     @OnClick({
@@ -65,9 +81,8 @@ public class MainActivity extends BaseActivity {
             R.id.action_share,
             R.id.action_update,
             R.id.action_settings,
-            R.id.action_about,
             R.id.action_help,
-            R.id.action_exit
+            R.id.action_about
     })
     public void onDrawerItemSelected(View view) {
         switch (view.getId()) {
@@ -92,14 +107,11 @@ public class MainActivity extends BaseActivity {
             case R.id.action_settings:
                 // TODO
                 break;
-            case R.id.action_about:
-                startActivity(new Intent(this, AboutActivity.class));
-                break;
             case R.id.action_help:
                 startActivity(new Intent(this, AgreementActivity.class));
                 break;
-            case R.id.action_exit:
-                showExitDialog();
+            case R.id.action_about:
+                startActivity(new Intent(this, AboutActivity.class));
                 break;
         }
     }
@@ -119,14 +131,6 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        if (intent.getBooleanExtra("is_goback_login", false)) { //返回登陆页面
-            startActivity(new Intent(this, LoginActivity.class));
-            finish();
-        }
-    }
-
     public void showLogoutDialog() {
         new MaterialDialog.Builder(this)
                 .title("注销")
@@ -139,29 +143,8 @@ public class MainActivity extends BaseActivity {
 
                     @Override
                     public void onPositive(MaterialDialog dialog) {
-                        UserInfoShared.logout(MainActivity.this); // 清除用户信息
-                        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                        intent.putExtra("gotoMain", true);
-                        startActivity(intent);
-                        finish();
-                    }
-
-                })
-                .show();
-    }
-
-    public void showExitDialog() {
-        new MaterialDialog.Builder(this)
-                .title("退出")
-                .content("您确定要退出应用吗？")
-                .positiveText("确定")
-                .negativeText("取消")
-                .positiveColorRes(R.color.colorPrimary)
-                .negativeColorRes(R.color.textColorPrimary)
-                .callback(new MaterialDialog.ButtonCallback() {
-
-                    @Override
-                    public void onPositive(MaterialDialog dialog) {
+                        LoginShared.logout(MainActivity.this);
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         finish();
                     }
 

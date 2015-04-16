@@ -12,7 +12,7 @@ import com.lntu.online.R;
 import com.lntu.online.ui.adapter.SkillTestAdapter;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.model.entityOld.SkillTestScore;
 import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
@@ -54,7 +54,7 @@ public class SkillTestActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "grades/skillTestScoresInfo", new RetryAuthListener(this) {
+        HttpUtil.get(this, "grades/skillTestScoresInfo", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

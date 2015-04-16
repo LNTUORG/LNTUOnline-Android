@@ -12,7 +12,7 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.lntu.online.R;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.model.entityOld.Curriculum;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
@@ -105,7 +105,7 @@ public class CurriculumActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "curriculum/info", new RetryAuthListener(this) {
+        HttpUtil.get(this, "curriculum/info", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
@@ -129,7 +129,7 @@ public class CurriculumActivity extends BaseActivity {
     }
     
     private void updateNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "curriculum/info", new NormalAuthListener(this) {
+        HttpUtil.get(this, "curriculum/info", new NormalAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

@@ -2,7 +2,6 @@ package com.lntu.online.app;
 
 import android.app.Application;
 
-
 public class AppController extends Application {
 
     @Override

@@ -12,7 +12,7 @@ import com.lntu.online.R;
 import com.lntu.online.ui.adapter.ExamPlanAdapter;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.model.entityOld.ExamPlan;
 import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
@@ -57,7 +57,7 @@ public class ExamPlanActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "examPlan/info", new RetryAuthListener(this) {
+        HttpUtil.get(this, "examPlan/info", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

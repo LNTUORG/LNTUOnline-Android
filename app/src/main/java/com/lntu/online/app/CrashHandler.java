@@ -8,7 +8,6 @@ import com.lntu.online.ui.activity.CrashShowActivity;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 
-
 public final class CrashHandler implements UncaughtExceptionHandler {
 
     private volatile static CrashHandler singleton;

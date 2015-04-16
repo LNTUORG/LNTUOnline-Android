@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.lntu.online.R;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.model.entityOld.EducationExperience;
 import com.lntu.online.model.entityOld.EntranceExam;
 import com.lntu.online.model.entityOld.Family;
@@ -64,7 +64,7 @@ public class StudentInfoActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "student/info", new RetryAuthListener(this) {
+        HttpUtil.get(this, "student/info", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {

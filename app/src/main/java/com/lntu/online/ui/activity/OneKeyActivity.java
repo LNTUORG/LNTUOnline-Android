@@ -17,7 +17,7 @@ import com.lntu.online.ui.adapter.OneKeyAdapter;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.model.http.RetryAuthListener;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.model.entityOld.EvaInfo;
 import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
@@ -78,7 +78,7 @@ public class OneKeyActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.get(this, NetworkInfo.serverUrl + "oneKey/info", new RetryAuthListener(this) {
+        HttpUtil.get(this, "oneKey/info", new RetryAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
@@ -217,7 +217,7 @@ public class OneKeyActivity extends BaseActivity {
             } else { //需要评价
                 RequestParams params = new RequestParams();
                 params.put("url", evaInfo.getUrl());
-                HttpUtil.post(this, NetworkInfo.serverUrl + "oneKey/evaluateOne", params, new NormalAuthListener(this, "正在评价：\n" + evaInfo.getCourse()) {
+                HttpUtil.post(this, "oneKey/evaluateOne", params, new NormalAuthListener(this, "正在评价：\n" + evaInfo.getCourse()) {
 
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, String responseString) {

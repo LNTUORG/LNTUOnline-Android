@@ -23,11 +23,12 @@ public class LogoActivity extends BaseActivity implements Runnable {
     @Override
     public void run() {
         if (!isFinishing()) {
-            if (TextUtils.isEmpty(LoginShared.getLoginToken(this))) {
+            if (TextUtils.isEmpty(LoginShared.getLoginToken(this)) || !LoginShared.isHoldOnline(this)) {
                 startActivity(new Intent(this, LoginActivity.class));
             } else {
                 startActivity(new Intent(this, MainActivity.class));
             }
+            finish();
         }
     }
 

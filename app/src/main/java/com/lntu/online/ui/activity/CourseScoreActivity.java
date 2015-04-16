@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.reflect.TypeToken;
 import com.lntu.online.R;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.model.entityOld.CourseScore;
 import com.lntu.online.model.http.BaseListener;
 import com.lntu.online.model.http.HttpUtil;
@@ -26,7 +26,6 @@ import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.shared.CacheShared;
 import com.lntu.online.shared.UserInfoShared;
 import com.lntu.online.ui.adapter.CourseScoreAdapter;
-import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
@@ -41,7 +40,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 
-public class CourseScoreActivity extends BaseActivity {
+public class CourseScoreActivity extends ActionBarActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
@@ -143,7 +142,7 @@ public class CourseScoreActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        HttpUtil.baseGet(this, NetworkInfo.serverUrl + "grades/averageOfCreditPointInfo", new TextHttpResponseHandler() {
+        HttpUtil.baseGet(this, "grades/averageOfCreditPointInfo", new TextHttpResponseHandler() {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
@@ -213,12 +212,12 @@ public class CourseScoreActivity extends BaseActivity {
         };
         //判断是否选择全部
         if (spnYear.getSelectedItemPosition() == 0) { //选择全部
-            HttpUtil.get(this, NetworkInfo.serverUrl + "grades/allCourseScoresInfo", listener);
+            HttpUtil.get(this,  "grades/allCourseScoresInfo", listener);
         } else { //没选择全部
             RequestParams params = new RequestParams();
             params.put("year", spnYear.getSelectedItem().toString());
             params.put("term", (spnTerm.getSelectedItemPosition() == 0 ? 1 : 2) + "");
-            HttpUtil.get(this, NetworkInfo.serverUrl + "grades/courseScoresInfo", params, listener);
+            HttpUtil.get(this, "grades/courseScoresInfo", params, listener);
         }
     }
 

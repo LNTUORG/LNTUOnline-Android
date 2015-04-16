@@ -1,32 +1,60 @@
 package com.lntu.online.model.entity;
 
+import com.google.gson.annotations.SerializedName;
+import com.lntu.online.util.gson.GsonWrapper;
+
+import retrofit.RetrofitError;
+
 public class ErrorInfo {
 
-    private ErrorCode code;
+    private int statusCode;
+
+    @SerializedName("code")
+    private ErrorCode errorCode;
 
     private String message;
 
-    public ErrorInfo() {}
-
-    public ErrorInfo(ErrorCode code, String message) {
-        this.code = code;
-        this.message = message;
+    public static ErrorInfo build(RetrofitError error) {
+        ErrorInfo result;
+        try {
+            result = (ErrorInfo) error.getBodyAs(ErrorInfo.class);
+            if (result == null) {
+                result = new ErrorInfo();
+                if (error.getResponse() == null) {
+                    result.statusCode = 0;
+                    result.errorCode = ErrorCode.CLIENT_ERROR;
+                } else {
+                    result.statusCode = error.getResponse().getStatus();
+                    result.errorCode = ErrorCode.HTTP_ERROR;
+                }
+                result.message = error.getLocalizedMessage();
+            } else {
+                result.statusCode = error.getResponse().getStatus();
+            }
+        } catch (Exception e) {
+            result = new ErrorInfo();
+            result.statusCode = error.getResponse() == null ? 0 : error.getResponse().getStatus();
+            result.errorCode = ErrorCode.UNKNOWN_ERROR;
+            result.message = error.getLocalizedMessage();
+        }
+        return result;
     }
 
-    public ErrorCode getCode() {
-        return code;
+    public int getStatusCode() {
+        return statusCode;
     }
 
-    public void setCode(ErrorCode code) {
-        this.code = code;
+    public ErrorCode getErrorCode() {
+        return errorCode;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    @Override
+    public String toString() {
+        return GsonWrapper.gson.toJson(this);
     }
 
 }

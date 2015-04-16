@@ -12,7 +12,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
-import com.lntu.online.config.NetworkInfo;
+
 import com.lntu.online.ui.base.BaseActivity;
 import com.loopj.android.http.RequestParams;
 
@@ -91,7 +91,7 @@ public class AdviceActivity extends BaseActivity {
         RequestParams params = new RequestParams();
         params.put("info", edtInfo.getText().toString() + "");
         params.put("contact", edtContact.getText().toString() + "");
-        HttpUtil.post(this, NetworkInfo.serverUrl + "feedback/advice", params, new NormalAuthListener(this) {
+        HttpUtil.post(this, "feedback/advice", params, new NormalAuthListener(this) {
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, String responseString) {
