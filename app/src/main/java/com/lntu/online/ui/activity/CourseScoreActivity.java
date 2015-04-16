@@ -26,6 +26,7 @@ import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.shared.CacheShared;
 import com.lntu.online.shared.UserInfoShared;
 import com.lntu.online.ui.adapter.CourseScoreAdapter;
+import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
@@ -40,7 +41,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 
-public class CourseScoreActivity extends ActionBarActivity {
+public class CourseScoreActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

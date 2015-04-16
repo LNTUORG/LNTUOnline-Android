@@ -10,13 +10,14 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.lntu.online.R;
+import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.AppUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class AboutActivity extends ActionBarActivity {
+public class AboutActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

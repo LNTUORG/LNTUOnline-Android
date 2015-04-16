@@ -16,6 +16,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.lntu.online.shared.UserInfoShared;
 import com.lntu.online.ui.adapter.MainAdapter;
+import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.ShipUtils;
 import com.lntu.online.util.UpdateUtils;
 
@@ -23,7 +24,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

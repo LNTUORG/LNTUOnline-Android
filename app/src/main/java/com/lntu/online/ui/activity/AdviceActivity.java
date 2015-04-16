@@ -13,6 +13,7 @@ import com.lntu.online.R;
 import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.config.NetworkInfo;
+import com.lntu.online.ui.base.BaseActivity;
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class AdviceActivity extends ActionBarActivity {
+public class AdviceActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

@@ -20,13 +20,14 @@ import com.lntu.online.model.entityOld.EducationExperience;
 import com.lntu.online.model.entityOld.EntranceExam;
 import com.lntu.online.model.entityOld.Family;
 import com.lntu.online.model.entityOld.Student;
+import com.lntu.online.ui.base.BaseActivity;
 import com.squareup.picasso.Picasso;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
-public class StudentInfoActivity extends ActionBarActivity {
+public class StudentInfoActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

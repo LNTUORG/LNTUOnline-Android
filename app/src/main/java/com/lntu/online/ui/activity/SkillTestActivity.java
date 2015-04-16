@@ -14,6 +14,7 @@ import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.RetryAuthListener;
 import com.lntu.online.config.NetworkInfo;
 import com.lntu.online.model.entityOld.SkillTestScore;
+import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
 
 import org.apache.http.Header;
@@ -24,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
-public class SkillTestActivity extends ActionBarActivity {
+public class SkillTestActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

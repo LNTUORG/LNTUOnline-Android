@@ -15,6 +15,7 @@ import com.lntu.online.model.http.HttpUtil;
 import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.config.NetworkInfo;
 
+import com.lntu.online.ui.base.BaseActivity;
 import com.loopj.android.http.RequestParams;
 import com.lntu.online.util.AppUtils;
 
@@ -28,7 +29,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class CrashShowActivity extends ActionBarActivity {
+public class CrashShowActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

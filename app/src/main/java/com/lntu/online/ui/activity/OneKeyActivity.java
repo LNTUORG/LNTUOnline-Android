@@ -19,6 +19,7 @@ import com.lntu.online.model.http.NormalAuthListener;
 import com.lntu.online.model.http.RetryAuthListener;
 import com.lntu.online.config.NetworkInfo;
 import com.lntu.online.model.entityOld.EvaInfo;
+import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.JsonUtil;
 import com.lntu.online.util.ShipUtils;
 import com.loopj.android.http.RequestParams;
@@ -33,7 +34,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class OneKeyActivity extends ActionBarActivity {
+public class OneKeyActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

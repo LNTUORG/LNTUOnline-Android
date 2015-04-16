@@ -20,6 +20,7 @@ import com.lntu.online.model.http.RetryAuthListener;
 import com.lntu.online.shared.SharedWrapper;
 import com.lntu.online.shared.UserInfoShared;
 import com.lntu.online.ui.adapter.CurriculumAdapter;
+import com.lntu.online.ui.base.BaseActivity;
 
 import org.apache.http.Header;
 
@@ -30,7 +31,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 
 
-public class CurriculumActivity extends ActionBarActivity {
+public class CurriculumActivity extends BaseActivity {
 
     private final static String TAG = CurriculumActivity.class.getSimpleName();
 

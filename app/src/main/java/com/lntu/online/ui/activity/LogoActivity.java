@@ -3,13 +3,13 @@ package com.lntu.online.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
 import android.text.TextUtils;
 
 import com.lntu.online.R;
 import com.lntu.online.shared.LoginShared;
+import com.lntu.online.ui.base.BaseActivity;
 
-public class LogoActivity extends ActionBarActivity implements Runnable {
+public class LogoActivity extends BaseActivity implements Runnable {
 
     private final static Handler handler = new Handler();
 

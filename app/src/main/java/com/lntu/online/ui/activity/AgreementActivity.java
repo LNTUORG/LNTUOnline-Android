@@ -7,11 +7,12 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 
 import com.lntu.online.R;
+import com.lntu.online.ui.base.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class AgreementActivity extends ActionBarActivity {
+public class AgreementActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

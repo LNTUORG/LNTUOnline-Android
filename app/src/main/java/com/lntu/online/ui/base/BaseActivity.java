@@ -1,7 +1,21 @@
 package com.lntu.online.ui.base;
 
-/**
- * Created by TakWolf on 2015/4/16.
- */
-public class BaseActivity {
+import android.support.v7.app.ActionBarActivity;
+
+import com.umeng.analytics.MobclickAgent;
+
+public class BaseActivity extends ActionBarActivity {
+
+    @Override
+    protected void onPause() {
+        MobclickAgent.onPause(this);
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        MobclickAgent.onResume(this);
+        super.onResume();
+    }
+
 }

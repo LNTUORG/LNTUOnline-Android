@@ -11,12 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.lntu.online.R;
+import com.lntu.online.ui.base.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class MottoActivity extends ActionBarActivity {
+public class MottoActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

@@ -9,7 +9,6 @@ import com.lntu.online.util.gson.GsonWrapper;
 import com.takwolf.util.crypto.DES3;
 import com.takwolf.util.digest.SHA256;
 
-
 public final class SharedWrapper {
 
     private volatile static String SECRET_KEY;

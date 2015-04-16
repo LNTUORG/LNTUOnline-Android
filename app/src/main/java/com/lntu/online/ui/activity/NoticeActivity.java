@@ -9,11 +9,12 @@ import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.lntu.online.R;
+import com.lntu.online.ui.base.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class NoticeActivity extends ActionBarActivity {
+public class NoticeActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
