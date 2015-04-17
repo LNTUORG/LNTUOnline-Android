@@ -27,6 +27,12 @@
         </activity>
 
         <activity
+            android:name="com.lntu.online.ui.activity.AuthErrorActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
             android:name="com.lntu.online.ui.activity.LoginActivity"
             android:label="@string/user_login"
             android:screenOrientation="portrait"
@@ -44,11 +50,6 @@
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
-        <activity
-            android:name="com.lntu.online.ui.activity.AuthErrorActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
 
 
 
