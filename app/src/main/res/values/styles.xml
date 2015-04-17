@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+    </style>
+
+    <style name="AppTheme.LogoPage" parent="AppBaseTheme">
+        <item name="colorPrimaryDark">@android:color/black</item>
+    </style>
+
+    <style name="AppTheme.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button_image</item>
+    </style>
+
+    <!-- Deep Line -->
+    <style name="AppTheme.DeepLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">#ffcccccc</item>
+    </style>
+
+    <!-- Gap -->
+    <style name="AppTheme.ItemGap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">8dp</item>
+    </style>
+
+    <!-- Drawer Item -->
+    <style name="AppTheme.DrawerItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:drawablePadding">32dp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/rect_btn_background</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+</resources>

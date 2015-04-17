@@ -1,0 +1,4 @@
+include ':app',
+        ':digest-and-crypto-utils',
+        ':material-design-icons',
+        ':umeng-update-sdk'

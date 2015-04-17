@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@android:color/white"
+    android:clickable="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View style="@style/AppTheme.ItemGap" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_browser"
+            android:drawableStart="@drawable/ic_open_in_browser_black_24dp"
+            android:drawableLeft="@drawable/ic_open_in_browser_black_24dp"
+            android:text="@string/main_action_browser" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_logout"
+            android:drawableStart="@drawable/ic_group_black_24dp"
+            android:drawableLeft="@drawable/ic_group_black_24dp"
+            android:text="@string/main_action_logout" />
+
+        <View style="@style/AppTheme.ItemGap" />
+        <View style="@style/AppTheme.DeepLine" />
+        <View style="@style/AppTheme.ItemGap" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_market"
+            android:drawableStart="@drawable/ic_grade_black_24dp"
+            android:drawableLeft="@drawable/ic_grade_black_24dp"
+            android:text="@string/main_action_market" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_feedback"
+            android:drawableStart="@drawable/ic_comment_grey600_24dp"
+            android:drawableLeft="@drawable/ic_comment_grey600_24dp"
+            android:text="@string/main_action_feedback" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_share"
+            android:drawableStart="@drawable/ic_share_black_24dp"
+            android:drawableLeft="@drawable/ic_share_black_24dp"
+            android:text="@string/main_action_share" />
+
+        <View style="@style/AppTheme.ItemGap" />
+        <View style="@style/AppTheme.DeepLine" />
+        <View style="@style/AppTheme.ItemGap" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_settings"
+            android:drawableStart="@drawable/ic_settings_black_24dp"
+            android:drawableLeft="@drawable/ic_settings_black_24dp"
+            android:text="@string/main_action_settings" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_help"
+            android:drawableStart="@drawable/ic_help_black_24dp"
+            android:drawableLeft="@drawable/ic_help_black_24dp"
+            android:text="@string/main_action_help" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_about"
+            android:drawableStart="@drawable/ic_info_black_24dp"
+            android:drawableLeft="@drawable/ic_info_black_24dp"
+            android:text="@string/main_action_about" />
+
+        <View style="@style/AppTheme.ItemGap" />
+
+    </LinearLayout>
+
+</ScrollView>
