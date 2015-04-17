@@ -26,9 +26,13 @@
     <string name="logout">注销登录</string>
     <string name="logout_tip">这会清除和当前账户相关联的所有本地数据和登录状态，您确定要注销登录吗？</string>
 
-    <string name="networking">"正在访问网络&#8230;"</string>
     <string name="auth_error">登录令牌失效</string>
     <string name="auth_error_tip">可能的原因是令牌授权已过期，或者是您修改了账户密码。您需要重新登录账户。</string>
+
+    <string name="networking">"正在访问网络&#8230;"</string>
+    <string name="network_remote_invoke_error_tip">远程调用失败，教务在线服务器可能挂掉了&#8230;</string>
+    <string name="network_server_error_tip">服务器被外星人搬走啦&#8230;</string>
+    <string name="network_default_error_tip">网络通信失败，请检查网络连接</string>
 
     <string name="confirm">确定</string>
     <string name="cancel">取消</string>

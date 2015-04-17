@@ -3,6 +3,7 @@ package com.lntu.online.model.api;
 import android.content.Context;
 import android.content.Intent;
 
+import com.lntu.online.R;
 import com.lntu.online.model.entity.ErrorInfo;
 import com.lntu.online.shared.LoginShared;
 
@@ -27,7 +28,7 @@ public class DefaultCallback<T> extends CallbackAdapter<T> {
     public void failure(ErrorInfo errorInfo) {
         switch (errorInfo.getErrorCode()) {
             case REMOTE_INVOKE_ERROR:
-                ToastUtils.with(context).show("远程调用失败，教务在线服务器可能挂掉了...");
+                ToastUtils.with(context).show(R.string.network_remote_invoke_error_tip);
                 break;
             case AUTH_ERROR: // 401认证错误
                 LoginShared.logout(context);
@@ -37,9 +38,9 @@ public class DefaultCallback<T> extends CallbackAdapter<T> {
                 break;
             default:
                 if (errorInfo.getStatusCode() >= 500) {
-                    ToastUtils.with(context).show("服务器被外星人搬走啦...");
+                    ToastUtils.with(context).show(R.string.network_server_error_tip);
                 } else {
-                    ToastUtils.with(context).show("网络通信失败，请检查一下网络连接");
+                    ToastUtils.with(context).show(R.string.network_default_error_tip);
                 }
                 break;
         }
