@@ -1,10 +1,12 @@
 package com.lntu.online.model.api;
 
+import com.lntu.online.model.entity.ClassTable;
 import com.lntu.online.model.entity.CourseEvaInfo;
 import com.lntu.online.model.entity.CourseScore;
 import com.lntu.online.model.entity.ExamPlan;
 import com.lntu.online.model.entity.LoginInfo;
 import com.lntu.online.model.entity.SkillTestScore;
+import com.lntu.online.model.entity.Student;
 
 import java.util.List;
 
@@ -14,6 +16,7 @@ import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.Header;
 import retrofit.http.POST;
+import retrofit.http.Query;
 
 public interface ApiService {
 
@@ -27,14 +30,38 @@ public interface ApiService {
             Callback<LoginInfo> callback
     );
 
+    @GET("/student/~self")
+    public void getStudent(
+            @Header(HEADER_AUTHORIZATION) String loginToken,
+            Callback<Student> callback
+    );
 
+    @GET("/class-table/~self")
+    public void getClassTable(
+            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Query("year") int year,
+            @Query("term") String term,
+            Callback<ClassTable> callback
+    );
 
+    @GET("/exam-plan/~self")
+    public void getExamPlanList(
+            @Header(HEADER_AUTHORIZATION) String loginToken,
+            Callback<List<ExamPlan>> callback
+    );
 
+    @GET("/course-score/~self")
+    public void getCourseScoreList(
+            @Header(HEADER_AUTHORIZATION) String loginToken,
+            Callback<List<CourseScore>> callback
+    );
 
+    @GET("/skill-test-score/~self")
+    public void getSkillTestScoreList(
+            @Header(HEADER_AUTHORIZATION) String loginToken,
+            Callback<List<SkillTestScore>> callback
+    );
 
-    
-    
-    
     @GET("/course-eva-info/~self")
     public void getCourseEvaInfoList(
             @Header(HEADER_AUTHORIZATION) String loginToken,
@@ -49,23 +76,4 @@ public interface ApiService {
             Callback<List<CourseEvaInfo>> callback
     );
     
-    @GET("/course-score/~self")
-    public void getCourseScoreList(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
-            Callback<List<CourseScore>> callback
-    );
-
-    @GET("/exam-plan/~self")
-    public void getExamPlanList(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
-            Callback<List<ExamPlan>> callback
-    );
-
-    @GET("/skill-test-score/~self")
-    public void getSkillTestScoreList(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
-            Callback<List<SkillTestScore>> callback
-    );
-
-
 }
