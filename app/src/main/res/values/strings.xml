@@ -21,7 +21,9 @@
     <string name="main_action_help">帮助</string>
     <string name="main_action_about">关于</string>
 
-    <string name="logout">注销</string>
+    <string name="menu">菜单</string>
+
+    <string name="logout">注销登录</string>
     <string name="logout_tip">这会清除和当前账户相关联的所有本地数据和登录状态，您确定要注销登录吗？</string>
 
     <string name="confirm">确定</string>
@@ -53,7 +55,7 @@
 
 
 
-    <string name="menu">菜单</string>
+
 
     <string name="your_suggestion_title">您的意见与建议：</string>
     <string name="your_suggestion_hint">请输入您要反馈的问题，我们将以此为动力不断改进</string>

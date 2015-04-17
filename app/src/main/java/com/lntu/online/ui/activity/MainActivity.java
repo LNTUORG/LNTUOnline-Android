@@ -131,9 +131,10 @@ public class MainActivity extends BaseActivity {
         new MaterialDialog.Builder(this)
                 .title(R.string.logout)
                 .content(R.string.logout_tip)
+                .contentColorRes(R.color.text_color_primary)
                 .positiveText(R.string.confirm)
-                .negativeText(R.string.cancel)
                 .positiveColorRes(R.color.color_primary)
+                .negativeText(R.string.cancel)
                 .negativeColorRes(R.color.text_color_primary)
                 .callback(new MaterialDialog.ButtonCallback() {
 
