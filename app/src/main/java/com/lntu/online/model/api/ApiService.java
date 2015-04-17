@@ -75,5 +75,5 @@ public interface ApiService {
             @Field("evaKey") String evaKey,
             Callback<List<CourseEvaInfo>> callback
     );
-    
+
 }
