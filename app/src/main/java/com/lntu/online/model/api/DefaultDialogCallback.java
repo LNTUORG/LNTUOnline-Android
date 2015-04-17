@@ -3,6 +3,7 @@ package com.lntu.online.model.api;
 import android.content.Context;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.lntu.online.R;
 import com.lntu.online.model.entity.ErrorInfo;
 
 import retrofit.client.Response;
@@ -14,7 +15,7 @@ public class DefaultDialogCallback<T> extends DefaultCallback<T> {
     public DefaultDialogCallback(Context context) {
         super(context);
         progressDialog = new MaterialDialog.Builder(context)
-                .content("正在访问网络...")
+                .content(R.string.networking)
                 .progress(true, 0)
                 .cancelable(false)
                 .build();

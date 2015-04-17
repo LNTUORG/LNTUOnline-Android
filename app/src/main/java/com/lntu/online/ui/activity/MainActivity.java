@@ -12,12 +12,18 @@ import android.view.View;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
+import com.lntu.online.model.api.ApiClient;
+import com.lntu.online.model.api.CallbackAdapter;
+import com.lntu.online.model.api.DefaultCallback;
+import com.lntu.online.model.entity.ExamPlan;
 import com.lntu.online.shared.LoginShared;
 import com.lntu.online.ui.adapter.MainAdapter;
 import com.lntu.online.ui.base.BaseActivity;
 import com.lntu.online.util.ShipUtils;
 import com.lntu.online.util.ToastUtils;
 import com.lntu.online.util.UpdateUtils;
+
+import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -58,6 +64,18 @@ public class MainActivity extends BaseActivity {
         UpdateUtils.update(this);
 
         handleIntent(getIntent());
+
+
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
+        ApiClient.with(this).apiService.getExamPlanList("dsfas", new DefaultCallback<List<ExamPlan>>(this));
     }
 
     @Override
