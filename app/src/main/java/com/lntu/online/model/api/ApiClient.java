@@ -2,6 +2,7 @@ package com.lntu.online.model.api;
 
 import android.content.Context;
 
+import com.lntu.online.config.NetworkInfo;
 import com.lntu.online.model.gson.GsonWrapper;
 import com.lntu.online.util.AppUtils;
 
@@ -27,7 +28,7 @@ public class ApiClient {
 
     private ApiClient(Context context) {
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://lntuonline.coding.io/api")
+                .setEndpoint(NetworkInfo.API_HOST)
                 .setConverter(new GsonConverter(GsonWrapper.gson))
                 .setRequestInterceptor(new ApiRequestInterceptor(AppUtils.getVersionName(context)))
                 .setLogLevel(RestAdapter.LogLevel.FULL)

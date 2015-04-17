@@ -10,7 +10,7 @@ public class ApiRequestInterceptor implements RequestInterceptor {
     private final String USER_AGENT;
 
     public ApiRequestInterceptor(String versionName) {
-        USER_AGENT = "LntuOnline/" + versionName + " (Android " + Build.VERSION.RELEASE + ", " + Build.MANUFACTURER + " " + Build.MODEL + ")";
+        USER_AGENT = "LntuOnline/" + versionName + " (Android " + Build.VERSION.RELEASE + ", " + Build.MANUFACTURER + "-" + Build.MODEL + ")";
     }
 
     @Override

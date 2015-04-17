@@ -62,6 +62,12 @@
 
 
 
+
+
+
+
+
+
     <string name="your_suggestion_title">您的意见与建议：</string>
     <string name="your_suggestion_hint">请输入您要反馈的问题，我们将以此为动力不断改进</string>
     <string name="your_contact_title">您的联系方式：</string>
@@ -73,10 +79,6 @@
     <string name="about_app">关于应用</string>
     <string name="advice">意见反馈</string>
     <string name="app_crash">程序崩溃</string>
-
-
-
-
 
     <string name="eva_info">评课信息</string>
 
