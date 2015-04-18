@@ -18,6 +18,13 @@ import butterknife.InjectView;
 
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
+    private final static int[] flagColorResId = {
+            R.color.red_light,
+            R.color.green_light,
+            R.color.blue_light,
+            R.color.orange_light
+    };
+
     private LayoutInflater inflater;
     private List<UnpassCourse> unpassCourseList;
 
@@ -100,6 +107,9 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
         holder.tvExamType.setText(record.getExamType());
         holder.tvScore.setText(record.getScore());
         holder.tvRemarks.setText(record.getRemarks());
+        holder.iconFlag.setBackgroundResource(flagColorResId[childPosition%flagColorResId.length]);
+        holder.iconShadowTop.setVisibility(childPosition == 0 ? View.VISIBLE : View.GONE);
+        holder.iconShadowBottom.setVisibility(childPosition == unpassCourseList.get(groupPosition).getRecords().size() - 1 ? View.VISIBLE : View.GONE);
         return convertView;
     }
 
@@ -124,6 +134,15 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     }
 
     protected static class ChildViewHolder {
+
+        @InjectView(R.id.unpass_course_item_child_icon_flag)
+        protected View iconFlag;
+
+        @InjectView(R.id.unpass_course_item_child_icon_shadow_top)
+        protected View iconShadowTop;
+
+        @InjectView(R.id.unpass_course_item_child_icon_shadow_bottom)
+        protected View iconShadowBottom;
 
         @InjectView(R.id.unpass_course_item_child_tv_semester)
         protected TextView tvSemester;
