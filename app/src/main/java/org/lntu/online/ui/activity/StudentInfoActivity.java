@@ -273,128 +273,112 @@ public class StudentInfoActivity extends BaseActivity {
             layoutContent.addView(deepLine);    
         }
         // 高考科目
-        {
+        if (student.getEntranceExams() != null && student.getEntranceExams().size() > 0) {
+
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("高考科目");
             tvTitle.setBackgroundResource(R.color.green_light);
             layoutContent.addView(tvTitle);
-        }
-        for (Student.EntranceExam ee : student.getEntranceExams()) {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
-            TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
-            TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_value);
-            tvName.setText(ee.getName());
-            tvValue.setText(ee.getScore());
-            // 添加到布局
-            layoutContent.addView(itemView);
-            // 添加分割线
-            View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-            layoutContent.addView(deepLine);
-        }
-        if (student.getEntranceExams().size() == 0) { // 没有高考科目
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
-            TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
-            tvName.setText("暂无信息");
-            layoutContent.addView(itemView);
+
+            for (Student.EntranceExam ee : student.getEntranceExams()) {
+                View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
+                TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
+                TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_value);
+                tvName.setText(ee.getName());
+                tvValue.setText(ee.getScore());
+                // 添加到布局
+                layoutContent.addView(itemView);
+                // 添加分割线
+                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
+                layoutContent.addView(deepLine);
+            }
+
         }
         // 教育经历
-        {
+        if (student.getEducationExperiences() != null && student.getEducationExperiences().size() > 0) {
+
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("教育经历");
             tvTitle.setBackgroundResource(R.color.blue_light);
             layoutContent.addView(tvTitle);
-        }
-        for (Student.EducationExperience ee : student.getEducationExperiences()) {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_edex, layoutContent, false);
-            TextView tvDateOfStart = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_start);
-            TextView tvDateOfEnd = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_end);
-            TextView tvSchoolName = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_school_name);
-            TextView tvWitness = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_witness);
-            tvDateOfStart.setText(TimeUtils.getTimeFormat(ee.getStartTime()));
-            tvDateOfEnd.setText(TimeUtils.getTimeFormat(ee.getEndTime()));
-            tvSchoolName.setText(ee.getSchoolInfo());
-            tvWitness.setText(ee.getWitness());
-            // 添加到布局
-            layoutContent.addView(itemView);
-            // 添加分割线
-            View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-            layoutContent.addView(deepLine);
-        }
-        if (student.getEducationExperiences().size() == 0) { // 没有教育经历
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
-            TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
-            tvName.setText("暂无信息");
-            layoutContent.addView(itemView);
+
+            for (Student.EducationExperience ee : student.getEducationExperiences()) {
+                View itemView = inflater.inflate(R.layout.activity_student_info_item_edex, layoutContent, false);
+                TextView tvDateOfStart = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_start);
+                TextView tvDateOfEnd = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_end);
+                TextView tvSchoolName = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_school_name);
+                TextView tvWitness = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_witness);
+                tvDateOfStart.setText(TimeUtils.getTimeFormat(ee.getStartTime()));
+                tvDateOfEnd.setText(TimeUtils.getTimeFormat(ee.getEndTime()));
+                tvSchoolName.setText(ee.getSchoolInfo());
+                tvWitness.setText(ee.getWitness());
+                // 添加到布局
+                layoutContent.addView(itemView);
+                // 添加分割线
+                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
+                layoutContent.addView(deepLine);
+            }
+
         }
         // 家庭信息
-        {
+        if (student.getFamilys() != null && student.getFamilys().size() > 0) {
+
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("家庭情况");
             tvTitle.setBackgroundResource(R.color.orange_light);
             layoutContent.addView(tvTitle);
-        }
-        for (Student.Family family : student.getFamilys()) {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_family, layoutContent, false);
-            TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_name);
-            TextView tvRelationship = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_relationship);
-            TextView tvPolAff = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_political_affiliation);
-            TextView tvJob = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_job);
-            TextView tvPost = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_post);
-            TextView tvWorkLocation = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_work_location);
-            TextView tvTel = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_tel);
-            tvName.setText(family.getName());
-            tvRelationship.setText("（" + family.getRelationship() + "）");
-            tvPolAff.setText(family.getPoliticalAffiliation());
-            tvJob.setText(family.getJob());
-            tvPost.setText(family.getPost());
-            tvWorkLocation.setText(family.getWorkLocation());
-            tvTel.setText(family.getTel());
-            // 添加到布局
-            layoutContent.addView(itemView);
-            // 添加分割线
-            View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-            layoutContent.addView(deepLine);
-        }
-        if (student.getFamilys().size() == 0) { // 没有家庭信息
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
-            TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
-            tvName.setText("暂无信息");
-            layoutContent.addView(itemView);
+
+            for (Student.Family family : student.getFamilys()) {
+                View itemView = inflater.inflate(R.layout.activity_student_info_item_family, layoutContent, false);
+                TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_name);
+                TextView tvRelationship = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_relationship);
+                TextView tvPolAff = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_political_affiliation);
+                TextView tvJob = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_job);
+                TextView tvPost = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_post);
+                TextView tvWorkLocation = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_work_location);
+                TextView tvTel = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_tel);
+                tvName.setText(family.getName());
+                tvRelationship.setText("（" + family.getRelationship() + "）");
+                tvPolAff.setText(family.getPoliticalAffiliation());
+                tvJob.setText(family.getJob());
+                tvPost.setText(family.getPost());
+                tvWorkLocation.setText(family.getWorkLocation());
+                tvTel.setText(family.getTel());
+                layoutContent.addView(itemView);
+                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
+                layoutContent.addView(deepLine);
+            }
+
         }
         // 警告处分
-        {
+        if (student.getDisciplinaryActions() != null && student.getDisciplinaryActions().size() > 0) {
+
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("警告处分");
             tvTitle.setBackgroundResource(R.color.grey_light);
             layoutContent.addView(tvTitle);
-        }
-        for (Student.DisciplinaryAction action : student.getDisciplinaryActions()) {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_action, layoutContent, false);
-            TextView tvLevel = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_level);
-            TextView tvCreateTime = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_create_time);
-            TextView tvCreateReason = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_create_reason);
-            TextView tvCancelTime = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_cancel_time);
-            TextView tvCancelReason = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_cancel_reason);
-            TextView tvState = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_state);
-            TextView tvRemarks = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_remarks);
-            tvLevel.setText(action.getLevel());
-            tvCreateTime.setText(TimeUtils.getTimeFormat(action.getCreateTime()));
-            tvCreateReason.setText(action.getCreateReason());
-            tvCancelTime.setText(TimeUtils.getTimeFormat(action.getCancelTime()));
-            tvCancelReason.setText(action.getCancelReason());
-            tvState.setText(action.getState());
-            tvRemarks.setText(action.getRemarks());
-            // 添加到布局
-            layoutContent.addView(itemView);
-            // 添加分割线
-            View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-            layoutContent.addView(deepLine);
-        }
-        if (student.getDisciplinaryActions().size() == 0) { // 没有处分信息
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
-            TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
-            tvName.setText("暂无信息");
-            layoutContent.addView(itemView);
+
+            for (Student.DisciplinaryAction action : student.getDisciplinaryActions()) {
+                View itemView = inflater.inflate(R.layout.activity_student_info_item_action, layoutContent, false);
+                TextView tvLevel = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_level);
+                TextView tvCreateTime = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_create_time);
+                TextView tvCreateReason = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_create_reason);
+                TextView tvCancelTime = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_cancel_time);
+                TextView tvCancelReason = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_cancel_reason);
+                TextView tvState = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_state);
+                TextView tvRemarks = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_remarks);
+                tvLevel.setText(action.getLevel());
+                tvCreateTime.setText(TimeUtils.getTimeFormat(action.getCreateTime()));
+                tvCreateReason.setText(action.getCreateReason());
+                tvCancelTime.setText(TimeUtils.getTimeFormat(action.getCancelTime()));
+                tvCancelReason.setText(action.getCancelReason());
+                tvState.setText(action.getState());
+                tvRemarks.setText(action.getRemarks());
+                layoutContent.addView(itemView);
+                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
+                layoutContent.addView(deepLine);
+            }
+            
         }
     }
 
