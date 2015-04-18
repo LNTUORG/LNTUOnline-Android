@@ -43,7 +43,7 @@
     <string name="press_back_again_to_exit">再按一次返回键退出</string>
 
     <string name="student_info">学籍信息</string>
-    <string name="curriculum">我的课表</string>
+    <string name="my_class_table">我的课表</string>
     <string name="exam_plan">考试安排</string>
     <string name="grades_query">成绩查询</string>
     <string name="one_key_eva">一键评课</string>
@@ -52,14 +52,25 @@
     <string name="senate_notice">教务公告</string>
     <string name="remember_motto">牢记校训</string>
 
+    <string name="political_affiliation">政治面貌：</string>
+    <string name="job_and_post">职业职位：</string>
+    <string name="work_location">工作单位：</string>
+    <string name="tel">联系电话：</string>
+    <string name="from_to">至</string>
+    <string name="school_name">所在地：</string>
+    <string name="witness">证明人：</string>
+    <string name="punish_time">处分日期：</string>
+    <string name="punish_reason">处分原因：</string>
+    <string name="cancel_time">撤销日期：</string>
+    <string name="cancel_reason">撤销原因：</string>
+    <string name="punish_state">状态：</string>
+
     <string name="have_left">还剩</string>
     <string name="day">天</string>
-
 
     <string name="credit">学分：</string>
     <string name="select_type">选课类型：</string>
     <string name="remarks">备注：</string>
-
 
     <string name="motto">诚朴求是，博学笃行</string>
     <string name="male_voice">男声朗读</string>
@@ -104,12 +115,7 @@
 
 
 
-    <string name="name">姓名</string>
-    <string name="name_content_test">李四</string>
-    <string name="political_affiliation">政治面貌：</string>
-    <string name="job_and_post">职业职位：</string>
-    <string name="work_location">工作单位：</string>
-    <string name="tel">联系电话：</string>
+
 
     <string name="course">课程</string>
     <string name="course_name">课程名</string>
@@ -138,8 +144,8 @@
     <string name="query">查询</string>
     <string name="nothing">暂无信息</string>
     <string name="grades">成绩</string>
-    <string name="merge_the_same">合并相同</string>
-    <string name="state">状态</string>
+
+
     <string name="teacher">教师</string>
 
 
@@ -149,11 +155,10 @@
 
 
 
-    <string name="from_to">至</string>
-    <string name="school_name">所在地：</string>
-    <string name="witness">证明人：</string>
 
-    <string name="have_unfold_less_same_course">已合并相同科目</string>
+
+
+
 
 
 

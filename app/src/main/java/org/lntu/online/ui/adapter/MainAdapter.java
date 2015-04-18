@@ -40,7 +40,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private static final int[] titles = {
             R.string.student_info,
-            R.string.curriculum,
+            R.string.my_class_table,
             R.string.exam_plan,
             R.string.grades_query,
             R.string.one_key_eva,
