@@ -9,14 +9,14 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name="com.lntu.online.app.AppController"
+        android:name="org.lntu.online.app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.lntu.online.ui.activity.LogoActivity"
+            android:name="org.lntu.online.ui.activity.LogoActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/AppTheme.LogoPage">
@@ -27,25 +27,25 @@
         </activity>
 
         <activity
-            android:name="com.lntu.online.ui.activity.AuthErrorActivity"
+            android:name="org.lntu.online.ui.activity.AuthErrorActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="com.lntu.online.ui.activity.LoginActivity"
+            android:name="org.lntu.online.ui.activity.LoginActivity"
             android:label="@string/user_login"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="com.lntu.online.ui.activity.AgreementActivity"
+            android:name="org.lntu.online.ui.activity.AgreementActivity"
             android:label="@string/user_agreement"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="com.lntu.online.ui.activity.MainActivity"
+            android:name="org.lntu.online.ui.activity.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
@@ -54,26 +54,33 @@
 
 
 
+
+
         <activity
-            android:name="com.lntu.online.ui.activity.ExamPlanActivity"
+            android:name="org.lntu.online.ui.activity.ExamPlanActivity"
             android:label="@string/exam_plan"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
+
+
+
+
+
         <activity
-            android:name="com.lntu.online.ui.activity.SkillTestActivity"
+            android:name="org.lntu.online.ui.activity.SkillTestActivity"
             android:label="@string/skill_test"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="com.lntu.online.ui.activity.NoticeActivity"
+            android:name="org.lntu.online.ui.activity.NoticeActivity"
             android:label="@string/senate_notice"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="com.lntu.online.ui.activity.MottoActivity"
+            android:name="org.lntu.online.ui.activity.MottoActivity"
             android:label="@string/remember_motto"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
