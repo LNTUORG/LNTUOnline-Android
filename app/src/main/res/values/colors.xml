@@ -3,6 +3,7 @@
 
     <color name="color_primary">#ff2196f3</color>
     <color name="color_primary_dark">#ff1976d2</color>
+    <color name="color_accent">#ff40aaee</color>
     <color name="text_color_primary">#ff212121</color>
     <color name="text_color_secondary">#ff757575</color>
 
@@ -12,5 +13,12 @@
     <color name="fab_ripple">#FF5252</color>
     <color name="fab_accent">#F44336</color>
     <color name="fab_accent_pressed">#D32F2F</color>
+
+    <array name="progress_colors">
+        <item>#ffd8433c</item>
+        <item>#fff2af3a</item>
+        <item>#ff3f8af8</item>
+        <item>#ff279b5e</item>
+    </array>
 
 </resources>

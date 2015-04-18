@@ -95,19 +95,19 @@ public class MainActivity extends BaseActivity {
                 ShipUtils.appStore(this);
                 break;
             case R.id.main_action_feedback:
-                // startActivity(new Intent(this, AdviceActivity.class));
+                startActivity(new Intent(this, AdviceActivity.class));
                 break;
             case R.id.main_action_share:
                 ShipUtils.share(this);
                 break;
             case R.id.main_action_settings:
-                // TODO
+                startActivity(new Intent(this, SettingActivity.class));
                 break;
             case R.id.main_action_help:
-                startActivity(new Intent(this, AgreementActivity.class));
+                startActivity(new Intent(this, HelpActivity.class));
                 break;
             case R.id.main_action_about:
-                // startActivity(new Intent(this, AboutActivity.class));
+                startActivity(new Intent(this, AboutActivity.class));
                 break;
         }
     }

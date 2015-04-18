@@ -53,7 +53,8 @@
 
 
 
-
+    <string name="have_left">还剩</string>
+    <string name="day">天</string>
 
 
 
@@ -138,13 +139,14 @@
     <string name="state">状态</string>
     <string name="teacher">教师</string>
 
-    <string name="course_sample">概率论与数理统计</string>
-    <string name="date_time_sample">2015&#8211;03&#8211;07&#160;09:00&#8211;11:00</string>
+
+
     <string name="date_sample">2015&#8211;03&#8211;07</string>
-    <string name="location_sample">静远118</string>
-    <string name="_100">100</string>
-    <string name="have_left">还剩</string>
-    <string name="day">天</string>
+
+
+
+
+
     <string name="from_to">至</string>
     <string name="school_name">所在地：</string>
     <string name="witness">证明人：</string>
