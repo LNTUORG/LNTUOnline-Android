@@ -14,11 +14,4 @@
     <color name="fab_accent">#F44336</color>
     <color name="fab_accent_pressed">#D32F2F</color>
 
-    <array name="progress_colors">
-        <item>#ffd8433c</item>
-        <item>#fff2af3a</item>
-        <item>#ff3f8af8</item>
-        <item>#ff279b5e</item>
-    </array>
-
 </resources>

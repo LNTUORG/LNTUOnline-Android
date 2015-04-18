@@ -3,6 +3,11 @@ package com.lntu.online.ui.activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.widget.Button;
 
 import com.lntu.online.R;
 import com.lntu.online.ui.base.BaseActivity;
@@ -15,6 +20,8 @@ public class ExamPlanActivity extends BaseActivity {
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
 
+    @InjectView(R.id.icon_loading_anim)
+    protected View iconLoadingAnim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +31,10 @@ public class ExamPlanActivity extends BaseActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
+        dataLoadAnim.setInterpolator(new LinearInterpolator());
+        iconLoadingAnim.startAnimation(dataLoadAnim);
     }
 
     @Override
