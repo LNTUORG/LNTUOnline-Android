@@ -30,6 +30,7 @@ public class BackgroundCallback<T> implements Callback<T> {
         ErrorInfo errorInfo = ErrorInfo.build(error);
         switch (errorInfo.getErrorCode()) {
             case AUTH_ERROR: // 401认证错误
+                handleFailure(context.getString(R.string.auth_error));
                 LoginShared.logout(context);
                 Intent intent = new Intent(context, AuthErrorActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
