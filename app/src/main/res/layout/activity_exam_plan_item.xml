@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:background="#FFFFFF">
+    android:background="@android:color/white">
 
     <LinearLayout
         android:id="@+id/exam_plan_item_layout_start"

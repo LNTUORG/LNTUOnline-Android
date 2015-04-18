@@ -73,9 +73,6 @@ public class ExamPlanActivity extends BaseActivity {
         }
     }
 
-    /**
-     * 获取考试安排信息
-     */
     private void startNetwork() {
         ApiClient.with(this).apiService.getExamPlanList(LoginShared.getLoginToken(this), new BackgroundCallback<List<ExamPlan>>(this) {
 
@@ -100,18 +97,12 @@ public class ExamPlanActivity extends BaseActivity {
         });
     }
 
-    /**
-     * 显示错误面板
-     */
     private void showIconEmptyView(String message) {
         iconLoading.setVisibility(View.GONE);
         iconEmpty.setVisibility(View.VISIBLE);
         tvLoadFailed.setText(message);
     }
 
-    /**
-     * 数据重新加载
-     */
     @OnClick(R.id.exam_plan_icon_empty)
     public void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);

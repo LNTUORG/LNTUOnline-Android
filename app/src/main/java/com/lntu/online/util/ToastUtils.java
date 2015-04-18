@@ -11,7 +11,7 @@ public final class ToastUtils {
         if (singleton == null) {
             synchronized (ToastUtils.class) {
                 if (singleton == null) {
-                    singleton = new ToastUtils(context);
+                    singleton = new ToastUtils(context.getApplicationContext());
                 }
             }
         }

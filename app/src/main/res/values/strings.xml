@@ -55,8 +55,9 @@
     <string name="have_left">还剩</string>
     <string name="day">天</string>
 
-
-
+    <string name="motto">诚朴求是，博学笃行</string>
+    <string name="male_voice">男声朗读</string>
+    <string name="female_voice">女生朗读</string>
 
 
 
@@ -95,8 +96,7 @@
     <string name="official_homepage">官方主页</string>
     <string name="official_homepage_content"><u>http://app.pupboss.com</u></string>
 
-    <string name="male_voice">男声朗读</string>
-    <string name="female_voice">女生朗读</string>
+
 
     <string name="name">姓名</string>
     <string name="name_content_test">李四</string>
@@ -132,7 +132,6 @@
     <string name="location">地点</string>    
     <string name="query">查询</string>
     <string name="nothing">暂无信息</string>
-    <string name="skill_test_name">科目</string>
     <string name="grades">成绩</string>
     <string name="merge_the_same">合并相同</string>
     <string name="state">状态</string>
@@ -141,7 +140,7 @@
 
 
 
-    
+
 
 
 
