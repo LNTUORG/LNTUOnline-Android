@@ -10,14 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
+        <ListView
             android:visibility="gone"
-            android:id="@+id/recycler_view"
+            android:id="@+id/exam_plan_list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <LinearLayout
-            android:id="@+id/layout_loading"
+            android:id="@+id/exam_plan_icon_loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/icon_loading_anim"
+                    android:id="@+id/exam_plan_icon_loading_anim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -54,7 +54,7 @@
 
         <LinearLayout
             android:visibility="gone"
-            android:id="@+id/icon_empty"
+            android:id="@+id/exam_plan_icon_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -68,7 +68,7 @@
                 android:src="@drawable/ic_empty_search" />
 
             <TextView
-                android:id="@+id/tv_load_failed"
+                android:id="@+id/exam_plan_tv_load_failed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

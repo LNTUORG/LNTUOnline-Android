@@ -1,8 +1,13 @@
 package com.lntu.online.model.entity;
 
-import java.util.Date;
+import android.support.annotation.NonNull;
 
-public class ExamPlan {
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class ExamPlan implements Comparable<ExamPlan> {
 
     private String studentId;
 
@@ -52,6 +57,22 @@ public class ExamPlan {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    @Override
+    public int compareTo(@NonNull ExamPlan another) {
+        return another.getStartTime().after(getStartTime()) ? -1 : 1;
+    }
+
+    private final static DateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
+    private final static DateFormat dateFormat2 = new SimpleDateFormat("HH:mm", Locale.CHINA);
+
+
+    public String getShowTime() {
+        String date = dateFormat1.format(getStartTime());
+        String start = dateFormat2.format(getStartTime());
+        String end = dateFormat2.format(getEndTime());
+        return date + " " + start + "-" + end;
     }
 
 }

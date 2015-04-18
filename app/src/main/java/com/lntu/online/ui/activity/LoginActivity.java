@@ -7,7 +7,7 @@ import android.widget.CheckBox;
 
 import com.lntu.online.R;
 import com.lntu.online.model.api.ApiClient;
-import com.lntu.online.model.api.DefaultDialogCallback;
+import com.lntu.online.model.api.DialogCallback;
 import com.lntu.online.model.entity.ErrorInfo;
 import com.lntu.online.model.entity.LoginInfo;
 import com.lntu.online.model.entity.UserType;
@@ -59,7 +59,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void loginAsyncTask(String userId, String password, final boolean isHoldOnline) {
-        ApiClient.with(this).apiService.login(userId, password, new DefaultDialogCallback<LoginInfo>(this) {
+        ApiClient.with(this).apiService.login(userId, password, new DialogCallback<LoginInfo>(this) {
 
             @Override
             public void handleSuccess(LoginInfo loginInfo, Response response) {

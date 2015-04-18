@@ -8,11 +8,11 @@ import com.lntu.online.model.entity.ErrorInfo;
 
 import retrofit.client.Response;
 
-public class DefaultDialogCallback<T> extends DefaultCallback<T> {
+public class DialogCallback<T> extends DefaultCallback<T> {
 
     private MaterialDialog progressDialog;
 
-    public DefaultDialogCallback(Context context) {
+    public DialogCallback(Context context) {
         super(context);
         progressDialog = new MaterialDialog.Builder(context)
                 .content(R.string.networking)
