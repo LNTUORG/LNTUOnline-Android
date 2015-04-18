@@ -15,6 +15,7 @@ import com.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.CourseScore;
+import org.lntu.online.model.entity.UnpassCourse;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.UnpassCourseAdapter;
 import org.lntu.online.ui.base.BaseActivity;
@@ -74,14 +75,14 @@ public class UnpassCourseActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        ApiClient.with(this).apiService.getCourseScoreList(LoginShared.getLoginToken(this), new BackgroundCallback<List<CourseScore>>(this) {
+        ApiClient.with(this).apiService.getUnpassCourseList(LoginShared.getLoginToken(this), new BackgroundCallback<List<UnpassCourse>>(this) {
 
             @Override
-            public void handleSuccess(List<CourseScore> courseScoreList, Response response) {
-                if (courseScoreList.size() == 0) {
+            public void handleSuccess(List<UnpassCourse> unpassCourseList, Response response) {
+                if (unpassCourseList.size() == 0) {
                     showIconEmptyView("目前没有未通过的课程。");
                 } else {
-                    exListView.setAdapter(new UnpassCourseAdapter(UnpassCourseActivity.this, courseScoreList));
+                    exListView.setAdapter(new UnpassCourseAdapter(UnpassCourseActivity.this, unpassCourseList));
                     exListView.setVisibility(View.VISIBLE);
                     iconLoading.setVisibility(View.GONE);
                     iconEmpty.setVisibility(View.GONE);

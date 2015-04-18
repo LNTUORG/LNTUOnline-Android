@@ -7,6 +7,7 @@ import org.lntu.online.model.entity.ExamPlan;
 import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.SkillTestScore;
 import org.lntu.online.model.entity.Student;
+import org.lntu.online.model.entity.UnpassCourse;
 
 import java.util.List;
 
@@ -54,6 +55,12 @@ public interface ApiService {
     public void getCourseScoreList(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             Callback<List<CourseScore>> callback
+    );
+
+    @GET("/unpass-course/~self")
+    public void getUnpassCourseList(
+            @Header(HEADER_AUTHORIZATION) String loginToken,
+            Callback<List<UnpassCourse>> callback
     );
 
     @GET("/skill-test-score/~self")

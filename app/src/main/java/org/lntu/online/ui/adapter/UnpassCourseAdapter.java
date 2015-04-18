@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.lntu.online.R;
 
-import org.lntu.online.model.entity.CourseScore;
+import org.lntu.online.model.entity.UnpassCourse;
 
 import java.util.List;
 
@@ -19,33 +19,32 @@ import butterknife.InjectView;
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     private LayoutInflater inflater;
-    private List<CourseScore> groupList;
-    private List<List<CourseScore>> childrenList;
+    private List<UnpassCourse> unpassCourseList;
 
-    public UnpassCourseAdapter(Context context, List<CourseScore> scoreList) {
+    public UnpassCourseAdapter(Context context, List<UnpassCourse> unpassCourseList) {
         inflater = LayoutInflater.from(context);
-
+        this.unpassCourseList = unpassCourseList;
     }
 
     @Override
     public int getGroupCount() {
-        return groupList == null ? 0 : groupList.size();
+        return unpassCourseList == null ? 0 : unpassCourseList.size();
     }
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        List<CourseScore> childList = childrenList.get(groupPosition);
-        return childList == null ? 0 : childList.size();
+        List<UnpassCourse.Record> recordList = unpassCourseList.get(groupPosition).getRecords();
+        return recordList == null ? 0 : recordList.size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
-        return groupList.get(groupPosition);
+        return unpassCourseList.get(groupPosition);
     }
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
-        return childrenList.get(groupPosition).get(childPosition);
+        return unpassCourseList.get(groupPosition).getRecords().get(childPosition);
     }
 
     @Override
@@ -78,11 +77,11 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
         } else {
             holder = (GroupViewHolder) convertView.getTag();
         }
-        CourseScore score = groupList.get(groupPosition);
-        holder.tvName.setText(score.getName());
-        holder.tvNum.setText(score.getNum());
-        holder.tvCredit.setText(score.getCredit() + "");
-        holder.tvSelectType.setText(score.getSelectType());
+        UnpassCourse course = unpassCourseList.get(groupPosition);
+        holder.tvName.setText(course.getName());
+        holder.tvNum.setText(course.getNum());
+        holder.tvCredit.setText(course.getCredit() + "");
+        holder.tvSelectType.setText(course.getSelectType());
         return convertView;
     }
 
@@ -96,11 +95,11 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
         } else {
             holder = (ChildViewHolder) convertView.getTag();
         }
-        CourseScore score = childrenList.get(groupPosition).get(childPosition);
-        holder.tvSemester.setText(score.getYear() + score.getTerm());
-        holder.tvExamType.setText(score.getExamType());
-        holder.tvScore.setText(score.getScore());
-        holder.tvRemarks.setText(score.getRemarks());
+        UnpassCourse.Record record = unpassCourseList.get(groupPosition).getRecords().get(childPosition);
+        holder.tvSemester.setText(record.getYear() + record.getTerm());
+        holder.tvExamType.setText(record.getExamType());
+        holder.tvScore.setText(record.getScore());
+        holder.tvRemarks.setText(record.getRemarks());
         return convertView;
     }
 

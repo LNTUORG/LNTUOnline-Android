@@ -65,7 +65,11 @@
 
 
 
-
+        <activity
+            android:name="org.lntu.online.ui.activity.UnpassCourseActivity"
+            android:label="@string/unpass_query"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
             android:name="org.lntu.online.ui.activity.SkillTestActivity"
