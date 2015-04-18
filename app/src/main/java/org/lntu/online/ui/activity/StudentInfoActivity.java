@@ -119,10 +119,11 @@ public class StudentInfoActivity extends BaseActivity {
         }
         // 基本信息
         {
-            TextView tvName = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
-            tvName.setText("基本信息");
-            tvName.setBackgroundResource(R.color.red_light);
-            layoutContent.addView(tvName);
+            TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
+            tvTitle.setText("基本信息");
+            tvTitle.setBackgroundResource(R.color.red_light);
+            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_assignment_ind_white_24dp, 0, 0, 0);
+            layoutContent.addView(tvTitle);
         }
         for (int n = 0; n < 34; n++) {
             View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
@@ -266,9 +267,7 @@ public class StudentInfoActivity extends BaseActivity {
                     tvValue.setText(student.getRemarks());
                     break;
             }
-            // 添加到布局中
             layoutContent.addView(itemView);
-            // 添加分割线
             View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
             layoutContent.addView(deepLine);    
         }
@@ -278,6 +277,7 @@ public class StudentInfoActivity extends BaseActivity {
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("高考科目");
             tvTitle.setBackgroundResource(R.color.green_light);
+            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check_circle_white_24dp, 0, 0, 0);
             layoutContent.addView(tvTitle);
 
             for (Student.EntranceExam ee : student.getEntranceExams()) {
@@ -300,6 +300,7 @@ public class StudentInfoActivity extends BaseActivity {
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("教育经历");
             tvTitle.setBackgroundResource(R.color.blue_light);
+            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_book_white_24dp, 0, 0, 0);
             layoutContent.addView(tvTitle);
 
             for (Student.EducationExperience ee : student.getEducationExperiences()) {
@@ -326,6 +327,7 @@ public class StudentInfoActivity extends BaseActivity {
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("家庭情况");
             tvTitle.setBackgroundResource(R.color.orange_light);
+            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_home_white_24dp, 0, 0, 0);
             layoutContent.addView(tvTitle);
 
             for (Student.Family family : student.getFamilys()) {
@@ -356,6 +358,7 @@ public class StudentInfoActivity extends BaseActivity {
             TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
             tvTitle.setText("警告处分");
             tvTitle.setBackgroundResource(R.color.grey_light);
+            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_report_problem_white_24dp, 0, 0, 0);
             layoutContent.addView(tvTitle);
 
             for (Student.DisciplinaryAction action : student.getDisciplinaryActions()) {
@@ -378,7 +381,7 @@ public class StudentInfoActivity extends BaseActivity {
                 View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
                 layoutContent.addView(deepLine);
             }
-            
+
         }
     }
 

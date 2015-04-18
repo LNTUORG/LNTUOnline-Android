@@ -9,11 +9,10 @@
     android:paddingBottom="16dp"
     android:textSize="16sp"
     android:textColor="#FFFFFF"
-
-    android:drawableStart="@drawable/ic_error_white_24dp"
-    android:drawableLeft="@drawable/ic_error_white_24dp"
     android:drawablePadding="16dp"
     android:gravity="center_vertical"
     android:background="@color/red_light"
     android:elevation="4dp"
-    tools:text="标题" />
+    tools:text="标题"
+    tools:drawableStart="@drawable/ic_assignment_ind_white_24dp"
+    tools:drawableLeft="@drawable/ic_assignment_ind_white_24dp" />
