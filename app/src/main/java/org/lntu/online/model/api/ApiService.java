@@ -2,8 +2,8 @@ package org.lntu.online.model.api;
 
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.CourseEvaInfo;
-import org.lntu.online.model.entity.CourseScore;
 import org.lntu.online.model.entity.ExamPlan;
+import org.lntu.online.model.entity.Grades;
 import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.SkillTestScore;
 import org.lntu.online.model.entity.Student;
@@ -51,10 +51,10 @@ public interface ApiService {
             Callback<List<ExamPlan>> callback
     );
 
-    @GET("/course-score/~self")
-    public void getCourseScoreList(
+    @GET("/grades/~self")
+    public void getGrades(
             @Header(HEADER_AUTHORIZATION) String loginToken,
-            Callback<List<CourseScore>> callback
+            Callback<Grades> callback
     );
 
     @GET("/unpass-course/~self")
