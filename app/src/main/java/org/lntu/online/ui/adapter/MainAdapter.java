@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.lntu.online.R;
 import org.lntu.online.ui.activity.ClassTableActivity;
-import org.lntu.online.ui.activity.CourseScoreActivity;
+import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.ExamPlanActivity;
 import org.lntu.online.ui.activity.MottoActivity;
 import org.lntu.online.ui.activity.NoticeActivity;
@@ -54,7 +54,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             StudentInfoActivity.class,
             ClassTableActivity.class,
             ExamPlanActivity.class,
-            CourseScoreActivity.class,
+            GradesActivity.class,
             OneKeyEvaActivity.class,
             UnpassCourseActivity.class,
             SkillTestActivity.class,

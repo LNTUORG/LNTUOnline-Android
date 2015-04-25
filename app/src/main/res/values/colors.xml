@@ -16,6 +16,10 @@
     <color name="orange_light">#ffffbb33</color>
     <color name="grey_light">#ff999999</color>
 
+    <color name="score_level_great">#ffffd700</color>
+    <color name="score_level_unpass">#fff44336</color>
+    <color name="score_level_normal">#ff4caf50</color>
+
     <color name="fab_ripple">#FF5252</color>
     <color name="fab_accent">#F44336</color>
     <color name="fab_accent_pressed">#D32F2F</color>

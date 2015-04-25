@@ -74,7 +74,7 @@ public class Grades {
         UNPASS
     }
 
-    public static class CourseScore {
+    public static class CourseScore implements Comparable<CourseScore> {
 
         private String studentId;
 
@@ -204,6 +204,23 @@ public class Grades {
 
         public void setLevel(Level level) {
             this.level = level;
+        }
+
+        @Override
+        public int compareTo(CourseScore another) {
+            if (getYear() > another.getYear()) {
+                return -1;
+            } else if (getYear() < another.getYear()) {
+                return 1;
+            } else { // 年相等
+                if ("秋".equals(getTerm()) && "春".equals(another.getTerm())) {
+                    return -1;
+                } else if ("春".equals(getTerm()) && "秋".equals(another.getTerm())) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
         }
 
     }
