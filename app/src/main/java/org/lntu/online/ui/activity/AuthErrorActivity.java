@@ -16,15 +16,12 @@ public class AuthErrorActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth_error);
         ButterKnife.inject(this);
-
-        getSupportActionBar().hide();
     }
 
     @OnClick(R.id.auth_error_btn_close)
     protected void onBtnCloseClick() {
         finish();
     }
-
 
     @Override
     protected void onDestroy() {
