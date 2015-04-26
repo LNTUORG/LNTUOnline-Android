@@ -102,13 +102,13 @@
         android:id="@+id/unpass_course_item_child_icon_shadow_top"
         android:layout_width="match_parent"
         android:layout_height="8dp"
-        android:background="@drawable/item_gap_shadow_top" />
+        android:background="@drawable/item_gap_shadow_bottom" />
 
     <View
         android:id="@+id/unpass_course_item_child_icon_shadow_bottom"
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:layout_gravity="bottom"
-        android:background="@drawable/item_gap_shadow_bottom" />
+        android:background="@drawable/item_gap_shadow_top" />
 
 </FrameLayout>

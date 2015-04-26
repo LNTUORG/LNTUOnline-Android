@@ -1,6 +1,8 @@
 package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,10 +11,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
@@ -23,14 +23,12 @@ import org.lntu.online.model.entity.Grades;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.GradesAdapter;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.ToastUtils;
 
 import java.util.Collections;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
 public class GradesActivity extends BaseActivity {
@@ -41,8 +39,8 @@ public class GradesActivity extends BaseActivity {
     @InjectView(R.id.grades_layout_content)
     protected ViewGroup layoutContent;
 
-    @InjectView(R.id.grades_list_view)
-    protected ListView listView;
+    @InjectView(R.id.grades_recycler_view)
+    protected RecyclerView recyclerView;
 
     @InjectView(R.id.grades_icon_loading)
     protected View iconLoading;
@@ -98,7 +96,11 @@ public class GradesActivity extends BaseActivity {
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
-        fab.attachToListView(listView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new GradesAdapter(this);
+        recyclerView.setAdapter(adapter);
+
+        fab.attachToRecyclerView(recyclerView);
 
         startNetwork();
     }
@@ -136,9 +138,9 @@ public class GradesActivity extends BaseActivity {
 
     private void showLayoutContent(Grades grades) {
         tvAvaCredit.setText(grades.getAverageCredit().getSummary());
+
         Collections.sort(grades.getCourseScores()); // 排序
-        adapter = new GradesAdapter(this, grades.getCourseScores());
-        listView.setAdapter(adapter);
+        adapter.setScoreList(grades.getCourseScores());
 
         int topYear = grades.getCourseScores().get(0).getYear();
         int bottomYear = grades.getCourseScores().get(grades.getCourseScores().size() - 1).getYear();
@@ -236,8 +238,8 @@ public class GradesActivity extends BaseActivity {
         lastTerm = spnTerm.getSelectedItemPosition() == 0 ? "" : spnTerm.getSelectedItem().toString();
         lastLevel = getCurrentLevel();
         lastDisplayMax = spnDisplay.getSelectedItemPosition() != 0;
-        adapter.update(lastYear, lastTerm, lastLevel, lastDisplayMax);
-        listView.setSelection(0);
+        adapter.updateListView(lastYear, lastTerm, lastLevel, lastDisplayMax);
+        recyclerView.scrollToPosition(0);
     }
 
 }

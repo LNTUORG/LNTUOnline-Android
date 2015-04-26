@@ -36,8 +36,8 @@
                     android:background="@color/blue_light"
                     tools:text="您的平均学分绩为 1.523" />
 
-                <ListView
-                    android:id="@+id/grades_list_view"
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/grades_recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
@@ -124,7 +124,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="@drawable/item_gap_shadow_bottom" />
+                android:background="@drawable/item_gap_shadow_top" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -255,7 +255,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:background="@drawable/item_gap_shadow_top" />
+                android:background="@drawable/item_gap_shadow_bottom" />
 
         </LinearLayout>
 
