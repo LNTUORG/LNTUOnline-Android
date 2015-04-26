@@ -79,7 +79,7 @@ public class ExamPlanAdapter extends BaseAdapter {
         return convertView;
     }
 
-    protected static class ViewHolder {
+    protected class ViewHolder {
 
         @InjectView(R.id.exam_plan_item_tv_course)
         protected TextView tvCourse;
