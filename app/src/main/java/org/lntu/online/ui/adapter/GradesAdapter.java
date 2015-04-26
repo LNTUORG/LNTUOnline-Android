@@ -1,6 +1,7 @@
 package org.lntu.online.ui.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,22 +24,56 @@ public class GradesAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private List<Grades.CourseScore> scoreList;
+    private List<Grades.CourseScore> maxList;
     private List<Grades.CourseScore> currentList;
 
     public GradesAdapter(Context context, List<Grades.CourseScore> scoreList) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.scoreList = scoreList;
+        // 构建最高成绩数据源
+        maxList = new ArrayList<Grades.CourseScore>();
+        for (Grades.CourseScore score : scoreList) {
+            Grades.CourseScore currentMaxScore = getFirstScoreFormMaxList(score.getNum());
+            if (currentMaxScore == null) {
+                maxList.add(score);
+            } else {
+                if (score.getScoreValue() > currentMaxScore.getScoreValue()) {
+                    maxList.remove(currentMaxScore);
+                    maxList.add(score);
+                }
+            }
+        }
+        // 构建当前显示数据源
         currentList = new ArrayList<Grades.CourseScore>();
         for (Grades.CourseScore score : scoreList) {
             currentList.add(score);
         }
     }
 
+    private Grades.CourseScore getFirstScoreFormMaxList(String num) {
+        for (Grades.CourseScore score : maxList) {
+            if (score.getNum().equals(num)) {
+                return score;
+            }
+        }
+        return null;
+    }
+
     public void update(int year, String term, Grades.Level level, boolean displayMax) {
-        ToastUtils.with(context).show("更新");
-
-
+        currentList.clear();
+        for (Grades.CourseScore score : (displayMax ? maxList : scoreList)) {
+            if (year != 0 && score.getYear() != year) {
+                continue;
+            }
+            if (!TextUtils.isEmpty(term) && !score.getTerm().equals(term)) {
+                continue;
+            }
+            if (level != null && score.getLevel() != level) {
+                continue;
+            }
+            currentList.add(score);
+        }
         notifyDataSetChanged();
     }
 

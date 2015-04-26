@@ -69,9 +69,20 @@ public class Grades {
     }
 
     public enum Level {
-        GREAT,
-        NORMAL,
-        UNPASS
+        GREAT(100),
+        NORMAL(60),
+        UNPASS(0);
+
+        private int value;
+
+        private Level(int value) {
+            this.value = value;
+        }
+
+        public int value() {
+            return value;
+        }
+
     }
 
     public static class CourseScore implements Comparable<CourseScore> {
@@ -204,6 +215,17 @@ public class Grades {
 
         public void setLevel(Level level) {
             this.level = level;
+        }
+
+        /**
+         * 获取转化成绩
+         */
+        public float getScoreValue() {
+            try {
+                return Float.parseFloat(getScore());
+            } catch (NumberFormatException e) {
+                return getLevel().value();
+            }
         }
 
         @Override

@@ -175,12 +175,6 @@ public class GradesActivity extends BaseActivity {
         // 屏蔽条件面板中间事件
     }
 
-    @OnClick(R.id.grades_layout_condition)
-    public void onBtnLayoutConditionClick() {
-        layoutCondition.setVisibility(View.GONE);
-        fab.setImageResource(R.drawable.ic_search_white_24dp);
-    }
-
     @Override
     public void onBackPressed() {
         if (layoutCondition.getVisibility() == View.VISIBLE) {
@@ -191,7 +185,10 @@ public class GradesActivity extends BaseActivity {
         }
     }
 
-    @OnClick(R.id.grades_fab)
+    @OnClick({
+            R.id.grades_fab,
+            R.id.grades_layout_condition
+    })
     public void onBtnFabClick() {
         if (layoutCondition.getVisibility() == View.GONE) {
             layoutCondition.setVisibility(View.VISIBLE);
