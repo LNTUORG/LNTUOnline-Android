@@ -2,7 +2,7 @@
 <resources>
 
     <string-array name="years">
-        <item>全部年份</item>
+        <item>全部</item>
         <item>2015</item>
         <item>2014</item>
         <item>2013</item>
@@ -12,32 +12,21 @@
     </string-array>
 
     <string-array name="terms">
-        <item>全部学期</item>
+        <item>全部</item>
         <item>春</item>
         <item>秋</item>
     </string-array>
 
-    <string-array name="weeks">
-        <item>第1周</item>
-        <item>第2周</item>
-        <item>第3周</item>
-        <item>第4周</item>
-        <item>第5周</item>
-        <item>第6周</item>
-        <item>第7周</item>
-        <item>第8周</item>
-        <item>第9周</item>
-        <item>第10周</item>
-        <item>第11周</item>
-        <item>第12周</item>
-        <item>第13周</item>
-        <item>第14周</item>
-        <item>第15周</item>
-        <item>第16周</item>
-        <item>第17周</item>
-        <item>第18周</item>
-        <item>第19周</item>
-        <item>第20周</item>
+    <string-array name="score_level">
+        <item>全部</item>
+        <item>优秀（90分以上）</item>
+        <item>一般</item>
+        <item>未通过（60分以下）</item>
+    </string-array>
+
+    <string-array name="score_display">
+        <item>全部</item>
+        <item>科目最高分</item>
     </string-array>
 
 </resources>

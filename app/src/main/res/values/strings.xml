@@ -68,6 +68,11 @@
     <string name="have_left">还剩</string>
     <string name="day">天</string>
 
+    <string name="year">年份：</string>
+    <string name="term">学期：</string>
+    <string name="score_level">成绩：</string>
+    <string name="score_display">显示：</string>
+
     <string name="overall_score">总评：</string>
     <string name="credit">学分：</string>
     <string name="test_mode">考核方式：</string>

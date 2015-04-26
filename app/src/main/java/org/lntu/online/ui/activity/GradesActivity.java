@@ -8,8 +8,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
@@ -20,12 +23,14 @@ import org.lntu.online.model.entity.Grades;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.GradesAdapter;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.util.ToastUtils;
 
 import java.util.Collections;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
 public class GradesActivity extends BaseActivity {
@@ -60,7 +65,21 @@ public class GradesActivity extends BaseActivity {
     @InjectView(R.id.grades_layout_condition)
     protected ViewGroup layoutCondition;
 
+    @InjectView(R.id.grades_spn_year)
+    protected Spinner spnYear;
+
+    @InjectView(R.id.grades_spn_term)
+    protected Spinner spnTerm;
+
+    @InjectView(R.id.grades_spn_level)
+    protected Spinner spnLevel;
+
+    @InjectView(R.id.grades_spn_display)
+    protected Spinner spnDisplay;
+
     private GradesAdapter adapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +135,18 @@ public class GradesActivity extends BaseActivity {
         Collections.sort(grades.getCourseScores()); // 排序
         adapter = new GradesAdapter(this, grades.getCourseScores());
         listView.setAdapter(adapter);
+
+        int firstYear = grades.getCourseScores().get(0).getYear();
+        int lastYear = grades.getCourseScores().get(grades.getCourseScores().size() - 1).getYear();
+        String[] years = new String[firstYear - lastYear + 2];
+        years[0] = "全部";
+        for (int n = 1; n < years.length; n++) {
+            years[n] = firstYear - n + 1 + "";
+        }
+        ArrayAdapter<String> spnYearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
+        spnYearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnYear.setAdapter(spnYearAdapter);
+
         layoutContent.setVisibility(View.VISIBLE);
         fab.setVisibility(View.VISIBLE);
         iconLoading.setVisibility(View.GONE);
@@ -135,20 +166,10 @@ public class GradesActivity extends BaseActivity {
         startNetwork();
     }
 
-    @OnClick(R.id.grades_fab)
-    public void onBtnFabClick() {
-        if (layoutCondition.getVisibility() == View.GONE) {
-            layoutCondition.setVisibility(View.VISIBLE);
-            fab.setImageResource(R.drawable.ic_done_white_24dp);
-        } else {
-            layoutCondition.setVisibility(View.GONE);
-            fab.setImageResource(R.drawable.ic_search_white_24dp);
-        }
-    }
-
     @OnClick(R.id.grades_layout_condition)
     public void onBtnLayoutConditionClick() {
-        // 截断条件面板事件
+        layoutCondition.setVisibility(View.GONE);
+        fab.setImageResource(R.drawable.ic_search_white_24dp);
     }
 
     @Override
@@ -158,6 +179,17 @@ public class GradesActivity extends BaseActivity {
             fab.setImageResource(R.drawable.ic_search_white_24dp);
         } else {
             super.onBackPressed();
+        }
+    }
+
+    @OnClick(R.id.grades_fab)
+    public void onBtnFabClick() {
+        if (layoutCondition.getVisibility() == View.GONE) {
+            layoutCondition.setVisibility(View.VISIBLE);
+            fab.setImageResource(R.drawable.ic_done_white_24dp);
+        } else {
+            layoutCondition.setVisibility(View.GONE);
+            fab.setImageResource(R.drawable.ic_search_white_24dp);
         }
     }
 
