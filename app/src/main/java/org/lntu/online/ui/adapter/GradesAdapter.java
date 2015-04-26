@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.lntu.online.R;
 
 import org.lntu.online.model.entity.Grades;
+import org.lntu.online.util.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,8 @@ public class GradesAdapter extends BaseAdapter {
         }
     }
 
-    public void update() {
+    public void update(int year, String term, Grades.Level level, boolean displayMax) {
+        ToastUtils.with(context).show("更新");
 
 
         notifyDataSetChanged();

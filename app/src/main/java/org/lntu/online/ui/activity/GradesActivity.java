@@ -79,7 +79,11 @@ public class GradesActivity extends BaseActivity {
 
     private GradesAdapter adapter;
 
-
+    // 最后一次使用的过滤条件-默认条件为全部
+    private int lastYear = 0;
+    private String lastTerm = "";
+    private Grades.Level lastLevel = null;
+    private boolean lastDisplayMax = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,12 +140,12 @@ public class GradesActivity extends BaseActivity {
         adapter = new GradesAdapter(this, grades.getCourseScores());
         listView.setAdapter(adapter);
 
-        int firstYear = grades.getCourseScores().get(0).getYear();
-        int lastYear = grades.getCourseScores().get(grades.getCourseScores().size() - 1).getYear();
-        String[] years = new String[firstYear - lastYear + 2];
+        int topYear = grades.getCourseScores().get(0).getYear();
+        int bottomYear = grades.getCourseScores().get(grades.getCourseScores().size() - 1).getYear();
+        String[] years = new String[topYear - bottomYear + 2];
         years[0] = "全部";
         for (int n = 1; n < years.length; n++) {
-            years[n] = firstYear - n + 1 + "";
+            years[n] = topYear - n + 1 + "";
         }
         ArrayAdapter<String> spnYearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
         spnYearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -164,6 +168,11 @@ public class GradesActivity extends BaseActivity {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
+    }
+
+    @OnClick(R.id.grades_layout_condition_center)
+    public void onBtnLayoutConditionCenterClick() {
+        // 屏蔽条件面板中间事件
     }
 
     @OnClick(R.id.grades_layout_condition)
@@ -190,7 +199,48 @@ public class GradesActivity extends BaseActivity {
         } else {
             layoutCondition.setVisibility(View.GONE);
             fab.setImageResource(R.drawable.ic_search_white_24dp);
+            if (needUpdateListView()) {
+                updateListView();
+            }
         }
+    }
+
+    private Grades.Level getCurrentLevel() {
+        switch (spnLevel.getSelectedItemPosition()) {
+            case 1:
+                return Grades.Level.GREAT;
+            case 2:
+                return Grades.Level.NORMAL;
+            case 3:
+                return Grades.Level.UNPASS;
+            default:
+                return null;
+        }
+    }
+
+    private boolean needUpdateListView() {
+        if (lastYear != (spnYear.getSelectedItemPosition() == 0 ? 0 : Integer.parseInt(spnYear.getSelectedItem().toString()))) {
+            return true;
+        }
+        if (!lastTerm.equals(spnTerm.getSelectedItemPosition() == 0 ? "" : spnTerm.getSelectedItem().toString())) {
+            return true;
+        }
+        if (lastLevel != getCurrentLevel()) {
+            return true;
+        }
+        if (lastDisplayMax == (spnDisplay.getSelectedItemPosition() == 0)) {
+            return true;
+        }
+        return false;
+    }
+
+    private void updateListView() {
+        lastYear = spnYear.getSelectedItemPosition() == 0 ? 0 : Integer.parseInt(spnYear.getSelectedItem().toString());
+        lastTerm = spnTerm.getSelectedItemPosition() == 0 ? "" : spnTerm.getSelectedItem().toString();
+        lastLevel = getCurrentLevel();
+        lastDisplayMax = spnDisplay.getSelectedItemPosition() != 0;
+        adapter.update(lastYear, lastTerm, lastLevel, lastDisplayMax);
+        listView.setSelection(0);
     }
 
 }

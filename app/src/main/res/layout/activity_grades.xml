@@ -107,152 +107,159 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
         android:visibility="gone"
         android:id="@+id/grades_layout_condition"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#bbeeeeee"
-        android:orientation="vertical"
-        android:gravity="center_vertical">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:background="@drawable/item_gap_shadow_bottom" />
+        android:background="#bbdddddd">
 
         <LinearLayout
+            android:id="@+id/grades_layout_condition_center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
-            android:paddingEnd="16dp"
-            android:paddingRight="16dp"
-            android:background="@android:color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_gravity="center"
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/year"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@drawable/item_gap_shadow_bottom" />
 
-            <Spinner
-                android:id="@+id/grades_spn_year"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:entries="@array/years" />
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/year"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/grades_spn_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:entries="@array/years" />
+
+            </LinearLayout>
+
+            <include layout="@layout/activity_deep_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/term"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/grades_spn_term"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:entries="@array/terms" />
+
+            </LinearLayout>
+
+            <include layout="@layout/activity_deep_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/score_level"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/grades_spn_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:entries="@array/score_level" />
+
+            </LinearLayout>
+
+            <include layout="@layout/activity_deep_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingLeft="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:text="@string/score_display"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/grades_spn_display"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:entries="@array/score_display" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@drawable/item_gap_shadow_top" />
 
         </LinearLayout>
 
-        <include layout="@layout/activity_deep_line" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
-            android:paddingEnd="16dp"
-            android:paddingRight="16dp"
-            android:background="@android:color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/term"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp" />
-
-            <Spinner
-                android:id="@+id/grades_spn_term"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:entries="@array/terms" />
-
-        </LinearLayout>
-
-        <include layout="@layout/activity_deep_line" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
-            android:paddingEnd="16dp"
-            android:paddingRight="16dp"
-            android:background="@android:color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/score_level"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp" />
-
-            <Spinner
-                android:id="@+id/grades_spn_level"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:entries="@array/score_level" />
-
-        </LinearLayout>
-
-        <include layout="@layout/activity_deep_line" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
-            android:paddingEnd="16dp"
-            android:paddingRight="16dp"
-            android:background="@android:color/white"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/score_display"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp" />
-
-            <Spinner
-                android:id="@+id/grades_spn_display"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:entries="@array/score_display" />
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="8dp"
-            android:background="@drawable/item_gap_shadow_top" />
-
-    </LinearLayout>
+    </FrameLayout>
 
     <com.melnykov.fab.FloatingActionButton
         android:visibility="gone"
