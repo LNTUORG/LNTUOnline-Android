@@ -1,81 +1,144 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/activity_action_bar" />
-
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ListView
-            android:visibility="gone"
-            android:id="@+id/grades_list_view"
+        <include layout="@layout/activity_action_bar" />
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/grades_icon_loading"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/grades_layout_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/grades_tv_ava_credit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:background="@color/blue_light"
+                    tools:text="您的平均学分绩为 1.523" />
+
+                <ListView
+                    android:id="@+id/grades_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/grades_icon_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/grades_icon_loading_anim"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_empty_inbox_anim" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_empty_inbox" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/network_data_loading" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/grades_icon_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
                 <ImageView
-                    android:id="@+id/grades_icon_loading_anim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_empty_inbox_anim" />
+                    android:src="@drawable/ic_empty_search" />
 
-                <ImageView
+                <TextView
+                    android:id="@+id/grades_tv_load_failed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_empty_inbox" />
+                    android:text="@string/network_data_load_failed" />
 
-            </FrameLayout>
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="@string/network_data_loading" />
+        </FrameLayout>
 
-        </LinearLayout>
+    </LinearLayout>
 
-        <LinearLayout
-            android:visibility="gone"
-            android:id="@+id/grades_icon_empty"
+    <LinearLayout
+
+        android:id="@+id/grades_layout_condition"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#bbffffff"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/grades_spn_year"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:entries="@array/years" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_empty_search" />
+        <Spinner
+            android:id="@+id/grades_spn_term"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/terms" />
 
-            <TextView
-                android:id="@+id/grades_tv_load_failed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="@string/network_data_load_failed" />
+    </LinearLayout>
 
-        </LinearLayout>
+    <com.melnykov.fab.FloatingActionButton
+        android:visibility="gone"
+        android:id="@+id/grades_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_search_white_24dp"
+        app:fab_colorNormal="@color/fab_accent"
+        app:fab_colorPressed="@color/fab_accent_pressed"
+        app:fab_colorRipple="@color/fab_ripple" />
 
-    </FrameLayout>
-
-</LinearLayout>
+</FrameLayout>

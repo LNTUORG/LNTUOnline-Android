@@ -11,6 +11,7 @@ import com.lntu.online.R;
 
 import org.lntu.online.model.entity.Grades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -21,21 +22,32 @@ public class GradesAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
     private List<Grades.CourseScore> scoreList;
+    private List<Grades.CourseScore> currentList;
 
     public GradesAdapter(Context context, List<Grades.CourseScore> scoreList) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.scoreList = scoreList;
+        currentList = new ArrayList<Grades.CourseScore>();
+        for (Grades.CourseScore score : scoreList) {
+            currentList.add(score);
+        }
+    }
+
+    public void update() {
+
+
+        notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return scoreList == null ? 0 : scoreList.size();
+        return currentList == null ? 0 : currentList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return scoreList.get(position);
+        return currentList.get(position);
     }
 
     @Override
@@ -53,7 +65,7 @@ public class GradesAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        Grades.CourseScore score = scoreList.get(position);
+        Grades.CourseScore score = currentList.get(position);
         holder.tvNum.setText(score.getNum());
         holder.tvName.setText(score.getName());
         holder.tvScore.setText(score.getScore());

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.lntu.online.R;
+import com.melnykov.fab.FloatingActionButton;
 
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
@@ -31,6 +33,9 @@ public class GradesActivity extends BaseActivity {
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
 
+    @InjectView(R.id.grades_layout_content)
+    protected ViewGroup layoutContent;
+
     @InjectView(R.id.grades_list_view)
     protected ListView listView;
 
@@ -46,6 +51,17 @@ public class GradesActivity extends BaseActivity {
     @InjectView(R.id.grades_tv_load_failed)
     protected TextView tvLoadFailed;
 
+    @InjectView(R.id.grades_tv_ava_credit)
+    protected TextView tvAvaCredit;
+
+    @InjectView(R.id.grades_fab)
+    protected FloatingActionButton fab;
+
+    @InjectView(R.id.grades_layout_condition)
+    protected ViewGroup layoutCondition;
+
+    private GradesAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +74,8 @@ public class GradesActivity extends BaseActivity {
         Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
+
+        fab.attachToListView(listView);
 
         startNetwork();
     }
@@ -81,11 +99,7 @@ public class GradesActivity extends BaseActivity {
                 if (grades.getCourseScores().size() == 0) {
                     showIconEmptyView("暂时没有成绩信息。");
                 } else {
-                    Collections.sort(grades.getCourseScores()); // 排序
-                    listView.setAdapter(new GradesAdapter(GradesActivity.this, grades.getCourseScores()));
-                    listView.setVisibility(View.VISIBLE);
-                    iconLoading.setVisibility(View.GONE);
-                    iconEmpty.setVisibility(View.GONE);
+                    showLayoutContent(grades);
                 }
             }
 
@@ -95,6 +109,17 @@ public class GradesActivity extends BaseActivity {
             }
 
         });
+    }
+
+    private void showLayoutContent(Grades grades) {
+        tvAvaCredit.setText(grades.getAverageCredit().getSummary());
+        Collections.sort(grades.getCourseScores()); // 排序
+        adapter = new GradesAdapter(this, grades.getCourseScores());
+        listView.setAdapter(adapter);
+        layoutContent.setVisibility(View.VISIBLE);
+        fab.setVisibility(View.VISIBLE);
+        iconLoading.setVisibility(View.GONE);
+        iconEmpty.setVisibility(View.GONE);
     }
 
     private void showIconEmptyView(String message) {
@@ -108,6 +133,32 @@ public class GradesActivity extends BaseActivity {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
+    }
+
+    @OnClick(R.id.grades_fab)
+    public void onBtnFabClick() {
+        if (layoutCondition.getVisibility() == View.GONE) {
+            layoutCondition.setVisibility(View.VISIBLE);
+            fab.setImageResource(R.drawable.ic_done_white_24dp);
+        } else {
+            layoutCondition.setVisibility(View.GONE);
+            fab.setImageResource(R.drawable.ic_search_white_24dp);
+        }
+    }
+
+    @OnClick(R.id.grades_layout_condition)
+    public void onBtnLayoutConditionClick() {
+        // 截断条件面板事件
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (layoutCondition.getVisibility() == View.VISIBLE) {
+            layoutCondition.setVisibility(View.GONE);
+            fab.setImageResource(R.drawable.ic_search_white_24dp);
+        } else {
+            super.onBackPressed();
+        }
     }
 
 }

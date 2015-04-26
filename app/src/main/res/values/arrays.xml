@@ -2,12 +2,17 @@
 <resources>
 
     <string-array name="years">
-        <item>全部</item>
+        <item>全部年份</item>
+        <item>2015</item>
         <item>2014</item>
         <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+        <item>2010</item>
     </string-array>
 
     <string-array name="terms">
+        <item>全部学期</item>
         <item>春</item>
         <item>秋</item>
     </string-array>
