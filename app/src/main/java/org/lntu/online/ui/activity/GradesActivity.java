@@ -221,16 +221,15 @@ public class GradesActivity extends BaseActivity {
         if (lastYear != (spnYear.getSelectedItemPosition() == 0 ? 0 : Integer.parseInt(spnYear.getSelectedItem().toString()))) {
             return true;
         }
-        if (!lastTerm.equals(spnTerm.getSelectedItemPosition() == 0 ? "" : spnTerm.getSelectedItem().toString())) {
+        else if (!lastTerm.equals(spnTerm.getSelectedItemPosition() == 0 ? "" : spnTerm.getSelectedItem().toString())) {
             return true;
         }
-        if (lastLevel != getCurrentLevel()) {
+        else if (lastLevel != getCurrentLevel()) {
             return true;
         }
-        if (lastDisplayMax == (spnDisplay.getSelectedItemPosition() == 0)) {
-            return true;
+        else {
+            return lastDisplayMax == (spnDisplay.getSelectedItemPosition() == 0);
         }
-        return false;
     }
 
     private void updateListView() {

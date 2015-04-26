@@ -149,9 +149,7 @@
                 <Spinner
                     android:id="@+id/grades_spn_year"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:layout_height="54dp"
                     android:entries="@array/years" />
 
             </LinearLayout>
@@ -181,9 +179,7 @@
                 <Spinner
                     android:id="@+id/grades_spn_term"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:layout_height="54dp"
                     android:entries="@array/terms" />
 
             </LinearLayout>
@@ -213,9 +209,7 @@
                 <Spinner
                     android:id="@+id/grades_spn_level"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:layout_height="54dp"
                     android:entries="@array/score_level" />
 
             </LinearLayout>
@@ -245,9 +239,7 @@
                 <Spinner
                     android:id="@+id/grades_spn_display"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="16dp"
+                    android:layout_height="54dp"
                     android:entries="@array/score_display" />
 
             </LinearLayout>
