@@ -41,7 +41,7 @@ public final class ShipUtils {
     }
 
     public static void homepage(Context context) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.official_homepage)));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.official_homepage_content)));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
         } else {

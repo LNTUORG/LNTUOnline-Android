@@ -54,6 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/version_name_content"
+                    android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -80,9 +81,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/official_homepage_content"
+                    android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
             </LinearLayout>
+
+            <View style="@style/AppTheme.DeepLine" />
 
         </LinearLayout>
 
