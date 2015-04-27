@@ -105,6 +105,37 @@
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
+        <activity
+            android:name="org.lntu.online.ui.activity.AdviceActivity"
+            android:label="@string/advice"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
+
+        <activity
+            android:name="org.lntu.online.ui.activity.SettingActivity"
+            android:label="@string/setting"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
+            android:name="org.lntu.online.ui.activity.HelpActivity"
+            android:label="@string/help"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
+            android:name="org.lntu.online.ui.activity.AboutActivity"
+            android:label="@string/about_app"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
+            android:name="org.lntu.online.ui.activity.CrashShowActivity"
+            android:label="@string/app_crash"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
         <!-- 友盟参数 -->
         <meta-data
             android:name="UMENG_APPKEY"

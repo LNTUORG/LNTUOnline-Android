@@ -51,6 +51,11 @@
     <string name="skill_test">等级考试</string>
     <string name="senate_notice">教务公告</string>
     <string name="remember_motto">牢记校训</string>
+    <string name="advice">意见反馈</string>
+    <string name="setting">设置</string>
+    <string name="help">帮助</string>
+    <string name="about_app">关于应用</string>
+    <string name="app_crash">程序崩溃</string>
 
     <string name="political_affiliation">政治面貌：</string>
     <string name="job_and_post">职业职位：</string>
@@ -105,9 +110,7 @@
     <string name="send_crash_log">发送错误日志</string>
 
 
-    <string name="about_app">关于应用</string>
-    <string name="advice">意见反馈</string>
-    <string name="app_crash">程序崩溃</string>
+
 
     <string name="eva_info">评课信息</string>
 
