@@ -34,17 +34,18 @@
                 android:elevation="4dp" />
 
             <LinearLayout
+                android:id="@+id/about_btn_version"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="#FFFFFF">
+                android:background="@drawable/rect_btn_background">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/version_name"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/text_color_primary"
                     android:textSize="16sp" />
 
                 <TextView
@@ -60,28 +61,26 @@
             <View style="@style/AppTheme.DeepLine" />
 
             <LinearLayout
+                android:id="@+id/about_btn_homepage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="#FFFFFF">
+                android:background="@drawable/rect_btn_background">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/official_homepage"
-                    android:textColor="?android:attr/textColorPrimary"
+                    android:textColor="@color/text_color_primary"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/about_btn_home_page"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/official_homepage_content"
-                    android:textColor="@drawable/text_view_link_text_color"
-                    android:textSize="14sp"
-                    android:clickable="true" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 

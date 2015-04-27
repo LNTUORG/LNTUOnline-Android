@@ -102,7 +102,7 @@ public class SkillTestActivity extends BaseActivity {
     }
 
     @OnClick(R.id.skill_test_icon_empty)
-    public void onBtnIconEmptyClick() {
+    protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();

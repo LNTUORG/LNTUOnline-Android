@@ -104,7 +104,7 @@ public class ExamPlanActivity extends BaseActivity {
     }
 
     @OnClick(R.id.exam_plan_icon_empty)
-    public void onBtnIconEmptyClick() {
+    protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();

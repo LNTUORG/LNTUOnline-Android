@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
+import com.lntu.online.R;
+
 public final class ShipUtils {
 
     private ShipUtils() {}
@@ -16,7 +18,7 @@ public final class ShipUtils {
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
         } else {
-            Toast.makeText(context, "您的系统中没有安装应用商店", Toast.LENGTH_SHORT).show();
+            ToastUtils.with(context).show("您的系统中没有安装应用商店");
         }
     }
 
@@ -34,7 +36,16 @@ public final class ShipUtils {
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
         } else {
-            Toast.makeText(context, "您的系统中没有安装浏览器", Toast.LENGTH_SHORT).show();
+            ToastUtils.with(context).show("您的系统中没有安装浏览器");
+        }
+    }
+
+    public static void homepage(Context context) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.official_homepage)));
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            context.startActivity(intent);
+        } else {
+            ToastUtils.with(context).show("您的系统中没有安装浏览器");
         }
     }
 

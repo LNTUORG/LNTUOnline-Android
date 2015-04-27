@@ -83,7 +83,7 @@ public class MainActivity extends BaseActivity {
             R.id.main_action_help,
             R.id.main_action_about
     })
-    public void onDrawerItemSelected(View view) {
+    protected void onDrawerItemSelected(View view) {
         switch (view.getId()) {
             case R.id.main_action_browser:
                 ShipUtils.webOnline(this);

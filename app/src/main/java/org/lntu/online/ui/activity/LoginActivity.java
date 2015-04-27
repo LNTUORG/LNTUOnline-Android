@@ -47,7 +47,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @OnClick(R.id.login_btn_login)
-    protected void onBtnLogin() {
+    protected void onBtnLoginClick() {
         if (edtUserId.getText().length() < 10) {
             edtUserId.setError("学号长度为10位");
         } 
@@ -89,7 +89,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     @OnClick(R.id.login_btn_agreement)
-    protected void onBtnAgreement() {
+    protected void onBtnAgreementClick() {
         startActivity(new Intent(this, AgreementActivity.class));
     }
 

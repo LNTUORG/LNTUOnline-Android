@@ -86,14 +86,14 @@ public class MottoActivity extends BaseActivity {
     }
 
     @OnClick(R.id.motto_btn_male_voice)
-    public void onBtnMaleVoice(View view) {
+    protected void onBtnMaleVoiceClick() {
         if (maleVoice != null) {
             maleVoice.start();
         }
     }
 
     @OnClick(R.id.motto_btn_female_voice)
-    public void onBtnFemaleVoice(View view) {
+    protected void onBtnFemaleVoiceClick() {
         if (femaleVoice != null) {
             femaleVoice.start();
         }

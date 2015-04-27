@@ -166,14 +166,14 @@ public class GradesActivity extends BaseActivity {
     }
 
     @OnClick(R.id.grades_icon_empty)
-    public void onBtnIconEmptyClick() {
+    protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
     }
 
     @OnClick(R.id.grades_layout_condition_center)
-    public void onBtnLayoutConditionCenterClick() {
+    protected void onBtnLayoutConditionCenterClick() {
         // 屏蔽条件面板中间事件
     }
 
@@ -191,7 +191,7 @@ public class GradesActivity extends BaseActivity {
             R.id.grades_fab,
             R.id.grades_layout_condition
     })
-    public void onBtnFabClick() {
+    protected void onBtnFabClick() {
         if (layoutCondition.getVisibility() == View.GONE) {
             layoutCondition.setVisibility(View.VISIBLE);
             fab.setImageResource(R.drawable.ic_done_white_24dp);

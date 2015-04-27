@@ -81,7 +81,7 @@ public class CrashShowActivity extends BaseActivity {
     }
 
     @OnClick(R.id.crash_show_btn_send)
-    protected void onBtnSend() {
+    protected void onBtnSendClick() {
 
     }
 

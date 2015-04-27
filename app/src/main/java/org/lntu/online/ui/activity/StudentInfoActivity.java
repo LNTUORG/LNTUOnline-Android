@@ -103,7 +103,7 @@ public class StudentInfoActivity extends BaseActivity {
     }
 
     @OnClick(R.id.student_info_icon_empty)
-    public void onBtnIconEmptyClick() {
+    protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
