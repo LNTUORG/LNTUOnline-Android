@@ -27,6 +27,7 @@
                 android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                 android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                 android:drawablePadding="16dp"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp"
                 android:gravity="start|center_vertical"
                 tools:text="2014春" />
@@ -37,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp"
                 tools:text="重修" />
 
@@ -53,6 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/overall_score"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp" />
 
             <TextView
@@ -77,6 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/remarks"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp" />
 
             <TextView
@@ -85,6 +89,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp"
                 tools:text="正常" />
 

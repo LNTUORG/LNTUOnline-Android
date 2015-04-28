@@ -49,6 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/school_name"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -57,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="北京" />
 
@@ -72,6 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/witness"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -80,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="乔布斯" />
 

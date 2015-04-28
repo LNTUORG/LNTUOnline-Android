@@ -31,6 +31,7 @@
             android:drawableStart="@drawable/ic_schedule_grey600_18dp"
             android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
             android:drawablePadding="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             android:gravity="start|center_vertical"
             tools:text="2015&#8211;03&#8211;07&#160;09:00&#8211;11:00" />
@@ -43,6 +44,7 @@
             android:drawableStart="@drawable/ic_location_on_grey600_18dp"
             android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
             android:drawablePadding="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             android:gravity="start|center_vertical"
             tools:text="静远118" />
@@ -67,7 +69,6 @@
             android:layout_margin="4dp"
             android:src="@drawable/icon_exam_finish"
             android:scaleType="fitCenter"
-            android:contentDescription="@string/exam_plan"
             android:adjustViewBounds="true"/>
 
         <LinearLayout
@@ -89,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:text="@string/have_left"
+                    android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -108,6 +110,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:text="@string/day"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp"
                 android:gravity="bottom" />
 

@@ -23,6 +23,7 @@
         android:drawableStart="@drawable/ic_class_grey600_18dp"
         android:drawableLeft="@drawable/ic_class_grey600_18dp"
         android:drawablePadding="16dp"
+        android:textColor="@color/text_color_secondary"
         android:textSize="14sp"
         tools:text="HX888888888" />
 
@@ -36,6 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/credit"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -60,6 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/select_type"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -68,6 +71,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="必修" />
 

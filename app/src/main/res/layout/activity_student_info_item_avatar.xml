@@ -3,5 +3,4 @@
     android:layout_width="match_parent"
     android:layout_height="180dp"
     android:scaleType="fitCenter"
-    android:contentDescription="@string/student_info"
     android:background="@drawable/photo_bg" />

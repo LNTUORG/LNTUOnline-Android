@@ -55,7 +55,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/network_data_loading" />
+                android:text="@string/network_data_loading"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
@@ -79,7 +81,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="@string/network_data_load_failed" />
+                android:text="@string/network_data_load_failed"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

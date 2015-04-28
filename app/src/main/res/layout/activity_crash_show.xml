@@ -24,7 +24,7 @@
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textSize="16sp"
-                android:textColor="#FF000000" />
+                android:textColor="@color/text_color_primary" />
 
         </ScrollView>
 

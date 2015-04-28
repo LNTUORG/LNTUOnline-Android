@@ -40,6 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/political_affiliation"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="党员" />
 
@@ -63,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/job_and_post"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -71,6 +74,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="程序员" />
 
@@ -78,6 +82,7 @@
             android:id="@+id/student_info_item_family_tv_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="前端工程师" />
 
@@ -93,6 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/work_location"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -101,6 +107,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="微软中国" />
 
@@ -116,6 +123,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tel"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -124,6 +132,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
             tools:text="12345678901" />
 
