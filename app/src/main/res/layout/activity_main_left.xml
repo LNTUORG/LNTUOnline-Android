@@ -64,9 +64,15 @@
             android:text="@string/main_action_help" />
 
         <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_about"
+            android:id="@+id/main_action_agreement"
             android:drawableStart="@drawable/ic_info_grey600_24dp"
             android:drawableLeft="@drawable/ic_info_grey600_24dp"
+            android:text="@string/main_action_agreement" />
+
+        <TextView style="@style/AppTheme.DrawerItem"
+            android:id="@+id/main_action_about"
+            android:drawableStart="@drawable/ic_info_outline_grey600_24dp"
+            android:drawableLeft="@drawable/ic_info_outline_grey600_24dp"
             android:text="@string/main_action_about" />
 
         <View style="@style/AppTheme.ItemGap" />

@@ -81,6 +81,7 @@ public class MainActivity extends BaseActivity {
             R.id.main_action_share,
             R.id.main_action_settings,
             R.id.main_action_help,
+            R.id.main_action_agreement,
             R.id.main_action_about
     })
     protected void onDrawerItemSelected(View view) {
@@ -105,6 +106,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.main_action_help:
                 startActivity(new Intent(this, HelpActivity.class));
+                break;
+            case R.id.main_action_agreement:
+                startActivity(new Intent(this, AgreementActivity.class));
                 break;
             case R.id.main_action_about:
                 startActivity(new Intent(this, AboutActivity.class));
