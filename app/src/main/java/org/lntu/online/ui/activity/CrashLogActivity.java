@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.format.Time;
 import android.widget.TextView;
 
 import com.lntu.online.R;
@@ -21,7 +20,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class CrashShowActivity extends BaseActivity {
+public class CrashLogActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
@@ -40,7 +39,7 @@ public class CrashShowActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crash_show);
+        setContentView(R.layout.activity_crash_log);
         ButterKnife.inject(this);
 
         setSupportActionBar(toolbar);

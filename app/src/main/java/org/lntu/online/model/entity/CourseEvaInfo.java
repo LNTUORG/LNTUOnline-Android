@@ -6,9 +6,11 @@ public class CourseEvaInfo {
 
     private String teacher;
 
-    private String course;
+    private String name;
 
-    private String state;
+    private String num;
+
+    private boolean done;
 
     private String evaKey;
 
@@ -28,20 +30,28 @@ public class CourseEvaInfo {
         this.teacher = teacher;
     }
 
-    public String getCourse() {
-        return course;
+    public String getName() {
+        return name;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getState() {
-        return state;
+    public String getNum() {
+        return num;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setNum(String num) {
+        this.num = num;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 
     public String getEvaKey() {

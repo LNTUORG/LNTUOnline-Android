@@ -33,7 +33,7 @@
             android:drawablePadding="16dp"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
-            android:gravity="start|center_vertical"
+            android:gravity="center_vertical"
             tools:text="2015&#8211;03&#8211;07&#160;09:00&#8211;11:00" />
 
         <TextView
@@ -46,7 +46,7 @@
             android:drawablePadding="16dp"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
-            android:gravity="start|center_vertical"
+            android:gravity="center_vertical"
             tools:text="静远118" />
 
     </LinearLayout>

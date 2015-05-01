@@ -131,7 +131,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.ui.activity.CrashShowActivity"
+            android:name="org.lntu.online.ui.activity.CrashLogActivity"
             android:label="@string/app_crash"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />

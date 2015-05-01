@@ -1,9 +1,10 @@
 package org.lntu.online.ui.activity;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+
 import org.lntu.online.ui.base.BaseActivity;
 
-/**
- * Created by TakWolf on 2015/4/18.
- */
 public class SettingActivity extends BaseActivity {
+
 }
