@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
 
-import org.apache.http.Header;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.CourseEvaInfo;
@@ -67,8 +65,6 @@ public class OneKeyEvaActivity extends BaseActivity {
     private OneKeyEvaAdapter adapter;
     private List<CourseEvaInfo> infoList;
 
-    private MaterialDialog progressDialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,20 +84,6 @@ public class OneKeyEvaActivity extends BaseActivity {
         recyclerView.setAdapter(adapter);
 
         fab.attachToRecyclerView(recyclerView);
-
-        progressDialog = new MaterialDialog.Builder(this)
-                .content(R.string.networking)
-                .progress(true, 0)
-                .cancelListener(new DialogInterface.OnCancelListener() {
-
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        ToastUtils.with(OneKeyEvaActivity.this).show("评课任务已停止");
-                    }
-
-                })
-                .build();
-        progressDialog.setCanceledOnTouchOutside(false);
 
         startNetwork();
     }
@@ -186,8 +168,21 @@ public class OneKeyEvaActivity extends BaseActivity {
 
                         @Override
                         public void onPositive(MaterialDialog dialog) {
+                            MaterialDialog progressDialog = new MaterialDialog.Builder(OneKeyEvaActivity.this)
+                                    .content(R.string.networking)
+                                    .progress(true, 0)
+                                    .cancelListener(new DialogInterface.OnCancelListener() {
+
+                                        @Override
+                                        public void onCancel(DialogInterface dialog) {
+                                            ToastUtils.with(OneKeyEvaActivity.this).show("评课任务已停止");
+                                        }
+
+                                    })
+                                    .build();
+                            progressDialog.setCanceledOnTouchOutside(false);
                             progressDialog.show();
-                            startEvaCourse(0);
+                            startEvaCourse(0, progressDialog);
                         }
 
                     })
@@ -195,7 +190,7 @@ public class OneKeyEvaActivity extends BaseActivity {
         }
     }
 
-    private void startEvaCourse(final int current) {
+    private void startEvaCourse(final int current, final MaterialDialog progressDialog) {
         if (current == infoList.size()) { //评价已经完成
             progressDialog.dismiss();
             int n = 0;
@@ -239,7 +234,7 @@ public class OneKeyEvaActivity extends BaseActivity {
         } else { //没评完
             final CourseEvaInfo info = infoList.get(current);
             if (info.isDone()) { //不需要评价，跳过
-                startEvaCourse(current + 1);
+                startEvaCourse(current + 1, progressDialog);
             } else { //需要评价
                 progressDialog.setContent("正在评价：" + info.getName());
                 ApiClient.with(this).apiService.doCourseEva(LoginShared.getLoginToken(this), info.getEvaKey(), new Callback<Void>() {
@@ -249,14 +244,14 @@ public class OneKeyEvaActivity extends BaseActivity {
                         if (progressDialog.isShowing()) {
                             info.setDone(true);
                             adapter.notifyItemChanged(current);
-                            startEvaCourse(current + 1);
+                            startEvaCourse(current + 1, progressDialog);
                         }
                     }
 
                     @Override
                     public void failure(RetrofitError error) {
                         if (progressDialog.isShowing()) {
-                            startEvaCourse(current + 1);
+                            startEvaCourse(current + 1, progressDialog);
                         }
                     }
 
