@@ -7,8 +7,8 @@
     <color name="text_color_primary">#ff212121</color>
     <color name="text_color_secondary">#ff757575</color>
 
-    <color name="rect_btn_background_normal">#ffffffff</color>
-    <color name="rect_btn_background_pressed">#ffdddddd</color>
+    <color name="rect_btn_background_normal">@android:color/white</color>
+    <color name="rect_btn_background_pressed">#ffeeeeee</color>
 
     <color name="red_light">#ffff4444</color>
     <color name="green_light">#ff99cc00</color>
@@ -20,8 +20,8 @@
     <color name="score_level_unpass">#fff44336</color>
     <color name="score_level_normal">#ff4caf50</color>
 
-    <color name="fab_ripple">#FF5252</color>
-    <color name="fab_accent">#F44336</color>
-    <color name="fab_accent_pressed">#D32F2F</color>
+    <color name="fab_ripple">#ffff5252</color>
+    <color name="fab_accent">#fff44336</color>
+    <color name="fab_accent_pressed">#ffd32f2f</color>
 
 </resources>
