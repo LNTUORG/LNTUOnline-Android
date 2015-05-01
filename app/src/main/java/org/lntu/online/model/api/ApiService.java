@@ -80,7 +80,7 @@ public interface ApiService {
     public void doCourseEva(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             @Field("evaKey") String evaKey,
-            Callback<List<CourseEvaInfo>> callback
+            Callback<Void> callback
     );
 
 }
