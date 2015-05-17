@@ -28,7 +28,7 @@ public class AgreementActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        webView.loadUrl("http://online.lntu.org/agreement");
+        webView.loadUrl("http://online.lntu.org/agreement/");
     }
 
     @Override
