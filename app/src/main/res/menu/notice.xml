@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_notice_by_browser"
         android:title="@string/notice_by_browser"
-        android:icon="@drawable/ic_open_in_browser_grey600_24dp"
+        android:icon="@drawable/ic_open_in_browser_white_24dp"
         android:orderInCategory="1"
         app:showAsAction="always" />
 
