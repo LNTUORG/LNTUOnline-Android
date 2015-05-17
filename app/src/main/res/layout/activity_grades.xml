@@ -34,6 +34,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:background="@color/blue_light"
+                    android:elevation="4dp"
                     tools:text="您的平均学分绩为 1.523" />
 
                 <android.support.v7.widget.RecyclerView
