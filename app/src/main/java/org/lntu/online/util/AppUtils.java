@@ -31,14 +31,4 @@ public final class AppUtils {
         }
     }
 
-    public static String getSignatureMD5(Context context) {
-        try {
-            PackageManager manager = context.getPackageManager();
-            PackageInfo info = manager.getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES);
-            return MD5.getMessageDigest(info.signatures[0].toByteArray());
-        } catch (NameNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }
