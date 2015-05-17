@@ -2,12 +2,14 @@ package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 
 import butterknife.ButterKnife;
@@ -44,10 +46,19 @@ public class NoticeActivity extends BaseActivity {
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.notice, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
+                return true;
+            case R.id.action_notice_by_browser:
+                ShipUtils.noticeOnline(this);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
