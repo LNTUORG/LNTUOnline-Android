@@ -31,8 +31,8 @@ public final class ShipUtils {
         context.startActivity(Intent.createChooser(intent, "分享给好友"));
     }
 
-    public static void webOnline(Context context) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://60.18.131.131:11180/academic/index.html"));
+    private static void openUrlByBrowser(Context context, String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
         } else {
@@ -40,13 +40,16 @@ public final class ShipUtils {
         }
     }
 
+    public static void webOnline(Context context) {
+        openUrlByBrowser(context, "http://60.18.131.131:11180/academic/index.html");
+    }
+
     public static void homepage(Context context) {
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(R.string.official_homepage_content)));
-        if (intent.resolveActivity(context.getPackageManager()) != null) {
-            context.startActivity(intent);
-        } else {
-            ToastUtils.with(context).show("您的系统中没有安装浏览器");
-        }
+        openUrlByBrowser(context, context.getString(R.string.official_homepage_content));
+    }
+
+    public static void noticeOnline(Context context) {
+        openUrlByBrowser(context, "http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100");
     }
 
 }
