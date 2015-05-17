@@ -89,7 +89,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="6dp"
-                android:background="@drawable/item_gap_shadow_top" />
+                android:background="@drawable/item_gap_shadow_bottom" />
 
         </LinearLayout>
 
