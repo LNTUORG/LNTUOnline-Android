@@ -13,13 +13,13 @@ public final class LoginShared {
 
     private LoginShared() {}
 
-    private final static String TAG = LoginShared.class.getSimpleName();
+    private static final String TAG = LoginShared.class.getSimpleName();
 
-    private final static String KEY_USER_ID = "userId";
-    private final static String KEY_USER_TYPE = "userType";
-    private final static String KEY_LOGIN_TOKEN = "loginToken";
-    private final static String KEY_EXPIRES_AT = "expiresAt";
-    private final static String KEY_HOLD_ONLINE = "holdOnline";
+    private static final String KEY_USER_ID = "userId";
+    private static final String KEY_USER_TYPE = "userType";
+    private static final String KEY_LOGIN_TOKEN = "loginToken";
+    private static final String KEY_EXPIRES_AT = "expiresAt";
+    private static final String KEY_HOLD_ONLINE = "holdOnline";
 
     public static void login(Context context, LoginInfo info, boolean isHoldOnline) {
         SharedWrapper.with(context, TAG).setString(KEY_USER_ID, info.getUserId());

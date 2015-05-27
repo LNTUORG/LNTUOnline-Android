@@ -9,7 +9,7 @@ public final class GsonWrapper {
 
     private GsonWrapper() {}
 
-    public final static Gson gson = new GsonBuilder()
+    public static final Gson gson = new GsonBuilder()
             .registerTypeAdapter(Date.class, new DateTypeAdapter())
             .create();
 

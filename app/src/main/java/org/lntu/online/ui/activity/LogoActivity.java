@@ -11,7 +11,7 @@ import org.lntu.online.ui.base.BaseActivity;
 
 public class LogoActivity extends BaseActivity implements Runnable {
 
-    private final static Handler handler = new Handler();
+    private static final Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

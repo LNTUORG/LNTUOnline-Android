@@ -25,7 +25,7 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
-    public final static String KEY_BACK_TO_ENTRY = "backToEntry";
+    public static final String KEY_BACK_TO_ENTRY = "backToEntry";
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;

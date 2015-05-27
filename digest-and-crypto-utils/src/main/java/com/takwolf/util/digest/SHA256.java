@@ -2,7 +2,7 @@ package com.takwolf.util.digest;
 
 public class SHA256 {
 
-    private final static DigestCoder coder = new DigestCoder("SHA-256");
+    private static final DigestCoder coder = new DigestCoder("SHA-256");
 
     public static byte[] getRawDigest(byte[] input) {
         return coder.getRawDigest(input);

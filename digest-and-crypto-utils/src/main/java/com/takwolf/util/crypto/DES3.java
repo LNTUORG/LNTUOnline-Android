@@ -11,8 +11,8 @@ import com.takwolf.util.coder.Base64;
 
 public class DES3 {
 
-    private final static String IV = "01234567";
-    private final static String CHARSET = "utf-8";
+    private static final String IV = "01234567";
+    private static final String CHARSET = "utf-8";
 
     /**
      * 加密

@@ -64,8 +64,8 @@ public class ExamPlan implements Comparable<ExamPlan> {
         return another.getStartTime().after(getStartTime()) ? -1 : 1;
     }
 
-    private final static DateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
-    private final static DateFormat dateFormat2 = new SimpleDateFormat("HH:mm", Locale.CHINA);
+    private static final DateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
+    private static final DateFormat dateFormat2 = new SimpleDateFormat("HH:mm", Locale.CHINA);
 
     public String getShowTime() {
         String date = dateFormat1.format(getStartTime());

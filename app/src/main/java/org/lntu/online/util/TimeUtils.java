@@ -9,7 +9,7 @@ public final class TimeUtils {
 
     private TimeUtils() {}
 
-    private final static DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
+    private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
 
     public static String getTimeFormat(Date date) {
         if (date == null) {

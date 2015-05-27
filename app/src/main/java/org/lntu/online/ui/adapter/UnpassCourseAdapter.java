@@ -18,7 +18,7 @@ import butterknife.InjectView;
 
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
-    private final static int[] flagColorResId = {
+    private static final int[] flagColorResId = {
             R.color.red_light,
             R.color.green_light,
             R.color.blue_light,

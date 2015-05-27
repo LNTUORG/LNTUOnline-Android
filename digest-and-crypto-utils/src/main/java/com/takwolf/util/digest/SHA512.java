@@ -2,7 +2,7 @@ package com.takwolf.util.digest;
 
 public class SHA512 {
 
-    private final static DigestCoder coder = new DigestCoder("SHA-512");
+    private static final DigestCoder coder = new DigestCoder("SHA-512");
 
     public static byte[] getRawDigest(byte[] input) {
         return coder.getRawDigest(input);

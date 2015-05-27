@@ -21,7 +21,7 @@ import retrofit.http.Query;
 
 public interface ApiService {
 
-    public final static String HEADER_AUTHORIZATION = "Authorization";
+    public static final String HEADER_AUTHORIZATION = "Authorization";
 
     @FormUrlEncoded
     @POST("/account/login")

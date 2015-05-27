@@ -2,7 +2,7 @@ package com.takwolf.util.digest;
 
 public class MD2 {
 
-    private final static DigestCoder coder = new DigestCoder("MD2");
+    private static final DigestCoder coder = new DigestCoder("MD2");
 
     public static byte[] getRawDigest(byte[] input) {
         return coder.getRawDigest(input);

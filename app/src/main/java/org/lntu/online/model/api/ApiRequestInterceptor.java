@@ -6,7 +6,7 @@ import retrofit.RequestInterceptor;
 
 public class ApiRequestInterceptor implements RequestInterceptor {
 
-    private final static String APPLICATION_JSON = "application/json";
+    private static final String APPLICATION_JSON = "application/json";
     private final String USER_AGENT;
 
     public ApiRequestInterceptor(String versionName) {
