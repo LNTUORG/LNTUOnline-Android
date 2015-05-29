@@ -2,11 +2,13 @@
 
 v2.0.0, a new version.
 
-![](/screenshot/n (1).png) ![](/screenshot/n (2).png) ![](/screenshot/n (3).png)
+![](/screenshot/n (1).png) ![](/screenshot/n (2).png)
 
-![](/screenshot/n (4).png) ![](/screenshot/n (5).png) ![](/screenshot/n (6).png)
+![](/screenshot/n (3).png) ![](/screenshot/n (4).png)
 
-![](/screenshot/n (7).png) ![](/screenshot/n (8).png) ![](/screenshot/n (9).png)
+![](/screenshot/n (5).png) ![](/screenshot/n (6).png)
+
+![](/screenshot/n (7).png) ![](/screenshot/n (8).png)
 
 ### 下载地址： ###
 
