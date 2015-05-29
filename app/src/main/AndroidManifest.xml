@@ -139,11 +139,11 @@
         <!-- 友盟参数 -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="548fa73efd98c5ebda00035b" />
+            android:value="${UMENG_APPKEY}" />
 
         <meta-data
             android:name="UMENG_CHANNEL"
-            android:value="LntuOnline" />
+            android:value="${UMENG_CHANNEL}" />
 
         <!-- 友盟自动更新 -->
         <service
