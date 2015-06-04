@@ -37,7 +37,9 @@ public abstract class BackgroundCallback<T> implements Callback<T> {
                 handleFailure(context.getString(R.string.auth_error));
                 LoginShared.logout(context);
                 Intent intent = new Intent(context, AuthErrorActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 context.startActivity(intent);
                 break;
             case REMOTE_INVOKE_ERROR:

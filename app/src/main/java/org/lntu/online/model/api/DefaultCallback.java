@@ -33,7 +33,9 @@ public class DefaultCallback<T> extends CallbackAdapter<T> {
             case AUTH_ERROR: // 401认证错误
                 LoginShared.logout(context);
                 Intent intent = new Intent(context, AuthErrorActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 context.startActivity(intent);
                 break;
             default:
