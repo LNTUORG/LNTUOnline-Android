@@ -46,15 +46,9 @@ v2.0.0, a new version.
 
 ## Power support ##
 
-- [Git@OSC](http://git.oschina.net)
-
-- [coding.net](https://coding.net)
-
 - [Digital Ocean](https://www.digitalocean.com)
 
 - [友盟](http://www.umeng.com)
-
-- [新浪云](http://sae.sina.com.cn)
 
 ## Thanks ##
 
