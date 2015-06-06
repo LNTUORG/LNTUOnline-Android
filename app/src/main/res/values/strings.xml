@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">辽工大教务在线</string>
+    <string name="logo_copyright">Copyright © 2014 &#8211; 2015 LNTU.ORG. All Rights Reserved.</string>
 
     <string name="user_login">用户登录</string>
     <string name="user_id_input_hint">学号：</string>
