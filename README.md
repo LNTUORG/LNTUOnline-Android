@@ -52,8 +52,6 @@ v2.0.0, a new version.
 
 ## Thanks ##
 
-- [PUPBOSS](http://pupboss.com)
-
 - 《印象·工大》葫芦岛校区掠影作品集
 
 ## Author ##
