@@ -6,10 +6,16 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:src="@drawable/logo_bg_0"
+        android:scaleType="centerCrop" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="40dp"
         android:src="@drawable/logo"
-        android:scaleType="fitStart"
-        android:background="@drawable/logo_bg" />
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true" />
 
     <TextView
         android:layout_width="match_parent"
@@ -17,7 +23,7 @@
         android:layout_gravity="bottom"
         android:layout_marginBottom="16dp"
         android:text="@string/logo_copyright"
-        android:textColor="#ddffffff"
+        android:textColor="#ccffffff"
         android:textSize="12sp"
         android:gravity="center" />
 
