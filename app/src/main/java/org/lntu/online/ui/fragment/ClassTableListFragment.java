@@ -14,13 +14,13 @@ import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.ui.adapter.ClassTableListAdapter;
 import org.lntu.online.ui.base.ClassTableFragment;
 
+import java.util.List;
+import java.util.Map;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class ClassTableListFragment extends ClassTableFragment {
-
-    @InjectView(R.id.class_table_list_tv_year_term)
-    protected TextView tvYearTerm;
 
     @InjectView(R.id.class_table_list_recycler_view)
     protected RecyclerView recyclerView;
@@ -43,8 +43,7 @@ public class ClassTableListFragment extends ClassTableFragment {
     }
 
     @Override
-    public void updateDataView(ClassTable classTable) {
-        tvYearTerm.setText(classTable.getYear() + "年 " + classTable.getTerm() + "季学期");
+    public void updateDataView(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
         adapter.setClassTable(classTable);
     }
 

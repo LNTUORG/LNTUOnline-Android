@@ -22,6 +22,9 @@ import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.base.ClassTableFragment;
 import org.lntu.online.util.ToastUtils;
 
+import java.util.List;
+import java.util.Map;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -75,6 +78,9 @@ public class ClassTableActivity extends BaseActivity {
         year = nowTime.getYear();
         term = (nowTime.getMonthOfYear() >= 3 && nowTime.getMonthOfYear() < 9) ? "春" : "秋";
 
+        // 设置标题
+        getSupportActionBar().setTitle(year + "年 " + term + "季学期");
+
         // 初始化Fragment
         fmPage = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_page);
         fmList = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_list);
@@ -83,8 +89,9 @@ public class ClassTableActivity extends BaseActivity {
         // 获取本地课表数据
         classTable = LoginShared.getClassTable(this, year, term);
         if (classTable != null) {
-            fmPage.updateDataView(classTable);
-            fmList.updateDataView(classTable);
+            Map<String, List<ClassTable.Course>> classTableMap = classTable.getMap();
+            fmPage.updateDataView(classTable, classTableMap);
+            fmList.updateDataView(classTable, classTableMap);
             showLayoutFragment();
         } else {
             showLayoutLoading();
@@ -137,8 +144,9 @@ public class ClassTableActivity extends BaseActivity {
             public void handleSuccess(ClassTable classTable, Response response) {
                 LoginShared.setClassTable(ClassTableActivity.this, year, term, classTable);
                 ClassTableActivity.this.classTable = classTable;
-                fmPage.updateDataView(classTable);
-                fmList.updateDataView(classTable);
+                Map<String, List<ClassTable.Course>> classTableMap = classTable.getMap();
+                fmPage.updateDataView(classTable, classTableMap);
+                fmList.updateDataView(classTable, classTableMap);
                 showLayoutFragment();
             }
 

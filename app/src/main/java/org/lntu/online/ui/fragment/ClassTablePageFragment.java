@@ -8,9 +8,16 @@ import android.view.ViewGroup;
 
 import com.lntu.online.R;
 
+import org.joda.time.DateTime;
 import org.lntu.online.model.entity.ClassTable;
+import org.lntu.online.model.entity.DayInWeek;
 import org.lntu.online.ui.adapter.ClassTablePageAdapter;
 import org.lntu.online.ui.base.ClassTableFragment;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -34,17 +41,12 @@ public class ClassTablePageFragment extends ClassTableFragment {
 
         adapter = new ClassTablePageAdapter(getActivity());
         viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(adapter.getNowTimePosition());
     }
 
     @Override
-    public void updateDataView(ClassTable classTable) {
-        for (ClassTable.Course course : classTable.getCourses()) {
-            for (ClassTable.TimeAndPlace timeAndPlace : course.getTimesAndPlaces()) {
-
-                // timeAndPlace.
-
-            }
-        }
+    public void updateDataView(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
+        adapter.setDataSet(classTable, classTableMap);
     }
 
 }

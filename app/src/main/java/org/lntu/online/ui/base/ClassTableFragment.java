@@ -9,8 +9,11 @@ import com.lntu.online.R;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.util.ShipUtils;
 
+import java.util.List;
+import java.util.Map;
+
 public abstract class ClassTableFragment extends Fragment {
 
-    public abstract void updateDataView(ClassTable classTable);
+    public abstract void updateDataView(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap);
 
 }

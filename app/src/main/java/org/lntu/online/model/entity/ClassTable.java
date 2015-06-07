@@ -1,7 +1,10 @@
 package org.lntu.online.model.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ClassTable {
 
@@ -211,6 +214,21 @@ public class ClassTable {
             this.stage = stage;
         }
 
+    }
+
+    public Map<String, List<Course>> getMap() {
+        Map<String, List<ClassTable.Course>> classTableMap = new HashMap<>();
+        for (ClassTable.Course course : getCourses()) {
+            for (ClassTable.TimeAndPlace timeAndPlace : course.getTimesAndPlaces()) {
+                List<ClassTable.Course> coursesList = classTableMap.get(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage());
+                if (coursesList == null) {
+                    coursesList = new ArrayList<>();
+                    classTableMap.put(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage(), coursesList);
+                }
+                coursesList.add(course);
+            }
+        }
+        return classTableMap;
     }
 
 }

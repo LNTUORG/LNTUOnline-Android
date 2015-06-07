@@ -5,20 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/class_table_list_tv_year_term"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:background="@color/blue_light"
-        android:elevation="4dp"
-        tools:text="2015年 春季学期" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/class_table_list_recycler_view"
         android:layout_width="match_parent"
