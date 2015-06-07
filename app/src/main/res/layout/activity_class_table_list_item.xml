@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:orientation="vertical"
-        android:background="@android:color/white">
+        android:background="@drawable/rect_btn_background">
 
         <TextView
             android:id="@+id/class_table_list_item_tv_name"

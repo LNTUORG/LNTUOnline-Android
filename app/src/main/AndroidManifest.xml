@@ -64,6 +64,12 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
+            android:name="org.lntu.online.ui.activity.ClassTableCourseActivity"
+            android:label="@string/class_table_course_info"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
             android:name="org.lntu.online.ui.activity.ExamPlanActivity"
             android:label="@string/exam_plan"
             android:screenOrientation="portrait"

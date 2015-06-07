@@ -45,7 +45,7 @@ public class ClassTableListFragment extends ClassTableFragment {
     @Override
     public void updateDataView(ClassTable classTable) {
         tvYearTerm.setText(classTable.getYear() + "年 " + classTable.getTerm() + "季学期");
-        adapter.setCourseList(classTable.getCourses());
+        adapter.setClassTable(classTable);
     }
 
 }

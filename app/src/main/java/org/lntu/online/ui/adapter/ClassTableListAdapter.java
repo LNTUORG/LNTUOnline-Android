@@ -1,6 +1,7 @@
 package org.lntu.online.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,32 +12,35 @@ import com.lntu.online.R;
 
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.Grades;
+import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.ui.activity.ClassTableCourseActivity;
 
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAdapter.ViewHolder> {
 
     private Context context;
     private LayoutInflater inflater;
 
-    private List<ClassTable.Course> courseList;
+    private ClassTable classTable;
 
     public ClassTableListAdapter(Context context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
     }
 
-    public void setCourseList(List<ClassTable.Course> courseList) {
-        this.courseList = courseList;
+    public void setClassTable(ClassTable classTable) {
+        this.classTable = classTable;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return courseList == null ? 0 : courseList.size();
+        return classTable == null ? 0 : classTable.getCourses() == null ? 0 : classTable.getCourses().size();
     }
 
     @Override
@@ -46,15 +50,15 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        ClassTable.Course course = courseList.get(position);
+        ClassTable.Course course = classTable.getCourses().get(position);
         holder.tvNum.setText(course.getNum());
         holder.tvName.setText(course.getName());
         holder.tvTeacher.setText(course.getTeacher());
         holder.iconBlankTop.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
-        holder.iconBlankBottom.setVisibility(position == courseList.size() - 1 ? View.VISIBLE : View.GONE);
+        holder.iconBlankBottom.setVisibility(position == classTable.getCourses().size() - 1 ? View.VISIBLE : View.GONE);
     }
 
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
+    protected class ViewHolder extends RecyclerView.ViewHolder {
 
         @InjectView(R.id.class_table_list_item_tv_num)
         protected TextView tvNum;
@@ -74,6 +78,15 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.inject(this, itemView);
+        }
+
+        @OnClick(R.id.class_table_list_item_btn_card)
+        public void onBtnCardClick() {
+            Intent intent = new Intent(context, ClassTableCourseActivity.class);
+            intent.putExtra("course", GsonWrapper.gson.toJson(classTable.getCourses().get(getLayoutPosition())));
+            intent.putExtra("year", classTable.getYear());
+            intent.putExtra("term", classTable.getTerm());
+            context.startActivity(intent);
         }
 
     }

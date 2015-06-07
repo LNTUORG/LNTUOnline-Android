@@ -46,6 +46,7 @@
 
     <string name="student_info">学籍信息</string>
     <string name="my_class_table">我的课表</string>
+    <string name="class_table_course_info">课程信息</string>
     <string name="exam_plan">考试安排</string>
     <string name="grades_query">成绩查询</string>
     <string name="one_key_eva">一键评课</string>
@@ -59,32 +60,36 @@
     <string name="about_app">关于应用</string>
     <string name="app_crash">程序崩溃</string>
 
-    <string name="political_affiliation">政治面貌：</string>
-    <string name="job_and_post">职业职位：</string>
-    <string name="work_location">工作单位：</string>
-    <string name="tel">联系电话：</string>
+    <string name="political_affiliation_">政治面貌：</string>
+    <string name="job_and_post_">职业职位：</string>
+    <string name="work_location_">工作单位：</string>
+    <string name="tel_">联系电话：</string>
     <string name="from_to">至</string>
-    <string name="school_name">所在地：</string>
-    <string name="witness">证明人：</string>
-    <string name="punish_time">处分日期：</string>
-    <string name="punish_reason">处分原因：</string>
-    <string name="cancel_time">撤销日期：</string>
-    <string name="cancel_reason">撤销原因：</string>
-    <string name="punish_state">状态：</string>
+    <string name="school_name_">所在地：</string>
+    <string name="witness_">证明人：</string>
+    <string name="punish_time_">处分日期：</string>
+    <string name="punish_reason_">处分原因：</string>
+    <string name="cancel_time_">撤销日期：</string>
+    <string name="cancel_reason_">撤销原因：</string>
+    <string name="punish_state_">状态：</string>
 
     <string name="have_left">还剩</string>
     <string name="day">天</string>
 
-    <string name="year">年份：</string>
-    <string name="term">学期：</string>
-    <string name="score_level">成绩：</string>
-    <string name="score_display">显示：</string>
+    <string name="year_">年份：</string>
+    <string name="term_">学期：</string>
+    <string name="score_level_">成绩：</string>
+    <string name="score_display_">显示：</string>
 
-    <string name="overall_score">总评：</string>
-    <string name="credit">学分：</string>
-    <string name="test_mode">考核方式：</string>
-    <string name="select_type">选课类型：</string>
-    <string name="remarks">备注：</string>
+    <string name="overall_score_">总评：</string>
+    <string name="credit_">学分：</string>
+    <string name="test_mode_">考核方式：</string>
+    <string name="exam_type_">考试类型：</string>
+    <string name="select_type_">选课类型：</string>
+    <string name="times_and_places_">上课时间、地点：</string>
+    <string name="remarks_">备注：</string>
+
+    <string name="credit">学分</string>
 
     <string name="notice_by_browser">浏览器访问教务公告</string>
 
@@ -97,6 +102,7 @@
     <string name="official_homepage">官方主页</string>
     <string name="official_homepage_content">http://online.lntu.org</string>
 
+    <string name="send_crash_log">发送错误日志</string>
 
 
 
@@ -115,8 +121,5 @@
     <string name="your_contact_title">您的联系方式：</string>
     <string name="your_contact_hint">可选填写，以便解决问题后给您回复</string>
 
-    <string name="send_crash_log">发送错误日志</string>
-
-    <string name="eva_info">评课信息</string>
 
 </resources>

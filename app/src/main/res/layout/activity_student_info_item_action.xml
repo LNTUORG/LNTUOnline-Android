@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/punish_time"
+            android:text="@string/punish_time_"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
@@ -49,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/punish_reason"
+            android:text="@string/punish_reason_"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
@@ -74,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancel_time"
+            android:text="@string/cancel_time_"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
@@ -99,7 +99,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/cancel_reason"
+            android:text="@string/cancel_reason_"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
@@ -124,7 +124,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/punish_state"
+            android:text="@string/punish_state_"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
@@ -149,7 +149,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/remarks"
+            android:text="@string/remarks_"
             android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 

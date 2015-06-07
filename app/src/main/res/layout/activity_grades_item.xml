@@ -85,7 +85,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/overall_score"
+                    android:text="@string/overall_score_"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
@@ -102,7 +102,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/credit"
+                    android:text="@string/credit_"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
@@ -126,7 +126,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/select_type"
+                    android:text="@string/select_type_"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
@@ -151,7 +151,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/test_mode"
+                    android:text="@string/test_mode_"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
@@ -176,7 +176,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/remarks"
+                    android:text="@string/remarks_"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
