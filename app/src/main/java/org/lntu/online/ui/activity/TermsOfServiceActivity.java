@@ -29,7 +29,7 @@ public class TermsOfServiceActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        webView.loadUrl("https://online.lntu.org/terms-of-service/");
+        webView.loadUrl("http://takwolf.com/lntuonline/terms-of-service");
         webView.setWebViewClient(new WebViewClient() {
 
             @Override
