@@ -50,6 +50,8 @@ v2.0.0, a new version.
 
 - [FloatingActionButton](https://github.com/makovkastar/FloatingActionButton)
 
+- [material-design-icons](https://github.com/google/material-design-icons)
+
 ## Power support ##
 
 - [Digital Ocean](https://www.digitalocean.com)

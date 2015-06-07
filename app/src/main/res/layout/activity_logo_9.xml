@@ -6,7 +6,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/logo_bg_8"
+        android:src="@drawable/logo_bg_9"
         android:scaleType="centerCrop" />
 
     <ImageView
@@ -26,7 +26,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
         android:text="@string/logo_copyright"
-        android:textColor="#ccffffff"
+        android:textColor="@android:color/black"
         android:textSize="12sp"
         android:gravity="center" />
 
