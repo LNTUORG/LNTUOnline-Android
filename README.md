@@ -32,6 +32,10 @@ v2.0.0, a new version.
 
 - [Butter Knife](https://github.com/JakeWharton/butterknife)
 
+- [Retrofit](http://square.github.io/retrofit)
+
+- [OkHttp](http://square.github.io/okhttp)
+
 - [Picasso](https://github.com/square/picasso)
 
 - [Gson](https://code.google.com/p/google-gson)
@@ -43,6 +47,8 @@ v2.0.0, a new version.
 - [Material Dialogs](https://github.com/afollestad/material-dialogs)
 
 - [NineOldAndroids](http://nineoldandroids.com)
+
+- [FloatingActionButton](https://github.com/makovkastar/FloatingActionButton)
 
 ## Power support ##
 
