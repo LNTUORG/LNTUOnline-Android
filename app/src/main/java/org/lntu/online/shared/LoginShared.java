@@ -2,6 +2,7 @@ package org.lntu.online.shared;
 
 import android.content.Context;
 
+import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.UserType;
 
@@ -20,6 +21,8 @@ public final class LoginShared {
     private static final String KEY_LOGIN_TOKEN = "loginToken";
     private static final String KEY_EXPIRES_AT = "expiresAt";
     private static final String KEY_HOLD_ONLINE = "holdOnline";
+
+    private static final String KEY_CLASS_TABLE = "classTable-";
 
     public static void login(Context context, LoginInfo info, boolean isHoldOnline) {
         SharedWrapper.with(context, TAG).setString(KEY_USER_ID, info.getUserId());
@@ -51,6 +54,14 @@ public final class LoginShared {
 
     public static boolean isHoldOnline(Context context) {
         return SharedWrapper.with(context, TAG).getBoolean(KEY_HOLD_ONLINE, false);
+    }
+
+    public static ClassTable getClassTable(Context context, int year, String term) {
+        return SharedWrapper.with(context, TAG).getObject(KEY_CLASS_TABLE + year + term, ClassTable.class);
+    }
+
+    public static void setClassTable(Context context, int year, String term, ClassTable classTable) {
+        SharedWrapper.with(context, TAG).setObject(KEY_CLASS_TABLE + year + term, classTable);
     }
 
 }
