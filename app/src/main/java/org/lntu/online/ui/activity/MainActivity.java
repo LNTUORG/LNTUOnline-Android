@@ -80,7 +80,7 @@ public class MainActivity extends BaseActivity {
             R.id.main_action_feedback,
             R.id.main_action_share,
             R.id.main_action_settings,
-            R.id.main_action_help,
+            R.id.main_action_faq,
             R.id.main_action_agreement,
             R.id.main_action_about
     })
@@ -104,7 +104,7 @@ public class MainActivity extends BaseActivity {
             case R.id.main_action_settings:
                 startActivity(new Intent(this, SettingActivity.class));
                 break;
-            case R.id.main_action_help:
+            case R.id.main_action_faq:
                 startActivity(new Intent(this, HelpActivity.class));
                 break;
             case R.id.main_action_agreement:
