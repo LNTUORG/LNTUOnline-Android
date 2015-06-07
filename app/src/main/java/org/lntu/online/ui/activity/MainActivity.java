@@ -108,7 +108,7 @@ public class MainActivity extends BaseActivity {
                 startActivity(new Intent(this, HelpActivity.class));
                 break;
             case R.id.main_action_agreement:
-                startActivity(new Intent(this, AgreementActivity.class));
+                startActivity(new Intent(this, TermsOfServiceActivity.class));
                 break;
             case R.id.main_action_about:
                 startActivity(new Intent(this, AboutActivity.class));

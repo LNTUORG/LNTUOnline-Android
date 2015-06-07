@@ -12,24 +12,24 @@ import org.lntu.online.ui.base.BaseActivity;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class AgreementActivity extends BaseActivity {
+public class TermsOfServiceActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.agreement_web_view)
+    @InjectView(R.id.terms_of_service_web_view)
     protected WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agreement);
+        setContentView(R.layout.activity_terms_of_service);
         ButterKnife.inject(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        webView.loadUrl("http://online.lntu.org/agreement/");
+        webView.loadUrl("https://online.lntu.org/terms-of-service/");
         webView.setWebViewClient(new WebViewClient() {
 
             @Override

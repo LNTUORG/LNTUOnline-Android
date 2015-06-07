@@ -90,7 +90,7 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.login_btn_agreement)
     protected void onBtnAgreementClick() {
-        startActivity(new Intent(this, AgreementActivity.class));
+        startActivity(new Intent(this, TermsOfServiceActivity.class));
     }
 
 }

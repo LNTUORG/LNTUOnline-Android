@@ -7,7 +7,7 @@
     <include layout="@layout/activity_action_bar" />
 
     <WebView
-        android:id="@+id/agreement_web_view"
+        android:id="@+id/terms_of_service_web_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

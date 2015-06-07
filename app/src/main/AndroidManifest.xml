@@ -40,7 +40,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.ui.activity.AgreementActivity"
+            android:name="org.lntu.online.ui.activity.TermsOfServiceActivity"
             android:label="@string/user_agreement"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
