@@ -155,6 +155,8 @@ public class ClassTable {
 
         private int endWeek;
 
+        private WeekMode weekMode;
+
         private DayInWeek dayInWeek;
 
         private String room;
@@ -175,6 +177,14 @@ public class ClassTable {
 
         public void setEndWeek(int endWeek) {
             this.endWeek = endWeek;
+        }
+
+        public WeekMode getWeekMode() {
+            return weekMode;
+        }
+
+        public void setWeekMode(WeekMode weekMode) {
+            this.weekMode = weekMode;
         }
 
         public DayInWeek getDayInWeek() {
