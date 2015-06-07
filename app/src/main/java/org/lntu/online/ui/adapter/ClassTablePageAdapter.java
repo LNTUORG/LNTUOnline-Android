@@ -3,7 +3,7 @@ package org.lntu.online.ui.adapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 
-public class ClassTableAdapter extends PagerAdapter {
+public class ClassTablePageAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
