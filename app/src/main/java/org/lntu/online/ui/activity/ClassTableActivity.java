@@ -20,6 +20,7 @@ import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.base.ClassTableFragment;
+import org.lntu.online.util.ToastUtils;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -51,6 +52,8 @@ public class ClassTableActivity extends BaseActivity {
 
     private Menu menu;
 
+    private ClassTable classTable;
+
     private int year;
     private String term;
 
@@ -78,7 +81,7 @@ public class ClassTableActivity extends BaseActivity {
         getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmList).commit();
 
         // 获取本地课表数据
-        ClassTable classTable = LoginShared.getClassTable(this, year, term);
+        classTable = LoginShared.getClassTable(this, year, term);
         if (classTable != null) {
             fmPage.updateDataView(classTable);
             fmList.updateDataView(classTable);
@@ -115,9 +118,9 @@ public class ClassTableActivity extends BaseActivity {
                 getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmList).commit();
                 return true;
             case R.id.action_class_table_today:
-
-                // TODO
-
+                if (classTable != null) {
+                    showTodayDialog();
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -133,6 +136,7 @@ public class ClassTableActivity extends BaseActivity {
             @Override
             public void handleSuccess(ClassTable classTable, Response response) {
                 LoginShared.setClassTable(ClassTableActivity.this, year, term, classTable);
+                ClassTableActivity.this.classTable = classTable;
                 fmPage.updateDataView(classTable);
                 fmList.updateDataView(classTable);
                 showLayoutFragment();
@@ -140,7 +144,7 @@ public class ClassTableActivity extends BaseActivity {
 
             @Override
             public void handleFailure(String message) {
-                if (layoutFragment.getVisibility() != View.VISIBLE) {
+                if (classTable == null) { // 如果classTable为空，说明是第一次初始化
                     showLayoutEmpty(message);
                 }
             }
@@ -183,6 +187,14 @@ public class ClassTableActivity extends BaseActivity {
     protected void onBtnIconEmptyClick() {
         showLayoutLoading();
         startNetwork();
+    }
+
+    /**
+     * 显示日期设置对话框
+     */
+    private void showTodayDialog() {
+        // TODO
+        ToastUtils.with(this).show("today");
     }
 
 }
