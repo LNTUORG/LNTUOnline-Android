@@ -41,7 +41,7 @@ public class ClassTablePageFragment extends ClassTableFragment {
 
         adapter = new ClassTablePageAdapter(getActivity());
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(adapter.getNowTimePosition());
+        //viewPager.setCurrentItem(adapter.getNowTimePosition());
     }
 
     @Override

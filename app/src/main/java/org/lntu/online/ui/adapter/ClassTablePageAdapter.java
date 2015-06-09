@@ -53,9 +53,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         this.classTable = classTable;
         this.classTableMap = classTableMap;
         firstWeekMonday = new DateTime(classTable.getFirstWeekMondayAt());
-        if (firstWeekMonday.getDayOfWeek() != 1) { // 不是星期1
-            firstWeekMonday = firstWeekMonday.minusDays(firstWeekMonday.getDayOfWeek() - 1);
-        }
+        firstWeekMonday = firstWeekMonday.minusDays(firstWeekMonday.getDayOfWeek() - 1);
         notifyDataSetChanged();
     }
 
@@ -137,7 +135,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         if (firstWeekMonday != null) {
             Period period = new Period(firstWeekMonday, time, PeriodType.days());
             int days = period.getDays();
-            return days >= 0 ? days / 7 + 1 : 0;
+            return days < 0 ? 0 : days / 7 + 1;
         } else {
             return 0;
         }
