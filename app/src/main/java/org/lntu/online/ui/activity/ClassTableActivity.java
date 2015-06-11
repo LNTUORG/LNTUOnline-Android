@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.lntu.online.R;
@@ -34,6 +35,9 @@ public class ClassTableActivity extends BaseActivity {
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
+
+    @InjectView(R.id.class_table_spn_year_term)
+    protected Spinner spnYearTerm;
 
     @InjectView(R.id.class_table_layout_loading)
     protected View layoutLoading;
@@ -80,6 +84,7 @@ public class ClassTableActivity extends BaseActivity {
 
         // 设置标题
         getSupportActionBar().setTitle(year + "年 " + term + "季学期");
+        getSupportActionBar().setTitle("");
 
         // 初始化Fragment
         fmPage = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_page);

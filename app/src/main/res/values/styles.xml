@@ -50,4 +50,9 @@
         <item name="android:clickable">true</item>
     </style>
 
+    <!-- ClassTableSpinner -->
+    <style name="AppTheme.ClassTableSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
+    </style>
+
 </resources>
