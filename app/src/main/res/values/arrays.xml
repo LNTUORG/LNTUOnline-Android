@@ -29,13 +29,4 @@
         <item>只保留科目最高分</item>
     </string-array>
 
-    <string-array name="years_terms">
-        <item>2015年 春季学期</item>
-        <item>2014年 秋季学期</item>
-        <item>2014年 春季学期</item>
-        <item>2013年 秋季学期</item>
-        <item>2013年 春季学期</item>
-        <item>2012年 秋季学期</item>
-    </string-array>
-
 </resources>

@@ -24,15 +24,14 @@
             <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="@dimen/margin_short"
+                android:layout_marginEnd="@dimen/margin_short"
                 android:layout_marginRight="@dimen/margin_short"
-                android:background="#99ffffff" />
+                android:background="#88ffffff" />
 
             <Spinner style="@style/AppTheme.ClassTableSpinner"
                 android:id="@+id/class_table_spn_year_term"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:entries="@array/years_terms" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
