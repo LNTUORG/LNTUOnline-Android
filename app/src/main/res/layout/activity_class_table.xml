@@ -42,6 +42,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:visibility="gone"
             android:id="@+id/class_table_layout_loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

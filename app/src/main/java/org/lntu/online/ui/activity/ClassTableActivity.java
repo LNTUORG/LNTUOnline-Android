@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import com.lntu.online.R;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
@@ -25,6 +24,7 @@ import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.base.ClassTableFragment;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -82,36 +82,32 @@ public class ClassTableActivity extends BaseActivity {
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
-        ArrayAdapter spnAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getYearTermList(today));
-        spnAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnYearTerm.setAdapter(spnAdapter);
-        spnYearTerm.setSelection(spnAdapter.getCount() - 1);
-
         fmPage = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_page);
         fmGrid = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_grid);
         fmList = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_list);
         getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmGrid).hide(fmList).commit();
 
-        setCurrentYearAndTerm(today.getYear(), (today.getMonthOfYear() >= 3 && today.getMonthOfYear() < 9) ? "春" : "秋");
+        ArrayAdapter spnAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getYearTermList(today));
+        spnAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnYearTerm.setAdapter(spnAdapter);
     }
 
     /**
      * 获取年级学期数组
      */
-    private String[] getYearTermList(LocalDate today) {
+    private List<String> getYearTermList(LocalDate today) {
         int startYear = 2000 + Integer.parseInt(LoginShared.getUserId(this).substring(0, 2));
         int endYear = today.getYear() < startYear ? startYear : today.getYear();
         String endTerm = (today.getMonthOfYear() >= 3 && today.getMonthOfYear() < 9) ? "春" : "秋";
-        String[] yearsTermsArray = new String[1 + (endYear - startYear) * 2 - (endYear > startYear && today.equals("春") ? 1 : 0)];
-        yearsTermsArray[0] = startYear + "年 " + "秋季";
-        for (int n = 0; n < yearsTermsArray.length - 1; n++) {
-            if (n % 2 == 0) {
-                yearsTermsArray[n + 1] = startYear + n / 2 + 1 + "年 " + "春季";
-            } else {
-                yearsTermsArray[n + 1] = startYear + n / 2 + 1 + "年 " + "秋季";
+        List<String> yearTermList = new ArrayList<>();
+        for (int n = 0; n < endYear - startYear; n++) {
+            if (!(endYear - n == endYear && endTerm.equals("春"))) {
+                yearTermList.add(endYear - n + "年 " + "秋季");
             }
+            yearTermList.add(endYear - n + "年 " + "春季");
         }
-        return yearsTermsArray;
+        yearTermList.add(startYear + "年 " + "秋季");
+        return yearTermList;
     }
 
     /**
@@ -179,7 +175,7 @@ public class ClassTableActivity extends BaseActivity {
             case R.id.action_class_table_list:
                 menu.clear();
                 getMenuInflater().inflate(R.menu.class_table_list, menu);
-                getSupportFragmentManager().beginTransaction().show(fmList).hide(fmPage).hide(fmList).commit();
+                getSupportFragmentManager().beginTransaction().show(fmList).hide(fmPage).hide(fmGrid).commit();
                 return true;
             case R.id.action_class_table_today:
                 if (classTable != null) {

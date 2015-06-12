@@ -44,7 +44,7 @@ public class ClassTableListFragment extends ClassTableFragment {
 
     @Override
     public void onDataSetInit(int year, String term, LocalDate today) {
-        // 不在这里初始化
+        // List布局不在这里初始化
     }
 
     @Override
