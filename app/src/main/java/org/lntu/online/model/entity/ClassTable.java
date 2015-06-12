@@ -218,16 +218,43 @@ public class ClassTable {
 
     }
 
-    public Map<String, List<Course>> getMap() {
-        Map<String, List<ClassTable.Course>> classTableMap = new HashMap<>();
-        for (ClassTable.Course course : getCourses()) {
+    public static class CourseWrapper {
+
+        private Course course;
+
+        private TimeAndPlace timeAndPlace;
+
+        public Course getCourse() {
+            return course;
+        }
+
+        public void setCourse(Course course) {
+            this.course = course;
+        }
+
+        public TimeAndPlace getTimeAndPlace() {
+            return timeAndPlace;
+        }
+
+        public void setTimeAndPlace(TimeAndPlace timeAndPlace) {
+            this.timeAndPlace = timeAndPlace;
+        }
+
+    }
+
+    public Map<String, List<CourseWrapper>> getMap() {
+        Map<String, List<CourseWrapper>> classTableMap = new HashMap<>();
+        for (Course course : getCourses()) {
             for (ClassTable.TimeAndPlace timeAndPlace : course.getTimesAndPlaces()) {
-                List<ClassTable.Course> coursesList = classTableMap.get(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage());
-                if (coursesList == null) {
-                    coursesList = new ArrayList<>();
-                    classTableMap.put(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage(), coursesList);
+                List<CourseWrapper> coursesWrapperList = classTableMap.get(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage());
+                if (coursesWrapperList == null) {
+                    coursesWrapperList = new ArrayList<>();
+                    classTableMap.put(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage(), coursesWrapperList);
                 }
-                coursesList.add(course);
+                CourseWrapper courseWrapper = new CourseWrapper();
+                courseWrapper.setCourse(course);
+                courseWrapper.setTimeAndPlace(timeAndPlace);
+                coursesWrapperList.add(courseWrapper);
             }
         }
         return classTableMap;

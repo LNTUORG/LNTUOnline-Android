@@ -12,6 +12,6 @@ public abstract class ClassTableFragment extends Fragment {
 
     public abstract void onDataSetInit(int year, String term, LocalDate today);
 
-    public abstract void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap);
+    public abstract void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.CourseWrapper>> classTableMap);
 
 }

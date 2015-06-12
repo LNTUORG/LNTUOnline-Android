@@ -121,7 +121,7 @@ public class ClassTableActivity extends BaseActivity {
         currentTerm = term;
         classTable = LoginShared.getClassTable(this, year, term);
         if (classTable != null) {
-            Map<String, List<ClassTable.Course>> classTableMap = classTable.getMap();
+            Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
             fmPage.onDataSetUpdate(classTable, classTableMap);
             fmGrid.onDataSetUpdate(classTable, classTableMap);
             fmList.onDataSetUpdate(classTable, classTableMap);
@@ -198,7 +198,7 @@ public class ClassTableActivity extends BaseActivity {
                 LoginShared.setClassTable(ClassTableActivity.this, classTable);
                 if (year == currentYear && term.equals(currentTerm)) { // 如果当前年级和学期没有改变
                     ClassTableActivity.this.classTable = classTable;
-                    Map<String, List<ClassTable.Course>> classTableMap = classTable.getMap();
+                    Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
                     fmPage.onDataSetUpdate(classTable, classTableMap);
                     fmGrid.onDataSetUpdate(classTable, classTableMap);
                     fmList.onDataSetUpdate(classTable, classTableMap);

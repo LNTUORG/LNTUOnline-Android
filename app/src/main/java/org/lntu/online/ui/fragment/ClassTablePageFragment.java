@@ -46,7 +46,7 @@ public class ClassTablePageFragment extends ClassTableFragment {
     }
 
     @Override
-    public void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
+    public void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.CourseWrapper>> classTableMap) {
         adapter.updateDataSet(classTable, classTableMap);
     }
 

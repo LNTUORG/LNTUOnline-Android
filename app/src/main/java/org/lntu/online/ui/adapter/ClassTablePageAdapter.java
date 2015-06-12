@@ -19,6 +19,7 @@ import org.joda.time.Period;
 import org.joda.time.PeriodType;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.DayInWeek;
+import org.lntu.online.model.entity.WeekMode;
 import org.lntu.online.model.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
 
@@ -43,7 +44,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
     private LocalDate today;
 
     private ClassTable classTable;
-    private Map<String, List<ClassTable.Course>> classTableMap;
+    private Map<String, List<ClassTable.CourseWrapper>> classTableMap;
 
     public ClassTablePageAdapter(Context context, int year, String term, LocalDate today) {
         this.context = context;
@@ -58,7 +59,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         this.today = today;
     }
 
-    public void updateDataSet(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
+    public void updateDataSet(ClassTable classTable, Map<String, List<ClassTable.CourseWrapper>> classTableMap) {
         this.classTable = classTable;
         this.classTableMap = classTableMap;
         firstWeekMonday = new LocalDate(classTable.getFirstWeekMondayAt());
@@ -132,7 +133,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         convertView = viewPool.get(position % 7);
         ViewHolder holder = (ViewHolder) convertView.getTag();
         LocalDate currentDate = getDateAt(position);
-        holder.update(position, currentDate);
+        holder.update(position, currentDate, getWeekOfTerm(currentDate));
         container.addView(convertView);
         return convertView;
     }
@@ -151,7 +152,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
             for (View view : viewPool) {
                 ViewHolder holder = (ViewHolder) view.getTag();
                 if (holder.position >= 0) {
-                    holder.update(holder.position, holder.currentDate);
+                    holder.update(holder.position, holder.currentDate, holder.weekOfTerm);
                 }
             }
         }
@@ -192,14 +193,16 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
         protected int position = -1;
         protected LocalDate currentDate;
+        protected int weekOfTerm;
 
         public ViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
         }
 
-        protected void update(int position, LocalDate currentDate) {
+        protected void update(int position, LocalDate currentDate, int weekOfTerm) {
             this.position = position;
             this.currentDate = currentDate;
+            this.weekOfTerm = weekOfTerm;
             if (classTableMap == null) {
                 return;
             }
@@ -207,21 +210,22 @@ public class ClassTablePageAdapter extends PagerAdapter {
                 // 设置上课时间
                 tvStageList.get(stage - 1).setText(ClassTable.getStageTimeString(stage, currentDate));
                 // 获取今天这一大节的课程列表
-                List<ClassTable.Course> courseList = classTableMap.get(currentDate.getDayOfWeek() + "-" + stage);
+                List<ClassTable.CourseWrapper> courseWrapperList = classTableMap.get(currentDate.getDayOfWeek() + "-" + stage);
                 ViewGroup layoutStage = layoutStageList.get(stage - 1);
                 View iconStage = iconStageList.get(stage - 1);
-                if (courseList == null || courseList.size() == 0) { // 没有课程
+                if (courseWrapperList == null || courseWrapperList.size() == 0) { // 没有课程
                     layoutStage.setVisibility(View.GONE);
                     iconStage.setVisibility(View.VISIBLE);
                 } else { // 有课程
                     // 判断布局是否多余，删除多余
-                    if (layoutStage.getChildCount() > courseList.size()) {
-                        layoutStage.removeViews(0, layoutStage.getChildCount() - courseList.size());
+                    if (layoutStage.getChildCount() > courseWrapperList.size()) {
+                        layoutStage.removeViews(0, layoutStage.getChildCount() - courseWrapperList.size());
                     }
                     // 遍历课程，生成布局
                     iconStage.setVisibility(View.VISIBLE); // 这里先标记为显示
-                    for (int i = 0; i < courseList.size(); i++) {
-                        ClassTable.Course course = courseList.get(i);
+                    layoutStage.setVisibility(View.GONE);
+                    for (int i = 0; i < courseWrapperList.size(); i++) {
+                        ClassTable.CourseWrapper courseWrapper = courseWrapperList.get(i);
                         View viewCourse = layoutStage.getChildAt(i);
                         if (viewCourse == null) {
                             viewCourse = inflater.inflate(R.layout.activity_class_table_page_item_course, layoutStage, false);
@@ -229,10 +233,24 @@ public class ClassTablePageAdapter extends PagerAdapter {
                             layoutStage.addView(viewCourse);
                         }
                         CourseViewHolder holder = (CourseViewHolder) viewCourse.getTag();
-                        holder.update(course, currentDate.getDayOfWeek(), stage);
+                        holder.update(courseWrapper);
                         // 这里判断课程是否在时间段内，不在则隐藏
-                        iconStage.setVisibility(View.GONE);
-                        layoutStage.setVisibility(View.VISIBLE);
+                        if (weekOfTerm < 0) { // 不是这个学期，没法判断，全显示
+                            viewCourse.setVisibility(View.VISIBLE);
+                            iconStage.setVisibility(View.GONE);
+                            layoutStage.setVisibility(View.VISIBLE);
+                        } else if (weekOfTerm >= courseWrapper.getTimeAndPlace().getStartWeek()
+                                && weekOfTerm <= courseWrapper.getTimeAndPlace().getEndWeek()
+                                && (courseWrapper.getTimeAndPlace().getWeekMode() == null
+                                 || courseWrapper.getTimeAndPlace().getWeekMode() == WeekMode.ALL
+                                 || courseWrapper.getTimeAndPlace().getWeekMode() == WeekMode.ODD && weekOfTerm % 2 == 1
+                                 || courseWrapper.getTimeAndPlace().getWeekMode() == WeekMode.EVEN && weekOfTerm % 2 == 0)) {
+                            viewCourse.setVisibility(View.VISIBLE);
+                            iconStage.setVisibility(View.GONE);
+                            layoutStage.setVisibility(View.VISIBLE);
+                        } else {
+                            viewCourse.setVisibility(View.GONE);
+                        }
                     }
                 }
             }
@@ -241,6 +259,8 @@ public class ClassTablePageAdapter extends PagerAdapter {
     }
 
     protected class CourseViewHolder {
+
+        protected View root;
 
         @InjectView(R.id.class_table_page_item_course_tv_name)
         protected TextView tvName;
@@ -251,30 +271,25 @@ public class ClassTablePageAdapter extends PagerAdapter {
         @InjectView(R.id.class_table_page_item_course_tv_place)
         protected TextView tvPlace;
 
-        protected ClassTable.Course course;
+        protected ClassTable.CourseWrapper courseWrapper;
 
         public CourseViewHolder(View convertView) {
+            root = convertView;
             ButterKnife.inject(this, convertView);
         }
 
-        public void update(ClassTable.Course course, int dayInWeek, int stage) {
-            this.course = course;
-            tvName.setText(course.getName());
-            tvTeacher.setText(course.getTeacher());
-            for (ClassTable.TimeAndPlace timeAndPlace : course.getTimesAndPlaces()) {
-                if (timeAndPlace.getStage() == stage && timeAndPlace.getDayInWeek().index() == dayInWeek) {
-                    tvPlace.setText(timeAndPlace.getRoom());
-                    return;
-                }
-            }
-            tvPlace.setText(null);
+        public void update(ClassTable.CourseWrapper courseWrapper) {
+            this.courseWrapper = courseWrapper;
+            tvName.setText(courseWrapper.getCourse().getName());
+            tvTeacher.setText(courseWrapper.getCourse().getTeacher());
+            tvPlace.setText(courseWrapper.getTimeAndPlace().getRoom());
         }
 
         @OnClick(R.id.class_table_page_item_course_btn_card)
         protected void onBtnCardClick() {
-            if (course != null) {
+            if (courseWrapper != null) {
                 Intent intent = new Intent(context, ClassTableCourseActivity.class);
-                intent.putExtra("course", GsonWrapper.gson.toJson(course));
+                intent.putExtra("course", GsonWrapper.gson.toJson(courseWrapper.getCourse()));
                 intent.putExtra("year", classTable.getYear());
                 intent.putExtra("term", classTable.getTerm());
                 context.startActivity(intent);
