@@ -22,7 +22,7 @@ public final class LoginShared {
     private static final String KEY_EXPIRES_AT = "expiresAt";
     private static final String KEY_HOLD_ONLINE = "holdOnline";
 
-    private static final String KEY_CLASS_TABLE = "classTable-";
+    private static final String KEY_CLASS_TABLE = "classTable-"; // 这里年级和学期要作为后缀
 
     public static void login(Context context, LoginInfo info, boolean isHoldOnline) {
         SharedWrapper.with(context, TAG).setString(KEY_USER_ID, info.getUserId());
