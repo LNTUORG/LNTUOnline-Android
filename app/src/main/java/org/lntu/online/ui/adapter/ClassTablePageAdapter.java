@@ -145,7 +145,9 @@ public class ClassTablePageAdapter extends PagerAdapter {
         if (viewPool != null) {
             for (View view : viewPool) {
                 ViewHolder holder = (ViewHolder) view.getTag();
-                holder.update(holder.position, holder.currentDate);
+                if (holder.position > 0) {
+                    holder.update(holder.position, holder.currentDate);
+                }
             }
         }
         super.notifyDataSetChanged();
@@ -171,7 +173,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         @InjectView(R.id.class_table_page_item_tv_stage_5)
         protected TextView tvStage5;
 
-        protected int position;
+        protected int position = -1;
         protected LocalDate currentDate;
 
         public ViewHolder(View convertView) {
@@ -187,6 +189,11 @@ public class ClassTablePageAdapter extends PagerAdapter {
             tvStage3.setText(ClassTable.getStageTimeString(3, currentDate));
             tvStage4.setText(ClassTable.getStageTimeString(4, currentDate));
             tvStage5.setText(ClassTable.getStageTimeString(5, currentDate));
+
+
+
+
+
         }
 
     }
