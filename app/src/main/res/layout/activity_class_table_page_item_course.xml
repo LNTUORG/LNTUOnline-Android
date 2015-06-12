@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/class_table_page_item_course_btn_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:orientation="vertical"
+        android:background="@drawable/rect_btn_transparent_background">
+
+        <TextView
+            android:id="@+id/class_table_page_item_course_tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:drawableStart="@drawable/ic_class_grey600_18dp"
+            android:drawableLeft="@drawable/ic_class_grey600_18dp"
+            android:drawablePadding="16dp"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            tools:text="概率论与数理统计" />
+
+        <TextView
+            android:id="@+id/class_table_page_item_course_tv_teacher"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:drawableStart="@drawable/ic_person_grey600_18dp"
+            android:drawableLeft="@drawable/ic_person_grey600_18dp"
+            android:drawablePadding="16dp"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            tools:text="张三" />
+
+        <TextView
+            android:id="@+id/class_table_page_item_course_tv_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:drawableStart="@drawable/ic_location_on_grey600_18dp"
+            android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
+            android:drawablePadding="16dp"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            tools:text="静远118" />
+
+    </LinearLayout>
+
+    <View style="@style/AppTheme.DeepLine" />
+
+</LinearLayout>

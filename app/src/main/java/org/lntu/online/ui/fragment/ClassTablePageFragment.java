@@ -8,14 +8,12 @@ import android.view.ViewGroup;
 
 import com.lntu.online.R;
 
-import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import org.lntu.online.model.entity.ClassTable;
-import org.lntu.online.model.entity.DayInWeek;
 import org.lntu.online.ui.adapter.ClassTablePageAdapter;
 import org.lntu.online.ui.base.ClassTableFragment;
+import org.lntu.online.util.ToastUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,15 +36,23 @@ public class ClassTablePageFragment extends ClassTableFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.inject(this, view);
-
-        adapter = new ClassTablePageAdapter(getActivity());
-        viewPager.setAdapter(adapter);
-        //viewPager.setCurrentItem(adapter.getNowTimePosition());
     }
 
     @Override
-    public void updateDataView(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
-        adapter.setDataSet(classTable, classTableMap);
+    public void onDataSetInit(int year, String term, LocalDate today) {
+        adapter = new ClassTablePageAdapter(getActivity(), year, term, today);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(adapter.getPositionFromDate(today));
+    }
+
+    @Override
+    public void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.CourseWrapper>> classTableMap) {
+        adapter.updateDataSet(classTable, classTableMap);
+    }
+
+    public void onSetToday() {
+        // TODO
+        ToastUtils.with(getActivity()).show("today");
     }
 
 }

@@ -10,9 +10,9 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_class_table_list"
-        android:title="显示列表"
-        android:icon="@drawable/ic_view_list_white_24dp"
+        android:id="@+id/action_class_table_grid"
+        android:title="显示整体"
+        android:icon="@drawable/ic_view_module_white_24dp"
         android:orderInCategory="1"
         app:showAsAction="always" />
 

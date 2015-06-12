@@ -10,8 +10,8 @@
     <string name="hold_online">保持登录状态</string>
     <string name="login">登录</string>
     <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
-    <string name="user_agreement">用户协议</string>
-    <string name="user_agreement_link_style"><u>用户协议</u></string>
+    <string name="user_agreement">服务条款</string>
+    <string name="user_agreement_link_style"><u>服务条款</u></string>
 
     <string name="main_action_browser">浏览器访问教务在线</string>
     <string name="main_action_logout">注销登录（切换账户）</string>
@@ -20,7 +20,7 @@
     <string name="main_action_share">分享给好友</string>
     <string name="main_action_settings">设置</string>
     <string name="main_action_faq">常见问题</string>
-    <string name="main_action_agreement">用户协议</string>
+    <string name="main_action_agreement">服务条款</string>
     <string name="main_action_about">关于</string>
 
     <string name="menu">菜单</string>
@@ -104,6 +104,7 @@
 
     <string name="send_crash_log">发送错误日志</string>
 
+    <string name="this_stage_no_course">本节没课</string>
 
 
 
@@ -120,6 +121,5 @@
     <string name="your_suggestion_hint">请输入您要反馈的问题，我们将以此为动力不断改进</string>
     <string name="your_contact_title">您的联系方式：</string>
     <string name="your_contact_hint">可选填写，以便解决问题后给您回复</string>
-
 
 </resources>

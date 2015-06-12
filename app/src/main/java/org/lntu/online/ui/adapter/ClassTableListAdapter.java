@@ -33,7 +33,7 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
         inflater = LayoutInflater.from(context);
     }
 
-    public void setClassTable(ClassTable classTable) {
+    public void updateClassTable(ClassTable classTable) {
         this.classTable = classTable;
         notifyDataSetChanged();
     }

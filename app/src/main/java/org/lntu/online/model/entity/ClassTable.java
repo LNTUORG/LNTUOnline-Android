@@ -1,5 +1,7 @@
 package org.lntu.online.model.entity;
 
+import org.joda.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -216,19 +218,67 @@ public class ClassTable {
 
     }
 
-    public Map<String, List<Course>> getMap() {
-        Map<String, List<ClassTable.Course>> classTableMap = new HashMap<>();
-        for (ClassTable.Course course : getCourses()) {
+    public static class CourseWrapper {
+
+        private Course course;
+
+        private TimeAndPlace timeAndPlace;
+
+        public Course getCourse() {
+            return course;
+        }
+
+        public void setCourse(Course course) {
+            this.course = course;
+        }
+
+        public TimeAndPlace getTimeAndPlace() {
+            return timeAndPlace;
+        }
+
+        public void setTimeAndPlace(TimeAndPlace timeAndPlace) {
+            this.timeAndPlace = timeAndPlace;
+        }
+
+    }
+
+    public Map<String, List<CourseWrapper>> getMap() {
+        Map<String, List<CourseWrapper>> classTableMap = new HashMap<>();
+        for (Course course : getCourses()) {
             for (ClassTable.TimeAndPlace timeAndPlace : course.getTimesAndPlaces()) {
-                List<ClassTable.Course> coursesList = classTableMap.get(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage());
-                if (coursesList == null) {
-                    coursesList = new ArrayList<>();
-                    classTableMap.put(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage(), coursesList);
+                List<CourseWrapper> coursesWrapperList = classTableMap.get(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage());
+                if (coursesWrapperList == null) {
+                    coursesWrapperList = new ArrayList<>();
+                    classTableMap.put(timeAndPlace.getDayInWeek().index() + "-" + timeAndPlace.getStage(), coursesWrapperList);
                 }
-                coursesList.add(course);
+                CourseWrapper courseWrapper = new CourseWrapper();
+                courseWrapper.setCourse(course);
+                courseWrapper.setTimeAndPlace(timeAndPlace);
+                coursesWrapperList.add(courseWrapper);
             }
         }
         return classTableMap;
+    }
+
+    public static String getStageTimeString(int stage, LocalDate currentDate) {
+        if (stage < 1 || stage > 5 || currentDate == null) {
+            return null;
+        }
+        boolean isSummer = (currentDate.getMonthOfYear() >= 5 && currentDate.getMonthOfYear() < 10);
+        switch (stage) {
+            case 1:
+                return "第一大节（08:00-08:45\u300008:50-09:35）";
+            case 2:
+                return "第二大节（09:55-10:40\u300010:45-11:30）";
+            case 3:
+                return "第三大节（" + (isSummer ? "14:00-14:45\u300014:50-15:35" : "13:30-14:15\u300014:20-15:05") + "）";
+            case 4:
+                return "第四大节（" + (isSummer ? "15:55-16:40\u300016:45-17:30" : "15:25-16:10\u300016:15-17:00") + "）";
+            case 5:
+                return "晚自习\u3000（" + (isSummer ? "19:00-19:45\u300019:50-20:35" : "18:30-19:15\u300019:20-20:05") + "）";
+            default:
+                return null;
+        }
     }
 
 }
