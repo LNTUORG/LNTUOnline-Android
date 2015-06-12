@@ -4,10 +4,14 @@ import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.lntu.online.R;
 
@@ -20,6 +24,10 @@ import org.lntu.online.model.entity.DayInWeek;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class ClassTablePageAdapter extends PagerAdapter {
 
@@ -67,13 +75,17 @@ public class ClassTablePageAdapter extends PagerAdapter {
         return view == object;
     }
 
-    public int getDayPosition(LocalDate date) {
+    public int getPositionFromDate(LocalDate date) {
         if (date.isBefore(startDate) || date.isAfter(endDate)) {
             return 0;
         } else {
             Period period = new Period(startDate, date, PeriodType.days());
             return period.getDays();
         }
+    }
+
+    public LocalDate getDateAt(int position) {
+        return startDate.plusDays(position);
     }
 
     public int getWeekOfTerm(LocalDate date) {
@@ -88,7 +100,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        LocalDate currentDate = startDate.plusDays(position);
+        LocalDate currentDate = getDateAt(position);
         String title = currentDate.getMonthOfYear() + "月" + currentDate.getDayOfMonth() + "日";
         int weekOfTerm = getWeekOfTerm(currentDate);
         if (weekOfTerm > 0) {
@@ -111,14 +123,14 @@ public class ClassTablePageAdapter extends PagerAdapter {
             viewPool = new ArrayList<View>();
             for (int n = 0; n < 7; n++) {
                 View viewItem = inflater.inflate(R.layout.activity_class_table_page_item, container, false);
-
+                viewItem.setTag(new ViewHolder(viewItem));
                 viewPool.add(viewItem);
             }
         }
         convertView = viewPool.get(position % 7);
-
-
-
+        ViewHolder holder = (ViewHolder) convertView.getTag();
+        LocalDate currentDate = getDateAt(position);
+        holder.update(position, currentDate);
         container.addView(convertView);
         return convertView;
     }
@@ -130,8 +142,53 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     @Override
     public void notifyDataSetChanged() {
-        // TODO
+        if (viewPool != null) {
+            for (View view : viewPool) {
+                ViewHolder holder = (ViewHolder) view.getTag();
+                holder.update(holder.position, holder.currentDate);
+            }
+        }
         super.notifyDataSetChanged();
+    }
+
+    protected class ViewHolder {
+
+        @InjectView(R.id.class_table_page_item_scroll_view)
+        protected ScrollView scrollView;
+
+        @InjectView(R.id.class_table_page_item_tv_stage_1)
+        protected TextView tvStage1;
+
+        @InjectView(R.id.class_table_page_item_tv_stage_2)
+        protected TextView tvStage2;
+
+        @InjectView(R.id.class_table_page_item_tv_stage_3)
+        protected TextView tvStage3;
+
+        @InjectView(R.id.class_table_page_item_tv_stage_4)
+        protected TextView tvStage4;
+
+        @InjectView(R.id.class_table_page_item_tv_stage_5)
+        protected TextView tvStage5;
+
+        protected int position;
+        protected LocalDate currentDate;
+
+        public ViewHolder(View convertView) {
+            ButterKnife.inject(this, convertView);
+        }
+
+        protected void update(int position, LocalDate currentDate) {
+            this.position = position;
+            this.currentDate = currentDate;
+            scrollView.scrollTo(0, 0);
+            tvStage1.setText(ClassTable.getStageTimeString(1, currentDate));
+            tvStage2.setText(ClassTable.getStageTimeString(2, currentDate));
+            tvStage3.setText(ClassTable.getStageTimeString(3, currentDate));
+            tvStage4.setText(ClassTable.getStageTimeString(4, currentDate));
+            tvStage5.setText(ClassTable.getStageTimeString(5, currentDate));
+        }
+
     }
 
 }

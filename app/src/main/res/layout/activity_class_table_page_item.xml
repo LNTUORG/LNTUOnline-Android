@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/class_table_page_item_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -50,9 +52,34 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
+                <TextView
+                    android:id="@+id/class_table_page_item_tv_stage_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:background="#88ffffff"
+                    tools:text="第一大节（08:00-08:45  08:50-09:35）" />
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"/>
+                    android:layout_height="4dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/item_gap_shadow_bottom" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    tools:text="第一大节（08:00-08:45  08:50-09:35）" />
 
             </LinearLayout>
 
@@ -81,9 +108,25 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
+                <TextView
+                    android:id="@+id/class_table_page_item_tv_stage_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:background="#88ffffff"
+                    tools:text="第二大节（08:00-08:45  08:50-09:35）" />
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"/>
+                    android:layout_height="4dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/item_gap_shadow_bottom" />
 
             </LinearLayout>
 
@@ -111,9 +154,25 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
+                <TextView
+                    android:id="@+id/class_table_page_item_tv_stage_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:background="#88ffffff"
+                    tools:text="第三大节（08:00-08:45  08:50-09:35）" />
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"/>
+                    android:layout_height="4dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/item_gap_shadow_bottom" />
 
             </LinearLayout>
 
@@ -142,9 +201,25 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
+                <TextView
+                    android:id="@+id/class_table_page_item_tv_stage_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:background="#88ffffff"
+                    tools:text="第四大节（08:00-08:45  08:50-09:35）" />
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"/>
+                    android:layout_height="4dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/item_gap_shadow_bottom" />
 
             </LinearLayout>
 
@@ -173,9 +248,25 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
+                <TextView
+                    android:id="@+id/class_table_page_item_tv_stage_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical"
+                    android:background="#88ffffff"
+                    tools:text="晚自习（08:00-08:45  08:50-09:35）" />
+
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"/>
+                    android:layout_height="4dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/item_gap_shadow_bottom" />
 
             </LinearLayout>
 
