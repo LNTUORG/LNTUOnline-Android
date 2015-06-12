@@ -1,15 +1,14 @@
 package org.lntu.online.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -20,6 +19,8 @@ import org.joda.time.Period;
 import org.joda.time.PeriodType;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.DayInWeek;
+import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.ui.activity.ClassTableCourseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.InjectViews;
 import butterknife.OnClick;
 
 public class ClassTablePageAdapter extends PagerAdapter {
@@ -89,7 +91,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
     }
 
     public int getWeekOfTerm(LocalDate date) {
-        if (firstWeekMonday == null ||firstWeekMonday.isBefore(startDate) || firstWeekMonday.isAfter(endDate)) {
+        if (firstWeekMonday == null || firstWeekMonday.isBefore(startDate) || firstWeekMonday.isAfter(endDate)) {
             return -1;
         } else {
             Period period = new Period(firstWeekMonday, date, PeriodType.days());
@@ -101,10 +103,10 @@ public class ClassTablePageAdapter extends PagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         LocalDate currentDate = getDateAt(position);
-        String title = currentDate.getMonthOfYear() + "月" + currentDate.getDayOfMonth() + "日";
+        String title = currentDate.getMonthOfYear() + "月" + currentDate.getDayOfMonth() + "日 " + DayInWeek.getFromIndex(currentDate.getDayOfWeek()).value();
         int weekOfTerm = getWeekOfTerm(currentDate);
         if (weekOfTerm > 0) {
-            title += " " + DayInWeek.getFromIndex(currentDate.getDayOfWeek()).value() + "（第" + getWeekOfTerm(currentDate) + "周）";
+            title += "（第" + getWeekOfTerm(currentDate) + "周）";
         }
         if (currentDate.equals(today)) { // 是今天-主题色标注
             SpannableString spanString = new SpannableString(title);
@@ -137,7 +139,10 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((View) object);
+        View convertView = (View) object;
+        ViewHolder holder = (ViewHolder) convertView.getTag();
+        holder.scrollView.scrollTo(0, 0);
+        container.removeView(convertView);
     }
 
     @Override
@@ -145,7 +150,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         if (viewPool != null) {
             for (View view : viewPool) {
                 ViewHolder holder = (ViewHolder) view.getTag();
-                if (holder.position > 0) {
+                if (holder.position >= 0) {
                     holder.update(holder.position, holder.currentDate);
                 }
             }
@@ -158,20 +163,32 @@ public class ClassTablePageAdapter extends PagerAdapter {
         @InjectView(R.id.class_table_page_item_scroll_view)
         protected ScrollView scrollView;
 
-        @InjectView(R.id.class_table_page_item_tv_stage_1)
-        protected TextView tvStage1;
+        @InjectViews({
+                R.id.class_table_page_item_tv_stage_1,
+                R.id.class_table_page_item_tv_stage_2,
+                R.id.class_table_page_item_tv_stage_3,
+                R.id.class_table_page_item_tv_stage_4,
+                R.id.class_table_page_item_tv_stage_5
+        })
+        protected List<TextView> tvStageList;
 
-        @InjectView(R.id.class_table_page_item_tv_stage_2)
-        protected TextView tvStage2;
+        @InjectViews({
+                R.id.class_table_page_item_layout_stage_1,
+                R.id.class_table_page_item_layout_stage_2,
+                R.id.class_table_page_item_layout_stage_3,
+                R.id.class_table_page_item_layout_stage_4,
+                R.id.class_table_page_item_layout_stage_5
+        })
+        protected List<ViewGroup> layoutStageList;
 
-        @InjectView(R.id.class_table_page_item_tv_stage_3)
-        protected TextView tvStage3;
-
-        @InjectView(R.id.class_table_page_item_tv_stage_4)
-        protected TextView tvStage4;
-
-        @InjectView(R.id.class_table_page_item_tv_stage_5)
-        protected TextView tvStage5;
+        @InjectViews({
+                R.id.class_table_page_item_icon_stage_1,
+                R.id.class_table_page_item_icon_stage_2,
+                R.id.class_table_page_item_icon_stage_3,
+                R.id.class_table_page_item_icon_stage_4,
+                R.id.class_table_page_item_icon_stage_5
+        })
+        protected List<View> iconStageList;
 
         protected int position = -1;
         protected LocalDate currentDate;
@@ -183,17 +200,85 @@ public class ClassTablePageAdapter extends PagerAdapter {
         protected void update(int position, LocalDate currentDate) {
             this.position = position;
             this.currentDate = currentDate;
-            scrollView.scrollTo(0, 0);
-            tvStage1.setText(ClassTable.getStageTimeString(1, currentDate));
-            tvStage2.setText(ClassTable.getStageTimeString(2, currentDate));
-            tvStage3.setText(ClassTable.getStageTimeString(3, currentDate));
-            tvStage4.setText(ClassTable.getStageTimeString(4, currentDate));
-            tvStage5.setText(ClassTable.getStageTimeString(5, currentDate));
+            if (classTableMap == null) {
+                return;
+            }
+            for (int stage = 1; stage <= 5; stage++) {
+                // 设置上课时间
+                tvStageList.get(stage - 1).setText(ClassTable.getStageTimeString(stage, currentDate));
+                // 获取今天这一大节的课程列表
+                List<ClassTable.Course> courseList = classTableMap.get(currentDate.getDayOfWeek() + "-" + stage);
+                ViewGroup layoutStage = layoutStageList.get(stage - 1);
+                View iconStage = iconStageList.get(stage - 1);
+                if (courseList == null || courseList.size() == 0) { // 没有课程
+                    layoutStage.setVisibility(View.GONE);
+                    iconStage.setVisibility(View.VISIBLE);
+                } else { // 有课程
+                    // 判断布局是否多余，删除多余
+                    if (layoutStage.getChildCount() > courseList.size()) {
+                        layoutStage.removeViews(0, layoutStage.getChildCount() - courseList.size());
+                    }
+                    // 遍历课程，生成布局
+                    iconStage.setVisibility(View.VISIBLE); // 这里先标记为显示
+                    for (int i = 0; i < courseList.size(); i++) {
+                        ClassTable.Course course = courseList.get(i);
+                        View viewCourse = layoutStage.getChildAt(i);
+                        if (viewCourse == null) {
+                            viewCourse = inflater.inflate(R.layout.activity_class_table_page_item_course, layoutStage, false);
+                            viewCourse.setTag(new CourseViewHolder(viewCourse));
+                            layoutStage.addView(viewCourse);
+                        }
+                        CourseViewHolder holder = (CourseViewHolder) viewCourse.getTag();
+                        holder.update(course, currentDate.getDayOfWeek(), stage);
+                        // 这里判断课程是否在时间段内，不在则隐藏
+                        iconStage.setVisibility(View.GONE);
+                        layoutStage.setVisibility(View.VISIBLE);
+                    }
+                }
+            }
+        }
 
+    }
 
+    protected class CourseViewHolder {
 
+        @InjectView(R.id.class_table_page_item_course_tv_name)
+        protected TextView tvName;
 
+        @InjectView(R.id.class_table_page_item_course_tv_teacher)
+        protected TextView tvTeacher;
 
+        @InjectView(R.id.class_table_page_item_course_tv_place)
+        protected TextView tvPlace;
+
+        protected ClassTable.Course course;
+
+        public CourseViewHolder(View convertView) {
+            ButterKnife.inject(this, convertView);
+        }
+
+        public void update(ClassTable.Course course, int dayInWeek, int stage) {
+            this.course = course;
+            tvName.setText(course.getName());
+            tvTeacher.setText(course.getTeacher());
+            for (ClassTable.TimeAndPlace timeAndPlace : course.getTimesAndPlaces()) {
+                if (timeAndPlace.getStage() == stage && timeAndPlace.getDayInWeek().index() == dayInWeek) {
+                    tvPlace.setText(timeAndPlace.getRoom());
+                    return;
+                }
+            }
+            tvPlace.setText(null);
+        }
+
+        @OnClick(R.id.class_table_page_item_course_btn_card)
+        protected void onBtnCardClick() {
+            if (course != null) {
+                Intent intent = new Intent(context, ClassTableCourseActivity.class);
+                intent.putExtra("course", GsonWrapper.gson.toJson(course));
+                intent.putExtra("year", classTable.getYear());
+                intent.putExtra("term", classTable.getTerm());
+                context.startActivity(intent);
+            }
         }
 
     }

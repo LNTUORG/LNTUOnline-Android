@@ -59,7 +59,7 @@
                     android:padding="8dp"
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                     android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="16dp"
+                    android:drawablePadding="8dp"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp"
                     android:gravity="center_vertical"
@@ -72,14 +72,21 @@
                     android:layout_gravity="bottom"
                     android:background="@drawable/item_gap_shadow_bottom" />
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/class_table_page_item_icon_stage_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/this_stage_no_course"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    tools:text="第一大节（08:00-08:45  08:50-09:35）" />
+                    android:gravity="center_vertical" />
 
             </LinearLayout>
 
@@ -115,7 +122,7 @@
                     android:padding="8dp"
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                     android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="16dp"
+                    android:drawablePadding="8dp"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp"
                     android:gravity="center_vertical"
@@ -127,6 +134,22 @@
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/item_gap_shadow_bottom" />
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/class_table_page_item_icon_stage_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/this_stage_no_course"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical" />
 
             </LinearLayout>
 
@@ -161,7 +184,7 @@
                     android:padding="8dp"
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                     android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="16dp"
+                    android:drawablePadding="8dp"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp"
                     android:gravity="center_vertical"
@@ -173,6 +196,22 @@
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/item_gap_shadow_bottom" />
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/class_table_page_item_icon_stage_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/this_stage_no_course"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical" />
 
             </LinearLayout>
 
@@ -208,7 +247,7 @@
                     android:padding="8dp"
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                     android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="16dp"
+                    android:drawablePadding="8dp"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp"
                     android:gravity="center_vertical"
@@ -220,6 +259,22 @@
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/item_gap_shadow_bottom" />
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/class_table_page_item_icon_stage_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/this_stage_no_course"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical" />
 
             </LinearLayout>
 
@@ -255,7 +310,7 @@
                     android:padding="8dp"
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                     android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="16dp"
+                    android:drawablePadding="8dp"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp"
                     android:gravity="center_vertical"
@@ -267,6 +322,22 @@
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/item_gap_shadow_bottom" />
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:id="@+id/class_table_page_item_icon_stage_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:text="@string/this_stage_no_course"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical" />
 
             </LinearLayout>
 
