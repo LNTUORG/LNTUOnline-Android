@@ -18,6 +18,8 @@ import butterknife.ButterKnife;
 
 public class ClassTableGridFragment extends ClassTableFragment {
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_class_table_grid, container, false);
@@ -31,7 +33,7 @@ public class ClassTableGridFragment extends ClassTableFragment {
 
     @Override
     public void onDataSetInit(int year, String term, LocalDate today) {
-
+        // 不在这里初始化
     }
 
     @Override
