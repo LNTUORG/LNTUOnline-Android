@@ -40,12 +40,14 @@ public class ClassTablePageFragment extends ClassTableFragment {
 
     @Override
     public void onDataSetInit(int year, String term, LocalDate today) {
-
+        adapter = new ClassTablePageAdapter(getActivity(), year, term, today);
+        viewPager.setAdapter(adapter);
+        viewPager.setCurrentItem(adapter.getDayPosition(today));
     }
 
     @Override
     public void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
-
+        adapter.updateDataSet(classTable, classTableMap);
     }
 
     public void onSetToday() {
