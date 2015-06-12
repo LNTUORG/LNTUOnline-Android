@@ -117,6 +117,12 @@
                 android:layout_height="match_parent"
                 tools:layout="@layout/activity_class_table_page" />
 
+            <fragment class="org.lntu.online.ui.fragment.ClassTableGridFragment"
+                android:id="@+id/class_table_fragement_grid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout="@layout/activity_class_table_grid" />
+
             <fragment class="org.lntu.online.ui.fragment.ClassTableListFragment"
                 android:id="@+id/class_table_fragement_list"
                 android:layout_width="match_parent"

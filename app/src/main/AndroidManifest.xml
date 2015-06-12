@@ -59,6 +59,7 @@
 
         <activity
             android:name="org.lntu.online.ui.activity.ClassTableActivity"
+            android:theme="@style/AppTheme.Toolbar"
             android:label="@string/my_class_table"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />

@@ -1,7 +1,6 @@
 package org.lntu.online.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,26 +9,18 @@ import com.lntu.online.R;
 
 import org.joda.time.LocalDate;
 import org.lntu.online.model.entity.ClassTable;
-import org.lntu.online.ui.adapter.ClassTablePageAdapter;
 import org.lntu.online.ui.base.ClassTableFragment;
-import org.lntu.online.util.ToastUtils;
 
 import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
-public class ClassTablePageFragment extends ClassTableFragment {
-
-    @InjectView(R.id.class_table_page_view_pager)
-    protected ViewPager viewPager;
-
-    private ClassTablePageAdapter adapter;
+public class ClassTableGridFragment extends ClassTableFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.activity_class_table_page, container, false);
+        return inflater.inflate(R.layout.activity_class_table_grid, container, false);
     }
 
     @Override
@@ -46,11 +37,6 @@ public class ClassTablePageFragment extends ClassTableFragment {
     @Override
     public void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
 
-    }
-
-    public void onSetToday() {
-        // TODO
-        ToastUtils.with(getActivity()).show("today");
     }
 
 }

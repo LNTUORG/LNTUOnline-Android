@@ -6,10 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.lntu.online.R;
 
+import org.joda.time.LocalDate;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.ui.adapter.ClassTableListAdapter;
 import org.lntu.online.ui.base.ClassTableFragment;
@@ -43,8 +43,13 @@ public class ClassTableListFragment extends ClassTableFragment {
     }
 
     @Override
-    public void updateDataView(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
-        adapter.setClassTable(classTable);
+    public void onDataSetInit(int year, String term, LocalDate today) {
+        // 不在这里初始化
+    }
+
+    @Override
+    public void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.Course>> classTableMap) {
+        adapter.updateClassTable(classTable);
     }
 
 }

@@ -60,8 +60,8 @@ public final class LoginShared {
         return SharedWrapper.with(context, TAG).getObject(KEY_CLASS_TABLE + year + term, ClassTable.class);
     }
 
-    public static void setClassTable(Context context, int year, String term, ClassTable classTable) {
-        SharedWrapper.with(context, TAG).setObject(KEY_CLASS_TABLE + year + term, classTable);
+    public static void setClassTable(Context context, ClassTable classTable) {
+        SharedWrapper.with(context, TAG).setObject(KEY_CLASS_TABLE + classTable.getYear() + classTable.getTerm(), classTable);
     }
 
 }
