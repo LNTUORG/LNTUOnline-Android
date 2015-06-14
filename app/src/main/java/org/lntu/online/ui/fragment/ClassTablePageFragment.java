@@ -42,7 +42,14 @@ public class ClassTablePageFragment extends ClassTableFragment {
     public void onDataSetInit(int year, String term, LocalDate today) {
         adapter = new ClassTablePageAdapter(getActivity(), year, term, today);
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(adapter.getPositionFromDate(today), true);
+        String currentTerm = (today.getMonthOfYear() >= 2 && today.getMonthOfYear() < 8) ? "春" : "秋";
+        if (today.getYear() == year && currentTerm.equals(term)) {
+            viewPager.setCurrentItem(adapter.getPositionFromDate(today), true);
+        } else if (term.equals("春")) {
+            viewPager.setCurrentItem(adapter.getPositionFromDate(new LocalDate(year, 3, 1)), true);
+        } else {
+            viewPager.setCurrentItem(adapter.getPositionFromDate(new LocalDate(year, 9, 1)), true);
+        }
     }
 
     @Override
