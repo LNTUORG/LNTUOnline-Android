@@ -211,6 +211,15 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<View> iconStageList;
 
+        @InjectViews({
+                R.id.class_table_page_item_btn_stage_1,
+                R.id.class_table_page_item_btn_stage_2,
+                R.id.class_table_page_item_btn_stage_3,
+                R.id.class_table_page_item_btn_stage_4,
+                R.id.class_table_page_item_btn_stage_5,
+        })
+        protected List<View> btnStageList;
+
         protected int position = -1;
         protected LocalDate currentDate;
 
@@ -233,6 +242,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
                 ViewGroup layoutStageShow = layoutStageShowList.get(stage - 1);
                 ViewGroup layoutStageHide = layoutStageHideList.get(stage - 1);
                 View iconStage = iconStageList.get(stage - 1);
+                View btnStage = btnStageList.get(stage - 1);
                 // 清除布局
                 layoutStageShow.removeAllViews();
                 layoutStageHide.removeAllViews();
@@ -266,6 +276,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
                 layoutStageShow.setVisibility(showCount > 0 ? View.VISIBLE : View.GONE);
                 iconStage.setVisibility(showCount > 0 ? View.GONE : View.VISIBLE);
                 layoutStageHide.setVisibility(TextUtils.isEmpty(openStateMap.get(currentDate.toString() + "-" + stage)) ? View.GONE : View.VISIBLE);
+                btnStage.setVisibility(layoutStageHide.getChildCount() > 0 ? View.VISIBLE : View.GONE);
             }
         }
 
