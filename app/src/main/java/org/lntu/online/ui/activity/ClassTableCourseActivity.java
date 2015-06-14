@@ -71,11 +71,11 @@ public class ClassTableCourseActivity extends BaseActivity {
             StringBuilder sbTimesAndPlaces = new StringBuilder();
             for (int n = 0; n < course.getTimesAndPlaces().size(); n++) {
                 ClassTable.TimeAndPlace timeAndPlace = course.getTimesAndPlaces().get(n);
-                sbTimesAndPlaces.append("· ").append(timeAndPlace.getStartWeek()).append("-").append(timeAndPlace.getEndWeek());
+                sbTimesAndPlaces.append("· ").append(timeAndPlace.getStartWeek()).append("-").append(timeAndPlace.getEndWeek()).append("周");
                 if (timeAndPlace.getWeekMode() == WeekMode.ODD) {
-                    sbTimesAndPlaces.append("单");
+                    sbTimesAndPlaces.append("（单周）");
                 } else if (timeAndPlace.getWeekMode() == WeekMode.EVEN) {
-                    sbTimesAndPlaces.append("双");
+                    sbTimesAndPlaces.append("（双周）");
                 }
                 sbTimesAndPlaces
                         .append("  ").append(timeAndPlace.getDayInWeek().value())
