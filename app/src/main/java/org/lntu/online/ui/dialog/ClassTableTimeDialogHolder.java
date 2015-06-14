@@ -117,9 +117,9 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
     protected void onBtnTitleClick() {
         int index;
         if (currentDate.getMonthOfYear() >= 2 && currentDate.getMonthOfYear() < 8) { // 春季
-            index = 6 - currentDate.getMonthOfYear() + 1;
+            index = 7 - currentDate.getMonthOfYear();
         } else {
-            index = 6 - (currentDate.getMonthOfYear() == 1 ? 13 : currentDate.getMonthOfYear()) + 1;
+            index = 13 - (currentDate.getMonthOfYear() == 1 ? 13 : currentDate.getMonthOfYear());
         }
         btnMonthList.get(index).setChecked(true);
         layoutMonth.setVisibility(View.VISIBLE);
@@ -208,11 +208,12 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
                     break;
             }
             SpannableString spanString = new SpannableString(text);
-            ForegroundColorSpan span = new ForegroundColorSpan(context.getResources().getColor(R.color.text_color_primary));
+            ForegroundColorSpan span = new ForegroundColorSpan(context.getResources().getColor(R.color.text_color_secondary));
             spanString.setSpan(span, 0, spanString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             holder.tv.setText(spanString);
             holder.tv.setChecked(false);
             holder.tv.setClickable(false);
+            holder.tv.getPaint().setFakeBoldText(true); // 字体加粗
         } else {
             position -= 7;
             LocalDate positionDate = startDate.plusDays(position);
@@ -224,6 +225,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
                 holder.tv.setText("");
                 holder.tv.setClickable(false);
             }
+            holder.tv.getPaint().setFakeBoldText(false); // 字体加粗
         }
 
     }
