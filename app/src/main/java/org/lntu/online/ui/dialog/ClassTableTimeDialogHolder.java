@@ -3,6 +3,9 @@ package org.lntu.online.ui.dialog;
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -177,32 +180,38 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         if (position < 7) {
+            String text;
             switch (position) {
                 case 0:
-                    holder.tv.setText("日");
+                    text = "日";
                     break;
                 case 1:
-                    holder.tv.setText("一");
+                    text = "一";
                     break;
                 case 2:
-                    holder.tv.setText("二");
+                    text = "二";
                     break;
                 case 3:
-                    holder.tv.setText("三");
+                    text = "三";
                     break;
                 case 4:
-                    holder.tv.setText("四");
+                    text = "四";
                     break;
                 case 5:
-                    holder.tv.setText("五");
+                    text = "五";
                     break;
                 case 6:
-                    holder.tv.setText("六");
+                    text = "六";
                     break;
                 default:
-                    holder.tv.setText("");
+                    text = "";
                     break;
             }
+            SpannableString spanString = new SpannableString(text);
+            ForegroundColorSpan span = new ForegroundColorSpan(context.getResources().getColor(R.color.text_color_primary));
+            spanString.setSpan(span, 0, spanString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            holder.tv.setText(spanString);
+            holder.tv.setChecked(false);
             holder.tv.setClickable(false);
         } else {
             position -= 7;
