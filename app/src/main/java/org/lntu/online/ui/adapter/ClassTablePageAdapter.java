@@ -51,11 +51,11 @@ public class ClassTablePageAdapter extends PagerAdapter {
         this.context = context;
         inflater = LayoutInflater.from(context);
         if ("春".equals(term)) {
-            startDate = new LocalDate(year, 3, 1);
-            endDate = new LocalDate(year, 9, 1);
+            startDate = new LocalDate(year, 2, 1);
+            endDate = new LocalDate(year, 8, 1);
         } else {
-            startDate = new LocalDate(year, 9, 1);
-            endDate = new LocalDate(year + 1, 3, 1);
+            startDate = new LocalDate(year, 8, 1);
+            endDate = new LocalDate(year + 1, 2, 1);
         }
         this.today = today;
     }
