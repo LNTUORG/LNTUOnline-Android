@@ -64,7 +64,16 @@ public class ClassTablePageAdapter extends PagerAdapter {
         this.classTable = classTable;
         this.classTableMap = classTableMap;
         firstWeekMonday = new LocalDate(classTable.getFirstWeekMondayAt());
-        firstWeekMonday = firstWeekMonday.minusDays(firstWeekMonday.getDayOfWeek() - 1);
+        if (firstWeekMonday.isBefore(startDate) || firstWeekMonday.isAfter(endDate)) { // 第一周周一不在时间区域，重新定义第一周周一
+            if ("春".equals(classTable.getTerm())) {
+                firstWeekMonday = new LocalDate(classTable.getYear(), 3, 1);
+            } else {
+                firstWeekMonday = new LocalDate(classTable.getYear(), 9, 1);
+            }
+            firstWeekMonday = firstWeekMonday.plusDays((7 - firstWeekMonday.getDayOfWeek() + 1) % 7);
+        } else { // 第一周周一在时间区域
+            firstWeekMonday = firstWeekMonday.minusDays(firstWeekMonday.getDayOfWeek() - 1);
+        }
         notifyDataSetChanged();
     }
 
