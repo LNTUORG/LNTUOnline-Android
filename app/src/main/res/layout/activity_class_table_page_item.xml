@@ -52,19 +52,34 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
-                <TextView
-                    android:id="@+id/class_table_page_item_tv_stage_1"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="8dp"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    android:background="#88ffffff"
-                    tools:text="第一大节（08:00-08:45  08:50-09:35）" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/class_table_page_item_tv_stage_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                        android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:background="#88ffffff"
+                        tools:text="第一大节（08:00-08:45  08:50-09:35）" />
+
+                    <ImageView
+                        android:id="@+id/class_table_page_item_btn_stage_1"
+                        android:layout_width="32dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:src="@drawable/icon_draw_down"
+                        android:scaleType="center"
+                        android:background="@drawable/rect_btn_transparent_background" />
+
+                </FrameLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -73,20 +88,35 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_1"
+                    android:id="@+id/class_table_page_item_icon_stage_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="@string/this_stage_no_course"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical" />
+
+                    <View style="@style/AppTheme.DeepLine" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_1_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
-                <TextView
-                    android:id="@+id/class_table_page_item_icon_stage_1"
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_1_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="@string/this_stage_no_course"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical" />
+                    android:orientation="vertical" />
 
             </LinearLayout>
 
@@ -115,19 +145,34 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
-                <TextView
-                    android:id="@+id/class_table_page_item_tv_stage_2"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="8dp"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    android:background="#88ffffff"
-                    tools:text="第二大节（08:00-08:45  08:50-09:35）" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/class_table_page_item_tv_stage_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                        android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:background="#88ffffff"
+                        tools:text="第二大节（08:00-08:45  08:50-09:35）" />
+
+                    <ImageView
+                        android:id="@+id/class_table_page_item_btn_stage_2"
+                        android:layout_width="32dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:src="@drawable/icon_draw_down"
+                        android:scaleType="center"
+                        android:background="@drawable/rect_btn_transparent_background" />
+
+                </FrameLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -136,20 +181,35 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_2"
+                    android:id="@+id/class_table_page_item_icon_stage_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="@string/this_stage_no_course"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical" />
+
+                    <View style="@style/AppTheme.DeepLine" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_2_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
-                <TextView
-                    android:id="@+id/class_table_page_item_icon_stage_2"
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_2_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="@string/this_stage_no_course"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical" />
+                    android:orientation="vertical" />
 
             </LinearLayout>
 
@@ -177,19 +237,34 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
-                <TextView
-                    android:id="@+id/class_table_page_item_tv_stage_3"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="8dp"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    android:background="#88ffffff"
-                    tools:text="第三大节（08:00-08:45  08:50-09:35）" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/class_table_page_item_tv_stage_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                        android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:background="#88ffffff"
+                        tools:text="第三大节（08:00-08:45  08:50-09:35）" />
+
+                    <ImageView
+                        android:id="@+id/class_table_page_item_btn_stage_3"
+                        android:layout_width="32dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:src="@drawable/icon_draw_down"
+                        android:scaleType="center"
+                        android:background="@drawable/rect_btn_transparent_background" />
+
+                </FrameLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -198,20 +273,35 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_3"
+                    android:id="@+id/class_table_page_item_icon_stage_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="@string/this_stage_no_course"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical" />
+
+                    <View style="@style/AppTheme.DeepLine" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_3_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
-                <TextView
-                    android:id="@+id/class_table_page_item_icon_stage_3"
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_3_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="@string/this_stage_no_course"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical" />
+                    android:orientation="vertical" />
 
             </LinearLayout>
 
@@ -240,19 +330,34 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
-                <TextView
-                    android:id="@+id/class_table_page_item_tv_stage_4"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="8dp"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    android:background="#88ffffff"
-                    tools:text="第四大节（08:00-08:45  08:50-09:35）" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/class_table_page_item_tv_stage_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                        android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:background="#88ffffff"
+                        tools:text="第四大节（08:00-08:45  08:50-09:35）" />
+
+                    <ImageView
+                        android:id="@+id/class_table_page_item_btn_stage_4"
+                        android:layout_width="32dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:src="@drawable/icon_draw_down"
+                        android:scaleType="center"
+                        android:background="@drawable/rect_btn_transparent_background" />
+
+                </FrameLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -261,20 +366,35 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_4"
+                    android:id="@+id/class_table_page_item_icon_stage_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="@string/this_stage_no_course"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical" />
+
+                    <View style="@style/AppTheme.DeepLine" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_4_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
-                <TextView
-                    android:id="@+id/class_table_page_item_icon_stage_4"
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_4_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="@string/this_stage_no_course"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical" />
+                    android:orientation="vertical" />
 
             </LinearLayout>
 
@@ -303,19 +423,34 @@
                 android:orientation="vertical"
                 android:background="#88ffffff">
 
-                <TextView
-                    android:id="@+id/class_table_page_item_tv_stage_5"
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:drawableStart="@drawable/ic_schedule_grey600_18dp"
-                    android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
-                    android:drawablePadding="8dp"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical"
-                    android:background="#88ffffff"
-                    tools:text="晚自习（08:00-08:45  08:50-09:35）" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/class_table_page_item_tv_stage_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                        android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                        android:drawablePadding="8dp"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical"
+                        android:background="#88ffffff"
+                        tools:text="晚自习（08:00-08:45  08:50-09:35）" />
+
+                    <ImageView
+                        android:id="@+id/class_table_page_item_btn_stage_5"
+                        android:layout_width="32dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="end"
+                        android:src="@drawable/icon_draw_down"
+                        android:scaleType="center"
+                        android:background="@drawable/rect_btn_transparent_background" />
+
+                </FrameLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -324,20 +459,35 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_5"
+                    android:id="@+id/class_table_page_item_icon_stage_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:text="@string/this_stage_no_course"
+                        android:textColor="@color/text_color_secondary"
+                        android:textSize="14sp"
+                        android:gravity="center_vertical" />
+
+                    <View style="@style/AppTheme.DeepLine" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_5_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
-                <TextView
-                    android:id="@+id/class_table_page_item_icon_stage_5"
+                <LinearLayout
+                    android:id="@+id/class_table_page_item_layout_stage_5_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="16dp"
-                    android:text="@string/this_stage_no_course"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical" />
+                    android:orientation="vertical" />
 
             </LinearLayout>
 

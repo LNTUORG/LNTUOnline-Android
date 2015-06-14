@@ -42,7 +42,7 @@ public class ClassTablePageFragment extends ClassTableFragment {
     public void onDataSetInit(int year, String term, LocalDate today) {
         adapter = new ClassTablePageAdapter(getActivity(), year, term, today);
         viewPager.setAdapter(adapter);
-        viewPager.setCurrentItem(adapter.getPositionFromDate(today));
+        viewPager.setCurrentItem(adapter.getPositionFromDate(today), true);
     }
 
     @Override
