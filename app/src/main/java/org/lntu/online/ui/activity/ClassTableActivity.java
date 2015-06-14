@@ -97,7 +97,7 @@ public class ClassTableActivity extends BaseActivity {
     private List<String> getYearTermList(LocalDate today) {
         int startYear = 2000 + Integer.parseInt(LoginShared.getUserId(this).substring(0, 2));
         int endYear = today.getYear() < startYear ? startYear : today.getYear();
-        String endTerm = (today.getMonthOfYear() >= 3 && today.getMonthOfYear() < 9) ? "春" : "秋";
+        String endTerm = (today.getMonthOfYear() >= 2 && today.getMonthOfYear() < 8) ? "春" : "秋";
         List<String> yearTermList = new ArrayList<>();
         for (int n = 0; n < endYear - startYear; n++) {
             if (!(endYear - n == endYear && endTerm.equals("春"))) {
