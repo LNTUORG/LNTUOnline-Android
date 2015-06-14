@@ -63,6 +63,14 @@ public class ClassTablePageAdapter extends PagerAdapter {
         this.today = today;
     }
 
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
     public void updateDataSet(ClassTable classTable, Map<String, List<ClassTable.CourseWrapper>> classTableMap) {
         this.classTable = classTable;
         this.classTableMap = classTableMap;
@@ -92,7 +100,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
     }
 
     public int getPositionFromDate(LocalDate date) {
-        if (date.isBefore(startDate) || date.isAfter(endDate)) {
+        if (date == null || date.isBefore(startDate) || date.isAfter(endDate)) {
             return 0;
         } else {
             Period period = new Period(startDate, date, PeriodType.days());

@@ -12,7 +12,7 @@ import org.joda.time.LocalDate;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.ui.adapter.ClassTablePageAdapter;
 import org.lntu.online.ui.base.ClassTableFragment;
-import org.lntu.online.util.ToastUtils;
+import org.lntu.online.ui.dialog.ClassTableTimeDialogHolder;
 
 import java.util.List;
 import java.util.Map;
@@ -27,6 +27,8 @@ public class ClassTablePageFragment extends ClassTableFragment {
 
     private ClassTablePageAdapter adapter;
 
+    private ClassTableTimeDialogHolder holder;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_class_table_page, container, false);
@@ -36,6 +38,18 @@ public class ClassTablePageFragment extends ClassTableFragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.inject(this, view);
+
+        holder = new ClassTableTimeDialogHolder(getActivity());
+        holder.setOnTimeDialogFinishListener(new ClassTableTimeDialogHolder.OnDialogFinishListener() {
+
+            @Override
+            public void onDialogFinish(LocalDate currentDate) {
+                if (adapter != null) {
+                    viewPager.setCurrentItem(adapter.getPositionFromDate(currentDate), true);
+                }
+            }
+
+        });
     }
 
     @Override
@@ -58,8 +72,9 @@ public class ClassTablePageFragment extends ClassTableFragment {
     }
 
     public void onSetToday() {
-        // TODO
-        ToastUtils.with(getActivity()).show("today");
+        if (adapter != null) {
+            holder.showDialog(adapter.getDateAt(viewPager.getCurrentItem()));
+        }
     }
 
 }
