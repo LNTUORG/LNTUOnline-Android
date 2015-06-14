@@ -36,7 +36,8 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater inflater;
-    private List<View> viewPool;
+    private List<View> busyPool = new ArrayList<>();
+    private List<View> idelPool = new ArrayList<>();
 
     private LocalDate startDate;
     private LocalDate endDate;
@@ -122,15 +123,14 @@ public class ClassTablePageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         View convertView;
-        if (viewPool == null) {
-            viewPool = new ArrayList<View>();
-            for (int n = 0; n < 7; n++) {
-                View viewItem = inflater.inflate(R.layout.activity_class_table_page_item, container, false);
-                viewItem.setTag(new ViewHolder(viewItem));
-                viewPool.add(viewItem);
-            }
+        if (idelPool.size() <= 0) { // 没有空闲view
+            convertView = inflater.inflate(R.layout.activity_class_table_page_item, container, false);
+            convertView.setTag(new ViewHolder(convertView));
+        } else {
+            convertView = idelPool.get(0);
+            idelPool.remove(convertView);
         }
-        convertView = viewPool.get(position % viewPool.size());
+        busyPool.add(convertView);
         ViewHolder holder = (ViewHolder) convertView.getTag();
         LocalDate currentDate = getDateAt(position);
         holder.update(position, currentDate, getWeekOfTerm(currentDate));
@@ -144,16 +144,16 @@ public class ClassTablePageAdapter extends PagerAdapter {
         ViewHolder holder = (ViewHolder) convertView.getTag();
         holder.scrollView.scrollTo(0, 0);
         container.removeView(convertView);
+        busyPool.remove(convertView);
+        idelPool.add(convertView);
     }
 
     @Override
     public void notifyDataSetChanged() {
-        if (viewPool != null) {
-            for (View view : viewPool) {
-                ViewHolder holder = (ViewHolder) view.getTag();
-                if (holder.position >= 0) {
-                    holder.update(holder.position, holder.currentDate, holder.weekOfTerm);
-                }
+        for (View view : busyPool) {
+            ViewHolder holder = (ViewHolder) view.getTag();
+            if (holder.position >= 0) {
+                holder.update(holder.position, holder.currentDate, holder.weekOfTerm);
             }
         }
         super.notifyDataSetChanged();

@@ -37,8 +37,6 @@ import retrofit.client.Response;
 
 public class ClassTableActivity extends BaseActivity {
 
-    private static final Handler handler = new Handler();
-
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
 
@@ -124,14 +122,6 @@ public class ClassTableActivity extends BaseActivity {
             final Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
             fmPage.onDataSetUpdate(classTable, classTableMap);
             fmList.onDataSetUpdate(classTable, classTableMap);
-            handler.postDelayed(new Runnable() { // TODO 解决ViewPager刷新问题
-
-                @Override
-                public void run() {
-                    fmPage.onDataSetUpdate(classTable, classTableMap);
-                }
-
-            }, 10);
             showLayoutFragment();
         } else {
             showLayoutLoading();
