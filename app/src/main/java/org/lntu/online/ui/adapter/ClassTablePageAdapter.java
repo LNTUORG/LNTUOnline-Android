@@ -130,7 +130,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
                 viewPool.add(viewItem);
             }
         }
-        convertView = viewPool.get(position % 7);
+        convertView = viewPool.get(position % viewPool.size());
         ViewHolder holder = (ViewHolder) convertView.getTag();
         LocalDate currentDate = getDateAt(position);
         holder.update(position, currentDate, getWeekOfTerm(currentDate));

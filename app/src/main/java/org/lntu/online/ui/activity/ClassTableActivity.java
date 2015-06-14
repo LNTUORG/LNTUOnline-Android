@@ -1,6 +1,7 @@
 package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,6 +36,8 @@ import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
 public class ClassTableActivity extends BaseActivity {
+
+    private static final Handler handler = new Handler();
 
     @InjectView(R.id.toolbar)
     protected Toolbar toolbar;
@@ -118,9 +121,17 @@ public class ClassTableActivity extends BaseActivity {
         currentTerm = term;
         classTable = LoginShared.getClassTable(this, year, term);
         if (classTable != null) {
-            Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
+            final Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
             fmPage.onDataSetUpdate(classTable, classTableMap);
             fmList.onDataSetUpdate(classTable, classTableMap);
+            handler.postDelayed(new Runnable() { // TODO 解决ViewPager刷新问题
+
+                @Override
+                public void run() {
+                    fmPage.onDataSetUpdate(classTable, classTableMap);
+                }
+
+            }, 10);
             showLayoutFragment();
         } else {
             showLayoutLoading();
