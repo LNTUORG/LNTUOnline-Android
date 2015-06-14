@@ -60,7 +60,6 @@ public class ClassTableActivity extends BaseActivity {
     private Menu menu;
 
     private ClassTableFragment fmPage;
-    private ClassTableFragment fmGrid;
     private ClassTableFragment fmList;
 
     private final LocalDate today = new LocalDate();
@@ -83,11 +82,10 @@ public class ClassTableActivity extends BaseActivity {
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
         fmPage = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_page);
-        fmGrid = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_grid);
         fmList = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_list);
-        getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmGrid).hide(fmList).commit();
+        getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmList).commit();
 
-        ArrayAdapter spnAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, getYearTermList(today));
+        ArrayAdapter spnAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getYearTermList(today));
         spnAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnYearTerm.setAdapter(spnAdapter);
     }
@@ -115,7 +113,6 @@ public class ClassTableActivity extends BaseActivity {
      */
     private void setCurrentYearAndTerm(int year, String term) {
         fmPage.onDataSetInit(year, term, today);
-        fmGrid.onDataSetInit(year, term, today);
         fmList.onDataSetInit(year, term, today);
         currentYear = year;
         currentTerm = term;
@@ -123,7 +120,6 @@ public class ClassTableActivity extends BaseActivity {
         if (classTable != null) {
             Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
             fmPage.onDataSetUpdate(classTable, classTableMap);
-            fmGrid.onDataSetUpdate(classTable, classTableMap);
             fmList.onDataSetUpdate(classTable, classTableMap);
             showLayoutFragment();
         } else {
@@ -136,7 +132,7 @@ public class ClassTableActivity extends BaseActivity {
      * 当前年级和学期切换
      */
     @OnItemSelected(R.id.class_table_spn_year_term)
-    protected void onSpnItemSelected(int position) {
+    protected void onSpnItemSelected() {
         String[] itemArr = spnYearTerm.getSelectedItem().toString().split(" ");
         int year = Integer.parseInt(itemArr[0].replace("年", ""));
         String term = itemArr[1].replace("季", "");
@@ -165,17 +161,12 @@ public class ClassTableActivity extends BaseActivity {
             case R.id.action_class_table_page:
                 menu.clear();
                 getMenuInflater().inflate(R.menu.class_table_page, menu);
-                getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmGrid).hide(fmList).commit();
-                return true;
-            case R.id.action_class_table_grid:
-                menu.clear();
-                getMenuInflater().inflate(R.menu.class_table_grid, menu);
-                getSupportFragmentManager().beginTransaction().show(fmGrid).hide(fmPage).hide(fmList).commit();
+                getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmList).commit();
                 return true;
             case R.id.action_class_table_list:
                 menu.clear();
                 getMenuInflater().inflate(R.menu.class_table_list, menu);
-                getSupportFragmentManager().beginTransaction().show(fmList).hide(fmPage).hide(fmGrid).commit();
+                getSupportFragmentManager().beginTransaction().show(fmList).hide(fmPage).commit();
                 return true;
             case R.id.action_class_table_today:
                 if (classTable != null) {
@@ -200,7 +191,6 @@ public class ClassTableActivity extends BaseActivity {
                     ClassTableActivity.this.classTable = classTable;
                     Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
                     fmPage.onDataSetUpdate(classTable, classTableMap);
-                    fmGrid.onDataSetUpdate(classTable, classTableMap);
                     fmList.onDataSetUpdate(classTable, classTableMap);
                     showLayoutFragment();
                 }
