@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ import org.lntu.online.model.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -46,6 +48,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     private ClassTable classTable;
     private Map<String, List<ClassTable.CourseWrapper>> classTableMap;
+    private Map<String, String> openStateMap = new HashMap<>();
 
     public ClassTablePageAdapter(Context context, int year, String term, LocalDate today) {
         this.context = context;
@@ -209,6 +212,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         protected List<View> iconStageList;
 
         protected int position = -1;
+        protected LocalDate currentDate;
 
         public ViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
@@ -216,7 +220,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
         protected void update(int position) {
             this.position = position;
-            LocalDate currentDate = getDateAt(position);
+            currentDate = getDateAt(position);
             int weekOfTerm = getWeekOfTerm(currentDate);
             if (classTableMap == null) {
                 return;
@@ -225,8 +229,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
                 // 设置上课时间
                 tvStageList.get(stage - 1).setText(ClassTable.getStageTimeString(stage, currentDate));
                 // 获取今天这一大节的课程列表
-                String key = currentDate.getDayOfWeek() + "-" + stage;
-                List<ClassTable.CourseWrapper> courseWrapperList = classTableMap.get(key);
+                List<ClassTable.CourseWrapper> courseWrapperList = classTableMap.get(currentDate.getDayOfWeek() + "-" + stage);
                 ViewGroup layoutStageShow = layoutStageShowList.get(stage - 1);
                 ViewGroup layoutStageHide = layoutStageHideList.get(stage - 1);
                 View iconStage = iconStageList.get(stage - 1);
@@ -262,7 +265,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
                 // 更新整体布局状态
                 layoutStageShow.setVisibility(showCount > 0 ? View.VISIBLE : View.GONE);
                 iconStage.setVisibility(showCount > 0 ? View.GONE : View.VISIBLE);
-                layoutStageHide.setVisibility(View.GONE);
+                layoutStageHide.setVisibility(TextUtils.isEmpty(openStateMap.get(currentDate.toString() + "-" + stage)) ? View.GONE : View.VISIBLE);
             }
         }
 
@@ -296,6 +299,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         private void toggleLayout(int stage) {
             ViewGroup layoutStageHide = layoutStageHideList.get(stage - 1);
             layoutStageHide.setVisibility(layoutStageHide.getVisibility() == View.VISIBLE ? View.GONE : View.VISIBLE);
+            openStateMap.put(currentDate.toString() + "-" + stage, layoutStageHide.getVisibility() == View.VISIBLE ? "true" : null);
         }
 
     }
