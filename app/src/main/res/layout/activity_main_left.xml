@@ -59,6 +59,7 @@
             android:text="@string/main_action_settings" />
 
         <TextView style="@style/AppTheme.DrawerItem"
+            android:visibility="gone"
             android:id="@+id/main_action_faq"
             android:drawableStart="@drawable/ic_help_grey600_24dp"
             android:drawableLeft="@drawable/ic_help_grey600_24dp"
