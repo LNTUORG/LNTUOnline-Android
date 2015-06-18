@@ -1,8 +1,8 @@
-package com.takwolf.util.digest;
+package org.lntu.online.util.digest;
 
-public class MD5 {
+public class SHA256 {
 
-    private static final DigestCoder coder = new DigestCoder("MD5");
+    private static final DigestCoder coder = new DigestCoder("SHA-256");
 
     public static byte[] getRawDigest(byte[] input) {
         return coder.getRawDigest(input);

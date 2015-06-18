@@ -1,4 +1,4 @@
-package com.takwolf.util.crypto;
+package org.lntu.online.util.crypto;
 
 import java.security.Key;
 
@@ -7,7 +7,7 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
 import javax.crypto.spec.IvParameterSpec;
 
-import com.takwolf.util.coder.Base64;
+import org.lntu.online.util.coder.Base64;
 
 public class DES3 {
 
