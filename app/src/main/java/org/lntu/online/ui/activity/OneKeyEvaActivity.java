@@ -159,7 +159,7 @@ public class OneKeyEvaActivity extends BaseActivity {
                     .positiveText("评价")
                     .positiveColorRes(R.color.color_primary)
                     .negativeText("取消")
-                    .negativeColorRes(R.color.text_color_primary)
+                    .negativeColorRes(R.color.color_primary)
                     .callback(new MaterialDialog.ButtonCallback() {
 
                         @Override
@@ -202,7 +202,7 @@ public class OneKeyEvaActivity extends BaseActivity {
                         .positiveText("给好评")
                         .positiveColorRes(R.color.color_primary)
                         .negativeText("不评价")
-                        .negativeColorRes(R.color.text_color_primary)
+                        .negativeColorRes(R.color.color_primary)
                         .callback(new MaterialDialog.ButtonCallback() {
 
                             @Override
