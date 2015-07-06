@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <org.lntu.online.ui.view.ScrimInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start"
     android:background="@android:color/white"
     android:fitsSystemWindows="true"
+    android:clickable="true"
     app:insetForeground="#4000">
 
     <ScrollView
@@ -19,17 +21,45 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="192dp"
-                android:padding="16dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="40dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
                 android:background="@color/color_primary"
-                android:orientation="vertical"
-                android:gravity="bottom">
+                android:orientation="vertical">
 
+                <com.github.siyamed.shapeimageview.CircularImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:src="@drawable/icon_image_default"
+                    android:scaleType="fitCenter"
+                    app:siBorderWidth="2dp"
+                    app:siBorderColor="@android:color/white" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    tools:text="张三" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/text_color_light"
+                    android:textSize="13sp"
+                    tools:text="电子与信息工程学院" />
 
-
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/text_color_light"
+                    android:textSize="13sp"
+                    tools:text="计算10-1" />
 
             </LinearLayout>
 
