@@ -9,6 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +20,6 @@ import com.lntu.online.R;
 import com.squareup.picasso.Picasso;
 
 import org.lntu.online.model.api.ApiClient;
-import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.shared.LoginShared;
@@ -54,6 +56,9 @@ public class MainActivity extends BaseActivity {
     @InjectView(R.id.main_left_tv_class_info)
     protected TextView tvClassInfo;
 
+    @InjectView(R.id.main_left_anim)
+    protected View anim;
+
     @InjectView(R.id.main_recycler_view)
     protected RecyclerView recyclerView;
 
@@ -74,6 +79,10 @@ public class MainActivity extends BaseActivity {
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new MainAdapter(this));
+
+        Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
+        dataLoadAnim.setInterpolator(new LinearInterpolator());
+        anim.startAnimation(dataLoadAnim);
 
         UpdateUtils.update(this);
 
