@@ -102,10 +102,11 @@
     <string name="official_homepage">官方主页</string>
     <string name="official_homepage_content">http://online.lntu.org</string>
 
-    <string name="send_crash_log">发送错误日志</string>
-
     <string name="this_stage_no_course">本节没课</string>
     <string name="not_current_week">非本周</string>
+
+    <string name="send">发送</string>
+    <string name="crash_log_tip">非常抱歉，程序运行过程中出现了一个无法避免的错误。您可以将该问题发送给我们，此举将有助于我们改善应用体验。由此给您带来的诸多不便，我们深表歉意，敬请谅解。</string>
 
 
 

@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.lntu.online.R;
 
+import org.joda.time.DateTime;
 import org.lntu.online.model.gson.GsonWrapper;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.util.ShipUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -28,12 +32,6 @@ public class CrashLogActivity extends BaseActivity {
     @InjectView(R.id.crash_show_tv_info)
     protected TextView tvInfo;
 
-    private String sorry = "" +
-        "非常抱歉，程序运行过程中出现了一个无法避免的错误。" +
-        "您可以将该问题发送给我们，此举将有助于我们改善应用体验。" +
-        "由此给您带来的诸多不便，我们深表歉意，敬请谅解。\n" +
-        "----------------\n";
-
     private String crashLog;
 
     @Override
@@ -49,6 +47,7 @@ public class CrashLogActivity extends BaseActivity {
         //接收异常对象
         Intent intent = getIntent();
         Throwable e = (Throwable) intent.getSerializableExtra("e");
+
         //构建字符串
         StringBuilder sb = new StringBuilder();
         sb.append("生产厂商：\n");
@@ -58,7 +57,7 @@ public class CrashLogActivity extends BaseActivity {
         sb.append("系统版本：\n");
         sb.append(Build.VERSION.RELEASE + "\n\n");
         sb.append("异常时间：\n");
-        sb.append(GsonWrapper.gson.toJson(new Date())).append("\n\n");
+        sb.append(new DateTime()).append("\n\n");
         sb.append("异常类型：\n");
         sb.append(e.getClass().getName() + "\n\n");
         sb.append("异常信息：\n");
@@ -76,12 +75,27 @@ public class CrashLogActivity extends BaseActivity {
         sb.append(writer.toString());
         crashLog = sb.toString();
         //显示信息
-        tvInfo.setText(sorry + crashLog);
+        tvInfo.setText(crashLog);
     }
 
-    @OnClick(R.id.crash_show_btn_send)
-    protected void onBtnSendClick() {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.crash_log, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                // TODO
+                return true;
+            case R.id.action_send:
+                // TODO
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
