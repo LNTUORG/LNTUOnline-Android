@@ -4,6 +4,7 @@ import android.content.Context;
 
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.LoginInfo;
+import org.lntu.online.model.entity.Student;
 import org.lntu.online.model.entity.UserType;
 
 import org.joda.time.DateTime;
@@ -22,6 +23,7 @@ public final class LoginShared {
     private static final String KEY_EXPIRES_AT = "expiresAt";
     private static final String KEY_HOLD_ONLINE = "holdOnline";
 
+    private static final String KEY_STUDENT = "student";
     private static final String KEY_CLASS_TABLE = "classTable-"; // 这里年级和学期要作为后缀
 
     public static void login(Context context, LoginInfo info, boolean isHoldOnline) {
@@ -54,6 +56,14 @@ public final class LoginShared {
 
     public static boolean isHoldOnline(Context context) {
         return SharedWrapper.with(context, TAG).getBoolean(KEY_HOLD_ONLINE, false);
+    }
+
+    public static Student getStudent(Context context) {
+        return SharedWrapper.with(context, TAG).getObject(KEY_STUDENT, Student.class);
+    }
+
+    public static void setStudent(Context context, Student student) {
+        SharedWrapper.with(context, TAG).setObject(KEY_STUDENT, student);
     }
 
     public static ClassTable getClassTable(Context context, int year, String term) {

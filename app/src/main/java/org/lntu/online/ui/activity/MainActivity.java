@@ -9,10 +9,17 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
+import com.squareup.picasso.Picasso;
 
+import org.lntu.online.model.api.ApiClient;
+import org.lntu.online.model.api.BackgroundCallback;
+import org.lntu.online.model.api.DefaultCallback;
+import org.lntu.online.model.entity.Student;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.BaseActivity;
@@ -23,6 +30,7 @@ import org.lntu.online.util.UpdateUtils;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import retrofit.client.Response;
 
 public class MainActivity extends BaseActivity {
 
@@ -34,9 +42,22 @@ public class MainActivity extends BaseActivity {
     @InjectView(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
+    @InjectView(R.id.main_left_img_avatar)
+    protected ImageView imgAvatar;
+
+    @InjectView(R.id.main_left_tv_name)
+    protected TextView tvName;
+
+    @InjectView(R.id.main_left_tv_college)
+    protected TextView tvCollege;
+
+    @InjectView(R.id.main_left_tv_class_info)
+    protected TextView tvClassInfo;
+
     @InjectView(R.id.main_recycler_view)
     protected RecyclerView recyclerView;
 
+    private boolean asyncStudentFlag = false;
     private long firstBackKeyTime = 0;
 
     @Override
@@ -87,8 +108,38 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onResume() {
+        if (!asyncStudentFlag) {
+            Student student = LoginShared.getStudent(this);
+            if (student == null) {
+                getStudentAsyncTask();
+            } else {
+                updateStudentView(student);
+            }
+        }
+        super.onResume();
+    }
 
+    private void updateStudentView(Student student) {
+        Picasso.with(this).load(student.getPhotoUrl()).error(R.drawable.icon_image_default).into(imgAvatar);
+        tvName.setText(student.getName());
+        tvCollege.setText(student.getCollege());
+        tvClassInfo.setText(student.getClassInfo());
+        asyncStudentFlag = true;
+    }
 
+    private void getStudentAsyncTask() {
+        ApiClient.with(this).apiService.getStudent(LoginShared.getLoginToken(this), new DefaultCallback<Student>(this) {
+
+            @Override
+            public void success(Student student, Response response) {
+                LoginShared.setStudent(MainActivity.this, student);
+                updateStudentView(student);
+            }
+
+        });
+    }
 
     @OnClick({
             R.id.main_action_browser,

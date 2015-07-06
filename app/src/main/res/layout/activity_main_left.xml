@@ -29,6 +29,7 @@
                 android:orientation="vertical">
 
                 <com.github.siyamed.shapeimageview.CircularImageView
+                    android:id="@+id/main_left_img_avatar"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:src="@drawable/icon_image_default"
@@ -37,6 +38,7 @@
                     app:siBorderColor="@android:color/white" />
 
                 <TextView
+                    android:id="@+id/main_left_tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -45,6 +47,7 @@
                     tools:text="张三" />
 
                 <TextView
+                    android:id="@+id/main_left_tv_college"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -53,6 +56,7 @@
                     tools:text="电子与信息工程学院" />
 
                 <TextView
+                    android:id="@+id/main_left_tv_class_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -65,20 +69,16 @@
             <View style="@style/AppTheme.ItemGap" />
 
             <TextView style="@style/AppTheme.DrawerItem"
-                android:id="@+id/main_action_browser"
-                android:drawableStart="@drawable/ic_open_in_browser_grey600_24dp"
-                android:drawableLeft="@drawable/ic_open_in_browser_grey600_24dp"
-                android:text="@string/main_action_browser" />
-
-            <TextView style="@style/AppTheme.DrawerItem"
                 android:id="@+id/main_action_logout"
                 android:drawableStart="@drawable/ic_group_grey600_24dp"
                 android:drawableLeft="@drawable/ic_group_grey600_24dp"
                 android:text="@string/main_action_logout" />
 
-            <View style="@style/AppTheme.ItemGap" />
-            <View style="@style/AppTheme.DeepLine" />
-            <View style="@style/AppTheme.ItemGap" />
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:id="@+id/main_action_browser"
+                android:drawableStart="@drawable/ic_open_in_browser_grey600_24dp"
+                android:drawableLeft="@drawable/ic_open_in_browser_grey600_24dp"
+                android:text="@string/main_action_browser" />
 
             <TextView style="@style/AppTheme.DrawerItem"
                 android:id="@+id/main_action_market"
