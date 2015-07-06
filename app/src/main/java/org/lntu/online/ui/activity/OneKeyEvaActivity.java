@@ -147,7 +147,6 @@ public class OneKeyEvaActivity extends BaseActivity {
         }
         if (n <= 0) { //不需要评估
             new MaterialDialog.Builder(this)
-                    .title("提示")
                     .content("您的课程都已经评价完成了。")
                     .contentColorRes(R.color.text_color_primary)
                     .positiveText("确定")
@@ -155,15 +154,12 @@ public class OneKeyEvaActivity extends BaseActivity {
                     .show();
         } else { //需要评估
             new MaterialDialog.Builder(this)
-                    .title("提示")
-                    .content("" +
-                            "您有" + n + "门课程需要评价。只有所有的课程完成评价之后，才能够正常查询成绩信息。点击【评价】按钮将会授权应用为您自动全部评价为好评。您也可以通过浏览器登录教务在线手动评价。\n\n" +
-                            "您是否授权应用为您自动评价课程呢？")
+                    .content("您有" + n + "门课程需要评价。只有所有的课程完成评价之后，才能够正常查询成绩信息。点击【评价】按钮将会授权应用为您自动全部评价为好评。您也可以通过浏览器登录教务在线手动评价。\n\n您是否授权应用为您自动评价课程呢？")
                     .contentColorRes(R.color.text_color_primary)
                     .positiveText("评价")
                     .positiveColorRes(R.color.color_primary)
                     .negativeText("取消")
-                    .negativeColorRes(R.color.text_color_primary)
+                    .negativeColorRes(R.color.color_primary)
                     .callback(new MaterialDialog.ButtonCallback() {
 
                         @Override
@@ -201,13 +197,12 @@ public class OneKeyEvaActivity extends BaseActivity {
             }
             if (n <= 0) { //不需要评估
                 new MaterialDialog.Builder(this)
-                        .title("提示")
                         .content("您的课程都已经评价完成了。\n不给我们一个好评吗？")
                         .contentColorRes(R.color.text_color_primary)
                         .positiveText("给好评")
                         .positiveColorRes(R.color.color_primary)
                         .negativeText("不评价")
-                        .negativeColorRes(R.color.text_color_primary)
+                        .negativeColorRes(R.color.color_primary)
                         .callback(new MaterialDialog.ButtonCallback() {
 
                             @Override
@@ -224,7 +219,6 @@ public class OneKeyEvaActivity extends BaseActivity {
                         .show();
             } else { //需要评估
                 new MaterialDialog.Builder(this)
-                        .title("提示")
                         .content("您有" + n + "门课程评价失败，您可以再试一次。")
                         .contentColorRes(R.color.text_color_primary)
                         .positiveText("确定")
