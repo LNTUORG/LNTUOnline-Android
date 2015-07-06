@@ -4,7 +4,7 @@
     <style name="AppTheme.MainPage">
         <item name="colorPrimaryDark">@color/color_primary</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">#66000000</item>
+        <item name="android:statusBarColor">#44000000</item>
     </style>
 
 </resources>

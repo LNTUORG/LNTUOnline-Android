@@ -3,15 +3,17 @@
 
     <color name="color_primary">#ff2196f3</color>
     <color name="color_primary_dark">#ff1976d2</color>
-    <color name="color_accent">#ff40aaee</color>
+    <color name="color_accent">#ff2196f3</color>
     <color name="text_color_primary">#ff212121</color>
     <color name="text_color_secondary">#ff757575</color>
     <color name="text_color_light">#ccffffff</color>
 
     <color name="rect_btn_background_normal">@android:color/white</color>
     <color name="rect_btn_background_pressed">#ffeeeeee</color>
+    <color name="rect_btn_background_accent">#ffcccccc</color>
     <color name="rect_btn_transparent_background_normal">#00000000</color>
     <color name="rect_btn_transparent_background_pressed">#44ffffff</color>
+    <color name="rect_btn_transparent_background_accent">#44000000</color>
 
     <color name="rect_btn_class_table_time_dialog_background_normal">#00000000</color>
     <color name="rect_btn_class_table_time_dialog_background_pressed">#882196f3</color>
