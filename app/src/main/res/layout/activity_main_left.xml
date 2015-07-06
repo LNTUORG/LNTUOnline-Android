@@ -1,84 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<org.lntu.online.ui.view.ScrimInsetsFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="start"
     android:background="@android:color/white"
+    android:fitsSystemWindows="true"
     android:clickable="true">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <View style="@style/AppTheme.ItemGap" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_browser"
-            android:drawableStart="@drawable/ic_open_in_browser_grey600_24dp"
-            android:drawableLeft="@drawable/ic_open_in_browser_grey600_24dp"
-            android:text="@string/main_action_browser" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_primary">
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_logout"
-            android:drawableStart="@drawable/ic_group_grey600_24dp"
-            android:drawableLeft="@drawable/ic_group_grey600_24dp"
-            android:text="@string/main_action_logout" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:orientation="vertical">
 
-        <View style="@style/AppTheme.ItemGap" />
-        <View style="@style/AppTheme.DeepLine" />
-        <View style="@style/AppTheme.ItemGap" />
+                    <com.github.siyamed.shapeimageview.CircularImageView
+                        android:id="@+id/main_left_img_avatar"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/icon_image_default"
+                        android:scaleType="fitCenter"
+                        app:siBorderWidth="2dp"
+                        app:siBorderColor="@android:color/white" />
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_market"
-            android:drawableStart="@drawable/ic_grade_grey600_24dp"
-            android:drawableLeft="@drawable/ic_grade_grey600_24dp"
-            android:text="@string/main_action_market" />
+                    <TextView
+                        android:id="@+id/main_left_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        tools:text="张三" />
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_feedback"
-            android:drawableStart="@drawable/ic_comment_grey600_24dp"
-            android:drawableLeft="@drawable/ic_comment_grey600_24dp"
-            android:text="@string/main_action_feedback" />
+                    <TextView
+                        android:id="@+id/main_left_tv_college"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/text_color_light"
+                        android:textSize="13sp"
+                        tools:text="电子与信息工程学院" />
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_share"
-            android:drawableStart="@drawable/ic_share_grey600_24dp"
-            android:drawableLeft="@drawable/ic_share_grey600_24dp"
-            android:text="@string/main_action_share" />
+                    <TextView
+                        android:id="@+id/main_left_tv_class_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/text_color_light"
+                        android:textSize="13sp"
+                        tools:text="计算10-1" />
 
-        <View style="@style/AppTheme.ItemGap" />
-        <View style="@style/AppTheme.DeepLine" />
-        <View style="@style/AppTheme.ItemGap" />
+                </LinearLayout>
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:visibility="gone"
-            android:id="@+id/main_action_settings"
-            android:drawableStart="@drawable/ic_settings_grey600_24dp"
-            android:drawableLeft="@drawable/ic_settings_grey600_24dp"
-            android:text="@string/main_action_settings" />
+                <TextView
+                    android:id="@+id/main_left_btn_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:text="@string/logout"
+                    android:textColor="@color/text_color_light"
+                    android:textSize="14sp"
+                    android:background="@drawable/rect_btn_transparent_background" />
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:visibility="gone"
-            android:id="@+id/main_action_faq"
-            android:drawableStart="@drawable/ic_help_grey600_24dp"
-            android:drawableLeft="@drawable/ic_help_grey600_24dp"
-            android:text="@string/main_action_faq" />
+            </FrameLayout>
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_agreement"
-            android:drawableStart="@drawable/ic_info_grey600_24dp"
-            android:drawableLeft="@drawable/ic_info_grey600_24dp"
-            android:text="@string/main_action_agreement" />
+            <View style="@style/AppTheme.ItemGap" />
 
-        <TextView style="@style/AppTheme.DrawerItem"
-            android:id="@+id/main_action_about"
-            android:drawableStart="@drawable/ic_info_outline_grey600_24dp"
-            android:drawableLeft="@drawable/ic_info_outline_grey600_24dp"
-            android:text="@string/main_action_about" />
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:id="@+id/main_action_browser"
+                android:drawableStart="@drawable/ic_open_in_browser_grey600_24dp"
+                android:drawableLeft="@drawable/ic_open_in_browser_grey600_24dp"
+                android:text="@string/main_action_browser" />
 
-        <View style="@style/AppTheme.ItemGap" />
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:id="@+id/main_action_market"
+                android:drawableStart="@drawable/ic_grade_grey600_24dp"
+                android:drawableLeft="@drawable/ic_grade_grey600_24dp"
+                android:text="@string/main_action_market" />
 
-    </LinearLayout>
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:id="@+id/main_action_feedback"
+                android:drawableStart="@drawable/ic_comment_grey600_24dp"
+                android:drawableLeft="@drawable/ic_comment_grey600_24dp"
+                android:text="@string/main_action_feedback" />
 
-</ScrollView>
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:id="@+id/main_action_share"
+                android:drawableStart="@drawable/ic_share_grey600_24dp"
+                android:drawableLeft="@drawable/ic_share_grey600_24dp"
+                android:text="@string/main_action_share" />
+
+            <View style="@style/AppTheme.ItemGap" />
+            <View style="@style/AppTheme.DeepLine" />
+            <View style="@style/AppTheme.ItemGap" />
+
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:visibility="gone"
+                android:id="@+id/main_action_settings"
+                android:drawableStart="@drawable/ic_settings_grey600_24dp"
+                android:drawableLeft="@drawable/ic_settings_grey600_24dp"
+                android:text="@string/main_action_settings" />
+
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:visibility="gone"
+                android:id="@+id/main_action_faq"
+                android:drawableStart="@drawable/ic_help_grey600_24dp"
+                android:drawableLeft="@drawable/ic_help_grey600_24dp"
+                android:text="@string/main_action_faq" />
+
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:id="@+id/main_action_agreement"
+                android:drawableStart="@drawable/ic_info_grey600_24dp"
+                android:drawableLeft="@drawable/ic_info_grey600_24dp"
+                android:text="@string/main_action_agreement" />
+
+            <TextView style="@style/AppTheme.DrawerItem"
+                android:id="@+id/main_action_about"
+                android:drawableStart="@drawable/ic_info_outline_grey600_24dp"
+                android:drawableLeft="@drawable/ic_info_outline_grey600_24dp"
+                android:text="@string/main_action_about" />
+
+            <View style="@style/AppTheme.ItemGap" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</org.lntu.online.ui.view.ScrimInsetsFrameLayout>

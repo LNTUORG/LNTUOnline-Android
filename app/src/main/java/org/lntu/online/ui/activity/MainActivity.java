@@ -4,14 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
+import com.squareup.picasso.Picasso;
+
+import org.lntu.online.model.api.ApiClient;
+import org.lntu.online.model.api.BackgroundCallback;
+import org.lntu.online.model.api.DefaultCallback;
+import org.lntu.online.model.entity.Student;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.BaseActivity;
@@ -22,6 +30,7 @@ import org.lntu.online.util.UpdateUtils;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
+import retrofit.client.Response;
 
 public class MainActivity extends BaseActivity {
 
@@ -33,9 +42,22 @@ public class MainActivity extends BaseActivity {
     @InjectView(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
+    @InjectView(R.id.main_left_img_avatar)
+    protected ImageView imgAvatar;
+
+    @InjectView(R.id.main_left_tv_name)
+    protected TextView tvName;
+
+    @InjectView(R.id.main_left_tv_college)
+    protected TextView tvCollege;
+
+    @InjectView(R.id.main_left_tv_class_info)
+    protected TextView tvClassInfo;
+
     @InjectView(R.id.main_recycler_view)
     protected RecyclerView recyclerView;
 
+    private boolean asyncStudentFlag = false;
     private long firstBackKeyTime = 0;
 
     @Override
@@ -46,10 +68,8 @@ public class MainActivity extends BaseActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
 
-        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.menu, R.string.app_name);
-        drawerToggle.syncState();
-        drawerLayout.setDrawerListener(drawerToggle);
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
@@ -73,9 +93,56 @@ public class MainActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.openDrawer(GravityCompat.START);
+                    return true;
+                } else {
+                    return super.onOptionsItemSelected(item);
+                }
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        if (!asyncStudentFlag) {
+            Student student = LoginShared.getStudent(this);
+            if (student == null) {
+                getStudentAsyncTask();
+            } else {
+                updateStudentView(student);
+            }
+        }
+        super.onResume();
+    }
+
+    private void updateStudentView(Student student) {
+        Picasso.with(this).load(student.getPhotoUrl()).error(R.drawable.icon_image_default).into(imgAvatar);
+        tvName.setText(student.getName());
+        tvCollege.setText(student.getCollege());
+        tvClassInfo.setText(student.getClassInfo());
+        asyncStudentFlag = true;
+    }
+
+    private void getStudentAsyncTask() {
+        ApiClient.with(this).apiService.getStudent(LoginShared.getLoginToken(this), new DefaultCallback<Student>(this) {
+
+            @Override
+            public void success(Student student, Response response) {
+                LoginShared.setStudent(MainActivity.this, student);
+                updateStudentView(student);
+            }
+
+        });
+    }
+
     @OnClick({
             R.id.main_action_browser,
-            R.id.main_action_logout,
             R.id.main_action_market,
             R.id.main_action_feedback,
             R.id.main_action_share,
@@ -88,9 +155,6 @@ public class MainActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.main_action_browser:
                 ShipUtils.webOnline(this);
-                break;
-            case R.id.main_action_logout:
-                showLogoutDialog();
                 break;
             case R.id.main_action_market:
                 ShipUtils.appStore(this);
@@ -131,7 +195,8 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    public void showLogoutDialog() {
+    @OnClick(R.id.main_left_btn_logout)
+    protected void onBtnLogoutClick() {
         new MaterialDialog.Builder(this)
                 .content(R.string.logout_tip)
                 .contentColorRes(R.color.text_color_primary)

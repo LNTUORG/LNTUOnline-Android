@@ -5,6 +5,6 @@
     <dimen name="margin_short">8dp</dimen>
     <dimen name="margin_extra_short">4dp</dimen>
 
-    <dimen name="button_corner_radius">2dp</dimen>
+    <dimen name="button_corner_radius">4dp</dimen>
 
 </resources>
