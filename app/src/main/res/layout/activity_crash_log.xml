@@ -6,38 +6,34 @@
 
     <include layout="@layout/activity_action_bar" />
 
-    <!-- Container -->
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="10dp"
-            android:layout_above="@+id/crash_show_btn_send">
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/crash_log_tip"
+                android:textSize="16sp"
+                android:textColor="@color/text_color_primary" />
 
             <TextView
                 android:id="@+id/crash_show_tv_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
+                android:padding="8dp"
                 android:textSize="16sp"
                 android:textColor="@color/text_color_primary" />
 
-        </ScrollView>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/crash_show_btn_send"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_alignParentBottom="true"
-            android:text="@string/send_crash_log"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_image" />
-
-    </RelativeLayout>
+    </ScrollView>
 
 </LinearLayout>

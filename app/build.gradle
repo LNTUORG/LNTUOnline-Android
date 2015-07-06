@@ -44,7 +44,6 @@ dependencies {
     compile 'com.squareup.okhttp:okhttp:2.3.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.3.0'
 
-    compile project(':digest-and-crypto-utils')
     compile project(':material-design-icons')
 
     compile project(':umeng-update-sdk')

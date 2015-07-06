@@ -1,4 +1,4 @@
-package com.takwolf.util.digest;
+package org.lntu.online.util.digest;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;

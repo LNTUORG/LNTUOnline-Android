@@ -5,8 +5,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 
-import com.takwolf.util.digest.MD5;
-
 public final class AppUtils {
 
     private AppUtils() {}

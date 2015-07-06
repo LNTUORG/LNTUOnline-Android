@@ -1,4 +1,4 @@
-package com.takwolf.util.coder;
+package org.lntu.online.util.coder;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

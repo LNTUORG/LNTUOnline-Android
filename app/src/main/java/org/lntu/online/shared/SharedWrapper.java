@@ -7,9 +7,9 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
-import com.takwolf.util.crypto.DES3;
+import org.lntu.online.util.crypto.DES3;
 
-import com.takwolf.util.digest.SHA256;
+import org.lntu.online.util.digest.SHA256;
 
 import org.lntu.online.model.gson.GsonWrapper;
 
