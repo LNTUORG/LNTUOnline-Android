@@ -18,61 +18,73 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="40dp"
-                android:paddingBottom="8dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:background="@color/color_primary"
-                android:orientation="vertical">
+                android:background="@color/color_primary">
 
-                <com.github.siyamed.shapeimageview.CircularImageView
-                    android:id="@+id/main_left_img_avatar"
-                    android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:src="@drawable/icon_image_default"
-                    android:scaleType="fitCenter"
-                    app:siBorderWidth="2dp"
-                    app:siBorderColor="@android:color/white" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:orientation="vertical">
+
+                    <com.github.siyamed.shapeimageview.CircularImageView
+                        android:id="@+id/main_left_img_avatar"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/icon_image_default"
+                        android:scaleType="fitCenter"
+                        app:siBorderWidth="2dp"
+                        app:siBorderColor="@android:color/white" />
+
+                    <TextView
+                        android:id="@+id/main_left_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        tools:text="张三" />
+
+                    <TextView
+                        android:id="@+id/main_left_tv_college"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/text_color_light"
+                        android:textSize="13sp"
+                        tools:text="电子与信息工程学院" />
+
+                    <TextView
+                        android:id="@+id/main_left_tv_class_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/text_color_light"
+                        android:textSize="13sp"
+                        tools:text="计算10-1" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/main_left_tv_name"
+                    android:id="@+id/main_left_btn_logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="15sp"
-                    tools:text="张三" />
-
-                <TextView
-                    android:id="@+id/main_left_tv_college"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="16dp"
+                    android:padding="16dp"
+                    android:text="@string/logout"
                     android:textColor="@color/text_color_light"
-                    android:textSize="13sp"
-                    tools:text="电子与信息工程学院" />
+                    android:textSize="14sp"
+                    android:background="@drawable/rect_btn_transparent_background" />
 
-                <TextView
-                    android:id="@+id/main_left_tv_class_info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/text_color_light"
-                    android:textSize="13sp"
-                    tools:text="计算10-1" />
-
-            </LinearLayout>
+            </FrameLayout>
 
             <View style="@style/AppTheme.ItemGap" />
-
-            <TextView style="@style/AppTheme.DrawerItem"
-                android:id="@+id/main_action_logout"
-                android:drawableStart="@drawable/ic_group_grey600_24dp"
-                android:drawableLeft="@drawable/ic_group_grey600_24dp"
-                android:text="@string/main_action_logout" />
 
             <TextView style="@style/AppTheme.DrawerItem"
                 android:id="@+id/main_action_browser"

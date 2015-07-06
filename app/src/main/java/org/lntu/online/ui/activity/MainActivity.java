@@ -143,7 +143,6 @@ public class MainActivity extends BaseActivity {
 
     @OnClick({
             R.id.main_action_browser,
-            R.id.main_action_logout,
             R.id.main_action_market,
             R.id.main_action_feedback,
             R.id.main_action_share,
@@ -156,9 +155,6 @@ public class MainActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.main_action_browser:
                 ShipUtils.webOnline(this);
-                break;
-            case R.id.main_action_logout:
-                showLogoutDialog();
                 break;
             case R.id.main_action_market:
                 ShipUtils.appStore(this);
@@ -199,7 +195,8 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    public void showLogoutDialog() {
+    @OnClick(R.id.main_left_btn_logout)
+    protected void onBtnLogoutClick() {
         new MaterialDialog.Builder(this)
                 .content(R.string.logout_tip)
                 .contentColorRes(R.color.text_color_primary)
