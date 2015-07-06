@@ -12,7 +12,11 @@
         <item name="colorAccent">@color/color_accent</item>
     </style>
 
-    <style name="AppTheme.LogoPage" parent="AppBaseTheme">
+    <style name="AppTheme.MainPage">
+
+    </style>
+
+    <style name="AppTheme.LogoPage" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@android:color/black</item>
     </style>
 
