@@ -7,4 +7,6 @@
 
     <dimen name="button_corner_radius">4dp</dimen>
 
+    <dimen name="main_left_padding_top">16dp</dimen>
+
 </resources>
