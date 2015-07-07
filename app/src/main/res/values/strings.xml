@@ -12,6 +12,7 @@
     <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
     <string name="term_of_service">服务条款</string>
     <string name="term_of_service_link_style"><u>服务条款</u></string>
+    <string name="faq">常见问题</string>
     <string name="open_source_license">开放源代码许可</string>
 
     <string name="main_action_browser">浏览器访问教务在线</string>
@@ -19,7 +20,6 @@
     <string name="main_action_feedback">意见反馈</string>
     <string name="main_action_share">分享给好友</string>
     <string name="main_action_settings">设置</string>
-    <string name="main_action_faq">常见问题</string>
     <string name="main_action_about">关于</string>
 
     <string name="menu">菜单</string>
@@ -55,7 +55,6 @@
     <string name="remember_motto">牢记校训</string>
     <string name="advice">意见反馈</string>
     <string name="setting">设置</string>
-    <string name="help">帮助</string>
     <string name="about_app">关于应用</string>
     <string name="app_crash">程序崩溃</string>
 

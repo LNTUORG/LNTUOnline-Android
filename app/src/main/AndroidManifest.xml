@@ -133,8 +133,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.ui.activity.HelpActivity"
-            android:label="@string/help"
+            android:name="org.lntu.online.ui.activity.FaqActivity"
+            android:label="@string/faq"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
