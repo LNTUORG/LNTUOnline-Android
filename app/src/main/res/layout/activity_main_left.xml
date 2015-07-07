@@ -140,7 +140,6 @@
             <View style="@style/AppTheme.ItemGap" />
 
             <TextView style="@style/AppTheme.DrawerItem"
-                android:visibility="gone"
                 android:id="@+id/main_action_settings"
                 android:drawableStart="@drawable/ic_settings_grey600_24dp"
                 android:drawableLeft="@drawable/ic_settings_grey600_24dp"
@@ -155,8 +154,8 @@
 
             <TextView style="@style/AppTheme.DrawerItem"
                 android:id="@+id/main_action_about"
-                android:drawableStart="@drawable/ic_info_outline_grey600_24dp"
-                android:drawableLeft="@drawable/ic_info_outline_grey600_24dp"
+                android:drawableStart="@drawable/ic_info_grey600_24dp"
+                android:drawableLeft="@drawable/ic_info_grey600_24dp"
                 android:text="@string/main_action_about" />
 
             <View style="@style/AppTheme.ItemGap" />

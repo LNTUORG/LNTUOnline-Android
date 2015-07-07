@@ -1,5 +1,6 @@
 package org.lntu.online.ui.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -56,6 +57,18 @@ public class AboutActivity extends BaseActivity {
     @OnClick(R.id.about_btn_homepage)
     protected void onBtnHomepageClick() {
         ShipUtils.homepage(this);
+    }
+
+    @OnClick(R.id.about_btn_term_of_service)
+    protected void onBtnTermsOfServiceClick() {
+        startActivity(new Intent(this, TermsOfServiceActivity.class));
+    }
+
+    @OnClick(R.id.about_btn_open_source_license)
+    protected void onBtnOpenSourceLicenseClick() {
+
+
+
     }
 
 }

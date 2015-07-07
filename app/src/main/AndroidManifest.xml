@@ -41,7 +41,7 @@
 
         <activity
             android:name="org.lntu.online.ui.activity.TermsOfServiceActivity"
-            android:label="@string/user_agreement"
+            android:label="@string/term_of_service"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 

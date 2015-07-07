@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
-                android:text="@string/user_agreement_link_style"
+                android:text="@string/term_of_service_link_style"
                 android:textColor="@drawable/text_view_link_text_color"
                 android:textSize="14sp"
                 android:clickable="true" />

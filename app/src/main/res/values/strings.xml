@@ -10,9 +10,8 @@
     <string name="hold_online">保持登录状态</string>
     <string name="login">登录</string>
     <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
-    <string name="user_agreement">服务条款</string>
     <string name="term_of_service">服务条款</string>
-    <string name="user_agreement_link_style"><u>服务条款</u></string>
+    <string name="term_of_service_link_style"><u>服务条款</u></string>
     <string name="open_source_license">开放源代码许可</string>
 
     <string name="main_action_browser">浏览器访问教务在线</string>
