@@ -105,6 +105,7 @@
                 android:layout_marginRight="8dp" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/about_btn_faq"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -117,6 +118,7 @@
                 android:background="@drawable/rect_btn_background" />
 
             <View style="@style/AppTheme.DeepLine"
+                android:visibility="gone"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp" />
 

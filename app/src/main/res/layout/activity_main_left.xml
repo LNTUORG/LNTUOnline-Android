@@ -140,6 +140,7 @@
             <View style="@style/AppTheme.ItemGap" />
 
             <TextView style="@style/AppTheme.DrawerItem"
+                android:visibility="gone"
                 android:id="@+id/main_action_settings"
                 android:drawableStart="@drawable/ic_settings_grey600_24dp"
                 android:drawableLeft="@drawable/ic_settings_grey600_24dp"
