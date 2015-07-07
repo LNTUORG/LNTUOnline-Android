@@ -57,13 +57,16 @@ public class MainActivity extends BaseActivity {
     protected TextView tvClassInfo;
 
     @InjectView(R.id.main_left_anim)
-    protected View anim;
+    protected View iconAnim;
 
     @InjectView(R.id.main_recycler_view)
     protected RecyclerView recyclerView;
 
     private boolean asyncStudentFlag = false;
     private long firstBackKeyTime = 0;
+
+    private Animation anim;
+    private boolean animPlaying = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,9 +83,8 @@ public class MainActivity extends BaseActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new MainAdapter(this));
 
-        Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
-        dataLoadAnim.setInterpolator(new LinearInterpolator());
-        anim.startAnimation(dataLoadAnim);
+        anim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
+        anim.setInterpolator(new LinearInterpolator());
 
         UpdateUtils.update(this);
 
@@ -224,6 +226,17 @@ public class MainActivity extends BaseActivity {
 
                 })
                 .show();
+    }
+
+    @OnClick(R.id.main_left_btn_anim)
+    protected void onBtnAnimClick() {
+        if (!animPlaying) {
+            iconAnim.startAnimation(anim);
+            animPlaying = true;
+        } else {
+            iconAnim.clearAnimation();
+            animPlaying = false;
+        }
     }
 
 }
