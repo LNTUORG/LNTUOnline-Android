@@ -66,9 +66,7 @@ public class AboutActivity extends BaseActivity {
 
     @OnClick(R.id.about_btn_open_source_license)
     protected void onBtnOpenSourceLicenseClick() {
-
-
-
+        startActivity(new Intent(this, LicenseActivity.class));
     }
 
 }
