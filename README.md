@@ -36,9 +36,9 @@ v2.0.0, a new version.
 
 - [OkHttp](http://square.github.io/okhttp)
 
-- [Picasso](https://github.com/square/picasso)
+- [Picasso](http://square.github.io/picasso)
 
-- [Gson](https://code.google.com/p/google-gson)
+- [Gson](https://github.com/google/gson)
 
 - [Joda-Time](http://www.joda.org/joda-time)
 
@@ -51,6 +51,8 @@ v2.0.0, a new version.
 - [FloatingActionButton](https://github.com/makovkastar/FloatingActionButton)
 
 - [material-design-icons](https://github.com/google/material-design-icons)
+
+- [Shape Image View](https://github.com/siyamed/android-shape-imageview)
 
 ## Power support ##
 
