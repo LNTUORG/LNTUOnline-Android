@@ -26,7 +26,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="16dp"
         android:text="@string/logo_copyright"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
         android:textSize="12sp"
         android:gravity="center" />
 
