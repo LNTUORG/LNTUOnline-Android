@@ -113,9 +113,10 @@ public class StudentInfoActivity extends BaseActivity {
         LayoutInflater inflater = getLayoutInflater();
         // 头像信息
         {
-            ImageView imgAvatar = (ImageView) inflater.inflate(R.layout.activity_student_info_item_avatar, layoutContent, false);
+            View itemView  = inflater.inflate(R.layout.activity_student_info_item_avatar, layoutContent, false);
+            ImageView imgAvatar = (ImageView) itemView.findViewById(R.id.student_info_item_avatar_img_avatar);
             Picasso.with(this).load(student.getPhotoUrl()).into(imgAvatar);
-            layoutContent.addView(imgAvatar);
+            layoutContent.addView(itemView);
         }
         // 基本信息
         {
