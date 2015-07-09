@@ -13,7 +13,7 @@
         android:id="@+id/main_center_item_img_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/main_icon_profle"
+        android:src="@drawable/main_icon_megaphone"
         android:scaleType="fitCenter" />
 
     <TextView

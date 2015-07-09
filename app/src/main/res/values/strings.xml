@@ -26,7 +26,7 @@
     <string name="one_key_eva">一键评课</string>
     <string name="unpass_query">挂科查询</string>
     <string name="skill_test">等级考试</string>
-    <string name="remember_motto">牢记校训</string>
+
     <string name="advice">意见反馈</string>
     <string name="about_app">关于应用</string>
     <string name="app_crash">程序崩溃</string>
@@ -99,10 +99,6 @@
     <string name="grade_in_play">去商店评分</string>
     <string name="share_to_friends">分享给好友</string>
     <string name="feedback">反馈</string>
-
-    <string name="motto">诚朴求是，博学笃行</string>
-    <string name="male_voice">男声朗读</string>
-    <string name="female_voice">女生朗读</string>
 
     <string name="version_check_update">检查更新</string>
     <string name="official_homepage">官方主页</string>

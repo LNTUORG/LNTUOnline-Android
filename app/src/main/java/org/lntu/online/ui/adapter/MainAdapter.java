@@ -10,14 +10,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lntu.online.R;
+
 import org.lntu.online.ui.activity.ClassTableActivity;
-import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.ExamPlanActivity;
-import org.lntu.online.ui.activity.MottoActivity;
+import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.NoticeActivity;
 import org.lntu.online.ui.activity.OneKeyEvaActivity;
 import org.lntu.online.ui.activity.SkillTestActivity;
-import org.lntu.online.ui.activity.StudentInfoActivity;
 import org.lntu.online.ui.activity.UnpassCourseActivity;
 
 import butterknife.ButterKnife;
@@ -27,39 +26,33 @@ import butterknife.OnClick;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     private static final int[] icons = {
-            R.drawable.main_icon_profle,
             R.drawable.main_icon_clock2,
             R.drawable.main_icon_calendar,
             R.drawable.main_icon_right2,
             R.drawable.main_icon_gps,
             R.drawable.main_icon_stop,
             R.drawable.main_icon_trophy,
-            R.drawable.main_icon_megaphone,
-            R.drawable.main_icon_chat
+            R.drawable.main_icon_megaphone
     };
 
     private static final int[] titles = {
-            R.string.student_info,
             R.string.my_class_table,
             R.string.exam_plan,
             R.string.grades_query,
             R.string.one_key_eva,
             R.string.unpass_query,
             R.string.skill_test,
-            R.string.senate_notice,
-            R.string.remember_motto
+            R.string.senate_notice
     };
 
     private static final Class<?>[] clzs = {
-            StudentInfoActivity.class,
             ClassTableActivity.class,
             ExamPlanActivity.class,
             GradesActivity.class,
             OneKeyEvaActivity.class,
             UnpassCourseActivity.class,
             SkillTestActivity.class,
-            NoticeActivity.class,
-            MottoActivity.class
+            NoticeActivity.class
     };
 
     private Context context;
