@@ -8,8 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,6 +79,69 @@
             </LinearLayout>
 
             <View style="@style/AppTheme.DeepLine" />
+
+            <LinearLayout
+                android:id="@+id/about_btn_online"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:background="@drawable/rect_btn_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/online_by_browser"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/online_homepage_content"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <View style="@style/AppTheme.ShadowGap" />
+
+            <TextView
+                android:id="@+id/about_btn_grade_in_play"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/grade_in_play"
+                android:textColor="@color/text_color_primary"
+                android:textSize="16sp"
+                android:background="@drawable/rect_btn_background" />
+
+            <View style="@style/AppTheme.DeepLine" />
+
+            <TextView
+                android:id="@+id/about_btn_share_to_friends"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/share_to_friends"
+                android:textColor="@color/text_color_primary"
+                android:textSize="16sp"
+                android:background="@drawable/rect_btn_background" />
+
+            <View style="@style/AppTheme.DeepLine" />
+
+            <TextView
+                android:id="@+id/about_btn_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@string/feedback"
+                android:textColor="@color/text_color_primary"
+                android:textSize="16sp"
+                android:background="@drawable/rect_btn_background" />
+
+            <View style="@style/AppTheme.ShadowGap" />
 
             <TextView
                 android:id="@+id/about_btn_term_of_service"

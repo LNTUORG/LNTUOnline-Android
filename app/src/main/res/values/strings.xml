@@ -18,6 +18,8 @@
 
 
 
+
+
     <string name="class_table_course_info">课程信息</string>
     <string name="one_key_eva">一键评课</string>
     <string name="unpass_query">挂科查询</string>
@@ -35,15 +37,7 @@
     <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
     <string name="term_of_service">服务条款</string>
     <string name="term_of_service_link_style"><u>服务条款</u></string>
-    <string name="faq">常见问题</string>
     <string name="open_source_license">开放源代码许可</string>
-
-    <string name="main_action_browser">浏览器访问教务在线</string>
-    <string name="main_action_market">为应用评分</string>
-    <string name="main_action_feedback">意见反馈</string>
-    <string name="main_action_share">分享给好友</string>
-    <string name="main_action_settings">设置</string>
-    <string name="main_action_about">关于</string>
 
     <string name="menu">菜单</string>
 
@@ -98,6 +92,11 @@
     <string name="credit">学分</string>
 
     <string name="notice_by_browser">浏览器访问教务公告</string>
+    <string name="online_by_browser">访问教务在线主页</string>
+    <string name="online_homepage_content">http://60.18.131.131</string>
+    <string name="grade_in_play">去商店评分</string>
+    <string name="share_to_friends">分享给好友</string>
+    <string name="feedback">反馈</string>
 
     <string name="motto">诚朴求是，博学笃行</string>
     <string name="male_voice">男声朗读</string>

@@ -388,35 +388,4 @@ public class MainActivity extends BaseActivity {
 
     };
 
-
-
-
-
-
-
-
-
-
-
-    /*
-    protected void onDrawerItemSelected(View view) {
-        switch (view.getId()) {
-            case R.id.main_action_browser:
-                ShipUtils.webOnline(this);
-                break;
-            case R.id.main_action_market:
-                ShipUtils.appStore(this);
-                break;
-            case R.id.main_action_feedback:
-                startActivity(new Intent(this, AdviceActivity.class));
-                break;
-            case R.id.main_action_share:
-                ShipUtils.share(this);
-                break;
-
-        }
-    }
-    */
-
-
 }
