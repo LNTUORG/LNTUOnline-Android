@@ -166,7 +166,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void updateStudentView(Student student) {
-        Picasso.with(this).load(student.getPhotoUrl()).error(R.drawable.icon_image_default).into(imgAvatar);
+        Picasso.with(this).load(student.getPhotoUrl()).error(R.drawable.image_default).into(imgAvatar);
         tvName.setText(student.getName());
         tvCollege.setText(student.getCollege());
         tvClassInfo.setText(student.getClassInfo());

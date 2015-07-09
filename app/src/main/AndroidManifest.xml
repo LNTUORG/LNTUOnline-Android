@@ -115,12 +115,6 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.ui.activity.MottoActivity"
-            android:label="@string/remember_motto"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
-
-        <activity
             android:name="org.lntu.online.ui.activity.AdviceActivity"
             android:label="@string/advice"
             android:screenOrientation="portrait"
