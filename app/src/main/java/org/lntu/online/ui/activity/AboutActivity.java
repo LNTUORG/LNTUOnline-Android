@@ -35,7 +35,7 @@ public class AboutActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
 
-        tvVersionName.setText("当前版本：v" + AppUtils.getVersionName(this) + "-build-" + AppUtils.getVersionCode(this));
+        tvVersionName.setText("当前版本：" + AppUtils.getVersionName(this) + "-build-" + AppUtils.getVersionCode(this));
     }
 
     @Override
