@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:padding="8dp"
-                android:text="@string/logo_copyright"
+                android:text="@string/about_copyright"
                 android:textColor="@color/text_color_secondary"
                 android:textSize="14sp"
                 android:gravity="center" />
