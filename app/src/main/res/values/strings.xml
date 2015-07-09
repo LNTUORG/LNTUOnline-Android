@@ -4,6 +4,8 @@
     <string name="app_name">辽工大教务在线</string>
 
     <string name="logo_copyright">Copyright © 2014 &#8211; 2015 LNTU.ORG. All Rights Reserved.</string>
+    <string name="about_copyright">Copyright © 2014 &#8211; 2015 LNTU.ORG. \nAll Rights Reserved.</string>
+
 
     <string name="student_info">个人信息</string>
     <string name="my_class_table">我的课表</string>
