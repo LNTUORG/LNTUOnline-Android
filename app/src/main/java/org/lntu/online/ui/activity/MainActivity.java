@@ -202,11 +202,8 @@ public class MainActivity extends BaseActivity {
     protected void onBtnLogoutClick() {
         new MaterialDialog.Builder(this)
                 .content(R.string.logout_tip)
-                .contentColorRes(R.color.text_color_primary)
                 .positiveText(R.string.logout)
-                .positiveColorRes(R.color.color_primary)
                 .negativeText("不好意思，我点错了")
-                .negativeColorRes(R.color.color_primary)
                 .callback(new MaterialDialog.ButtonCallback() {
 
                     @Override

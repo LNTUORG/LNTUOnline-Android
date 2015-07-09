@@ -66,7 +66,6 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
 
         dialog = new MaterialDialog.Builder(context)
                 .customView(R.layout.dialog_class_table_time, false)
-                .positiveColorRes(R.color.color_primary)
                 .positiveText(R.string.confirm)
                 .callback(new MaterialDialog.ButtonCallback() {
 

@@ -5,12 +5,11 @@ import android.content.Intent;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.lntu.online.R;
+
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.activity.AuthErrorActivity;
 import org.lntu.online.ui.activity.OneKeyEvaActivity;
-import org.lntu.online.util.ShipUtils;
-import org.lntu.online.util.ToastUtils;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -49,11 +48,8 @@ public abstract class BackgroundCallback<T> implements Callback<T> {
                 new MaterialDialog.Builder(context)
                         .title("提示")
                         .content("您本学期还没有完成评课，暂时无法查看成绩。")
-                        .contentColorRes(R.color.text_color_primary)
                         .positiveText("去评课")
-                        .positiveColorRes(R.color.color_primary)
                         .negativeText("取消")
-                        .negativeColorRes(R.color.text_color_primary)
                         .callback(new MaterialDialog.ButtonCallback() {
 
                             @Override
