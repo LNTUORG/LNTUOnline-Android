@@ -3,6 +3,7 @@
     android:color="@color/rect_btn_background_accent">
     <item>
         <selector>
+            <item android:state_checked="true" android:drawable="@color/rect_btn_background_pressed" />
             <item android:state_pressed="true" android:drawable="@color/rect_btn_background_pressed" />
             <item android:drawable="@color/rect_btn_background_normal" />
         </selector>

@@ -59,14 +59,29 @@ public class AboutActivity extends BaseActivity {
         ShipUtils.homepage(this);
     }
 
+    @OnClick(R.id.about_btn_online)
+    protected void onBtnOnlineClick() {
+        ShipUtils.webOnline(this);
+    }
+
+    @OnClick(R.id.about_btn_grade_in_play)
+    protected void onBtnGradeInPlayClick() {
+        ShipUtils.appStore(this);
+    }
+
+    @OnClick(R.id.about_btn_share_to_friends)
+    protected void onBtnShareToFriendsClick() {
+        ShipUtils.share(this);
+    }
+
+    @OnClick(R.id.about_btn_feedback)
+    protected void onBtnFeedbackClick() {
+        startActivity(new Intent(this, AdviceActivity.class));
+    }
+
     @OnClick(R.id.about_btn_term_of_service)
     protected void onBtnTermsOfServiceClick() {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
-    }
-
-    @OnClick(R.id.about_btn_faq)
-    protected void onBtnFaqClick() {
-        startActivity(new Intent(this, FaqActivity.class));
     }
 
     @OnClick(R.id.about_btn_open_source_license)
