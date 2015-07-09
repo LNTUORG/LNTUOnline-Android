@@ -128,6 +128,12 @@
             android:windowSoftInputMode="stateHidden|stateAlwaysHidden" />
 
         <activity
+            android:name="org.lntu.online.ui.activity.NotificationActivity"
+            android:label="@string/notification"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
             android:name="org.lntu.online.ui.activity.SettingActivity"
             android:label="@string/setting"
             android:screenOrientation="portrait"
