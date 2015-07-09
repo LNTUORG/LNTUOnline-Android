@@ -64,11 +64,6 @@ public class AboutActivity extends BaseActivity {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
     }
 
-    @OnClick(R.id.about_btn_faq)
-    protected void onBtnFaqClick() {
-        startActivity(new Intent(this, FaqActivity.class));
-    }
-
     @OnClick(R.id.about_btn_open_source_license)
     protected void onBtnOpenSourceLicenseClick() {
         startActivity(new Intent(this, LicenseActivity.class));
