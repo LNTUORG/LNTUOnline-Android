@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Application theme. -->
+    <!-- App Theme -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
     </style>
 
-    <style name="AppTheme.MainPage" />
+    <!-- App Theme FitsStatusBar -->
+    <style name="AppTheme.FitsStatusBar" />
 
+    <!-- App Theme Logo Page -->
     <style name="AppTheme.LogoPage" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@android:color/black</item>
     </style>
+
+
+
+
 
     <style name="AppTheme.AuthErrorPage" parent="Theme.AppCompat.Light.Dialog" />
 

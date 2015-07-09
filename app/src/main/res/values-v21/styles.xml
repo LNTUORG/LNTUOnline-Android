@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="AppTheme.MainPage">
-        <item name="colorPrimaryDark">@color/color_primary</item>
+    <style name="AppTheme.FitsStatusBar">
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">#44000000</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
 </resources>
