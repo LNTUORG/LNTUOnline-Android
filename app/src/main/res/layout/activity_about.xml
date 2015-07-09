@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -29,8 +30,6 @@
                 android:id="@+id/about_btn_version"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:padding="16dp"
                 android:orientation="vertical"
                 android:background="@drawable/rect_btn_background">
@@ -47,22 +46,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/version_name_content"
                     android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    tools:text="当前版本：0.0.0-build-0" />
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.DeepLine"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp" />
+            <View style="@style/AppTheme.DeepLine" />
 
             <LinearLayout
                 android:id="@+id/about_btn_homepage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:padding="16dp"
                 android:orientation="vertical"
                 android:background="@drawable/rect_btn_background">
@@ -84,33 +79,25 @@
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.DeepLine"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp" />
+            <View style="@style/AppTheme.DeepLine" />
 
             <TextView
                 android:id="@+id/about_btn_term_of_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:padding="16dp"
                 android:text="@string/term_of_service"
                 android:textColor="@color/text_color_primary"
                 android:textSize="16sp"
                 android:background="@drawable/rect_btn_background" />
 
-            <View style="@style/AppTheme.DeepLine"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp" />
+            <View style="@style/AppTheme.DeepLine" />
 
             <TextView
                 android:visibility="gone"
                 android:id="@+id/about_btn_faq"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:padding="16dp"
                 android:text="@string/faq"
                 android:textColor="@color/text_color_primary"
@@ -118,25 +105,19 @@
                 android:background="@drawable/rect_btn_background" />
 
             <View style="@style/AppTheme.DeepLine"
-                android:visibility="gone"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp" />
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/about_btn_open_source_license"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
                 android:padding="16dp"
                 android:text="@string/open_source_license"
                 android:textColor="@color/text_color_primary"
                 android:textSize="16sp"
                 android:background="@drawable/rect_btn_background" />
 
-            <View style="@style/AppTheme.DeepLine"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp" />
+            <View style="@style/AppTheme.DeepLine" />
 
         </LinearLayout>
 
