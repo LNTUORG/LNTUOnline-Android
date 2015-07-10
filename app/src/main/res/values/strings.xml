@@ -17,6 +17,14 @@
     <string name="setting">设置</string>
     <string name="about">关于</string>
 
+    <string name="nav_menu_header_background">导航菜单顶部背景</string>
+    <string name="color">颜色</string>
+    <string name="picture">图片</string>
+    <string name="notice">通知</string>
+    <string name="receive_system_notification">接收系统消息</string>
+    <string name="receive_system_notification_summary">开启也没用，这功能压根没做</string>
+
+
 
 
 
