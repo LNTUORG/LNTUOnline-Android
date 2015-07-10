@@ -69,6 +69,11 @@ public class AboutActivity extends BaseActivity {
         ShipUtils.webOnline(this);
     }
 
+    @OnClick(R.id.about_btn_photo)
+    protected void onBtnPhotoClick() {
+        ShipUtils.photoOnline(this);
+    }
+
     @OnClick(R.id.about_btn_grade_in_play)
     protected void onBtnGradeInPlayClick() {
         ShipUtils.appStore(this);
