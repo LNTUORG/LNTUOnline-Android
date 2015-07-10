@@ -16,6 +16,8 @@ v2.0.0, a new version.
 
 - [小米应用商店](http://app.mi.com/detail/81673)
 
+- [魅族Flyme应用中心](http://app.meizu.com/apps/public/detail?package_name=com.lntu.online)
+
 - [360手机助手](http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF)
 
 - [应用宝](http://android.myapp.com/myapp/detail.htm?apkName=com.lntu.online)
