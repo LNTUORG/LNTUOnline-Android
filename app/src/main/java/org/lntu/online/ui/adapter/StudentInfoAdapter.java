@@ -40,244 +40,246 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
     }
 
     public void setStudent(Student student) {
-        typeList.clear();
-        sourceMap.clear();
+        if (student != null) {
+            typeList.clear();
+            sourceMap.clear();
 
-        // 添加顶部边距
-        typeList.add(TYPE_TOP);
-        // 添加基本信息
-        for (int n = 0; n < 34; n++) {
-            String[] kv = new String[2];
-            switch(n) {
-                case 0:
-                    kv[0] = "学号";
-                    kv[1] = student.getId();
-                    break;
-                case 1:
-                    kv[0] = "姓名";
-                    kv[1] = student.getName();
-                    break;
-                case 2:
-                    kv[0] = "英文名";
-                    kv[1] = student.getEnglishName();
-                    break;
-                case 3:
-                    kv[0] = "性别";
-                    kv[1] = student.getSex();
-                    break;
-                case 4:
-                    kv[0] = "国籍";
-                    kv[1] = student.getNationality();
-                    break;
-                case 5:
-                    kv[0] = "民族";
-                    kv[1] = student.getNation();
-                    break;
-                case 6:
-                    kv[0] = "政治面貌";
-                    kv[1] = student.getPoliticalAffiliation();
-                    break;
-                case 7:
-                    kv[0] = "证件类型";
-                    kv[1] = student.getIdCardType();
-                    break;
-                case 8:
-                    kv[0] = "证件号码";
-                    kv[1] = student.getIdCardNum();
-                    break;
-                case 9:
-                    kv[0] = "出生日期";
-                    kv[1] = TimeUtils.getTimeFormat(student.getBirthday());
-                    break;
-                case 10:
-                    kv[0] = "籍贯";
-                    kv[1] = student.getBirthplace();
-                    break;
-                case 11:
-                    kv[0] = "学院";
-                    kv[1] = student.getCollege();
-                    break;
-                case 12:
-                    kv[0] = "专业";
-                    kv[1] = student.getMajor();
-                    break;
-                case 13:
-                    kv[0] = "班级";
-                    kv[1] = student.getClassInfo();
-                    break;
-                case 14:
-                    kv[0] = "学生类型";
-                    kv[1] = student.getStudentType();
-                    break;
-                case 15:
-                    kv[0] = "学籍表号";
-                    kv[1] = student.getStudentInfoTableNum();
-                    break;
-                case 16:
-                    kv[0] = "考区";
-                    kv[1] = student.getEntranceExamArea();
-                    break;
-                case 17:
-                    kv[0] = "准考证号码";
-                    kv[1] = student.getEntranceExamNum();
-                    break;
-                case 18:
-                    kv[0] = "外语语种";
-                    kv[1] = student.getForeignLanguage();
-                    break;
-                case 19:
-                    kv[0] = "培养方式";
-                    kv[1] = student.getEducationType();
-                    break;
-                case 20:
-                    kv[0] = "录取证号";
-                    kv[1] = student.getAdmissionNum();
-                    break;
-                case 21:
-                    kv[0] = "录取方式";
-                    kv[1] = student.getAdmissionType();
-                    break;
-                case 22:
-                    kv[0] = "学生来源";
-                    kv[1] = student.getSourceOfStudent();
-                    break;
-                case 23:
-                    kv[0] = "毕业学校";
-                    kv[1] = student.getGraduateSchool();
-                    break;
-                case 24:
-                    kv[0] = "高考总分";
-                    kv[1] = student.getEntranceExamScore();
-                    break;
-                case 25:
-                    kv[0] = "入学日期";
-                    kv[1] = TimeUtils.getTimeFormat(student.getAdmissionTime());
-                    break;
-                case 26:
-                    kv[0] = "毕业日期";
-                    kv[1] = TimeUtils.getTimeFormat(student.getGraduationTime());
-                    break;
-                case 27:
-                    kv[0] = "毕业去向";
-                    kv[1] = student.getWhereaboutsAftergraduation();
-                    break;
-                case 28:
-                    kv[0] = "家庭地址";
-                    kv[1] = student.getHomeAddress();
-                    break;
-                case 29:
-                    kv[0] = "乘车区间";
-                    kv[1] = student.getTravelRange();
-                    break;
-                case 30:
-                    kv[0] = "联系电话";
-                    kv[1] = student.getTel();
-                    break;
-                case 31:
-                    kv[0] = "邮政编码";
-                    kv[1] = student.getZipCode();
-                    break;
-                case 32:
-                    kv[0] = "电子邮件";
-                    kv[1] = student.getEmail();
-                    break;
-                case 33:
-                    kv[0] = "备注";
-                    kv[1] = student.getRemarks();
-                    break;
-            }
-            typeList.add(TYPE_NORMAL);
-            sourceMap.put(typeList.size() - 1, kv);
-            //添加深度线
-            if (n != 34 -1) {
-                typeList.add(TYPE_DEEPLINE);
-            }
-        }
-        // 高考科目
-        if (student.getEntranceExams() != null && student.getEntranceExams().size() > 0) {
-            // 添加标题
-            typeList.add(TYPE_TITLE);
-            Object[] objs  = new Object[3];
-            objs[0] = "高考科目";
-            objs[1] = R.color.green_light;
-            objs[2] = R.drawable.ic_check_circle_white_24dp;
-            sourceMap.put(typeList.size() - 1, objs);
-            // 添加项目
-            for (int n = 0; n < student.getEntranceExams().size(); n++) {
-                typeList.add(TYPE_NORMAL);
+            // 添加顶部边距
+            typeList.add(TYPE_TOP);
+            // 添加基本信息
+            for (int n = 0; n < 34; n++) {
                 String[] kv = new String[2];
-                Student.EntranceExam ee = student.getEntranceExams().get(n);
-                kv[0] = ee.getName();
-                kv[1] = ee.getScore();
+                switch (n) {
+                    case 0:
+                        kv[0] = "学号";
+                        kv[1] = student.getId();
+                        break;
+                    case 1:
+                        kv[0] = "姓名";
+                        kv[1] = student.getName();
+                        break;
+                    case 2:
+                        kv[0] = "英文名";
+                        kv[1] = student.getEnglishName();
+                        break;
+                    case 3:
+                        kv[0] = "性别";
+                        kv[1] = student.getSex();
+                        break;
+                    case 4:
+                        kv[0] = "国籍";
+                        kv[1] = student.getNationality();
+                        break;
+                    case 5:
+                        kv[0] = "民族";
+                        kv[1] = student.getNation();
+                        break;
+                    case 6:
+                        kv[0] = "政治面貌";
+                        kv[1] = student.getPoliticalAffiliation();
+                        break;
+                    case 7:
+                        kv[0] = "证件类型";
+                        kv[1] = student.getIdCardType();
+                        break;
+                    case 8:
+                        kv[0] = "证件号码";
+                        kv[1] = student.getIdCardNum();
+                        break;
+                    case 9:
+                        kv[0] = "出生日期";
+                        kv[1] = TimeUtils.getTimeFormat(student.getBirthday());
+                        break;
+                    case 10:
+                        kv[0] = "籍贯";
+                        kv[1] = student.getBirthplace();
+                        break;
+                    case 11:
+                        kv[0] = "学院";
+                        kv[1] = student.getCollege();
+                        break;
+                    case 12:
+                        kv[0] = "专业";
+                        kv[1] = student.getMajor();
+                        break;
+                    case 13:
+                        kv[0] = "班级";
+                        kv[1] = student.getClassInfo();
+                        break;
+                    case 14:
+                        kv[0] = "学生类型";
+                        kv[1] = student.getStudentType();
+                        break;
+                    case 15:
+                        kv[0] = "学籍表号";
+                        kv[1] = student.getStudentInfoTableNum();
+                        break;
+                    case 16:
+                        kv[0] = "考区";
+                        kv[1] = student.getEntranceExamArea();
+                        break;
+                    case 17:
+                        kv[0] = "准考证号码";
+                        kv[1] = student.getEntranceExamNum();
+                        break;
+                    case 18:
+                        kv[0] = "外语语种";
+                        kv[1] = student.getForeignLanguage();
+                        break;
+                    case 19:
+                        kv[0] = "培养方式";
+                        kv[1] = student.getEducationType();
+                        break;
+                    case 20:
+                        kv[0] = "录取证号";
+                        kv[1] = student.getAdmissionNum();
+                        break;
+                    case 21:
+                        kv[0] = "录取方式";
+                        kv[1] = student.getAdmissionType();
+                        break;
+                    case 22:
+                        kv[0] = "学生来源";
+                        kv[1] = student.getSourceOfStudent();
+                        break;
+                    case 23:
+                        kv[0] = "毕业学校";
+                        kv[1] = student.getGraduateSchool();
+                        break;
+                    case 24:
+                        kv[0] = "高考总分";
+                        kv[1] = student.getEntranceExamScore();
+                        break;
+                    case 25:
+                        kv[0] = "入学日期";
+                        kv[1] = TimeUtils.getTimeFormat(student.getAdmissionTime());
+                        break;
+                    case 26:
+                        kv[0] = "毕业日期";
+                        kv[1] = TimeUtils.getTimeFormat(student.getGraduationTime());
+                        break;
+                    case 27:
+                        kv[0] = "毕业去向";
+                        kv[1] = student.getWhereaboutsAftergraduation();
+                        break;
+                    case 28:
+                        kv[0] = "家庭地址";
+                        kv[1] = student.getHomeAddress();
+                        break;
+                    case 29:
+                        kv[0] = "乘车区间";
+                        kv[1] = student.getTravelRange();
+                        break;
+                    case 30:
+                        kv[0] = "联系电话";
+                        kv[1] = student.getTel();
+                        break;
+                    case 31:
+                        kv[0] = "邮政编码";
+                        kv[1] = student.getZipCode();
+                        break;
+                    case 32:
+                        kv[0] = "电子邮件";
+                        kv[1] = student.getEmail();
+                        break;
+                    case 33:
+                        kv[0] = "备注";
+                        kv[1] = student.getRemarks();
+                        break;
+                }
+                typeList.add(TYPE_NORMAL);
                 sourceMap.put(typeList.size() - 1, kv);
                 //添加深度线
-                if (n != student.getEntranceExams().size() - 1) {
+                if (n != 34 - 1) {
                     typeList.add(TYPE_DEEPLINE);
                 }
             }
-        }
-        // 教育经历
-        if (student.getEducationExperiences() != null && student.getEducationExperiences().size() > 0) {
-            // 添加标题
-            typeList.add(TYPE_TITLE);
-            Object[] objs  = new Object[3];
-            objs[0] = "教育经历";
-            objs[1] = R.color.blue_light;
-            objs[2] = R.drawable.ic_book_white_24dp;
-            sourceMap.put(typeList.size() - 1, objs);
-            // 添加项目
-            for (int n = 0; n < student.getEducationExperiences().size(); n++) {
-                typeList.add(TYPE_EDEX);
-                Student.EducationExperience ee = student.getEducationExperiences().get(n);
-                sourceMap.put(typeList.size() - 1, ee);
-                //添加深度线
-                if (n != student.getEducationExperiences().size() - 1) {
-                    typeList.add(TYPE_DEEPLINE);
+            // 高考科目
+            if (student.getEntranceExams() != null && student.getEntranceExams().size() > 0) {
+                // 添加标题
+                typeList.add(TYPE_TITLE);
+                Object[] objs = new Object[3];
+                objs[0] = "高考科目";
+                objs[1] = R.color.green_light;
+                objs[2] = R.drawable.ic_check_circle_white_24dp;
+                sourceMap.put(typeList.size() - 1, objs);
+                // 添加项目
+                for (int n = 0; n < student.getEntranceExams().size(); n++) {
+                    typeList.add(TYPE_NORMAL);
+                    String[] kv = new String[2];
+                    Student.EntranceExam ee = student.getEntranceExams().get(n);
+                    kv[0] = ee.getName();
+                    kv[1] = ee.getScore();
+                    sourceMap.put(typeList.size() - 1, kv);
+                    //添加深度线
+                    if (n != student.getEntranceExams().size() - 1) {
+                        typeList.add(TYPE_DEEPLINE);
+                    }
                 }
             }
-        }
-        // 家庭信息
-        if (student.getFamilys() != null && student.getFamilys().size() > 0) {
-            // 添加标题
-            typeList.add(TYPE_TITLE);
-            Object[] objs  = new Object[3];
-            objs[0] = "家庭情况";
-            objs[1] = R.color.orange_light;
-            objs[2] = R.drawable.ic_home_white_24dp;
-            sourceMap.put(typeList.size() - 1, objs);
-            // 添加项目
-            for (int n = 0; n < student.getFamilys().size(); n++) {
-                typeList.add(TYPE_FAMILY);
-                Student.Family family = student.getFamilys().get(n);
-                sourceMap.put(typeList.size() - 1, family);
-                //添加深度线
-                if (n != student.getFamilys().size() - 1) {
-                    typeList.add(TYPE_DEEPLINE);
+            // 教育经历
+            if (student.getEducationExperiences() != null && student.getEducationExperiences().size() > 0) {
+                // 添加标题
+                typeList.add(TYPE_TITLE);
+                Object[] objs = new Object[3];
+                objs[0] = "教育经历";
+                objs[1] = R.color.blue_light;
+                objs[2] = R.drawable.ic_book_white_24dp;
+                sourceMap.put(typeList.size() - 1, objs);
+                // 添加项目
+                for (int n = 0; n < student.getEducationExperiences().size(); n++) {
+                    typeList.add(TYPE_EDEX);
+                    Student.EducationExperience ee = student.getEducationExperiences().get(n);
+                    sourceMap.put(typeList.size() - 1, ee);
+                    //添加深度线
+                    if (n != student.getEducationExperiences().size() - 1) {
+                        typeList.add(TYPE_DEEPLINE);
+                    }
                 }
             }
-        }
-        // 警告处分
-        if (student.getDisciplinaryActions() != null && student.getDisciplinaryActions().size() > 0) {
-            // 添加标题
-            typeList.add(TYPE_TITLE);
-            Object[] objs  = new Object[3];
-            objs[0] = "警告处分";
-            objs[1] = R.color.grey_light;
-            objs[2] = R.drawable.ic_report_problem_white_24dp;
-            sourceMap.put(typeList.size() - 1, objs);
-            // 添加项目
-            for (int n = 0; n < student.getDisciplinaryActions().size(); n++) {
-                typeList.add(TYPE_ACTION);
-                Student.DisciplinaryAction action = student.getDisciplinaryActions().get(n);
-                sourceMap.put(typeList.size() - 1, action);
-                //添加深度线
-                if (n != student.getDisciplinaryActions().size() - 1) {
-                    typeList.add(TYPE_DEEPLINE);
+            // 家庭信息
+            if (student.getFamilys() != null && student.getFamilys().size() > 0) {
+                // 添加标题
+                typeList.add(TYPE_TITLE);
+                Object[] objs = new Object[3];
+                objs[0] = "家庭情况";
+                objs[1] = R.color.orange_light;
+                objs[2] = R.drawable.ic_home_white_24dp;
+                sourceMap.put(typeList.size() - 1, objs);
+                // 添加项目
+                for (int n = 0; n < student.getFamilys().size(); n++) {
+                    typeList.add(TYPE_FAMILY);
+                    Student.Family family = student.getFamilys().get(n);
+                    sourceMap.put(typeList.size() - 1, family);
+                    //添加深度线
+                    if (n != student.getFamilys().size() - 1) {
+                        typeList.add(TYPE_DEEPLINE);
+                    }
                 }
             }
+            // 警告处分
+            if (student.getDisciplinaryActions() != null && student.getDisciplinaryActions().size() > 0) {
+                // 添加标题
+                typeList.add(TYPE_TITLE);
+                Object[] objs = new Object[3];
+                objs[0] = "警告处分";
+                objs[1] = R.color.grey_light;
+                objs[2] = R.drawable.ic_report_problem_white_24dp;
+                sourceMap.put(typeList.size() - 1, objs);
+                // 添加项目
+                for (int n = 0; n < student.getDisciplinaryActions().size(); n++) {
+                    typeList.add(TYPE_ACTION);
+                    Student.DisciplinaryAction action = student.getDisciplinaryActions().get(n);
+                    sourceMap.put(typeList.size() - 1, action);
+                    //添加深度线
+                    if (n != student.getDisciplinaryActions().size() - 1) {
+                        typeList.add(TYPE_DEEPLINE);
+                    }
+                }
+            }
+            // 底部
+            typeList.add(TYPE_BOTTOM);
         }
-        // 底部
-        typeList.add(TYPE_BOTTOM);
     }
 
     @Override

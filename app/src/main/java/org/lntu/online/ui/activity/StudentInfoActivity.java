@@ -46,14 +46,14 @@ public class StudentInfoActivity extends BaseActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        student = LoginShared.getStudent(this);
+        //student = LoginShared.getStudent(this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new StudentInfoAdapter(this, student);
         recyclerView.setAdapter(adapter);
 
         loadAvatar(student);
-        getStudentAsyncTask();
+        //getStudentAsyncTask();
     }
 
     @Override
