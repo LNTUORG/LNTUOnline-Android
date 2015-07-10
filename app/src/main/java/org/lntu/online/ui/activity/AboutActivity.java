@@ -2,6 +2,7 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -19,11 +20,14 @@ import butterknife.OnClick;
 
 public class AboutActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @InjectView(R.id.about_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.about_tv_version_name)
-    protected TextView tvVersionName;
+    @InjectView(R.id.about_layout_collapsing_toolbar)
+    protected CollapsingToolbarLayout layoutCollapsingToolbar;
+
+    @InjectView(R.id.about_tv_version)
+    protected TextView tvVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +37,10 @@ public class AboutActivity extends BaseActivity {
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("");
 
-        tvVersionName.setText("当前版本：" + AppUtils.getVersionName(this) + "-build-" + AppUtils.getVersionCode(this));
+        layoutCollapsingToolbar.setTitle(getString(R.string.about));
+
+        tvVersion.setText("当前版本：" + AppUtils.getVersionName(this) + "-build-" + AppUtils.getVersionCode(this));
     }
 
     @Override
