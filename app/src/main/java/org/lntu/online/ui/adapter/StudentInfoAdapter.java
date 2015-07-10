@@ -198,10 +198,9 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
             if (student.getEntranceExams() != null && student.getEntranceExams().size() > 0) {
                 // 添加标题
                 typeList.add(TYPE_TITLE);
-                Object[] objs = new Object[3];
+                Object[] objs = new Object[2];
                 objs[0] = "高考科目";
-                objs[1] = R.color.green_light;
-                objs[2] = R.drawable.ic_check_circle_white_24dp;
+                objs[1] = R.drawable.student_info_ic_exam_theme_18dp;
                 sourceMap.put(typeList.size() - 1, objs);
                 // 添加项目
                 for (int n = 0; n < student.getEntranceExams().size(); n++) {
@@ -221,10 +220,9 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
             if (student.getEducationExperiences() != null && student.getEducationExperiences().size() > 0) {
                 // 添加标题
                 typeList.add(TYPE_TITLE);
-                Object[] objs = new Object[3];
+                Object[] objs = new Object[2];
                 objs[0] = "教育经历";
-                objs[1] = R.color.blue_light;
-                objs[2] = R.drawable.ic_book_white_24dp;
+                objs[1] = R.drawable.student_info_ic_edex_theme_18dp;
                 sourceMap.put(typeList.size() - 1, objs);
                 // 添加项目
                 for (int n = 0; n < student.getEducationExperiences().size(); n++) {
@@ -241,10 +239,9 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
             if (student.getFamilys() != null && student.getFamilys().size() > 0) {
                 // 添加标题
                 typeList.add(TYPE_TITLE);
-                Object[] objs = new Object[3];
+                Object[] objs = new Object[2];
                 objs[0] = "家庭情况";
-                objs[1] = R.color.orange_light;
-                objs[2] = R.drawable.ic_home_white_24dp;
+                objs[1] = R.drawable.student_info_ic_family_theme_18dp;
                 sourceMap.put(typeList.size() - 1, objs);
                 // 添加项目
                 for (int n = 0; n < student.getFamilys().size(); n++) {
@@ -261,10 +258,9 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
             if (student.getDisciplinaryActions() != null && student.getDisciplinaryActions().size() > 0) {
                 // 添加标题
                 typeList.add(TYPE_TITLE);
-                Object[] objs = new Object[3];
+                Object[] objs = new Object[2];
                 objs[0] = "警告处分";
-                objs[1] = R.color.grey_light;
-                objs[2] = R.drawable.ic_report_problem_white_24dp;
+                objs[1] = R.drawable.student_info_ic_action_theme_18dp;
                 sourceMap.put(typeList.size() - 1, objs);
                 // 添加项目
                 for (int n = 0; n < student.getDisciplinaryActions().size(); n++) {
@@ -476,8 +472,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
         public void update(int position) {
             Object[] objs  = (Object[]) sourceMap.get(position);
             tvTitle.setText((String) objs[0]);
-            tvTitle.setBackgroundResource((int) objs[1]);
-            tvTitle.setCompoundDrawablesWithIntrinsicBounds((int) objs[2], 0, 0, 0);
+            tvTitle.setCompoundDrawablesWithIntrinsicBounds((int) objs[1], 0, 0, 0);
         }
 
     }
