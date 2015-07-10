@@ -11,11 +11,6 @@
     <!-- App Theme FitsStatusBar -->
     <style name="AppTheme.FitsStatusBar" />
 
-    <!-- App Theme Logo Page -->
-    <style name="AppTheme.LogoPage" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimaryDark">@android:color/black</item>
-    </style>
-
     <!-- Deep Line -->
     <style name="AppTheme.DeepLine">
         <item name="android:layout_width">match_parent</item>
