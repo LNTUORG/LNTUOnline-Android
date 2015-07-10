@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/logo_bg_0"
+        android:fitsSystemWindows="true"
+        android:src="@drawable/logo_bg_default"
         android:scaleType="centerCrop" />
 
     <ImageView
@@ -27,4 +29,4 @@
         android:textSize="12sp"
         android:gravity="center" />
 
-</FrameLayout>
+</android.support.design.widget.CoordinatorLayout>
