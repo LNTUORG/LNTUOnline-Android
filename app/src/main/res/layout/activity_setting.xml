@@ -30,7 +30,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:text="导航菜单顶部背景"
+                android:text="@string/nav_menu_header_background"
                 android:textColor="@color/color_primary"
                 android:textSize="14sp" />
 
@@ -47,7 +47,7 @@
                     android:paddingBottom="16dp"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:text="纯色" />
+                    android:text="@string/color" />
 
                 <View style="@style/AppTheme.DeepLine" />
 
@@ -58,7 +58,7 @@
                     android:paddingBottom="16dp"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:text="图片" />
+                    android:text="@string/picture" />
 
             </RadioGroup>
 
@@ -68,7 +68,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:text="通知"
+                android:text="@string/notice"
                 android:textColor="@color/color_primary"
                 android:textSize="14sp" />
 
@@ -89,7 +89,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="接收系统消息"
+                        android:text="@string/receive_system_notification"
                         android:textColor="@color/text_color_primary"
                         android:textSize="16sp" />
 
@@ -97,7 +97,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="开启也没用，这功能压根没做"
+                        android:text="@string/receive_system_notification_summary"
                         android:textColor="@color/text_color_secondary"
                         android:textSize="14sp" />
 
