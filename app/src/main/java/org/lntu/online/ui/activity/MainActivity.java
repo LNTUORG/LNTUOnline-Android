@@ -9,18 +9,15 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
 import android.widget.CheckedTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import org.lntu.online.R;
 import com.squareup.picasso.Picasso;
 
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
@@ -28,7 +25,6 @@ import org.lntu.online.model.local.NavMenuHeaderBackgroundType;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 import org.lntu.online.util.UpdateUtils;
 
