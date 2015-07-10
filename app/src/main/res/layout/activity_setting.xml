@@ -35,12 +35,14 @@
                 android:textSize="14sp" />
 
             <RadioGroup
+                android:id="@+id/setting_rg_nav_menu_header_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp">
 
                 <RadioButton
+                    android:id="@+id/setting_rb_nav_menu_header_bg_color"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="16dp"
@@ -52,6 +54,7 @@
                 <View style="@style/AppTheme.DeepLine" />
 
                 <RadioButton
+                    android:id="@+id/setting_rb_nav_menu_header_bg_picture"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="16dp"
@@ -73,7 +76,7 @@
                 android:textSize="14sp" />
 
             <RelativeLayout
-                android:clickable="true"
+                android:id="@+id/setting_btn_enable_notification"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
@@ -82,8 +85,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toStartOf="@+id/setting_switch_phone"
-                    android:layout_toLeftOf="@+id/setting_switch_phone"
+                    android:layout_toStartOf="@+id/setting_switch_enable_notification"
+                    android:layout_toLeftOf="@+id/setting_switch_enable_notification"
                     android:orientation="vertical">
 
                     <TextView
@@ -104,7 +107,7 @@
                 </LinearLayout>
 
                 <com.rey.material.widget.Switch style="@style/Material.Widget.Switch"
-                    android:id="@+id/setting_switch_phone"
+                    android:id="@+id/setting_switch_enable_notification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
