@@ -62,6 +62,7 @@
         <activity
             android:name="org.lntu.online.ui.activity.StudentInfoActivity"
             android:label="@string/student_info"
+            android:theme="@style/AppTheme.FitsStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
