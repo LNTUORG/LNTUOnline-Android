@@ -16,6 +16,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
 public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.ViewHolder> {
 
     private static final int TYPE_NORMAL = 0;
@@ -27,20 +30,16 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
     private static final int TYPE_TOP = 6;
     private static final int TYPE_BOTTOM = 7;
 
-    private Context context;
     private LayoutInflater inflater;
-    private Student student;
     private List<Integer> typeList = new ArrayList<>();
     private Map<Integer, Object> sourceMap = new HashMap<>();
 
     public StudentInfoAdapter(Context context, Student student) {
-        this.context = context;
         inflater = LayoutInflater.from(context);
         setStudent(student);
     }
 
     public void setStudent(Student student) {
-        this.student = student;
         typeList.clear();
         sourceMap.clear();
 
@@ -295,15 +294,15 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         switch (viewType) {
             case TYPE_NORMAL:
-                return new ViewHolder(inflater.inflate(R.layout.activity_student_info_item_normal, parent, false));
+                return new NormalViewHolder(inflater.inflate(R.layout.activity_student_info_item_normal, parent, false));
             case TYPE_EDEX:
-                return new ViewHolder(inflater.inflate(R.layout.activity_student_info_item_edex, parent, false));
+                return new EdexViewHolder(inflater.inflate(R.layout.activity_student_info_item_edex, parent, false));
             case TYPE_FAMILY:
-                return new ViewHolder(inflater.inflate(R.layout.activity_student_info_item_family, parent, false));
+                return new FamilyViewHolder(inflater.inflate(R.layout.activity_student_info_item_family, parent, false));
             case TYPE_ACTION:
-                return new ViewHolder(inflater.inflate(R.layout.activity_student_info_item_action, parent, false));
+                return new ActionViewHolder(inflater.inflate(R.layout.activity_student_info_item_action, parent, false));
             case TYPE_TITLE:
-                return new ViewHolder(inflater.inflate(R.layout.activity_student_info_item_title, parent, false));
+                return new TitleViewHolder(inflater.inflate(R.layout.activity_student_info_item_title, parent, false));
             case TYPE_DEEPLINE:
                 return new ViewHolder(inflater.inflate(R.layout.activity_deep_line, parent, false));
             case TYPE_TOP:
@@ -330,280 +329,155 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     }
 
+    public class NormalViewHolder extends ViewHolder {
 
+        @InjectView(R.id.student_info_item_normal_tv_name)
+        protected TextView tvName;
 
+        @InjectView(R.id.student_info_item_normal_tv_value)
+        protected TextView tvValue;
 
-
-
-
-
-
-/*
-
-
-    public void updateStudentView(Student student) {
-
-        for (int n = 0; n < 34; n++) {
-            View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
-            TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
-            TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_value);
-            switch(n) {
-                case 0:
-                    tvName.setText("学号");
-                    tvValue.setText(student.getId());
-                    break;
-                case 1:
-                    tvName.setText("姓名");
-                    tvValue.setText(student.getName());
-                    break;
-                case 2:
-                    tvName.setText("英文名");
-                    tvValue.setText(student.getEnglishName());
-                    break;
-                case 3:
-                    tvName.setText("性别");
-                    tvValue.setText(student.getSex());
-                    break;
-                case 4:
-                    tvName.setText("国籍");
-                    tvValue.setText(student.getNationality());
-                    break;
-                case 5:
-                    tvName.setText("民族");
-                    tvValue.setText(student.getNation());
-                    break;
-                case 6:
-                    tvName.setText("政治面貌");
-                    tvValue.setText(student.getPoliticalAffiliation());
-                    break;
-                case 7:
-                    tvName.setText("证件类型");
-                    tvValue.setText(student.getIdCardType());
-                    break;
-                case 8:
-                    tvName.setText("证件号码");
-                    tvValue.setText(student.getIdCardNum());
-                    break;
-                case 9:
-                    tvName.setText("出生日期");
-                    tvValue.setText(TimeUtils.getTimeFormat(student.getBirthday()));
-                    break;
-                case 10:
-                    tvName.setText("籍贯");
-                    tvValue.setText(student.getBirthplace());
-                    break;
-                case 11:
-                    tvName.setText("学院");
-                    tvValue.setText(student.getCollege());
-                    break;
-                case 12:
-                    tvName.setText("专业");
-                    tvValue.setText(student.getMajor());
-                    break;
-                case 13:
-                    tvName.setText("班级");
-                    tvValue.setText(student.getClassInfo());
-                    break;
-                case 14:
-                    tvName.setText("学生类型");
-                    tvValue.setText(student.getStudentType());
-                    break;
-                case 15:
-                    tvName.setText("学籍表号");
-                    tvValue.setText(student.getStudentInfoTableNum());
-                    break;
-                case 16:
-                    tvName.setText("考区");
-                    tvValue.setText(student.getEntranceExamArea());
-                    break;
-                case 17:
-                    tvName.setText("准考证号码");
-                    tvValue.setText(student.getEntranceExamNum());
-                    break;
-                case 18:
-                    tvName.setText("外语语种");
-                    tvValue.setText(student.getForeignLanguage());
-                    break;
-                case 19:
-                    tvName.setText("培养方式");
-                    tvValue.setText(student.getEducationType());
-                    break;
-                case 20:
-                    tvName.setText("录取证号");
-                    tvValue.setText(student.getAdmissionNum());
-                    break;
-                case 21:
-                    tvName.setText("录取方式");
-                    tvValue.setText(student.getAdmissionType());
-                    break;
-                case 22:
-                    tvName.setText("学生来源");
-                    tvValue.setText(student.getSourceOfStudent());
-                    break;
-                case 23:
-                    tvName.setText("毕业学校");
-                    tvValue.setText(student.getGraduateSchool());
-                    break;
-                case 24:
-                    tvName.setText("高考总分");
-                    tvValue.setText(student.getEntranceExamScore());
-                    break;
-                case 25:
-                    tvName.setText("入学日期");
-                    tvValue.setText(TimeUtils.getTimeFormat(student.getAdmissionTime()));
-                    break;
-                case 26:
-                    tvName.setText("毕业日期");
-                    tvValue.setText(TimeUtils.getTimeFormat(student.getGraduationTime()));
-                    break;
-                case 27:
-                    tvName.setText("毕业去向");
-                    tvValue.setText(student.getWhereaboutsAftergraduation());
-                    break;
-                case 28:
-                    tvName.setText("家庭地址");
-                    tvValue.setText(student.getHomeAddress());
-                    break;
-                case 29:
-                    tvName.setText("乘车区间");
-                    tvValue.setText(student.getTravelRange());
-                    break;
-                case 30:
-                    tvName.setText("联系电话");
-                    tvValue.setText(student.getTel());
-                    break;
-                case 31:
-                    tvName.setText("邮政编码");
-                    tvValue.setText(student.getZipCode());
-                    break;
-                case 32:
-                    tvName.setText("电子邮件");
-                    tvValue.setText(student.getEmail());
-                    break;
-                case 33:
-                    tvName.setText("备注");
-                    tvValue.setText(student.getRemarks());
-                    break;
-            }
-            layoutContent.addView(itemView);
-            View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-            layoutContent.addView(deepLine);
+        public NormalViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.inject(this, itemView);
         }
-        // 高考科目
-        if (student.getEntranceExams() != null && student.getEntranceExams().size() > 0) {
 
-            TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
-            tvTitle.setText("高考科目");
-            tvTitle.setBackgroundResource(R.color.green_light);
-            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_check_circle_white_24dp, 0, 0, 0);
-            layoutContent.addView(tvTitle);
-
-            for (Student.EntranceExam ee : student.getEntranceExams()) {
-                View itemView = inflater.inflate(R.layout.activity_student_info_item_normal, layoutContent, false);
-                TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_name);
-                TextView tvValue = (TextView) itemView.findViewById(R.id.student_info_item_normal_tv_value);
-                tvName.setText(ee.getName());
-                tvValue.setText(ee.getScore());
-                // 添加到布局
-                layoutContent.addView(itemView);
-                // 添加分割线
-                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-                layoutContent.addView(deepLine);
-            }
-
+        public void update(int position) {
+            String[] kv = (String[]) sourceMap.get(position);
+            tvName.setText(kv[0]);
+            tvValue.setText(kv[1]);
         }
-        // 教育经历
-        if (student.getEducationExperiences() != null && student.getEducationExperiences().size() > 0) {
 
-            TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
-            tvTitle.setText("教育经历");
-            tvTitle.setBackgroundResource(R.color.blue_light);
-            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_book_white_24dp, 0, 0, 0);
-            layoutContent.addView(tvTitle);
-
-            for (Student.EducationExperience ee : student.getEducationExperiences()) {
-                View itemView = inflater.inflate(R.layout.activity_student_info_item_edex, layoutContent, false);
-                TextView tvDateOfStart = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_start);
-                TextView tvDateOfEnd = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_end);
-                TextView tvSchoolName = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_school_name);
-                TextView tvWitness = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_witness);
-                tvDateOfStart.setText(TimeUtils.getTimeFormat(ee.getStartTime()));
-                tvDateOfEnd.setText(TimeUtils.getTimeFormat(ee.getEndTime()));
-                tvSchoolName.setText(ee.getSchoolInfo());
-                tvWitness.setText(ee.getWitness());
-                // 添加到布局
-                layoutContent.addView(itemView);
-                // 添加分割线
-                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-                layoutContent.addView(deepLine);
-            }
-
-        }
-        // 家庭信息
-        if (student.getFamilys() != null && student.getFamilys().size() > 0) {
-
-            TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
-            tvTitle.setText("家庭情况");
-            tvTitle.setBackgroundResource(R.color.orange_light);
-            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_home_white_24dp, 0, 0, 0);
-            layoutContent.addView(tvTitle);
-
-            for (Student.Family family : student.getFamilys()) {
-                View itemView = inflater.inflate(R.layout.activity_student_info_item_family, layoutContent, false);
-                TextView tvName = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_name);
-                TextView tvRelationship = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_relationship);
-                TextView tvPolAff = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_political_affiliation);
-                TextView tvJob = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_job);
-                TextView tvPost = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_post);
-                TextView tvWorkLocation = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_work_location);
-                TextView tvTel = (TextView) itemView.findViewById(R.id.student_info_item_family_tv_tel);
-                tvName.setText(family.getName());
-                tvRelationship.setText("（" + family.getRelationship() + "）");
-                tvPolAff.setText(family.getPoliticalAffiliation());
-                tvJob.setText(family.getJob());
-                tvPost.setText(family.getPost());
-                tvWorkLocation.setText(family.getWorkLocation());
-                tvTel.setText(family.getTel());
-                layoutContent.addView(itemView);
-                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-                layoutContent.addView(deepLine);
-            }
-
-        }
-        // 警告处分
-        if (student.getDisciplinaryActions() != null && student.getDisciplinaryActions().size() > 0) {
-
-            TextView tvTitle = (TextView) inflater.inflate(R.layout.activity_student_info_item_title, layoutContent, false);
-            tvTitle.setText("警告处分");
-            tvTitle.setBackgroundResource(R.color.grey_light);
-            tvTitle.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_report_problem_white_24dp, 0, 0, 0);
-            layoutContent.addView(tvTitle);
-
-            for (Student.DisciplinaryAction action : student.getDisciplinaryActions()) {
-                View itemView = inflater.inflate(R.layout.activity_student_info_item_action, layoutContent, false);
-                TextView tvLevel = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_level);
-                TextView tvCreateTime = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_create_time);
-                TextView tvCreateReason = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_create_reason);
-                TextView tvCancelTime = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_cancel_time);
-                TextView tvCancelReason = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_cancel_reason);
-                TextView tvState = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_state);
-                TextView tvRemarks = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_remarks);
-                tvLevel.setText(action.getLevel());
-                tvCreateTime.setText(TimeUtils.getTimeFormat(action.getCreateTime()));
-                tvCreateReason.setText(action.getCreateReason());
-                tvCancelTime.setText(TimeUtils.getTimeFormat(action.getCancelTime()));
-                tvCancelReason.setText(action.getCancelReason());
-                tvState.setText(action.getState());
-                tvRemarks.setText(action.getRemarks());
-                layoutContent.addView(itemView);
-                View deepLine = inflater.inflate(R.layout.activity_deep_line, layoutContent, false);
-                layoutContent.addView(deepLine);
-            }
-
-        }
     }
 
-*/
+    public class EdexViewHolder extends ViewHolder {
 
+        @InjectView(R.id.student_info_item_edex_tv_date_of_start)
+        protected TextView tvDateOfStart;
+
+        @InjectView(R.id.student_info_item_edex_tv_date_of_end)
+        protected TextView tvDateOfEnd;
+
+        @InjectView(R.id.student_info_item_edex_tv_school_name)
+        protected TextView tvSchoolName;
+
+        @InjectView(R.id.student_info_item_edex_tv_witness)
+        protected TextView tvWitness;
+
+        public EdexViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            Student.EducationExperience ee = (Student.EducationExperience) sourceMap.get(position);
+            tvDateOfStart.setText(TimeUtils.getTimeFormat(ee.getStartTime()));
+            tvDateOfEnd.setText(TimeUtils.getTimeFormat(ee.getEndTime()));
+            tvSchoolName.setText(ee.getSchoolInfo());
+            tvWitness.setText(ee.getWitness());
+        }
+
+    }
+
+    public class FamilyViewHolder extends ViewHolder {
+
+        @InjectView(R.id.student_info_item_family_tv_name)
+        protected TextView tvName;
+
+        @InjectView(R.id.student_info_item_family_tv_relationship)
+        protected TextView tvRelationship;
+
+        @InjectView(R.id.student_info_item_family_tv_political_affiliation)
+        protected TextView tvPolAff;
+
+        @InjectView(R.id.student_info_item_family_tv_job)
+        protected TextView tvJob;
+
+        @InjectView(R.id.student_info_item_family_tv_post)
+        protected TextView tvPost;
+
+        @InjectView(R.id.student_info_item_family_tv_work_location)
+        protected TextView tvWorkLocation;
+
+        @InjectView(R.id.student_info_item_family_tv_tel)
+        protected TextView tvTel;
+
+        public FamilyViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            Student.Family family = (Student.Family) sourceMap.get(position);
+            tvName.setText(family.getName());
+            tvRelationship.setText("（" + family.getRelationship() + "）");
+            tvPolAff.setText(family.getPoliticalAffiliation());
+            tvJob.setText(family.getJob());
+            tvPost.setText(family.getPost());
+            tvWorkLocation.setText(family.getWorkLocation());
+            tvTel.setText(family.getTel());
+        }
+
+    }
+
+    public class ActionViewHolder extends ViewHolder {
+
+        @InjectView(R.id.student_info_item_action_tv_level)
+        protected TextView tvLevel;
+
+        @InjectView(R.id.student_info_item_action_tv_create_time)
+        protected TextView tvCreateTime;
+
+        @InjectView(R.id.student_info_item_action_tv_create_reason)
+        protected TextView tvCreateReason;
+
+        @InjectView(R.id.student_info_item_action_tv_cancel_time)
+        protected TextView tvCancelTime;
+
+        @InjectView(R.id.student_info_item_action_tv_cancel_reason)
+        protected TextView tvCancelReason;
+
+        @InjectView(R.id.student_info_item_action_tv_state)
+        protected TextView tvState;
+
+        @InjectView(R.id.student_info_item_action_tv_remarks)
+        protected TextView tvRemarks;
+
+        public ActionViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            Student.DisciplinaryAction action = (Student.DisciplinaryAction) sourceMap.get(position);
+            tvLevel.setText(action.getLevel());
+            tvCreateTime.setText(TimeUtils.getTimeFormat(action.getCreateTime()));
+            tvCreateReason.setText(action.getCreateReason());
+            tvCancelTime.setText(TimeUtils.getTimeFormat(action.getCancelTime()));
+            tvCancelReason.setText(action.getCancelReason());
+            tvState.setText(action.getState());
+            tvRemarks.setText(action.getRemarks());
+        }
+
+    }
+
+    public class TitleViewHolder extends ViewHolder {
+
+        @InjectView(R.id.student_info_item_title_tv_title)
+        protected TextView tvTitle;
+
+        public TitleViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            Object[] objs  = (Object[]) sourceMap.get(position);
+            tvTitle.setText((String) objs[0]);
+            tvTitle.setBackgroundResource((int) objs[1]);
+            tvTitle.setCompoundDrawablesWithIntrinsicBounds((int) objs[2], 0, 0, 0);
+        }
+
+    }
 
 }
