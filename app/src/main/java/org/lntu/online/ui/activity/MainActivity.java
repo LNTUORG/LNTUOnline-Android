@@ -24,6 +24,7 @@ import com.squareup.picasso.Picasso;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
+import org.lntu.online.model.local.NavMenuHeaderBackgroundType;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.BaseActivity;
@@ -73,6 +74,9 @@ public class MainActivity extends BaseActivity {
 
     @InjectView(R.id.main_left_tv_class_info)
     protected TextView tvClassInfo;
+
+    @InjectView(R.id.main_left_img_nav_header_photo)
+    protected ImageView imgNavHeaderPhoto;
 
     // 主要导航项
     @InjectViews({
@@ -162,6 +166,7 @@ public class MainActivity extends BaseActivity {
                 updateStudentView(student);
             }
         }
+        imgNavHeaderPhoto.setVisibility(LoginShared.getNavMenuHeaderBackgroundType(this) == NavMenuHeaderBackgroundType.picture ? View.VISIBLE : View.GONE);
         super.onResume();
     }
 
