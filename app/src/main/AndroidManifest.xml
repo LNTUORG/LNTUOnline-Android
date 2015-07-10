@@ -135,7 +135,8 @@
 
         <activity
             android:name="org.lntu.online.ui.activity.AboutActivity"
-            android:label="@string/about_app"
+            android:label="@string/about"
+            android:theme="@style/AppTheme.FitsStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 

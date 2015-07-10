@@ -44,6 +44,10 @@ public final class ShipUtils {
         openUrlByBrowser(context, "http://60.18.131.131:11180/academic/index.html");
     }
 
+    public static void photoOnline(Context context) {
+        openUrlByBrowser(context, "http://tieba.baidu.com/p/1424591498");
+    }
+
     public static void homepage(Context context) {
         openUrlByBrowser(context, context.getString(R.string.official_homepage_content));
     }

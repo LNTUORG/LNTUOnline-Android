@@ -62,7 +62,7 @@ v2.0.0, a new version.
 
 ## Thanks ##
 
-- 《印象·工大》葫芦岛校区掠影作品集
+- [《印象·工大》葫芦岛校区掠影作品集](http://tieba.baidu.com/p/1424591498)
 
 ## Author ##
 

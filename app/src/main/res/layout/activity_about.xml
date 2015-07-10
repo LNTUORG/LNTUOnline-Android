@@ -1,192 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
-    <ScrollView
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="256dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true">
 
-        <LinearLayout
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/about_layout_collapsing_toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="@color/color_primary"
+            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="64dp">
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:padding="16dp"
-                android:src="@drawable/logo"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/app_name"
-                android:background="@color/color_primary"
-                android:elevation="4dp" />
+                android:layout_height="match_parent"
+                android:src="@drawable/about_header_bg"
+                android:scaleType="centerCrop"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax" />
 
-            <LinearLayout
-                android:id="@+id/about_btn_version"
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/about_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="vertical"
-                android:background="@drawable/rect_btn_background">
+                android:layout_height="?attr/actionBarSize"
+                android:background="#01000000"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/version_check_update"
-                    android:textColor="@color/text_color_primary"
-                    android:textSize="16sp" />
+        </android.support.design.widget.CollapsingToolbarLayout>
 
-                <TextView
-                    android:id="@+id/about_tv_version_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp"
-                    tools:text="当前版本：0.0.0-build-0" />
+    </android.support.design.widget.AppBarLayout>
 
-            </LinearLayout>
-
-            <View style="@style/AppTheme.DeepLine" />
-
-            <LinearLayout
-                android:id="@+id/about_btn_homepage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="vertical"
-                android:background="@drawable/rect_btn_background">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/official_homepage"
-                    android:textColor="@color/text_color_primary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/official_homepage_content"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <View style="@style/AppTheme.DeepLine" />
-
-            <LinearLayout
-                android:id="@+id/about_btn_online"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="vertical"
-                android:background="@drawable/rect_btn_background">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/online_by_browser"
-                    android:textColor="@color/text_color_primary"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/online_homepage_content"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <View style="@style/AppTheme.ShadowGap" />
-
-            <TextView
-                android:id="@+id/about_btn_grade_in_play"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/grade_in_play"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/rect_btn_background" />
-
-            <View style="@style/AppTheme.DeepLine" />
-
-            <TextView
-                android:id="@+id/about_btn_share_to_friends"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/share_to_friends"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/rect_btn_background" />
-
-            <View style="@style/AppTheme.DeepLine" />
-
-            <TextView
-                android:id="@+id/about_btn_feedback"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/feedback"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/rect_btn_background" />
-
-            <View style="@style/AppTheme.ShadowGap" />
-
-            <TextView
-                android:id="@+id/about_btn_term_of_service"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/term_of_service"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/rect_btn_background" />
-
-            <View style="@style/AppTheme.DeepLine" />
-
-            <TextView
-                android:id="@+id/about_btn_open_source_license"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/open_source_license"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/rect_btn_background" />
-
-            <View style="@style/AppTheme.ShadowGap" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:padding="8dp"
-                android:text="@string/about_copyright"
-                android:textColor="@color/text_color_secondary"
-                android:textSize="14sp"
-                android:gravity="center" />
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#01ffffff"
-        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-</FrameLayout>
+        <include layout="@layout/activity_about_content" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

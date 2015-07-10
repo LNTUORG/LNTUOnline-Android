@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View style="@style/AppTheme.ShadowGap" />
+
+    <LinearLayout
+        android:id="@+id/about_btn_version"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/rect_btn_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/version_check_update"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/about_tv_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            tools:text="当前版本：0.0.0-build-0" />
+
+    </LinearLayout>
+
+    <View style="@style/AppTheme.DeepLine" />
+
+    <LinearLayout
+        android:id="@+id/about_btn_homepage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/rect_btn_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/official_homepage"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/official_homepage_content"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <View style="@style/AppTheme.DeepLine" />
+
+    <LinearLayout
+        android:id="@+id/about_btn_online"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/rect_btn_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/online_by_browser"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/online_homepage_content"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <View style="@style/AppTheme.DeepLine" />
+
+    <LinearLayout
+        android:id="@+id/about_btn_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/rect_btn_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/source_of_app_photo"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/image_of_lntu"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <View style="@style/AppTheme.ShadowGap" />
+
+    <TextView
+        android:id="@+id/about_btn_grade_in_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/grade_in_play"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16sp"
+        android:background="@drawable/rect_btn_background" />
+
+    <View style="@style/AppTheme.DeepLine" />
+
+    <TextView
+        android:id="@+id/about_btn_share_to_friends"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/share_to_friends"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16sp"
+        android:background="@drawable/rect_btn_background" />
+
+    <View style="@style/AppTheme.DeepLine" />
+
+    <TextView
+        android:id="@+id/about_btn_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/feedback"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16sp"
+        android:background="@drawable/rect_btn_background" />
+
+    <View style="@style/AppTheme.ShadowGap" />
+
+    <TextView
+        android:id="@+id/about_btn_term_of_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/term_of_service"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16sp"
+        android:background="@drawable/rect_btn_background" />
+
+    <View style="@style/AppTheme.DeepLine" />
+
+    <TextView
+        android:id="@+id/about_btn_open_source_license"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/open_source_license"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16sp"
+        android:background="@drawable/rect_btn_background" />
+
+    <View style="@style/AppTheme.ShadowGap" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:padding="8dp"
+        android:text="@string/about_copyright"
+        android:textColor="@color/text_color_secondary"
+        android:textSize="14sp"
+        android:gravity="center" />
+
+</LinearLayout>
