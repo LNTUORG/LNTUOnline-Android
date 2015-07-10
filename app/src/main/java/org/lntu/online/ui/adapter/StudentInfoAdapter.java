@@ -308,7 +308,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
             case TYPE_TOP:
                 return new ViewHolder(inflater.inflate(R.layout.activity_student_info_item_top, parent, false));
             case TYPE_BOTTOM:
-                return new ViewHolder(inflater.inflate(R.layout.activity_student_info_item_bottom, parent, false));
+                return new ViewHolder(inflater.inflate(R.layout.activity_shadow_gap, parent, false));
             default:
                 throw new RuntimeException("Unknow view type.");
         }
