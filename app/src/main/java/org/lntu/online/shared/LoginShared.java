@@ -98,5 +98,4 @@ public final class LoginShared {
         SharedWrapper.with(context, TAG).setBoolean(SETTING_ENABLE_NOTIFICATION, enable);
     }
 
-
 }
