@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Period;

@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.WeekMode;

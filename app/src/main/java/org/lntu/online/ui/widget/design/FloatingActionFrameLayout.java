@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.widget.FrameLayout;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 @CoordinatorLayout.DefaultBehavior(FloatingActionFrameLayout.Behavior.class)
 public class FloatingActionFrameLayout extends FrameLayout {

@@ -7,7 +7,7 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
 

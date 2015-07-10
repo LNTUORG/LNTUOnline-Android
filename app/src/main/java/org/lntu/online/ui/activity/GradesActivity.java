@@ -14,7 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
 
 import org.lntu.online.model.api.ApiClient;

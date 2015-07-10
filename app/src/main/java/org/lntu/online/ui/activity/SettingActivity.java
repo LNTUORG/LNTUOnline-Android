@@ -8,7 +8,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import com.rey.material.widget.Switch;
 
 import org.lntu.online.model.local.NavMenuHeaderBackgroundType;

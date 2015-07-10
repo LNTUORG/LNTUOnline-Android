@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.joda.time.DateTime;
 import org.lntu.online.model.gson.GsonWrapper;

@@ -3,7 +3,7 @@ package org.lntu.online.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
 
 import butterknife.ButterKnife;

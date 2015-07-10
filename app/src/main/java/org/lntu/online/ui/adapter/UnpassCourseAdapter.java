@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.lntu.online.model.entity.UnpassCourse;
 

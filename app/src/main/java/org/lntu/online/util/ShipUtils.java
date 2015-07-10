@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 public final class ShipUtils {
 

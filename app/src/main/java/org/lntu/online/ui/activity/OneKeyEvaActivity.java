@@ -14,7 +14,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.lntu.online.R;
+import org.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
 
 import org.lntu.online.model.api.ApiClient;

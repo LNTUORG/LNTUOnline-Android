@@ -12,7 +12,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import com.squareup.picasso.Picasso;
 
 import org.lntu.online.model.api.ApiClient;
