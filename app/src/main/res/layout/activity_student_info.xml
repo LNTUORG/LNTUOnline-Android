@@ -61,7 +61,7 @@
             android:layout_marginBottom="48dp"
             android:src="@drawable/image_default"
             android:scaleType="fitCenter"
-            app:siBorderWidth="2dp"
+            app:siBorderWidth="3dp"
             app:siBorderColor="@color/orange_light" />
 
     </org.lntu.online.ui.widget.design.FloatingActionFrameLayout>
