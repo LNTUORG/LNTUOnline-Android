@@ -22,8 +22,7 @@ public class LogoActivity extends BaseActivity implements Runnable {
             R.layout.activity_logo_5,
             R.layout.activity_logo_6,
             R.layout.activity_logo_7,
-            R.layout.activity_logo_8,
-            R.layout.activity_logo_9
+            R.layout.activity_logo_8
     };
 
     private static final Handler handler = new Handler();
