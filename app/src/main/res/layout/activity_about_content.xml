@@ -60,6 +60,34 @@
 
     </LinearLayout>
 
+
+    <View style="@style/AppTheme.DeepLine" />
+
+    <LinearLayout
+        android:id="@+id/about_btn_open_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:background="@drawable/rect_btn_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open_source_homepage"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/open_source_homepage_content"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
     <View style="@style/AppTheme.DeepLine" />
 
     <LinearLayout

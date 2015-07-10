@@ -41,7 +41,7 @@ public final class ShipUtils {
     }
 
     public static void webOnline(Context context) {
-        openUrlByBrowser(context, "http://60.18.131.131:11180/academic/index.html");
+        openUrlByBrowser(context, context.getString(R.string.online_homepage_content));
     }
 
     public static void photoOnline(Context context) {
@@ -50,6 +50,10 @@ public final class ShipUtils {
 
     public static void homepage(Context context) {
         openUrlByBrowser(context, context.getString(R.string.official_homepage_content));
+    }
+
+    public static void openSource(Context context) {
+        openUrlByBrowser(context, context.getString(R.string.open_source_homepage_content));
     }
 
     public static void noticeOnline(Context context) {

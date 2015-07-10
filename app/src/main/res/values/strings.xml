@@ -101,7 +101,9 @@
     <string name="credit">学分</string>
 
     <string name="notice_by_browser">浏览器访问教务公告</string>
-    <string name="online_by_browser">访问教务在线主页</string>
+    <string name="open_source_homepage">项目开源主页</string>
+    <string name="open_source_homepage_content">https://github.com/LNTUORG/LntuOnline-Android</string>
+    <string name="online_by_browser">教务在线主页</string>
     <string name="online_homepage_content">http://60.18.131.131</string>
     <string name="source_of_app_photo">插图来源</string>
     <string name="image_of_lntu">《印象·工大》葫芦岛校区掠影作品集</string>

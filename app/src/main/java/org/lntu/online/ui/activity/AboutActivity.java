@@ -64,6 +64,11 @@ public class AboutActivity extends BaseActivity {
         ShipUtils.homepage(this);
     }
 
+    @OnClick(R.id.about_btn_open_source)
+    protected void onBtnOpenSourceClick() {
+        ShipUtils.openSource(this);
+    }
+
     @OnClick(R.id.about_btn_online)
     protected void onBtnOnlineClick() {
         ShipUtils.webOnline(this);
