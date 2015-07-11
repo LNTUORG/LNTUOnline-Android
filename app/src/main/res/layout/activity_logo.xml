@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:src="@drawable/logo_bg_default"
+        android:src="@drawable/logo_bg"
         android:scaleType="centerCrop" />
 
     <ImageView
