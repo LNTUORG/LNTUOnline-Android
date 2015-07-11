@@ -30,7 +30,7 @@
         <activity
             android:name="org.lntu.online.ui.activity.AuthErrorActivity"
             android:label="@string/auth_error"
-            android:theme="@style/AppTheme.AuthErrorPage"
+            android:theme="@style/AppTheme.TranslucentPage"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
