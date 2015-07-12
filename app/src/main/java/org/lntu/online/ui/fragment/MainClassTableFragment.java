@@ -1,7 +1,6 @@
 package org.lntu.online.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,8 +23,8 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.activity.MainActivity;
-import org.lntu.online.ui.adapter.ClassTableListAdapter;
-import org.lntu.online.ui.adapter.ClassTablePageAdapter;
+import org.lntu.online.ui.adapter.MainClassTableListAdapter;
+import org.lntu.online.ui.adapter.MainClassTablePageAdapter;
 import org.lntu.online.ui.dialog.ClassTableTimeDialogHolder;
 
 import java.util.ArrayList;
@@ -65,7 +64,7 @@ public class MainClassTableFragment extends MainActivity.BaseFragment implements
     @InjectView(R.id.class_table_page_view_pager)
     protected ViewPager viewPager;
 
-    private ClassTablePageAdapter pageAdapter;
+    private MainClassTablePageAdapter pageAdapter;
 
     private ClassTableTimeDialogHolder dialogHolder;
 
@@ -73,7 +72,7 @@ public class MainClassTableFragment extends MainActivity.BaseFragment implements
     @InjectView(R.id.class_table_list_recycler_view)
     protected RecyclerView recyclerView;
 
-    private ClassTableListAdapter listAdapter;
+    private MainClassTableListAdapter listAdapter;
 
     // Other
     private final LocalDate today = new LocalDate();
@@ -118,7 +117,7 @@ public class MainClassTableFragment extends MainActivity.BaseFragment implements
 
         // List
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        listAdapter = new ClassTableListAdapter(getActivity());
+        listAdapter = new MainClassTableListAdapter(getActivity());
         recyclerView.setAdapter(listAdapter);
 
         // 显示Page隐藏List
@@ -272,7 +271,7 @@ public class MainClassTableFragment extends MainActivity.BaseFragment implements
      */
     public void onDataSetInit(int year, String term, LocalDate today) {
         // Page
-        pageAdapter = new ClassTablePageAdapter(getActivity(), year, term, today);
+        pageAdapter = new MainClassTablePageAdapter(getActivity(), year, term, today);
         viewPager.setAdapter(pageAdapter);
         String currentTerm = (today.getMonthOfYear() >= 2 && today.getMonthOfYear() < 8) ? "春" : "秋";
         if (today.getYear() == year && currentTerm.equals(term)) {

@@ -15,13 +15,13 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class ExamPlanAdapter extends BaseAdapter {
+public class MainExamPlanAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private List<ExamPlan> planList;
     private Date nowDate;
 
-    public ExamPlanAdapter(LayoutInflater inflater) {
+    public MainExamPlanAdapter(LayoutInflater inflater) {
         this.inflater = inflater;
     }
 

@@ -18,7 +18,7 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ExamPlan;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.activity.MainActivity;
-import org.lntu.online.ui.adapter.ExamPlanAdapter;
+import org.lntu.online.ui.adapter.MainExamPlanAdapter;
 import org.lntu.online.util.ToastUtils;
 
 import java.util.Collections;
@@ -52,11 +52,11 @@ public class MainExamPlanFragment extends MainActivity.BaseFragment implements S
     @InjectView(R.id.main_exam_plan_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    private ExamPlanAdapter adapter;
+    private MainExamPlanAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        adapter = new ExamPlanAdapter(inflater);
+        adapter = new MainExamPlanAdapter(inflater);
         return inflater.inflate(R.layout.activity_main_exam_plan, container, false);
     }
 

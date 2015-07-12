@@ -34,7 +34,7 @@ import butterknife.InjectView;
 import butterknife.InjectViews;
 import butterknife.OnClick;
 
-public class ClassTablePageAdapter extends PagerAdapter {
+public class MainClassTablePageAdapter extends PagerAdapter {
 
     private Context context;
     private LayoutInflater inflater;
@@ -50,7 +50,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
     private Map<String, List<ClassTable.CourseWrapper>> classTableMap;
     private Map<String, String> openStateMap = new HashMap<>();
 
-    public ClassTablePageAdapter(Context context, int year, String term, LocalDate today) {
+    public MainClassTablePageAdapter(Context context, int year, String term, LocalDate today) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         if ("春".equals(term)) {
@@ -144,7 +144,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         View convertView;
         if (idelPool.size() <= 0) { // 没有空闲view
-            convertView = inflater.inflate(R.layout.activity_class_table_page_item, container, false);
+            convertView = inflater.inflate(R.layout.activity_main_class_table_page_item, container, false);
             convertView.setTag(new ViewHolder(convertView));
         } else {
             convertView = idelPool.get(0);
@@ -180,51 +180,51 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class ViewHolder {
 
-        @InjectView(R.id.class_table_page_item_scroll_view)
+        @InjectView(R.id.main_class_table_page_item_scroll_view)
         protected ScrollView scrollView;
 
         @InjectViews({
-                R.id.class_table_page_item_tv_stage_1,
-                R.id.class_table_page_item_tv_stage_2,
-                R.id.class_table_page_item_tv_stage_3,
-                R.id.class_table_page_item_tv_stage_4,
-                R.id.class_table_page_item_tv_stage_5
+                R.id.main_class_table_page_item_tv_stage_1,
+                R.id.main_class_table_page_item_tv_stage_2,
+                R.id.main_class_table_page_item_tv_stage_3,
+                R.id.main_class_table_page_item_tv_stage_4,
+                R.id.main_class_table_page_item_tv_stage_5
         })
         protected List<TextView> tvStageList;
 
         @InjectViews({
-                R.id.class_table_page_item_layout_stage_1_show,
-                R.id.class_table_page_item_layout_stage_2_show,
-                R.id.class_table_page_item_layout_stage_3_show,
-                R.id.class_table_page_item_layout_stage_4_show,
-                R.id.class_table_page_item_layout_stage_5_show
+                R.id.main_class_table_page_item_layout_stage_1_show,
+                R.id.main_class_table_page_item_layout_stage_2_show,
+                R.id.main_class_table_page_item_layout_stage_3_show,
+                R.id.main_class_table_page_item_layout_stage_4_show,
+                R.id.main_class_table_page_item_layout_stage_5_show
         })
         protected List<ViewGroup> layoutStageShowList;
 
         @InjectViews({
-                R.id.class_table_page_item_layout_stage_1_hide,
-                R.id.class_table_page_item_layout_stage_2_hide,
-                R.id.class_table_page_item_layout_stage_3_hide,
-                R.id.class_table_page_item_layout_stage_4_hide,
-                R.id.class_table_page_item_layout_stage_5_hide
+                R.id.main_class_table_page_item_layout_stage_1_hide,
+                R.id.main_class_table_page_item_layout_stage_2_hide,
+                R.id.main_class_table_page_item_layout_stage_3_hide,
+                R.id.main_class_table_page_item_layout_stage_4_hide,
+                R.id.main_class_table_page_item_layout_stage_5_hide
         })
         protected List<ViewGroup> layoutStageHideList;
 
         @InjectViews({
-                R.id.class_table_page_item_icon_stage_1,
-                R.id.class_table_page_item_icon_stage_2,
-                R.id.class_table_page_item_icon_stage_3,
-                R.id.class_table_page_item_icon_stage_4,
-                R.id.class_table_page_item_icon_stage_5
+                R.id.main_class_table_page_item_icon_stage_1,
+                R.id.main_class_table_page_item_icon_stage_2,
+                R.id.main_class_table_page_item_icon_stage_3,
+                R.id.main_class_table_page_item_icon_stage_4,
+                R.id.main_class_table_page_item_icon_stage_5
         })
         protected List<View> iconStageList;
 
         @InjectViews({
-                R.id.class_table_page_item_btn_stage_1,
-                R.id.class_table_page_item_btn_stage_2,
-                R.id.class_table_page_item_btn_stage_3,
-                R.id.class_table_page_item_btn_stage_4,
-                R.id.class_table_page_item_btn_stage_5,
+                R.id.main_class_table_page_item_btn_stage_1,
+                R.id.main_class_table_page_item_btn_stage_2,
+                R.id.main_class_table_page_item_btn_stage_3,
+                R.id.main_class_table_page_item_btn_stage_4,
+                R.id.main_class_table_page_item_btn_stage_5,
         })
         protected List<View> btnStageList;
 
@@ -267,7 +267,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
                             || courseWrapper.getTimeAndPlace().getWeekMode() == WeekMode.EVEN && weekOfTerm % 2 == 0);
                     View viewCourse = isCurrent ? layoutStageShow.getChildAt(showCount) : layoutStageHide.getChildAt(hideCount);
                     if (viewCourse == null) {
-                        viewCourse = inflater.inflate(R.layout.activity_class_table_page_item_course, isCurrent ? layoutStageShow : layoutStageHide, false);
+                        viewCourse = inflater.inflate(R.layout.activity_main_class_table_page_item_course, isCurrent ? layoutStageShow : layoutStageHide, false);
                         viewCourse.setTag(new CourseViewHolder(viewCourse));
                         if (isCurrent) {
                             layoutStageShow.addView(viewCourse);
@@ -289,27 +289,27 @@ public class ClassTablePageAdapter extends PagerAdapter {
         }
 
         @OnClick({
-                R.id.class_table_page_item_btn_stage_1,
-                R.id.class_table_page_item_btn_stage_2,
-                R.id.class_table_page_item_btn_stage_3,
-                R.id.class_table_page_item_btn_stage_4,
-                R.id.class_table_page_item_btn_stage_5,
+                R.id.main_class_table_page_item_btn_stage_1,
+                R.id.main_class_table_page_item_btn_stage_2,
+                R.id.main_class_table_page_item_btn_stage_3,
+                R.id.main_class_table_page_item_btn_stage_4,
+                R.id.main_class_table_page_item_btn_stage_5,
         })
         protected void onBtnStage1Click(View view) {
             switch (view.getId()) {
-                case R.id.class_table_page_item_btn_stage_1:
+                case R.id.main_class_table_page_item_btn_stage_1:
                     toggleLayout(1);
                     break;
-                case R.id.class_table_page_item_btn_stage_2:
+                case R.id.main_class_table_page_item_btn_stage_2:
                     toggleLayout(2);
                     break;
-                case R.id.class_table_page_item_btn_stage_3:
+                case R.id.main_class_table_page_item_btn_stage_3:
                     toggleLayout(3);
                     break;
-                case R.id.class_table_page_item_btn_stage_4:
+                case R.id.main_class_table_page_item_btn_stage_4:
                     toggleLayout(4);
                     break;
-                case R.id.class_table_page_item_btn_stage_5:
+                case R.id.main_class_table_page_item_btn_stage_5:
                     toggleLayout(5);
                     break;
             }
@@ -325,16 +325,16 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class CourseViewHolder {
 
-        @InjectView(R.id.class_table_page_item_course_tv_name)
+        @InjectView(R.id.main_class_table_page_item_course_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.class_table_page_item_course_tv_teacher)
+        @InjectView(R.id.main_class_table_page_item_course_tv_teacher)
         protected TextView tvTeacher;
 
-        @InjectView(R.id.class_table_page_item_course_tv_place)
+        @InjectView(R.id.main_class_table_page_item_course_tv_place)
         protected TextView tvPlace;
 
-        @InjectView(R.id.class_table_page_item_course_icon_not_current)
+        @InjectView(R.id.main_class_table_page_item_course_icon_not_current)
         protected View iconNotCurrent;
 
         protected ClassTable.CourseWrapper courseWrapper;
@@ -351,7 +351,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
             iconNotCurrent.setVisibility(isCurrent ? View.GONE : View.VISIBLE);
         }
 
-        @OnClick(R.id.class_table_page_item_course_btn_card)
+        @OnClick(R.id.main_class_table_page_item_course_btn_card)
         protected void onBtnCardClick() {
             if (courseWrapper != null) {
                 Intent intent = new Intent(context, ClassTableCourseActivity.class);

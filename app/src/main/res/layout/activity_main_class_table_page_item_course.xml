@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <FrameLayout
-        android:id="@+id/class_table_page_item_course_btn_card"
+        android:id="@+id/main_class_table_page_item_course_btn_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="4dp"
@@ -21,7 +21,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/class_table_page_item_course_tv_name"
+                android:id="@+id/main_class_table_page_item_course_tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -34,7 +34,7 @@
                 tools:text="概率论与数理统计" />
 
             <TextView
-                android:id="@+id/class_table_page_item_course_tv_teacher"
+                android:id="@+id/main_class_table_page_item_course_tv_teacher"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -47,7 +47,7 @@
                 tools:text="张三" />
 
             <TextView
-                android:id="@+id/class_table_page_item_course_tv_place"
+                android:id="@+id/main_class_table_page_item_course_tv_place"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
@@ -62,7 +62,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/class_table_page_item_course_icon_not_current"
+            android:id="@+id/main_class_table_page_item_course_icon_not_current"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center"
