@@ -1,6 +1,5 @@
 package org.lntu.online.ui.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +21,11 @@ public class ExamPlanAdapter extends BaseAdapter {
     private List<ExamPlan> planList;
     private Date nowDate;
 
-    public ExamPlanAdapter(Context context, List<ExamPlan> planList) {
-        inflater = LayoutInflater.from(context);
+    public ExamPlanAdapter(LayoutInflater inflater) {
+        this.inflater = inflater;
+    }
+
+    public void setExamPlanList(List<ExamPlan> planList) {
         this.planList = planList;
         nowDate = new Date();
     }
@@ -41,12 +43,6 @@ public class ExamPlanAdapter extends BaseAdapter {
     @Override
     public long getItemId(int position) {
         return 0;
-    }
-
-    @Override
-    public void notifyDataSetChanged() {
-        nowDate = new Date(); // 更新今天的时间对象
-        super.notifyDataSetChanged();
     }
 
     @Override
