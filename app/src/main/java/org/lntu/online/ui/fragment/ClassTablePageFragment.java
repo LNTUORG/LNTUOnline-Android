@@ -6,12 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.lntu.online.R;
-
 import org.joda.time.LocalDate;
+import org.lntu.online.R;
 import org.lntu.online.model.entity.ClassTable;
+import org.lntu.online.ui.activity.ClassTableActivity;
 import org.lntu.online.ui.adapter.ClassTablePageAdapter;
-import org.lntu.online.ui.base.ClassTableFragment;
 import org.lntu.online.ui.dialog.ClassTableTimeDialogHolder;
 
 import java.util.List;
@@ -20,7 +19,7 @@ import java.util.Map;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class ClassTablePageFragment extends ClassTableFragment {
+public class ClassTablePageFragment extends ClassTableActivity.BaseFragment {
 
     @InjectView(R.id.class_table_page_view_pager)
     protected ViewPager viewPager;
