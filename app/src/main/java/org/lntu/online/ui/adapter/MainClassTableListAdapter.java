@@ -11,24 +11,21 @@ import android.widget.TextView;
 import org.lntu.online.R;
 
 import org.lntu.online.model.entity.ClassTable;
-import org.lntu.online.model.entity.Grades;
 import org.lntu.online.model.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
-
-import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 
-public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAdapter.ViewHolder> {
+public class MainClassTableListAdapter extends RecyclerView.Adapter<MainClassTableListAdapter.ViewHolder> {
 
     private Context context;
     private LayoutInflater inflater;
 
     private ClassTable classTable;
 
-    public ClassTableListAdapter(Context context) {
+    public MainClassTableListAdapter(Context context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
     }
@@ -45,7 +42,7 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(inflater.inflate(R.layout.activity_class_table_list_item, parent, false));
+        return new ViewHolder(inflater.inflate(R.layout.activity_main_class_table_list_item, parent, false));
     }
 
     @Override
@@ -60,19 +57,19 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.class_table_list_item_tv_num)
+        @InjectView(R.id.main_class_table_list_item_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.class_table_list_item_tv_name)
+        @InjectView(R.id.main_class_table_list_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.class_table_list_item_tv_teacher)
+        @InjectView(R.id.main_class_table_list_item_tv_teacher)
         protected TextView tvTeacher;
 
-        @InjectView(R.id.class_table_list_item_icon_blank_top)
+        @InjectView(R.id.main_class_table_list_item_icon_blank_top)
         protected View iconBlankTop;
 
-        @InjectView(R.id.class_table_list_item_icon_blank_bottom)
+        @InjectView(R.id.main_class_table_list_item_icon_blank_bottom)
         protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {
@@ -80,7 +77,7 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
             ButterKnife.inject(this, itemView);
         }
 
-        @OnClick(R.id.class_table_list_item_btn_card)
+        @OnClick(R.id.main_class_table_list_item_btn_card)
         public void onBtnCardClick() {
             Intent intent = new Intent(context, ClassTableCourseActivity.class);
             intent.putExtra("course", GsonWrapper.gson.toJson(classTable.getCourses().get(getLayoutPosition())));

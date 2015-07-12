@@ -9,12 +9,12 @@
     android:orientation="vertical">
 
     <View
-        android:id="@+id/class_table_list_item_icon_blank_top"
+        android:id="@+id/main_class_table_list_item_icon_blank_top"
         android:layout_width="match_parent"
         android:layout_height="4dp" />
 
     <LinearLayout
-        android:id="@+id/class_table_list_item_btn_card"
+        android:id="@+id/main_class_table_list_item_btn_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
@@ -22,7 +22,7 @@
         android:background="@drawable/rect_btn_background">
 
         <TextView
-            android:id="@+id/class_table_list_item_tv_name"
+            android:id="@+id/main_class_table_list_item_tv_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/text_color_primary"
@@ -30,7 +30,7 @@
             tools:text="高等数学" />
 
         <TextView
-            android:id="@+id/class_table_list_item_tv_num"
+            android:id="@+id/main_class_table_list_item_tv_num"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -42,7 +42,7 @@
             tools:text="H06849214A" />
 
         <TextView
-            android:id="@+id/class_table_list_item_tv_teacher"
+            android:id="@+id/main_class_table_list_item_tv_teacher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -62,7 +62,7 @@
         android:background="@drawable/item_gap_shadow_bottom" />
 
     <View
-        android:id="@+id/class_table_list_item_icon_blank_bottom"
+        android:id="@+id/main_class_table_list_item_icon_blank_bottom"
         android:layout_width="match_parent"
         android:layout_height="4dp" />
 

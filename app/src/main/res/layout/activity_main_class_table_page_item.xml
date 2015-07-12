@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/class_table_page_item_scroll_view"
+    android:id="@+id/main_class_table_page_item_scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,8 +12,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/class_table_layout_stage_1"
-            android:layout_alignBottom="@+id/class_table_layout_stage_2"
+            android:layout_alignTop="@+id/main_class_table_page_item_layout_stage_1"
+            android:layout_alignBottom="@+id/main_class_table_page_item_layout_stage_2"
             android:src="@drawable/class_table_bg_morning"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true" />
@@ -21,8 +21,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/class_table_layout_stage_3"
-            android:layout_alignBottom="@+id/class_table_layout_stage_4"
+            android:layout_alignTop="@+id/main_class_table_page_item_layout_stage_3"
+            android:layout_alignBottom="@+id/main_class_table_page_item_layout_stage_4"
             android:src="@drawable/class_table_bg_afternoon"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true" />
@@ -30,14 +30,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/class_table_layout_stage_5"
-            android:layout_alignBottom="@+id/class_table_layout_stage_5"
+            android:layout_alignTop="@+id/main_class_table_page_item_layout_stage_5"
+            android:layout_alignBottom="@+id/main_class_table_page_item_layout_stage_5"
             android:src="@drawable/class_table_bg_night"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true" />
 
         <LinearLayout
-            android:id="@+id/class_table_layout_stage_1"
+            android:id="@+id/main_class_table_page_item_layout_stage_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/class_table_page_item_tv_stage_1"
+                        android:id="@+id/main_class_table_page_item_tv_stage_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
@@ -71,7 +71,7 @@
                         tools:text="第一大节（08:00-08:45  08:50-09:35）" />
 
                     <ImageView
-                        android:id="@+id/class_table_page_item_btn_stage_1"
+                        android:id="@+id/main_class_table_page_item_btn_stage_1"
                         android:layout_width="32dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
@@ -88,7 +88,7 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_icon_stage_1"
+                    android:id="@+id/main_class_table_page_item_icon_stage_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -107,13 +107,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_1_show"
+                    android:id="@+id/main_class_table_page_item_layout_stage_1_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_1_hide"
+                    android:id="@+id/main_class_table_page_item_layout_stage_1_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
@@ -129,10 +129,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/class_table_layout_stage_2"
+            android:id="@+id/main_class_table_page_item_layout_stage_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/class_table_layout_stage_1"
+            android:layout_below="@+id/main_class_table_page_item_layout_stage_1"
             android:paddingTop="4dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -150,7 +150,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/class_table_page_item_tv_stage_2"
+                        android:id="@+id/main_class_table_page_item_tv_stage_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
@@ -164,7 +164,7 @@
                         tools:text="第二大节（08:00-08:45  08:50-09:35）" />
 
                     <ImageView
-                        android:id="@+id/class_table_page_item_btn_stage_2"
+                        android:id="@+id/main_class_table_page_item_btn_stage_2"
                         android:layout_width="32dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
@@ -181,7 +181,7 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_icon_stage_2"
+                    android:id="@+id/main_class_table_page_item_icon_stage_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -200,13 +200,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_2_show"
+                    android:id="@+id/main_class_table_page_item_layout_stage_2_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_2_hide"
+                    android:id="@+id/main_class_table_page_item_layout_stage_2_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
@@ -222,10 +222,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/class_table_layout_stage_3"
+            android:id="@+id/main_class_table_page_item_layout_stage_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/class_table_layout_stage_2"
+            android:layout_below="@+id/main_class_table_page_item_layout_stage_2"
             android:paddingTop="8dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -242,7 +242,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/class_table_page_item_tv_stage_3"
+                        android:id="@+id/main_class_table_page_item_tv_stage_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
@@ -256,7 +256,7 @@
                         tools:text="第三大节（08:00-08:45  08:50-09:35）" />
 
                     <ImageView
-                        android:id="@+id/class_table_page_item_btn_stage_3"
+                        android:id="@+id/main_class_table_page_item_btn_stage_3"
                         android:layout_width="32dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
@@ -273,7 +273,7 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_icon_stage_3"
+                    android:id="@+id/main_class_table_page_item_icon_stage_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -292,13 +292,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_3_show"
+                    android:id="@+id/main_class_table_page_item_layout_stage_3_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_3_hide"
+                    android:id="@+id/main_class_table_page_item_layout_stage_3_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
@@ -314,10 +314,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/class_table_layout_stage_4"
+            android:id="@+id/main_class_table_page_item_layout_stage_4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/class_table_layout_stage_3"
+            android:layout_below="@+id/main_class_table_page_item_layout_stage_3"
             android:paddingTop="4dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -335,7 +335,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/class_table_page_item_tv_stage_4"
+                        android:id="@+id/main_class_table_page_item_tv_stage_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
@@ -349,7 +349,7 @@
                         tools:text="第四大节（08:00-08:45  08:50-09:35）" />
 
                     <ImageView
-                        android:id="@+id/class_table_page_item_btn_stage_4"
+                        android:id="@+id/main_class_table_page_item_btn_stage_4"
                         android:layout_width="32dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
@@ -366,7 +366,7 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_icon_stage_4"
+                    android:id="@+id/main_class_table_page_item_icon_stage_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -385,13 +385,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_4_show"
+                    android:id="@+id/main_class_table_page_item_layout_stage_4_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_4_hide"
+                    android:id="@+id/main_class_table_page_item_layout_stage_4_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
@@ -407,10 +407,10 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/class_table_layout_stage_5"
+            android:id="@+id/main_class_table_page_item_layout_stage_5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/class_table_layout_stage_4"
+            android:layout_below="@+id/main_class_table_page_item_layout_stage_4"
             android:paddingTop="8dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
@@ -428,7 +428,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/class_table_page_item_tv_stage_5"
+                        android:id="@+id/main_class_table_page_item_tv_stage_5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="8dp"
@@ -442,7 +442,7 @@
                         tools:text="晚自习（08:00-08:45  08:50-09:35）" />
 
                     <ImageView
-                        android:id="@+id/class_table_page_item_btn_stage_5"
+                        android:id="@+id/main_class_table_page_item_btn_stage_5"
                         android:layout_width="32dp"
                         android:layout_height="match_parent"
                         android:layout_gravity="end"
@@ -459,7 +459,7 @@
                     android:background="@drawable/item_gap_shadow_bottom" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_icon_stage_5"
+                    android:id="@+id/main_class_table_page_item_icon_stage_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -478,13 +478,13 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_5_show"
+                    android:id="@+id/main_class_table_page_item_layout_stage_5_show"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />
 
                 <LinearLayout
-                    android:id="@+id/class_table_page_item_layout_stage_5_hide"
+                    android:id="@+id/main_class_table_page_item_layout_stage_5_hide"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical" />

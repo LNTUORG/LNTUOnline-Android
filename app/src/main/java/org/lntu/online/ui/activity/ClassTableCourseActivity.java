@@ -2,24 +2,21 @@ package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import org.lntu.online.R;
-
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.WeekMode;
 import org.lntu.online.model.gson.GsonWrapper;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.AppUtils;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class ClassTableCourseActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @InjectView(R.id.class_table_course_toolbar)
     protected Toolbar toolbar;
 
     @InjectView(R.id.class_table_course_tv_name)
@@ -55,8 +52,7 @@ public class ClassTableCourseActivity extends BaseActivity {
         setContentView(R.layout.activity_class_table_course);
         ButterKnife.inject(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         ClassTable.Course course = GsonWrapper.gson.fromJson(getIntent().getStringExtra("course"), ClassTable.Course.class);
         tvName.setText(course.getName());
@@ -88,17 +84,6 @@ public class ClassTableCourseActivity extends BaseActivity {
             tvTimesAndPlaces.setText(sbTimesAndPlaces.toString());
         } else {
             tvTimesAndPlaces.setText("时间、地点未定");
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
         }
     }
 

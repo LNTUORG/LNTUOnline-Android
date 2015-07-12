@@ -13,17 +13,12 @@
     <color name="rect_btn_background_pressed">#ffeeeeee</color>
     <color name="rect_btn_background_accent">#ffcccccc</color>
 
-
-
-
-
-
     <color name="rect_btn_transparent_background_normal">#00000000</color>
     <color name="rect_btn_transparent_background_pressed">#44ffffff</color>
     <color name="rect_btn_transparent_background_accent">#44000000</color>
 
-    <color name="rect_btn_class_table_time_dialog_background_normal">#00000000</color>
-    <color name="rect_btn_class_table_time_dialog_background_pressed">#882196f3</color>
+    <color name="class_table_time_dialog_btn_background_pressed">#11000000</color>
+    <color name="class_table_time_dialog_btn_background_accent">#aa000000</color>
 
     <color name="red_light">#ffff4444</color>
     <color name="green_light">#ff99cc00</color>
