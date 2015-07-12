@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder> {
+public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGradesQueryCourseAdapter.ViewHolder> {
 
     private Context context;
     private LayoutInflater inflater;
@@ -27,7 +27,7 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder
     private List<Grades.CourseScore> maxList;
     private List<Grades.CourseScore> currentList;
 
-    public GradesAdapter(Context context) {
+    public MainGradesQueryCourseAdapter(Context context) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         scoreList = new ArrayList<>();
@@ -91,7 +91,7 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(inflater.inflate(R.layout.activity_grades_item, parent, false));
+        return new ViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item, parent, false));
     }
 
     @Override
