@@ -47,7 +47,7 @@ public class ExamPlanAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.activity_exam_plan_item, parent, false);
+            convertView = inflater.inflate(R.layout.activity_main_exam_plan_item, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -81,22 +81,22 @@ public class ExamPlanAdapter extends BaseAdapter {
 
     protected class ViewHolder {
 
-        @InjectView(R.id.exam_plan_item_tv_course)
+        @InjectView(R.id.main_exam_plan_item_tv_course)
         protected TextView tvCourse;
         
-        @InjectView(R.id.exam_plan_item_tv_time)
+        @InjectView(R.id.main_exam_plan_item_tv_time)
         protected TextView tvTime;
         
-        @InjectView(R.id.exam_plan_item_tv_location)
+        @InjectView(R.id.main_exam_plan_item_tv_location)
         protected TextView tvLocation;
 
-        @InjectView(R.id.exam_plan_item_icon_finish)
+        @InjectView(R.id.main_exam_plan_item_icon_finish)
         protected View iconFinish;
 
-        @InjectView(R.id.exam_plan_item_icon_countdown)
+        @InjectView(R.id.main_exam_plan_item_icon_countdown)
         protected View iconCountdown;
         
-        @InjectView(R.id.exam_plan_item_tv_day_left)
+        @InjectView(R.id.main_exam_plan_item_tv_day_left)
         protected TextView tvDayLeft;
 
         public ViewHolder(View convertView) {
