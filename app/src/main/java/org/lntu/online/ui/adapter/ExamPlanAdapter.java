@@ -44,6 +44,12 @@ public class ExamPlanAdapter extends BaseAdapter {
     }
 
     @Override
+    public void notifyDataSetChanged() {
+        nowDate = new Date(); // 更新今天的时间对象
+        super.notifyDataSetChanged();
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
@@ -53,29 +59,7 @@ public class ExamPlanAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        ExamPlan plan = planList.get(position);
-        holder.tvCourse.setText(plan.getCourse());
-        holder.tvTime.setText(plan.getShowTime());
-        holder.tvLocation.setText(plan.getLocation());
-        if (plan.getEndTime().before(nowDate)) {
-            holder.iconFinish.setVisibility(View.VISIBLE);
-            holder.iconCountdown.setVisibility(View.INVISIBLE);
-        } else {
-            holder.iconFinish.setVisibility(View.INVISIBLE);
-            holder.iconCountdown.setVisibility(View.VISIBLE);
-            long diff = plan.getStartTime().getTime() - nowDate.getTime();
-            long days = diff / (1000 * 60 * 60 * 24);
-            if (days == 0) {
-                holder.tvDayLeft.setText("< 1");
-            } else {
-                holder.tvDayLeft.setText(days + "");
-            }
-            if (days <= 7) {
-                holder.tvDayLeft.setTextColor(0xFFF44336);
-            } else {
-                holder.tvDayLeft.setTextColor(0xFF4CAF50);
-            }
-        }
+        holder.update(position);
         return convertView;
     }
 
@@ -101,6 +85,32 @@ public class ExamPlanAdapter extends BaseAdapter {
 
         public ViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
+        }
+
+        public void update(int position) {
+            ExamPlan plan = planList.get(position);
+            tvCourse.setText(plan.getCourse());
+            tvTime.setText(plan.getShowTime());
+            tvLocation.setText(plan.getLocation());
+            if (plan.getEndTime().before(nowDate)) {
+                iconFinish.setVisibility(View.VISIBLE);
+                iconCountdown.setVisibility(View.INVISIBLE);
+            } else {
+                iconFinish.setVisibility(View.INVISIBLE);
+                iconCountdown.setVisibility(View.VISIBLE);
+                long diff = plan.getStartTime().getTime() - nowDate.getTime();
+                long days = diff / (1000 * 60 * 60 * 24);
+                if (days == 0) {
+                    tvDayLeft.setText("< 1");
+                } else {
+                    tvDayLeft.setText(days + "");
+                }
+                if (days <= 7) {
+                    tvDayLeft.setTextColor(0xFFF44336);
+                } else {
+                    tvDayLeft.setTextColor(0xFF4CAF50);
+                }
+            }
         }
 
     }
