@@ -2,8 +2,9 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.widget.CheckBox;
+
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
@@ -14,7 +15,6 @@ import org.lntu.online.model.entity.UserType;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ToastUtils;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -22,9 +22,6 @@ import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class LoginActivity extends BaseActivity {
-
-    @InjectView(R.id.toolbar)
-    protected Toolbar toolbar;
 
     @InjectView(R.id.login_edt_user_id)
     protected MaterialEditText edtUserId;
@@ -40,10 +37,6 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_account_circle_white_24dp);
     }
 
     @OnClick(R.id.login_btn_login)

@@ -2,19 +2,19 @@ package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class TermsOfServiceActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @InjectView(R.id.terms_of_service_toolbar)
     protected Toolbar toolbar;
 
     @InjectView(R.id.terms_of_service_web_view)
@@ -26,8 +26,7 @@ public class TermsOfServiceActivity extends BaseActivity {
         setContentView(R.layout.activity_terms_of_service);
         ButterKnife.inject(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         webView.loadUrl("http://takwolf.com/lntuonline/terms-of-service");
         webView.setWebViewClient(new WebViewClient() {
@@ -40,17 +39,6 @@ public class TermsOfServiceActivity extends BaseActivity {
 
         });
 
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-        case android.R.id.home:
-            finish();
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
-        }
     }
 
 }
