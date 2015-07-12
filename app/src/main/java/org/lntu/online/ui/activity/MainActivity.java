@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CheckedTextView;
 import android.widget.ImageView;
@@ -160,21 +161,6 @@ public class MainActivity extends BaseActivity {
             }
 
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            long secondBackKeyTime = System.currentTimeMillis();
-            if (secondBackKeyTime - firstBackKeyTime > 2000) {
-                ToastUtils.with(this).show(R.string.press_back_again_to_exit);
-                firstBackKeyTime = secondBackKeyTime;
-            } else {
-                finish();
-            }
-        }
     }
 
     /**
@@ -376,8 +362,40 @@ public class MainActivity extends BaseActivity {
 
     };
 
+    /**
+     * 返回键关闭导航
+     */
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            long secondBackKeyTime = System.currentTimeMillis();
+            if (secondBackKeyTime - firstBackKeyTime > 2000) {
+                ToastUtils.with(this).show(R.string.press_back_again_to_exit);
+                firstBackKeyTime = secondBackKeyTime;
+            } else {
+                finish();
+            }
+        }
+    }
+
+    // 打开导航的监听器
+    private View.OnClickListener openNavigationClickListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            drawerLayout.openDrawer(GravityCompat.START);
+        }
+
+    };
+
     // Fragment模板
     public static abstract class BaseFragment extends Fragment {
+
+        protected void setOpenNavigationListen(Toolbar toolbar) {
+            toolbar.setNavigationOnClickListener(((MainActivity) getActivity()).openNavigationClickListener);
+        }
 
     }
 
