@@ -77,7 +77,7 @@ public class MainGradesQueryFragment extends MainActivity.BaseFragment implement
         public ViewPagerAdapter(FragmentManager fm) {
             super(fm);
             fmList.add(new MainGradesQuerySkillFragment());
-            fmList.add(new MainGradesQuerySkillFragment());
+            fmList.add(new MainGradesQueryUnpassFragment());
             fmList.add(new MainGradesQuerySkillFragment());
         }
 

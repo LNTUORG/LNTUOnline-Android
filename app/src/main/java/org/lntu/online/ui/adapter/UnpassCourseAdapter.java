@@ -78,7 +78,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         GroupViewHolder holder;
         if (convertView == null)  {
-            convertView = inflater.inflate(R.layout.activity_unpass_course_item_group, parent, false);
+            convertView = inflater.inflate(R.layout.activity_main_grades_query_unpass_item_group, parent, false);
             holder = new GroupViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -96,7 +96,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ChildViewHolder holder;
         if (convertView == null)  {
-            convertView = inflater.inflate(R.layout.activity_unpass_course_item_child, parent, false);
+            convertView = inflater.inflate(R.layout.activity_main_grades_query_unpass_item_child, parent, false);
             holder = new ChildViewHolder(convertView);
             convertView.setTag(holder);
         } else {

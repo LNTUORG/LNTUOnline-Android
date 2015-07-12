@@ -87,7 +87,7 @@ public class OneKeyEvaActivity extends BaseActivity {
 
         startNetwork();
     }
-    
+
     private void startNetwork() {
         ApiClient.with(this).apiService.getCourseEvaInfoList(LoginShared.getLoginToken(this), new BackgroundCallback<List<CourseEvaInfo>>(this) {
 
