@@ -80,6 +80,12 @@ public class MainExamPlanFragment extends MainActivity.BaseFragment implements S
     }
 
     @Override
+    public void onResume() {
+        adapter.notifyDataSetChanged();
+        super.onResume();
+    }
+
+    @Override
     public void onRefresh() {
         getExamPlanListAsyncTask();
     }

@@ -27,7 +27,12 @@ public class ExamPlanAdapter extends BaseAdapter {
 
     public void setExamPlanList(List<ExamPlan> planList) {
         this.planList = planList;
+    }
+
+    @Override
+    public void notifyDataSetChanged() {
         nowDate = new Date();
+        super.notifyDataSetChanged();
     }
 
     @Override
