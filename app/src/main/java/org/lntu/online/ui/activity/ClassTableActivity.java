@@ -1,7 +1,7 @@
 package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,15 +14,13 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.lntu.online.R;
-
 import org.joda.time.LocalDate;
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.ui.base.ClassTableFragment;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;
 
 import java.util.ArrayList;
@@ -60,8 +58,8 @@ public class ClassTableActivity extends BaseActivity {
 
     private Menu menu;
 
-    private ClassTableFragment fmPage;
-    private ClassTableFragment fmList;
+    private BaseFragment fmPage;
+    private BaseFragment fmList;
 
     private final LocalDate today = new LocalDate();
     private int currentYear;       // 当前查询的年条件
@@ -82,8 +80,8 @@ public class ClassTableActivity extends BaseActivity {
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
-        fmPage = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_page);
-        fmList = (ClassTableFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_list);
+        fmPage = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragment_page);
+        fmList = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragment_list);
         getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmList).commit();
 
         ArrayAdapter spnAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getYearTermList(today));
@@ -242,6 +240,14 @@ public class ClassTableActivity extends BaseActivity {
     protected void onBtnIconEmptyClick() {
         showLayoutLoading();
         startNetwork(currentYear, currentTerm);
+    }
+
+    public static abstract class BaseFragment extends Fragment {
+
+        public abstract void onDataSetInit(int year, String term, LocalDate today);
+
+        public abstract void onDataSetUpdate(ClassTable classTable, Map<String, List<ClassTable.CourseWrapper>> classTableMap);
+
     }
 
 }

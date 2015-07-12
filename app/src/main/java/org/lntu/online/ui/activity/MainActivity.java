@@ -2,17 +2,14 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckedTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Picasso;
@@ -23,7 +20,6 @@ import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.model.local.NavMenuHeaderBackgroundType;
 import org.lntu.online.shared.LoginShared;
-import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ToastUtils;
 import org.lntu.online.util.UpdateUtils;
@@ -37,6 +33,8 @@ import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class MainActivity extends BaseActivity {
+
+    public static final String KEY_BACK_TO_ENTRY = "backToEntry";
 
     // 抽屉导航布局
     @InjectView(R.id.main_drawer_layout)
@@ -83,19 +81,13 @@ public class MainActivity extends BaseActivity {
     })
     protected List<CheckedTextView> navItemList;
 
+    // Fragment
+    private BaseFragment fmClassTable;
+    private BaseFragment fmGradesQuery;
+    private BaseFragment fmExamPlan;
+    private BaseFragment fmSenateNotice;
 
-
-
-
-
-    public static final String KEY_BACK_TO_ENTRY = "backToEntry";
-
-    @InjectView(R.id.toolbar)
-    protected Toolbar toolbar;
-
-    @InjectView(R.id.main_recycler_view)
-    protected RecyclerView recyclerView;
-
+    // Flag
     private boolean asyncStudentFlag = false;
     private long firstBackKeyTime = 0;
 
@@ -107,17 +99,17 @@ public class MainActivity extends BaseActivity {
 
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 
-
-
-
-
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
-
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
-        recyclerView.setAdapter(new MainAdapter(this));
+        fmClassTable = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_my_class_table);
+        fmGradesQuery = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_grades_query);
+        fmExamPlan = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_exam_plan);
+        fmSenateNotice = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.main_fragment_senate_notice);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .show(fmClassTable)
+                .hide(fmGradesQuery)
+                .hide(fmExamPlan)
+                .hide(fmSenateNotice)
+                .commit();
 
         UpdateUtils.update(this);
 
@@ -134,21 +126,6 @@ public class MainActivity extends BaseActivity {
         if (intent.getBooleanExtra(KEY_BACK_TO_ENTRY, false)) {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.openDrawer(GravityCompat.START);
-                    return true;
-                } else {
-                    return super.onOptionsItemSelected(item);
-                }
-            default:
-                return super.onOptionsItemSelected(item);
         }
     }
 
@@ -185,26 +162,6 @@ public class MainActivity extends BaseActivity {
 
         });
     }
-
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            long secondBackKeyTime = System.currentTimeMillis();
-            if (secondBackKeyTime - firstBackKeyTime > 2000) {
-                ToastUtils.with(this).show(R.string.press_back_again_to_exit);
-                firstBackKeyTime = secondBackKeyTime;
-            } else {
-                finish();
-            }
-        }
-    }
-
-
-
-
-
 
     /**
      * 注销按钮事件
@@ -305,9 +262,13 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "我的课表", Toast.LENGTH_LONG).show();
-
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .show(fmClassTable) //*
+                    .hide(fmGradesQuery)
+                    .hide(fmExamPlan)
+                    .hide(fmSenateNotice)
+                    .commit();
             drawerLayout.setDrawerListener(null);
         }
 
@@ -317,9 +278,13 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "成绩查询", Toast.LENGTH_LONG).show();
-
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .hide(fmClassTable)
+                    .show(fmGradesQuery) //*
+                    .hide(fmExamPlan)
+                    .hide(fmSenateNotice)
+                    .commit();
             drawerLayout.setDrawerListener(null);
         }
 
@@ -329,9 +294,13 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "考试安排", Toast.LENGTH_LONG).show();
-
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .hide(fmClassTable)
+                    .hide(fmGradesQuery)
+                    .show(fmExamPlan) //*
+                    .hide(fmSenateNotice)
+                    .commit();
             drawerLayout.setDrawerListener(null);
         }
 
@@ -341,9 +310,13 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "教务公告", Toast.LENGTH_LONG).show();
-
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .hide(fmClassTable)
+                    .hide(fmGradesQuery)
+                    .hide(fmExamPlan)
+                    .show(fmSenateNotice) //*
+                    .commit();
             drawerLayout.setDrawerListener(null);
         }
 
@@ -388,5 +361,42 @@ public class MainActivity extends BaseActivity {
         }
 
     };
+
+    /**
+     * 返回键关闭导航
+     */
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            long secondBackKeyTime = System.currentTimeMillis();
+            if (secondBackKeyTime - firstBackKeyTime > 2000) {
+                ToastUtils.with(this).show(R.string.press_back_again_to_exit);
+                firstBackKeyTime = secondBackKeyTime;
+            } else {
+                finish();
+            }
+        }
+    }
+
+    // 打开导航的监听器
+    private View.OnClickListener openNavigationClickListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            drawerLayout.openDrawer(GravityCompat.START);
+        }
+
+    };
+
+    // Fragment模板
+    public static abstract class BaseFragment extends Fragment {
+
+        protected void setOpenNavigationListen(Toolbar toolbar) {
+            toolbar.setNavigationOnClickListener(((MainActivity) getActivity()).openNavigationClickListener);
+        }
+
+    }
 
 }

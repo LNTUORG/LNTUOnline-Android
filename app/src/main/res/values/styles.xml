@@ -14,6 +14,9 @@
     <!-- App Theme FitsStatusBar -->
     <style name="AppTheme.FitsStatusBar" />
 
+    <!-- App Theme TranslucentPage -->
+    <style name="AppTheme.TranslucentPage" parent="@android:style/Theme.Translucent.NoTitleBar" />
+
     <!-- Deep Line -->
     <style name="AppTheme.DeepLine">
         <item name="android:layout_width">match_parent</item>
@@ -80,7 +83,7 @@
 
 
 
-    <style name="AppTheme.AuthErrorPage" parent="Theme.AppCompat.Light.Dialog" />
+
 
     <!-- ClassTable -->
     <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">

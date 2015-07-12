@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@android:color/white">
+    android:layout_height="match_parent">
 
-    <include layout="@layout/activity_action_bar" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_recycler_view"
+    <fragment class="org.lntu.online.ui.fragment.MainClassTableFragment"
+        android:id="@+id/main_fragment_my_class_table"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:layout="@layout/activity_main_class_table" />
 
-</LinearLayout>
+    <fragment class="org.lntu.online.ui.fragment.MainGradesQueryFragment"
+        android:id="@+id/main_fragment_grades_query"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/activity_main_grades_query" />
 
+    <fragment class="org.lntu.online.ui.fragment.MainExamPlanFragment"
+        android:id="@+id/main_fragment_exam_plan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/activity_main_exa" />
+
+    <fragment class="org.lntu.online.ui.fragment.MainSenateNoticeFragment"
+        android:id="@+id/main_fragment_senate_notice"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/activity_class_table_page" />
+
+</FrameLayout>
