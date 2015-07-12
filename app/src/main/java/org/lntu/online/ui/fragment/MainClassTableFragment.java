@@ -98,8 +98,8 @@ public class MainClassTableFragment extends MainActivity.BaseFragment implements
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
-        ArrayAdapter spnAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, getYearTermList(today));
-        spnAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter spnAdapter = new ArrayAdapter<String>(getActivity(), R.layout.spinner_item_class_table, getYearTermList(today));
+        spnAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item_class_table);
         spnYearTerm.setAdapter(spnAdapter);
 
         // Page
