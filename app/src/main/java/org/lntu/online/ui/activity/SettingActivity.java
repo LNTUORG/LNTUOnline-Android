@@ -2,18 +2,16 @@ package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import org.lntu.online.R;
 import com.rey.material.widget.Switch;
 
+import org.lntu.online.R;
 import org.lntu.online.model.local.NavMenuHeaderBackgroundType;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -37,8 +35,7 @@ public class SettingActivity extends BaseActivity implements Switch.OnCheckedCha
         setContentView(R.layout.activity_setting);
         ButterKnife.inject(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         switch (LoginShared.getNavMenuHeaderBackgroundType(this)) {
             case color:
@@ -53,17 +50,6 @@ public class SettingActivity extends BaseActivity implements Switch.OnCheckedCha
         }
         switchEnableNotification.setChecked(LoginShared.isEnableNotification(this));
         switchEnableNotification.setOnCheckedChangeListener(this);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     /**

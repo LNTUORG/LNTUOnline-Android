@@ -4,12 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.AppUtils;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.UpdateUtils;
@@ -35,23 +34,10 @@ public class AboutActivity extends BaseActivity {
         setContentView(R.layout.activity_about);
         ButterKnife.inject(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
         layoutCollapsingToolbar.setTitle(getString(R.string.about));
 
         tvVersion.setText("当前版本：" + AppUtils.getVersionName(this) + "-build-" + AppUtils.getVersionCode(this));
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     @OnClick(R.id.about_btn_version)
