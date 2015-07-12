@@ -9,7 +9,7 @@
     android:orientation="vertical">
 
     <View
-        android:id="@+id/grades_item_icon_blank_top"
+        android:id="@+id/main_grades_query_course_item_icon_blank_top"
         android:layout_width="match_parent"
         android:layout_height="4dp" />
 
@@ -25,7 +25,7 @@
             android:background="@android:color/white">
 
             <TextView
-                android:id="@+id/grades_item_tv_name"
+                android:id="@+id/main_grades_query_course_item_tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_color_primary"
@@ -33,7 +33,7 @@
                 tools:text="高等数学" />
 
             <TextView
-                android:id="@+id/grades_item_tv_num"
+                android:id="@+id/main_grades_query_course_item_tv_num"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -51,7 +51,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/grades_item_tv_semester"
+                    android:id="@+id/main_grades_query_course_item_tv_semester"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
@@ -63,7 +63,7 @@
                     tools:text="2014春" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_exam_type"
+                    android:id="@+id/main_grades_query_course_item_tv_exam_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -90,7 +90,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_score"
+                    android:id="@+id/main_grades_query_course_item_tv_score"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -107,7 +107,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_credit"
+                    android:id="@+id/main_grades_query_course_item_tv_credit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -131,7 +131,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_select_type"
+                    android:id="@+id/main_grades_query_course_item_tv_select_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -156,7 +156,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_test_mode"
+                    android:id="@+id/main_grades_query_course_item_tv_test_mode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -181,7 +181,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_remarks"
+                    android:id="@+id/main_grades_query_course_item_tv_remarks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -195,7 +195,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/grades_item_icon_very_good"
+            android:id="@+id/main_grades_query_course_item_icon_very_good"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|end"
@@ -212,7 +212,7 @@
         android:background="@drawable/item_gap_shadow_bottom" />
 
     <View
-        android:id="@+id/grades_item_icon_blank_bottom"
+        android:id="@+id/main_grades_query_course_item_icon_blank_bottom"
         android:layout_width="match_parent"
         android:layout_height="4dp" />
 

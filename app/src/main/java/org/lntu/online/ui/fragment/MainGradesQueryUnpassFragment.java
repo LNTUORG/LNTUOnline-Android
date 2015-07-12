@@ -27,19 +27,19 @@ import retrofit.client.Response;
 
 public class MainGradesQueryUnpassFragment extends Fragment {
 
-    @InjectView(R.id.unpass_course_ex_list_view)
+    @InjectView(R.id.main_grades_query_unpass_ex_list_view)
     protected ExpandableListView exListView;
 
-    @InjectView(R.id.unpass_course_icon_loading)
+    @InjectView(R.id.main_grades_query_unpass_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.unpass_course_icon_empty)
+    @InjectView(R.id.main_grades_query_unpass_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.unpass_course_icon_loading_anim)
+    @InjectView(R.id.main_grades_query_unpass_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.unpass_course_tv_load_failed)
+    @InjectView(R.id.main_grades_query_unpass_tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
@@ -88,7 +88,7 @@ public class MainGradesQueryUnpassFragment extends Fragment {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.unpass_course_icon_empty)
+    @OnClick(R.id.main_grades_query_unpass_icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);

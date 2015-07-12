@@ -56,13 +56,13 @@ public class MainGradesQuerySkillAdapter extends BaseAdapter {
 
     protected class ViewHolder {
 
-        @InjectView(R.id.skill_test_item_tv_name)
+        @InjectView(R.id.main_grades_query_skill_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.skill_test_item_tv_time)
+        @InjectView(R.id.main_grades_query_skill_item_tv_time)
         protected TextView tvTime;
 
-        @InjectView(R.id.skill_test_item_tv_score)
+        @InjectView(R.id.main_grades_query_skill_item_tv_score)
         protected TextView tvScore;
 
         public ViewHolder(View convertView) {

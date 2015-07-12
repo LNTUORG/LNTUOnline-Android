@@ -5,12 +5,12 @@
 
     <ListView
         android:visibility="gone"
-        android:id="@+id/skill_test_list_view"
+        android:id="@+id/main_grades_query_skill_list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <LinearLayout
-        android:id="@+id/skill_test_icon_loading"
+        android:id="@+id/main_grades_query_skill_icon_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/skill_test_icon_loading_anim"
+                android:id="@+id/main_grades_query_skill_icon_loading_anim"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -49,7 +49,7 @@
 
     <LinearLayout
         android:visibility="gone"
-        android:id="@+id/skill_test_icon_empty"
+        android:id="@+id/main_grades_query_skill_icon_empty"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -63,7 +63,7 @@
             android:src="@drawable/ic_empty_search" />
 
         <TextView
-            android:id="@+id/skill_test_tv_load_failed"
+            android:id="@+id/main_grades_query_skill_tv_load_failed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"

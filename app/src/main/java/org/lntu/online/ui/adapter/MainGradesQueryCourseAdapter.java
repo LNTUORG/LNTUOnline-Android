@@ -125,40 +125,40 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.grades_item_tv_num)
+        @InjectView(R.id.main_grades_query_course_item_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.grades_item_tv_name)
+        @InjectView(R.id.main_grades_query_course_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.grades_item_tv_score)
+        @InjectView(R.id.main_grades_query_course_item_tv_score)
         protected TextView tvScore;
 
-        @InjectView(R.id.grades_item_tv_credit)
+        @InjectView(R.id.main_grades_query_course_item_tv_credit)
         protected TextView tvCredit;
 
-        @InjectView(R.id.grades_item_tv_test_mode)
+        @InjectView(R.id.main_grades_query_course_item_tv_test_mode)
         protected TextView tvTestMode;
 
-        @InjectView(R.id.grades_item_tv_select_type)
+        @InjectView(R.id.main_grades_query_course_item_tv_select_type)
         protected TextView tvSelectType;
 
-        @InjectView(R.id.grades_item_tv_remarks)
+        @InjectView(R.id.main_grades_query_course_item_tv_remarks)
         protected TextView tvRemarks;
 
-        @InjectView(R.id.grades_item_tv_exam_type)
+        @InjectView(R.id.main_grades_query_course_item_tv_exam_type)
         protected TextView tvExamType;
 
-        @InjectView(R.id.grades_item_tv_semester)
+        @InjectView(R.id.main_grades_query_course_item_tv_semester)
         protected TextView tvSemester;
 
-        @InjectView(R.id.grades_item_icon_very_good)
+        @InjectView(R.id.main_grades_query_course_item_icon_very_good)
         protected View iconVeryGood;
 
-        @InjectView(R.id.grades_item_icon_blank_top)
+        @InjectView(R.id.main_grades_query_course_item_icon_blank_top)
         protected View iconBlankTop;
 
-        @InjectView(R.id.grades_item_icon_blank_bottom)
+        @InjectView(R.id.main_grades_query_course_item_icon_blank_bottom)
         protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {

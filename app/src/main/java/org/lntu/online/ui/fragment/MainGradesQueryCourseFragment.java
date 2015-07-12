@@ -32,43 +32,43 @@ import retrofit.client.Response;
 
 public class MainGradesQueryCourseFragment extends Fragment {
 
-    @InjectView(R.id.grades_layout_content)
+    @InjectView(R.id.main_grades_query_course_layout_content)
     protected ViewGroup layoutContent;
 
-    @InjectView(R.id.grades_recycler_view)
+    @InjectView(R.id.main_grades_query_course_recycler_view)
     protected RecyclerView recyclerView;
 
-    @InjectView(R.id.grades_icon_loading)
+    @InjectView(R.id.main_grades_query_course_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.grades_icon_empty)
+    @InjectView(R.id.main_grades_query_course_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.grades_icon_loading_anim)
+    @InjectView(R.id.main_grades_query_course_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.grades_tv_load_failed)
+    @InjectView(R.id.main_grades_query_course_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @InjectView(R.id.grades_tv_ava_credit)
+    @InjectView(R.id.main_grades_query_course_tv_ava_credit)
     protected TextView tvAvaCredit;
 
-    @InjectView(R.id.grades_fab)
+    @InjectView(R.id.main_grades_query_course_fab)
     protected FloatingActionButton fab;
 
-    @InjectView(R.id.grades_layout_condition)
+    @InjectView(R.id.main_grades_query_course_layout_condition)
     protected ViewGroup layoutCondition;
 
-    @InjectView(R.id.grades_spn_year)
+    @InjectView(R.id.main_grades_query_course_spn_year)
     protected Spinner spnYear;
 
-    @InjectView(R.id.grades_spn_term)
+    @InjectView(R.id.main_grades_query_course_spn_term)
     protected Spinner spnTerm;
 
-    @InjectView(R.id.grades_spn_level)
+    @InjectView(R.id.main_grades_query_course_spn_level)
     protected Spinner spnLevel;
 
-    @InjectView(R.id.grades_spn_display)
+    @InjectView(R.id.main_grades_query_course_spn_display)
     protected Spinner spnDisplay;
 
     private MainGradesQueryCourseAdapter adapter;
@@ -151,14 +151,14 @@ public class MainGradesQueryCourseFragment extends Fragment {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.grades_icon_empty)
+    @OnClick(R.id.main_grades_query_course_icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
     }
 
-    @OnClick(R.id.grades_layout_condition_center)
+    @OnClick(R.id.main_grades_query_course_layout_condition_center)
     protected void onBtnLayoutConditionCenterClick() {
         // 屏蔽条件面板中间事件
     }
@@ -176,8 +176,8 @@ public class MainGradesQueryCourseFragment extends Fragment {
     */
 
     @OnClick({
-            R.id.grades_fab,
-            R.id.grades_layout_condition
+            R.id.main_grades_query_course_fab,
+            R.id.main_grades_query_course_layout_condition
     })
     protected void onBtnFabClick() {
         if (layoutCondition.getVisibility() == View.GONE) {
