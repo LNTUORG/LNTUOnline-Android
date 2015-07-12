@@ -20,12 +20,12 @@
         android:id="@+id/main_fragment_exam_plan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/activity_main_exa" />
+        tools:layout="@layout/activity_main_exam_plan" />
 
     <fragment class="org.lntu.online.ui.fragment.MainSenateNoticeFragment"
         android:id="@+id/main_fragment_senate_notice"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/activity_class_table_page" />
+        tools:layout="@layout/activity_main_senate_notice" />
 
 </FrameLayout>
