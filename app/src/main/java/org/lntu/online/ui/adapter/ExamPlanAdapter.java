@@ -1,6 +1,5 @@
 package org.lntu.online.ui.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +21,11 @@ public class ExamPlanAdapter extends BaseAdapter {
     private List<ExamPlan> planList;
     private Date nowDate;
 
-    public ExamPlanAdapter(Context context, List<ExamPlan> planList) {
-        inflater = LayoutInflater.from(context);
+    public ExamPlanAdapter(LayoutInflater inflater) {
+        this.inflater = inflater;
+    }
+
+    public void setExamPlanList(List<ExamPlan> planList) {
         this.planList = planList;
         nowDate = new Date();
     }
@@ -47,60 +49,64 @@ public class ExamPlanAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.activity_exam_plan_item, parent, false);
+            convertView = inflater.inflate(R.layout.activity_main_exam_plan_item, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        ExamPlan plan = planList.get(position);
-        holder.tvCourse.setText(plan.getCourse());
-        holder.tvTime.setText(plan.getShowTime());
-        holder.tvLocation.setText(plan.getLocation());
-        if (plan.getEndTime().before(nowDate)) {
-            holder.iconFinish.setVisibility(View.VISIBLE);
-            holder.iconCountdown.setVisibility(View.INVISIBLE);
-        } else {
-            holder.iconFinish.setVisibility(View.INVISIBLE);
-            holder.iconCountdown.setVisibility(View.VISIBLE);
-            long diff = plan.getStartTime().getTime() - nowDate.getTime();
-            long days = diff / (1000 * 60 * 60 * 24);
-            if (days == 0) {
-                holder.tvDayLeft.setText("< 1");
-            } else {
-                holder.tvDayLeft.setText(days + "");
-            }
-            if (days <= 7) {
-                holder.tvDayLeft.setTextColor(0xFFF44336);
-            } else {
-                holder.tvDayLeft.setTextColor(0xFF4CAF50);
-            }
-        }
+        holder.update(position);
         return convertView;
     }
 
     protected class ViewHolder {
 
-        @InjectView(R.id.exam_plan_item_tv_course)
+        @InjectView(R.id.main_exam_plan_item_tv_course)
         protected TextView tvCourse;
         
-        @InjectView(R.id.exam_plan_item_tv_time)
+        @InjectView(R.id.main_exam_plan_item_tv_time)
         protected TextView tvTime;
         
-        @InjectView(R.id.exam_plan_item_tv_location)
+        @InjectView(R.id.main_exam_plan_item_tv_location)
         protected TextView tvLocation;
 
-        @InjectView(R.id.exam_plan_item_icon_finish)
+        @InjectView(R.id.main_exam_plan_item_icon_finish)
         protected View iconFinish;
 
-        @InjectView(R.id.exam_plan_item_icon_countdown)
+        @InjectView(R.id.main_exam_plan_item_icon_countdown)
         protected View iconCountdown;
         
-        @InjectView(R.id.exam_plan_item_tv_day_left)
+        @InjectView(R.id.main_exam_plan_item_tv_day_left)
         protected TextView tvDayLeft;
 
         public ViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
+        }
+
+        public void update(int position) {
+            ExamPlan plan = planList.get(position);
+            tvCourse.setText(plan.getCourse());
+            tvTime.setText(plan.getShowTime());
+            tvLocation.setText(plan.getLocation());
+            if (plan.getEndTime().before(nowDate)) {
+                iconFinish.setVisibility(View.VISIBLE);
+                iconCountdown.setVisibility(View.INVISIBLE);
+            } else {
+                iconFinish.setVisibility(View.INVISIBLE);
+                iconCountdown.setVisibility(View.VISIBLE);
+                long diff = plan.getStartTime().getTime() - nowDate.getTime();
+                long days = diff / (1000 * 60 * 60 * 24);
+                if (days == 0) {
+                    tvDayLeft.setText("< 1");
+                } else {
+                    tvDayLeft.setText(days + "");
+                }
+                if (days <= 7) {
+                    tvDayLeft.setTextColor(0xFFF44336);
+                } else {
+                    tvDayLeft.setTextColor(0xFF4CAF50);
+                }
+            }
         }
 
     }

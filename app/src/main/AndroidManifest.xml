@@ -80,12 +80,6 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.ui.activity.ExamPlanActivity"
-            android:label="@string/exam_plan"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
-
-        <activity
             android:name="org.lntu.online.ui.activity.GradesActivity"
             android:label="@string/grades_query"
             android:screenOrientation="portrait"
