@@ -2,15 +2,12 @@ package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
-import org.lntu.online.R;
 import com.rey.material.widget.Switch;
 
+import org.lntu.online.R;
 import org.lntu.online.model.local.NavMenuHeaderBackgroundType;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;

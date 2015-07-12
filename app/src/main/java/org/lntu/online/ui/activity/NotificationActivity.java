@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import org.lntu.online.R;
 
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.AppUtils;
 
 import butterknife.ButterKnife;
@@ -23,19 +24,7 @@ public class NotificationActivity extends BaseActivity {
         setContentView(R.layout.activity_notification);
         ButterKnife.inject(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
     }
 
 }
