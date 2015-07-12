@@ -23,6 +23,7 @@ import org.lntu.online.model.entity.CourseEvaInfo;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.OneKeyEvaAdapter;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 
@@ -38,7 +39,7 @@ import retrofit.client.Response;
 
 public class OneKeyEvaActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @InjectView(R.id.one_key_eva_toolbar)
     protected Toolbar toolbar;
 
     @InjectView(R.id.one_key_eva_layout_content)
@@ -71,8 +72,7 @@ public class OneKeyEvaActivity extends BaseActivity {
         setContentView(R.layout.activity_one_key_eva);
         ButterKnife.inject(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
@@ -86,17 +86,6 @@ public class OneKeyEvaActivity extends BaseActivity {
         fab.attachToRecyclerView(recyclerView);
 
         startNetwork();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     private void startNetwork() {

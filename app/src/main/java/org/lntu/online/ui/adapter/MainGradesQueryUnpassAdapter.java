@@ -16,7 +16,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class UnpassCourseAdapter extends BaseExpandableListAdapter {
+public class MainGradesQueryUnpassAdapter extends BaseExpandableListAdapter {
 
     private static final int[] flagColorResId = {
             R.color.red_light,
@@ -28,7 +28,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     private LayoutInflater inflater;
     private List<UnpassCourse> unpassCourseList;
 
-    public UnpassCourseAdapter(Context context, List<UnpassCourse> unpassCourseList) {
+    public MainGradesQueryUnpassAdapter(Context context, List<UnpassCourse> unpassCourseList) {
         inflater = LayoutInflater.from(context);
         this.unpassCourseList = unpassCourseList;
     }
@@ -78,17 +78,13 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         GroupViewHolder holder;
         if (convertView == null)  {
-            convertView = inflater.inflate(R.layout.activity_unpass_course_item_group, parent, false);
+            convertView = inflater.inflate(R.layout.activity_main_grades_query_unpass_item_group, parent, false);
             holder = new GroupViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (GroupViewHolder) convertView.getTag();
         }
-        UnpassCourse course = unpassCourseList.get(groupPosition);
-        holder.tvName.setText(course.getName());
-        holder.tvNum.setText(course.getNum());
-        holder.tvCredit.setText(course.getCredit() + "");
-        holder.tvSelectType.setText(course.getSelectType());
+        holder.update(groupPosition);
         return convertView;
     }
 
@@ -96,68 +92,80 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ChildViewHolder holder;
         if (convertView == null)  {
-            convertView = inflater.inflate(R.layout.activity_unpass_course_item_child, parent, false);
+            convertView = inflater.inflate(R.layout.activity_main_grades_query_unpass_item_child, parent, false);
             holder = new ChildViewHolder(convertView);
             convertView.setTag(holder);
         } else {
             holder = (ChildViewHolder) convertView.getTag();
         }
-        UnpassCourse.Record record = unpassCourseList.get(groupPosition).getRecords().get(childPosition);
-        holder.tvSemester.setText(record.getYear() + record.getTerm());
-        holder.tvExamType.setText(record.getExamType());
-        holder.tvScore.setText(record.getScore());
-        holder.tvRemarks.setText(record.getRemarks());
-        holder.iconFlag.setBackgroundResource(flagColorResId[childPosition%flagColorResId.length]);
-        holder.iconShadowTop.setVisibility(childPosition == 0 ? View.VISIBLE : View.GONE);
-        holder.iconShadowBottom.setVisibility(childPosition == unpassCourseList.get(groupPosition).getRecords().size() - 1 ? View.VISIBLE : View.GONE);
+        holder.update(groupPosition, childPosition);
         return convertView;
     }
 
-    protected static class GroupViewHolder {
+    protected class GroupViewHolder {
 
-        @InjectView(R.id.unpass_course_item_group_tv_name)
+        @InjectView(R.id.main_grades_query_unpass_item_group_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.unpass_course_item_group_tv_num)
+        @InjectView(R.id.main_grades_query_unpass_item_group_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.unpass_course_item_group_tv_credit)
+        @InjectView(R.id.main_grades_query_unpass_item_group_tv_credit)
         protected TextView tvCredit;
 
-        @InjectView(R.id.unpass_course_item_group_tv_select_type)
+        @InjectView(R.id.main_grades_query_unpass_item_group_tv_select_type)
         protected TextView tvSelectType;
 
         public GroupViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
         }
 
+        public void update(int groupPosition) {
+            UnpassCourse course = unpassCourseList.get(groupPosition);
+            tvName.setText(course.getName());
+            tvNum.setText(course.getNum());
+            tvCredit.setText(course.getCredit() + "");
+            tvSelectType.setText(course.getSelectType());
+        }
+
     }
 
-    protected static class ChildViewHolder {
+    protected class ChildViewHolder {
 
-        @InjectView(R.id.unpass_course_item_child_icon_flag)
+        @InjectView(R.id.main_grades_query_unpass_item_child_icon_flag)
         protected View iconFlag;
 
-        @InjectView(R.id.unpass_course_item_child_icon_shadow_top)
+        @InjectView(R.id.main_grades_query_unpass_item_child_icon_shadow_top)
         protected View iconShadowTop;
 
-        @InjectView(R.id.unpass_course_item_child_icon_shadow_bottom)
+        @InjectView(R.id.main_grades_query_unpass_item_child_icon_shadow_bottom)
         protected View iconShadowBottom;
 
-        @InjectView(R.id.unpass_course_item_child_tv_semester)
+        @InjectView(R.id.main_grades_query_unpass_item_child_tv_semester)
         protected TextView tvSemester;
 
-        @InjectView(R.id.unpass_course_item_child_tv_exam_type)
+        @InjectView(R.id.main_grades_query_unpass_item_child_tv_exam_type)
         protected TextView tvExamType;
 
-        @InjectView(R.id.unpass_course_item_child_tv_score)
+        @InjectView(R.id.main_grades_query_unpass_item_child_tv_score)
         protected TextView tvScore;
 
-        @InjectView(R.id.unpass_course_item_child_tv_remarks)
+        @InjectView(R.id.main_grades_query_unpass_item_child_tv_remarks)
         protected TextView tvRemarks;
 
         public ChildViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
+        }
+
+        public void update(int groupPosition, int childPosition) {
+            UnpassCourse.Record record = unpassCourseList.get(groupPosition).getRecords().get(childPosition);
+            tvSemester.setText(record.getYear() + record.getTerm());
+            tvExamType.setText(record.getExamType());
+            tvScore.setText(record.getScore());
+            tvRemarks.setText(record.getRemarks());
+            iconFlag.setBackgroundResource(flagColorResId[childPosition%flagColorResId.length]);
+            iconShadowTop.setVisibility(childPosition == 0 ? View.VISIBLE : View.GONE);
+            iconShadowBottom.setVisibility(childPosition == unpassCourseList.get(groupPosition).getRecords().size() - 1 ? View.VISIBLE : View.GONE);
         }
 
     }

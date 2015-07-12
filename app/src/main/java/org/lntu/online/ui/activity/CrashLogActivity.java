@@ -8,25 +8,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import org.lntu.online.R;
-
 import org.joda.time.DateTime;
-import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.ShipUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.Date;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
-import butterknife.OnClick;
 
-public class CrashLogActivity extends BaseActivity {
+public class CrashLogActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
 
-    @InjectView(R.id.toolbar)
+    @InjectView(R.id.crash_show_toolbar)
     protected Toolbar toolbar;
 
     @InjectView(R.id.crash_show_tv_info)
@@ -40,9 +35,8 @@ public class CrashLogActivity extends BaseActivity {
         setContentView(R.layout.activity_crash_log);
         ButterKnife.inject(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_error_white_24dp);
+        toolbar.inflateMenu(R.menu.crash_log);
+        toolbar.setOnMenuItemClickListener(this);
 
         //接收异常对象
         Intent intent = getIntent();
@@ -79,22 +73,13 @@ public class CrashLogActivity extends BaseActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.crash_log, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
-            case android.R.id.home:
-                // TODO
-                return true;
             case R.id.action_send:
                 // TODO
                 return true;
             default:
-                return super.onOptionsItemSelected(item);
+                return false;
         }
     }
 

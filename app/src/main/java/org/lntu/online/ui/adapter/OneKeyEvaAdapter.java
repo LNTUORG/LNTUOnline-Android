@@ -40,20 +40,10 @@ public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        CourseEvaInfo info = infoList.get(position);
-        holder.tvName.setText(info.getName());
-        holder.tvNum.setText(info.getNum());
-        holder.tvTeacher.setText(info.getTeacher());
-        if (info.isDone()) {
-            holder.tvState.setText("已评估");
-            holder.tvState.setTextColor(context.getResources().getColor(R.color.score_level_normal));
-        } else {
-            holder.tvState.setText("未评估");
-            holder.tvState.setTextColor(context.getResources().getColor(R.color.score_level_unpass));
-        }
+        holder.update(position);
     }
 
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
+    protected class ViewHolder extends RecyclerView.ViewHolder {
 
         @InjectView(R.id.one_key_eva_item_tv_name)
         protected TextView tvName;
@@ -70,6 +60,20 @@ public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.View
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            CourseEvaInfo info = infoList.get(position);
+            tvName.setText(info.getName());
+            tvNum.setText(info.getNum());
+            tvTeacher.setText(info.getTeacher());
+            if (info.isDone()) {
+                tvState.setText("已评估");
+                tvState.setTextColor(context.getResources().getColor(R.color.score_level_normal));
+            } else {
+                tvState.setText("未评估");
+                tvState.setTextColor(context.getResources().getColor(R.color.score_level_unpass));
+            }
         }
 
     }

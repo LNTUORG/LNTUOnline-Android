@@ -6,9 +6,6 @@
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
-
-        <item name="android:spinnerItemStyle">@style/AppTheme.SpinnerItemStyle</item>
-        <item name="android:spinnerDropDownItemStyle">@style/AppTheme.SpinnerDropDownItemStyle</item>
     </style>
 
     <!-- App Theme -->
@@ -111,5 +108,9 @@
         <item name="android:textColor">@color/text_color_primary</item>
     </style>
 
+    <!--
+    <item name="android:spinnerItemStyle">@style/AppTheme.SpinnerItemStyle</item>
+    <item name="android:spinnerDropDownItemStyle">@style/AppTheme.SpinnerDropDownItemStyle</item>
+    -->
 
 </resources>

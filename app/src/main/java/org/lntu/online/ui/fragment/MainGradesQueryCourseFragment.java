@@ -1,10 +1,10 @@
-package org.lntu.online.ui.activity;
+package org.lntu.online.ui.fragment;
 
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -14,15 +14,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
 
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Grades;
 import org.lntu.online.shared.LoginShared;
-import org.lntu.online.ui.adapter.GradesAdapter;
-import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.adapter.MainGradesQueryCourseAdapter;
 
 import java.util.Collections;
 
@@ -31,51 +30,48 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class GradesActivity extends BaseActivity {
+public class MainGradesQueryCourseFragment extends Fragment {
 
-    @InjectView(R.id.toolbar)
-    protected Toolbar toolbar;
-
-    @InjectView(R.id.grades_layout_content)
+    @InjectView(R.id.main_grades_query_course_layout_content)
     protected ViewGroup layoutContent;
 
-    @InjectView(R.id.grades_recycler_view)
+    @InjectView(R.id.main_grades_query_course_recycler_view)
     protected RecyclerView recyclerView;
 
-    @InjectView(R.id.grades_icon_loading)
+    @InjectView(R.id.main_grades_query_course_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.grades_icon_empty)
+    @InjectView(R.id.main_grades_query_course_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.grades_icon_loading_anim)
+    @InjectView(R.id.main_grades_query_course_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.grades_tv_load_failed)
+    @InjectView(R.id.main_grades_query_course_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @InjectView(R.id.grades_tv_ava_credit)
+    @InjectView(R.id.main_grades_query_course_tv_ava_credit)
     protected TextView tvAvaCredit;
 
-    @InjectView(R.id.grades_fab)
+    @InjectView(R.id.main_grades_query_course_fab)
     protected FloatingActionButton fab;
 
-    @InjectView(R.id.grades_layout_condition)
+    @InjectView(R.id.main_grades_query_course_layout_condition)
     protected ViewGroup layoutCondition;
 
-    @InjectView(R.id.grades_spn_year)
+    @InjectView(R.id.main_grades_query_course_spn_year)
     protected Spinner spnYear;
 
-    @InjectView(R.id.grades_spn_term)
+    @InjectView(R.id.main_grades_query_course_spn_term)
     protected Spinner spnTerm;
 
-    @InjectView(R.id.grades_spn_level)
+    @InjectView(R.id.main_grades_query_course_spn_level)
     protected Spinner spnLevel;
 
-    @InjectView(R.id.grades_spn_display)
+    @InjectView(R.id.main_grades_query_course_spn_display)
     protected Spinner spnDisplay;
 
-    private GradesAdapter adapter;
+    private MainGradesQueryCourseAdapter adapter;
 
     // 最后一次使用的过滤条件-默认条件为全部
     private int lastYear = 0;
@@ -84,20 +80,21 @@ public class GradesActivity extends BaseActivity {
     private boolean lastDisplayMax = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grades);
-        ButterKnife.inject(this);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_main_grades_query_course, container, false);
+    }
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.inject(this, view);
 
-        Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
+        Animation dataLoadAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new GradesAdapter(this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new MainGradesQueryCourseAdapter(getActivity());
         recyclerView.setAdapter(adapter);
 
         fab.attachToRecyclerView(recyclerView);
@@ -105,19 +102,8 @@ public class GradesActivity extends BaseActivity {
         startNetwork();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     private void startNetwork() {
-        ApiClient.with(this).apiService.getGrades(LoginShared.getLoginToken(this), new BackgroundCallback<Grades>(this) {
+        ApiClient.with(getActivity()).apiService.getGrades(LoginShared.getLoginToken(getActivity()), new BackgroundCallback<Grades>(getActivity()) {
 
             @Override
             public void handleSuccess(Grades grades, Response response) {
@@ -149,7 +135,7 @@ public class GradesActivity extends BaseActivity {
         for (int n = 1; n < years.length; n++) {
             years[n] = topYear - n + 1 + "";
         }
-        ArrayAdapter<String> spnYearAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, years);
+        ArrayAdapter<String> spnYearAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, years);
         spnYearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnYear.setAdapter(spnYearAdapter);
 
@@ -165,18 +151,19 @@ public class GradesActivity extends BaseActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.grades_icon_empty)
+    @OnClick(R.id.main_grades_query_course_icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
     }
 
-    @OnClick(R.id.grades_layout_condition_center)
+    @OnClick(R.id.main_grades_query_course_layout_condition_center)
     protected void onBtnLayoutConditionCenterClick() {
         // 屏蔽条件面板中间事件
     }
 
+    /*
     @Override
     public void onBackPressed() {
         if (layoutCondition.getVisibility() == View.VISIBLE) {
@@ -186,10 +173,11 @@ public class GradesActivity extends BaseActivity {
             super.onBackPressed();
         }
     }
+    */
 
     @OnClick({
-            R.id.grades_fab,
-            R.id.grades_layout_condition
+            R.id.main_grades_query_course_fab,
+            R.id.main_grades_query_course_layout_condition
     })
     protected void onBtnFabClick() {
         if (layoutCondition.getVisibility() == View.GONE) {
