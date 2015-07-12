@@ -23,9 +23,6 @@ import retrofit.client.Response;
 
 public class LoginActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
-    protected Toolbar toolbar;
-
     @InjectView(R.id.login_edt_user_id)
     protected MaterialEditText edtUserId;
 
@@ -40,10 +37,6 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_account_circle_white_24dp);
     }
 
     @OnClick(R.id.login_btn_login)

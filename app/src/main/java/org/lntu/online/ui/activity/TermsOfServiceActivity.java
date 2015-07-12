@@ -41,5 +41,5 @@ public class TermsOfServiceActivity extends BaseActivity {
         });
 
     }
-    
+
 }
