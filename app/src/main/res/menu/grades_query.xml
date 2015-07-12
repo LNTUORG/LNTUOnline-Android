@@ -3,16 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_browser"
-        android:title="@string/notice_by_browser"
-        android:icon="@drawable/ic_open_in_browser_white_24dp"
-        android:orderInCategory="1"
-        app:showAsAction="always" />
-
-    <item
-        android:id="@+id/action_refresh"
-        android:title="@string/refresh"
-        android:icon="@drawable/ic_refresh_white_24dp"
+        android:id="@+id/action_one_key_eva"
+        android:title="@string/one_key_eva"
         android:orderInCategory="1"
         app:showAsAction="always" />
 

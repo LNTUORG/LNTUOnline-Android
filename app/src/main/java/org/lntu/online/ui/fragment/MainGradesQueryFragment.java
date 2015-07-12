@@ -1,5 +1,6 @@
 package org.lntu.online.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,11 +9,14 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.activity.MainActivity;
+import org.lntu.online.ui.activity.OneKeyEvaActivity;
+import org.lntu.online.util.ShipUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +24,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainGradesQueryFragment extends MainActivity.BaseFragment {
+public class MainGradesQueryFragment extends MainActivity.BaseFragment implements Toolbar.OnMenuItemClickListener {
 
     @InjectView(R.id.main_grades_query_toolbar)
     protected Toolbar toolbar;
@@ -42,10 +46,23 @@ public class MainGradesQueryFragment extends MainActivity.BaseFragment {
         ButterKnife.inject(this, view);
 
         toolbar.setNavigationOnClickListener(getOpenNavigationClickListener());
+        toolbar.inflateMenu(R.menu.grades_query);
+        toolbar.setOnMenuItemClickListener(this);
 
         viewPager.setAdapter(new ViewPagerAdapter(getActivity().getSupportFragmentManager()));
 
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_one_key_eva:
+                startActivity(new Intent(getActivity(), OneKeyEvaActivity.class));
+                return true;
+            default:
+                return false;
+        }
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {

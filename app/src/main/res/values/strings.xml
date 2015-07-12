@@ -33,7 +33,8 @@
     <string name="class_table_course_info">课程信息</string>
     <string name="one_key_eva">一键评课</string>
     <string name="unpass_query">挂科查询</string>
-    <string name="skill_test">等级考试</string>
+
+
 
     <string name="advice">意见反馈</string>
     <string name="app_crash">程序崩溃</string>
