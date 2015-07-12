@@ -16,7 +16,7 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.UnpassCourse;
 import org.lntu.online.shared.LoginShared;
-import org.lntu.online.ui.adapter.UnpassCourseAdapter;
+import org.lntu.online.ui.adapter.MainGradesQueryUnpassAdapter;
 
 import java.util.List;
 
@@ -67,7 +67,7 @@ public class MainGradesQueryUnpassFragment extends Fragment {
                 if (unpassCourseList.size() == 0) {
                     showIconEmptyView("目前没有未通过的课程。");
                 } else {
-                    exListView.setAdapter(new UnpassCourseAdapter(getActivity(), unpassCourseList));
+                    exListView.setAdapter(new MainGradesQueryUnpassAdapter(getActivity(), unpassCourseList));
                     exListView.setVisibility(View.VISIBLE);
                     iconLoading.setVisibility(View.GONE);
                     iconEmpty.setVisibility(View.GONE);

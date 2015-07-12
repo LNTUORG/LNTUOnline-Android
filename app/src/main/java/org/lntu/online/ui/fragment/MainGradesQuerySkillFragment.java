@@ -16,7 +16,7 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.SkillTestScore;
 import org.lntu.online.shared.LoginShared;
-import org.lntu.online.ui.adapter.SkillTestAdapter;
+import org.lntu.online.ui.adapter.MainGradesQuerySkillAdapter;
 
 import java.util.List;
 
@@ -67,7 +67,7 @@ public class MainGradesQuerySkillFragment extends Fragment {
                 if (skillTestScoreList.size() == 0) {
                     showIconEmptyView("您还没有参加过技能考试呢，赶快去报名啊~~");
                 } else {
-                    listView.setAdapter(new SkillTestAdapter(getActivity(), skillTestScoreList));
+                    listView.setAdapter(new MainGradesQuerySkillAdapter(getActivity(), skillTestScoreList));
                     listView.setVisibility(View.VISIBLE);
                     iconLoading.setVisibility(View.GONE);
                     iconEmpty.setVisibility(View.GONE);

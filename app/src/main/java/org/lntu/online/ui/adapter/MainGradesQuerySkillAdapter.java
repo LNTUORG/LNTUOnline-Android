@@ -15,12 +15,12 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class SkillTestAdapter extends BaseAdapter {
+public class MainGradesQuerySkillAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private List<SkillTestScore> scoreList;
 
-    public SkillTestAdapter(Context context, List<SkillTestScore> scoreList) {
+    public MainGradesQuerySkillAdapter(Context context, List<SkillTestScore> scoreList) {
         inflater = LayoutInflater.from(context);
         this.scoreList = scoreList;
     }
@@ -50,14 +50,11 @@ public class SkillTestAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        SkillTestScore score = scoreList.get(position);
-        holder.tvName.setText(score.getName());
-        holder.tvTime.setText(score.getTime());
-        holder.tvScore.setText(score.getScore());
+        holder.update(position);
         return convertView;
     }
 
-    protected static class ViewHolder {
+    protected class ViewHolder {
 
         @InjectView(R.id.skill_test_item_tv_name)
         protected TextView tvName;
@@ -70,6 +67,13 @@ public class SkillTestAdapter extends BaseAdapter {
 
         public ViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
+        }
+
+        public void update(int position) {
+            SkillTestScore score = scoreList.get(position);
+            tvName.setText(score.getName());
+            tvTime.setText(score.getTime());
+            tvScore.setText(score.getScore());
         }
 
     }

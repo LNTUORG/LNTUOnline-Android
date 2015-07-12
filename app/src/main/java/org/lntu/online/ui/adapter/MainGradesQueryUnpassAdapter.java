@@ -16,7 +16,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class UnpassCourseAdapter extends BaseExpandableListAdapter {
+public class MainGradesQueryUnpassAdapter extends BaseExpandableListAdapter {
 
     private static final int[] flagColorResId = {
             R.color.red_light,
@@ -28,7 +28,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     private LayoutInflater inflater;
     private List<UnpassCourse> unpassCourseList;
 
-    public UnpassCourseAdapter(Context context, List<UnpassCourse> unpassCourseList) {
+    public MainGradesQueryUnpassAdapter(Context context, List<UnpassCourse> unpassCourseList) {
         inflater = LayoutInflater.from(context);
         this.unpassCourseList = unpassCourseList;
     }
@@ -84,11 +84,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
         } else {
             holder = (GroupViewHolder) convertView.getTag();
         }
-        UnpassCourse course = unpassCourseList.get(groupPosition);
-        holder.tvName.setText(course.getName());
-        holder.tvNum.setText(course.getNum());
-        holder.tvCredit.setText(course.getCredit() + "");
-        holder.tvSelectType.setText(course.getSelectType());
+        holder.update(groupPosition);
         return convertView;
     }
 
@@ -102,18 +98,11 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
         } else {
             holder = (ChildViewHolder) convertView.getTag();
         }
-        UnpassCourse.Record record = unpassCourseList.get(groupPosition).getRecords().get(childPosition);
-        holder.tvSemester.setText(record.getYear() + record.getTerm());
-        holder.tvExamType.setText(record.getExamType());
-        holder.tvScore.setText(record.getScore());
-        holder.tvRemarks.setText(record.getRemarks());
-        holder.iconFlag.setBackgroundResource(flagColorResId[childPosition%flagColorResId.length]);
-        holder.iconShadowTop.setVisibility(childPosition == 0 ? View.VISIBLE : View.GONE);
-        holder.iconShadowBottom.setVisibility(childPosition == unpassCourseList.get(groupPosition).getRecords().size() - 1 ? View.VISIBLE : View.GONE);
+        holder.update(groupPosition, childPosition);
         return convertView;
     }
 
-    protected static class GroupViewHolder {
+    protected class GroupViewHolder {
 
         @InjectView(R.id.unpass_course_item_group_tv_name)
         protected TextView tvName;
@@ -131,9 +120,17 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
             ButterKnife.inject(this, convertView);
         }
 
+        public void update(int groupPosition) {
+            UnpassCourse course = unpassCourseList.get(groupPosition);
+            tvName.setText(course.getName());
+            tvNum.setText(course.getNum());
+            tvCredit.setText(course.getCredit() + "");
+            tvSelectType.setText(course.getSelectType());
+        }
+
     }
 
-    protected static class ChildViewHolder {
+    protected class ChildViewHolder {
 
         @InjectView(R.id.unpass_course_item_child_icon_flag)
         protected View iconFlag;
@@ -158,6 +155,17 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
         public ChildViewHolder(View convertView) {
             ButterKnife.inject(this, convertView);
+        }
+
+        public void update(int groupPosition, int childPosition) {
+            UnpassCourse.Record record = unpassCourseList.get(groupPosition).getRecords().get(childPosition);
+            tvSemester.setText(record.getYear() + record.getTerm());
+            tvExamType.setText(record.getExamType());
+            tvScore.setText(record.getScore());
+            tvRemarks.setText(record.getRemarks());
+            iconFlag.setBackgroundResource(flagColorResId[childPosition%flagColorResId.length]);
+            iconShadowTop.setVisibility(childPosition == 0 ? View.VISIBLE : View.GONE);
+            iconShadowBottom.setVisibility(childPosition == unpassCourseList.get(groupPosition).getRecords().size() - 1 ? View.VISIBLE : View.GONE);
         }
 
     }
