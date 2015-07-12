@@ -1,6 +1,11 @@
 package org.lntu.online.ui.fragment;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +14,9 @@ import android.view.ViewGroup;
 import org.lntu.online.R;
 import org.lntu.online.ui.activity.MainActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -16,6 +24,12 @@ public class MainGradesQueryFragment extends MainActivity.BaseFragment {
 
     @InjectView(R.id.main_grades_query_toolbar)
     protected Toolbar toolbar;
+
+    @InjectView(R.id.main_grades_query_tab_layout)
+    protected TabLayout tabLayout;
+
+    @InjectView(R.id.main_grades_query_view_pager)
+    protected ViewPager viewPager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,6 +42,43 @@ public class MainGradesQueryFragment extends MainActivity.BaseFragment {
         ButterKnife.inject(this, view);
 
         toolbar.setNavigationOnClickListener(getOpenNavigationClickListener());
+
+        viewPager.setAdapter(new ViewPagerAdapter(getActivity().getSupportFragmentManager()));
+
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private class ViewPagerAdapter extends FragmentPagerAdapter {
+
+        private List<Fragment> fmList = new ArrayList<>();
+        private String[] titles = {
+                "课程成绩",
+                "未通过课程",
+                "技能考试"
+        };
+
+        public ViewPagerAdapter(FragmentManager fm) {
+            super(fm);
+            fmList.add(new MainGradesQuerySkillFragment());
+            fmList.add(new MainGradesQuerySkillFragment());
+            fmList.add(new MainGradesQuerySkillFragment());
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return fmList.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return fmList.size();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
+        }
+
     }
 
 }

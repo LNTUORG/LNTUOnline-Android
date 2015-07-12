@@ -1,9 +1,10 @@
-package org.lntu.online.ui.activity;
+package org.lntu.online.ui.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
@@ -16,7 +17,6 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.SkillTestScore;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.SkillTestAdapter;
-import org.lntu.online.ui.base.BaseActivity;
 
 import java.util.List;
 
@@ -25,10 +25,7 @@ import butterknife.InjectView;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class SkillTestActivity extends BaseActivity {
-
-    @InjectView(R.id.toolbar)
-    protected Toolbar toolbar;
+public class MainGradesQuerySkillFragment extends Fragment {
 
     @InjectView(R.id.skill_test_list_view)
     protected ListView listView;
@@ -46,41 +43,31 @@ public class SkillTestActivity extends BaseActivity {
     protected TextView tvLoadFailed;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_skill_test);
-        ButterKnife.inject(this);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_main_grades_query_skill, container, false);
+    }
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.inject(this, view);
 
-        Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
+        Animation dataLoadAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
         startNetwork();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     private void startNetwork() {
-        ApiClient.with(this).apiService.getSkillTestScoreList(LoginShared.getLoginToken(this), new BackgroundCallback<List<SkillTestScore>>(this) {
+        ApiClient.with(getActivity()).apiService.getSkillTestScoreList(LoginShared.getLoginToken(getActivity()), new BackgroundCallback<List<SkillTestScore>>(getActivity()) {
 
             @Override
             public void handleSuccess(List<SkillTestScore> skillTestScoreList, Response response) {
                 if (skillTestScoreList.size() == 0) {
                     showIconEmptyView("您还没有参加过技能考试呢，赶快去报名啊~~");
                 } else {
-                    listView.setAdapter(new SkillTestAdapter(SkillTestActivity.this, skillTestScoreList));
+                    listView.setAdapter(new SkillTestAdapter(getActivity(), skillTestScoreList));
                     listView.setVisibility(View.VISIBLE);
                     iconLoading.setVisibility(View.GONE);
                     iconEmpty.setVisibility(View.GONE);

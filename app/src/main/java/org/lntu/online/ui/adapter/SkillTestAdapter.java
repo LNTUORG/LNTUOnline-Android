@@ -44,7 +44,7 @@ public class SkillTestAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = inflater.inflate(R.layout.activity_skill_test_item, parent, false);
+            convertView = inflater.inflate(R.layout.activity_main_grades_query_skill_item, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
