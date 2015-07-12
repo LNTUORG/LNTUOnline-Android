@@ -31,7 +31,7 @@ public final class ShipUtils {
         context.startActivity(Intent.createChooser(intent, "分享给好友"));
     }
 
-    private static void openUrlByBrowser(Context context, String url) {
+    public static void openUrlByBrowser(Context context, String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         if (intent.resolveActivity(context.getPackageManager()) != null) {
             context.startActivity(intent);
