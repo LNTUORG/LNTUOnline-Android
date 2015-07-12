@@ -27,7 +27,7 @@ public class MainExamPlanFragment extends MainActivity.BaseFragment {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.inject(this, view);
 
-        setOpenNavigationListen(toolbar);
+        toolbar.setNavigationOnClickListener(getOpenNavigationClickListener());
     }
 
 }

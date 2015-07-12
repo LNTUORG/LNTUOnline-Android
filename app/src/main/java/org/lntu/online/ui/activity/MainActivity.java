@@ -397,8 +397,8 @@ public class MainActivity extends BaseActivity {
      */
     public static abstract class BaseFragment extends Fragment {
 
-        protected void setOpenNavigationListen(Toolbar toolbar) {
-            toolbar.setNavigationOnClickListener(((MainActivity) getActivity()).openNavigationClickListener);
+        protected View.OnClickListener getOpenNavigationClickListener() {
+            return ((MainActivity) getActivity()).openNavigationClickListener;
         }
 
     }
