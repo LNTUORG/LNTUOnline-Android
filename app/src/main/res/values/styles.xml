@@ -6,6 +6,9 @@
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
+
+        <item name="android:spinnerItemStyle">@style/AppTheme.SpinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/AppTheme.SpinnerDropDownItemStyle</item>
     </style>
 
     <!-- App Theme -->
@@ -106,11 +109,6 @@
     <style name="AppTheme.Button">
         <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@drawable/button_image</item>
-    </style>
-
-    <!-- ClassTableSpinner -->
-    <style name="AppTheme.ClassTableSpinner" parent="Widget.AppCompat.Spinner">
-        <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
     </style>
 
 </resources>

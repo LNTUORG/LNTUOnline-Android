@@ -28,10 +28,11 @@
                 android:layout_marginRight="@dimen/margin_short"
                 android:background="#88ffffff" />
 
-            <Spinner style="@style/AppTheme.ClassTableSpinner"
+            <Spinner
                 android:id="@+id/class_table_spn_year_term"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:popupBackground="@drawable/abc_popup_background_mtrl_mult"  />
 
         </LinearLayout>
 
