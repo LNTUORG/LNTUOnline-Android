@@ -174,7 +174,11 @@
 
     </FrameLayout>
 
-    <View style="@style/AppTheme.DeepLine.Navigation"
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+    <View style="@style/AppTheme.DeepLine"
+        android:clickable="true" />
+    <View style="@style/AppTheme.ItemGap"
         android:clickable="true" />
 
     <FrameLayout
