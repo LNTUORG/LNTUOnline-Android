@@ -380,7 +380,9 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    // 打开导航的监听器
+    /**
+     * 打开导航的监听器
+     */
     private View.OnClickListener openNavigationClickListener = new View.OnClickListener() {
 
         @Override
@@ -390,7 +392,9 @@ public class MainActivity extends BaseActivity {
 
     };
 
-    // Fragment模板
+    /**
+     * Fragment模板
+     */
     public static abstract class BaseFragment extends Fragment {
 
         protected void setOpenNavigationListen(Toolbar toolbar) {
