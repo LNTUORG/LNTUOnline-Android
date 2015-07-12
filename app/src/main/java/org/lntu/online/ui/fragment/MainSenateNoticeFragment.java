@@ -62,6 +62,9 @@ public class MainSenateNoticeFragment extends MainActivity.BaseFragment implemen
             case R.id.action_browser:
                 ShipUtils.openUrlByBrowser(getActivity(), url);
                 return true;
+            case R.id.action_refresh:
+                webView.loadUrl(url);
+                return true;
             default:
                 return false;
         }

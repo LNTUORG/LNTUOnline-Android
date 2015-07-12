@@ -40,6 +40,9 @@ public class SenateNoticeDetailActivity extends BaseActivity implements Toolbar.
             case R.id.action_browser:
                 ShipUtils.openUrlByBrowser(this, getIntent().getStringExtra("url"));
                 return true;
+            case R.id.action_refresh:
+                webView.loadUrl(getIntent().getStringExtra("url"));
+                return true;
             default:
                 return false;
         }

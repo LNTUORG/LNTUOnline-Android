@@ -100,6 +100,8 @@
 
     <string name="credit">学分</string>
 
+    <string name="refresh">刷新</string>
+
     <string name="notice_by_browser">浏览器访问教务公告</string>
     <string name="open_source_homepage">项目开源主页</string>
     <string name="open_source_homepage_content">https://github.com/LNTUORG/LntuOnline-Android</string>
