@@ -1,37 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
         android:visibility="gone"
-        android:id="@+id/main_grades_query_course_layout_content"
+        android:id="@+id/main_grades_query_course_recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/main_grades_query_course_tv_ava_credit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:background="@color/blue_light"
-            android:elevation="4dp"
-            tools:text="您的平均学分绩为 1.523" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/main_grades_query_course_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
     <LinearLayout
         android:id="@+id/main_grades_query_course_icon_loading"

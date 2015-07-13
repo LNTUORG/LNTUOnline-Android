@@ -32,9 +32,6 @@ import retrofit.client.Response;
 
 public class MainGradesQueryCourseFragment extends Fragment {
 
-    @InjectView(R.id.main_grades_query_course_layout_content)
-    protected ViewGroup layoutContent;
-
     @InjectView(R.id.main_grades_query_course_recycler_view)
     protected RecyclerView recyclerView;
 
@@ -49,9 +46,6 @@ public class MainGradesQueryCourseFragment extends Fragment {
 
     @InjectView(R.id.main_grades_query_course_tv_load_failed)
     protected TextView tvLoadFailed;
-
-    @InjectView(R.id.main_grades_query_course_tv_ava_credit)
-    protected TextView tvAvaCredit;
 
     @InjectView(R.id.main_grades_query_course_fab)
     protected FloatingActionButton fab;
@@ -123,10 +117,8 @@ public class MainGradesQueryCourseFragment extends Fragment {
     }
 
     private void showLayoutContent(Grades grades) {
-        tvAvaCredit.setText(grades.getAverageCredit().getSummary());
-
         Collections.sort(grades.getCourseScores()); // 排序
-        adapter.setScoreList(grades.getCourseScores());
+        adapter.setGrades(grades);
 
         int topYear = grades.getCourseScores().get(0).getYear();
         int bottomYear = grades.getCourseScores().get(grades.getCourseScores().size() - 1).getYear();
@@ -139,7 +131,7 @@ public class MainGradesQueryCourseFragment extends Fragment {
         spnYearAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnYear.setAdapter(spnYearAdapter);
 
-        layoutContent.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.VISIBLE);
         fab.setVisibility(View.VISIBLE);
         iconLoading.setVisibility(View.GONE);
         iconEmpty.setVisibility(View.GONE);
@@ -162,18 +154,6 @@ public class MainGradesQueryCourseFragment extends Fragment {
     protected void onBtnLayoutConditionCenterClick() {
         // 屏蔽条件面板中间事件
     }
-
-    /*
-    @Override
-    public void onBackPressed() {
-        if (layoutCondition.getVisibility() == View.VISIBLE) {
-            layoutCondition.setVisibility(View.GONE);
-            fab.setImageResource(R.drawable.ic_search_white_24dp);
-        } else {
-            super.onBackPressed();
-        }
-    }
-    */
 
     @OnClick({
             R.id.main_grades_query_course_fab,
