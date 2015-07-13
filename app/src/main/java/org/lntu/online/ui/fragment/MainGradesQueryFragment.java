@@ -49,7 +49,9 @@ public class MainGradesQueryFragment extends MainActivity.BaseFragment implement
         toolbar.inflateMenu(R.menu.grades_query);
         toolbar.setOnMenuItemClickListener(this);
 
-        viewPager.setAdapter(new ViewPagerAdapter(getActivity().getSupportFragmentManager()));
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getActivity().getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(adapter.getCount());
 
         tabLayout.setupWithViewPager(viewPager);
     }
