@@ -22,6 +22,7 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     private static final int TYPE_NORMAL = 0;
     private static final int TYPE_TIP = 1;
+    private static final int TYPE_BOTTOM = 2;
 
     private Context context;
     private LayoutInflater inflater;
@@ -94,12 +95,18 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     @Override
     public int getItemCount() {
-        return currentList == null ? 0 : currentList.size() + 1;
+        return currentList == null ? 0 : currentList.size() + 2;
     }
 
     @Override
     public int getItemViewType(int position) {
-        return position == 0 ? TYPE_TIP : TYPE_NORMAL;
+        if (position == 0) {
+            return TYPE_TIP;
+        } else if (position == getItemCount() - 1) {
+            return TYPE_BOTTOM;
+        } else {
+            return TYPE_NORMAL;
+        }
     }
 
     @Override
@@ -109,6 +116,8 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
                 return new NormalViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item_normal, parent, false));
             case TYPE_TIP:
                 return new TipViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item_tip, parent, false));
+            case TYPE_BOTTOM:
+                return new ViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item_bottom, parent, false));
             default:
                 throw new RuntimeException("Unknow view type.");
         }
@@ -116,8 +125,10 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        if (position != 0) {
+        if (position != 0 && position != getItemCount() - 1) {
             position -= 1;
+        } else {
+            position = -1;
         }
         holder.update(position);
     }
@@ -164,9 +175,6 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
         @InjectView(R.id.main_grades_query_course_item_normal_icon_very_good)
         protected View iconVeryGood;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_icon_blank_bottom)
-        protected View iconBlankBottom;
-
         public NormalViewHolder(View itemView) {
             super(itemView);
             ButterKnife.inject(this, itemView);
@@ -196,7 +204,6 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
                     break;
             }
             iconVeryGood.setVisibility(score.getLevel() == Grades.Level.GREAT ? View.VISIBLE : View.GONE);
-            iconBlankBottom.setVisibility(position == currentList.size() - 1 ? View.VISIBLE : View.GONE);
         }
 
     }

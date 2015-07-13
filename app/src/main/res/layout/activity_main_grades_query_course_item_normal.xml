@@ -206,9 +206,4 @@
         android:layout_gravity="bottom"
         android:background="@drawable/item_gap_shadow_bottom" />
 
-    <View
-        android:id="@+id/main_grades_query_course_item_normal_icon_blank_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="4dp" />
-
 </LinearLayout>
