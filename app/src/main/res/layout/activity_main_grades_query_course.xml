@@ -6,107 +6,94 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/main_grades_query_course_layout_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <FrameLayout
+        <TextView
+            android:id="@+id/main_grades_query_course_tv_ava_credit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:background="@color/blue_light"
+            android:elevation="4dp"
+            tools:text="您的平均学分绩为 1.523" />
 
-            <LinearLayout
-                android:visibility="gone"
-                android:id="@+id/main_grades_query_course_layout_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/main_grades_query_course_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-                <TextView
-                    android:id="@+id/main_grades_query_course_tv_ava_credit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:background="@color/blue_light"
-                    android:elevation="4dp"
-                    tools:text="您的平均学分绩为 1.523" />
+    </LinearLayout>
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/main_grades_query_course_recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/main_grades_query_course_icon_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
 
-            </LinearLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/main_grades_query_course_icon_loading"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
+            <ImageView
+                android:id="@+id/main_grades_query_course_icon_loading_anim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_empty_inbox_anim" />
 
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/main_grades_query_course_icon_loading_anim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_empty_inbox_anim" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_empty_inbox" />
-
-                </FrameLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="@string/network_data_loading"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:visibility="gone"
-                android:id="@+id/main_grades_query_course_icon_empty"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_empty_search" />
-
-                <TextView
-                    android:id="@+id/main_grades_query_course_tv_load_failed"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="@string/network_data_load_failed"
-                    android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_empty_inbox" />
 
         </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/network_data_loading"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/main_grades_query_course_icon_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_empty_search" />
+
+        <TextView
+            android:id="@+id/main_grades_query_course_tv_load_failed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/network_data_load_failed"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
