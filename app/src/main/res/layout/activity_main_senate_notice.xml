@@ -12,7 +12,6 @@
         android:background="@color/color_primary"
         android:elevation="4dp"
         app:navigationIcon="@drawable/ic_menu_white_24dp"
-        app:title="@string/senate_notice"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 

@@ -1,6 +1,5 @@
 package org.lntu.online.ui.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -12,7 +11,6 @@ import android.webkit.WebViewClient;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.activity.MainActivity;
-import org.lntu.online.ui.activity.SenateNoticeDetailActivity;
 import org.lntu.online.util.ShipUtils;
 
 import butterknife.ButterKnife;
@@ -47,9 +45,7 @@ public class MainSenateNoticeFragment extends MainActivity.BaseFragment implemen
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                Intent intent = new Intent(getActivity(), SenateNoticeDetailActivity.class);
-                intent.putExtra("url", url);
-                startActivity(intent);
+                webView.loadUrl(url);
                 return true;
             }
 
@@ -64,6 +60,19 @@ public class MainSenateNoticeFragment extends MainActivity.BaseFragment implemen
                 return true;
             case R.id.action_refresh:
                 webView.loadUrl(webView.getUrl());
+                return true;
+            case R.id.action_home:
+                webView.loadUrl(url);
+                return true;
+            case R.id.action_back:
+                if (webView.canGoBack()) {
+                    webView.goBack();
+                }
+                return true;
+            case R.id.action_forward:
+                if (webView.canGoForward()) {
+                    webView.goForward();
+                }
                 return true;
             default:
                 return false;
