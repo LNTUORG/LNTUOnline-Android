@@ -20,8 +20,14 @@ import butterknife.InjectView;
 
 public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGradesQueryCourseAdapter.ViewHolder> {
 
+    private static final int TYPE_NORMAL = 0;
+    private static final int TYPE_TIP = 1;
+    private static final int TYPE_BOTTOM = 2;
+
     private Context context;
     private LayoutInflater inflater;
+
+    private Grades grades;
 
     private List<Grades.CourseScore> scoreList;
     private List<Grades.CourseScore> maxList;
@@ -35,10 +41,13 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
         currentList = new ArrayList<>();
     }
 
-    public void setScoreList(List<Grades.CourseScore> scoreList) {
+    public void setGrades(Grades grades) {
+        // 设置成绩
+        this.grades = grades;
+
         // 源数据
         this.scoreList.clear();
-        this.scoreList.addAll(scoreList);
+        this.scoreList.addAll(grades.getCourseScores());
         // 构建最高成绩数据源
         maxList.clear();
         for (Grades.CourseScore score : this.scoreList) {
@@ -86,84 +95,131 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     @Override
     public int getItemCount() {
-        return currentList == null ? 0 : currentList.size();
+        return currentList == null ? 0 : currentList.size() + 2;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position == 0) {
+            return TYPE_TIP;
+        } else if (position == getItemCount() - 1) {
+            return TYPE_BOTTOM;
+        } else {
+            return TYPE_NORMAL;
+        }
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item, parent, false));
+        switch (viewType) {
+            case TYPE_NORMAL:
+                return new NormalViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item_normal, parent, false));
+            case TYPE_TIP:
+                return new TipViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item_tip, parent, false));
+            case TYPE_BOTTOM:
+                return new ViewHolder(inflater.inflate(R.layout.activity_main_grades_query_course_item_bottom, parent, false));
+            default:
+                throw new RuntimeException("Unknow view type.");
+        }
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Grades.CourseScore score = currentList.get(position);
-        holder.tvNum.setText(score.getNum());
-        holder.tvName.setText(score.getName());
-        holder.tvScore.setText(score.getScore());
-        holder.tvCredit.setText(Float.toString(score.getCredit()));
-        holder.tvTestMode.setText(score.getTestMode());
-        holder.tvSelectType.setText(score.getSelectType());
-        holder.tvRemarks.setText(score.getRemarks());
-        holder.tvExamType.setText(score.getExamType());
-        holder.tvSemester.setText(score.getYear() + score.getTerm());
-        switch (score.getLevel()) { // 得分红色标记
-            case GREAT:
-                holder.tvScore.setTextColor(context.getResources().getColor(R.color.score_level_great));
-                break;
-            case UNPASS:
-                holder.tvScore.setTextColor(context.getResources().getColor(R.color.score_level_unpass));
-                break;
-            case NORMAL:
-            default:
-                holder.tvScore.setTextColor(context.getResources().getColor(R.color.score_level_normal));
-                break;
+        if (position != 0 && position != getItemCount() - 1) {
+            position -= 1;
+        } else {
+            position = -1;
         }
-        holder.iconVeryGood.setVisibility(score.getLevel() == Grades.Level.GREAT ? View.VISIBLE : View.GONE);
-        holder.iconBlankTop.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
-        holder.iconBlankBottom.setVisibility(position == currentList.size() - 1 ? View.VISIBLE : View.GONE);
+        holder.update(position);
     }
 
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
-
-        @InjectView(R.id.main_grades_query_course_item_tv_num)
-        protected TextView tvNum;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_name)
-        protected TextView tvName;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_score)
-        protected TextView tvScore;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_credit)
-        protected TextView tvCredit;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_test_mode)
-        protected TextView tvTestMode;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_select_type)
-        protected TextView tvSelectType;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_remarks)
-        protected TextView tvRemarks;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_exam_type)
-        protected TextView tvExamType;
-
-        @InjectView(R.id.main_grades_query_course_item_tv_semester)
-        protected TextView tvSemester;
-
-        @InjectView(R.id.main_grades_query_course_item_icon_very_good)
-        protected View iconVeryGood;
-
-        @InjectView(R.id.main_grades_query_course_item_icon_blank_top)
-        protected View iconBlankTop;
-
-        @InjectView(R.id.main_grades_query_course_item_icon_blank_bottom)
-        protected View iconBlankBottom;
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public ViewHolder(View itemView) {
             super(itemView);
+        }
+
+        public void update(int position) {}
+
+    }
+
+    protected class NormalViewHolder extends ViewHolder {
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_num)
+        protected TextView tvNum;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_name)
+        protected TextView tvName;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_score)
+        protected TextView tvScore;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_credit)
+        protected TextView tvCredit;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_test_mode)
+        protected TextView tvTestMode;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_select_type)
+        protected TextView tvSelectType;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_remarks)
+        protected TextView tvRemarks;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_exam_type)
+        protected TextView tvExamType;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_tv_semester)
+        protected TextView tvSemester;
+
+        @InjectView(R.id.main_grades_query_course_item_normal_icon_very_good)
+        protected View iconVeryGood;
+
+        public NormalViewHolder(View itemView) {
+            super(itemView);
             ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            Grades.CourseScore score = currentList.get(position);
+            tvNum.setText(score.getNum());
+            tvName.setText(score.getName());
+            tvScore.setText(score.getScore());
+            tvCredit.setText(Float.toString(score.getCredit()));
+            tvTestMode.setText(score.getTestMode());
+            tvSelectType.setText(score.getSelectType());
+            tvRemarks.setText(score.getRemarks());
+            tvExamType.setText(score.getExamType());
+            tvSemester.setText(score.getYear() + score.getTerm());
+            switch (score.getLevel()) { // 得分红色标记
+                case GREAT:
+                    tvScore.setTextColor(context.getResources().getColor(R.color.score_level_great));
+                    break;
+                case UNPASS:
+                    tvScore.setTextColor(context.getResources().getColor(R.color.score_level_unpass));
+                    break;
+                case NORMAL:
+                default:
+                    tvScore.setTextColor(context.getResources().getColor(R.color.score_level_normal));
+                    break;
+            }
+            iconVeryGood.setVisibility(score.getLevel() == Grades.Level.GREAT ? View.VISIBLE : View.GONE);
+        }
+
+    }
+
+    protected class TipViewHolder extends ViewHolder {
+
+        @InjectView(R.id.main_grades_query_course_item_tip_tv_ava_credit)
+        protected TextView tvAvaCredit;
+
+        public TipViewHolder(View itemView) {
+            super(itemView);
+            ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            tvAvaCredit.setText(grades.getAverageCredit().getSummary());
         }
 
     }
