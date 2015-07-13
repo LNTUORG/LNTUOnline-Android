@@ -96,34 +96,10 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Grades.CourseScore score = currentList.get(position);
-        holder.tvNum.setText(score.getNum());
-        holder.tvName.setText(score.getName());
-        holder.tvScore.setText(score.getScore());
-        holder.tvCredit.setText(Float.toString(score.getCredit()));
-        holder.tvTestMode.setText(score.getTestMode());
-        holder.tvSelectType.setText(score.getSelectType());
-        holder.tvRemarks.setText(score.getRemarks());
-        holder.tvExamType.setText(score.getExamType());
-        holder.tvSemester.setText(score.getYear() + score.getTerm());
-        switch (score.getLevel()) { // 得分红色标记
-            case GREAT:
-                holder.tvScore.setTextColor(context.getResources().getColor(R.color.score_level_great));
-                break;
-            case UNPASS:
-                holder.tvScore.setTextColor(context.getResources().getColor(R.color.score_level_unpass));
-                break;
-            case NORMAL:
-            default:
-                holder.tvScore.setTextColor(context.getResources().getColor(R.color.score_level_normal));
-                break;
-        }
-        holder.iconVeryGood.setVisibility(score.getLevel() == Grades.Level.GREAT ? View.VISIBLE : View.GONE);
-        holder.iconBlankTop.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
-        holder.iconBlankBottom.setVisibility(position == currentList.size() - 1 ? View.VISIBLE : View.GONE);
+        holder.update(position);
     }
 
-    protected static class ViewHolder extends RecyclerView.ViewHolder {
+    protected class ViewHolder extends RecyclerView.ViewHolder {
 
         @InjectView(R.id.main_grades_query_course_item_tv_num)
         protected TextView tvNum;
@@ -164,6 +140,34 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.inject(this, itemView);
+        }
+
+        public void update(int position) {
+            Grades.CourseScore score = currentList.get(position);
+            tvNum.setText(score.getNum());
+            tvName.setText(score.getName());
+            tvScore.setText(score.getScore());
+            tvCredit.setText(Float.toString(score.getCredit()));
+            tvTestMode.setText(score.getTestMode());
+            tvSelectType.setText(score.getSelectType());
+            tvRemarks.setText(score.getRemarks());
+            tvExamType.setText(score.getExamType());
+            tvSemester.setText(score.getYear() + score.getTerm());
+            switch (score.getLevel()) { // 得分红色标记
+                case GREAT:
+                    tvScore.setTextColor(context.getResources().getColor(R.color.score_level_great));
+                    break;
+                case UNPASS:
+                    tvScore.setTextColor(context.getResources().getColor(R.color.score_level_unpass));
+                    break;
+                case NORMAL:
+                default:
+                    tvScore.setTextColor(context.getResources().getColor(R.color.score_level_normal));
+                    break;
+            }
+            iconVeryGood.setVisibility(score.getLevel() == Grades.Level.GREAT ? View.VISIBLE : View.GONE);
+            iconBlankTop.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
+            iconBlankBottom.setVisibility(position == currentList.size() - 1 ? View.VISIBLE : View.GONE);
         }
 
     }
