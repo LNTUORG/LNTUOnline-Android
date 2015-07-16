@@ -11,18 +11,18 @@ import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.AppUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class NotificationActivity extends BaseActivity {
 
-    @InjectView(R.id.notification_toolbar)
+    @Bind(R.id.notification_toolbar)
     protected Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
     }

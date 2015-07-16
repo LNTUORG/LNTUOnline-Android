@@ -15,7 +15,7 @@ import org.lntu.online.model.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 
 public class MainClassTableListAdapter extends RecyclerView.Adapter<MainClassTableListAdapter.ViewHolder> {
@@ -57,24 +57,24 @@ public class MainClassTableListAdapter extends RecyclerView.Adapter<MainClassTab
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.main_class_table_list_item_tv_num)
+        @Bind(R.id.main_class_table_list_item_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.main_class_table_list_item_tv_name)
+        @Bind(R.id.main_class_table_list_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.main_class_table_list_item_tv_teacher)
+        @Bind(R.id.main_class_table_list_item_tv_teacher)
         protected TextView tvTeacher;
 
-        @InjectView(R.id.main_class_table_list_item_icon_blank_top)
+        @Bind(R.id.main_class_table_list_item_icon_blank_top)
         protected View iconBlankTop;
 
-        @InjectView(R.id.main_class_table_list_item_icon_blank_bottom)
+        @Bind(R.id.main_class_table_list_item_icon_blank_bottom)
         protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @OnClick(R.id.main_class_table_list_item_btn_card)

@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.ViewHolder> {
 
@@ -329,15 +329,15 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class NormalViewHolder extends ViewHolder {
 
-        @InjectView(R.id.student_info_item_normal_tv_name)
+        @Bind(R.id.student_info_item_normal_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.student_info_item_normal_tv_value)
+        @Bind(R.id.student_info_item_normal_tv_value)
         protected TextView tvValue;
 
         public NormalViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {
@@ -350,21 +350,21 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class EdexViewHolder extends ViewHolder {
 
-        @InjectView(R.id.student_info_item_edex_tv_date_of_start)
+        @Bind(R.id.student_info_item_edex_tv_date_of_start)
         protected TextView tvDateOfStart;
 
-        @InjectView(R.id.student_info_item_edex_tv_date_of_end)
+        @Bind(R.id.student_info_item_edex_tv_date_of_end)
         protected TextView tvDateOfEnd;
 
-        @InjectView(R.id.student_info_item_edex_tv_school_name)
+        @Bind(R.id.student_info_item_edex_tv_school_name)
         protected TextView tvSchoolName;
 
-        @InjectView(R.id.student_info_item_edex_tv_witness)
+        @Bind(R.id.student_info_item_edex_tv_witness)
         protected TextView tvWitness;
 
         public EdexViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {
@@ -379,30 +379,30 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class FamilyViewHolder extends ViewHolder {
 
-        @InjectView(R.id.student_info_item_family_tv_name)
+        @Bind(R.id.student_info_item_family_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.student_info_item_family_tv_relationship)
+        @Bind(R.id.student_info_item_family_tv_relationship)
         protected TextView tvRelationship;
 
-        @InjectView(R.id.student_info_item_family_tv_political_affiliation)
+        @Bind(R.id.student_info_item_family_tv_political_affiliation)
         protected TextView tvPolAff;
 
-        @InjectView(R.id.student_info_item_family_tv_job)
+        @Bind(R.id.student_info_item_family_tv_job)
         protected TextView tvJob;
 
-        @InjectView(R.id.student_info_item_family_tv_post)
+        @Bind(R.id.student_info_item_family_tv_post)
         protected TextView tvPost;
 
-        @InjectView(R.id.student_info_item_family_tv_work_location)
+        @Bind(R.id.student_info_item_family_tv_work_location)
         protected TextView tvWorkLocation;
 
-        @InjectView(R.id.student_info_item_family_tv_tel)
+        @Bind(R.id.student_info_item_family_tv_tel)
         protected TextView tvTel;
 
         public FamilyViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {
@@ -420,30 +420,30 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class ActionViewHolder extends ViewHolder {
 
-        @InjectView(R.id.student_info_item_action_tv_level)
+        @Bind(R.id.student_info_item_action_tv_level)
         protected TextView tvLevel;
 
-        @InjectView(R.id.student_info_item_action_tv_create_time)
+        @Bind(R.id.student_info_item_action_tv_create_time)
         protected TextView tvCreateTime;
 
-        @InjectView(R.id.student_info_item_action_tv_create_reason)
+        @Bind(R.id.student_info_item_action_tv_create_reason)
         protected TextView tvCreateReason;
 
-        @InjectView(R.id.student_info_item_action_tv_cancel_time)
+        @Bind(R.id.student_info_item_action_tv_cancel_time)
         protected TextView tvCancelTime;
 
-        @InjectView(R.id.student_info_item_action_tv_cancel_reason)
+        @Bind(R.id.student_info_item_action_tv_cancel_reason)
         protected TextView tvCancelReason;
 
-        @InjectView(R.id.student_info_item_action_tv_state)
+        @Bind(R.id.student_info_item_action_tv_state)
         protected TextView tvState;
 
-        @InjectView(R.id.student_info_item_action_tv_remarks)
+        @Bind(R.id.student_info_item_action_tv_remarks)
         protected TextView tvRemarks;
 
         public ActionViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {
@@ -461,12 +461,12 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class TitleViewHolder extends ViewHolder {
 
-        @InjectView(R.id.student_info_item_title_tv_title)
+        @Bind(R.id.student_info_item_title_tv_title)
         protected TextView tvTitle;
 
         public TitleViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {

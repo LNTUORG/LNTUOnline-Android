@@ -26,43 +26,43 @@ import org.lntu.online.ui.adapter.MainGradesQueryCourseAdapter;
 import java.util.Collections;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class MainGradesQueryCourseFragment extends Fragment {
 
-    @InjectView(R.id.main_grades_query_course_recycler_view)
+    @Bind(R.id.main_grades_query_course_recycler_view)
     protected RecyclerView recyclerView;
 
-    @InjectView(R.id.main_grades_query_course_icon_loading)
+    @Bind(R.id.main_grades_query_course_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.main_grades_query_course_icon_empty)
+    @Bind(R.id.main_grades_query_course_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.main_grades_query_course_icon_loading_anim)
+    @Bind(R.id.main_grades_query_course_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.main_grades_query_course_tv_load_failed)
+    @Bind(R.id.main_grades_query_course_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @InjectView(R.id.main_grades_query_course_fab)
+    @Bind(R.id.main_grades_query_course_fab)
     protected FloatingActionButton fab;
 
-    @InjectView(R.id.main_grades_query_course_layout_condition)
+    @Bind(R.id.main_grades_query_course_layout_condition)
     protected ViewGroup layoutCondition;
 
-    @InjectView(R.id.main_grades_query_course_spn_year)
+    @Bind(R.id.main_grades_query_course_spn_year)
     protected Spinner spnYear;
 
-    @InjectView(R.id.main_grades_query_course_spn_term)
+    @Bind(R.id.main_grades_query_course_spn_term)
     protected Spinner spnTerm;
 
-    @InjectView(R.id.main_grades_query_course_spn_level)
+    @Bind(R.id.main_grades_query_course_spn_level)
     protected Spinner spnLevel;
 
-    @InjectView(R.id.main_grades_query_course_spn_display)
+    @Bind(R.id.main_grades_query_course_spn_display)
     protected Spinner spnDisplay;
 
     private MainGradesQueryCourseAdapter adapter;
@@ -81,7 +81,7 @@ public class MainGradesQueryCourseFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         Animation dataLoadAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());

@@ -14,25 +14,25 @@ import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.UpdateUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 
 public class AboutActivity extends BaseActivity {
 
-    @InjectView(R.id.about_toolbar)
+    @Bind(R.id.about_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.about_layout_collapsing_toolbar)
+    @Bind(R.id.about_layout_collapsing_toolbar)
     protected CollapsingToolbarLayout layoutCollapsingToolbar;
 
-    @InjectView(R.id.about_tv_version)
+    @Bind(R.id.about_tv_version)
     protected TextView tvVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
         layoutCollapsingToolbar.setTitle(getString(R.string.about));

@@ -14,16 +14,16 @@ import org.lntu.online.ui.activity.MainActivity;
 import org.lntu.online.util.ShipUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class MainSenateNoticeFragment extends MainActivity.BaseFragment implements Toolbar.OnMenuItemClickListener {
 
     private static final String url = "http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100";
 
-    @InjectView(R.id.main_senate_notice_toolbar)
+    @Bind(R.id.main_senate_notice_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.main_senate_notice_web_view)
+    @Bind(R.id.main_senate_notice_web_view)
     protected WebView webView;
 
     @Override
@@ -34,7 +34,7 @@ public class MainSenateNoticeFragment extends MainActivity.BaseFragment implemen
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         toolbar.setNavigationOnClickListener(getOpenNavigationClickListener());
         toolbar.inflateMenu(R.menu.senate_notice);

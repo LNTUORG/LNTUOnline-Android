@@ -32,36 +32,36 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
 public class MainClassTableFragment extends MainActivity.BaseFragment implements Toolbar.OnMenuItemClickListener {
 
-    @InjectView(R.id.main_class_table_toolbar)
+    @Bind(R.id.main_class_table_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.class_table_spn_year_term)
+    @Bind(R.id.class_table_spn_year_term)
     protected Spinner spnYearTerm;
 
-    @InjectView(R.id.class_table_layout_loading)
+    @Bind(R.id.class_table_layout_loading)
     protected View layoutLoading;
 
-    @InjectView(R.id.class_table_layout_empty)
+    @Bind(R.id.class_table_layout_empty)
     protected View layoutEmpty;
 
-    @InjectView(R.id.class_table_layout_fragment)
+    @Bind(R.id.class_table_layout_fragment)
     protected ViewGroup layoutFragment;
 
-    @InjectView(R.id.class_table_icon_loading_anim)
+    @Bind(R.id.class_table_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.class_table_tv_load_failed)
+    @Bind(R.id.class_table_tv_load_failed)
     protected TextView tvLoadFailed;
 
     // Page
-    @InjectView(R.id.class_table_page_view_pager)
+    @Bind(R.id.class_table_page_view_pager)
     protected ViewPager viewPager;
 
     private MainClassTablePageAdapter pageAdapter;
@@ -69,7 +69,7 @@ public class MainClassTableFragment extends MainActivity.BaseFragment implements
     private ClassTableTimeDialogHolder dialogHolder;
 
     // List
-    @InjectView(R.id.class_table_list_recycler_view)
+    @Bind(R.id.class_table_list_recycler_view)
     protected RecyclerView recyclerView;
 
     private MainClassTableListAdapter listAdapter;
@@ -88,7 +88,7 @@ public class MainClassTableFragment extends MainActivity.BaseFragment implements
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         toolbar.setNavigationOnClickListener(getOpenNavigationClickListener());
         toolbar.inflateMenu(R.menu.class_table_page);

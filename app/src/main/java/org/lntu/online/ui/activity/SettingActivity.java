@@ -14,26 +14,26 @@ import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 
 public class SettingActivity extends BaseActivity implements Switch.OnCheckedChangeListener {
 
-    @InjectView(R.id.setting_toolbar)
+    @Bind(R.id.setting_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.setting_rg_nav_menu_header_bg)
+    @Bind(R.id.setting_rg_nav_menu_header_bg)
     protected RadioGroup rgNavMenuHeaderBg;
 
-    @InjectView(R.id.setting_switch_enable_notification)
+    @Bind(R.id.setting_switch_enable_notification)
     protected Switch switchEnableNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 

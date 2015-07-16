@@ -31,7 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -39,28 +39,28 @@ import retrofit.client.Response;
 
 public class OneKeyEvaActivity extends BaseActivity {
 
-    @InjectView(R.id.one_key_eva_toolbar)
+    @Bind(R.id.one_key_eva_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.one_key_eva_layout_content)
+    @Bind(R.id.one_key_eva_layout_content)
     protected ViewGroup layoutContent;
 
-    @InjectView(R.id.one_key_eva_icon_loading)
+    @Bind(R.id.one_key_eva_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.one_key_eva_icon_empty)
+    @Bind(R.id.one_key_eva_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.one_key_eva_icon_loading_anim)
+    @Bind(R.id.one_key_eva_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.one_key_eva_tv_load_failed)
+    @Bind(R.id.one_key_eva_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @InjectView(R.id.one_key_eva_recycler_view)
+    @Bind(R.id.one_key_eva_recycler_view)
     protected RecyclerView recyclerView;
 
-    @InjectView(R.id.one_key_eva_fab)
+    @Bind(R.id.one_key_eva_fab)
     protected FloatingActionButton fab;
 
     private OneKeyEvaAdapter adapter;
@@ -70,7 +70,7 @@ public class OneKeyEvaActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_key_eva);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 

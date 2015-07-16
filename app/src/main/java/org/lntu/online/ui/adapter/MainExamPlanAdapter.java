@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class MainExamPlanAdapter extends BaseAdapter {
 
@@ -66,26 +66,26 @@ public class MainExamPlanAdapter extends BaseAdapter {
 
     protected class ViewHolder {
 
-        @InjectView(R.id.main_exam_plan_item_tv_course)
+        @Bind(R.id.main_exam_plan_item_tv_course)
         protected TextView tvCourse;
         
-        @InjectView(R.id.main_exam_plan_item_tv_time)
+        @Bind(R.id.main_exam_plan_item_tv_time)
         protected TextView tvTime;
         
-        @InjectView(R.id.main_exam_plan_item_tv_location)
+        @Bind(R.id.main_exam_plan_item_tv_location)
         protected TextView tvLocation;
 
-        @InjectView(R.id.main_exam_plan_item_icon_finish)
+        @Bind(R.id.main_exam_plan_item_icon_finish)
         protected View iconFinish;
 
-        @InjectView(R.id.main_exam_plan_item_icon_countdown)
+        @Bind(R.id.main_exam_plan_item_icon_countdown)
         protected View iconCountdown;
         
-        @InjectView(R.id.main_exam_plan_item_tv_day_left)
+        @Bind(R.id.main_exam_plan_item_tv_day_left)
         protected TextView tvDayLeft;
 
         public ViewHolder(View convertView) {
-            ButterKnife.inject(this, convertView);
+            ButterKnife.bind(this, convertView);
         }
 
         public void update(int position) {

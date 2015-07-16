@@ -22,17 +22,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class MainGradesQueryFragment extends MainActivity.BaseFragment implements Toolbar.OnMenuItemClickListener {
 
-    @InjectView(R.id.main_grades_query_toolbar)
+    @Bind(R.id.main_grades_query_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.main_grades_query_tab_layout)
+    @Bind(R.id.main_grades_query_tab_layout)
     protected TabLayout tabLayout;
 
-    @InjectView(R.id.main_grades_query_view_pager)
+    @Bind(R.id.main_grades_query_view_pager)
     protected ViewPager viewPager;
 
     @Override
@@ -43,7 +43,7 @@ public class MainGradesQueryFragment extends MainActivity.BaseFragment implement
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         toolbar.setNavigationOnClickListener(getOpenNavigationClickListener());
         toolbar.inflateMenu(R.menu.grades_query);

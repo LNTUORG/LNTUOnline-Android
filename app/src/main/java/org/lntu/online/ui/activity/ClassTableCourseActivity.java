@@ -12,45 +12,45 @@ import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class ClassTableCourseActivity extends BaseActivity {
 
-    @InjectView(R.id.class_table_course_toolbar)
+    @Bind(R.id.class_table_course_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.class_table_course_tv_name)
+    @Bind(R.id.class_table_course_tv_name)
     protected TextView tvName;
 
-    @InjectView(R.id.class_table_course_tv_num)
+    @Bind(R.id.class_table_course_tv_num)
     protected TextView tvNum;
 
-    @InjectView(R.id.class_table_course_tv_credit)
+    @Bind(R.id.class_table_course_tv_credit)
     protected TextView tvCredit;
 
-    @InjectView(R.id.class_table_course_tv_teacher)
+    @Bind(R.id.class_table_course_tv_teacher)
     protected TextView tvTeacher;
 
-    @InjectView(R.id.class_table_course_tv_time)
+    @Bind(R.id.class_table_course_tv_time)
     protected TextView tvTime;
 
-    @InjectView(R.id.class_table_course_tv_select_type)
+    @Bind(R.id.class_table_course_tv_select_type)
     protected TextView tvSelectType;
 
-    @InjectView(R.id.class_table_course_tv_test_mode)
+    @Bind(R.id.class_table_course_tv_test_mode)
     protected TextView tvTestMode;
 
-    @InjectView(R.id.class_table_course_tv_exam_type)
+    @Bind(R.id.class_table_course_tv_exam_type)
     protected TextView tvExamType;
 
-    @InjectView(R.id.class_table_course_tv_times_and_places)
+    @Bind(R.id.class_table_course_tv_times_and_places)
     protected TextView tvTimesAndPlaces;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_table_course);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
