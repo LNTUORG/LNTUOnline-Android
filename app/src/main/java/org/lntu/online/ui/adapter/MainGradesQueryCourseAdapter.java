@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGradesQueryCourseAdapter.ViewHolder> {
 
@@ -145,39 +145,39 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     protected class NormalViewHolder extends ViewHolder {
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_num)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_name)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_score)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_score)
         protected TextView tvScore;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_credit)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_credit)
         protected TextView tvCredit;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_test_mode)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_test_mode)
         protected TextView tvTestMode;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_select_type)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_select_type)
         protected TextView tvSelectType;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_remarks)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_remarks)
         protected TextView tvRemarks;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_exam_type)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_exam_type)
         protected TextView tvExamType;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_tv_semester)
+        @Bind(R.id.main_grades_query_course_item_normal_tv_semester)
         protected TextView tvSemester;
 
-        @InjectView(R.id.main_grades_query_course_item_normal_icon_very_good)
+        @Bind(R.id.main_grades_query_course_item_normal_icon_very_good)
         protected View iconVeryGood;
 
         public NormalViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {
@@ -210,12 +210,12 @@ public class MainGradesQueryCourseAdapter extends RecyclerView.Adapter<MainGrade
 
     protected class TipViewHolder extends ViewHolder {
 
-        @InjectView(R.id.main_grades_query_course_item_tip_tv_ava_credit)
+        @Bind(R.id.main_grades_query_course_item_tip_tv_ava_credit)
         protected TextView tvAvaCredit;
 
         public TipViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {

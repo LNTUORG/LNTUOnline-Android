@@ -15,25 +15,24 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import org.lntu.online.R;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
+import org.lntu.online.R;
 
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.InjectViews;
 import butterknife.OnClick;
 
 public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableTimeDialogHolder.ViewHolder> {
 
-    @InjectView(R.id.dialog_class_table_time_tv_title)
+    @Bind(R.id.dialog_class_table_time_tv_title)
     protected TextView tvTitle;
 
-    @InjectViews({
+    @Bind({
             R.id.dialog_class_table_time_btn_month_1,
             R.id.dialog_class_table_time_btn_month_2,
             R.id.dialog_class_table_time_btn_month_3,
@@ -43,13 +42,13 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
     })
     protected List<RadioButton> btnMonthList;
 
-    @InjectView(R.id.dialog_class_table_time_layout_month)
+    @Bind(R.id.dialog_class_table_time_layout_month)
     protected ViewGroup layoutMonth;
 
-    @InjectView(R.id.dialog_class_table_time_recycler_view_day)
+    @Bind(R.id.dialog_class_table_time_recycler_view_day)
     protected RecyclerView recyclerView;
 
-    @InjectView(R.id.dialog_class_table_time_layout_day)
+    @Bind(R.id.dialog_class_table_time_layout_day)
     protected ViewGroup layoutDay;
 
     private Context context;
@@ -78,7 +77,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
 
                 })
                 .build();
-        ButterKnife.inject(this, dialog.getCustomView());
+        ButterKnife.bind(this, dialog.getCustomView());
 
         recyclerView.setLayoutManager(new GridLayoutManager(context, 7, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(this);
@@ -231,12 +230,12 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.dialog_class_table_time_day_tv)
+        @Bind(R.id.dialog_class_table_time_day_tv)
         protected CheckedTextView tv;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @OnClick(R.id.dialog_class_table_time_day_tv)

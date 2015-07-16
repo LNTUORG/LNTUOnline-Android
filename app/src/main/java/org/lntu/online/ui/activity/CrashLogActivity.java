@@ -17,14 +17,14 @@ import java.io.StringWriter;
 import java.io.Writer;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class CrashLogActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
 
-    @InjectView(R.id.crash_show_toolbar)
+    @Bind(R.id.crash_show_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.crash_show_tv_info)
+    @Bind(R.id.crash_show_tv_info)
     protected TextView tvInfo;
 
     private String crashLog;
@@ -33,7 +33,7 @@ public class CrashLogActivity extends BaseActivity implements Toolbar.OnMenuItem
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crash_log);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.inflateMenu(R.menu.crash_log);
         toolbar.setOnMenuItemClickListener(this);

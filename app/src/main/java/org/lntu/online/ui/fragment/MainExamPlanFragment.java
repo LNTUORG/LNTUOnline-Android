@@ -25,31 +25,31 @@ import java.util.Collections;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class MainExamPlanFragment extends MainActivity.BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
 
-    @InjectView(R.id.main_exam_plan_toolbar)
+    @Bind(R.id.main_exam_plan_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.main_exam_plan_refresh_layout)
+    @Bind(R.id.main_exam_plan_refresh_layout)
     protected SwipeRefreshLayout refreshLayout;
 
-    @InjectView(R.id.main_exam_plan_list_view)
+    @Bind(R.id.main_exam_plan_list_view)
     protected ListView listView;
 
-    @InjectView(R.id.main_exam_plan_layout_loading)
+    @Bind(R.id.main_exam_plan_layout_loading)
     protected ViewGroup layoutLoading;
 
-    @InjectView(R.id.main_exam_plan_layout_empty)
+    @Bind(R.id.main_exam_plan_layout_empty)
     protected ViewGroup layoutEmpty;
 
-    @InjectView(R.id.main_exam_plan_icon_loading_anim)
+    @Bind(R.id.main_exam_plan_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.main_exam_plan_tv_load_failed)
+    @Bind(R.id.main_exam_plan_tv_load_failed)
     protected TextView tvLoadFailed;
 
     private MainExamPlanAdapter adapter;
@@ -63,7 +63,7 @@ public class MainExamPlanFragment extends MainActivity.BaseFragment implements S
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         toolbar.setNavigationOnClickListener(getOpenNavigationClickListener());
 

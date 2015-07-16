@@ -34,4 +34,8 @@
     <color name="fab_accent">#fff44336</color>
     <color name="fab_accent_pressed">#ffd32f2f</color>
 
+    <color name="fab_color_primary">#ffff5252</color>
+    <color name="fab_color_primary_dark">#fff44336</color>
+    <color name="fab_color_accent">#ffd32f2f</color>
+
 </resources>

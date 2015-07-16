@@ -20,18 +20,18 @@ import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import retrofit.client.Response;
 
 public class StudentInfoActivity extends BaseActivity {
 
-    @InjectView(R.id.student_info_toolbar)
+    @Bind(R.id.student_info_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.student_info_img_avatar)
+    @Bind(R.id.student_info_img_avatar)
     protected ImageView imgAvatar;
 
-    @InjectView(R.id.student_info_recycler_view)
+    @Bind(R.id.student_info_recycler_view)
     protected RecyclerView recyclerView;
 
     private Student student;
@@ -41,7 +41,7 @@ public class StudentInfoActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_info);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 

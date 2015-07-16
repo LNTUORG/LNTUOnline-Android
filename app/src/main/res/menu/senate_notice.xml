@@ -3,9 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_browser"
-        android:title="@string/notice_by_browser"
-        android:icon="@drawable/ic_open_in_browser_white_24dp"
+        android:id="@+id/action_back"
+        android:title="@string/refresh"
+        android:icon="@drawable/ic_arrow_back_white_24dp"
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_forward"
+        android:title="@string/refresh"
+        android:icon="@drawable/ic_arrow_forward_white_24dp"
         android:orderInCategory="1"
         app:showAsAction="always" />
 
@@ -15,5 +22,19 @@
         android:icon="@drawable/ic_refresh_white_24dp"
         android:orderInCategory="1"
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_home"
+        android:title="@string/refresh"
+        android:icon="@drawable/ic_home_white_24dp"
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_browser"
+        android:title="@string/notice_by_browser"
+        android:icon="@drawable/ic_open_in_browser_white_24dp"
+        android:orderInCategory="1"
+        app:showAsAction="never" />
 
 </menu>

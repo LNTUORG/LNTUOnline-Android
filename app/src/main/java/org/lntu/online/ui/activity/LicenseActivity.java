@@ -10,21 +10,21 @@ import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.DocumentUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class LicenseActivity extends BaseActivity {
 
-    @InjectView(R.id.license_toolbar)
+    @Bind(R.id.license_toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.license_tv_license)
+    @Bind(R.id.license_tv_license)
     protected TextView tvLicense;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_license);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 

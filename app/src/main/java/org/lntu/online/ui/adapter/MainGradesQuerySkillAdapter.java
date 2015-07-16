@@ -13,7 +13,7 @@ import org.lntu.online.model.entity.SkillTestScore;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class MainGradesQuerySkillAdapter extends BaseAdapter {
 
@@ -56,17 +56,17 @@ public class MainGradesQuerySkillAdapter extends BaseAdapter {
 
     protected class ViewHolder {
 
-        @InjectView(R.id.main_grades_query_skill_item_tv_name)
+        @Bind(R.id.main_grades_query_skill_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.main_grades_query_skill_item_tv_time)
+        @Bind(R.id.main_grades_query_skill_item_tv_time)
         protected TextView tvTime;
 
-        @InjectView(R.id.main_grades_query_skill_item_tv_score)
+        @Bind(R.id.main_grades_query_skill_item_tv_score)
         protected TextView tvScore;
 
         public ViewHolder(View convertView) {
-            ButterKnife.inject(this, convertView);
+            ButterKnife.bind(this, convertView);
         }
 
         public void update(int position) {

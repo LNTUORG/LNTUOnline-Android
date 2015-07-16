@@ -14,7 +14,7 @@ import org.lntu.online.model.entity.CourseEvaInfo;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.ViewHolder> {
 
@@ -45,21 +45,21 @@ public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.View
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.one_key_eva_item_tv_name)
+        @Bind(R.id.one_key_eva_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.one_key_eva_item_tv_num)
+        @Bind(R.id.one_key_eva_item_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.one_key_eva_item_tv_teacher)
+        @Bind(R.id.one_key_eva_item_tv_teacher)
         protected TextView tvTeacher;
 
-        @InjectView(R.id.one_key_eva_item_tv_state)
+        @Bind(R.id.one_key_eva_item_tv_state)
         protected TextView tvState;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         public void update(int position) {

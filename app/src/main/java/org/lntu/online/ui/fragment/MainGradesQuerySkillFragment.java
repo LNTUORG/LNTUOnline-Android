@@ -21,25 +21,25 @@ import org.lntu.online.ui.adapter.MainGradesQuerySkillAdapter;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class MainGradesQuerySkillFragment extends Fragment {
 
-    @InjectView(R.id.main_grades_query_skill_list_view)
+    @Bind(R.id.main_grades_query_skill_list_view)
     protected ListView listView;
 
-    @InjectView(R.id.main_grades_query_skill_icon_loading)
+    @Bind(R.id.main_grades_query_skill_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.main_grades_query_skill_icon_empty)
+    @Bind(R.id.main_grades_query_skill_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.main_grades_query_skill_icon_loading_anim)
+    @Bind(R.id.main_grades_query_skill_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.main_grades_query_skill_tv_load_failed)
+    @Bind(R.id.main_grades_query_skill_tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
@@ -50,7 +50,7 @@ public class MainGradesQuerySkillFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         Animation dataLoadAnim = AnimationUtils.loadAnimation(getActivity(), R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
