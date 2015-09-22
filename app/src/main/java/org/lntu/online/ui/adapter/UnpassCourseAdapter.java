@@ -14,7 +14,7 @@ import org.lntu.online.model.entity.UnpassCourse;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
@@ -115,49 +115,49 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     protected static class GroupViewHolder {
 
-        @InjectView(R.id.unpass_course_item_group_tv_name)
+        @Bind(R.id.unpass_course_item_group_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.unpass_course_item_group_tv_num)
+        @Bind(R.id.unpass_course_item_group_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.unpass_course_item_group_tv_credit)
+        @Bind(R.id.unpass_course_item_group_tv_credit)
         protected TextView tvCredit;
 
-        @InjectView(R.id.unpass_course_item_group_tv_select_type)
+        @Bind(R.id.unpass_course_item_group_tv_select_type)
         protected TextView tvSelectType;
 
         public GroupViewHolder(View convertView) {
-            ButterKnife.inject(this, convertView);
+            ButterKnife.bind(this, convertView);
         }
 
     }
 
     protected static class ChildViewHolder {
 
-        @InjectView(R.id.unpass_course_item_child_icon_flag)
+        @Bind(R.id.unpass_course_item_child_icon_flag)
         protected View iconFlag;
 
-        @InjectView(R.id.unpass_course_item_child_icon_shadow_top)
+        @Bind(R.id.unpass_course_item_child_icon_shadow_top)
         protected View iconShadowTop;
 
-        @InjectView(R.id.unpass_course_item_child_icon_shadow_bottom)
+        @Bind(R.id.unpass_course_item_child_icon_shadow_bottom)
         protected View iconShadowBottom;
 
-        @InjectView(R.id.unpass_course_item_child_tv_semester)
+        @Bind(R.id.unpass_course_item_child_tv_semester)
         protected TextView tvSemester;
 
-        @InjectView(R.id.unpass_course_item_child_tv_exam_type)
+        @Bind(R.id.unpass_course_item_child_tv_exam_type)
         protected TextView tvExamType;
 
-        @InjectView(R.id.unpass_course_item_child_tv_score)
+        @Bind(R.id.unpass_course_item_child_tv_score)
         protected TextView tvScore;
 
-        @InjectView(R.id.unpass_course_item_child_tv_remarks)
+        @Bind(R.id.unpass_course_item_child_tv_remarks)
         protected TextView tvRemarks;
 
         public ChildViewHolder(View convertView) {
-            ButterKnife.inject(this, convertView);
+            ButterKnife.bind(this, convertView);
         }
 
     }

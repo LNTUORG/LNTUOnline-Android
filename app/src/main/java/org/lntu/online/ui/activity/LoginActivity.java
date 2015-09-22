@@ -17,29 +17,29 @@ import org.lntu.online.util.ToastUtils;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class LoginActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.login_edt_user_id)
+    @Bind(R.id.login_edt_user_id)
     protected MaterialEditText edtUserId;
 
-    @InjectView(R.id.login_edt_pwd)
+    @Bind(R.id.login_edt_pwd)
     protected MaterialEditText edtPwd;
 
-    @InjectView(R.id.login_cb_hold_online)
+    @Bind(R.id.login_cb_hold_online)
     protected CheckBox cbHoldOnline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

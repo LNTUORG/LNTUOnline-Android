@@ -9,9 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.LinearInterpolator;
 import android.widget.CheckedTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -27,55 +24,53 @@ import org.lntu.online.model.entity.Student;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 import org.lntu.online.util.UpdateUtils;
 
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.InjectViews;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class MainActivity extends BaseActivity {
 
     // 抽屉导航布局
-    @InjectView(R.id.main_drawer_layout)
+    @Bind(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
     // 导航项的消息数
-    @InjectView(R.id.main_left_tv_badger_my_class_table)
+    @Bind(R.id.main_left_tv_badger_my_class_table)
     protected TextView tvBadgerMyClassTable;
 
-    @InjectView(R.id.main_left_tv_badger_grades_query)
+    @Bind(R.id.main_left_tv_badger_grades_query)
     protected TextView tvBadgerGradesQuery;
 
-    @InjectView(R.id.main_left_tv_badger_exam_plan)
+    @Bind(R.id.main_left_tv_badger_exam_plan)
     protected TextView tvBadgerExamPlan;
 
-    @InjectView(R.id.main_left_tv_badger_senate_notice)
+    @Bind(R.id.main_left_tv_badger_senate_notice)
     protected TextView tvBadgerSenateNotice;
 
-    @InjectView(R.id.main_left_tv_badger_notification)
+    @Bind(R.id.main_left_tv_badger_notification)
     protected TextView tvBadgerNotification;
 
     // 导航顶部控件
-    @InjectView(R.id.main_left_img_avatar)
+    @Bind(R.id.main_left_img_avatar)
     protected ImageView imgAvatar;
 
-    @InjectView(R.id.main_left_tv_name)
+    @Bind(R.id.main_left_tv_name)
     protected TextView tvName;
 
-    @InjectView(R.id.main_left_tv_college)
+    @Bind(R.id.main_left_tv_college)
     protected TextView tvCollege;
 
-    @InjectView(R.id.main_left_tv_class_info)
+    @Bind(R.id.main_left_tv_class_info)
     protected TextView tvClassInfo;
 
     // 主要导航项
-    @InjectViews({
+    @Bind({
             R.id.main_left_btn_my_class_table,
             R.id.main_left_btn_grades_query,
             R.id.main_left_btn_exam_plan,
@@ -90,10 +85,10 @@ public class MainActivity extends BaseActivity {
 
     public static final String KEY_BACK_TO_ENTRY = "backToEntry";
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.main_recycler_view)
+    @Bind(R.id.main_recycler_view)
     protected RecyclerView recyclerView;
 
     private boolean asyncStudentFlag = false;
@@ -103,7 +98,7 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
 

@@ -13,21 +13,21 @@ import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class NoticeActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.notice_web_view)
+    @Bind(R.id.notice_web_view)
     protected WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -22,35 +22,35 @@ import org.lntu.online.ui.base.BaseActivity;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class UnpassCourseActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.unpass_course_ex_list_view)
+    @Bind(R.id.unpass_course_ex_list_view)
     protected ExpandableListView exListView;
 
-    @InjectView(R.id.unpass_course_icon_loading)
+    @Bind(R.id.unpass_course_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.unpass_course_icon_empty)
+    @Bind(R.id.unpass_course_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.unpass_course_icon_loading_anim)
+    @Bind(R.id.unpass_course_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.unpass_course_tv_load_failed)
+    @Bind(R.id.unpass_course_tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_unpass_course);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

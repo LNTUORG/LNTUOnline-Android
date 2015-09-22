@@ -13,7 +13,7 @@ import org.lntu.online.model.entity.SkillTestScore;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class SkillTestAdapter extends BaseAdapter {
 
@@ -59,17 +59,17 @@ public class SkillTestAdapter extends BaseAdapter {
 
     protected static class ViewHolder {
 
-        @InjectView(R.id.skill_test_item_tv_name)
+        @Bind(R.id.skill_test_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.skill_test_item_tv_time)
+        @Bind(R.id.skill_test_item_tv_time)
         protected TextView tvTime;
 
-        @InjectView(R.id.skill_test_item_tv_score)
+        @Bind(R.id.skill_test_item_tv_score)
         protected TextView tvScore;
 
         public ViewHolder(View convertView) {
-            ButterKnife.inject(this, convertView);
+            ButterKnife.bind(this, convertView);
         }
 
     }

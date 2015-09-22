@@ -21,35 +21,35 @@ import org.lntu.online.ui.base.BaseActivity;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class SkillTestActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.skill_test_list_view)
+    @Bind(R.id.skill_test_list_view)
     protected ListView listView;
 
-    @InjectView(R.id.skill_test_icon_loading)
+    @Bind(R.id.skill_test_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.skill_test_icon_empty)
+    @Bind(R.id.skill_test_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.skill_test_icon_loading_anim)
+    @Bind(R.id.skill_test_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.skill_test_tv_load_failed)
+    @Bind(R.id.skill_test_tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_skill_test);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -21,15 +21,15 @@ import java.io.Writer;
 import java.util.Date;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 
 public class CrashLogActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.crash_show_tv_info)
+    @Bind(R.id.crash_show_tv_info)
     protected TextView tvInfo;
 
     private String crashLog;
@@ -38,7 +38,7 @@ public class CrashLogActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crash_log);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

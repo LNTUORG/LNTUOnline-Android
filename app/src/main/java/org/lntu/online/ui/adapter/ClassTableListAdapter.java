@@ -18,7 +18,7 @@ import org.lntu.online.ui.activity.ClassTableCourseActivity;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 
 public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAdapter.ViewHolder> {
@@ -60,24 +60,24 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.class_table_list_item_tv_num)
+        @Bind(R.id.class_table_list_item_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.class_table_list_item_tv_name)
+        @Bind(R.id.class_table_list_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.class_table_list_item_tv_teacher)
+        @Bind(R.id.class_table_list_item_tv_teacher)
         protected TextView tvTeacher;
 
-        @InjectView(R.id.class_table_list_item_icon_blank_top)
+        @Bind(R.id.class_table_list_item_icon_blank_top)
         protected View iconBlankTop;
 
-        @InjectView(R.id.class_table_list_item_icon_blank_bottom)
+        @Bind(R.id.class_table_list_item_icon_blank_bottom)
         protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @OnClick(R.id.class_table_list_item_btn_card)

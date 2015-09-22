@@ -18,11 +18,11 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class ClassTablePageFragment extends ClassTableFragment {
 
-    @InjectView(R.id.class_table_page_view_pager)
+    @Bind(R.id.class_table_page_view_pager)
     protected ViewPager viewPager;
 
     private ClassTablePageAdapter adapter;
@@ -37,7 +37,7 @@ public class ClassTablePageFragment extends ClassTableFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         holder = new ClassTableTimeDialogHolder(getActivity());
         holder.setOnTimeDialogFinishListener(new ClassTableTimeDialogHolder.OnDialogFinishListener() {

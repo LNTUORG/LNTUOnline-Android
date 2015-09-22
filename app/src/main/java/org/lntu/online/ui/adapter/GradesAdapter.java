@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder> {
 
@@ -125,45 +125,45 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.grades_item_tv_num)
+        @Bind(R.id.grades_item_tv_num)
         protected TextView tvNum;
 
-        @InjectView(R.id.grades_item_tv_name)
+        @Bind(R.id.grades_item_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.grades_item_tv_score)
+        @Bind(R.id.grades_item_tv_score)
         protected TextView tvScore;
 
-        @InjectView(R.id.grades_item_tv_credit)
+        @Bind(R.id.grades_item_tv_credit)
         protected TextView tvCredit;
 
-        @InjectView(R.id.grades_item_tv_test_mode)
+        @Bind(R.id.grades_item_tv_test_mode)
         protected TextView tvTestMode;
 
-        @InjectView(R.id.grades_item_tv_select_type)
+        @Bind(R.id.grades_item_tv_select_type)
         protected TextView tvSelectType;
 
-        @InjectView(R.id.grades_item_tv_remarks)
+        @Bind(R.id.grades_item_tv_remarks)
         protected TextView tvRemarks;
 
-        @InjectView(R.id.grades_item_tv_exam_type)
+        @Bind(R.id.grades_item_tv_exam_type)
         protected TextView tvExamType;
 
-        @InjectView(R.id.grades_item_tv_semester)
+        @Bind(R.id.grades_item_tv_semester)
         protected TextView tvSemester;
 
-        @InjectView(R.id.grades_item_icon_very_good)
+        @Bind(R.id.grades_item_icon_very_good)
         protected View iconVeryGood;
 
-        @InjectView(R.id.grades_item_icon_blank_top)
+        @Bind(R.id.grades_item_icon_blank_top)
         protected View iconBlankTop;
 
-        @InjectView(R.id.grades_item_icon_blank_bottom)
+        @Bind(R.id.grades_item_icon_blank_bottom)
         protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
     }
