@@ -39,12 +39,18 @@
     </ScrollView>
 
     <!-- Ignore CheckBox -->
-    <CheckBox
-        android:id="@+id/umeng_update_id_check"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/UMIgnore" />
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/umeng_update_id_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/UMIgnore" />
+
+    </FrameLayout>
 
     <!-- OK&Cancel Button -->
     <LinearLayout
@@ -55,7 +61,7 @@
             android:visibility="gone"
             android:id="@+id/umeng_update_id_ignore"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:text="@string/UMIgnore"
@@ -65,7 +71,7 @@
         <Button
             android:id="@+id/umeng_update_id_cancel"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:text="@string/UMNotNow"
@@ -75,11 +81,11 @@
         <Button
             android:id="@+id/umeng_update_id_ok"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:layout_weight="1"
             android:layout_margin="8dp"
             android:text="@string/UMUpdateNow"
-            android:textColor="#ffffffff"
+            android:textColor="@android:color/white"
             android:background="@drawable/umeng_update_button_ok_bg_selector" />
 
     </LinearLayout>
