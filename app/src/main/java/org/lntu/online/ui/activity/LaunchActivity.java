@@ -11,7 +11,7 @@ import org.lntu.online.ui.base.BaseActivity;
 
 import java.util.Random;
 
-public class LogoActivity extends BaseActivity implements Runnable {
+public class LaunchActivity extends BaseActivity implements Runnable {
 
     private static final int LOGO_LAYOUTS[] = {
             R.layout.activity_logo_0,
