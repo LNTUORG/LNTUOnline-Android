@@ -7,7 +7,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import org.lntu.online.R;
 
 import org.lntu.online.model.entity.ErrorInfo;
-import org.lntu.online.shared.LoginShared;
+import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.activity.AuthErrorActivity;
 import org.lntu.online.ui.activity.OneKeyEvaActivity;
 

@@ -1,7 +1,6 @@
 package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +19,7 @@ import org.joda.time.LocalDate;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
-import org.lntu.online.shared.LoginShared;
+import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.base.ClassTableFragment;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;

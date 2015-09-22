@@ -1,4 +1,4 @@
-package org.lntu.online.shared;
+package org.lntu.online.storage;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -7,9 +7,9 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
-import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.util.codec.DES3;
 import org.lntu.online.util.codec.Digest;
+import org.lntu.online.util.gson.GsonWrapper;
 
 import java.lang.reflect.Type;
 

@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.text.TextUtils;
 
 import org.lntu.online.R;
-import org.lntu.online.shared.LoginShared;
+import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
 
 import java.util.Random;
