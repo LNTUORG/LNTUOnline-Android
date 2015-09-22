@@ -40,7 +40,7 @@
             android:id="@+id/main_left_layout_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/main_left_nav_padding_top"
+            android:paddingTop="@dimen/nav_status_bar_adapt_height"
             android:paddingBottom="8dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
@@ -50,7 +50,7 @@
                 android:id="@+id/main_left_img_avatar"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:src="@drawable/icon_image_default"
+                android:src="@drawable/image_default"
                 android:scaleType="fitCenter"
                 app:siBorderWidth="2dp"
                 app:siBorderColor="@android:color/white" />

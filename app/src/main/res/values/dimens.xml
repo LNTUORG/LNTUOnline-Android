@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="main_left_nav_padding_top">16dp</dimen>
+    <dimen name="nav_status_bar_adapt_height">0dp</dimen>
+
+    <dimen name="button_corner_radius">4dp</dimen>
+
+
+
+
+
+
 
     <dimen name="floating_action_frame_layout_anim_height">144dp</dimen>
-
-
-
-
-
 
     <dimen name="margin_standard">16dp</dimen>
     <dimen name="margin_short">8dp</dimen>
     <dimen name="margin_extra_short">4dp</dimen>
-
-    <dimen name="button_corner_radius">4dp</dimen>
 
 </resources>

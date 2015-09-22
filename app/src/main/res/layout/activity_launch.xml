@@ -1,33 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/logo_bg_1"
+        android:fitsSystemWindows="true"
+        android:src="@drawable/logo_bg"
         android:scaleType="centerCrop" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/logo_tv_copyright"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
-        android:src="@drawable/logo_title"
+        android:padding="40dp"
+        android:src="@drawable/logo"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true" />
 
     <TextView
-        android:id="@+id/logo_tv_copyright"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
         android:layout_marginBottom="16dp"
         android:text="@string/logo_copyright"
         android:textColor="#ccffffff"
         android:textSize="12sp"
         android:gravity="center" />
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

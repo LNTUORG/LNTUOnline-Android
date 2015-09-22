@@ -1,7 +1,6 @@
 package org.lntu.online.ui.activity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -9,13 +8,12 @@ import android.widget.TextView;
 
 import org.lntu.online.BuildConfig;
 import org.lntu.online.R;
-
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.UpdateUtils;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AboutActivity extends BaseActivity {

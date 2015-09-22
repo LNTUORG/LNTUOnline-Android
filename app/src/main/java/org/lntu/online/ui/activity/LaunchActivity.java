@@ -2,37 +2,22 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.TextUtils;
+
+import com.umeng.update.UmengUpdateAgent;
 
 import org.lntu.online.R;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.util.HandlerUtils;
 
-import java.util.Random;
-
-public class LogoActivity extends BaseActivity implements Runnable {
-
-    private static final int LOGO_LAYOUTS[] = {
-            R.layout.activity_logo_0,
-            R.layout.activity_logo_1,
-            R.layout.activity_logo_2,
-            R.layout.activity_logo_3,
-            R.layout.activity_logo_4,
-            R.layout.activity_logo_5,
-            R.layout.activity_logo_6,
-            R.layout.activity_logo_7,
-            R.layout.activity_logo_8,
-            R.layout.activity_logo_9
-    };
-
-    private static final Handler handler = new Handler();
+public class LaunchActivity extends BaseActivity implements Runnable {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(LOGO_LAYOUTS[new Random().nextInt(LOGO_LAYOUTS.length)]);
-        handler.postDelayed(this, 3000);
+        setContentView(R.layout.activity_launch);
+        HandlerUtils.postDelayed(this, 2000);
     }
 
     @Override
@@ -43,6 +28,7 @@ public class LogoActivity extends BaseActivity implements Runnable {
             } else {
                 startActivity(new Intent(this, MainActivity.class));
             }
+            UmengUpdateAgent.update(this); // 友盟更新
             finish();
         }
     }

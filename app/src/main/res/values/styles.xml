@@ -1,20 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- App Theme -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Base App Theme -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
+        <item name="windowActionModeOverlay">true</item>
     </style>
+
+    <!-- App Theme -->
+    <style name="AppTheme" parent="BaseAppTheme" />
 
     <!-- App Theme FitsStatusBar -->
     <style name="AppTheme.FitsStatusBar" />
 
-    <!-- App Theme Logo Page -->
-    <style name="AppTheme.LogoPage" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimaryDark">@android:color/black</item>
-    </style>
+    <!-- App Theme FitsStatusBar TranslucentNavigation -->
+    <style name="AppTheme.FitsStatusBar.TranslucentNavigation" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
     <!-- Deep Line -->
     <style name="AppTheme.DeepLine">
