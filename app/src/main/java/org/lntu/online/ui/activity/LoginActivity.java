@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.CheckBox;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DialogCallback;
 import org.lntu.online.model.entity.ErrorInfo;

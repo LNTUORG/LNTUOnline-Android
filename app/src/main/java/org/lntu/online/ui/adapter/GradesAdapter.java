@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.lntu.online.model.entity.Grades;
 

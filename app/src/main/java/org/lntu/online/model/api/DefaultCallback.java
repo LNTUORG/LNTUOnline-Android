@@ -3,7 +3,7 @@ package org.lntu.online.model.api;
 import android.content.Context;
 import android.content.Intent;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.shared.LoginShared;
 

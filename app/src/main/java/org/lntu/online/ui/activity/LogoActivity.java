@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.shared.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
 

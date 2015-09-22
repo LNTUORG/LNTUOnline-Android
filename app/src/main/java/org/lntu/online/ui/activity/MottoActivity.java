@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
 
 import java.io.IOException;

@@ -3,7 +3,7 @@ package org.lntu.online.model.api;
 import android.content.Context;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.model.entity.ErrorInfo;
 
 import retrofit.client.Response;

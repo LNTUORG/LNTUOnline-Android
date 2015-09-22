@@ -3,7 +3,7 @@ package org.lntu.online.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.lntu.online.BuildConfig;
+import org.lntu.online.BuildConfig;
 
 public class AppController extends Application {
 

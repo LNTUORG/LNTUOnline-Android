@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.joda.time.LocalDate;
 import org.lntu.online.model.entity.ClassTable;

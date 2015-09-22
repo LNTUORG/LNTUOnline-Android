@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.lntu.online.R;
+import org.lntu.online.R;
 import com.squareup.picasso.Picasso;
 
 import org.lntu.online.model.api.ApiClient;

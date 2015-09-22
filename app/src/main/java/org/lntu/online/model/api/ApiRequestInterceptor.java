@@ -2,7 +2,7 @@ package org.lntu.online.model.api;
 
 import android.os.Build;
 
-import com.lntu.online.BuildConfig;
+import org.lntu.online.BuildConfig;
 
 import retrofit.RequestInterceptor;
 

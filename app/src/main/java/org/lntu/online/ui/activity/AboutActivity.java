@@ -7,8 +7,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.lntu.online.BuildConfig;
-import com.lntu.online.R;
+import org.lntu.online.BuildConfig;
+import org.lntu.online.R;
 
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ShipUtils;
