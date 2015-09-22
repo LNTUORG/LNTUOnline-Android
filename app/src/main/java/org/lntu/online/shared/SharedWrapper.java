@@ -7,7 +7,7 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
-import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.util.codec.DES3;
 import org.lntu.online.util.codec.Digest;
 

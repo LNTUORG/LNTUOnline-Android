@@ -3,7 +3,7 @@ package org.lntu.online.model.api;
 import android.content.Context;
 
 import org.lntu.online.config.NetworkInfo;
-import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.util.gson.GsonWrapper;
 
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;

@@ -21,7 +21,7 @@ import org.joda.time.PeriodType;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.DayInWeek;
 import org.lntu.online.model.entity.WeekMode;
-import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
 
 import java.util.ArrayList;
