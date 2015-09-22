@@ -78,7 +78,7 @@ public class StudentInfoActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        ApiClient.with(this).apiService.getStudent(LoginShared.getLoginToken(this), new BackgroundCallback<Student>(this) {
+        ApiClient.service.getStudent(LoginShared.getLoginToken(this), new BackgroundCallback<Student>(this) {
 
             @Override
             public void handleSuccess(Student student, Response response) {

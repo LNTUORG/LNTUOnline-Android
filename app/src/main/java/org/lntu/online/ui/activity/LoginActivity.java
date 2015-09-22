@@ -59,7 +59,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private void loginAsyncTask(String userId, String password, final boolean isHoldOnline) {
-        ApiClient.with(this).apiService.login(userId, password, new DialogCallback<LoginInfo>(this) {
+        ApiClient.service.login(userId, password, new DialogCallback<LoginInfo>(this) {
 
             @Override
             public void handleSuccess(LoginInfo loginInfo, Response response) {

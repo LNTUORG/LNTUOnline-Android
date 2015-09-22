@@ -74,7 +74,7 @@ public class UnpassCourseActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        ApiClient.with(this).apiService.getUnpassCourseList(LoginShared.getLoginToken(this), new BackgroundCallback<List<UnpassCourse>>(this) {
+        ApiClient.service.getUnpassCourseList(LoginShared.getLoginToken(this), new BackgroundCallback<List<UnpassCourse>>(this) {
 
             @Override
             public void handleSuccess(List<UnpassCourse> unpassCourseList, Response response) {

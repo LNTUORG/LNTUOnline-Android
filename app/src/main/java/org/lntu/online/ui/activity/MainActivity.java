@@ -169,7 +169,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private void getStudentAsyncTask() {
-        ApiClient.with(this).apiService.getStudent(LoginShared.getLoginToken(this), new DefaultCallback<Student>(this) {
+        ApiClient.service.getStudent(LoginShared.getLoginToken(this), new DefaultCallback<Student>(this) {
 
             @Override
             public void success(Student student, Response response) {
