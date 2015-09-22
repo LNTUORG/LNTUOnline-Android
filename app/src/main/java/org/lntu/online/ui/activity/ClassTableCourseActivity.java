@@ -5,14 +5,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.gson.Gson;
 import com.lntu.online.R;
 
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.WeekMode;
 import org.lntu.online.model.gson.GsonWrapper;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.AppUtils;
 
 import butterknife.ButterKnife;
 import butterknife.Bind;

@@ -1,15 +1,16 @@
 package org.lntu.online.ui.activity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.lntu.online.BuildConfig;
 import com.lntu.online.R;
 
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.AppUtils;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.UpdateUtils;
 
@@ -18,6 +19,8 @@ import butterknife.Bind;
 import butterknife.OnClick;
 
 public class AboutActivity extends BaseActivity {
+
+    public static final String VERSION_TEXT = BuildConfig.VERSION_NAME + "-build-" + BuildConfig.VERSION_CODE;
 
     @Bind(R.id.toolbar)
     protected Toolbar toolbar;
@@ -35,7 +38,7 @@ public class AboutActivity extends BaseActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("");
 
-        tvVersionName.setText("当前版本：" + AppUtils.getVersionName(this) + "-build-" + AppUtils.getVersionCode(this));
+        tvVersionName.setText("当前版本：" + VERSION_TEXT);
     }
 
     @Override

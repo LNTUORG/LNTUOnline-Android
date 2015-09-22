@@ -4,7 +4,6 @@ import android.content.Context;
 
 import org.lntu.online.config.NetworkInfo;
 import org.lntu.online.model.gson.GsonWrapper;
-import org.lntu.online.util.AppUtils;
 
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
@@ -30,7 +29,7 @@ public class ApiClient {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(NetworkInfo.API_HOST)
                 .setConverter(new GsonConverter(GsonWrapper.gson))
-                .setRequestInterceptor(new ApiRequestInterceptor(AppUtils.getVersionName(context)))
+                .setRequestInterceptor(new ApiRequestInterceptor())
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .build();
         apiService = restAdapter.create(ApiService.class);
