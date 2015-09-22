@@ -22,35 +22,35 @@ import java.util.Collections;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class ExamPlanActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.exam_plan_list_view)
+    @Bind(R.id.exam_plan_list_view)
     protected ListView listView;
 
-    @InjectView(R.id.exam_plan_icon_loading)
+    @Bind(R.id.exam_plan_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.exam_plan_icon_empty)
+    @Bind(R.id.exam_plan_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.exam_plan_icon_loading_anim)
+    @Bind(R.id.exam_plan_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.exam_plan_tv_load_failed)
+    @Bind(R.id.exam_plan_tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_plan);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -30,32 +30,32 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
 public class ClassTableActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.class_table_spn_year_term)
+    @Bind(R.id.class_table_spn_year_term)
     protected Spinner spnYearTerm;
 
-    @InjectView(R.id.class_table_layout_loading)
+    @Bind(R.id.class_table_layout_loading)
     protected View layoutLoading;
 
-    @InjectView(R.id.class_table_layout_empty)
+    @Bind(R.id.class_table_layout_empty)
     protected View layoutEmpty;
 
-    @InjectView(R.id.class_table_layout_fragment)
+    @Bind(R.id.class_table_layout_fragment)
     protected ViewGroup layoutFragment;
 
-    @InjectView(R.id.class_table_icon_loading_anim)
+    @Bind(R.id.class_table_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.class_table_tv_load_failed)
+    @Bind(R.id.class_table_tv_load_failed)
     protected TextView tvLoadFailed;
 
     private Menu menu;
@@ -72,7 +72,7 @@ public class ClassTableActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_class_table);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -21,7 +21,7 @@ import org.lntu.online.ui.activity.StudentInfoActivity;
 import org.lntu.online.ui.activity.UnpassCourseActivity;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
@@ -89,15 +89,15 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @InjectView(R.id.main_center_item_img_icon)
+        @Bind(R.id.main_center_item_img_icon)
         protected ImageView imgIcon;
 
-        @InjectView(R.id.main_center_item_tv_title)
+        @Bind(R.id.main_center_item_tv_title)
         protected TextView tvTitle;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.inject(this, itemView);
+            ButterKnife.bind(this, itemView);
         }
 
         @OnClick(R.id.main_center_item_btn_root)

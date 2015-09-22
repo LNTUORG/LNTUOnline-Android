@@ -18,11 +18,11 @@ import java.util.List;
 import java.util.Map;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 
 public class ClassTableListFragment extends ClassTableFragment {
 
-    @InjectView(R.id.class_table_list_recycler_view)
+    @Bind(R.id.class_table_list_recycler_view)
     protected RecyclerView recyclerView;
 
     private ClassTableListAdapter adapter;
@@ -35,7 +35,7 @@ public class ClassTableListFragment extends ClassTableFragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new ClassTableListAdapter(getActivity());

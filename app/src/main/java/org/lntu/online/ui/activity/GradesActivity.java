@@ -27,52 +27,52 @@ import org.lntu.online.ui.base.BaseActivity;
 import java.util.Collections;
 
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import butterknife.Bind;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class GradesActivity extends BaseActivity {
 
-    @InjectView(R.id.toolbar)
+    @Bind(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @InjectView(R.id.grades_layout_content)
+    @Bind(R.id.grades_layout_content)
     protected ViewGroup layoutContent;
 
-    @InjectView(R.id.grades_recycler_view)
+    @Bind(R.id.grades_recycler_view)
     protected RecyclerView recyclerView;
 
-    @InjectView(R.id.grades_icon_loading)
+    @Bind(R.id.grades_icon_loading)
     protected View iconLoading;
 
-    @InjectView(R.id.grades_icon_empty)
+    @Bind(R.id.grades_icon_empty)
     protected View iconEmpty;
 
-    @InjectView(R.id.grades_icon_loading_anim)
+    @Bind(R.id.grades_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @InjectView(R.id.grades_tv_load_failed)
+    @Bind(R.id.grades_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @InjectView(R.id.grades_tv_ava_credit)
+    @Bind(R.id.grades_tv_ava_credit)
     protected TextView tvAvaCredit;
 
-    @InjectView(R.id.grades_fab)
+    @Bind(R.id.grades_fab)
     protected FloatingActionButton fab;
 
-    @InjectView(R.id.grades_layout_condition)
+    @Bind(R.id.grades_layout_condition)
     protected ViewGroup layoutCondition;
 
-    @InjectView(R.id.grades_spn_year)
+    @Bind(R.id.grades_spn_year)
     protected Spinner spnYear;
 
-    @InjectView(R.id.grades_spn_term)
+    @Bind(R.id.grades_spn_term)
     protected Spinner spnTerm;
 
-    @InjectView(R.id.grades_spn_level)
+    @Bind(R.id.grades_spn_level)
     protected Spinner spnLevel;
 
-    @InjectView(R.id.grades_spn_display)
+    @Bind(R.id.grades_spn_display)
     protected Spinner spnDisplay;
 
     private GradesAdapter adapter;
@@ -87,7 +87,7 @@ public class GradesActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grades);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

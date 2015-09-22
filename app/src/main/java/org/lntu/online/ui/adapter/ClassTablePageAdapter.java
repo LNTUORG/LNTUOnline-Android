@@ -29,9 +29,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.InjectViews;
 import butterknife.OnClick;
 
 public class ClassTablePageAdapter extends PagerAdapter {
@@ -180,10 +179,10 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class ViewHolder {
 
-        @InjectView(R.id.class_table_page_item_scroll_view)
+        @Bind(R.id.class_table_page_item_scroll_view)
         protected ScrollView scrollView;
 
-        @InjectViews({
+        @Bind({
                 R.id.class_table_page_item_tv_stage_1,
                 R.id.class_table_page_item_tv_stage_2,
                 R.id.class_table_page_item_tv_stage_3,
@@ -192,7 +191,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<TextView> tvStageList;
 
-        @InjectViews({
+        @Bind({
                 R.id.class_table_page_item_layout_stage_1_show,
                 R.id.class_table_page_item_layout_stage_2_show,
                 R.id.class_table_page_item_layout_stage_3_show,
@@ -201,7 +200,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<ViewGroup> layoutStageShowList;
 
-        @InjectViews({
+        @Bind({
                 R.id.class_table_page_item_layout_stage_1_hide,
                 R.id.class_table_page_item_layout_stage_2_hide,
                 R.id.class_table_page_item_layout_stage_3_hide,
@@ -210,7 +209,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<ViewGroup> layoutStageHideList;
 
-        @InjectViews({
+        @Bind({
                 R.id.class_table_page_item_icon_stage_1,
                 R.id.class_table_page_item_icon_stage_2,
                 R.id.class_table_page_item_icon_stage_3,
@@ -219,7 +218,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<View> iconStageList;
 
-        @InjectViews({
+        @Bind({
                 R.id.class_table_page_item_btn_stage_1,
                 R.id.class_table_page_item_btn_stage_2,
                 R.id.class_table_page_item_btn_stage_3,
@@ -232,7 +231,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         protected LocalDate currentDate;
 
         public ViewHolder(View convertView) {
-            ButterKnife.inject(this, convertView);
+            ButterKnife.bind(this, convertView);
         }
 
         protected void update(int position) {
@@ -325,22 +324,22 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class CourseViewHolder {
 
-        @InjectView(R.id.class_table_page_item_course_tv_name)
+        @Bind(R.id.class_table_page_item_course_tv_name)
         protected TextView tvName;
 
-        @InjectView(R.id.class_table_page_item_course_tv_teacher)
+        @Bind(R.id.class_table_page_item_course_tv_teacher)
         protected TextView tvTeacher;
 
-        @InjectView(R.id.class_table_page_item_course_tv_place)
+        @Bind(R.id.class_table_page_item_course_tv_place)
         protected TextView tvPlace;
 
-        @InjectView(R.id.class_table_page_item_course_icon_not_current)
+        @Bind(R.id.class_table_page_item_course_icon_not_current)
         protected View iconNotCurrent;
 
         protected ClassTable.CourseWrapper courseWrapper;
 
         public CourseViewHolder(View convertView) {
-            ButterKnife.inject(this, convertView);
+            ButterKnife.bind(this, convertView);
         }
 
         public void update(ClassTable.CourseWrapper courseWrapper, boolean isCurrent) {
