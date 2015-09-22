@@ -20,7 +20,7 @@
             android:hint="@string/user_id_input_hint"
             android:inputType="number"
             android:maxLength="10"
-            app:floatingLabel="highlight" />
+            app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/login_edt_pwd"
@@ -29,7 +29,7 @@
             android:layout_marginTop="8dp"
             android:hint="@string/pwd_input_hint"
             android:inputType="textPassword"
-            app:floatingLabel="highlight" />
+            app:met_floatingLabel="highlight" />
 
         <CheckBox
             android:id="@+id/login_cb_hold_online"
