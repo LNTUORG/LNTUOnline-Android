@@ -1,4 +1,4 @@
-package org.lntu.online.model.gson;
+package org.lntu.online.util.gson;
 
 import com.google.gson.*;
 import org.joda.time.DateTime;

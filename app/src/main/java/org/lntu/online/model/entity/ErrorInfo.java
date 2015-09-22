@@ -1,7 +1,7 @@
 package org.lntu.online.model.entity;
 
 import com.google.gson.annotations.SerializedName;
-import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.util.gson.GsonWrapper;
 
 import retrofit.RetrofitError;
 

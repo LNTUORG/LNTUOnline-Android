@@ -10,12 +10,12 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.UnpassCourse;
-import org.lntu.online.shared.LoginShared;
+import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.UnpassCourseAdapter;
 import org.lntu.online.ui.base.BaseActivity;
 

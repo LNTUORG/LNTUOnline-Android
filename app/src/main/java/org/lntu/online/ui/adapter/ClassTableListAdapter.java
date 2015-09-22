@@ -8,14 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.lntu.online.model.entity.ClassTable;
-import org.lntu.online.model.entity.Grades;
-import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
-
-import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.Bind;

@@ -12,13 +12,13 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import com.squareup.picasso.Picasso;
 
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Student;
-import org.lntu.online.shared.LoginShared;
+import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.TimeUtils;
 

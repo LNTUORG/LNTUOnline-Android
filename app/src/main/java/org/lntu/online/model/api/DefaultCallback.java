@@ -3,9 +3,9 @@ package org.lntu.online.model.api;
 import android.content.Context;
 import android.content.Intent;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.model.entity.ErrorInfo;
-import org.lntu.online.shared.LoginShared;
+import org.lntu.online.storage.LoginShared;
 
 import org.lntu.online.ui.activity.AuthErrorActivity;
 import org.lntu.online.util.ToastUtils;

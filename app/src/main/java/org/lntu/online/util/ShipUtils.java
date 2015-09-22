@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 public final class ShipUtils {
 

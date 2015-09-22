@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;

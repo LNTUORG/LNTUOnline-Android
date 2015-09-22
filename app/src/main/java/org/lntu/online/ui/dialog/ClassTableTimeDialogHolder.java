@@ -15,7 +15,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Period;

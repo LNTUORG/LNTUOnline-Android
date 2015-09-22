@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 import org.lntu.online.ui.activity.ClassTableActivity;
 import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.ExamPlanActivity;

@@ -8,21 +8,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.lntu.online.R;
+import org.lntu.online.R;
 
 import org.joda.time.DateTime;
-import org.lntu.online.model.gson.GsonWrapper;
+import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.ShipUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.Date;
 
 import butterknife.ButterKnife;
 import butterknife.Bind;
-import butterknife.OnClick;
 
 public class CrashLogActivity extends BaseActivity {
 

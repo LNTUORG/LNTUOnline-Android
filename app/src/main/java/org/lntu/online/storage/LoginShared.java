@@ -1,4 +1,4 @@
-package org.lntu.online.shared;
+package org.lntu.online.storage;
 
 import android.content.Context;
 
