@@ -182,7 +182,7 @@ public class ClassTableActivity extends BaseActivity {
      * 更新数据
      */
     private void startNetwork(final int year, final String term) {
-        ApiClient.with(this).apiService.getClassTable(LoginShared.getLoginToken(this), year, term, new BackgroundCallback<ClassTable>(this) {
+        ApiClient.service.getClassTable(LoginShared.getLoginToken(this), year, term, new BackgroundCallback<ClassTable>(this) {
 
             @Override
             public void handleSuccess(ClassTable classTable, Response response) {

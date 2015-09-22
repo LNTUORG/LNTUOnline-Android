@@ -117,7 +117,7 @@ public class GradesActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        ApiClient.with(this).apiService.getGrades(LoginShared.getLoginToken(this), new BackgroundCallback<Grades>(this) {
+        ApiClient.service.getGrades(LoginShared.getLoginToken(this), new BackgroundCallback<Grades>(this) {
 
             @Override
             public void handleSuccess(Grades grades, Response response) {

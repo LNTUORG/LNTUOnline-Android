@@ -21,24 +21,24 @@ import retrofit.http.Query;
 
 public interface ApiService {
 
-    public static final String HEADER_AUTHORIZATION = "Authorization";
+    String HEADER_AUTHORIZATION = "Authorization";
 
     @FormUrlEncoded
     @POST("/account/login")
-    public void login(
+    void login(
             @Field("userId") String userId,
             @Field("password") String password,
             Callback<LoginInfo> callback
     );
 
     @GET("/student/~self")
-    public void getStudent(
+    void getStudent(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             Callback<Student> callback
     );
 
     @GET("/class-table/~self")
-    public void getClassTable(
+    void getClassTable(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             @Query("year") int year,
             @Query("term") String term,
@@ -46,38 +46,38 @@ public interface ApiService {
     );
 
     @GET("/exam-plan/~self")
-    public void getExamPlanList(
+    void getExamPlanList(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             Callback<List<ExamPlan>> callback
     );
 
     @GET("/grades/~self")
-    public void getGrades(
+    void getGrades(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             Callback<Grades> callback
     );
 
     @GET("/unpass-course/~self")
-    public void getUnpassCourseList(
+    void getUnpassCourseList(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             Callback<List<UnpassCourse>> callback
     );
 
     @GET("/skill-test-score/~self")
-    public void getSkillTestScoreList(
+    void getSkillTestScoreList(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             Callback<List<SkillTestScore>> callback
     );
 
     @GET("/course-eva-info/~self")
-    public void getCourseEvaInfoList(
+    void getCourseEvaInfoList(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             Callback<List<CourseEvaInfo>> callback
     );
     
     @FormUrlEncoded
     @POST("/course-eva-info/~self/do:eva")
-    public void doCourseEva(
+    void doCourseEva(
             @Header(HEADER_AUTHORIZATION) String loginToken,
             @Field("evaKey") String evaKey,
             Callback<Void> callback

@@ -100,7 +100,7 @@ public class OneKeyEvaActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        ApiClient.with(this).apiService.getCourseEvaInfoList(LoginShared.getLoginToken(this), new BackgroundCallback<List<CourseEvaInfo>>(this) {
+        ApiClient.service.getCourseEvaInfoList(LoginShared.getLoginToken(this), new BackgroundCallback<List<CourseEvaInfo>>(this) {
 
             @Override
             public void handleSuccess(List<CourseEvaInfo> infoList, Response response) {
@@ -221,7 +221,7 @@ public class OneKeyEvaActivity extends BaseActivity {
                 startEvaCourse(current + 1, progressDialog);
             } else { //需要评价
                 progressDialog.setContent("正在评价：" + info.getName());
-                ApiClient.with(this).apiService.doCourseEva(LoginShared.getLoginToken(this), info.getEvaKey(), new Callback<Void>() {
+                ApiClient.service.doCourseEva(LoginShared.getLoginToken(this), info.getEvaKey(), new Callback<Void>() {
 
                     @Override
                     public void success(Void nothing, Response response) {

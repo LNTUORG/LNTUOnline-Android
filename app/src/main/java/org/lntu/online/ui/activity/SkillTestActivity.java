@@ -73,7 +73,7 @@ public class SkillTestActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        ApiClient.with(this).apiService.getSkillTestScoreList(LoginShared.getLoginToken(this), new BackgroundCallback<List<SkillTestScore>>(this) {
+        ApiClient.service.getSkillTestScoreList(LoginShared.getLoginToken(this), new BackgroundCallback<List<SkillTestScore>>(this) {
 
             @Override
             public void handleSuccess(List<SkillTestScore> skillTestScoreList, Response response) {

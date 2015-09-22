@@ -74,7 +74,7 @@ public class ExamPlanActivity extends BaseActivity {
     }
 
     private void startNetwork() {
-        ApiClient.with(this).apiService.getExamPlanList(LoginShared.getLoginToken(this), new BackgroundCallback<List<ExamPlan>>(this) {
+        ApiClient.service.getExamPlanList(LoginShared.getLoginToken(this), new BackgroundCallback<List<ExamPlan>>(this) {
 
             @Override
             public void handleSuccess(List<ExamPlan> examPlanList, Response response) {

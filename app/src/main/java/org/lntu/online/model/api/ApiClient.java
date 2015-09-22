@@ -1,38 +1,23 @@
 package org.lntu.online.model.api;
 
-import android.content.Context;
-
-import org.lntu.online.config.NetworkInfo;
+import org.lntu.online.BuildConfig;
 import org.lntu.online.util.gson.GsonWrapper;
 
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
 
-public class ApiClient {
+public final class ApiClient {
 
-    private volatile static ApiClient singleton;
+    private ApiClient() {}
 
-    public static ApiClient with(Context context) {
-        if (singleton == null) {
-            synchronized (ApiClient.class) {
-                if (singleton == null) {
-                    singleton = new ApiClient(context);
-                }
-            }
-        }
-        return singleton;
-    }
+    private static final String API_HOST = "https://api.online.lntu.org";
 
-    public final ApiService apiService;
-
-    private ApiClient(Context context) {
-        RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint(NetworkInfo.API_HOST)
-                .setConverter(new GsonConverter(GsonWrapper.gson))
-                .setRequestInterceptor(new ApiRequestInterceptor())
-                .setLogLevel(RestAdapter.LogLevel.FULL)
-                .build();
-        apiService = restAdapter.create(ApiService.class);
-    }
+    public static final ApiService service = new RestAdapter.Builder()
+            .setEndpoint(API_HOST)
+            .setConverter(new GsonConverter(GsonWrapper.gson))
+            .setRequestInterceptor(new ApiRequestInterceptor())
+            .setLogLevel(BuildConfig.DEBUG ? RestAdapter.LogLevel.FULL : RestAdapter.LogLevel.NONE)
+            .build()
+            .create(ApiService.class);
 
 }
