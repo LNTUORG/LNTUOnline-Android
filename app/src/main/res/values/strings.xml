@@ -51,8 +51,8 @@
 
     <string name="menu">菜单</string>
 
-    <string name="logout">注销</string>
-    <string name="logout_tip">注销将会清除和当前账户相关联的所有本地数据和登录状态，您确定要注销吗？</string>
+    <string name="logout">退出登录</string>
+    <string name="logout_tip">确定要退出登录吗？</string>
 
     <string name="auth_error">登录令牌失效</string>
     <string name="auth_error_tip">可能的原因是令牌授权已过期，或者是您修改了账户密码。您需要重新登录账户。</string>

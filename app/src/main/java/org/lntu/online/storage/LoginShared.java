@@ -5,7 +5,6 @@ import android.content.Context;
 import org.joda.time.DateTime;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.LoginInfo;
-import org.lntu.online.model.entity.NavMenuHeaderBackgroundType;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.model.entity.UserType;
 
@@ -25,9 +24,6 @@ public final class LoginShared {
 
     private static final String KEY_STUDENT = "student";
     private static final String KEY_CLASS_TABLE = "classTable-"; // 这里年级和学期要作为后缀
-
-    private static final String SETTING_NAV_MENU_HEADER_BACKGROUND = "settingNavMenuHeaderBackground"; // 导航顶部图片
-    private static final String SETTING_ENABLE_NOTIFICATION = "settingEnableNotification"; // 开启系统通知
 
     public static void login(Context context, LoginInfo info, boolean isHoldOnline) {
         SharedWrapper.with(context, TAG).setString(KEY_USER_ID, info.getUserId());
@@ -75,26 +71,6 @@ public final class LoginShared {
 
     public static void setClassTable(Context context, ClassTable classTable) {
         SharedWrapper.with(context, TAG).setObject(KEY_CLASS_TABLE + classTable.getYear() + classTable.getTerm(), classTable);
-    }
-
-    public static NavMenuHeaderBackgroundType getNavMenuHeaderBackgroundType(Context context) {
-        try {
-            return NavMenuHeaderBackgroundType.valueOf(SharedWrapper.with(context, TAG).getString(SETTING_NAV_MENU_HEADER_BACKGROUND, null));
-        } catch (Exception e) {
-            return NavMenuHeaderBackgroundType.color;
-        }
-    }
-
-    public static void setNavMenuHeaderBackgroundType(Context context, NavMenuHeaderBackgroundType type) {
-        SharedWrapper.with(context, TAG).setString(SETTING_NAV_MENU_HEADER_BACKGROUND, type == null ? NavMenuHeaderBackgroundType.color.name() : type.name());
-    }
-
-    public static boolean isEnableNotification(Context context) {
-        return SharedWrapper.with(context, TAG).getBoolean(SETTING_ENABLE_NOTIFICATION, true);
-    }
-
-    public static void setEnableNotification(Context context, boolean enable) {
-        SharedWrapper.with(context, TAG).setBoolean(SETTING_ENABLE_NOTIFICATION, enable);
     }
 
 }

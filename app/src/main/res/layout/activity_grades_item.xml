@@ -209,7 +209,7 @@
         android:layout_width="match_parent"
         android:layout_height="4dp"
         android:layout_gravity="bottom"
-        android:background="@drawable/item_gap_shadow_bottom" />
+        android:background="@drawable/gap_shadow" />
 
     <View
         android:id="@+id/grades_item_icon_blank_bottom"

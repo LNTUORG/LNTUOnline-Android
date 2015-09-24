@@ -2,32 +2,28 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckedTextView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import org.lntu.online.R;
 import com.squareup.picasso.Picasso;
 
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.ToastUtils;
-import org.lntu.online.util.UpdateUtils;
-
-import java.util.List;
+import org.lntu.online.ui.listener.NavigationOpenClickListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -36,40 +32,34 @@ import retrofit.client.Response;
 
 public class MainActivity extends BaseActivity {
 
+    public static final String KEY_BACK_TO_ENTRY = "backToEntry";
+
     // 抽屉导航布局
     @Bind(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
-    // 导航顶部控件
-    @Bind(R.id.main_left_img_avatar)
+    // 导航部分的个人信息
+    @Bind(R.id.main_nav_img_avatar)
     protected ImageView imgAvatar;
 
-    @Bind(R.id.main_left_tv_name)
+    @Bind(R.id.main_nav_tv_name)
     protected TextView tvName;
 
-    @Bind(R.id.main_left_tv_college)
+    @Bind(R.id.main_nav_tv_college)
     protected TextView tvCollege;
 
-    @Bind(R.id.main_left_tv_class_info)
+    @Bind(R.id.main_nav_tv_class_info)
     protected TextView tvClassInfo;
 
-
-
-
-
-
-
-
-    public static final String KEY_BACK_TO_ENTRY = "backToEntry";
-
-    @Bind(R.id.toolbar)
+    // 主界面部分
+    @Bind(R.id.main_toolbar)
     protected Toolbar toolbar;
 
     @Bind(R.id.main_recycler_view)
     protected RecyclerView recyclerView;
 
-    private boolean asyncStudentFlag = false;
-    private long firstBackKeyTime = 0;
+    // 首次按下返回键时间戳
+    private long firstBackPressedTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,20 +68,14 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
 
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
+        drawerLayout.setDrawerListener(drawerListener);
 
-
-
-
-
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+        toolbar.setNavigationOnClickListener(new NavigationOpenClickListener(drawerLayout));
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new MainAdapter(this));
 
-        UpdateUtils.update(this);
+        checkAndUpdateUserInfo();
 
         handleIntent(getIntent());
     }
@@ -102,6 +86,9 @@ public class MainActivity extends BaseActivity {
         super.onNewIntent(intent);
     }
 
+    /**
+     * 处理401时的用户注销逻辑
+     */
     private void handleIntent(Intent intent) {
         if (intent.getBooleanExtra(KEY_BACK_TO_ENTRY, false)) {
             startActivity(new Intent(this, LoginActivity.class));
@@ -109,83 +96,80 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                if (!drawerLayout.isDrawerOpen(GravityCompat.START)) {
-                    drawerLayout.openDrawer(GravityCompat.START);
-                    return true;
-                } else {
-                    return super.onOptionsItemSelected(item);
-                }
-            default:
-                return super.onOptionsItemSelected(item);
+    /**
+     * 抽屉菜单监听器
+     */
+    private final DrawerLayout.DrawerListener drawerListener = new DrawerLayout.SimpleDrawerListener() {
+
+        @Override
+        public void onDrawerOpened(View drawerView) {
+            checkAndUpdateUserInfo();
+        }
+
+    };
+
+    /**
+     * 检测是否需要并且更新用户信息
+     */
+    private void checkAndUpdateUserInfo() {
+        Student student = LoginShared.getStudent(this);
+        if (student == null) {
+            getStudentAsyncTask();
+        } else {
+            updateUserInfoViews(student);
         }
     }
 
-    @Override
-    protected void onResume() {
-        if (!asyncStudentFlag) {
-            Student student = LoginShared.getStudent(this);
-            if (student == null) {
-                getStudentAsyncTask();
-            } else {
-                updateStudentView(student);
-            }
-        }
-        super.onResume();
-    }
-
-    private void updateStudentView(Student student) {
-        Picasso.with(this).load(student.getPhotoUrl()).error(R.drawable.image_default).into(imgAvatar);
+    /**
+     * 更新导航部分的用户信息
+     */
+    private void updateUserInfoViews(@NonNull Student student) {
+        Picasso.with(this).load(student.getPhotoUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
         tvName.setText(student.getName());
         tvCollege.setText(student.getCollege());
         tvClassInfo.setText(student.getClassInfo());
-        asyncStudentFlag = true;
     }
 
+    /**
+     * 获取用户信息
+     */
     private void getStudentAsyncTask() {
         ApiClient.service.getStudent(LoginShared.getLoginToken(this), new DefaultCallback<Student>(this) {
 
             @Override
             public void success(Student student, Response response) {
                 LoginShared.setStudent(MainActivity.this, student);
-                updateStudentView(student);
+                updateUserInfoViews(student);
             }
 
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            long secondBackKeyTime = System.currentTimeMillis();
-            if (secondBackKeyTime - firstBackKeyTime > 2000) {
-                ToastUtils.with(this).show(R.string.press_back_again_to_exit);
-                firstBackKeyTime = secondBackKeyTime;
-            } else {
-                finish();
-            }
-        }
+    /**
+     * 用户信息按钮点击
+     */
+    @OnClick(R.id.main_nav_layout_info)
+    protected void onBtnUserDetailClick() {
+        startActivity(new Intent(this, StudentInfoActivity.class));
     }
 
-
-
-
-
+    /**
+     * 关于按钮点击
+     */
+    @OnClick(R.id.main_nav_btn_about)
+    protected void onBtnAboutClick() {
+        startActivity(new Intent(this, AboutActivity.class));
+    }
 
     /**
-     * 注销按钮事件
+     * 退出登录按钮点击
      */
-    @OnClick(R.id.main_left_btn_logout)
+    @OnClick(R.id.main_nav_btn_logout)
     protected void onBtnLogoutClick() {
         new MaterialDialog.Builder(this)
                 .content(R.string.logout_tip)
                 .positiveText(R.string.logout)
-                .negativeText("不好意思，我点错了")
+                .negativeText(R.string.cancel)
                 .callback(new MaterialDialog.ButtonCallback() {
 
                     @Override
@@ -197,6 +181,24 @@ public class MainActivity extends BaseActivity {
 
                 })
                 .show();
+    }
+
+    /**
+     * 返回键关闭导航
+     */
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            long secondBackPressedTime = System.currentTimeMillis();
+            if (secondBackPressedTime - firstBackPressedTime > 2000) {
+                Toast.makeText(this, R.string.press_back_again_to_exit, Toast.LENGTH_SHORT).show();
+                firstBackPressedTime = secondBackPressedTime;
+            } else {
+                finish();
+            }
+        }
     }
 
 }

@@ -72,8 +72,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = inflater.inflate(R.layout.activity_main_item, parent, false);
-        return new ViewHolder(itemView);
+        return new ViewHolder(inflater.inflate(R.layout.activity_main_item, parent, false));
     }
 
     @Override
@@ -89,10 +88,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.main_center_item_img_icon)
+        @Bind(R.id.main_item_img_icon)
         protected ImageView imgIcon;
 
-        @Bind(R.id.main_center_item_tv_title)
+        @Bind(R.id.main_item_tv_title)
         protected TextView tvTitle;
 
         public ViewHolder(View itemView) {
@@ -100,7 +99,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             ButterKnife.bind(this, itemView);
         }
 
-        @OnClick(R.id.main_center_item_btn_root)
+        @OnClick(R.id.main_item_btn_item)
         public void onBtnItemClick() {
             context.startActivity(new Intent(context, clzs[getLayoutPosition()]));
         }
