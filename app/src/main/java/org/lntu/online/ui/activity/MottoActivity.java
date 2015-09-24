@@ -5,10 +5,8 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 
 import org.lntu.online.R;
-import org.lntu.online.ui.base.BaseActivity;
 
 import java.io.IOException;
 

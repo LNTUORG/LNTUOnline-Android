@@ -1,4 +1,4 @@
-package org.lntu.online.ui.base;
+package org.lntu.online.ui.activity;
 
 import android.support.v7.app.AppCompatActivity;
 

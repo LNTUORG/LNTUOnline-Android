@@ -19,8 +19,7 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.storage.LoginShared;
-import org.lntu.online.ui.base.BaseActivity;
-import org.lntu.online.util.TimeUtils;
+import org.lntu.online.util.FormatUtils;
 
 import butterknife.ButterKnife;
 import butterknife.Bind;
@@ -169,7 +168,7 @@ public class StudentInfoActivity extends BaseActivity {
                     break;
                 case 9:
                     tvName.setText("出生日期");
-                    tvValue.setText(TimeUtils.getTimeFormat(student.getBirthday()));
+                    tvValue.setText(FormatUtils.getTimeFormat(student.getBirthday()));
                     break;
                 case 10:
                     tvName.setText("籍贯");
@@ -233,11 +232,11 @@ public class StudentInfoActivity extends BaseActivity {
                     break;
                 case 25:
                     tvName.setText("入学日期");
-                    tvValue.setText(TimeUtils.getTimeFormat(student.getAdmissionTime()));
+                    tvValue.setText(FormatUtils.getTimeFormat(student.getAdmissionTime()));
                     break;
                 case 26:
                     tvName.setText("毕业日期");
-                    tvValue.setText(TimeUtils.getTimeFormat(student.getGraduationTime()));
+                    tvValue.setText(FormatUtils.getTimeFormat(student.getGraduationTime()));
                     break;
                 case 27:
                     tvName.setText("毕业去向");
@@ -310,8 +309,8 @@ public class StudentInfoActivity extends BaseActivity {
                 TextView tvDateOfEnd = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_date_of_end);
                 TextView tvSchoolName = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_school_name);
                 TextView tvWitness = (TextView) itemView.findViewById(R.id.student_info_item_edex_tv_witness);
-                tvDateOfStart.setText(TimeUtils.getTimeFormat(ee.getStartTime()));
-                tvDateOfEnd.setText(TimeUtils.getTimeFormat(ee.getEndTime()));
+                tvDateOfStart.setText(FormatUtils.getTimeFormat(ee.getStartTime()));
+                tvDateOfEnd.setText(FormatUtils.getTimeFormat(ee.getEndTime()));
                 tvSchoolName.setText(ee.getSchoolInfo());
                 tvWitness.setText(ee.getWitness());
                 // 添加到布局
@@ -372,9 +371,9 @@ public class StudentInfoActivity extends BaseActivity {
                 TextView tvState = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_state);
                 TextView tvRemarks = (TextView) itemView.findViewById(R.id.student_info_item_action_tv_remarks);
                 tvLevel.setText(action.getLevel());
-                tvCreateTime.setText(TimeUtils.getTimeFormat(action.getCreateTime()));
+                tvCreateTime.setText(FormatUtils.getTimeFormat(action.getCreateTime()));
                 tvCreateReason.setText(action.getCreateReason());
-                tvCancelTime.setText(TimeUtils.getTimeFormat(action.getCancelTime()));
+                tvCancelTime.setText(FormatUtils.getTimeFormat(action.getCancelTime()));
                 tvCancelReason.setText(action.getCancelReason());
                 tvState.setText(action.getState());
                 tvRemarks.setText(action.getRemarks());

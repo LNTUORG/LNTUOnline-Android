@@ -6,11 +6,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.umeng.update.UmengUpdateAgent;
+
 import org.lntu.online.BuildConfig;
 import org.lntu.online.R;
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ShipUtils;
-import org.lntu.online.util.UpdateUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -52,32 +52,27 @@ public class AboutActivity extends BaseActivity {
 
     @OnClick(R.id.about_btn_version)
     protected void onBtnVersionClick() {
-        UpdateUtils.forceUpdate(this);
+        UmengUpdateAgent.forceUpdate(this);
     }
 
     @OnClick(R.id.about_btn_homepage)
     protected void onBtnHomepageClick() {
-        ShipUtils.homepage(this);
+        ShipUtils.openInBrowser(this, getString(R.string.official_homepage_content));
     }
 
     @OnClick(R.id.about_btn_online)
     protected void onBtnOnlineClick() {
-        ShipUtils.webOnline(this);
+        ShipUtils.openInBrowser(this, "http://60.18.131.131:11180/academic/index.html");
     }
 
     @OnClick(R.id.about_btn_grade_in_play)
     protected void onBtnGradeInPlayClick() {
-        ShipUtils.appStore(this);
+        ShipUtils.openInAppStore(this);
     }
 
     @OnClick(R.id.about_btn_share_to_friends)
     protected void onBtnShareToFriendsClick() {
         ShipUtils.share(this);
-    }
-
-    @OnClick(R.id.about_btn_feedback)
-    protected void onBtnFeedbackClick() {
-        startActivity(new Intent(this, AdviceActivity.class));
     }
 
     @OnClick(R.id.about_btn_term_of_service)

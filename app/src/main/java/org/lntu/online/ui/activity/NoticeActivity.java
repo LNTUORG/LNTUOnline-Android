@@ -8,7 +8,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import org.lntu.online.R;
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 
@@ -58,7 +57,7 @@ public class NoticeActivity extends BaseActivity {
                 finish();
                 return true;
             case R.id.action_notice_by_browser:
-                ShipUtils.noticeOnline(this);
+                ShipUtils.openInBrowser(this, "http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

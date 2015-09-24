@@ -2,8 +2,9 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.widget.CheckBox;
+
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
@@ -12,19 +13,14 @@ import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.UserType;
 import org.lntu.online.storage.LoginShared;
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ToastUtils;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class LoginActivity extends BaseActivity {
-
-    @Bind(R.id.toolbar)
-    protected Toolbar toolbar;
 
     @Bind(R.id.login_edt_user_id)
     protected MaterialEditText edtUserId;
@@ -40,19 +36,17 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_account_circle_white_24dp);
     }
 
     @OnClick(R.id.login_btn_login)
     protected void onBtnLoginClick() {
         if (edtUserId.getText().length() < 10) {
             edtUserId.setError("学号长度为10位");
+            edtUserId.requestFocus();
         } 
         else if (edtPwd.getText().length() <= 0) {
             edtPwd.setError("密码不能为空");
+            edtPwd.requestFocus();
         } else {
             loginAsyncTask(edtUserId.getText().toString(), edtPwd.getText().toString(), cbHoldOnline.isChecked());
         }
@@ -70,6 +64,7 @@ public class LoginActivity extends BaseActivity {
                     finish();
                 } else {
                     edtUserId.setError("账户未通过验证");
+                    edtUserId.requestFocus();
                 }
             }
 
@@ -78,6 +73,7 @@ public class LoginActivity extends BaseActivity {
                 switch (errorInfo.getErrorCode()) {
                     case PASSWORD_ERROR:
                         edtPwd.setError("密码未通过验证");
+                        edtPwd.requestFocus();
                         break;
                     default:
                         super.handleFailure(errorInfo);
@@ -88,7 +84,7 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
-    @OnClick(R.id.login_btn_agreement)
+    @OnClick(R.id.login_btn_tos)
     protected void onBtnAgreementClick() {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
     }

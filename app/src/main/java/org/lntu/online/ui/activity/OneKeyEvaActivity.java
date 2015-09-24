@@ -22,7 +22,6 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.CourseEvaInfo;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.OneKeyEvaAdapter;
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 
@@ -199,7 +198,7 @@ public class OneKeyEvaActivity extends BaseActivity {
 
                             @Override
                             public void onPositive(MaterialDialog dialog) {
-                                ShipUtils.appStore(OneKeyEvaActivity.this);
+                                ShipUtils.openInAppStore(OneKeyEvaActivity.this);
                             }
 
                             @Override

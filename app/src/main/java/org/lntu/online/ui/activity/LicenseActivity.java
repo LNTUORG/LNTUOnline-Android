@@ -7,7 +7,6 @@ import android.widget.TextView;
 
 import org.lntu.online.R;
 
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.DocumentUtils;
 
 import butterknife.ButterKnife;

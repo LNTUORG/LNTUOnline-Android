@@ -10,11 +10,6 @@
 
 
 
-
-
-
-
-
     <string name="student_info">个人信息</string>
     <string name="my_class_table">我的课表</string>
     <string name="grades_query">成绩查询</string>
@@ -24,11 +19,6 @@
     <string name="notification">消息</string>
     <string name="setting">设置</string>
     <string name="about">关于</string>
-
-
-
-
-
 
     <string name="class_table_course_info">课程信息</string>
     <string name="one_key_eva">一键评课</string>
@@ -106,7 +96,6 @@
     <string name="online_homepage_content">http://60.18.131.131</string>
     <string name="grade_in_play">去商店评分</string>
     <string name="share_to_friends">分享给好友</string>
-    <string name="feedback">反馈</string>
 
     <string name="motto">诚朴求是，博学笃行</string>
     <string name="male_voice">男声朗读</string>
@@ -121,21 +110,5 @@
 
     <string name="send">发送</string>
     <string name="crash_log_tip">非常抱歉，程序运行过程中出现了一个无法避免的错误。您可以将该问题发送给我们，此举将有助于我们改善应用体验。由此给您带来的诸多不便，我们深表歉意，敬请谅解。</string>
-
-
-
-
-
-
-
-
-
-
-
-
-    <string name="your_suggestion_title">您的意见与建议：</string>
-    <string name="your_suggestion_hint">请输入您要反馈的问题，我们将以此为动力不断改进</string>
-    <string name="your_contact_title">您的联系方式：</string>
-    <string name="your_contact_hint">可选填写，以便解决问题后给您回复</string>
 
 </resources>

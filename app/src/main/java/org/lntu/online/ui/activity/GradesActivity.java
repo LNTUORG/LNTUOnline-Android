@@ -22,7 +22,6 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Grades;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.GradesAdapter;
-import org.lntu.online.ui.base.BaseActivity;
 
 import java.util.Collections;
 
