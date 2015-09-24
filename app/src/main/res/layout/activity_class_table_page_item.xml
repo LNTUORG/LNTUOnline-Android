@@ -85,7 +85,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/item_gap_shadow_bottom" />
+                    android:background="@drawable/gap_shadow" />
 
                 <LinearLayout
                     android:id="@+id/class_table_page_item_icon_stage_1"
@@ -124,7 +124,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:layout_gravity="bottom"
-                android:background="@drawable/item_gap_shadow_bottom" />
+                android:background="@drawable/gap_shadow" />
 
         </LinearLayout>
 
@@ -178,7 +178,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/item_gap_shadow_bottom" />
+                    android:background="@drawable/gap_shadow" />
 
                 <LinearLayout
                     android:id="@+id/class_table_page_item_icon_stage_2"
@@ -217,7 +217,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:layout_gravity="bottom"
-                android:background="@drawable/item_gap_shadow_bottom" />
+                android:background="@drawable/gap_shadow" />
 
         </LinearLayout>
 
@@ -270,7 +270,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/item_gap_shadow_bottom" />
+                    android:background="@drawable/gap_shadow" />
 
                 <LinearLayout
                     android:id="@+id/class_table_page_item_icon_stage_3"
@@ -309,7 +309,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:layout_gravity="bottom"
-                android:background="@drawable/item_gap_shadow_bottom" />
+                android:background="@drawable/gap_shadow" />
 
         </LinearLayout>
 
@@ -363,7 +363,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/item_gap_shadow_bottom" />
+                    android:background="@drawable/gap_shadow" />
 
                 <LinearLayout
                     android:id="@+id/class_table_page_item_icon_stage_4"
@@ -402,7 +402,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:layout_gravity="bottom"
-                android:background="@drawable/item_gap_shadow_bottom" />
+                android:background="@drawable/gap_shadow" />
 
         </LinearLayout>
 
@@ -456,7 +456,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/item_gap_shadow_bottom" />
+                    android:background="@drawable/gap_shadow" />
 
                 <LinearLayout
                     android:id="@+id/class_table_page_item_icon_stage_5"
@@ -495,7 +495,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:layout_gravity="bottom"
-                android:background="@drawable/item_gap_shadow_bottom" />
+                android:background="@drawable/gap_shadow" />
 
         </LinearLayout>
 
