@@ -30,12 +30,8 @@
                 app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/student_info_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#01000000"
-                app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_collapseMode="pin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -67,15 +63,15 @@
 
     </org.lntu.online.ui.widget.design.FloatingActionFrameLayout>
 
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/student_info_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        android:text="@string/student_info"
-        android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:gravity="center_vertical"
-        android:elevation="10dp" />
+        android:layout_height="wrap_content"
+        android:background="#01000000"
+        android:elevation="10dp"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:title="@string/student_info"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 </android.support.design.widget.CoordinatorLayout>
