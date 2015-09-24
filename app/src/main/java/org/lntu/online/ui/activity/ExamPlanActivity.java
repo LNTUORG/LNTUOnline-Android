@@ -2,7 +2,6 @@ package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -16,18 +15,19 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ExamPlan;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.ExamPlanAdapter;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class ExamPlanActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @Bind(R.id.exam_plan_toolbar)
     protected Toolbar toolbar;
 
     @Bind(R.id.exam_plan_list_view)
@@ -51,25 +51,13 @@ public class ExamPlanActivity extends BaseActivity {
         setContentView(R.layout.activity_exam_plan);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
         startNetwork();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     private void startNetwork() {

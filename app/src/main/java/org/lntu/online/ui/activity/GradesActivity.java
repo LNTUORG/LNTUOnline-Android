@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -14,25 +13,26 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
 
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Grades;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.GradesAdapter;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class GradesActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @Bind(R.id.grades_toolbar)
     protected Toolbar toolbar;
 
     @Bind(R.id.grades_layout_content)
@@ -88,8 +88,7 @@ public class GradesActivity extends BaseActivity {
         setContentView(R.layout.activity_grades);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
@@ -102,17 +101,6 @@ public class GradesActivity extends BaseActivity {
         fab.attachToRecyclerView(recyclerView);
 
         startNetwork();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     private void startNetwork() {
@@ -219,14 +207,11 @@ public class GradesActivity extends BaseActivity {
     private boolean needUpdateListView() {
         if (lastYear != (spnYear.getSelectedItemPosition() == 0 ? 0 : Integer.parseInt(spnYear.getSelectedItem().toString()))) {
             return true;
-        }
-        else if (!lastTerm.equals(spnTerm.getSelectedItemPosition() == 0 ? "" : spnTerm.getSelectedItem().toString())) {
+        } else if (!lastTerm.equals(spnTerm.getSelectedItemPosition() == 0 ? "" : spnTerm.getSelectedItem().toString())) {
             return true;
-        }
-        else if (lastLevel != getCurrentLevel()) {
+        } else if (lastLevel != getCurrentLevel()) {
             return true;
-        }
-        else {
+        } else {
             return lastDisplayMax == (spnDisplay.getSelectedItemPosition() == 0);
         }
     }

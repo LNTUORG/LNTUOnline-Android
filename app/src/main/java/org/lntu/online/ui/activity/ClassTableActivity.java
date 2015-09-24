@@ -3,7 +3,6 @@ package org.lntu.online.ui.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +20,7 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,9 +32,9 @@ import butterknife.OnClick;
 import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
-public class ClassTableActivity extends BaseActivity {
+public class ClassTableActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
 
-    @Bind(R.id.toolbar)
+    @Bind(R.id.class_table_toolbar)
     protected Toolbar toolbar;
 
     @Bind(R.id.class_table_spn_year_term)
@@ -55,8 +55,6 @@ public class ClassTableActivity extends BaseActivity {
     @Bind(R.id.class_table_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    private Menu menu;
-
     private BaseFragment fmPage;
     private BaseFragment fmList;
 
@@ -71,9 +69,9 @@ public class ClassTableActivity extends BaseActivity {
         setContentView(R.layout.activity_class_table);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(null);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
+        toolbar.inflateMenu(R.menu.class_table_page);
+        toolbar.setOnMenuItemClickListener(this);
 
         Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
@@ -138,32 +136,22 @@ public class ClassTableActivity extends BaseActivity {
     }
 
     /**
-     * 创建菜单，默认为page
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        this.menu = menu;
-        getMenuInflater().inflate(R.menu.class_table_page, menu);
-        return true;
-    }
-
-    /**
      * 菜单点击事件
      */
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 return true;
             case R.id.action_class_table_page:
-                menu.clear();
-                getMenuInflater().inflate(R.menu.class_table_page, menu);
+                toolbar.getMenu().clear();
+                toolbar.inflateMenu(R.menu.class_table_page);
                 getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmList).commit();
                 return true;
             case R.id.action_class_table_list:
-                menu.clear();
-                getMenuInflater().inflate(R.menu.class_table_list, menu);
+                toolbar.getMenu().clear();
+                toolbar.inflateMenu(R.menu.class_table_list);
                 getSupportFragmentManager().beginTransaction().show(fmList).hide(fmPage).commit();
                 return true;
             case R.id.action_class_table_today:
@@ -172,7 +160,7 @@ public class ClassTableActivity extends BaseActivity {
                 }
                 return true;
             default:
-                return super.onOptionsItemSelected(item);
+                return false;
         }
     }
 

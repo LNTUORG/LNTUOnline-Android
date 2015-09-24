@@ -2,19 +2,18 @@ package org.lntu.online.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.DocumentUtils;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class LicenseActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @Bind(R.id.license_toolbar)
     protected Toolbar toolbar;
 
     @Bind(R.id.license_tv_license)
@@ -26,21 +25,9 @@ public class LicenseActivity extends BaseActivity {
         setContentView(R.layout.activity_license);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         tvLicense.setText(DocumentUtils.getString(this, R.raw.open_source));
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
 }

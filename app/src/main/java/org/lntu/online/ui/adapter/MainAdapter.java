@@ -14,7 +14,7 @@ import org.lntu.online.ui.activity.ClassTableActivity;
 import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.ExamPlanActivity;
 import org.lntu.online.ui.activity.MottoActivity;
-import org.lntu.online.ui.activity.NoticeActivity;
+import org.lntu.online.ui.activity.SenateNoticeActivity;
 import org.lntu.online.ui.activity.OneKeyEvaActivity;
 import org.lntu.online.ui.activity.SkillTestActivity;
 import org.lntu.online.ui.activity.StudentInfoActivity;
@@ -58,7 +58,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             OneKeyEvaActivity.class,
             UnpassCourseActivity.class,
             SkillTestActivity.class,
-            NoticeActivity.class,
+            SenateNoticeActivity.class,
             MottoActivity.class
     };
 

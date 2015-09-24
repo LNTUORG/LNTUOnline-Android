@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -14,22 +13,23 @@ import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import org.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
 
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.CourseEvaInfo;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.OneKeyEvaAdapter;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.util.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -37,7 +37,7 @@ import retrofit.client.Response;
 
 public class OneKeyEvaActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @Bind(R.id.one_key_eva_toolbar)
     protected Toolbar toolbar;
 
     @Bind(R.id.one_key_eva_layout_content)
@@ -70,8 +70,7 @@ public class OneKeyEvaActivity extends BaseActivity {
         setContentView(R.layout.activity_one_key_eva);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         Animation dataLoadAnim = AnimationUtils.loadAnimation(this, R.anim.data_loading);
         dataLoadAnim.setInterpolator(new LinearInterpolator());
@@ -85,17 +84,6 @@ public class OneKeyEvaActivity extends BaseActivity {
         fab.attachToRecyclerView(recyclerView);
 
         startNetwork();
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     private void startNetwork() {

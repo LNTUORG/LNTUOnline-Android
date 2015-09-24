@@ -110,7 +110,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.ui.activity.NoticeActivity"
+            android:name=".ui.activity.SenateNoticeActivity"
             android:label="@string/senate_notice"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />

@@ -5,7 +5,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/activity_action_bar" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/one_key_eva_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:title="@string/one_key_eva"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <FrameLayout
         android:layout_width="match_parent"
