@@ -28,19 +28,10 @@
             </intent-filter>
         </activity>
 
-
-
-
-
-
-
-
-
-
         <activity
             android:name="org.lntu.online.ui.activity.AuthErrorActivity"
             android:label="@string/auth_error"
-            android:theme="@style/AppTheme.AuthErrorPage"
+            android:theme="@style/AppTheme.Translucent"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
@@ -177,7 +168,7 @@
 
         <activity
             android:name="com.umeng.update.UpdateDialogActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"
+            android:theme="@style/AppTheme.Dialog"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 

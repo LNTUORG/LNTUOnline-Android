@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:orientation="vertical"
-        android:background="@drawable/rect_btn_background">
+        android:background="@drawable/selectable_item_background">
 
         <TextView
             android:id="@+id/unpass_course_item_group_tv_name"

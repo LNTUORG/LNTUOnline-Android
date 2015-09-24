@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/rect_btn_background">
+    android:background="@drawable/selectable_item_background">
 
     <ImageView
         android:id="@+id/main_center_item_img_icon"
