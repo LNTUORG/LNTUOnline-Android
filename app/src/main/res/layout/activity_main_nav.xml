@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary">
+
+        <!-- 主题色Header -->
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/main_left_layout_info"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginRight="-16dp"
+            android:src="@drawable/main_left_header_bg_image"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <!-- 信息栏 -->
+        <LinearLayout
+            android:id="@+id/main_left_layout_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/nav_status_bar_adapt_height"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="vertical">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/main_left_img_avatar"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/image_default"
+                android:scaleType="fitCenter"
+                app:siBorderWidth="2dp"
+                app:siBorderColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/main_left_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                tools:text="张三" />
+
+            <TextView
+                android:id="@+id/main_left_tv_college"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_color_light"
+                android:textSize="13sp"
+                tools:text="电子与信息工程学院" />
+
+            <TextView
+                android:id="@+id/main_left_tv_class_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_color_light"
+                android:textSize="13sp"
+                tools:text="计算10-1" />
+
+        </LinearLayout>
+
+        <!-- 注销按钮 -->
+        <TextView
+            android:id="@+id/main_left_btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/main_left_layout_info"
+            android:layout_margin="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/logout"
+            android:textColor="@color/text_color_light"
+            android:textSize="14sp"
+            android:background="@drawable/selectable_item_background_transparent" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

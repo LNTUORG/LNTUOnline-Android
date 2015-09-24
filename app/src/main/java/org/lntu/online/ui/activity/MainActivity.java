@@ -40,22 +40,6 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
-    // 导航项的消息数
-    @Bind(R.id.main_left_tv_badger_my_class_table)
-    protected TextView tvBadgerMyClassTable;
-
-    @Bind(R.id.main_left_tv_badger_grades_query)
-    protected TextView tvBadgerGradesQuery;
-
-    @Bind(R.id.main_left_tv_badger_exam_plan)
-    protected TextView tvBadgerExamPlan;
-
-    @Bind(R.id.main_left_tv_badger_senate_notice)
-    protected TextView tvBadgerSenateNotice;
-
-    @Bind(R.id.main_left_tv_badger_notification)
-    protected TextView tvBadgerNotification;
-
     // 导航顶部控件
     @Bind(R.id.main_left_img_avatar)
     protected ImageView imgAvatar;
@@ -69,14 +53,7 @@ public class MainActivity extends BaseActivity {
     @Bind(R.id.main_left_tv_class_info)
     protected TextView tvClassInfo;
 
-    // 主要导航项
-    @Bind({
-            R.id.main_left_btn_my_class_table,
-            R.id.main_left_btn_grades_query,
-            R.id.main_left_btn_exam_plan,
-            R.id.main_left_btn_senate_notice
-    })
-    protected List<CheckedTextView> navItemList;
+
 
 
 
@@ -221,166 +198,5 @@ public class MainActivity extends BaseActivity {
                 })
                 .show();
     }
-
-    /**
-     * 根据id选中主导航中的项，id不匹配则不选中
-     */
-    public void checkNavigationItem(int id) {
-        for (CheckedTextView navItem : navItemList) {
-            navItem.setChecked(navItem.getId() == id);
-        }
-    }
-
-    /**
-     * 主导航项单击事件
-     */
-    @OnClick({
-            R.id.main_left_btn_my_class_table,
-            R.id.main_left_btn_grades_query,
-            R.id.main_left_btn_exam_plan,
-            R.id.main_left_btn_senate_notice
-    })
-    public void onNavigationItemMainClick(CheckedTextView itemView) {
-        switch (itemView.getId()) {
-            case R.id.main_left_btn_my_class_table:
-                drawerLayout.setDrawerListener(myClassTableDrawerListener);
-                break;
-            case R.id.main_left_btn_grades_query:
-                drawerLayout.setDrawerListener(gradesQueryDrawerListener);
-                break;
-            case R.id.main_left_btn_exam_plan:
-                drawerLayout.setDrawerListener(examPlanDrawerListener);
-                break;
-            case R.id.main_left_btn_senate_notice:
-                drawerLayout.setDrawerListener(senateNoticeDrawerListener);
-                break;
-            default:
-                drawerLayout.setDrawerListener(null);
-                break;
-        }
-        checkNavigationItem(itemView.getId());
-        drawerLayout.closeDrawers();
-    }
-
-    /**
-     * 次要导航项单击事件
-     */
-    @OnClick({
-            R.id.main_left_img_avatar,
-            R.id.main_left_btn_notification,
-            R.id.main_left_btn_setting,
-            R.id.main_left_btn_about
-    })
-    public void onNavigationItemOtherClick(View itemView) {
-        switch (itemView.getId()) {
-            case R.id.main_left_img_avatar:
-                drawerLayout.setDrawerListener(studentInfoDrawerListener);
-                break;
-            case R.id.main_left_btn_notification:
-                drawerLayout.setDrawerListener(notificationDrawerListener);
-                break;
-            case R.id.main_left_btn_setting:
-                drawerLayout.setDrawerListener(settingDrawerListener);
-                break;
-            case R.id.main_left_btn_about:
-                drawerLayout.setDrawerListener(aboutDrawerListener);
-                break;
-            default:
-                drawerLayout.setDrawerListener(null);
-                break;
-        }
-        drawerLayout.closeDrawers();
-    }
-
-    /**
-     * 全部的Drawer事件监听器，这么做的目的是让Drawer关闭之后再触发事件
-     */
-    private DrawerLayout.DrawerListener myClassTableDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "我的课表", Toast.LENGTH_LONG).show();
-
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
-
-    private DrawerLayout.DrawerListener gradesQueryDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "成绩查询", Toast.LENGTH_LONG).show();
-
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
-
-    private DrawerLayout.DrawerListener examPlanDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "考试安排", Toast.LENGTH_LONG).show();
-
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
-
-    private DrawerLayout.DrawerListener senateNoticeDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            // TODO
-            Toast.makeText(MainActivity.this, "教务公告", Toast.LENGTH_LONG).show();
-
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
-
-    private DrawerLayout.DrawerListener studentInfoDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            startActivity(new Intent(MainActivity.this, StudentInfoActivity.class));
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
-
-    private DrawerLayout.DrawerListener notificationDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            startActivity(new Intent(MainActivity.this, NotificationActivity.class));
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
-
-    private DrawerLayout.DrawerListener settingDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            startActivity(new Intent(MainActivity.this, SettingActivity.class));
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
-
-    private DrawerLayout.DrawerListener aboutDrawerListener = new DrawerLayout.SimpleDrawerListener() {
-
-        @Override
-        public void onDrawerClosed(View drawerView) {
-            startActivity(new Intent(MainActivity.this, AboutActivity.class));
-            drawerLayout.setDrawerListener(null);
-        }
-
-    };
 
 }

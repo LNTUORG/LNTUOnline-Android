@@ -3,27 +3,20 @@
 
     <color name="color_primary">#ff2196f3</color>
     <color name="color_primary_dark">#ff1976d2</color>
-    <color name="color_accent">#ff1067d2</color>
+    <color name="color_accent">@color/color_primary_dark</color>
 
     <color name="text_color_primary">#ff212121</color>
     <color name="text_color_secondary">#ff757575</color>
     <color name="text_color_light">#ccffffff</color>
 
-    <color name="rect_btn_background_normal">@android:color/white</color>
-    <color name="rect_btn_background_pressed">#ffeeeeee</color>
-    <color name="rect_btn_background_accent">#ffcccccc</color>
+    <color name="selectable_item_background_normal">@android:color/white</color>
+    <color name="selectable_item_background_pressed">#ffeeeeee</color>
+    <color name="selectable_item_background_accent">#ffcccccc</color>
+    <color name="selectable_item_background_transparent_pressed">#44eeeeee</color>
 
-
-
-
-
-
-    <color name="rect_btn_transparent_background_normal">#00000000</color>
-    <color name="rect_btn_transparent_background_pressed">#44ffffff</color>
-    <color name="rect_btn_transparent_background_accent">#44000000</color>
-
-    <color name="rect_btn_class_table_time_dialog_background_normal">#00000000</color>
-    <color name="rect_btn_class_table_time_dialog_background_pressed">#882196f3</color>
+    <color name="fab_color_primary">#fff44336</color>
+    <color name="fab_color_primary_dark">#ffd32f2f</color>
+    <color name="fab_color_accent">#99ffffff</color>
 
     <color name="red_light">#ffff4444</color>
     <color name="green_light">#ff99cc00</color>
@@ -35,8 +28,7 @@
     <color name="score_level_unpass">#fff44336</color>
     <color name="score_level_normal">#ff4caf50</color>
 
-    <color name="fab_ripple">#ffff5252</color>
-    <color name="fab_accent">#fff44336</color>
-    <color name="fab_accent_pressed">#ffd32f2f</color>
+    <color name="class_table_time_dialog_btn_background_pressed">#11000000</color>
+    <color name="class_table_time_dialog_btn_background_accent">#aa000000</color>
 
 </resources>
