@@ -21,7 +21,7 @@
             android:layout_alignBottom="@+id/main_nav_layout_info"
             android:layout_marginEnd="-16dp"
             android:layout_marginRight="-16dp"
-            android:src="@drawable/main_left_header_bg_image"
+            android:src="@drawable/main_nav_header_bg_image"
             android:scaleType="fitCenter"
             android:adjustViewBounds="true" />
 
