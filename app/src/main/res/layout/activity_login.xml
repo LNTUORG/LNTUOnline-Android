@@ -5,7 +5,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/activity_action_bar" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/login_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_account_circle_white_24dp"
+        app:title="@string/login"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +26,8 @@
             android:id="@+id/login_edt_user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
             android:hint="@string/user_id_input_hint"
             android:inputType="number"
             android:maxLength="10"
@@ -27,6 +38,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
             android:hint="@string/pwd_input_hint"
             android:inputType="textPassword"
             app:met_floatingLabel="highlight" />
@@ -62,7 +75,7 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/login_btn_agreement"
+                android:id="@+id/login_btn_tos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"

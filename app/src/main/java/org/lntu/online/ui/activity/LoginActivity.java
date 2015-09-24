@@ -22,7 +22,7 @@ import retrofit.client.Response;
 
 public class LoginActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @Bind(R.id.login_toolbar)
     protected Toolbar toolbar;
 
     @Bind(R.id.login_edt_user_id)
@@ -87,7 +87,7 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
-    @OnClick(R.id.login_btn_agreement)
+    @OnClick(R.id.login_btn_tos)
     protected void onBtnAgreementClick() {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
     }
