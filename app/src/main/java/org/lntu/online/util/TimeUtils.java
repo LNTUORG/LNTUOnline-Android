@@ -5,9 +5,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public final class FormatUtils {
+public final class TimeUtils {
 
-    private FormatUtils() {}
+    private TimeUtils() {}
 
     private static final DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
 
