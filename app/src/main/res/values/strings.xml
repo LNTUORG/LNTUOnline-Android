@@ -6,27 +6,17 @@
     <string name="logo_copyright">Copyright © 2014 &#8211; 2015 LNTU.ORG. All Rights Reserved.</string>
     <string name="about_copyright">Copyright © 2014 &#8211; 2015 LNTU.ORG. \nAll Rights Reserved.</string>
 
-
-
-
-
     <string name="student_info">个人信息</string>
     <string name="my_class_table">我的课表</string>
     <string name="grades_query">成绩查询</string>
     <string name="exam_plan">考试安排</string>
     <string name="senate_notice">教务公告</string>
-
-    <string name="notification">消息</string>
-    <string name="setting">设置</string>
-    <string name="about">关于</string>
-
     <string name="class_table_course_info">课程信息</string>
     <string name="one_key_eva">一键评课</string>
     <string name="unpass_query">挂科查询</string>
     <string name="skill_test">等级考试</string>
     <string name="remember_motto">牢记校训</string>
-    <string name="advice">意见反馈</string>
-    <string name="about_app">关于应用</string>
+    <string name="about">关于</string>
 
     <string name="user_login">用户登录</string>
     <string name="user_id_input_hint">学号：</string>
@@ -37,8 +27,6 @@
     <string name="term_of_service">服务条款</string>
     <string name="term_of_service_link_style"><u>服务条款</u></string>
     <string name="open_source_license">开放源代码许可</string>
-
-    <string name="menu">菜单</string>
 
     <string name="logout">退出登录</string>
     <string name="logout_tip">确定要退出登录吗？</string>
@@ -57,7 +45,7 @@
     <string name="cancel">取消</string>
     <string name="ok">好的</string>
 
-    <string name="press_back_again_to_exit">再按一次返回键退出</string>
+    <string name="press_back_again_to_exit">再按一次退出</string>
 
     <string name="political_affiliation_">政治面貌：</string>
     <string name="job_and_post_">职业职位：</string>
