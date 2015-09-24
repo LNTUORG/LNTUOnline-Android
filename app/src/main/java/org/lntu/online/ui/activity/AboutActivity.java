@@ -75,11 +75,6 @@ public class AboutActivity extends BaseActivity {
         ShipUtils.share(this);
     }
 
-    @OnClick(R.id.about_btn_feedback)
-    protected void onBtnFeedbackClick() {
-        startActivity(new Intent(this, AdviceActivity.class));
-    }
-
     @OnClick(R.id.about_btn_term_of_service)
     protected void onBtnTermsOfServiceClick() {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
