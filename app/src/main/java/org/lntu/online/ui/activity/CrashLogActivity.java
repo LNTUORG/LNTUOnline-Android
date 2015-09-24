@@ -11,8 +11,6 @@ import android.widget.TextView;
 import org.lntu.online.R;
 
 import org.joda.time.DateTime;
-import org.lntu.online.util.gson.GsonWrapper;
-import org.lntu.online.ui.base.BaseActivity;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

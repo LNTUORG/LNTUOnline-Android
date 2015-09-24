@@ -12,7 +12,6 @@ import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.UserType;
 import org.lntu.online.storage.LoginShared;
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.util.ToastUtils;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
