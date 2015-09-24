@@ -4,19 +4,19 @@ import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 
 import org.lntu.online.R;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.io.IOException;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MottoActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @Bind(R.id.motto_toolbar)
     protected Toolbar toolbar;
 
     private MediaPlayer maleVoice;
@@ -28,10 +28,8 @@ public class MottoActivity extends BaseActivity {
         setContentView(R.layout.activity_motto);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        //init media
         maleVoice = new MediaPlayer();
         try {
             AssetFileDescriptor fd = getResources().openRawResourceFd(R.raw.motto_male_voice);
@@ -51,36 +49,25 @@ public class MottoActivity extends BaseActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
     protected void onPause() {
+        super.onPause();
         if (maleVoice != null) {
             maleVoice.stop();
         }
         if (femaleVoice != null) {
             femaleVoice.stop();
         }
-        super.onPause();
     }
 
     @Override
     protected void onDestroy() {
+        super.onDestroy();
         if (maleVoice != null) {
             maleVoice.release();
         }
         if (femaleVoice != null) {
             femaleVoice.release();
         }
-        super.onDestroy();
     }
 
     @OnClick(R.id.motto_btn_male_voice)
