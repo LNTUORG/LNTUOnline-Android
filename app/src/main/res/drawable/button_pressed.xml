@@ -6,5 +6,5 @@
         android:topLeftRadius="@dimen/button_corner_radius"
         android:topRightRadius="@dimen/button_corner_radius"
         android:bottomRightRadius="@dimen/button_corner_radius"
-        android:bottomLeftRadius="@dimen/button_corner_radius"/>
+        android:bottomLeftRadius="@dimen/button_corner_radius" />
 </shape>
