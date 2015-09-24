@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -14,9 +13,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.lntu.online.R;
 import com.melnykov.fab.FloatingActionButton;
 
+import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Grades;
@@ -26,8 +25,8 @@ import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
 
-import butterknife.ButterKnife;
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
