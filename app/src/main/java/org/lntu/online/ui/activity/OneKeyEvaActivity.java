@@ -199,7 +199,7 @@ public class OneKeyEvaActivity extends BaseActivity {
 
                             @Override
                             public void onPositive(MaterialDialog dialog) {
-                                ShipUtils.appStore(OneKeyEvaActivity.this);
+                                ShipUtils.openInAppStore(OneKeyEvaActivity.this);
                             }
 
                             @Override

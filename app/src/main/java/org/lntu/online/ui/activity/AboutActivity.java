@@ -1,5 +1,6 @@
 package org.lntu.online.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -58,17 +59,17 @@ public class AboutActivity extends BaseActivity {
 
     @OnClick(R.id.about_btn_homepage)
     protected void onBtnHomepageClick() {
-        ShipUtils.homepage(this);
+        ShipUtils.openInBrowser(this, getString(R.string.official_homepage_content));
     }
 
     @OnClick(R.id.about_btn_online)
     protected void onBtnOnlineClick() {
-        ShipUtils.webOnline(this);
+        ShipUtils.openInBrowser(this, "http://60.18.131.131:11180/academic/index.html");
     }
 
     @OnClick(R.id.about_btn_grade_in_play)
     protected void onBtnGradeInPlayClick() {
-        ShipUtils.appStore(this);
+        ShipUtils.openInAppStore(this);
     }
 
     @OnClick(R.id.about_btn_share_to_friends)
