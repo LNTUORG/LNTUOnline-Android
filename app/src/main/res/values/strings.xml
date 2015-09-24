@@ -91,7 +91,8 @@
 
     <string name="credit">学分</string>
 
-    <string name="notice_by_browser">浏览器访问教务公告</string>
+    <string name="open_in_browser">用浏览器打开</string>
+
     <string name="online_by_browser">访问教务在线主页</string>
     <string name="online_homepage_content">http://60.18.131.131</string>
     <string name="grade_in_play">去商店评分</string>
