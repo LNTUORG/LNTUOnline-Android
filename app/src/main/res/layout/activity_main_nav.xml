@@ -18,7 +18,7 @@
             android:layout_height="160dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignBottom="@+id/main_left_layout_info"
+            android:layout_alignBottom="@+id/main_nav_layout_info"
             android:layout_marginEnd="-16dp"
             android:layout_marginRight="-16dp"
             android:src="@drawable/main_left_header_bg_image"
@@ -27,7 +27,7 @@
 
         <!-- 信息栏 -->
         <LinearLayout
-            android:id="@+id/main_left_layout_info"
+            android:id="@+id/main_nav_layout_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/nav_status_bar_adapt_height"
@@ -37,7 +37,7 @@
             android:orientation="vertical">
 
             <com.github.siyamed.shapeimageview.CircularImageView
-                android:id="@+id/main_left_img_avatar"
+                android:id="@+id/main_nav_img_avatar"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
                 android:src="@drawable/image_default"
@@ -46,7 +46,7 @@
                 app:siBorderColor="@android:color/white" />
 
             <TextView
-                android:id="@+id/main_left_tv_name"
+                android:id="@+id/main_nav_tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -55,7 +55,7 @@
                 tools:text="张三" />
 
             <TextView
-                android:id="@+id/main_left_tv_college"
+                android:id="@+id/main_nav_tv_college"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -64,7 +64,7 @@
                 tools:text="电子与信息工程学院" />
 
             <TextView
-                android:id="@+id/main_left_tv_class_info"
+                android:id="@+id/main_nav_tv_class_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -76,12 +76,12 @@
 
         <!-- 注销按钮 -->
         <TextView
-            android:id="@+id/main_left_btn_logout"
+            android:id="@+id/main_nav_btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignBottom="@+id/main_left_layout_info"
+            android:layout_alignBottom="@+id/main_nav_layout_info"
             android:layout_margin="16dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
