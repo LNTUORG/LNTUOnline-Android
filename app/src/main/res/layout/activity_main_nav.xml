@@ -10,9 +10,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_primary">
+        android:background="@color/color_primary"
+        android:clickable="true">
 
-        <!-- 主题色Header -->
         <ImageView
             android:layout_width="160dp"
             android:layout_height="160dp"
@@ -25,22 +25,19 @@
             android:scaleType="fitCenter"
             android:adjustViewBounds="true" />
 
-        <!-- 信息栏 -->
         <LinearLayout
             android:id="@+id/main_nav_layout_info"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_status_bar_adapt_height"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
+            android:layout_marginTop="@dimen/nav_status_bar_adapt_height"
+            android:padding="16dp"
             android:orientation="vertical">
 
             <com.github.siyamed.shapeimageview.CircularImageView
                 android:id="@+id/main_nav_img_avatar"
                 android:layout_width="72dp"
                 android:layout_height="72dp"
-                android:src="@drawable/image_default"
+                android:src="@drawable/image_placeholder"
                 android:scaleType="fitCenter"
                 app:siBorderWidth="2dp"
                 app:siBorderColor="@android:color/white" />
@@ -74,43 +71,28 @@
 
         </LinearLayout>
 
-        <!-- 注销按钮 -->
-        <TextView
-            android:id="@+id/main_nav_btn_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignBottom="@+id/main_nav_layout_info"
-            android:layout_margin="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:text="@string/logout"
-            android:textColor="@color/text_color_light"
-            android:textSize="14sp"
-            android:background="@drawable/selectable_item_background_transparent" />
-
     </RelativeLayout>
 
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
 
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_about"
+        android:drawableStart="@drawable/ic_info_grey600_24dp"
+        android:drawableLeft="@drawable/ic_info_grey600_24dp"
+        android:text="@string/about" />
 
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+    <View style="@style/AppTheme.DeepLine"
+        android:clickable="true" />
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_logout"
+        android:drawableStart="@drawable/ic_exit_to_app_grey600_24dp"
+        android:drawableLeft="@drawable/ic_exit_to_app_grey600_24dp"
+        android:text="@string/logout" />
 
 </LinearLayout>
