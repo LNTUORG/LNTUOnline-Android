@@ -1,20 +1,30 @@
 ﻿# 辽工大教务在线-Android客户端 #
 
-v2.0.0, a new version.
+v2.0.0，Material Design 风格
 
-![](/screenshot/n (1).png) ![](/screenshot/n (2).png)
+官方网站：[http://online.lntu.org](http://online.lntu.org)
 
-![](/screenshot/n (3).png) ![](/screenshot/n (4).png)
+服务端项目：[https://github.com/LNTUORG/LntuOnline-API](https://github.com/LNTUORG/LntuOnline-API)
 
-![](/screenshot/n (5).png) ![](/screenshot/n (6).png)
+iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.com/LNTUORG/LntuOnline-iOS)
 
-![](/screenshot/n (7).png) ![](/screenshot/n (8).png)
+## Screenshot ##
 
-### 下载地址： ###
+![](/art/n (1).png) ![](/art/n (2).png)
+
+![](/art/n (3).png) ![](/art/n (4).png)
+
+![](/art/n (5).png) ![](/art/n (6).png)
+
+![](/art/n (7).png) ![](/art/n (8).png)
+
+## 下载地址： ##
 
 - [Google Play](https://play.google.com/store/apps/details?id=com.lntu.online)
 
 - [小米应用商店](http://app.mi.com/detail/81673)
+
+- [魅族Flyme应用中心](http://app.meizu.com/apps/public/detail?package_name=com.lntu.online)
 
 - [360手机助手](http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF)
 
@@ -42,6 +52,8 @@ v2.0.0, a new version.
 
 - [Joda-Time](http://www.joda.org/joda-time)
 
+- [Material](http://rey5137.com/material)
+
 - [MaterialEditText](https://github.com/rengwuxian/MaterialEditText)
 
 - [Material Dialogs](https://github.com/afollestad/material-dialogs)
@@ -62,7 +74,7 @@ v2.0.0, a new version.
 
 ## Thanks ##
 
-- 《印象·工大》葫芦岛校区掠影作品集
+- [《印象·工大》葫芦岛校区掠影作品集](http://tieba.baidu.com/p/1424591498)
 
 ## Author ##
 
@@ -72,9 +84,7 @@ TakWolf
 
 [http://takwolf.com](http://takwolf.com)
 
-## License ##
-
-Licensed under General Public License version 2 ([GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)).
+## License ([GPLv2](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)) ##
 
     Copyright (C) 2015-2016 LNTU.ORG (http://lntu.org)
     Copyright (C) 2014-2015 TakWolf <takwolf@foxmail.com>
