@@ -7,11 +7,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.lntu.online.R;
-import org.lntu.online.ui.fragment.ClassTablePageFragment;
+import org.lntu.online.model.api.ApiClient;
+import org.lntu.online.model.api.DialogCallback;
+import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import retrofit.client.Response;
 
 public class FeedbackActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
 
@@ -48,7 +51,15 @@ public class FeedbackActivity extends BaseActivity implements Toolbar.OnMenuItem
     }
 
     private void adviceAsyncTask() {
+        ApiClient.service.advice(LoginShared.getLoginToken(this), editText.getText().toString(), new DialogCallback<Void>(this) {
 
+            @Override
+            public void handleSuccess(Void nothing, Response response) {
+                Toast.makeText(FeedbackActivity.this, "发送成功，非常感谢~", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+
+        });
     }
 
 }
