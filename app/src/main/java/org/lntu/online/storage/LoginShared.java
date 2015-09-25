@@ -16,14 +16,15 @@ public final class LoginShared {
 
     private static final String TAG = LoginShared.class.getSimpleName();
 
+    //============
+    // 用户登录状态
+    //============
+
     private static final String KEY_USER_ID = "userId";
     private static final String KEY_USER_TYPE = "userType";
     private static final String KEY_LOGIN_TOKEN = "loginToken";
     private static final String KEY_EXPIRES_AT = "expiresAt";
     private static final String KEY_HOLD_ONLINE = "holdOnline";
-
-    private static final String KEY_STUDENT = "student";
-    private static final String KEY_CLASS_TABLE = "classTable-"; // 这里年级和学期要作为后缀
 
     public static void login(Context context, LoginInfo info, boolean isHoldOnline) {
         SharedWrapper.with(context, TAG).setString(KEY_USER_ID, info.getUserId());
@@ -57,6 +58,13 @@ public final class LoginShared {
         return SharedWrapper.with(context, TAG).getBoolean(KEY_HOLD_ONLINE, false);
     }
 
+    //=========
+    // 缓存数据
+    //=========
+
+    private static final String KEY_STUDENT = "student";
+    private static final String KEY_CLASS_TABLE = "classTable-"; // 这里年级和学期要作为后缀
+
     public static Student getStudent(Context context) {
         return SharedWrapper.with(context, TAG).getObject(KEY_STUDENT, Student.class);
     }
@@ -72,5 +80,9 @@ public final class LoginShared {
     public static void setClassTable(Context context, ClassTable classTable) {
         SharedWrapper.with(context, TAG).setObject(KEY_CLASS_TABLE + classTable.getYear() + classTable.getTerm(), classTable);
     }
+
+    //============
+    // 用户评价引导
+    //============
 
 }
