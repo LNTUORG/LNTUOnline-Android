@@ -56,7 +56,7 @@ public class StudentInfoActivity extends BaseActivity {
 
     private void loadAvatar(Student student) {
         if (student != null && !TextUtils.isEmpty(student.getPhotoUrl())) {
-            Picasso.with(this).load(student.getPhotoUrl()).into(imgAvatar);
+            Picasso.with(this).load(student.getPhotoUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
         }
     }
 
