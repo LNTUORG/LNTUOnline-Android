@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,17 +16,17 @@
 	        android:id="@+id/student_info_item_family_tv_name"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:text="@string/name_content_test"
-	        android:textColor="?android:attr/textColorPrimary"
-	        android:textSize="16sp" />
+	        android:textColor="@color/text_color_primary"
+	        android:textSize="16sp"
+            tools:text="李四" />
 
         <TextView
             android:id="@+id/student_info_item_family_tv_relationship"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="（父亲）"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp" />
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp"
+            tools:text="（父亲）" />
 
     </LinearLayout>
 
@@ -38,7 +39,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/political_affiliation"
+            android:text="@string/political_affiliation_"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -47,8 +49,9 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:text="@string/test_text"
-            android:textSize="14sp" />
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            tools:text="党员" />
 
     </LinearLayout>
 
@@ -61,7 +64,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/job_and_post"
+            android:text="@string/job_and_post_"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -70,15 +74,17 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:text="@string/test_text"
-            android:textSize="14sp" />
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            tools:text="程序员" />
 
         <TextView
             android:id="@+id/student_info_item_family_tv_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/test_text"
-            android:textSize="14sp" />
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            tools:text="前端工程师" />
 
     </LinearLayout>
 
@@ -91,7 +97,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/work_location"
+            android:text="@string/work_location_"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -100,8 +107,9 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:text="@string/test_text"
-            android:textSize="14sp" />
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            tools:text="微软中国" />
 
     </LinearLayout>
 
@@ -114,7 +122,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tel"
+            android:text="@string/tel_"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp" />
 
         <TextView
@@ -123,8 +132,9 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:text="@string/test_text"
-            android:textSize="14sp" />
+            android:textColor="@color/text_color_secondary"
+            android:textSize="14sp"
+            tools:text="12345678901" />
 
     </LinearLayout>
 

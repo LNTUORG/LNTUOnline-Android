@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:orientation="vertical"
-    android:background="#FFFFFF">
+    android:background="@android:color/white">
 
     <TextView
         android:id="@+id/skill_test_item_tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/test_text"
-        android:textColor="?android:attr/textColorPrimary"
-        android:textSize="16sp" />
+        android:textColor="@color/text_color_primary"
+        android:textSize="16sp"
+        tools:text="大学英语4级" />
 
     <TextView
         android:id="@+id/skill_test_item_tv_time"
@@ -22,9 +23,10 @@
         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
         android:drawablePadding="16dp"
-        android:text="@string/date_sample"
+        android:textColor="@color/text_color_secondary"
         android:textSize="14sp"
-        android:gravity="start|center_vertical" />
+        android:gravity="start|center_vertical"
+        tools:text="2015-1-1" />
 
     <TextView
         android:id="@+id/skill_test_item_tv_score"
@@ -34,8 +36,9 @@
         android:drawableStart="@drawable/ic_assignment_turned_in_grey600_18dp"
         android:drawableLeft="@drawable/ic_assignment_turned_in_grey600_18dp"
         android:drawablePadding="16dp"
-        android:text="@string/_100"
+        android:textColor="@color/text_color_secondary"
         android:textSize="14sp"
-        android:gravity="start|center_vertical" />
+        android:gravity="start|center_vertical"
+        tools:text="450" />
 
 </LinearLayout>

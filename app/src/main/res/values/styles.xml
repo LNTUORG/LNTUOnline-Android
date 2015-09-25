@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
-
+    <!-- Base App Theme -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <!-- App Theme -->
+    <style name="AppTheme" parent="BaseAppTheme" />
+
+    <!-- App Theme FitsStatusBar -->
+    <style name="AppTheme.FitsStatusBar" />
+
+    <!-- App Theme FitsStatusBar TranslucentNavigation -->
+    <style name="AppTheme.FitsStatusBar.TranslucentNavigation" />
+
+    <!-- App Theme Translucent -->
+    <style name="AppTheme.Translucent" parent="@android:style/Theme.Translucent.NoTitleBar" />
+
+    <!-- App Theme Dialog -->
+    <style name="AppTheme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
     </style>
 
     <!-- Deep Line -->
     <style name="AppTheme.DeepLine">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">0.5dp</item>
-        <item name="android:background">#CCCCCC</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#22000000</item>
+    </style>
+
+    <style name="AppTheme.DeepLine.Vertical">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
     </style>
 
     <!-- Gap -->
@@ -24,18 +46,75 @@
         <item name="android:layout_height">8dp</item>
     </style>
 
-    <!-- Drawer Item -->
-    <style name="AppTheme.DrawerItem">
+    <!-- Shadow Gap -->
+    <style name="AppTheme.ShadowGap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:background">@drawable/gap_shadow</item>
+    </style>
+
+    <!-- Shadow Gap Opposite -->
+    <style name="AppTheme.ShadowGap.Opposite">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:background">@drawable/gap_shadow_opposite</item>
+    </style>
+
+    <!-- Navigation Item -->
+    <style name="AppTheme.NavigationItem">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
         <item name="android:drawablePadding">32dp</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/main_nav_item_text_color</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:background">@drawable/rect_btn_background</item>
-        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/selectable_item_background</item>
+    </style>
+
+    <!-- Navigation Item Badger -->
+    <style name="AppTheme.NavigationItemBadger">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!-- Button -->
+    <style name="AppTheme.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/button_image</item>
+    </style>
+
+    <!-- ClassTable -->
+    <style name="AppTheme.Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:spinnerItemStyle">@style/AppTheme.SpinnerItemStyle</item>
+        <item name="android:spinnerDropDownItemStyle">@style/AppTheme.SpinnerDropDownItemStyle</item>
+    </style>
+
+    <style name="AppTheme.SpinnerItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.SpinnerDropDownItemStyle" parent="Widget.AppCompat.DropDownItem.Spinner">
+        <item name="android:background">@drawable/selectable_item_background</item>
+        <item name="android:textColor">@color/text_color_primary</item>
+    </style>
+
+    <!-- ClassTableSpinner -->
+    <style name="AppTheme.ClassTableSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:popupBackground">@drawable/abc_popup_background_mtrl_mult</item>
     </style>
 
 </resources>

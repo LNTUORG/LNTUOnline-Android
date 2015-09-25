@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="years_test">
+    <string-array name="years">
         <item>全部</item>
+        <item>2015</item>
         <item>2014</item>
         <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+        <item>2010</item>
     </string-array>
 
     <string-array name="terms">
+        <item>全部</item>
         <item>春</item>
         <item>秋</item>
+    </string-array>
+
+    <string-array name="score_level">
+        <item>全部</item>
+        <item>优秀（90分以上）</item>
+        <item>一般</item>
+        <item>未通过（60分以下）</item>
+    </string-array>
+
+    <string-array name="score_display">
+        <item>全部</item>
+        <item>只保留科目最高分</item>
     </string-array>
 
 </resources>

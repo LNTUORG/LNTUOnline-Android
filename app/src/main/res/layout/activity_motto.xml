@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:orientation="vertical">
 
-    <include layout="@layout/activity_action_bar" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/motto_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:title="@string/remember_motto"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
         android:src="@drawable/motto"
-        android:scaleType="fitCenter"
-        android:contentDescription="@string/motto" />
+        android:scaleType="fitCenter" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:padding="8dp"
         android:orientation="horizontal">
 
-        <Button
+        <Button style="@style/AppTheme.Button"
             android:id="@+id/motto_btn_male_voice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp"
-            android:text="@string/male_voice"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_image" />
+            android:text="@string/male_voice" />
 
-        <Button
+        <Button style="@style/AppTheme.Button"
             android:id="@+id/motto_btn_female_voice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="8dp"
-            android:text="@string/female_voice"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_image" />
+            android:text="@string/female_voice" />
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

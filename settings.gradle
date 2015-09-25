@@ -1,5 +1,1 @@
-include ':app',
-        ':android-utils',
-        ':digest-and-crypto-utils',
-        ':xiaomi-update',
-        ':material-design-icons'
+include ':app', ':umeng-update-sdk'

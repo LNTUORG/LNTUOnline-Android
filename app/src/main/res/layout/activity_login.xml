@@ -3,10 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#FFFFFFFF">
+    android:orientation="vertical">
 
-    <include layout="@layout/activity_action_bar" />
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_account_circle_white_24dp"
+        app:title="@string/login"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,36 +25,39 @@
             android:id="@+id/login_edt_user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
             android:hint="@string/user_id_input_hint"
             android:inputType="number"
             android:maxLength="10"
-            app:floatingLabel="highlight" />
+            app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/login_edt_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
             android:hint="@string/pwd_input_hint"
             android:inputType="textPassword"
-            app:floatingLabel="highlight" />
+            app:met_floatingLabel="highlight" />
 
         <CheckBox
-            android:id="@+id/login_cb_auto_login"
-            android:layout_width="match_parent"
+            android:id="@+id/login_cb_hold_online"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="@string/auto_login"
+            android:text="@string/hold_online"
+            android:textColor="@color/text_color_primary"
             android:checked="false" />
 
-        <Button
+        <Button style="@style/AppTheme.Button"
             android:id="@+id/login_btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/login"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_image" />
+            android:text="@string/login" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,16 +70,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/register_tips"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/login_btn_agreement"
+                android:id="@+id/login_btn_tos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginRight="2dp"
-                android:text="@string/user_agreement_link_style"
-                android:textColor="@drawable/text_view_link_text_color"
+                android:text="@string/term_of_service_link_style"
+                android:textColor="@color/text_view_link_text_color"
                 android:textSize="14sp"
                 android:clickable="true" />
 
