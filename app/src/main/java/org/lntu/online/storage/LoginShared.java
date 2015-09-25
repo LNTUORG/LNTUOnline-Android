@@ -85,4 +85,15 @@ public final class LoginShared {
     // 用户评价引导
     //============
 
+    private static final String KEY_MAIN_RESUME_REST_COUNT = "mainResumeRestCount";
+
+    public static int getMainResumeRestCount(Context context) {
+        return SharedWrapper.with(context, TAG).getInt(KEY_MAIN_RESUME_REST_COUNT, 5);
+    }
+
+    public static void markMainResumeRestCount(Context context) {
+        SharedWrapper sharedWrapper = SharedWrapper.with(context, TAG);
+        sharedWrapper.setInt(KEY_MAIN_RESUME_REST_COUNT, sharedWrapper.getInt(KEY_MAIN_RESUME_REST_COUNT, 5) - 1);
+    }
+    
 }
