@@ -27,11 +27,12 @@ public final class LoginShared {
     private static final String KEY_HOLD_ONLINE = "holdOnline";
 
     public static void login(Context context, LoginInfo info, boolean isHoldOnline) {
-        SharedWrapper.with(context, TAG).setString(KEY_USER_ID, info.getUserId());
-        SharedWrapper.with(context, TAG).setString(KEY_USER_TYPE, info.getUserType().name());
-        SharedWrapper.with(context, TAG).setString(KEY_LOGIN_TOKEN, info.getLoginToken());
-        SharedWrapper.with(context, TAG).setString(KEY_EXPIRES_AT, new DateTime(info.getExpiresAt()).toString());
-        SharedWrapper.with(context, TAG).setBoolean(KEY_HOLD_ONLINE, isHoldOnline); // 是否保持在线状态
+        SharedWrapper sharedWrapper = SharedWrapper.with(context, TAG);
+        sharedWrapper.setString(KEY_USER_ID, info.getUserId());
+        sharedWrapper.setString(KEY_USER_TYPE, info.getUserType().name());
+        sharedWrapper.setString(KEY_LOGIN_TOKEN, info.getLoginToken());
+        sharedWrapper.setString(KEY_EXPIRES_AT, new DateTime(info.getExpiresAt()).toString());
+        sharedWrapper.setBoolean(KEY_HOLD_ONLINE, isHoldOnline); // 是否保持在线状态
     }
 
     public static void logout(Context context) {
@@ -95,5 +96,5 @@ public final class LoginShared {
         SharedWrapper sharedWrapper = SharedWrapper.with(context, TAG);
         sharedWrapper.setInt(KEY_MAIN_RESUME_REST_COUNT, sharedWrapper.getInt(KEY_MAIN_RESUME_REST_COUNT, 5) - 1);
     }
-    
+
 }
