@@ -22,9 +22,7 @@ iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.
 
 - [Google Play](https://play.google.com/store/apps/details?id=com.lntu.online)
 
-- [小米应用商店](http://app.mi.com/detail/81673)
-
-- [魅族Flyme应用中心](http://app.meizu.com/apps/public/detail?package_name=com.lntu.online)
+- [FIR.im](http://fir.im/LntuOnline)
 
 - [360手机助手](http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF)
 
@@ -37,6 +35,10 @@ iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.
 - [木蚂蚁应用市场](http://www.mumayi.com/android-851065.html?1412616355)
 
 - [蒲公英](http://www.pgyer.com/azjwzx)
+
+- [小米应用商店](http://app.mi.com/detail/81673)
+
+- [魅族Flyme应用中心](http://app.meizu.com/apps/public/detail?package_name=com.lntu.online)
 
 ## Libraries used ##
 
