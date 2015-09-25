@@ -91,12 +91,11 @@
         android:drawableLeft="@drawable/ic_share_grey600_24dp"
         android:text="@string/share_to_friends" />
 
-    <View style="@style/AppTheme.ItemGap"
-        android:clickable="true" />
-    <View style="@style/AppTheme.DeepLine"
-        android:clickable="true" />
-    <View style="@style/AppTheme.ItemGap"
-        android:clickable="true" />
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_feedback"
+        android:drawableStart="@drawable/ic_comment_grey600_24dp"
+        android:drawableLeft="@drawable/ic_comment_grey600_24dp"
+        android:text="@string/feedback" />
 
     <TextView style="@style/AppTheme.NavigationItem"
         android:id="@+id/main_nav_btn_about"

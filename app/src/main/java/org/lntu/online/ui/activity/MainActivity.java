@@ -170,6 +170,16 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
+     * 意见反馈
+     */
+    @OnClick(R.id.main_nav_btn_feedback)
+    protected void onBtnFeedbackClick() {
+
+        // TODO
+
+    }
+
+    /**
      * 关于按钮点击
      */
     @OnClick(R.id.main_nav_btn_about)
