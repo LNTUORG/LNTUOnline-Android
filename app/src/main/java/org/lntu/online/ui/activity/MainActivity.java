@@ -97,6 +97,45 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
+     * TODO 引导用户评分，下一个版本可能会去掉
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        int mainResumeRestCount = LoginShared.getMainResumeRestCount(this);
+        if (mainResumeRestCount > 0) {
+            LoginShared.markMainResumeRestCount(this);
+        } else if (mainResumeRestCount == 0) { // 提示用户评分或者反馈
+            LoginShared.markMainResumeRestCount(this);
+            new MaterialDialog.Builder(this)
+                    .content("各位用户老爷们，觉得新版本咋样啊？给点鼓励吧~~(｡・`ω´･)9")
+                    .positiveText("五星好评")
+                    .negativeText("提点意见")
+                    .neutralText("啥也不干")
+                    .cancelable(false)
+                    .callback(new MaterialDialog.ButtonCallback() {
+
+                        @Override
+                        public void onPositive(MaterialDialog dialog) {
+                            ShipUtils.openInAppStore(dialog.getContext());
+                        }
+
+                        @Override
+                        public void onNegative(MaterialDialog dialog) {
+                            startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
+                        }
+
+                        @Override
+                        public void onNeutral(MaterialDialog dialog) {
+                            Toast.makeText(MainActivity.this, "Σ( ° △ °|||)︴", Toast.LENGTH_LONG).show();
+                        }
+
+                    })
+                    .show();
+        }
+    }
+
+    /**
      * 抽屉菜单监听器
      */
     private final DrawerLayout.DrawerListener drawerListener = new DrawerLayout.SimpleDrawerListener() {
