@@ -91,4 +91,12 @@ public interface ApiService {
             Callback<Void> callback
     );
 
+    @FormUrlEncoded
+    @POST("/feedback/advice")
+    void advice(
+            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Field("content") String content,
+            Callback<Void> callback
+    );
+
 }

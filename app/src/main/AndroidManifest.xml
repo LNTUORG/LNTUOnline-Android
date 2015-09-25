@@ -126,7 +126,8 @@
             android:name="org.lntu.online.ui.activity.FeedbackActivity"
             android:label="@string/feedback"
             android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
 
         <activity
             android:name="org.lntu.online.ui.activity.AboutActivity"

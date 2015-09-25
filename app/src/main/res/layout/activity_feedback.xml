@@ -16,4 +16,22 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/feedback_edt_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:inputType="textMultiLine"
+            android:maxLength="500"
+            android:textSize="16sp"
+            android:gravity="start"
+            android:hint="@string/feedback_tip"
+            android:background="@null" />
+
+    </ScrollView>
+
 </LinearLayout>
