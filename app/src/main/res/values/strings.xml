@@ -96,6 +96,6 @@
 
     <string name="app_crash">程序崩溃</string>
     <string name="crash_log_tip">非常抱歉，程序运行过程中出现了一个无法避免的错误。该问题已经提交到服务器，此举将有助于改善应用体验。由此给您带来的诸多不便，我们深表歉意，敬请谅解。</string>
-    <string name="feedback_tip">随便给提点建议吧，虽然也不一定会采纳&#8230;</string>
+    <string name="feedback_tip">随便给提点建议吧，虽然我们也不一定会采纳&#8230;</string>
 
 </resources>

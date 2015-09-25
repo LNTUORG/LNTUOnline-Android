@@ -25,6 +25,7 @@
         android:maxLength="500"
         android:textSize="16sp"
         android:gravity="start"
-        android:hint="@string/feedback_tip" />
+        android:hint="@string/feedback_tip"
+        android:background="@null" />
 
 </LinearLayout>
