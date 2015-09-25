@@ -40,13 +40,13 @@ public class FloatingActionFrameLayout extends FrameLayout {
 
         @Override
         public boolean onDependentViewChanged(CoordinatorLayout parent, FloatingActionFrameLayout child, View dependency) {
-            if(dependency instanceof AppBarLayout) { // app:layout_anchor 设定为 AppBarLayout的时候
-                AppBarLayout appBarLayout = (AppBarLayout)dependency;
-                if(appBarLayout.getBottom() <= appBarLayout.getResources().getDimension(R.dimen.floating_action_frame_layout_anim_height)) {
-                    if(!mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
+            if (dependency instanceof AppBarLayout) { // app:layout_anchor 设定为 AppBarLayout的时候
+                AppBarLayout appBarLayout = (AppBarLayout) dependency;
+                if (appBarLayout.getBottom() <= appBarLayout.getResources().getDimension(R.dimen.floating_action_frame_layout_anim_height)) {
+                    if (!mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
                         animateOut(child);
                     }
-                } else if(child.getVisibility() != View.VISIBLE) {
+                } else if (child.getVisibility() != View.VISIBLE) {
                     animateIn(child);
                 }
             }
@@ -55,7 +55,7 @@ public class FloatingActionFrameLayout extends FrameLayout {
 
         private void animateIn(FloatingActionFrameLayout button) {
             button.setVisibility(View.VISIBLE);
-            if(Build.VERSION.SDK_INT >= 14) {
+            if (Build.VERSION.SDK_INT >= 14) {
                 ViewCompat.animate(button).scaleX(1.0F).scaleY(1.0F).alpha(1.0F).setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR).withLayer().setListener(null).start();
             } else {
                 Animation anim = android.view.animation.AnimationUtils.loadAnimation(button.getContext(), android.support.design.R.anim.fab_in);
@@ -67,7 +67,7 @@ public class FloatingActionFrameLayout extends FrameLayout {
         }
 
         private void animateOut(final FloatingActionFrameLayout button) {
-            if(Build.VERSION.SDK_INT >= 14) {
+            if (Build.VERSION.SDK_INT >= 14) {
                 ViewCompat.animate(button).scaleX(0.0F).scaleY(0.0F).alpha(0.0F).setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR).withLayer().setListener(new ViewPropertyAnimatorListener() {
                     public void onAnimationStart(View view) {
                         Behavior.this.mIsAnimatingOut = true;

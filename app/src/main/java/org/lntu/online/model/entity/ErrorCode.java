@@ -1,6 +1,6 @@
 package org.lntu.online.model.entity;
 
-public enum  ErrorCode {
+public enum ErrorCode {
 
     CLIENT_ERROR,    // 默认值，没有错误码是使用该值
     HTTP_ERROR,      // HTTP错误
