@@ -174,9 +174,7 @@ public class MainActivity extends BaseActivity {
      */
     @OnClick(R.id.main_nav_btn_feedback)
     protected void onBtnFeedbackClick() {
-
-        // TODO
-
+        startActivity(new Intent(this, FeedbackActivity.class));
     }
 
     /**
