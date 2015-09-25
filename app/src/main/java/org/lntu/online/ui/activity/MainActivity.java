@@ -112,6 +112,7 @@ public class MainActivity extends BaseActivity {
                     .positiveText("五星好评")
                     .negativeText("提点意见")
                     .neutralText("啥也不干")
+                    .cancelable(false)
                     .callback(new MaterialDialog.ButtonCallback() {
 
                         @Override
