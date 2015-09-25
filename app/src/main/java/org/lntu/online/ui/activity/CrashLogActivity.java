@@ -5,11 +5,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import org.joda.time.DateTime;
 import org.lntu.online.R;
+import org.lntu.online.model.api.ApiClient;
+import org.lntu.online.model.api.CallbackAdapter;
+import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.io.PrintWriter;
@@ -19,7 +21,7 @@ import java.io.Writer;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CrashLogActivity extends AppCompatActivity implements Toolbar.OnMenuItemClickListener {
+public class CrashLogActivity extends AppCompatActivity {
 
     @Bind(R.id.crash_log_toolbar)
     protected Toolbar toolbar;
@@ -36,8 +38,6 @@ public class CrashLogActivity extends AppCompatActivity implements Toolbar.OnMen
         ButterKnife.bind(this);
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
-        toolbar.inflateMenu(R.menu.crash_log);
-        toolbar.setOnMenuItemClickListener(this);
 
         //接收异常对象
         Intent intent = getIntent();
@@ -71,21 +71,12 @@ public class CrashLogActivity extends AppCompatActivity implements Toolbar.OnMen
         crashLog = sb.toString();
         //显示信息
         tvInfo.setText(crashLog);
+
+        crashLogAsyncTask();
     }
 
-    @Override
-    public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_send:
-
-
-                // TODO
-
-
-                return true;
-            default:
-                return false;
-        }
+    private void crashLogAsyncTask() {
+        ApiClient.service.crashLog(LoginShared.getUserId(this), crashLog, new CallbackAdapter<Void>());
     }
 
 }

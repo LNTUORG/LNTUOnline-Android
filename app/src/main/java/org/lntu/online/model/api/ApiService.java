@@ -83,4 +83,12 @@ public interface ApiService {
             Callback<Void> callback
     );
 
+    @FormUrlEncoded
+    @POST("/feedback/crash-log")
+    void crashLog(
+            @Field("userId") String userId,
+            @Field("content") String content,
+            Callback<Void> callback
+    );
+
 }
