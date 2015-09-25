@@ -127,7 +127,7 @@ public class MainActivity extends BaseActivity {
 
                         @Override
                         public void onNeutral(MaterialDialog dialog) {
-                            Toast.makeText(MainActivity.this, "Σ( ° △ °|||)︴", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Σ( ° △ °|||)︴", Toast.LENGTH_LONG).show();
                         }
 
                     })
