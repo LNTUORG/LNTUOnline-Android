@@ -108,30 +108,6 @@
             <View style="@style/AppTheme.ShadowGap" />
 
             <TextView
-                android:id="@+id/about_btn_grade_in_play"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/grade_in_play"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/selectable_item_background" />
-
-            <View style="@style/AppTheme.DeepLine" />
-
-            <TextView
-                android:id="@+id/about_btn_share_to_friends"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/share_to_friends"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/selectable_item_background" />
-
-            <View style="@style/AppTheme.ShadowGap" />
-
-            <TextView
                 android:id="@+id/about_btn_term_of_service"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

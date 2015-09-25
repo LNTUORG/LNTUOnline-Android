@@ -65,16 +65,6 @@ public class AboutActivity extends BaseActivity {
         ShipUtils.openInBrowser(this, "http://60.18.131.131:11180/academic/index.html");
     }
 
-    @OnClick(R.id.about_btn_grade_in_play)
-    protected void onBtnGradeInPlayClick() {
-        ShipUtils.openInAppStore(this);
-    }
-
-    @OnClick(R.id.about_btn_share_to_friends)
-    protected void onBtnShareToFriendsClick() {
-        ShipUtils.share(this);
-    }
-
     @OnClick(R.id.about_btn_term_of_service)
     protected void onBtnTermsOfServiceClick() {
         startActivity(new Intent(this, TermsOfServiceActivity.class));

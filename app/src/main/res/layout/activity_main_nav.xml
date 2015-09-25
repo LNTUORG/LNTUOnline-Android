@@ -76,6 +76,28 @@
     <View style="@style/AppTheme.ItemGap"
         android:clickable="true" />
 
+
+
+
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_open_in_play"
+        android:drawableStart="@drawable/ic_grade_grey600_24dp"
+        android:drawableLeft="@drawable/ic_grade_grey600_24dp"
+        android:text="@string/grade_in_play" />
+
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_share"
+        android:drawableStart="@drawable/ic_share_grey600_24dp"
+        android:drawableLeft="@drawable/ic_share_grey600_24dp"
+        android:text="@string/share_to_friends" />
+
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+    <View style="@style/AppTheme.DeepLine"
+        android:clickable="true" />
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+
     <TextView style="@style/AppTheme.NavigationItem"
         android:id="@+id/main_nav_btn_about"
         android:drawableStart="@drawable/ic_info_grey600_24dp"
