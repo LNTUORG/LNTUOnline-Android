@@ -23,6 +23,7 @@ import org.lntu.online.model.entity.Student;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.listener.NavigationOpenClickListener;
+import org.lntu.online.util.ShipUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -150,6 +151,30 @@ public class MainActivity extends BaseActivity {
     @OnClick(R.id.main_nav_layout_info)
     protected void onBtnUserDetailClick() {
         startActivity(new Intent(this, StudentInfoActivity.class));
+    }
+
+    /**
+     * 在商店中打开
+     */
+    @OnClick(R.id.main_nav_btn_open_in_play)
+    protected void onBtnOpenInAppStoreClick() {
+        ShipUtils.openInAppStore(this);
+    }
+
+    /**
+     * 分享给好友
+     */
+    @OnClick(R.id.main_nav_btn_share)
+    protected void onBtnShareClick() {
+        ShipUtils.share(this);
+    }
+
+    /**
+     * 意见反馈
+     */
+    @OnClick(R.id.main_nav_btn_feedback)
+    protected void onBtnFeedbackClick() {
+        startActivity(new Intent(this, FeedbackActivity.class));
     }
 
     /**

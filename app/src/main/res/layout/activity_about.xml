@@ -21,9 +21,8 @@
                 android:padding="16dp"
                 android:src="@drawable/logo"
                 android:scaleType="fitCenter"
-                android:contentDescription="@string/app_name"
                 android:background="@color/color_primary"
-                android:elevation="4dp" />
+                android:elevation="2dp" />
 
             <LinearLayout
                 android:id="@+id/about_btn_version"
@@ -47,6 +46,7 @@
                     android:layout_marginTop="4dp"
                     android:textColor="@color/text_color_secondary"
                     android:textSize="14sp"
+                    android:singleLine="true"
                     tools:text="当前版本：0.0.0-build-0" />
 
             </LinearLayout>
@@ -54,7 +54,7 @@
             <View style="@style/AppTheme.DeepLine" />
 
             <LinearLayout
-                android:id="@+id/about_btn_homepage"
+                android:id="@+id/about_btn_app_homepage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
@@ -64,7 +64,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/official_homepage"
+                    android:text="@string/app_homepage"
                     android:textColor="@color/text_color_primary"
                     android:textSize="16sp" />
 
@@ -72,16 +72,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/official_homepage_content"
+                    android:text="@string/app_homepage_content"
                     android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:singleLine="true" />
 
             </LinearLayout>
 
             <View style="@style/AppTheme.DeepLine" />
 
             <LinearLayout
-                android:id="@+id/about_btn_online"
+                android:id="@+id/about_btn_lntu_online_homepage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
@@ -91,7 +92,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/online_by_browser"
+                    android:text="@string/lntu_online_homepage"
                     android:textColor="@color/text_color_primary"
                     android:textSize="16sp" />
 
@@ -99,35 +100,68 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/online_homepage_content"
+                    android:text="@string/lntu_online_homepage_content"
                     android:textColor="@color/text_color_secondary"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:singleLine="true" />
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.ShadowGap" />
+            <View style="@style/AppTheme.DeepLine" />
 
-            <TextView
-                android:id="@+id/about_btn_grade_in_play"
+            <LinearLayout
+                android:id="@+id/about_btn_open_source_url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:text="@string/grade_in_play"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/selectable_item_background" />
+                android:orientation="vertical"
+                android:background="@drawable/selectable_item_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/open_source_url"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/open_source_url_content"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:singleLine="true" />
+
+            </LinearLayout>
 
             <View style="@style/AppTheme.DeepLine" />
 
-            <TextView
-                android:id="@+id/about_btn_share_to_friends"
+            <LinearLayout
+                android:id="@+id/about_btn_about_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:text="@string/share_to_friends"
-                android:textColor="@color/text_color_primary"
-                android:textSize="16sp"
-                android:background="@drawable/selectable_item_background" />
+                android:orientation="vertical"
+                android:background="@drawable/selectable_item_background">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_author"
+                    android:textColor="@color/text_color_primary"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/about_author_content"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="14sp"
+                    android:singleLine="true" />
+
+            </LinearLayout>
 
             <View style="@style/AppTheme.ShadowGap" />
 
@@ -170,10 +204,11 @@
     </ScrollView>
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/about_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#01ffffff"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 

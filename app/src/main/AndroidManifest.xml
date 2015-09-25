@@ -123,6 +123,12 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
+            android:name="org.lntu.online.ui.activity.FeedbackActivity"
+            android:label="@string/feedback"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
             android:name="org.lntu.online.ui.activity.AboutActivity"
             android:label="@string/about"
             android:screenOrientation="portrait"
