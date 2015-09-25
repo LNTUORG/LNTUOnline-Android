@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="48dp"
+        android:paddingRight="48dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/unpass_course_item_child_tv_semester"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_schedule_grey600_18dp"
+                android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
+                android:drawablePadding="16dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp"
+                android:gravity="start|center_vertical"
+                tools:text="2014春" />
+
+            <TextView
+                android:id="@+id/unpass_course_item_child_tv_exam_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp"
+                tools:text="重修" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/overall_score_"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/unpass_course_item_child_tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/red_light"
+                android:textSize="20sp"
+                tools:text="40" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remarks_"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/unpass_course_item_child_tv_remarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp"
+                tools:text="正常" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/unpass_course_item_child_icon_flag"
+        android:layout_width="6dp"
+        android:layout_height="match_parent"
+        android:background="@color/red_light" />
+
+    <View
+        android:id="@+id/unpass_course_item_child_icon_shadow_top"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@drawable/gap_shadow" />
+
+    <View
+        android:id="@+id/unpass_course_item_child_icon_shadow_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/gap_shadow_opposite" />
+
+</FrameLayout>

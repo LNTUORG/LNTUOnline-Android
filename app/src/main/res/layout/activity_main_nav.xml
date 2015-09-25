@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:clickable="true">
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@+id/main_nav_layout_info"
+            android:layout_marginEnd="-16dp"
+            android:layout_marginRight="-16dp"
+            android:src="@drawable/main_nav_header_bg_image"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
+
+        <LinearLayout
+            android:id="@+id/main_nav_layout_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/nav_status_bar_adapt_height"
+            android:padding="16dp"
+            android:orientation="vertical">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/main_nav_img_avatar"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/image_placeholder"
+                android:scaleType="fitCenter"
+                app:siBorderWidth="2dp"
+                app:siBorderColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/main_nav_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                tools:text="张三" />
+
+            <TextView
+                android:id="@+id/main_nav_tv_college"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_color_light"
+                android:textSize="13sp"
+                tools:text="电子与信息工程学院" />
+
+            <TextView
+                android:id="@+id/main_nav_tv_class_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/text_color_light"
+                android:textSize="13sp"
+                tools:text="计算10-1" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+
+
+
+
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_open_in_play"
+        android:drawableStart="@drawable/ic_grade_grey600_24dp"
+        android:drawableLeft="@drawable/ic_grade_grey600_24dp"
+        android:text="@string/grade_in_play" />
+
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_share"
+        android:drawableStart="@drawable/ic_share_grey600_24dp"
+        android:drawableLeft="@drawable/ic_share_grey600_24dp"
+        android:text="@string/share_to_friends" />
+
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_feedback"
+        android:drawableStart="@drawable/ic_comment_grey600_24dp"
+        android:drawableLeft="@drawable/ic_comment_grey600_24dp"
+        android:text="@string/feedback" />
+
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_about"
+        android:drawableStart="@drawable/ic_info_grey600_24dp"
+        android:drawableLeft="@drawable/ic_info_grey600_24dp"
+        android:text="@string/about" />
+
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+    <View style="@style/AppTheme.DeepLine"
+        android:clickable="true" />
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_logout"
+        android:drawableStart="@drawable/ic_exit_to_app_grey600_24dp"
+        android:drawableLeft="@drawable/ic_exit_to_app_grey600_24dp"
+        android:text="@string/logout" />
+
+</LinearLayout>

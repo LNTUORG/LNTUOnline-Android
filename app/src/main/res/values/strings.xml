@@ -1,128 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">辽工大教务在线</string>
-    <string name="motto">诚朴求是，博学笃行</string>
 
-    <string name="title">标题</string>
-    <string name="forward">前进</string>
-    <string name="backward">返回</string>
-    <string name="submit">提交</string>
-    <string name="refresh">刷新</string>
+    <string name="logo_copyright">Copyright © 2014 &#8211; 2016 LNTU.ORG. All Rights Reserved.</string>
+    <string name="about_copyright">Copyright © 2014 &#8211; 2016 LNTU.ORG. \nAll Rights Reserved.</string>
 
-    <string name="exit">退出</string>
-
-    <string name="test_title">测试标题</string>
-    <string name="test_text">测试文本</string>
-    <string name="test_icon">测试图标</string>
-
-    <string name="your_suggestion_title">您的意见与建议：</string>
-    <string name="your_suggestion_hint">请输入您要反馈的问题，我们将以此为动力不断改进</string>
-    <string name="your_contact_title">您的联系方式：</string>
-    <string name="your_contact_hint">可选填写，以便解决问题后给您回复</string>
-
-    <string name="send_crash_log">发送错误日志</string>
-
-    <string name="user_login">用户登录</string>
-    <string name="about_app">关于应用</string>
-    <string name="advice">意见反馈</string>
-    <string name="app_crash">程序崩溃</string>
-    <string name="student_info">学籍信息</string>
-    <string name="curriculum">学期课表</string>
-    <string name="exam_plan">考试安排</string>
+    <string name="student_info">个人信息</string>
+    <string name="my_class_table">我的课表</string>
     <string name="grades_query">成绩查询</string>
-    <string name="one_key">一键评课</string>
+    <string name="exam_plan">考试安排</string>
+    <string name="senate_notice">教务公告</string>
+    <string name="class_table_course_info">课程信息</string>
+    <string name="one_key_eva">一键评课</string>
     <string name="unpass_query">挂科查询</string>
     <string name="skill_test">等级考试</string>
-    <string name="senate_notice">教务公告</string>
     <string name="remember_motto">牢记校训</string>
-    <string name="user_agreement">用户协议</string>
+    <string name="feedback">意见反馈</string>
+    <string name="about">关于</string>
 
-    <string name="eva_info">评课信息</string>
-
+    <string name="user_login">用户登录</string>
     <string name="user_id_input_hint">学号：</string>
     <string name="pwd_input_hint">密码：</string>
-    <string name="auto_login">自动登录</string>
+    <string name="hold_online">保持登录状态</string>
     <string name="login">登录</string>
+    <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
+    <string name="term_of_service">服务条款</string>
+    <string name="term_of_service_link_style"><u>服务条款</u></string>
+    <string name="open_source_license">开放源代码许可</string>
 
-    <string name="version_name">当前版本</string>
-    <string name="version_name_content">Android 0.0.0.0</string>
-    <string name="author_email">开发者邮件</string>
-    <string name="author_email_content">takwolf@foxmail.com</string>
-    <string name="official_homepage">官方主页</string>
-    <string name="official_homepage_content"><u>http://app.pupboss.com</u></string>
+    <string name="logout">退出登录</string>
+    <string name="logout_tip">确定要退出登录吗？</string>
+    <string name="auth_error">登录令牌失效</string>
+    <string name="auth_error_tip">可能的原因是令牌授权已过期，或者是您修改了账户密码。您需要重新登录账户。</string>
 
+    <string name="networking">"正在访问网络&#8230;"</string>
+    <string name="network_remote_invoke_error_tip">远程调用失败，教务在线服务器可能挂掉了&#8230;</string>
+    <string name="network_server_error_tip">服务器被外星人搬走啦&#8230;</string>
+    <string name="network_default_error_tip">网络通信失败，请检查网络连接</string>
+    <string name="network_data_loading">正在加载数据&#8230;</string>
+    <string name="network_data_load_failed">数据加载失败，点击重新加载</string>
+
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="ok">好的</string>
+    <string name="send">发送</string>
+    <string name="press_back_again_to_exit">再按一次退出</string>
+
+    <string name="political_affiliation_">政治面貌：</string>
+    <string name="job_and_post_">职业职位：</string>
+    <string name="work_location_">工作单位：</string>
+    <string name="tel_">联系电话：</string>
+    <string name="from_to">至</string>
+    <string name="school_name_">所在地：</string>
+    <string name="witness_">证明人：</string>
+    <string name="punish_time_">处分日期：</string>
+    <string name="punish_reason_">处分原因：</string>
+    <string name="cancel_time_">撤销日期：</string>
+    <string name="cancel_reason_">撤销原因：</string>
+    <string name="punish_state_">状态：</string>
+    <string name="have_left">还剩</string>
+    <string name="day">天</string>
+    <string name="year_">年份：</string>
+    <string name="term_">学期：</string>
+    <string name="score_level_">成绩：</string>
+    <string name="score_display_">显示：</string>
+    <string name="overall_score_">总评：</string>
+    <string name="credit_">学分：</string>
+    <string name="test_mode_">考核方式：</string>
+    <string name="exam_type_">考试类型：</string>
+    <string name="select_type_">选课类型：</string>
+    <string name="times_and_places_">上课时间、地点：</string>
+    <string name="remarks_">备注：</string>
+    <string name="credit">学分</string>
+    <string name="this_stage_no_course">本节没课</string>
+    <string name="not_current_week">非本周</string>
+
+    <string name="open_in_browser">用浏览器打开</string>
+    <string name="grade_in_play">去商店评分</string>
+    <string name="share_to_friends">分享给好友</string>
+
+    <string name="motto">诚朴求是，博学笃行</string>
     <string name="male_voice">男声朗读</string>
     <string name="female_voice">女生朗读</string>
 
-    <string name="name">姓名</string>
-    <string name="name_content_test">李四</string>
-    <string name="political_affiliation">政治面貌：</string>
-    <string name="job_and_post">职业职位：</string>
-    <string name="work_location">工作单位：</string>
-    <string name="tel">联系电话：</string>
+    <string name="version_check_update">检查更新</string>
+    <string name="app_homepage">客户端官方主页</string>
+    <string name="app_homepage_content">http://online.lntu.org</string>
+    <string name="lntu_online_homepage">教务在线主页</string>
+    <string name="lntu_online_homepage_content">http://60.18.131.131</string>
+    <string name="open_source_url">项目开源主页</string>
+    <string name="open_source_url_content">https://github.com/LNTUORG/LntuOnline-Android</string>
+    <string name="about_author">关于作者</string>
+    <string name="about_author_content">http://blog.takwolf.com/about</string>
 
-    <string name="course">课程</string>
-    <string name="course_name">课程名</string>
-    <string name="course_name_content">高等数学</string>
-    <string name="course_num">课程号</string>
-    <string name="course_num_content">H06849214A</string>
-    <string name="course_index">课序号</string>
-    <string name="course_index_content">0</string>
-    <string name="overall_score">总评：</string>
-    <string name="overall_score_content">96</string>
-    <string name="credit">学分：</string>
-    <string name="credit_content">6.5</string>
-    <string name="credit_point">学分绩点</string>
-    <string name="credit_point_content">0.0</string>
-    <string name="test_mode">考核方式：</string>
-    <string name="test_mode_content">考试</string>
-    <string name="select_type">选课类型：</string>
-    <string name="select_type_content">必修</string>
-    <string name="exam_type">考试类型</string>
-    <string name="exam_type_content">重修</string>
-    <string name="semester">学期</string>
-    <string name="semester_content">2014春</string>
-    <string name="remarks">备注：</string>
-    <string name="remarks_content">正常</string>
-    <string name="time">时间</string>
-    <string name="location">地点</string>    
-    <string name="query">查询</string>
-    <string name="nothing">暂无信息</string>
-    <string name="skill_test_name">科目</string>
-    <string name="grades">成绩</string>
-    <string name="merge_the_same">合并相同</string>
-    <string name="state">状态</string>
-    <string name="teacher">教师</string>
-
-    <string name="course_sample">概率论与数理统计</string>
-    <string name="date_time_sample">2015&#8211;03&#8211;07&#160;09:00&#8211;11:00</string>
-    <string name="date_sample">2015&#8211;03&#8211;07</string>
-    <string name="location_sample">静远118</string>
-    <string name="_100">100</string>
-    <string name="have_left">还剩</string>
-    <string name="day">天</string>
-    <string name="from_to">至</string>
-    <string name="school_name">所在地：</string>
-    <string name="witness">证明人：</string>
-
-    <string name="have_unfold_less_same_course">已合并相同科目</string>
-
-    <string name="menu">菜单</string>
-    <string name="action_browser">浏览器访问教务在线</string>
-    <string name="action_logout">切换/注销账户</string>
-    <string name="action_market">为应用评分</string>
-    <string name="action_feedback">意见反馈</string>
-    <string name="action_share">分享给好友</string>
-    <string name="action_update">更新检查</string>
-    <string name="action_settings">设置</string>
-    <string name="action_about">关于</string>
-    <string name="action_help">帮助</string>
-    <string name="action_exit">退出</string>
-
-    <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
-    <string name="user_agreement_link_style"><u>用户协议</u></string>
-
-    <string name="curriculum_test">第一行\n第二行\n第三行\n第四行</string>
+    <string name="app_crash">程序崩溃</string>
+    <string name="crash_log_tip">非常抱歉，程序运行过程中出现了一个无法避免的错误。该问题已经提交到服务器，此举将有助于改善应用体验。由此给您带来的诸多不便，我们深表歉意，敬请谅解。</string>
+    <string name="feedback_tip">随便给提点建议吧，虽然我们也不一定会采纳&#8230;</string>
 
 </resources>

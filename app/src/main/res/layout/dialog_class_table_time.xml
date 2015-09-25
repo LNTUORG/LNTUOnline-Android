@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_class_table_time_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16sp"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/class_table_time_dialog_title_background"
+        tools:text="2015年 6月" />
+
+    <ScrollView
+        android:id="@+id/dialog_class_table_time_layout_month"
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/dialog_class_table_time_btn_month_1"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/class_table_time_dialog_btn_background"
+                tools:text="2015年 7月" />
+
+            <RadioButton
+                android:id="@+id/dialog_class_table_time_btn_month_2"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/class_table_time_dialog_btn_background"
+                tools:text="2015年 6月" />
+
+            <RadioButton
+                android:id="@+id/dialog_class_table_time_btn_month_3"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/class_table_time_dialog_btn_background"
+                tools:text="2015年 5月" />
+
+            <RadioButton
+                android:id="@+id/dialog_class_table_time_btn_month_4"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/class_table_time_dialog_btn_background"
+                tools:text="2015年 4月" />
+
+            <RadioButton
+                android:id="@+id/dialog_class_table_time_btn_month_5"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/class_table_time_dialog_btn_background"
+                tools:text="2015年 3月" />
+
+            <RadioButton
+                android:id="@+id/dialog_class_table_time_btn_month_6"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:button="@null"
+                android:background="@drawable/class_table_time_dialog_btn_background"
+                tools:text="2015年 2月" />
+
+        </RadioGroup>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/dialog_class_table_time_layout_day"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/dialog_class_table_time_recycler_view_day"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,51 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/activity_action_bar" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/unpass_course_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary"
+        android:elevation="4dp"
+        app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
+        app:title="@string/unpass_query"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <ExpandableListView
+            android:visibility="gone"
+            android:id="@+id/unpass_course_ex_list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:groupIndicator="@null"/>
+
+        <LinearLayout
+            android:id="@+id/unpass_course_icon_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/unpass_course_icon_loading_anim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_empty_inbox_anim" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_empty_inbox" />
+
+            </FrameLayout>
 
             <TextView
-                android:id="@+id/unpass_course_icon_unfold_less"
-                android:visibility="gone"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:text="@string/have_unfold_less_same_course"
-                android:textSize="14sp"
-                android:background="#BBDEFB" />
-
-            <ListView
-                android:id="@+id/unpass_course_lv_root"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_margin="8dp"
+                android:text="@string/network_data_loading"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
-        <com.melnykov.fab.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_unfold_less_white_24dp"
-            fab:fab_colorNormal="@color/fab_accent"
-            fab:fab_colorPressed="@color/fab_accent_pressed"
-            fab:fab_colorRipple="@color/fab_ripple" />
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/unpass_course_icon_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_empty_search" />
+
+            <TextView
+                android:id="@+id/unpass_course_tv_load_failed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="@string/network_data_load_failed"
+                android:textColor="@color/text_color_secondary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
 
     </FrameLayout>
 

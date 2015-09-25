@@ -1,0 +1,85 @@
+package org.lntu.online.ui.activity;
+
+import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.widget.ImageView;
+
+import com.squareup.picasso.Picasso;
+
+import org.lntu.online.R;
+import org.lntu.online.model.api.ApiClient;
+import org.lntu.online.model.api.DefaultCallback;
+import org.lntu.online.model.entity.ErrorInfo;
+import org.lntu.online.model.entity.Student;
+import org.lntu.online.storage.LoginShared;
+import org.lntu.online.ui.adapter.StudentInfoAdapter;
+import org.lntu.online.ui.listener.NavigationFinishClickListener;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import retrofit.client.Response;
+
+public class StudentInfoActivity extends BaseActivity {
+
+    @Bind(R.id.student_info_toolbar)
+    protected Toolbar toolbar;
+
+    @Bind(R.id.student_info_img_avatar)
+    protected ImageView imgAvatar;
+
+    @Bind(R.id.student_info_recycler_view)
+    protected RecyclerView recyclerView;
+
+    private Student student;
+    private StudentInfoAdapter adapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_student_info);
+        ButterKnife.bind(this);
+
+        toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
+
+        student = LoginShared.getStudent(this);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new StudentInfoAdapter(this, student);
+        recyclerView.setAdapter(adapter);
+
+        loadAvatar(student);
+        getStudentAsyncTask();
+    }
+
+    private void loadAvatar(Student student) {
+        if (student != null && !TextUtils.isEmpty(student.getPhotoUrl())) {
+            Picasso.with(this).load(student.getPhotoUrl()).placeholder(R.drawable.image_placeholder).into(imgAvatar);
+        }
+    }
+
+    private void getStudentAsyncTask() {
+        ApiClient.service.getStudent(LoginShared.getLoginToken(this), new DefaultCallback<Student>(this) {
+
+            @Override
+            public void success(Student student, Response response) {
+                LoginShared.setStudent(StudentInfoActivity.this, student);
+                StudentInfoActivity.this.student = student;
+                loadAvatar(student);
+                adapter.setStudent(student);
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void failure(ErrorInfo errorInfo) {
+                if (student == null) {
+                    super.failure(errorInfo);
+                }
+            }
+
+        });
+    }
+
+}

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    android:background="#FFFFFF">
+    android:background="@android:color/white">
 
     <LinearLayout
         android:id="@+id/exam_plan_item_layout_start"
@@ -18,9 +19,9 @@
             android:id="@+id/exam_plan_item_tv_course"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/course_sample"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="16sp" />
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp"
+            tools:text="概率论与数理统计" />
 
         <TextView
             android:id="@+id/exam_plan_item_tv_time"
@@ -30,9 +31,10 @@
             android:drawableStart="@drawable/ic_schedule_grey600_18dp"
             android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
             android:drawablePadding="16dp"
-            android:text="@string/date_time_sample"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
-            android:gravity="start|center_vertical" />
+            android:gravity="center_vertical"
+            tools:text="2015&#8211;03&#8211;07&#160;09:00&#8211;11:00" />
 
         <TextView
             android:id="@+id/exam_plan_item_tv_location"
@@ -42,9 +44,10 @@
             android:drawableStart="@drawable/ic_location_on_grey600_18dp"
             android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
             android:drawablePadding="16dp"
-            android:text="@string/location_sample"
+            android:textColor="@color/text_color_secondary"
             android:textSize="14sp"
-            android:gravity="start|center_vertical" />
+            android:gravity="center_vertical"
+            tools:text="静远118" />
 
     </LinearLayout>
 
@@ -66,8 +69,7 @@
             android:layout_margin="4dp"
             android:src="@drawable/icon_exam_finish"
             android:scaleType="fitCenter"
-            android:contentDescription="@string/exam_plan"
-            android:adjustViewBounds="true"/>
+            android:adjustViewBounds="true" />
 
         <LinearLayout
             android:id="@+id/exam_plan_item_icon_countdown"
@@ -88,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:text="@string/have_left"
+                    android:textColor="@color/text_color_secondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -96,9 +99,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
-                    android:text="@string/_100"
-                    android:textColor="#FF0000"
-                    android:textSize="34sp" />
+                    android:textColor="@color/red_light"
+                    android:textSize="34sp"
+                    tools:text="100" />
 
             </LinearLayout>
 
@@ -107,6 +110,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:text="@string/day"
+                android:textColor="@color/text_color_secondary"
                 android:textSize="14sp"
                 android:gravity="bottom" />
 
