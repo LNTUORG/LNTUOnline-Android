@@ -10,7 +10,8 @@ public final class ApiClient {
 
     private ApiClient() {}
 
-    private static final String API_HOST = "https://api.online.lntu.org";
+    // private static final String API_HOST = "https://api.online.lntu.org";
+    private static final String API_HOST = "http://lntuonline-api.takwolf.com";
 
     public static final ApiService service = new RestAdapter.Builder()
             .setEndpoint(API_HOST)
