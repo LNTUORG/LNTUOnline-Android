@@ -34,8 +34,6 @@ iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.
 
 - [木蚂蚁应用市场](http://www.mumayi.com/android-851065.html?1412616355)
 
-- [蒲公英](http://www.pgyer.com/azjwzx)
-
 - [小米应用商店](http://app.mi.com/detail/81673)
 
 - [魅族Flyme应用中心](http://app.meizu.com/apps/public/detail?package_name=com.lntu.online)
