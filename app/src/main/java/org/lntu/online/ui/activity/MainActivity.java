@@ -154,6 +154,14 @@ public class MainActivity extends BaseActivity {
     }
 
     /**
+     * 浏览器打开教务在线
+     */
+    @OnClick(R.id.main_nav_btn_lntu_online_by_browser)
+    protected void onBtnLntuOnlineByBrowserClick() {
+        ShipUtils.openInBrowser(this, "http://60.18.131.131:11180/academic/index.html");
+    }
+
+    /**
      * 在商店中打开
      */
     @OnClick(R.id.main_nav_btn_open_in_play)
