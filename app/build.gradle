@@ -20,7 +20,7 @@ android {
         minSdkVersion 9
         targetSdkVersion 23
         versionCode Integer.parseInt(year + month + day)
-        versionName "2.0.0"
+        versionName "2.0.1"
 
         manifestPlaceholders = [
                 UMENG_CHANNEL: "LntuOnline",

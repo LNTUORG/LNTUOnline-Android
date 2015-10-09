@@ -76,8 +76,18 @@
     <View style="@style/AppTheme.ItemGap"
         android:clickable="true" />
 
+    <TextView style="@style/AppTheme.NavigationItem"
+        android:id="@+id/main_nav_btn_lntu_online_by_browser"
+        android:drawableStart="@drawable/ic_open_in_browser_grey600_24dp"
+        android:drawableLeft="@drawable/ic_open_in_browser_grey600_24dp"
+        android:text="@string/lntuonline_by_browser" />
 
-
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
+    <View style="@style/AppTheme.DeepLine"
+        android:clickable="true" />
+    <View style="@style/AppTheme.ItemGap"
+        android:clickable="true" />
 
     <TextView style="@style/AppTheme.NavigationItem"
         android:id="@+id/main_nav_btn_open_in_play"
