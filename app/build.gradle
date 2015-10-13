@@ -62,5 +62,5 @@ dependencies {
     compile 'com.github.siyamed:android-shape-imageview:0.9.2'
 
     compile project(':umeng-update-sdk')
-    compile 'com.umeng.analytics:analytics:5.5.3'
+    compile 'com.umeng.analytics:analytics:5.6.1'
 }
