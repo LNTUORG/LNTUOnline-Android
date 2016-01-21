@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:paddingTop="8dp"
     android:paddingBottom="8dp"
-    android:textColor="@color/text_color_secondary"
+    android:textColor="?android:attr/textColorSecondary"
     android:textSize="16sp"
     android:gravity="center"
     android:background="@drawable/class_table_time_dialog_btn_background"

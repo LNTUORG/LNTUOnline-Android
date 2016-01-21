@@ -15,6 +15,7 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.SkillTestScore;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.SkillTestAdapter;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.List;
@@ -24,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class SkillTestActivity extends BaseActivity {
+public class SkillTestActivity extends StatusBarActivity {
 
     @Bind(R.id.skill_test_toolbar)
     protected Toolbar toolbar;

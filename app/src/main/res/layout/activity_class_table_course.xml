@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
-        android:elevation="4dp"
+        android:elevation="@dimen/app_bar_elevation"
         app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
         app:title="@string/class_table_course_info"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -47,7 +47,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="60dp"
                         android:layout_marginRight="60dp"
-                        android:textColor="@color/text_color_primary"
+                        android:textColor="?android:attr/textColorPrimary"
                         android:textSize="16sp"
                         tools:text="高等数学" />
 
@@ -59,7 +59,7 @@
                         android:drawableStart="@drawable/ic_class_grey600_18dp"
                         android:drawableLeft="@drawable/ic_class_grey600_18dp"
                         android:drawablePadding="16dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         tools:text="H06849214A" />
 
@@ -71,7 +71,7 @@
                         android:drawableStart="@drawable/ic_person_grey600_18dp"
                         android:drawableLeft="@drawable/ic_person_grey600_18dp"
                         android:drawablePadding="16dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         tools:text="张三" />
 
@@ -83,7 +83,7 @@
                         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                         android:drawablePadding="16dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         tools:text="2015年 春季学期" />
 
@@ -97,7 +97,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/select_type_"
-                            android:textColor="@color/text_color_secondary"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="14sp" />
 
                         <TextView
@@ -106,7 +106,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingRight="16dp"
-                            android:textColor="@color/text_color_secondary"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="14sp"
                             tools:text="必修" />
 
@@ -122,7 +122,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/test_mode_"
-                            android:textColor="@color/text_color_secondary"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="14sp" />
 
                         <TextView
@@ -131,7 +131,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingRight="16dp"
-                            android:textColor="@color/text_color_secondary"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="14sp"
                             tools:text="考试" />
 
@@ -147,7 +147,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/exam_type_"
-                            android:textColor="@color/text_color_secondary"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="14sp" />
 
                         <TextView
@@ -156,7 +156,7 @@
                             android:layout_height="wrap_content"
                             android:paddingLeft="16dp"
                             android:paddingRight="16dp"
-                            android:textColor="@color/text_color_secondary"
+                            android:textColor="?android:attr/textColorSecondary"
                             android:textSize="14sp"
                             tools:text="正常考试" />
 
@@ -167,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="32dp"
                         android:text="@string/times_and_places_"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp" />
 
                     <TextView
@@ -177,7 +177,7 @@
                         android:paddingTop="16dp"
                         android:paddingLeft="16dp"
                         android:paddingRight="16dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:lineSpacingMultiplier="1.5"
                         tools:text="1-18 周三 第一大节 尔雅楼315\n1-18 周三 第一大节 尔雅楼315\n1-18 周三 第一大节 尔雅楼315" />

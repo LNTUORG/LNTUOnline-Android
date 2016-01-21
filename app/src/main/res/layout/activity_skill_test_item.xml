@@ -11,7 +11,7 @@
         android:id="@+id/skill_test_item_tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_color_primary"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         tools:text="大学英语4级" />
 
@@ -23,7 +23,7 @@
         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
         android:drawablePadding="16dp"
-        android:textColor="@color/text_color_secondary"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp"
         android:gravity="start|center_vertical"
         tools:text="2015-1-1" />
@@ -36,7 +36,7 @@
         android:drawableStart="@drawable/ic_assignment_turned_in_grey600_18dp"
         android:drawableLeft="@drawable/ic_assignment_turned_in_grey600_18dp"
         android:drawablePadding="16dp"
-        android:textColor="@color/text_color_secondary"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp"
         android:gravity="start|center_vertical"
         tools:text="450" />

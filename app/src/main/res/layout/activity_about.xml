@@ -22,7 +22,7 @@
                 android:src="@drawable/logo"
                 android:scaleType="fitCenter"
                 android:background="@color/color_primary"
-                android:elevation="2dp" />
+                android:elevation="@dimen/app_bar_elevation" />
 
             <LinearLayout
                 android:id="@+id/about_btn_version"
@@ -30,13 +30,13 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="@drawable/selectable_item_background">
+                android:background="?attr/selectableItemBackgroundGeneral">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/version_check_update"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <TextView
@@ -44,14 +44,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     android:singleLine="true"
                     tools:text="当前版本：0.0.0-build-0" />
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.DeepLine" />
+            <View style="@style/AppWidget.DeepLine" />
 
             <LinearLayout
                 android:id="@+id/about_btn_app_homepage"
@@ -59,13 +59,13 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="@drawable/selectable_item_background">
+                android:background="?attr/selectableItemBackgroundGeneral">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/app_homepage"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <TextView
@@ -73,13 +73,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/app_homepage_content"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     android:singleLine="true" />
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.DeepLine" />
+            <View style="@style/AppWidget.DeepLine" />
 
             <LinearLayout
                 android:id="@+id/about_btn_lntu_online_homepage"
@@ -87,13 +87,13 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="@drawable/selectable_item_background">
+                android:background="?attr/selectableItemBackgroundGeneral">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/lntu_online_homepage"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <TextView
@@ -101,13 +101,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/lntu_online_homepage_content"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     android:singleLine="true" />
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.DeepLine" />
+            <View style="@style/AppWidget.DeepLine" />
 
             <LinearLayout
                 android:id="@+id/about_btn_open_source_url"
@@ -115,13 +115,13 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="@drawable/selectable_item_background">
+                android:background="?attr/selectableItemBackgroundGeneral">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/open_source_url"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <TextView
@@ -129,13 +129,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/open_source_url_content"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     android:singleLine="true" />
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.DeepLine" />
+            <View style="@style/AppWidget.DeepLine" />
 
             <LinearLayout
                 android:id="@+id/about_btn_about_author"
@@ -143,13 +143,13 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:orientation="vertical"
-                android:background="@drawable/selectable_item_background">
+                android:background="?attr/selectableItemBackgroundGeneral">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/about_author"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <TextView
@@ -157,13 +157,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="@string/about_author_content"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     android:singleLine="true" />
 
             </LinearLayout>
 
-            <View style="@style/AppTheme.ShadowGap" />
+            <View style="@style/AppWidget.ShadowGap" />
 
             <TextView
                 android:id="@+id/about_btn_term_of_service"
@@ -171,11 +171,11 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="@string/term_of_service"
-                android:textColor="@color/text_color_primary"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
-                android:background="@drawable/selectable_item_background" />
+                android:background="?attr/selectableItemBackgroundGeneral" />
 
-            <View style="@style/AppTheme.DeepLine" />
+            <View style="@style/AppWidget.DeepLine" />
 
             <TextView
                 android:id="@+id/about_btn_open_source_license"
@@ -183,11 +183,11 @@
                 android:layout_height="wrap_content"
                 android:padding="16dp"
                 android:text="@string/open_source_license"
-                android:textColor="@color/text_color_primary"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
-                android:background="@drawable/selectable_item_background" />
+                android:background="?attr/selectableItemBackgroundGeneral" />
 
-            <View style="@style/AppTheme.ShadowGap" />
+            <View style="@style/AppWidget.ShadowGap" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -195,8 +195,8 @@
                 android:layout_marginBottom="8dp"
                 android:padding="8dp"
                 android:text="@string/about_copyright"
-                android:textColor="@color/text_color_secondary"
-                android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="12sp"
                 android:gravity="center" />
 
         </LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="selectableItemBackgroundGeneral" format="color|reference" />
+
+    <declare-styleable name="ScrimInsetsScrollView">
+        <attr name="appInsetForeground" format="reference|color" />
+    </declare-styleable>
+
+</resources>

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <View style="@style/AppTheme.ShadowGap" />
+    <View style="@style/AppWidget.ShadowGap" />
 
     <TextView
         android:id="@+id/student_info_item_title_tv_title"

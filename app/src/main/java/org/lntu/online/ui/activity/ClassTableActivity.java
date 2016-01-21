@@ -19,6 +19,7 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.storage.LoginShared;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
@@ -32,7 +33,7 @@ import butterknife.OnClick;
 import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
-public class ClassTableActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
+public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
     @Bind(R.id.class_table_toolbar)
     protected Toolbar toolbar;

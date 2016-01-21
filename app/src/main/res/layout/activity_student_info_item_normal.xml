@@ -11,7 +11,7 @@
         android:id="@+id/student_info_item_normal_tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_color_primary"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         tools:text="姓名" />
 
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="@color/text_color_secondary"
+        android:textColor="?android:attr/textColorSecondary"
         android:textSize="14sp"
         tools:text="李四" />
 

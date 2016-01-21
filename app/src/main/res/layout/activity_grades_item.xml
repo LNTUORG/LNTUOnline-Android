@@ -28,7 +28,7 @@
                 android:id="@+id/grades_item_tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color_primary"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
                 tools:text="高等数学" />
 
@@ -40,7 +40,7 @@
                 android:drawableStart="@drawable/ic_class_grey600_18dp"
                 android:drawableLeft="@drawable/ic_class_grey600_18dp"
                 android:drawablePadding="16dp"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp"
                 tools:text="H06849214A" />
 
@@ -57,7 +57,7 @@
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                     android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                     android:drawablePadding="16dp"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     android:gravity="center_vertical"
                     tools:text="2014春" />
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     tools:text="重修" />
 
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/overall_score_"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -94,7 +94,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="22sp"
                     tools:text="96" />
 
@@ -103,7 +103,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/credit_"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -111,7 +111,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="22sp"
                     tools:text="6.5" />
 
@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/select_type_"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     tools:text="必修" />
 
@@ -152,7 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/test_mode_"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -161,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     tools:text="考试" />
 
@@ -177,7 +177,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/remarks_"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -186,7 +186,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp"
                     tools:text="正常" />
 

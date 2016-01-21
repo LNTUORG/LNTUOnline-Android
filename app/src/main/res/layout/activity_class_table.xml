@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
-        android:elevation="4dp"
+        android:elevation="@dimen/app_bar_elevation"
         app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
@@ -28,7 +28,7 @@
                 android:layout_marginRight="@dimen/margin_short"
                 android:background="#88ffffff" />
 
-            <Spinner style="@style/AppTheme.ClassTableSpinner"
+            <Spinner style="@style/AppWidget.ClassTableSpinner"
                 android:id="@+id/class_table_spn_year_term"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:text="@string/network_data_loading"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -101,7 +101,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:text="@string/network_data_load_failed"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp" />
 
         </LinearLayout>
