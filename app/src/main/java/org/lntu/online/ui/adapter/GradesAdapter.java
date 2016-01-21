@@ -119,8 +119,6 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder
                 break;
         }
         holder.iconVeryGood.setVisibility(score.getLevel() == Grades.Level.GREAT ? View.VISIBLE : View.GONE);
-        holder.iconBlankTop.setVisibility(position == 0 ? View.VISIBLE : View.GONE);
-        holder.iconBlankBottom.setVisibility(position == currentList.size() - 1 ? View.VISIBLE : View.GONE);
     }
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
@@ -154,12 +152,6 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder
 
         @Bind(R.id.grades_item_icon_very_good)
         protected View iconVeryGood;
-
-        @Bind(R.id.grades_item_icon_blank_top)
-        protected View iconBlankTop;
-
-        @Bind(R.id.grades_item_icon_blank_bottom)
-        protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {
             super(itemView);
