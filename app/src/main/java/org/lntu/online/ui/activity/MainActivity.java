@@ -20,6 +20,7 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
+import org.lntu.online.storage.CacheShared;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.DrawerLayoutActivity;
@@ -122,7 +123,7 @@ public class MainActivity extends DrawerLayoutActivity {
      * 检测是否需要并且更新用户信息
      */
     private void checkAndUpdateUserInfo() {
-        Student student = LoginShared.getStudent(this);
+        Student student = CacheShared.getStudent(this);
         if (student == null) {
             getStudentAsyncTask();
         } else {
@@ -148,7 +149,7 @@ public class MainActivity extends DrawerLayoutActivity {
 
             @Override
             public void success(Student student, Response response) {
-                LoginShared.setStudent(MainActivity.this, student);
+                CacheShared.setStudent(MainActivity.this, student);
                 updateUserInfoViews(student);
             }
 
