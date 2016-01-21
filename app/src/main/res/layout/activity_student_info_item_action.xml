@@ -11,7 +11,7 @@
         android:id="@+id/student_info_item_action_tv_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_color_primary"
+        android:textColor="?android:attr/textColorPrimary"
         android:textSize="16sp"
         tools:text="警告" />
 
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/punish_time_"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp" />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             tools:text="2010-1-1" />
 
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/punish_reason_"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp" />
 
         <TextView
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             tools:text="存在违章电器" />
 
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel_time_"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp" />
 
         <TextView
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             tools:text="2014-1-1" />
 
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel_reason_"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp" />
 
         <TextView
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             tools:text="处分已到期" />
 
@@ -125,7 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/punish_state_"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp" />
 
         <TextView
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             tools:text="有效" />
 
@@ -150,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/remarks_"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp" />
 
         <TextView
@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             tools:text="辽宁工大发[2014]303号" />
 

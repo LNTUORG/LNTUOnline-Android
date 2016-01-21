@@ -18,9 +18,7 @@ public class AuthErrorActivity extends Activity {
         new MaterialDialog.Builder(this)
                 .backgroundColorRes(android.R.color.white)
                 .title(R.string.auth_error)
-                .titleColorRes(R.color.text_color_primary)
                 .content(R.string.auth_error_tip)
-                .contentColorRes(R.color.text_color_secondary)
                 .positiveText(R.string.ok)
                 .positiveColorRes(R.color.color_accent)
                 .dismissListener(new DialogInterface.OnDismissListener() {

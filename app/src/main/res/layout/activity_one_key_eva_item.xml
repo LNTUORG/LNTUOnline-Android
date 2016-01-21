@@ -23,7 +23,7 @@
                 android:id="@+id/one_key_eva_item_tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color_primary"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="16sp"
                 tools:text="概率论与数理统计" />
 
@@ -35,7 +35,7 @@
                 android:drawableStart="@drawable/ic_class_grey600_18dp"
                 android:drawableLeft="@drawable/ic_class_grey600_18dp"
                 android:drawablePadding="16dp"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp"
                 tools:text="H06849214A" />
 
@@ -47,7 +47,7 @@
                 android:drawableStart="@drawable/ic_person_grey600_18dp"
                 android:drawableLeft="@drawable/ic_person_grey600_18dp"
                 android:drawablePadding="16dp"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp"
                 android:gravity="center_vertical"
                 tools:text="张三" />
@@ -68,6 +68,6 @@
 
     </RelativeLayout>
 
-    <View style="@style/AppTheme.DeepLine" />
+    <View style="@style/AppWidget.DeepLine" />
 
 </LinearLayout>

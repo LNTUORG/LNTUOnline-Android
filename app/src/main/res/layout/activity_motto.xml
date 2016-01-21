@@ -31,7 +31,7 @@
         android:padding="8dp"
         android:orientation="horizontal">
 
-        <Button style="@style/AppTheme.Button"
+        <Button style="@style/AppWidget.Button"
             android:id="@+id/motto_btn_male_voice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_margin="8dp"
             android:text="@string/male_voice" />
 
-        <Button style="@style/AppTheme.Button"
+        <Button style="@style/AppWidget.Button"
             android:id="@+id/motto_btn_female_voice"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

@@ -19,7 +19,7 @@
             android:id="@+id/exam_plan_item_tv_course"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color_primary"
+            android:textColor="?android:attr/textColorPrimary"
             android:textSize="16sp"
             tools:text="概率论与数理统计" />
 
@@ -31,7 +31,7 @@
             android:drawableStart="@drawable/ic_schedule_grey600_18dp"
             android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
             android:drawablePadding="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             android:gravity="center_vertical"
             tools:text="2015&#8211;03&#8211;07&#160;09:00&#8211;11:00" />
@@ -44,7 +44,7 @@
             android:drawableStart="@drawable/ic_location_on_grey600_18dp"
             android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
             android:drawablePadding="16dp"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="?android:attr/textColorSecondary"
             android:textSize="14sp"
             android:gravity="center_vertical"
             tools:text="静远118" />
@@ -90,7 +90,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:text="@string/have_left"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -110,7 +110,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
                 android:text="@string/day"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp"
                 android:gravity="bottom" />
 

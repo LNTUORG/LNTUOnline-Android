@@ -64,7 +64,7 @@
                         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                         android:drawablePadding="8dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical"
                         android:background="#88ffffff"
@@ -77,7 +77,7 @@
                         android:layout_gravity="end"
                         android:src="@drawable/icon_draw_down"
                         android:scaleType="center"
-                        android:background="@drawable/selectable_item_background_transparent" />
+                        android:background="?attr/selectableItemBackgroundBorderless" />
 
                 </FrameLayout>
 
@@ -98,11 +98,11 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text="@string/this_stage_no_course"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical" />
 
-                    <View style="@style/AppTheme.DeepLine" />
+                    <View style="@style/AppWidget.DeepLine" />
 
                 </LinearLayout>
 
@@ -157,7 +157,7 @@
                         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                         android:drawablePadding="8dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical"
                         android:background="#88ffffff"
@@ -170,7 +170,7 @@
                         android:layout_gravity="end"
                         android:src="@drawable/icon_draw_down"
                         android:scaleType="center"
-                        android:background="@drawable/selectable_item_background_transparent" />
+                        android:background="?attr/selectableItemBackgroundBorderless" />
 
                 </FrameLayout>
 
@@ -191,11 +191,11 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text="@string/this_stage_no_course"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical" />
 
-                    <View style="@style/AppTheme.DeepLine" />
+                    <View style="@style/AppWidget.DeepLine" />
 
                 </LinearLayout>
 
@@ -249,7 +249,7 @@
                         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                         android:drawablePadding="8dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical"
                         android:background="#88ffffff"
@@ -262,7 +262,7 @@
                         android:layout_gravity="end"
                         android:src="@drawable/icon_draw_down"
                         android:scaleType="center"
-                        android:background="@drawable/selectable_item_background_transparent" />
+                        android:background="?attr/selectableItemBackgroundBorderless" />
 
                 </FrameLayout>
 
@@ -283,11 +283,11 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text="@string/this_stage_no_course"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical" />
 
-                    <View style="@style/AppTheme.DeepLine" />
+                    <View style="@style/AppWidget.DeepLine" />
 
                 </LinearLayout>
 
@@ -342,7 +342,7 @@
                         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                         android:drawablePadding="8dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical"
                         android:background="#88ffffff"
@@ -355,7 +355,7 @@
                         android:layout_gravity="end"
                         android:src="@drawable/icon_draw_down"
                         android:scaleType="center"
-                        android:background="@drawable/selectable_item_background_transparent" />
+                        android:background="?attr/selectableItemBackgroundBorderless" />
 
                 </FrameLayout>
 
@@ -376,11 +376,11 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text="@string/this_stage_no_course"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical" />
 
-                    <View style="@style/AppTheme.DeepLine" />
+                    <View style="@style/AppWidget.DeepLine" />
 
                 </LinearLayout>
 
@@ -435,7 +435,7 @@
                         android:drawableStart="@drawable/ic_schedule_grey600_18dp"
                         android:drawableLeft="@drawable/ic_schedule_grey600_18dp"
                         android:drawablePadding="8dp"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical"
                         android:background="#88ffffff"
@@ -448,7 +448,7 @@
                         android:layout_gravity="end"
                         android:src="@drawable/icon_draw_down"
                         android:scaleType="center"
-                        android:background="@drawable/selectable_item_background_transparent" />
+                        android:background="?attr/selectableItemBackgroundBorderless" />
 
                 </FrameLayout>
 
@@ -469,11 +469,11 @@
                         android:layout_height="wrap_content"
                         android:padding="16dp"
                         android:text="@string/this_stage_no_course"
-                        android:textColor="@color/text_color_secondary"
+                        android:textColor="?android:attr/textColorSecondary"
                         android:textSize="14sp"
                         android:gravity="center_vertical" />
 
-                    <View style="@style/AppTheme.DeepLine" />
+                    <View style="@style/AppWidget.DeepLine" />
 
                 </LinearLayout>
 
