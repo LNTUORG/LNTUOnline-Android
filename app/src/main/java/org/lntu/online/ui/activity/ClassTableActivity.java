@@ -93,7 +93,9 @@ public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnM
      */
     private List<String> getYearTermList(LocalDate today) {
         int startYear = 2000 + Integer.parseInt(LoginShared.getUserId(this).substring(0, 2));
-        int endYear = today.getYear() < startYear ? startYear : today.getYear();
+        int endYear = today.getYear();
+        endYear = today.getMonthOfYear() < 2 ? endYear - 1 : endYear;
+        endYear = endYear < startYear ? startYear : endYear;
         String endTerm = (today.getMonthOfYear() >= 2 && today.getMonthOfYear() < 8) ? "春" : "秋";
         List<String> yearTermList = new ArrayList<>();
         for (int n = 0; n < endYear - startYear; n++) {
