@@ -8,25 +8,15 @@
 
 # 辽工大教务在线-Android客户端 #
 
-v2.0.0，Material Design 风格
+v2，Material Design 风格
 
 官方网站：[http://online.lntu.org](http://online.lntu.org)
 
-服务端项目：[https://github.com/LNTUORG/LntuOnline-API](https://github.com/LNTUORG/LntuOnline-API)
+服务端项目：[LNTUOnline-API](https://github.com/LNTUORG/LNTUOnline-API)
 
-iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.com/LNTUORG/LntuOnline-iOS)
+iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
-## Screenshot ##
-
-![](/art/n (1).png) ![](/art/n (2).png)
-
-![](/art/n (3).png) ![](/art/n (4).png)
-
-![](/art/n (5).png) ![](/art/n (6).png)
-
-![](/art/n (7).png) ![](/art/n (8).png)
-
-## 下载地址： ##
+## Download ##
 
 - [Google Play](https://play.google.com/store/apps/details?id=com.lntu.online)
 
@@ -34,7 +24,11 @@ iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.
 
 - [360手机助手](http://zhushou.360.cn/detail/index/soft_id/1964733?recrefer=SE_D_%E8%BE%BD%E5%B7%A5%E5%A4%A7%E6%95%99%E5%8A%A1%E5%9C%A8%E7%BA%BF)
 
-- [应用宝](http://android.myapp.com/myapp/detail.htm?apkName=com.lntu.online)
+- [腾讯应用宝](http://android.myapp.com/myapp/detail.htm?apkName=com.lntu.online)
+
+- [魅族Flyme应用中心](http://app.meizu.com/apps/public/detail?package_name=com.lntu.online)
+
+- [小米应用商店](http://app.mi.com/detail/81673)
 
 - [豌豆荚](http://www.wandoujia.com/apps/com.lntu.online)
 
@@ -42,11 +36,17 @@ iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.
 
 - [木蚂蚁应用市场](http://www.mumayi.com/android-851065.html?1412616355)
 
-- [小米应用商店](http://app.mi.com/detail/81673)
+## Screenshot ##
 
-- [魅族Flyme应用中心](http://app.meizu.com/apps/public/detail?package_name=com.lntu.online)
+![image](/art/n (1).png) ![image](/art/n (2).png)
 
-## Libraries used ##
+![image](/art/n (3).png) ![image](/art/n (4).png)
+
+![image](/art/n (5).png) ![image](/art/n (6).png)
+
+![image](/art/n (7).png) ![image](/art/n (8).png)
+
+## Credits ##
 
 - [Butter Knife](https://github.com/JakeWharton/butterknife)
 
@@ -73,12 +73,6 @@ iOS客户端实现：[https://github.com/LNTUORG/LntuOnline-iOS](https://github.
 - [material-design-icons](https://github.com/google/material-design-icons)
 
 - [Shape Image View](https://github.com/siyamed/android-shape-imageview)
-
-## Power support ##
-
-- [Digital Ocean](https://www.digitalocean.com)
-
-- [友盟](http://www.umeng.com)
 
 ## Thanks ##
 
