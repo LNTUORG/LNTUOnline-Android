@@ -60,8 +60,6 @@ iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
 - [Joda-Time](http://www.joda.org/joda-time)
 
-- [Material](http://rey5137.com/material)
-
 - [MaterialEditText](https://github.com/rengwuxian/MaterialEditText)
 
 - [Material Dialogs](https://github.com/afollestad/material-dialogs)
