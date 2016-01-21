@@ -9,6 +9,7 @@ import com.umeng.update.UmengUpdateAgent;
 
 import org.lntu.online.BuildConfig;
 import org.lntu.online.R;
+import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
 

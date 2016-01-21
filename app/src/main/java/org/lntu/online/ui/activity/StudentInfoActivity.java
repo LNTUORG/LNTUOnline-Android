@@ -16,6 +16,7 @@ import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.StudentInfoAdapter;
+import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.Bind;

@@ -19,6 +19,7 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.storage.LoginShared;
+import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 

@@ -15,6 +15,7 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ExamPlan;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.ExamPlanAdapter;
+import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
