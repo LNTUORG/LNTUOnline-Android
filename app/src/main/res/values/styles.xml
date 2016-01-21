@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/color_accent</item>
         <item name="windowActionModeOverlay">true</item>
         <item name="android:windowBackground">@color/window_background</item>
-        <item name="android:listDivider">@color/list_divider</item>
         <item name="selectableItemBackgroundGeneral">@drawable/selectable_item_background_general</item>
     </style>
 
@@ -34,7 +33,7 @@
     <style name="AppWidget.DeepLine">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
-        <item name="android:background">?android:attr/listDivider</item>
+        <item name="android:background">@color/list_divider</item>
     </style>
 
     <style name="AppWidget.DeepLine.Vertical">
