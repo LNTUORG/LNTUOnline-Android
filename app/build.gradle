@@ -13,12 +13,12 @@ def day = String.format("%02d", calendar.get(Calendar.DAY_OF_MONTH));
 android {
 
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         applicationId "com.lntu.online"
         minSdkVersion 9
-        targetSdkVersion 21
+        targetSdkVersion 22
         versionCode Integer.parseInt(year + month + day)
         versionName "2.0.1"
 
