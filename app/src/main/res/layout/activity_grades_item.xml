@@ -3,15 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="8dp"
-    android:paddingRight="8dp"
-    android:paddingTop="4dp"
     android:orientation="vertical">
-
-    <View
-        android:id="@+id/grades_item_icon_blank_top"
-        android:layout_width="match_parent"
-        android:layout_height="4dp" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -205,15 +197,6 @@
 
     </FrameLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_gravity="bottom"
-        android:background="@drawable/gap_shadow" />
-
-    <View
-        android:id="@+id/grades_item_icon_blank_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="4dp" />
+    <View style="@style/AppWidget.DeepLine" />
 
 </LinearLayout>

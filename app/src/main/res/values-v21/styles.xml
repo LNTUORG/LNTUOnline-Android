@@ -7,13 +7,8 @@
         <item name="android:windowContentTransitions">true</item>
     </style>
 
-    <style name="AppTheme.FitsStatusBar">
+    <style name="AppTheme.TransStatusBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-
-    <style name="AppTheme.Launch">
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
 </resources>
