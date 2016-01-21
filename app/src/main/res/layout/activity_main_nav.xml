@@ -126,6 +126,8 @@
             android:drawableLeft="@drawable/ic_exit_to_app_grey600_24dp"
             android:text="@string/logout" />
 
+        <View style="@style/AppWidget.ItemGap" />
+
     </LinearLayout>
 
 </org.lntu.online.ui.widget.ScrimInsetsScrollView>
