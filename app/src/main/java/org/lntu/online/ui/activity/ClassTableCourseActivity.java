@@ -7,7 +7,6 @@ import android.widget.TextView;
 import org.lntu.online.R;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.WeekMode;
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.gson.GsonWrapper;
