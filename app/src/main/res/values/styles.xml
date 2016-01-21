@@ -13,9 +13,7 @@
 
     <style name="AppTheme" parent="BaseAppTheme" />
 
-    <style name="AppTheme.FitsStatusBar" />
-
-    <style name="AppTheme.Launch" />
+    <style name="AppTheme.TransStatusBar" />
 
     <style name="AppTheme.Translucent">
         <item name="android:windowBackground">@android:color/transparent</item>
