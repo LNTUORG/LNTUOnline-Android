@@ -135,10 +135,7 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="@drawable/gap_shadow_opposite" />
+            <View style="@style/AppWidget.ShadowGap.Opposite" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -258,10 +255,7 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="@drawable/gap_shadow" />
+            <View style="@style/AppWidget.ShadowGap" />
 
         </LinearLayout>
 
