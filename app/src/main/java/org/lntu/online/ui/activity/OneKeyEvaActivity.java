@@ -24,7 +24,7 @@ import org.lntu.online.ui.adapter.OneKeyEvaAdapter;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
-import org.lntu.online.util.ToastUtils;
+import org.lntu.online.ui.widget.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
