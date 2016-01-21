@@ -23,7 +23,6 @@ public final class LoginShared {
 
     private static String userId;
     private static String loginToken;
-    private static Boolean holdOnline;
 
     public static void login(Context context, LoginInfo info, boolean holdOnline) {
         SharedWrapper sharedWrapper = SharedWrapper.with(context, TAG);
@@ -32,14 +31,12 @@ public final class LoginShared {
         sharedWrapper.setBoolean(KEY_HOLD_ONLINE, holdOnline); // 是否保持在线状态
         userId = info.getUserId();
         loginToken = info.getLoginToken();
-        LoginShared.holdOnline = holdOnline;
     }
 
     public static void logout(Context context) {
         SharedWrapper.with(context, TAG).clear();
         userId = null;
         loginToken = null;
-        holdOnline = null;
     }
 
     public static String getUserId(Context context) {
@@ -57,10 +54,7 @@ public final class LoginShared {
     }
 
     public static boolean isHoldOnline(Context context) {
-        if (holdOnline == null) {
-            holdOnline = SharedWrapper.with(context, TAG).getBoolean(KEY_HOLD_ONLINE, false);
-        }
-        return holdOnline;
+        return SharedWrapper.with(context, TAG).getBoolean(KEY_HOLD_ONLINE, false);
     }
 
 
@@ -70,7 +64,7 @@ public final class LoginShared {
 
 
 
-    
+
     //=========
     // 缓存数据
     //=========
