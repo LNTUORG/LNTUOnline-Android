@@ -12,6 +12,7 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.CallbackAdapter;
 import org.lntu.online.storage.LoginShared;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.io.PrintWriter;
@@ -21,7 +22,7 @@ import java.io.Writer;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class CrashLogActivity extends AppCompatActivity {
+public class CrashLogActivity extends StatusBarActivity {
 
     @Bind(R.id.crash_log_toolbar)
     protected Toolbar toolbar;

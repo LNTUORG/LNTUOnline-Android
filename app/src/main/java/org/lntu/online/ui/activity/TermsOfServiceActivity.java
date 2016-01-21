@@ -7,12 +7,13 @@ import android.webkit.WebViewClient;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TermsOfServiceActivity extends BaseActivity {
+public class TermsOfServiceActivity extends StatusBarActivity {
 
     @Bind(R.id.terms_of_service_toolbar)
     protected Toolbar toolbar;

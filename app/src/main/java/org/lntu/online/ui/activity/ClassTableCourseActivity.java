@@ -8,13 +8,14 @@ import org.lntu.online.R;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.WeekMode;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.gson.GsonWrapper;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class ClassTableCourseActivity extends BaseActivity {
+public class ClassTableCourseActivity extends StatusBarActivity {
 
     @Bind(R.id.class_table_course_toolbar)
     protected Toolbar toolbar;

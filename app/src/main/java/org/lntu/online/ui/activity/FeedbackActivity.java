@@ -11,13 +11,14 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DialogCallback;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import retrofit.client.Response;
 
-public class FeedbackActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
+public class FeedbackActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
     @Bind(R.id.feedback_toolbar)
     protected Toolbar toolbar;

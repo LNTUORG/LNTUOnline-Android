@@ -22,6 +22,7 @@ import org.lntu.online.model.entity.Grades;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.GradesAdapter;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
@@ -31,7 +32,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class GradesActivity extends BaseActivity {
+public class GradesActivity extends StatusBarActivity {
 
     @Bind(R.id.grades_toolbar)
     protected Toolbar toolbar;

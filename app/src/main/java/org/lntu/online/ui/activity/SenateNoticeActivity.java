@@ -8,13 +8,14 @@ import android.webkit.WebViewClient;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SenateNoticeActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
+public class SenateNoticeActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
     private static final String URL = "http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100";
 

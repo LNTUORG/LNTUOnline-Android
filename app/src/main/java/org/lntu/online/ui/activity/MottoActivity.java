@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.base.BaseActivity;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.io.IOException;
@@ -15,7 +16,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MottoActivity extends BaseActivity {
+public class MottoActivity extends StatusBarActivity {
 
     @Bind(R.id.motto_toolbar)
     protected Toolbar toolbar;
