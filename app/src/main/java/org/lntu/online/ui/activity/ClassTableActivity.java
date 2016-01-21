@@ -18,6 +18,7 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
+import org.lntu.online.storage.CacheShared;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;
@@ -113,7 +114,7 @@ public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnM
         fmList.onDataSetInit(year, term, today);
         currentYear = year;
         currentTerm = term;
-        classTable = LoginShared.getClassTable(this, year, term);
+        classTable = CacheShared.getClassTable(this, year, term);
         if (classTable != null) {
             final Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
             fmPage.onDataSetUpdate(classTable, classTableMap);
@@ -173,7 +174,7 @@ public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnM
 
             @Override
             public void handleSuccess(ClassTable classTable, Response response) {
-                LoginShared.setClassTable(ClassTableActivity.this, classTable);
+                CacheShared.setClassTable(ClassTableActivity.this, classTable);
                 if (year == currentYear && term.equals(currentTerm)) { // 如果当前年级和学期没有改变
                     ClassTableActivity.this.classTable = classTable;
                     Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
