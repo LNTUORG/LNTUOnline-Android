@@ -22,7 +22,7 @@
                 android:src="@drawable/logo"
                 android:scaleType="fitCenter"
                 android:background="@color/color_primary"
-                android:elevation="2dp" />
+                android:elevation="@dimen/app_bar_elevation" />
 
             <LinearLayout
                 android:id="@+id/about_btn_version"

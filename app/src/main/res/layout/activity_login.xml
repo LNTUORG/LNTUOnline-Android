@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
-        android:elevation="4dp"
+        android:elevation="@dimen/app_bar_elevation"
         app:navigationIcon="@drawable/ic_account_circle_white_24dp"
         app:title="@string/login"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
