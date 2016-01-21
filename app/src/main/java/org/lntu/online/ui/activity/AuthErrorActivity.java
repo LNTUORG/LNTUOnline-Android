@@ -1,6 +1,5 @@
 package org.lntu.online.ui.activity;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +7,9 @@ import android.os.Bundle;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import org.lntu.online.R;
+import org.lntu.online.ui.base.FullLayoutActivity;
 
-public class AuthErrorActivity extends Activity {
+public class AuthErrorActivity extends FullLayoutActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
