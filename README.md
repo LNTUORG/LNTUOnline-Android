@@ -38,13 +38,13 @@ iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
 ## Screenshot ##
 
-![image](/art/n (1).png) ![image](/art/n (2).png)
+![image](/art/n_1.png) ![image](/art/n_2.png)
 
-![image](/art/n (3).png) ![image](/art/n (4).png)
+![image](/art/n_3.png) ![image](/art/n_4.png)
 
-![image](/art/n (5).png) ![image](/art/n (6).png)
+![image](/art/n_5.png) ![image](/art/n_6.png)
 
-![image](/art/n (7).png) ![image](/art/n (8).png)
+![image](/art/n_7.png) ![image](/art/n_8.png)
 
 ## Credits ##
 
