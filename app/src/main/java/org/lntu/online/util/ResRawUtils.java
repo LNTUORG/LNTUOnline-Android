@@ -1,19 +1,20 @@
 package org.lntu.online.util;
 
 import android.content.Context;
+import android.support.annotation.RawRes;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public final class DocumentUtils {
+public final class ResRawUtils {
 
-    private DocumentUtils() {}
+    private ResRawUtils() {}
 
-    public static String getString(Context context, int docRawId) {
+    public static String getString(Context context, @RawRes int rawId) {
         try {
-            InputStream is = context.getResources().openRawResource(docRawId);
+            InputStream is = context.getResources().openRawResource(rawId);
             BufferedReader reader = new BufferedReader(new InputStreamReader(is, "utf-8"));
             StringBuilder sb = new StringBuilder();
             String line;
@@ -24,7 +25,7 @@ public final class DocumentUtils {
             reader.close();
             return sb.toString();
         } catch (IOException e) {
-            return "文档读取失败。";
+            return "资源读取失败。";
         }
     }
 
