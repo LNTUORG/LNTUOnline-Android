@@ -16,12 +16,10 @@ public class AppController extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        if (context == null) {
-            context = this;
+        context = this;
 
-            if (!BuildConfig.DEBUG) {
-                Thread.setDefaultUncaughtExceptionHandler(new AppExceptionHandler(this));
-            }
+        if (!BuildConfig.DEBUG) {
+            Thread.setDefaultUncaughtExceptionHandler(new AppExceptionHandler(this));
         }
     }
 
