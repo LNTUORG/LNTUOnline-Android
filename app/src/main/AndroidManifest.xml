@@ -19,7 +19,7 @@
         <activity
             android:name="org.lntu.online.ui.activity.LaunchActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.FitsStatusBar.TranslucentNavigation"
+            android:theme="@style/AppTheme.TransStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize">
             <intent-filter>
@@ -56,21 +56,21 @@
         <activity
             android:name="org.lntu.online.ui.activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.FitsStatusBar"
+            android:theme="@style/AppTheme.TransStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
             android:name="org.lntu.online.ui.activity.StudentInfoActivity"
             android:label="@string/student_info"
-            android:theme="@style/AppTheme.FitsStatusBar"
+            android:theme="@style/AppTheme.TransStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
             android:name="org.lntu.online.ui.activity.ClassTableActivity"
             android:label="@string/my_class_table"
-            android:theme="@style/AppTheme.Toolbar"
+            android:theme="@style/AppTheme.ClassTable"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
@@ -157,7 +157,7 @@
 
         <activity
             android:name="com.umeng.update.UpdateDialogActivity"
-            android:theme="@style/AppTheme.Dialog"
+            android:theme="@style/AppDialog"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 

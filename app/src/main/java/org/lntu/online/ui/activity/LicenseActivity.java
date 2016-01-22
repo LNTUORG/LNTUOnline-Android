@@ -5,13 +5,14 @@ import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import org.lntu.online.R;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
-import org.lntu.online.util.DocumentUtils;
+import org.lntu.online.util.ResRawUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class LicenseActivity extends BaseActivity {
+public class LicenseActivity extends StatusBarActivity {
 
     @Bind(R.id.license_toolbar)
     protected Toolbar toolbar;
@@ -27,7 +28,7 @@ public class LicenseActivity extends BaseActivity {
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        tvLicense.setText(DocumentUtils.getString(this, R.raw.open_source));
+        tvLicense.setText(ResRawUtils.getString(this, R.raw.open_source));
     }
 
 }

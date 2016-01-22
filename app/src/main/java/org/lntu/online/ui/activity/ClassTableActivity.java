@@ -18,7 +18,9 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
+import org.lntu.online.storage.CacheShared;
 import org.lntu.online.storage.LoginShared;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.fragment.ClassTablePageFragment;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
@@ -32,7 +34,7 @@ import butterknife.OnClick;
 import butterknife.OnItemSelected;
 import retrofit.client.Response;
 
-public class ClassTableActivity extends BaseActivity implements Toolbar.OnMenuItemClickListener {
+public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
     @Bind(R.id.class_table_toolbar)
     protected Toolbar toolbar;
@@ -91,7 +93,9 @@ public class ClassTableActivity extends BaseActivity implements Toolbar.OnMenuIt
      */
     private List<String> getYearTermList(LocalDate today) {
         int startYear = 2000 + Integer.parseInt(LoginShared.getUserId(this).substring(0, 2));
-        int endYear = today.getYear() < startYear ? startYear : today.getYear();
+        int endYear = today.getYear();
+        endYear = today.getMonthOfYear() < 2 ? endYear - 1 : endYear;
+        endYear = endYear < startYear ? startYear : endYear;
         String endTerm = (today.getMonthOfYear() >= 2 && today.getMonthOfYear() < 8) ? "春" : "秋";
         List<String> yearTermList = new ArrayList<>();
         for (int n = 0; n < endYear - startYear; n++) {
@@ -112,7 +116,7 @@ public class ClassTableActivity extends BaseActivity implements Toolbar.OnMenuIt
         fmList.onDataSetInit(year, term, today);
         currentYear = year;
         currentTerm = term;
-        classTable = LoginShared.getClassTable(this, year, term);
+        classTable = CacheShared.getClassTable(this, year, term);
         if (classTable != null) {
             final Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();
             fmPage.onDataSetUpdate(classTable, classTableMap);
@@ -172,7 +176,7 @@ public class ClassTableActivity extends BaseActivity implements Toolbar.OnMenuIt
 
             @Override
             public void handleSuccess(ClassTable classTable, Response response) {
-                LoginShared.setClassTable(ClassTableActivity.this, classTable);
+                CacheShared.setClassTable(ClassTableActivity.this, classTable);
                 if (year == currentYear && term.equals(currentTerm)) { // 如果当前年级和学期没有改变
                     ClassTableActivity.this.classTable = classTable;
                     Map<String, List<ClassTable.CourseWrapper>> classTableMap = classTable.getMap();

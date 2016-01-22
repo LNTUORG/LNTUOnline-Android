@@ -1,4 +1,4 @@
-package org.lntu.online.util;
+package org.lntu.online.ui.widget;
 
 import android.content.Context;
 import android.widget.Toast;

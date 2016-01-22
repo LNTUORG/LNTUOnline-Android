@@ -20,8 +20,10 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
+import org.lntu.online.storage.CacheShared;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
+import org.lntu.online.ui.base.DrawerLayoutActivity;
 import org.lntu.online.ui.listener.NavigationOpenClickListener;
 import org.lntu.online.util.ShipUtils;
 
@@ -30,13 +32,20 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends DrawerLayoutActivity {
 
     public static final String KEY_BACK_TO_ENTRY = "backToEntry";
 
     // 抽屉导航布局
     @Bind(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
+
+    // 状态栏
+    @Bind(R.id.main_center_adapt_status_bar)
+    protected View centerAdaptStatusBar;
+
+    @Bind(R.id.main_nav_adapt_status_bar)
+    protected View navAdaptStatusBar;
 
     // 导航部分的个人信息
     @Bind(R.id.main_nav_img_avatar)
@@ -67,9 +76,11 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        adaptStatusBar(centerAdaptStatusBar);
+        adaptStatusBar(navAdaptStatusBar);
+
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
         drawerLayout.setDrawerListener(drawerListener);
-
         toolbar.setNavigationOnClickListener(new NavigationOpenClickListener(drawerLayout));
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
@@ -82,8 +93,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void onNewIntent(Intent intent) {
-        handleIntent(intent);
         super.onNewIntent(intent);
+        handleIntent(intent);
     }
 
     /**
@@ -112,7 +123,7 @@ public class MainActivity extends BaseActivity {
      * 检测是否需要并且更新用户信息
      */
     private void checkAndUpdateUserInfo() {
-        Student student = LoginShared.getStudent(this);
+        Student student = CacheShared.getStudent(this);
         if (student == null) {
             getStudentAsyncTask();
         } else {
@@ -138,7 +149,7 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void success(Student student, Response response) {
-                LoginShared.setStudent(MainActivity.this, student);
+                CacheShared.setStudent(MainActivity.this, student);
                 updateUserInfoViews(student);
             }
 

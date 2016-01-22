@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/color_primary"
-            android:elevation="4dp"
+            android:elevation="@dimen/app_bar_elevation"
             app:navigationIcon="@drawable/ic_arrow_back_white_24dp"
             app:title="@string/grades_query"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -43,7 +43,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="14sp"
                     android:background="@color/blue_light"
-                    android:elevation="4dp"
+                    android:elevation="@dimen/app_bar_elevation"
                     tools:text="您的平均学分绩为 1.523" />
 
                 <android.support.v7.widget.RecyclerView
@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="@string/network_data_loading"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -112,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:text="@string/network_data_load_failed"
-                    android:textColor="@color/text_color_secondary"
+                    android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
 
             </LinearLayout>
@@ -135,10 +135,7 @@
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="@drawable/gap_shadow_opposite" />
+            <View style="@style/AppWidget.ShadowGap.Opposite" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -157,7 +154,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="@string/year_"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <Spinner
@@ -187,7 +184,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="@string/term_"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <Spinner
@@ -217,7 +214,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="@string/score_level_"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <Spinner
@@ -247,7 +244,7 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginRight="16dp"
                     android:text="@string/score_display_"
-                    android:textColor="@color/text_color_primary"
+                    android:textColor="?android:attr/textColorPrimary"
                     android:textSize="16sp" />
 
                 <Spinner
@@ -258,10 +255,7 @@
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:background="@drawable/gap_shadow" />
+            <View style="@style/AppWidget.ShadowGap" />
 
         </LinearLayout>
 

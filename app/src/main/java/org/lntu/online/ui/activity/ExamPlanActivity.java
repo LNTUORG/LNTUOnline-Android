@@ -15,6 +15,7 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ExamPlan;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.ExamPlanAdapter;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
@@ -25,7 +26,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class ExamPlanActivity extends BaseActivity {
+public class ExamPlanActivity extends StatusBarActivity {
 
     @Bind(R.id.exam_plan_toolbar)
     protected Toolbar toolbar;

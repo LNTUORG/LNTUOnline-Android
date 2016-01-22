@@ -13,14 +13,15 @@ import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.UserType;
 import org.lntu.online.storage.LoginShared;
-import org.lntu.online.util.ToastUtils;
+import org.lntu.online.ui.base.StatusBarActivity;
+import org.lntu.online.ui.widget.ToastUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends StatusBarActivity {
 
     @Bind(R.id.login_edt_user_id)
     protected MaterialEditText edtUserId;

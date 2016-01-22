@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/selectable_item_background">
+    android:background="?attr/selectableItemBackgroundGeneral">
 
     <ImageView
         android:id="@+id/main_item_img_icon"
@@ -21,8 +21,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:textColor="@color/text_color_primary"
-        android:textSize="18sp"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
         android:gravity="center"
         tools:text="标题文本" />
 

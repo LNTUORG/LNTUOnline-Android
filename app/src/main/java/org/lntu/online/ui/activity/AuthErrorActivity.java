@@ -1,6 +1,5 @@
 package org.lntu.online.ui.activity;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +7,9 @@ import android.os.Bundle;
 import com.afollestad.materialdialogs.MaterialDialog;
 
 import org.lntu.online.R;
+import org.lntu.online.ui.base.FullLayoutActivity;
 
-public class AuthErrorActivity extends Activity {
+public class AuthErrorActivity extends FullLayoutActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,7 @@ public class AuthErrorActivity extends Activity {
         new MaterialDialog.Builder(this)
                 .backgroundColorRes(android.R.color.white)
                 .title(R.string.auth_error)
-                .titleColorRes(R.color.text_color_primary)
                 .content(R.string.auth_error_tip)
-                .contentColorRes(R.color.text_color_secondary)
                 .positiveText(R.string.ok)
                 .positiveColorRes(R.color.color_accent)
                 .dismissListener(new DialogInterface.OnDismissListener() {

@@ -13,7 +13,7 @@
         android:paddingBottom="4dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
-        android:background="@drawable/selectable_item_background_transparent">
+        android:background="?attr/selectableItemBackground">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:drawableStart="@drawable/ic_class_grey600_18dp"
                 android:drawableLeft="@drawable/ic_class_grey600_18dp"
                 android:drawablePadding="16dp"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp"
                 android:gravity="center_vertical"
                 tools:text="概率论与数理统计" />
@@ -41,7 +41,7 @@
                 android:drawableStart="@drawable/ic_person_grey600_18dp"
                 android:drawableLeft="@drawable/ic_person_grey600_18dp"
                 android:drawablePadding="16dp"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp"
                 android:gravity="center_vertical"
                 tools:text="张三" />
@@ -54,7 +54,7 @@
                 android:drawableStart="@drawable/ic_location_on_grey600_18dp"
                 android:drawableLeft="@drawable/ic_location_on_grey600_18dp"
                 android:drawablePadding="16dp"
-                android:textColor="@color/text_color_secondary"
+                android:textColor="?android:attr/textColorSecondary"
                 android:textSize="14sp"
                 android:gravity="center_vertical"
                 tools:text="静远118" />
@@ -73,6 +73,6 @@
 
     </FrameLayout>
 
-    <View style="@style/AppTheme.DeepLine" />
+    <View style="@style/AppWidget.DeepLine" />
 
 </LinearLayout>

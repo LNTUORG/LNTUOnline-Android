@@ -15,6 +15,7 @@ import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.UnpassCourse;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.UnpassCourseAdapter;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.List;
@@ -24,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class UnpassCourseActivity extends BaseActivity {
+public class UnpassCourseActivity extends StatusBarActivity {
 
     @Bind(R.id.unpass_course_toolbar)
     protected Toolbar toolbar;

@@ -14,15 +14,17 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.Student;
+import org.lntu.online.storage.CacheShared;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.StudentInfoAdapter;
+import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import retrofit.client.Response;
 
-public class StudentInfoActivity extends BaseActivity {
+public class StudentInfoActivity extends StatusBarActivity {
 
     @Bind(R.id.student_info_toolbar)
     protected Toolbar toolbar;
@@ -44,7 +46,7 @@ public class StudentInfoActivity extends BaseActivity {
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        student = LoginShared.getStudent(this);
+        student = CacheShared.getStudent(this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new StudentInfoAdapter(this, student);
@@ -65,7 +67,7 @@ public class StudentInfoActivity extends BaseActivity {
 
             @Override
             public void success(Student student, Response response) {
-                LoginShared.setStudent(StudentInfoActivity.this, student);
+                CacheShared.setStudent(StudentInfoActivity.this, student);
                 StudentInfoActivity.this.student = student;
                 loadAvatar(student);
                 adapter.setStudent(student);
