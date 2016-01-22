@@ -20,9 +20,7 @@ import retrofit.http.POST;
 import retrofit.http.Query;
 
 public interface ApiService {
-
-    String HEADER_AUTHORIZATION = "Authorization";
-
+    
     @FormUrlEncoded
     @POST("/account/login")
     void login(
@@ -33,13 +31,13 @@ public interface ApiService {
 
     @GET("/student/~self")
     void getStudent(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             Callback<Student> callback
     );
 
     @GET("/class-table/~self")
     void getClassTable(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             @Query("year") int year,
             @Query("term") String term,
             Callback<ClassTable> callback
@@ -47,38 +45,38 @@ public interface ApiService {
 
     @GET("/exam-plan/~self")
     void getExamPlanList(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             Callback<List<ExamPlan>> callback
     );
 
     @GET("/grades/~self")
     void getGrades(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             Callback<Grades> callback
     );
 
     @GET("/unpass-course/~self")
     void getUnpassCourseList(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             Callback<List<UnpassCourse>> callback
     );
 
     @GET("/skill-test-score/~self")
     void getSkillTestScoreList(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             Callback<List<SkillTestScore>> callback
     );
 
     @GET("/course-eva-info/~self")
     void getCourseEvaInfoList(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             Callback<List<CourseEvaInfo>> callback
     );
     
     @FormUrlEncoded
     @POST("/course-eva-info/~self/do:eva")
     void doCourseEva(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             @Field("evaKey") String evaKey,
             Callback<Void> callback
     );
@@ -94,7 +92,7 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("/feedback/advice")
     void advice(
-            @Header(HEADER_AUTHORIZATION) String loginToken,
+            @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             @Field("content") String content,
             Callback<Void> callback
     );
