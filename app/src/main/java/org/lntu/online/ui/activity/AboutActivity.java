@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
-import com.umeng.update.UmengUpdateAgent;
-
 import org.lntu.online.BuildConfig;
 import org.lntu.online.R;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
+import org.lntu.online.util.UpdateUtils;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,8 +23,8 @@ public class AboutActivity extends StatusBarActivity {
     @Bind(R.id.about_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.about_tv_version_name)
-    protected TextView tvVersionName;
+    @Bind(R.id.about_tv_version)
+    protected TextView tvVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +34,12 @@ public class AboutActivity extends StatusBarActivity {
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        tvVersionName.setText("当前版本：" + VERSION_TEXT);
+        tvVersion.setText(VERSION_TEXT);
     }
 
     @OnClick(R.id.about_btn_version)
     protected void onBtnVersionClick() {
-        UmengUpdateAgent.forceUpdate(this);
+        UpdateUtils.forceUpdate(this);
     }
 
     @OnClick(R.id.about_btn_app_homepage)

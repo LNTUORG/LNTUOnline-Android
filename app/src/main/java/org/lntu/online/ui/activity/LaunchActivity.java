@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import com.umeng.update.UmengUpdateAgent;
-
 import org.lntu.online.R;
 import org.lntu.online.storage.LoginShared;
-import org.lntu.online.ui.base.BaseActivity;
 import org.lntu.online.ui.base.FullLayoutActivity;
 import org.lntu.online.util.HandlerUtils;
+import org.lntu.online.util.UpdateUtils;
 
 public class LaunchActivity extends FullLayoutActivity implements Runnable {
 
@@ -29,7 +27,7 @@ public class LaunchActivity extends FullLayoutActivity implements Runnable {
             } else {
                 startActivity(new Intent(this, MainActivity.class));
             }
-            UmengUpdateAgent.update(this); // 友盟更新
+            UpdateUtils.update(this); // 更新检查
             finish();
         }
     }

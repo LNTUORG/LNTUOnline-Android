@@ -29,7 +29,8 @@
                 android:layout_marginRight="-16dp"
                 android:src="@drawable/main_nav_header_bg_image"
                 android:scaleType="fitCenter"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:clickable="true" />
 
             <View
                 android:id="@+id/main_nav_adapt_status_bar"
