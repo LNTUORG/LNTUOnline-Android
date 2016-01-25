@@ -29,15 +29,6 @@ public class FaqActivity extends StatusBarActivity {
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         webView.loadUrl("http://takwolf.com/lntuonline/faq");
-        webView.setWebViewClient(new WebViewClient() {
-
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-
-        });
     }
 
 }
