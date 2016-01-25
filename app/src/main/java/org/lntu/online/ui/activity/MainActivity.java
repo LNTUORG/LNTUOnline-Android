@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,7 +33,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
-public class MainActivity extends DrawerLayoutActivity {
+public class MainActivity extends DrawerLayoutActivity implements Toolbar.OnMenuItemClickListener {
 
     public static final String KEY_BACK_TO_ENTRY = "backToEntry";
 
@@ -82,6 +83,8 @@ public class MainActivity extends DrawerLayoutActivity {
         drawerLayout.setDrawerShadow(R.drawable.navigation_drawer_shadow, GravityCompat.START);
         drawerLayout.setDrawerListener(drawerListener);
         toolbar.setNavigationOnClickListener(new NavigationOpenClickListener(drawerLayout));
+        toolbar.inflateMenu(R.menu.main);
+        toolbar.setOnMenuItemClickListener(this);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new MainAdapter(this));
@@ -241,6 +244,20 @@ public class MainActivity extends DrawerLayoutActivity {
             } else {
                 finish();
             }
+        }
+    }
+
+    /**
+     * 常见问题
+     */
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_faq:
+                startActivity(new Intent(this, FaqActivity.class));
+                return true;
+            default:
+                return false;
         }
     }
 
