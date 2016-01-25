@@ -84,7 +84,7 @@
     <string name="male_voice">男声朗读</string>
     <string name="female_voice">女生朗读</string>
 
-    <string name="version_check_update">检查更新</string>
+    <string name="current_version">当前版本</string>
     <string name="app_homepage">客户端官方主页</string>
     <string name="app_homepage_content">http://online.lntu.org</string>
     <string name="lntu_online_homepage">教务在线主页</string>
