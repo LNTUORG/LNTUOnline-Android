@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 public class ProgressDialog extends AppCompatDialog {
 
     public ProgressDialog(Context context) {
-        super(context, R.style.AppDialog);
+        super(context);
         init();
     }
 
