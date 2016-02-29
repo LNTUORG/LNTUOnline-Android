@@ -1,6 +1,8 @@
 package org.lntu.online.ui.dialog;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
@@ -14,7 +16,6 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import org.lntu.online.R;
 
 import org.joda.time.LocalDate;
@@ -54,7 +55,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
 
     private Context context;
     private LayoutInflater inflater;
-    private MaterialDialog dialog;
+    private AlertDialog dialog;
     private LocalDate currentDate;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -64,21 +65,21 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
         this.context = context;
         inflater = LayoutInflater.from(context);
 
-        dialog = new MaterialDialog.Builder(context)
-                .customView(R.layout.dialog_class_table_time, false)
-                .positiveText(R.string.confirm)
-                .callback(new MaterialDialog.ButtonCallback() {
+        View view = inflater.inflate(R.layout.dialog_class_table_time, null);
+        dialog = DialogUtils.createAlertDialogBuilder(context)
+                .setView(view)
+                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
 
                     @Override
-                    public void onPositive(MaterialDialog dialog) {
+                    public void onClick(DialogInterface dialog, int which) {
                         if (listener != null) {
                             listener.onDialogFinish(currentDate);
                         }
                     }
 
                 })
-                .build();
-        ButterKnife.bind(this, dialog.getCustomView());
+                .create();
+        ButterKnife.bind(this, view);
 
         recyclerView.setLayoutManager(new GridLayoutManager(context, 7, GridLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(this);

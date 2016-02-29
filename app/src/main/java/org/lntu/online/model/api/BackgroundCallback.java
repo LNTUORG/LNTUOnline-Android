@@ -1,15 +1,16 @@
 package org.lntu.online.model.api;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import org.lntu.online.R;
 
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.activity.AuthErrorActivity;
 import org.lntu.online.ui.activity.OneKeyEvaActivity;
+import org.lntu.online.ui.dialog.DialogUtils;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -45,19 +46,18 @@ public abstract class BackgroundCallback<T> implements Callback<T> {
                 handleFailure(context.getString(R.string.network_remote_invoke_error_tip));
                 break;
             case NOT_EVALUATE:
-                new MaterialDialog.Builder(context)
-                        .title("提示")
-                        .content("您本学期还没有完成评课，暂时无法查看成绩。")
-                        .positiveText("去评课")
-                        .negativeText("取消")
-                        .callback(new MaterialDialog.ButtonCallback() {
+                DialogUtils.createAlertDialogBuilder(context)
+                        .setTitle("提示")
+                        .setMessage("您本学期还没有完成评课，暂时无法查看成绩。")
+                        .setPositiveButton("去评课", new DialogInterface.OnClickListener() {
 
                             @Override
-                            public void onPositive(MaterialDialog dialog) {
+                            public void onClick(DialogInterface dialog, int which) {
                                 context.startActivity(new Intent(context, OneKeyEvaActivity.class));
                             }
 
                         })
+                        .setNegativeButton("取消", null)
                         .show();
                 handleFailure("您本学期还没有完成评课，暂时无法查看成绩");
                 break;

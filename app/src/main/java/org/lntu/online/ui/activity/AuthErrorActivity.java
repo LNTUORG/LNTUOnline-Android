@@ -4,10 +4,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-
 import org.lntu.online.R;
 import org.lntu.online.ui.base.FullLayoutActivity;
+import org.lntu.online.ui.dialog.DialogUtils;
 
 public class AuthErrorActivity extends FullLayoutActivity {
 
@@ -15,13 +14,11 @@ public class AuthErrorActivity extends FullLayoutActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        new MaterialDialog.Builder(this)
-                .backgroundColorRes(android.R.color.white)
-                .title(R.string.auth_error)
-                .content(R.string.auth_error_tip)
-                .positiveText(R.string.ok)
-                .positiveColorRes(R.color.color_accent)
-                .dismissListener(new DialogInterface.OnDismissListener() {
+        DialogUtils.createAlertDialogBuilder(this)
+                .setTitle(R.string.auth_error)
+                .setMessage(R.string.auth_error_tip)
+                .setPositiveButton(R.string.ok, null)
+                .setOnDismissListener(new DialogInterface.OnDismissListener() {
 
                     @Override
                     public void onDismiss(DialogInterface dialog) {

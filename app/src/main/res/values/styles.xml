@@ -22,14 +22,16 @@
         <item name="android:windowAnimationStyle">@android:style/Animation</item>
     </style>
 
-    <!-- App Theme Dialog -->
+    <!-- App Dialog -->
     <style name="AppDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
         <item name="colorAccent">@color/color_accent</item>
+        <item name="windowMinWidthMajor">@fraction/dialog_min_width_major</item>
+        <item name="windowMinWidthMinor">@fraction/dialog_min_width_minor</item>
     </style>
 
-    <!-- AppWidget -->
+    <!-- App Widget -->
     <style name="AppWidget" parent="Theme.AppCompat.Light" />
 
     <!-- Deep Line -->

@@ -2,23 +2,22 @@ package org.lntu.online.model.api;
 
 import android.content.Context;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import org.lntu.online.R;
 import org.lntu.online.model.entity.ErrorInfo;
+import org.lntu.online.ui.dialog.DialogUtils;
+import org.lntu.online.ui.dialog.ProgressDialog;
 
 import retrofit.client.Response;
 
 public class DialogCallback<T> extends DefaultCallback<T> {
 
-    private MaterialDialog progressDialog;
+    private ProgressDialog progressDialog;
 
     public DialogCallback(Context context) {
         super(context);
-        progressDialog = new MaterialDialog.Builder(context)
-                .content(R.string.networking)
-                .progress(true, 0)
-                .cancelable(false)
-                .build();
+        progressDialog = DialogUtils.createProgressDialog(context);
+        progressDialog.setMessage(R.string.networking);
+        progressDialog.setCancelable(false);
         progressDialog.show();
     }
 
