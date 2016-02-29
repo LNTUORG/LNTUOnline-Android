@@ -1,7 +1,9 @@
 package org.lntu.online.ui.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
@@ -20,6 +22,9 @@ public class AboutActivity extends StatusBarActivity {
 
     public static final String VERSION_TEXT = BuildConfig.VERSION_NAME + "-build-" + BuildConfig.VERSION_CODE;
 
+    @Bind(R.id.about_layout_app_bar)
+    protected AppBarLayout layoutAppBar;
+
     @Bind(R.id.about_toolbar)
     protected Toolbar toolbar;
 
@@ -35,6 +40,16 @@ public class AboutActivity extends StatusBarActivity {
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
         tvVersion.setText(VERSION_TEXT);
+
+        layoutAppBar.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                float p = 1 - (appBarLayout.getTotalScrollRange() + verticalOffset) / (float) appBarLayout.getTotalScrollRange();
+                toolbar.setTitleTextColor(Color.argb((int) (255 * p), 255, 255, 255));
+            }
+
+        });
     }
 
     @OnClick(R.id.about_btn_version)
