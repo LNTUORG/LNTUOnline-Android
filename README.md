@@ -62,8 +62,6 @@ iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
 - [MaterialEditText](https://github.com/rengwuxian/MaterialEditText)
 
-- [Material Dialogs](https://github.com/afollestad/material-dialogs)
-
 - [NineOldAndroids](http://nineoldandroids.com)
 
 - [FloatingActionButton](https://github.com/makovkastar/FloatingActionButton)

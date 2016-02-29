@@ -1,5 +1,6 @@
 package org.lntu.online.ui.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.squareup.picasso.Picasso;
 
 import org.lntu.online.R;
@@ -25,6 +25,7 @@ import org.lntu.online.storage.CacheShared;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.MainAdapter;
 import org.lntu.online.ui.base.DrawerLayoutActivity;
+import org.lntu.online.ui.dialog.DialogUtils;
 import org.lntu.online.ui.listener.NavigationOpenClickListener;
 import org.lntu.online.util.ShipUtils;
 
@@ -212,20 +213,19 @@ public class MainActivity extends DrawerLayoutActivity implements Toolbar.OnMenu
      */
     @OnClick(R.id.main_nav_btn_logout)
     protected void onBtnLogoutClick() {
-        new MaterialDialog.Builder(this)
-                .content(R.string.logout_tip)
-                .positiveText(R.string.logout)
-                .negativeText(R.string.cancel)
-                .callback(new MaterialDialog.ButtonCallback() {
+        DialogUtils.createAlertDialogBuilder(this)
+                .setMessage(R.string.logout_tip)
+                .setPositiveButton(R.string.logout, new DialogInterface.OnClickListener() {
 
                     @Override
-                    public void onPositive(MaterialDialog dialog) {
+                    public void onClick(DialogInterface dialog, int which) {
                         LoginShared.logout(MainActivity.this);
                         startActivity(new Intent(MainActivity.this, LoginActivity.class));
                         finish();
                     }
 
                 })
+                .setNegativeButton(R.string.cancel, null)
                 .show();
     }
 

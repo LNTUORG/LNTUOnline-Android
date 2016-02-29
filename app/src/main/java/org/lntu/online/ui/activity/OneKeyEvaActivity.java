@@ -12,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.TextView;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.melnykov.fab.FloatingActionButton;
 
 import org.lntu.online.R;
@@ -22,6 +21,8 @@ import org.lntu.online.model.entity.CourseEvaInfo;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.adapter.OneKeyEvaAdapter;
 import org.lntu.online.ui.base.StatusBarActivity;
+import org.lntu.online.ui.dialog.DialogUtils;
+import org.lntu.online.ui.dialog.ProgressDialog;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
 import org.lntu.online.ui.widget.ToastUtils;
@@ -134,42 +135,39 @@ public class OneKeyEvaActivity extends StatusBarActivity {
             }
         }
         if (n <= 0) { //不需要评估
-            new MaterialDialog.Builder(this)
-                    .content("您的课程都已经评价完成了。")
-                    .positiveText("确定")
+            DialogUtils.createAlertDialogBuilder(this)
+                    .setMessage("您的课程都已经评价完成了。")
+                    .setPositiveButton("确定", null)
                     .show();
         } else { //需要评估
-            new MaterialDialog.Builder(this)
-                    .content("您有" + n + "门课程需要评价。只有所有的课程完成评价之后，才能够正常查询成绩信息。点击【评价】按钮将会授权应用为您自动全部评价为好评。您也可以通过浏览器登录教务在线手动评价。\n\n您是否授权应用为您自动评价课程呢？")
-                    .positiveText("评价")
-                    .negativeText("取消")
-                    .callback(new MaterialDialog.ButtonCallback() {
+            DialogUtils.createAlertDialogBuilder(this)
+                    .setMessage("您有" + n + "门课程需要评价。只有所有的课程完成评价之后，才能够正常查询成绩信息。点击【评价】按钮将会授权应用为您自动全部评价为好评。您也可以通过浏览器登录教务在线手动评价。\n\n您是否授权应用为您自动评价课程呢？")
+                    .setPositiveButton("评价", new DialogInterface.OnClickListener() {
 
                         @Override
-                        public void onPositive(MaterialDialog dialog) {
-                            MaterialDialog progressDialog = new MaterialDialog.Builder(OneKeyEvaActivity.this)
-                                    .content(R.string.networking)
-                                    .progress(true, 0)
-                                    .cancelListener(new DialogInterface.OnCancelListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            ProgressDialog progressDialog = DialogUtils.createProgressDialog(OneKeyEvaActivity.this);
+                            progressDialog.setMessage(R.string.networking);
+                            progressDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
 
-                                        @Override
-                                        public void onCancel(DialogInterface dialog) {
-                                            ToastUtils.with(OneKeyEvaActivity.this).show("评课任务已停止");
-                                        }
+                                @Override
+                                public void onCancel(DialogInterface dialog) {
+                                    ToastUtils.with(OneKeyEvaActivity.this).show("评课任务已停止");
+                                }
 
-                                    })
-                                    .build();
+                            });
                             progressDialog.setCanceledOnTouchOutside(false);
                             progressDialog.show();
                             startEvaCourse(0, progressDialog);
                         }
 
                     })
+                    .setNegativeButton("取消", null)
                     .show();
         }
     }
 
-    private void startEvaCourse(final int current, final MaterialDialog progressDialog) {
+    private void startEvaCourse(final int current, final ProgressDialog progressDialog) {
         if (current == infoList.size()) { //评价已经完成
             progressDialog.dismiss();
             int n = 0;
@@ -179,28 +177,29 @@ public class OneKeyEvaActivity extends StatusBarActivity {
                 }
             }
             if (n <= 0) { //不需要评估
-                new MaterialDialog.Builder(this)
-                        .content("您的课程都已经评价完成了。\n不给我们一个好评吗？")
-                        .positiveText("给好评")
-                        .negativeText("不评价")
-                        .callback(new MaterialDialog.ButtonCallback() {
+                DialogUtils.createAlertDialogBuilder(this)
+                        .setMessage("您的课程都已经评价完成了。\n不给我们一个好评吗？")
+                        .setPositiveButton("给好评", new DialogInterface.OnClickListener() {
 
                             @Override
-                            public void onPositive(MaterialDialog dialog) {
+                            public void onClick(DialogInterface dialog, int which) {
                                 ShipUtils.openInAppStore(OneKeyEvaActivity.this);
                             }
 
+                        })
+                        .setNegativeButton("不评价", new DialogInterface.OnClickListener() {
+
                             @Override
-                            public void onNegative(MaterialDialog dialog) {
+                            public void onClick(DialogInterface dialog, int which) {
                                 ToastUtils.with(OneKeyEvaActivity.this).show("呜呜呜~~~o(>_<)o");
                             }
 
                         })
                         .show();
             } else { //需要评估
-                new MaterialDialog.Builder(this)
-                        .content("您有" + n + "门课程评价失败，您可以再试一次。")
-                        .positiveText("确定")
+                DialogUtils.createAlertDialogBuilder(this)
+                        .setMessage("您有" + n + "门课程评价失败，您可以再试一次。")
+                        .setPositiveButton("确定", null)
                         .show();
             }
         } else { //没评完
@@ -208,7 +207,7 @@ public class OneKeyEvaActivity extends StatusBarActivity {
             if (info.isDone()) { //不需要评价，跳过
                 startEvaCourse(current + 1, progressDialog);
             } else { //需要评价
-                progressDialog.setContent("正在评价：" + info.getName());
+                progressDialog.setMessage("正在评价：" + info.getName());
                 ApiClient.service.doCourseEva(LoginShared.getLoginToken(this), info.getEvaKey(), new Callback<Void>() {
 
                     @Override
