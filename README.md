@@ -50,9 +50,9 @@ iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
 - [Butter Knife](https://github.com/JakeWharton/butterknife)
 
-- [Retrofit](http://square.github.io/retrofit)
-
 - [OkHttp](http://square.github.io/okhttp)
+
+- [Retrofit](http://square.github.io/retrofit)
 
 - [Picasso](http://square.github.io/picasso)
 
