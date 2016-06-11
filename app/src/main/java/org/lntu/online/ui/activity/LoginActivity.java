@@ -23,13 +23,13 @@ import retrofit.client.Response;
 
 public class LoginActivity extends StatusBarActivity {
 
-    @BindView(R.id.login_edt_user_id)
+    @BindView(R.id.edt_user_id)
     protected MaterialEditText edtUserId;
 
-    @BindView(R.id.login_edt_pwd)
+    @BindView(R.id.edt_pwd)
     protected MaterialEditText edtPwd;
 
-    @BindView(R.id.login_cb_hold_online)
+    @BindView(R.id.cb_hold_online)
     protected CheckBox cbHoldOnline;
 
     @Override
@@ -39,7 +39,7 @@ public class LoginActivity extends StatusBarActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick(R.id.login_btn_login)
+    @OnClick(R.id.btn_login)
     protected void onBtnLoginClick() {
         if (edtUserId.getText().length() < 10) {
             edtUserId.setError("学号长度为10位");
@@ -85,7 +85,7 @@ public class LoginActivity extends StatusBarActivity {
         });
     }
 
-    @OnClick(R.id.login_btn_tos)
+    @OnClick(R.id.btn_tos)
     protected void onBtnAgreementClick() {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
     }

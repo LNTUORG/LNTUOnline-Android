@@ -16,34 +16,34 @@ import butterknife.ButterKnife;
 
 public class ClassTableCourseActivity extends StatusBarActivity {
 
-    @BindView(R.id.class_table_course_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.class_table_course_tv_name)
+    @BindView(R.id.tv_name)
     protected TextView tvName;
 
-    @BindView(R.id.class_table_course_tv_num)
+    @BindView(R.id.tv_num)
     protected TextView tvNum;
 
-    @BindView(R.id.class_table_course_tv_credit)
+    @BindView(R.id.tv_credit)
     protected TextView tvCredit;
 
-    @BindView(R.id.class_table_course_tv_teacher)
+    @BindView(R.id.tv_teacher)
     protected TextView tvTeacher;
 
-    @BindView(R.id.class_table_course_tv_time)
+    @BindView(R.id.tv_time)
     protected TextView tvTime;
 
-    @BindView(R.id.class_table_course_tv_select_type)
+    @BindView(R.id.tv_select_type)
     protected TextView tvSelectType;
 
-    @BindView(R.id.class_table_course_tv_test_mode)
+    @BindView(R.id.tv_test_mode)
     protected TextView tvTestMode;
 
-    @BindView(R.id.class_table_course_tv_exam_type)
+    @BindView(R.id.tv_exam_type)
     protected TextView tvExamType;
 
-    @BindView(R.id.class_table_course_tv_times_and_places)
+    @BindView(R.id.tv_times_and_places)
     protected TextView tvTimesAndPlaces;
 
     @Override

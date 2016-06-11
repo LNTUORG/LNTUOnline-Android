@@ -30,7 +30,7 @@ public class ProgressDialog extends AppCompatDialog {
         init();
     }
 
-    @BindView(R.id.dialog_progress_tv_message)
+    @BindView(R.id.tv_message)
     protected TextView tvMessage;
 
     private void init() {

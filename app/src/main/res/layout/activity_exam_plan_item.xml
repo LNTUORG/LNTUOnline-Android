@@ -7,16 +7,16 @@
     android:background="@android:color/white">
 
     <LinearLayout
-        android:id="@+id/exam_plan_item_layout_start"
+        android:id="@+id/layout_start"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toStartOf="@+id/exam_plan_item_layout_end"
-        android:layout_toLeftOf="@+id/exam_plan_item_layout_end"
+        android:layout_toStartOf="@+id/layout_end"
+        android:layout_toLeftOf="@+id/layout_end"
         android:padding="8dp"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/exam_plan_item_tv_course"
+            android:id="@+id/tv_course"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="?android:attr/textColorPrimary"
@@ -24,7 +24,7 @@
             tools:text="概率论与数理统计" />
 
         <TextView
-            android:id="@+id/exam_plan_item_tv_time"
+            android:id="@+id/tv_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -37,7 +37,7 @@
             tools:text="2015&#8211;03&#8211;07&#160;09:00&#8211;11:00" />
 
         <TextView
-            android:id="@+id/exam_plan_item_tv_location"
+            android:id="@+id/tv_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -52,17 +52,17 @@
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/exam_plan_item_layout_end"
+        android:id="@+id/layout_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/exam_plan_item_layout_start"
-        android:layout_alignBottom="@+id/exam_plan_item_layout_start"
+        android:layout_alignTop="@+id/layout_start"
+        android:layout_alignBottom="@+id/layout_start"
         android:padding="4dp">
 
         <ImageView
-            android:id="@+id/exam_plan_item_icon_finish"
+            android:id="@+id/icon_finish"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="top|end"
@@ -72,7 +72,7 @@
             android:adjustViewBounds="true" />
 
         <LinearLayout
-            android:id="@+id/exam_plan_item_icon_countdown"
+            android:id="@+id/icon_countdown"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="bottom|end"
@@ -94,7 +94,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/exam_plan_item_tv_day_left"
+                    android:id="@+id/tv_day_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"

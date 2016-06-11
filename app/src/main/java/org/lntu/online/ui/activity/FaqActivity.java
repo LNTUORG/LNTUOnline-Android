@@ -14,10 +14,10 @@ import butterknife.ButterKnife;
 
 public class FaqActivity extends StatusBarActivity {
 
-    @BindView(R.id.faq_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.faq_web_view)
+    @BindView(R.id.web_view)
     protected WebView webView;
 
     @Override

@@ -88,10 +88,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.main_item_img_icon)
+        @BindView(R.id.img_icon)
         protected ImageView imgIcon;
 
-        @BindView(R.id.main_item_tv_title)
+        @BindView(R.id.tv_title)
         protected TextView tvTitle;
 
         public ViewHolder(View itemView) {
@@ -99,7 +99,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             ButterKnife.bind(this, itemView);
         }
 
-        @OnClick(R.id.main_item_btn_item)
+        @OnClick(R.id.btn_item)
         public void onBtnItemClick() {
             context.startActivity(new Intent(context, clzs[getLayoutPosition()]));
         }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_item_btn_item"
+    android:id="@+id/btn_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
@@ -10,14 +10,14 @@
     android:background="?attr/selectableItemBackgroundGeneral">
 
     <ImageView
-        android:id="@+id/main_item_img_icon"
+        android:id="@+id/img_icon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/main_icon_profle"
         android:scaleType="fitCenter" />
 
     <TextView
-        android:id="@+id/main_item_tv_title"
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

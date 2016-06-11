@@ -27,22 +27,22 @@ import retrofit.client.Response;
 
 public class SkillTestActivity extends StatusBarActivity {
 
-    @BindView(R.id.skill_test_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.skill_test_list_view)
+    @BindView(R.id.list_view)
     protected ListView listView;
 
-    @BindView(R.id.skill_test_icon_loading)
+    @BindView(R.id.icon_loading)
     protected View iconLoading;
 
-    @BindView(R.id.skill_test_icon_empty)
+    @BindView(R.id.icon_empty)
     protected View iconEmpty;
 
-    @BindView(R.id.skill_test_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @BindView(R.id.skill_test_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
@@ -89,7 +89,7 @@ public class SkillTestActivity extends StatusBarActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.skill_test_icon_empty)
+    @OnClick(R.id.icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);

@@ -123,34 +123,34 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.grades_item_tv_num)
+        @BindView(R.id.tv_num)
         protected TextView tvNum;
 
-        @BindView(R.id.grades_item_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @BindView(R.id.grades_item_tv_score)
+        @BindView(R.id.tv_score)
         protected TextView tvScore;
 
-        @BindView(R.id.grades_item_tv_credit)
+        @BindView(R.id.tv_credit)
         protected TextView tvCredit;
 
-        @BindView(R.id.grades_item_tv_test_mode)
+        @BindView(R.id.tv_test_mode)
         protected TextView tvTestMode;
 
-        @BindView(R.id.grades_item_tv_select_type)
+        @BindView(R.id.tv_select_type)
         protected TextView tvSelectType;
 
-        @BindView(R.id.grades_item_tv_remarks)
+        @BindView(R.id.tv_remarks)
         protected TextView tvRemarks;
 
-        @BindView(R.id.grades_item_tv_exam_type)
+        @BindView(R.id.tv_exam_type)
         protected TextView tvExamType;
 
-        @BindView(R.id.grades_item_tv_semester)
+        @BindView(R.id.tv_semester)
         protected TextView tvSemester;
 
-        @BindView(R.id.grades_item_icon_very_good)
+        @BindView(R.id.icon_very_good)
         protected View iconVeryGood;
 
         public ViewHolder(View itemView) {

@@ -33,46 +33,46 @@ import retrofit.client.Response;
 
 public class GradesActivity extends StatusBarActivity {
 
-    @BindView(R.id.grades_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.grades_layout_content)
+    @BindView(R.id.layout_content)
     protected ViewGroup layoutContent;
 
-    @BindView(R.id.grades_recycler_view)
+    @BindView(R.id.recycler_view)
     protected RecyclerView recyclerView;
 
-    @BindView(R.id.grades_icon_loading)
+    @BindView(R.id.icon_loading)
     protected View iconLoading;
 
-    @BindView(R.id.grades_icon_empty)
+    @BindView(R.id.icon_empty)
     protected View iconEmpty;
 
-    @BindView(R.id.grades_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @BindView(R.id.grades_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @BindView(R.id.grades_tv_ava_credit)
+    @BindView(R.id.tv_ava_credit)
     protected TextView tvAvaCredit;
 
-    @BindView(R.id.grades_fab)
+    @BindView(R.id.fab)
     protected FloatingActionButton fab;
 
-    @BindView(R.id.grades_layout_condition)
+    @BindView(R.id.layout_condition)
     protected ViewGroup layoutCondition;
 
-    @BindView(R.id.grades_spn_year)
+    @BindView(R.id.spn_year)
     protected Spinner spnYear;
 
-    @BindView(R.id.grades_spn_term)
+    @BindView(R.id.spn_term)
     protected Spinner spnTerm;
 
-    @BindView(R.id.grades_spn_level)
+    @BindView(R.id.spn_level)
     protected Spinner spnLevel;
 
-    @BindView(R.id.grades_spn_display)
+    @BindView(R.id.spn_display)
     protected Spinner spnDisplay;
 
     private GradesAdapter adapter;
@@ -153,14 +153,14 @@ public class GradesActivity extends StatusBarActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.grades_icon_empty)
+    @OnClick(R.id.icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
     }
 
-    @OnClick(R.id.grades_layout_condition_center)
+    @OnClick(R.id.layout_condition_center)
     protected void onBtnLayoutConditionCenterClick() {
         // 屏蔽条件面板中间事件
     }
@@ -176,8 +176,8 @@ public class GradesActivity extends StatusBarActivity {
     }
 
     @OnClick({
-            R.id.grades_fab,
-            R.id.grades_layout_condition
+            R.id.fab,
+            R.id.layout_condition
     })
     protected void onBtnFabClick() {
         if (layoutCondition.getVisibility() == View.GONE) {

@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 
 public class ClassTablePageFragment extends ClassTableActivity.BaseFragment {
 
-    @BindView(R.id.class_table_page_view_pager)
+    @BindView(R.id.view_pager)
     protected ViewPager viewPager;
 
     private ClassTablePageAdapter adapter;

@@ -55,16 +55,16 @@ public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.View
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.one_key_eva_item_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @BindView(R.id.one_key_eva_item_tv_num)
+        @BindView(R.id.tv_num)
         protected TextView tvNum;
 
-        @BindView(R.id.one_key_eva_item_tv_teacher)
+        @BindView(R.id.tv_teacher)
         protected TextView tvTeacher;
 
-        @BindView(R.id.one_key_eva_item_tv_state)
+        @BindView(R.id.tv_state)
         protected TextView tvState;
 
         public ViewHolder(View itemView) {

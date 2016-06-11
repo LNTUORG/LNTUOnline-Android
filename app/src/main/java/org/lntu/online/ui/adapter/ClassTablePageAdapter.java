@@ -180,51 +180,51 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class ViewHolder {
 
-        @BindView(R.id.class_table_page_item_scroll_view)
+        @BindView(R.id.scroll_view)
         protected ScrollView scrollView;
 
         @BindViews({
-                R.id.class_table_page_item_tv_stage_1,
-                R.id.class_table_page_item_tv_stage_2,
-                R.id.class_table_page_item_tv_stage_3,
-                R.id.class_table_page_item_tv_stage_4,
-                R.id.class_table_page_item_tv_stage_5
+                R.id.tv_stage_1,
+                R.id.tv_stage_2,
+                R.id.tv_stage_3,
+                R.id.tv_stage_4,
+                R.id.tv_stage_5
         })
         protected List<TextView> tvStageList;
 
         @BindViews({
-                R.id.class_table_page_item_layout_stage_1_show,
-                R.id.class_table_page_item_layout_stage_2_show,
-                R.id.class_table_page_item_layout_stage_3_show,
-                R.id.class_table_page_item_layout_stage_4_show,
-                R.id.class_table_page_item_layout_stage_5_show
+                R.id.layout_stage_1_show,
+                R.id.layout_stage_2_show,
+                R.id.layout_stage_3_show,
+                R.id.layout_stage_4_show,
+                R.id.layout_stage_5_show
         })
         protected List<ViewGroup> layoutStageShowList;
 
         @BindViews({
-                R.id.class_table_page_item_layout_stage_1_hide,
-                R.id.class_table_page_item_layout_stage_2_hide,
-                R.id.class_table_page_item_layout_stage_3_hide,
-                R.id.class_table_page_item_layout_stage_4_hide,
-                R.id.class_table_page_item_layout_stage_5_hide
+                R.id.layout_stage_1_hide,
+                R.id.layout_stage_2_hide,
+                R.id.layout_stage_3_hide,
+                R.id.layout_stage_4_hide,
+                R.id.layout_stage_5_hide
         })
         protected List<ViewGroup> layoutStageHideList;
 
         @BindViews({
-                R.id.class_table_page_item_icon_stage_1,
-                R.id.class_table_page_item_icon_stage_2,
-                R.id.class_table_page_item_icon_stage_3,
-                R.id.class_table_page_item_icon_stage_4,
-                R.id.class_table_page_item_icon_stage_5
+                R.id.icon_stage_1,
+                R.id.icon_stage_2,
+                R.id.icon_stage_3,
+                R.id.icon_stage_4,
+                R.id.icon_stage_5
         })
         protected List<View> iconStageList;
 
         @BindViews({
-                R.id.class_table_page_item_btn_stage_1,
-                R.id.class_table_page_item_btn_stage_2,
-                R.id.class_table_page_item_btn_stage_3,
-                R.id.class_table_page_item_btn_stage_4,
-                R.id.class_table_page_item_btn_stage_5,
+                R.id.btn_stage_1,
+                R.id.btn_stage_2,
+                R.id.btn_stage_3,
+                R.id.btn_stage_4,
+                R.id.btn_stage_5,
         })
         protected List<View> btnStageList;
 
@@ -289,27 +289,27 @@ public class ClassTablePageAdapter extends PagerAdapter {
         }
 
         @OnClick({
-                R.id.class_table_page_item_btn_stage_1,
-                R.id.class_table_page_item_btn_stage_2,
-                R.id.class_table_page_item_btn_stage_3,
-                R.id.class_table_page_item_btn_stage_4,
-                R.id.class_table_page_item_btn_stage_5,
+                R.id.btn_stage_1,
+                R.id.btn_stage_2,
+                R.id.btn_stage_3,
+                R.id.btn_stage_4,
+                R.id.btn_stage_5,
         })
         protected void onBtnStage1Click(View view) {
             switch (view.getId()) {
-                case R.id.class_table_page_item_btn_stage_1:
+                case R.id.btn_stage_1:
                     toggleLayout(1);
                     break;
-                case R.id.class_table_page_item_btn_stage_2:
+                case R.id.btn_stage_2:
                     toggleLayout(2);
                     break;
-                case R.id.class_table_page_item_btn_stage_3:
+                case R.id.btn_stage_3:
                     toggleLayout(3);
                     break;
-                case R.id.class_table_page_item_btn_stage_4:
+                case R.id.btn_stage_4:
                     toggleLayout(4);
                     break;
-                case R.id.class_table_page_item_btn_stage_5:
+                case R.id.btn_stage_5:
                     toggleLayout(5);
                     break;
             }
@@ -325,16 +325,16 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class CourseViewHolder {
 
-        @BindView(R.id.class_table_page_item_course_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @BindView(R.id.class_table_page_item_course_tv_teacher)
+        @BindView(R.id.tv_teacher)
         protected TextView tvTeacher;
 
-        @BindView(R.id.class_table_page_item_course_tv_place)
+        @BindView(R.id.tv_place)
         protected TextView tvPlace;
 
-        @BindView(R.id.class_table_page_item_course_icon_not_current)
+        @BindView(R.id.icon_not_current)
         protected View iconNotCurrent;
 
         protected ClassTable.CourseWrapper courseWrapper;
@@ -351,7 +351,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
             iconNotCurrent.setVisibility(isCurrent ? View.GONE : View.VISIBLE);
         }
 
-        @OnClick(R.id.class_table_page_item_course_btn_card)
+        @OnClick(R.id.btn_card)
         protected void onBtnCardClick() {
             if (courseWrapper != null) {
                 Intent intent = new Intent(context, ClassTableCourseActivity.class);

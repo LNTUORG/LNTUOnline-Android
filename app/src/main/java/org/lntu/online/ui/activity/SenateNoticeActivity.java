@@ -18,10 +18,10 @@ public class SenateNoticeActivity extends StatusBarActivity implements Toolbar.O
 
     private static final String URL = "http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100";
 
-    @BindView(R.id.senate_notice_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.senate_notice_web_view)
+    @BindView(R.id.web_view)
     protected WebView webView;
 
     @Override

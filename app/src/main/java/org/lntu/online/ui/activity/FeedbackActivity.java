@@ -19,10 +19,10 @@ import retrofit.client.Response;
 
 public class FeedbackActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
-    @BindView(R.id.feedback_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.feedback_edt_content)
+    @BindView(R.id.edt_content)
     protected EditText editText;
 
     @Override

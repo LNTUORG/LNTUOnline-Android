@@ -8,7 +8,7 @@
     android:background="@android:color/white">
 
     <TextView
-        android:id="@+id/student_info_item_action_tv_level"
+        android:id="@+id/tv_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="?android:attr/textColorPrimary"
@@ -29,7 +29,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_action_tv_create_time"
+            android:id="@+id/tv_create_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
@@ -54,7 +54,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_action_tv_create_reason"
+            android:id="@+id/tv_create_reason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
@@ -79,7 +79,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_action_tv_cancel_time"
+            android:id="@+id/tv_cancel_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
@@ -104,7 +104,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_action_tv_cancel_reason"
+            android:id="@+id/tv_cancel_reason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
@@ -129,7 +129,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_action_tv_state"
+            android:id="@+id/tv_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"
@@ -154,7 +154,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_action_tv_remarks"
+            android:id="@+id/tv_remarks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="16dp"

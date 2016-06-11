@@ -39,28 +39,28 @@ import retrofit.client.Response;
 
 public class OneKeyEvaActivity extends StatusBarActivity {
 
-    @BindView(R.id.one_key_eva_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.one_key_eva_layout_content)
+    @BindView(R.id.layout_content)
     protected ViewGroup layoutContent;
 
-    @BindView(R.id.one_key_eva_icon_loading)
+    @BindView(R.id.icon_loading)
     protected View iconLoading;
 
-    @BindView(R.id.one_key_eva_icon_empty)
+    @BindView(R.id.icon_empty)
     protected View iconEmpty;
 
-    @BindView(R.id.one_key_eva_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @BindView(R.id.one_key_eva_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @BindView(R.id.one_key_eva_recycler_view)
+    @BindView(R.id.recycler_view)
     protected RecyclerView recyclerView;
 
-    @BindView(R.id.one_key_eva_fab)
+    @BindView(R.id.fab)
     protected FloatingActionButton fab;
 
     private OneKeyEvaAdapter adapter;
@@ -119,14 +119,14 @@ public class OneKeyEvaActivity extends StatusBarActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.one_key_eva_icon_empty)
+    @OnClick(R.id.icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
     }
 
-    @OnClick(R.id.one_key_eva_fab)
+    @OnClick(R.id.fab)
     protected void onBtnFabClick() {
         int n = 0;
         for (CourseEvaInfo info : infoList) {

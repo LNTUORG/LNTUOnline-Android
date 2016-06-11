@@ -26,13 +26,13 @@ import retrofit.client.Response;
 
 public class StudentInfoActivity extends StatusBarActivity {
 
-    @BindView(R.id.student_info_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.student_info_img_avatar)
+    @BindView(R.id.img_avatar)
     protected ImageView imgAvatar;
 
-    @BindView(R.id.student_info_recycler_view)
+    @BindView(R.id.recycler_view)
     protected RecyclerView recyclerView;
 
     private Student student;

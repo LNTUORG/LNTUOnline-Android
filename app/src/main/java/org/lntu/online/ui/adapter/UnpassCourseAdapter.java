@@ -115,16 +115,16 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     protected static class GroupViewHolder {
 
-        @BindView(R.id.unpass_course_item_group_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @BindView(R.id.unpass_course_item_group_tv_num)
+        @BindView(R.id.tv_num)
         protected TextView tvNum;
 
-        @BindView(R.id.unpass_course_item_group_tv_credit)
+        @BindView(R.id.tv_credit)
         protected TextView tvCredit;
 
-        @BindView(R.id.unpass_course_item_group_tv_select_type)
+        @BindView(R.id.tv_select_type)
         protected TextView tvSelectType;
 
         public GroupViewHolder(View convertView) {
@@ -135,25 +135,25 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     protected static class ChildViewHolder {
 
-        @BindView(R.id.unpass_course_item_child_icon_flag)
+        @BindView(R.id.icon_flag)
         protected View iconFlag;
 
-        @BindView(R.id.unpass_course_item_child_icon_shadow_top)
+        @BindView(R.id.icon_shadow_top)
         protected View iconShadowTop;
 
-        @BindView(R.id.unpass_course_item_child_icon_shadow_bottom)
+        @BindView(R.id.icon_shadow_bottom)
         protected View iconShadowBottom;
 
-        @BindView(R.id.unpass_course_item_child_tv_semester)
+        @BindView(R.id.tv_semester)
         protected TextView tvSemester;
 
-        @BindView(R.id.unpass_course_item_child_tv_exam_type)
+        @BindView(R.id.tv_exam_type)
         protected TextView tvExamType;
 
-        @BindView(R.id.unpass_course_item_child_tv_score)
+        @BindView(R.id.tv_score)
         protected TextView tvScore;
 
-        @BindView(R.id.unpass_course_item_child_tv_remarks)
+        @BindView(R.id.tv_remarks)
         protected TextView tvRemarks;
 
         public ChildViewHolder(View convertView) {

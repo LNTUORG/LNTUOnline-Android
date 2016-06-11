@@ -14,10 +14,10 @@ import butterknife.ButterKnife;
 
 public class TermsOfServiceActivity extends StatusBarActivity {
 
-    @BindView(R.id.terms_of_service_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @BindView(R.id.terms_of_service_web_view)
+    @BindView(R.id.web_view)
     protected WebView webView;
 
     @Override

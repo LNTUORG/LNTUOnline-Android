@@ -57,19 +57,19 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.class_table_list_item_tv_num)
+        @BindView(R.id.tv_num)
         protected TextView tvNum;
 
-        @BindView(R.id.class_table_list_item_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @BindView(R.id.class_table_list_item_tv_teacher)
+        @BindView(R.id.tv_teacher)
         protected TextView tvTeacher;
 
-        @BindView(R.id.class_table_list_item_icon_blank_top)
+        @BindView(R.id.icon_blank_top)
         protected View iconBlankTop;
 
-        @BindView(R.id.class_table_list_item_icon_blank_bottom)
+        @BindView(R.id.icon_blank_bottom)
         protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {
@@ -77,7 +77,7 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
             ButterKnife.bind(this, itemView);
         }
 
-        @OnClick(R.id.class_table_list_item_btn_card)
+        @OnClick(R.id.btn_card)
         public void onBtnCardClick() {
             Intent intent = new Intent(context, ClassTableCourseActivity.class);
             intent.putExtra("course", GsonWrapper.gson.toJson(classTable.getCourses().get(getLayoutPosition())));

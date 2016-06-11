@@ -81,22 +81,22 @@ public class ExamPlanAdapter extends BaseAdapter {
 
     protected class ViewHolder {
 
-        @BindView(R.id.exam_plan_item_tv_course)
+        @BindView(R.id.tv_course)
         protected TextView tvCourse;
         
-        @BindView(R.id.exam_plan_item_tv_time)
+        @BindView(R.id.tv_time)
         protected TextView tvTime;
         
-        @BindView(R.id.exam_plan_item_tv_location)
+        @BindView(R.id.tv_location)
         protected TextView tvLocation;
 
-        @BindView(R.id.exam_plan_item_icon_finish)
+        @BindView(R.id.icon_finish)
         protected View iconFinish;
 
-        @BindView(R.id.exam_plan_item_icon_countdown)
+        @BindView(R.id.icon_countdown)
         protected View iconCountdown;
         
-        @BindView(R.id.exam_plan_item_tv_day_left)
+        @BindView(R.id.tv_day_left)
         protected TextView tvDayLeft;
 
         public ViewHolder(View convertView) {

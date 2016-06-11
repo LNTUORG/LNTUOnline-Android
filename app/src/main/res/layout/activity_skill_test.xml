@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/skill_test_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
@@ -22,12 +22,12 @@
 
         <ListView
             android:visibility="gone"
-            android:id="@+id/skill_test_list_view"
+            android:id="@+id/list_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <LinearLayout
-            android:id="@+id/skill_test_icon_loading"
+            android:id="@+id/icon_loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/skill_test_icon_loading_anim"
+                    android:id="@+id/icon_loading_anim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -66,7 +66,7 @@
 
         <LinearLayout
             android:visibility="gone"
-            android:id="@+id/skill_test_icon_empty"
+            android:id="@+id/icon_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -80,7 +80,7 @@
                 android:src="@drawable/ic_empty_search" />
 
             <TextView
-                android:id="@+id/skill_test_tv_load_failed"
+                android:id="@+id/tv_load_failed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

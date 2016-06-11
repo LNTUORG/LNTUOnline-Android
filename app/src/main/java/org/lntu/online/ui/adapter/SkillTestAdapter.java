@@ -59,13 +59,13 @@ public class SkillTestAdapter extends BaseAdapter {
 
     protected static class ViewHolder {
 
-        @BindView(R.id.skill_test_item_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @BindView(R.id.skill_test_item_tv_time)
+        @BindView(R.id.tv_time)
         protected TextView tvTime;
 
-        @BindView(R.id.skill_test_item_tv_score)
+        @BindView(R.id.tv_score)
         protected TextView tvScore;
 
         public ViewHolder(View convertView) {
