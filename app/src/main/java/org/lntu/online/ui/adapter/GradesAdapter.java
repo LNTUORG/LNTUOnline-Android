@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder> {
 
@@ -123,34 +123,34 @@ public class GradesAdapter extends RecyclerView.Adapter<GradesAdapter.ViewHolder
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.grades_item_tv_num)
+        @BindView(R.id.grades_item_tv_num)
         protected TextView tvNum;
 
-        @Bind(R.id.grades_item_tv_name)
+        @BindView(R.id.grades_item_tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.grades_item_tv_score)
+        @BindView(R.id.grades_item_tv_score)
         protected TextView tvScore;
 
-        @Bind(R.id.grades_item_tv_credit)
+        @BindView(R.id.grades_item_tv_credit)
         protected TextView tvCredit;
 
-        @Bind(R.id.grades_item_tv_test_mode)
+        @BindView(R.id.grades_item_tv_test_mode)
         protected TextView tvTestMode;
 
-        @Bind(R.id.grades_item_tv_select_type)
+        @BindView(R.id.grades_item_tv_select_type)
         protected TextView tvSelectType;
 
-        @Bind(R.id.grades_item_tv_remarks)
+        @BindView(R.id.grades_item_tv_remarks)
         protected TextView tvRemarks;
 
-        @Bind(R.id.grades_item_tv_exam_type)
+        @BindView(R.id.grades_item_tv_exam_type)
         protected TextView tvExamType;
 
-        @Bind(R.id.grades_item_tv_semester)
+        @BindView(R.id.grades_item_tv_semester)
         protected TextView tvSemester;
 
-        @Bind(R.id.grades_item_icon_very_good)
+        @BindView(R.id.grades_item_icon_very_good)
         protected View iconVeryGood;
 
         public ViewHolder(View itemView) {

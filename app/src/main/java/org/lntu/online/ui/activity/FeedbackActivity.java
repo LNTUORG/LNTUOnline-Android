@@ -13,16 +13,16 @@ import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit.client.Response;
 
 public class FeedbackActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
-    @Bind(R.id.feedback_toolbar)
+    @BindView(R.id.feedback_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.feedback_edt_content)
+    @BindView(R.id.feedback_edt_content)
     protected EditText editText;
 
     @Override

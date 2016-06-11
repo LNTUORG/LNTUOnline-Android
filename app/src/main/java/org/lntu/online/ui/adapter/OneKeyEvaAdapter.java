@@ -14,7 +14,7 @@ import org.lntu.online.model.entity.CourseEvaInfo;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.ViewHolder> {
 
@@ -55,16 +55,16 @@ public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.View
 
     protected static class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.one_key_eva_item_tv_name)
+        @BindView(R.id.one_key_eva_item_tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.one_key_eva_item_tv_num)
+        @BindView(R.id.one_key_eva_item_tv_num)
         protected TextView tvNum;
 
-        @Bind(R.id.one_key_eva_item_tv_teacher)
+        @BindView(R.id.one_key_eva_item_tv_teacher)
         protected TextView tvTeacher;
 
-        @Bind(R.id.one_key_eva_item_tv_state)
+        @BindView(R.id.one_key_eva_item_tv_state)
         protected TextView tvState;
 
         public ViewHolder(View itemView) {

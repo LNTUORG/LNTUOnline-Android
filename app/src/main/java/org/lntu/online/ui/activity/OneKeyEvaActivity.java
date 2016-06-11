@@ -30,7 +30,7 @@ import org.lntu.online.ui.widget.ToastUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.Callback;
@@ -39,28 +39,28 @@ import retrofit.client.Response;
 
 public class OneKeyEvaActivity extends StatusBarActivity {
 
-    @Bind(R.id.one_key_eva_toolbar)
+    @BindView(R.id.one_key_eva_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.one_key_eva_layout_content)
+    @BindView(R.id.one_key_eva_layout_content)
     protected ViewGroup layoutContent;
 
-    @Bind(R.id.one_key_eva_icon_loading)
+    @BindView(R.id.one_key_eva_icon_loading)
     protected View iconLoading;
 
-    @Bind(R.id.one_key_eva_icon_empty)
+    @BindView(R.id.one_key_eva_icon_empty)
     protected View iconEmpty;
 
-    @Bind(R.id.one_key_eva_icon_loading_anim)
+    @BindView(R.id.one_key_eva_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.one_key_eva_tv_load_failed)
+    @BindView(R.id.one_key_eva_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @Bind(R.id.one_key_eva_recycler_view)
+    @BindView(R.id.one_key_eva_recycler_view)
     protected RecyclerView recyclerView;
 
-    @Bind(R.id.one_key_eva_fab)
+    @BindView(R.id.one_key_eva_fab)
     protected FloatingActionButton fab;
 
     private OneKeyEvaAdapter adapter;

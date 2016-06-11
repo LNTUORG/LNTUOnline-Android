@@ -29,7 +29,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -179,10 +180,10 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class ViewHolder {
 
-        @Bind(R.id.class_table_page_item_scroll_view)
+        @BindView(R.id.class_table_page_item_scroll_view)
         protected ScrollView scrollView;
 
-        @Bind({
+        @BindViews({
                 R.id.class_table_page_item_tv_stage_1,
                 R.id.class_table_page_item_tv_stage_2,
                 R.id.class_table_page_item_tv_stage_3,
@@ -191,7 +192,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<TextView> tvStageList;
 
-        @Bind({
+        @BindViews({
                 R.id.class_table_page_item_layout_stage_1_show,
                 R.id.class_table_page_item_layout_stage_2_show,
                 R.id.class_table_page_item_layout_stage_3_show,
@@ -200,7 +201,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<ViewGroup> layoutStageShowList;
 
-        @Bind({
+        @BindViews({
                 R.id.class_table_page_item_layout_stage_1_hide,
                 R.id.class_table_page_item_layout_stage_2_hide,
                 R.id.class_table_page_item_layout_stage_3_hide,
@@ -209,7 +210,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<ViewGroup> layoutStageHideList;
 
-        @Bind({
+        @BindViews({
                 R.id.class_table_page_item_icon_stage_1,
                 R.id.class_table_page_item_icon_stage_2,
                 R.id.class_table_page_item_icon_stage_3,
@@ -218,7 +219,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         })
         protected List<View> iconStageList;
 
-        @Bind({
+        @BindViews({
                 R.id.class_table_page_item_btn_stage_1,
                 R.id.class_table_page_item_btn_stage_2,
                 R.id.class_table_page_item_btn_stage_3,
@@ -324,16 +325,16 @@ public class ClassTablePageAdapter extends PagerAdapter {
 
     protected class CourseViewHolder {
 
-        @Bind(R.id.class_table_page_item_course_tv_name)
+        @BindView(R.id.class_table_page_item_course_tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.class_table_page_item_course_tv_teacher)
+        @BindView(R.id.class_table_page_item_course_tv_teacher)
         protected TextView tvTeacher;
 
-        @Bind(R.id.class_table_page_item_course_tv_place)
+        @BindView(R.id.class_table_page_item_course_tv_place)
         protected TextView tvPlace;
 
-        @Bind(R.id.class_table_page_item_course_icon_not_current)
+        @BindView(R.id.class_table_page_item_course_icon_not_current)
         protected View iconNotCurrent;
 
         protected ClassTable.CourseWrapper courseWrapper;

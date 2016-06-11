@@ -25,16 +25,17 @@ import org.lntu.online.ui.widget.ThemeUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableTimeDialogHolder.ViewHolder> {
 
-    @Bind(R.id.dialog_class_table_time_tv_title)
+    @BindView(R.id.dialog_class_table_time_tv_title)
     protected TextView tvTitle;
 
-    @Bind({
+    @BindViews({
             R.id.dialog_class_table_time_btn_month_1,
             R.id.dialog_class_table_time_btn_month_2,
             R.id.dialog_class_table_time_btn_month_3,
@@ -44,13 +45,13 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
     })
     protected List<RadioButton> btnMonthList;
 
-    @Bind(R.id.dialog_class_table_time_layout_month)
+    @BindView(R.id.dialog_class_table_time_layout_month)
     protected ViewGroup layoutMonth;
 
-    @Bind(R.id.dialog_class_table_time_recycler_view_day)
+    @BindView(R.id.dialog_class_table_time_recycler_view_day)
     protected RecyclerView recyclerView;
 
-    @Bind(R.id.dialog_class_table_time_layout_day)
+    @BindView(R.id.dialog_class_table_time_layout_day)
     protected ViewGroup layoutDay;
 
     private Context context;
@@ -232,7 +233,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.dialog_class_table_time_day_tv)
+        @BindView(R.id.dialog_class_table_time_day_tv)
         protected CheckedTextView tv;
 
         public ViewHolder(View itemView) {

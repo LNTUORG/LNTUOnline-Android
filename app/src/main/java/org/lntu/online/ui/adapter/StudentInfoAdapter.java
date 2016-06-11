@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.ViewHolder> {
@@ -329,10 +329,10 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class NormalViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_normal_tv_name)
+        @BindView(R.id.student_info_item_normal_tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.student_info_item_normal_tv_value)
+        @BindView(R.id.student_info_item_normal_tv_value)
         protected TextView tvValue;
 
         public NormalViewHolder(View itemView) {
@@ -350,16 +350,16 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class EdexViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_edex_tv_date_of_start)
+        @BindView(R.id.student_info_item_edex_tv_date_of_start)
         protected TextView tvDateOfStart;
 
-        @Bind(R.id.student_info_item_edex_tv_date_of_end)
+        @BindView(R.id.student_info_item_edex_tv_date_of_end)
         protected TextView tvDateOfEnd;
 
-        @Bind(R.id.student_info_item_edex_tv_school_name)
+        @BindView(R.id.student_info_item_edex_tv_school_name)
         protected TextView tvSchoolName;
 
-        @Bind(R.id.student_info_item_edex_tv_witness)
+        @BindView(R.id.student_info_item_edex_tv_witness)
         protected TextView tvWitness;
 
         public EdexViewHolder(View itemView) {
@@ -379,25 +379,25 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class FamilyViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_family_tv_name)
+        @BindView(R.id.student_info_item_family_tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.student_info_item_family_tv_relationship)
+        @BindView(R.id.student_info_item_family_tv_relationship)
         protected TextView tvRelationship;
 
-        @Bind(R.id.student_info_item_family_tv_political_affiliation)
+        @BindView(R.id.student_info_item_family_tv_political_affiliation)
         protected TextView tvPolAff;
 
-        @Bind(R.id.student_info_item_family_tv_job)
+        @BindView(R.id.student_info_item_family_tv_job)
         protected TextView tvJob;
 
-        @Bind(R.id.student_info_item_family_tv_post)
+        @BindView(R.id.student_info_item_family_tv_post)
         protected TextView tvPost;
 
-        @Bind(R.id.student_info_item_family_tv_work_location)
+        @BindView(R.id.student_info_item_family_tv_work_location)
         protected TextView tvWorkLocation;
 
-        @Bind(R.id.student_info_item_family_tv_tel)
+        @BindView(R.id.student_info_item_family_tv_tel)
         protected TextView tvTel;
 
         public FamilyViewHolder(View itemView) {
@@ -420,25 +420,25 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class ActionViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_action_tv_level)
+        @BindView(R.id.student_info_item_action_tv_level)
         protected TextView tvLevel;
 
-        @Bind(R.id.student_info_item_action_tv_create_time)
+        @BindView(R.id.student_info_item_action_tv_create_time)
         protected TextView tvCreateTime;
 
-        @Bind(R.id.student_info_item_action_tv_create_reason)
+        @BindView(R.id.student_info_item_action_tv_create_reason)
         protected TextView tvCreateReason;
 
-        @Bind(R.id.student_info_item_action_tv_cancel_time)
+        @BindView(R.id.student_info_item_action_tv_cancel_time)
         protected TextView tvCancelTime;
 
-        @Bind(R.id.student_info_item_action_tv_cancel_reason)
+        @BindView(R.id.student_info_item_action_tv_cancel_reason)
         protected TextView tvCancelReason;
 
-        @Bind(R.id.student_info_item_action_tv_state)
+        @BindView(R.id.student_info_item_action_tv_state)
         protected TextView tvState;
 
-        @Bind(R.id.student_info_item_action_tv_remarks)
+        @BindView(R.id.student_info_item_action_tv_remarks)
         protected TextView tvRemarks;
 
         public ActionViewHolder(View itemView) {
@@ -461,7 +461,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class TitleViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_title_tv_title)
+        @BindView(R.id.student_info_item_title_tv_title)
         protected TextView tvTitle;
 
         public TitleViewHolder(View itemView) {

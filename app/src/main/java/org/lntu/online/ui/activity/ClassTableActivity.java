@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemSelected;
@@ -36,25 +36,25 @@ import retrofit.client.Response;
 
 public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
-    @Bind(R.id.class_table_toolbar)
+    @BindView(R.id.class_table_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.class_table_spn_year_term)
+    @BindView(R.id.class_table_spn_year_term)
     protected Spinner spnYearTerm;
 
-    @Bind(R.id.class_table_layout_loading)
+    @BindView(R.id.class_table_layout_loading)
     protected View layoutLoading;
 
-    @Bind(R.id.class_table_layout_empty)
+    @BindView(R.id.class_table_layout_empty)
     protected View layoutEmpty;
 
-    @Bind(R.id.class_table_layout_fragment)
+    @BindView(R.id.class_table_layout_fragment)
     protected ViewGroup layoutFragment;
 
-    @Bind(R.id.class_table_icon_loading_anim)
+    @BindView(R.id.class_table_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.class_table_tv_load_failed)
+    @BindView(R.id.class_table_tv_load_failed)
     protected TextView tvLoadFailed;
 
     private BaseFragment fmPage;

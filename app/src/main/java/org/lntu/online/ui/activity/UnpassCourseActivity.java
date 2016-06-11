@@ -20,29 +20,29 @@ import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class UnpassCourseActivity extends StatusBarActivity {
 
-    @Bind(R.id.unpass_course_toolbar)
+    @BindView(R.id.unpass_course_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.unpass_course_ex_list_view)
+    @BindView(R.id.unpass_course_ex_list_view)
     protected ExpandableListView exListView;
 
-    @Bind(R.id.unpass_course_icon_loading)
+    @BindView(R.id.unpass_course_icon_loading)
     protected View iconLoading;
 
-    @Bind(R.id.unpass_course_icon_empty)
+    @BindView(R.id.unpass_course_icon_empty)
     protected View iconEmpty;
 
-    @Bind(R.id.unpass_course_icon_loading_anim)
+    @BindView(R.id.unpass_course_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.unpass_course_tv_load_failed)
+    @BindView(R.id.unpass_course_tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override

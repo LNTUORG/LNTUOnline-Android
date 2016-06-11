@@ -13,7 +13,7 @@ import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -21,13 +21,13 @@ public class AboutActivity extends StatusBarActivity {
 
     public static final String VERSION_TEXT = BuildConfig.VERSION_NAME + "-build-" + BuildConfig.VERSION_CODE;
 
-    @Bind(R.id.about_layout_app_bar)
+    @BindView(R.id.about_layout_app_bar)
     protected AppBarLayout layoutAppBar;
 
-    @Bind(R.id.about_toolbar)
+    @BindView(R.id.about_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.about_tv_version)
+    @BindView(R.id.about_tv_version)
     protected TextView tvVersion;
 
     @Override

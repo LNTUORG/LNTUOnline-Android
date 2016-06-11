@@ -9,15 +9,15 @@ import org.lntu.online.R;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TermsOfServiceActivity extends StatusBarActivity {
 
-    @Bind(R.id.terms_of_service_toolbar)
+    @BindView(R.id.terms_of_service_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.terms_of_service_web_view)
+    @BindView(R.id.terms_of_service_web_view)
     protected WebView webView;
 
     @Override

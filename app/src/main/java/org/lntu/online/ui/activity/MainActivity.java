@@ -29,7 +29,7 @@ import org.lntu.online.ui.dialog.DialogUtils;
 import org.lntu.online.ui.listener.NavigationOpenClickListener;
 import org.lntu.online.util.ShipUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
@@ -39,34 +39,34 @@ public class MainActivity extends DrawerLayoutActivity implements Toolbar.OnMenu
     public static final String KEY_BACK_TO_ENTRY = "backToEntry";
 
     // 抽屉导航布局
-    @Bind(R.id.main_drawer_layout)
+    @BindView(R.id.main_drawer_layout)
     protected DrawerLayout drawerLayout;
 
     // 状态栏
-    @Bind(R.id.main_center_adapt_status_bar)
+    @BindView(R.id.main_center_adapt_status_bar)
     protected View centerAdaptStatusBar;
 
-    @Bind(R.id.main_nav_adapt_status_bar)
+    @BindView(R.id.main_nav_adapt_status_bar)
     protected View navAdaptStatusBar;
 
     // 导航部分的个人信息
-    @Bind(R.id.main_nav_img_avatar)
+    @BindView(R.id.main_nav_img_avatar)
     protected ImageView imgAvatar;
 
-    @Bind(R.id.main_nav_tv_name)
+    @BindView(R.id.main_nav_tv_name)
     protected TextView tvName;
 
-    @Bind(R.id.main_nav_tv_college)
+    @BindView(R.id.main_nav_tv_college)
     protected TextView tvCollege;
 
-    @Bind(R.id.main_nav_tv_class_info)
+    @BindView(R.id.main_nav_tv_class_info)
     protected TextView tvClassInfo;
 
     // 主界面部分
-    @Bind(R.id.main_toolbar)
+    @BindView(R.id.main_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.main_recycler_view)
+    @BindView(R.id.main_recycler_view)
     protected RecyclerView recyclerView;
 
     // 首次按下返回键时间戳

@@ -26,53 +26,53 @@ import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class GradesActivity extends StatusBarActivity {
 
-    @Bind(R.id.grades_toolbar)
+    @BindView(R.id.grades_toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.grades_layout_content)
+    @BindView(R.id.grades_layout_content)
     protected ViewGroup layoutContent;
 
-    @Bind(R.id.grades_recycler_view)
+    @BindView(R.id.grades_recycler_view)
     protected RecyclerView recyclerView;
 
-    @Bind(R.id.grades_icon_loading)
+    @BindView(R.id.grades_icon_loading)
     protected View iconLoading;
 
-    @Bind(R.id.grades_icon_empty)
+    @BindView(R.id.grades_icon_empty)
     protected View iconEmpty;
 
-    @Bind(R.id.grades_icon_loading_anim)
+    @BindView(R.id.grades_icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.grades_tv_load_failed)
+    @BindView(R.id.grades_tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @Bind(R.id.grades_tv_ava_credit)
+    @BindView(R.id.grades_tv_ava_credit)
     protected TextView tvAvaCredit;
 
-    @Bind(R.id.grades_fab)
+    @BindView(R.id.grades_fab)
     protected FloatingActionButton fab;
 
-    @Bind(R.id.grades_layout_condition)
+    @BindView(R.id.grades_layout_condition)
     protected ViewGroup layoutCondition;
 
-    @Bind(R.id.grades_spn_year)
+    @BindView(R.id.grades_spn_year)
     protected Spinner spnYear;
 
-    @Bind(R.id.grades_spn_term)
+    @BindView(R.id.grades_spn_term)
     protected Spinner spnTerm;
 
-    @Bind(R.id.grades_spn_level)
+    @BindView(R.id.grades_spn_level)
     protected Spinner spnLevel;
 
-    @Bind(R.id.grades_spn_display)
+    @BindView(R.id.grades_spn_display)
     protected Spinner spnDisplay;
 
     private GradesAdapter adapter;

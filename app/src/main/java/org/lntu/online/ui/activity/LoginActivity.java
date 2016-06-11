@@ -16,20 +16,20 @@ import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.widget.ToastUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class LoginActivity extends StatusBarActivity {
 
-    @Bind(R.id.login_edt_user_id)
+    @BindView(R.id.login_edt_user_id)
     protected MaterialEditText edtUserId;
 
-    @Bind(R.id.login_edt_pwd)
+    @BindView(R.id.login_edt_pwd)
     protected MaterialEditText edtPwd;
 
-    @Bind(R.id.login_cb_hold_online)
+    @BindView(R.id.login_cb_hold_online)
     protected CheckBox cbHoldOnline;
 
     @Override

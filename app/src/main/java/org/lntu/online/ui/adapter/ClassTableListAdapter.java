@@ -15,7 +15,7 @@ import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAdapter.ViewHolder> {
@@ -57,19 +57,19 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.class_table_list_item_tv_num)
+        @BindView(R.id.class_table_list_item_tv_num)
         protected TextView tvNum;
 
-        @Bind(R.id.class_table_list_item_tv_name)
+        @BindView(R.id.class_table_list_item_tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.class_table_list_item_tv_teacher)
+        @BindView(R.id.class_table_list_item_tv_teacher)
         protected TextView tvTeacher;
 
-        @Bind(R.id.class_table_list_item_icon_blank_top)
+        @BindView(R.id.class_table_list_item_icon_blank_top)
         protected View iconBlankTop;
 
-        @Bind(R.id.class_table_list_item_icon_blank_bottom)
+        @BindView(R.id.class_table_list_item_icon_blank_bottom)
         protected View iconBlankBottom;
 
         public ViewHolder(View itemView) {
