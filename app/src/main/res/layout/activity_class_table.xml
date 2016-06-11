@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/class_table_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
@@ -29,7 +29,7 @@
                 android:background="#88ffffff" />
 
             <Spinner style="@style/AppWidget.ClassTableSpinner"
-                android:id="@+id/class_table_spn_year_term"
+                android:id="@+id/spn_year_term"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -43,7 +43,7 @@
 
         <LinearLayout
             android:visibility="gone"
-            android:id="@+id/class_table_layout_loading"
+            android:id="@+id/layout_loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/class_table_icon_loading_anim"
+                    android:id="@+id/icon_loading_anim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -82,7 +82,7 @@
 
         <LinearLayout
             android:visibility="gone"
-            android:id="@+id/class_table_layout_empty"
+            android:id="@+id/layout_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -96,7 +96,7 @@
                 android:src="@drawable/ic_empty_search" />
 
             <TextView
-                android:id="@+id/class_table_tv_load_failed"
+                android:id="@+id/tv_load_failed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -108,18 +108,18 @@
 
         <FrameLayout
             android:visibility="gone"
-            android:id="@+id/class_table_layout_fragment"
+            android:id="@+id/layout_fragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <fragment class="org.lntu.online.ui.fragment.ClassTablePageFragment"
-                android:id="@+id/class_table_fragement_page"
+                android:id="@+id/fragement_page"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout="@layout/activity_class_table_page" />
 
             <fragment class="org.lntu.online.ui.fragment.ClassTableListFragment"
-                android:id="@+id/class_table_fragement_list"
+                android:id="@+id/fragement_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout="@layout/activity_class_table_list" />

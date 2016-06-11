@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/grades_toolbar"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/color_primary"
@@ -27,13 +27,13 @@
 
             <LinearLayout
                 android:visibility="gone"
-                android:id="@+id/grades_layout_content"
+                android:id="@+id/layout_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/grades_tv_ava_credit"
+                    android:id="@+id/tv_ava_credit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -47,14 +47,14 @@
                     tools:text="您的平均学分绩为 1.523" />
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/grades_recycler_view"
+                    android:id="@+id/recycler_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/grades_icon_loading"
+                android:id="@+id/icon_loading"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/grades_icon_loading_anim"
+                        android:id="@+id/icon_loading_anim"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -93,7 +93,7 @@
 
             <LinearLayout
                 android:visibility="gone"
-                android:id="@+id/grades_icon_empty"
+                android:id="@+id/icon_empty"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -107,7 +107,7 @@
                     android:src="@drawable/ic_empty_search" />
 
                 <TextView
-                    android:id="@+id/grades_tv_load_failed"
+                    android:id="@+id/tv_load_failed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -123,13 +123,13 @@
 
     <FrameLayout
         android:visibility="gone"
-        android:id="@+id/grades_layout_condition"
+        android:id="@+id/layout_condition"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#bbdddddd">
 
         <LinearLayout
-            android:id="@+id/grades_layout_condition_center"
+            android:id="@+id/layout_condition_center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -158,7 +158,7 @@
                     android:textSize="16sp" />
 
                 <Spinner
-                    android:id="@+id/grades_spn_year"
+                    android:id="@+id/spn_year"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:entries="@array/years" />
@@ -188,7 +188,7 @@
                     android:textSize="16sp" />
 
                 <Spinner
-                    android:id="@+id/grades_spn_term"
+                    android:id="@+id/spn_term"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:entries="@array/terms" />
@@ -218,7 +218,7 @@
                     android:textSize="16sp" />
 
                 <Spinner
-                    android:id="@+id/grades_spn_level"
+                    android:id="@+id/spn_level"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:entries="@array/score_level" />
@@ -248,7 +248,7 @@
                     android:textSize="16sp" />
 
                 <Spinner
-                    android:id="@+id/grades_spn_display"
+                    android:id="@+id/spn_display"
                     android:layout_width="match_parent"
                     android:layout_height="54dp"
                     android:entries="@array/score_display" />
@@ -263,7 +263,7 @@
 
     <com.melnykov.fab.FloatingActionButton
         android:visibility="gone"
-        android:id="@+id/grades_fab"
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

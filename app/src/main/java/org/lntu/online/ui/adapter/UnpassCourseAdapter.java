@@ -14,7 +14,7 @@ import org.lntu.online.model.entity.UnpassCourse;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.Bind;
+import butterknife.BindView;
 
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
@@ -115,16 +115,16 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     protected static class GroupViewHolder {
 
-        @Bind(R.id.unpass_course_item_group_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.unpass_course_item_group_tv_num)
+        @BindView(R.id.tv_num)
         protected TextView tvNum;
 
-        @Bind(R.id.unpass_course_item_group_tv_credit)
+        @BindView(R.id.tv_credit)
         protected TextView tvCredit;
 
-        @Bind(R.id.unpass_course_item_group_tv_select_type)
+        @BindView(R.id.tv_select_type)
         protected TextView tvSelectType;
 
         public GroupViewHolder(View convertView) {
@@ -135,25 +135,25 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     protected static class ChildViewHolder {
 
-        @Bind(R.id.unpass_course_item_child_icon_flag)
+        @BindView(R.id.icon_flag)
         protected View iconFlag;
 
-        @Bind(R.id.unpass_course_item_child_icon_shadow_top)
+        @BindView(R.id.icon_shadow_top)
         protected View iconShadowTop;
 
-        @Bind(R.id.unpass_course_item_child_icon_shadow_bottom)
+        @BindView(R.id.icon_shadow_bottom)
         protected View iconShadowBottom;
 
-        @Bind(R.id.unpass_course_item_child_tv_semester)
+        @BindView(R.id.tv_semester)
         protected TextView tvSemester;
 
-        @Bind(R.id.unpass_course_item_child_tv_exam_type)
+        @BindView(R.id.tv_exam_type)
         protected TextView tvExamType;
 
-        @Bind(R.id.unpass_course_item_child_tv_score)
+        @BindView(R.id.tv_score)
         protected TextView tvScore;
 
-        @Bind(R.id.unpass_course_item_child_tv_remarks)
+        @BindView(R.id.tv_remarks)
         protected TextView tvRemarks;
 
         public ChildViewHolder(View convertView) {

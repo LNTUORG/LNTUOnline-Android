@@ -9,15 +9,15 @@ import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ResRawUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class LicenseActivity extends StatusBarActivity {
 
-    @Bind(R.id.license_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.license_tv_license)
+    @BindView(R.id.tv_license)
     protected TextView tvLicense;
 
     @Override

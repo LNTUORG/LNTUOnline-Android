@@ -17,7 +17,7 @@
             android:background="@android:color/white">
 
             <TextView
-                android:id="@+id/grades_item_tv_name"
+                android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="?android:attr/textColorPrimary"
@@ -25,7 +25,7 @@
                 tools:text="高等数学" />
 
             <TextView
-                android:id="@+id/grades_item_tv_num"
+                android:id="@+id/tv_num"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -43,7 +43,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/grades_item_tv_semester"
+                    android:id="@+id/tv_semester"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_schedule_grey600_18dp"
@@ -55,7 +55,7 @@
                     tools:text="2014春" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_exam_type"
+                    android:id="@+id/tv_exam_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -82,7 +82,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_score"
+                    android:id="@+id/tv_score"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -99,7 +99,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_credit"
+                    android:id="@+id/tv_credit"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -123,7 +123,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_select_type"
+                    android:id="@+id/tv_select_type"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -148,7 +148,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_test_mode"
+                    android:id="@+id/tv_test_mode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -173,7 +173,7 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/grades_item_tv_remarks"
+                    android:id="@+id/tv_remarks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="16dp"
@@ -187,7 +187,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/grades_item_icon_very_good"
+            android:id="@+id/icon_very_good"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="top|end"

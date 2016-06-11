@@ -25,32 +25,33 @@ import org.lntu.online.ui.widget.ThemeUtils;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableTimeDialogHolder.ViewHolder> {
 
-    @Bind(R.id.dialog_class_table_time_tv_title)
+    @BindView(R.id.tv_title)
     protected TextView tvTitle;
 
-    @Bind({
-            R.id.dialog_class_table_time_btn_month_1,
-            R.id.dialog_class_table_time_btn_month_2,
-            R.id.dialog_class_table_time_btn_month_3,
-            R.id.dialog_class_table_time_btn_month_4,
-            R.id.dialog_class_table_time_btn_month_5,
-            R.id.dialog_class_table_time_btn_month_6,
+    @BindViews({
+            R.id.btn_month_1,
+            R.id.btn_month_2,
+            R.id.btn_month_3,
+            R.id.btn_month_4,
+            R.id.btn_month_5,
+            R.id.btn_month_6,
     })
     protected List<RadioButton> btnMonthList;
 
-    @Bind(R.id.dialog_class_table_time_layout_month)
+    @BindView(R.id.layout_month)
     protected ViewGroup layoutMonth;
 
-    @Bind(R.id.dialog_class_table_time_recycler_view_day)
+    @BindView(R.id.recycler_view_day)
     protected RecyclerView recyclerView;
 
-    @Bind(R.id.dialog_class_table_time_layout_day)
+    @BindView(R.id.layout_day)
     protected ViewGroup layoutDay;
 
     private Context context;
@@ -113,7 +114,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
         dialog.show();
     }
 
-    @OnClick(R.id.dialog_class_table_time_tv_title)
+    @OnClick(R.id.tv_title)
     protected void onBtnTitleClick() {
         int index;
         if (currentDate.getMonthOfYear() >= 2 && currentDate.getMonthOfYear() < 8) { // 春季
@@ -127,12 +128,12 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
     }
 
     @OnClick({
-            R.id.dialog_class_table_time_btn_month_1,
-            R.id.dialog_class_table_time_btn_month_2,
-            R.id.dialog_class_table_time_btn_month_3,
-            R.id.dialog_class_table_time_btn_month_4,
-            R.id.dialog_class_table_time_btn_month_5,
-            R.id.dialog_class_table_time_btn_month_6,
+            R.id.btn_month_1,
+            R.id.btn_month_2,
+            R.id.btn_month_3,
+            R.id.btn_month_4,
+            R.id.btn_month_5,
+            R.id.btn_month_6,
     })
     protected void onBtnMonthClick(CompoundButton btn) {
         tvTitle.setText(btn.getText());
@@ -232,7 +233,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.dialog_class_table_time_day_tv)
+        @BindView(R.id.tv)
         protected CheckedTextView tv;
 
         public ViewHolder(View itemView) {
@@ -240,7 +241,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
             ButterKnife.bind(this, itemView);
         }
 
-        @OnClick(R.id.dialog_class_table_time_day_tv)
+        @OnClick(R.id.tv)
         public void onBtnItemClick(TextView tv) {
             currentDate = new LocalDate(currentDate.getYear(), currentDate.getMonthOfYear(), Integer.parseInt(tv.getText().toString()));
             updateDataSet();

@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemSelected;
@@ -36,25 +36,25 @@ import retrofit.client.Response;
 
 public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
-    @Bind(R.id.class_table_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.class_table_spn_year_term)
+    @BindView(R.id.spn_year_term)
     protected Spinner spnYearTerm;
 
-    @Bind(R.id.class_table_layout_loading)
+    @BindView(R.id.layout_loading)
     protected View layoutLoading;
 
-    @Bind(R.id.class_table_layout_empty)
+    @BindView(R.id.layout_empty)
     protected View layoutEmpty;
 
-    @Bind(R.id.class_table_layout_fragment)
+    @BindView(R.id.layout_fragment)
     protected ViewGroup layoutFragment;
 
-    @Bind(R.id.class_table_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.class_table_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
     private BaseFragment fmPage;
@@ -79,8 +79,8 @@ public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnM
         dataLoadAnim.setInterpolator(new LinearInterpolator());
         iconLoadingAnim.startAnimation(dataLoadAnim);
 
-        fmPage = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_page);
-        fmList = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.class_table_fragement_list);
+        fmPage = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.fragement_page);
+        fmList = (BaseFragment) getSupportFragmentManager().findFragmentById(R.id.fragement_list);
         getSupportFragmentManager().beginTransaction().show(fmPage).hide(fmList).commit();
 
         ArrayAdapter spnAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, getYearTermList(today));
@@ -131,7 +131,7 @@ public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnM
     /**
      * 当前年级和学期切换
      */
-    @OnItemSelected(R.id.class_table_spn_year_term)
+    @OnItemSelected(R.id.spn_year_term)
     protected void onSpnItemSelected() {
         String[] itemArr = spnYearTerm.getSelectedItem().toString().split(" ");
         int year = Integer.parseInt(itemArr[0].replace("年", ""));
@@ -227,7 +227,7 @@ public class ClassTableActivity extends StatusBarActivity implements Toolbar.OnM
     /**
      * 点击重新加载数据
      */
-    @OnClick(R.id.class_table_layout_empty)
+    @OnClick(R.id.layout_empty)
     protected void onBtnIconEmptyClick() {
         showLayoutLoading();
         startNetwork(currentYear, currentTerm);

@@ -11,17 +11,17 @@ import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SenateNoticeActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
     private static final String URL = "http://60.18.131.133:8090/lntu/pub_message/messagesplitepageopenwindow.jsp?fmodulecode=5100&modulecode=5100&messagefid=5100";
 
-    @Bind(R.id.senate_notice_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.senate_notice_web_view)
+    @BindView(R.id.web_view)
     protected WebView webView;
 
     @Override

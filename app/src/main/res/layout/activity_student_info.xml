@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true">
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/student_info_layout_appbar"
+        android:id="@+id/layout_appbar"
         android:layout_width="match_parent"
         android:layout_height="210dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -39,7 +39,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/student_info_recycler_view"
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
@@ -48,11 +48,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:layout_anchor="@id/student_info_layout_appbar"
+        app:layout_anchor="@+id/layout_appbar"
         app:layout_anchorGravity="bottom">
 
         <com.github.siyamed.shapeimageview.CircularImageView
-            android:id="@+id/student_info_img_avatar"
+            android:id="@+id/img_avatar"
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_marginBottom="48dp"
@@ -64,7 +64,7 @@
     </org.lntu.online.ui.widget.design.FloatingActionFrameLayout>
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/student_info_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#01000000"

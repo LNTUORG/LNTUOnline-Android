@@ -11,13 +11,13 @@ import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MottoActivity extends StatusBarActivity {
 
-    @Bind(R.id.motto_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
     private MediaPlayer maleVoice;
@@ -71,14 +71,14 @@ public class MottoActivity extends StatusBarActivity {
         }
     }
 
-    @OnClick(R.id.motto_btn_male_voice)
+    @OnClick(R.id.btn_male_voice)
     protected void onBtnMaleVoiceClick() {
         if (maleVoice != null) {
             maleVoice.start();
         }
     }
 
-    @OnClick(R.id.motto_btn_female_voice)
+    @OnClick(R.id.btn_female_voice)
     protected void onBtnFemaleVoiceClick() {
         if (femaleVoice != null) {
             femaleVoice.start();

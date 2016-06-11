@@ -13,7 +13,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/student_info_item_edex_tv_date_of_start"
+            android:id="@+id/tv_date_of_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?android:attr/textColorPrimary"
@@ -30,7 +30,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/student_info_item_edex_tv_date_of_end"
+            android:id="@+id/tv_date_of_end"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?android:attr/textColorPrimary"
@@ -53,7 +53,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_edex_tv_school_name"
+            android:id="@+id/tv_school_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -78,7 +78,7 @@
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/student_info_item_edex_tv_witness"
+            android:id="@+id/tv_witness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"

@@ -16,12 +16,12 @@ import org.lntu.online.ui.dialog.ClassTableTimeDialogHolder;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ClassTablePageFragment extends ClassTableActivity.BaseFragment {
 
-    @Bind(R.id.class_table_page_view_pager)
+    @BindView(R.id.view_pager)
     protected ViewPager viewPager;
 
     private ClassTablePageAdapter adapter;
