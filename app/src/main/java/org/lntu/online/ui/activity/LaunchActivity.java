@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import org.lntu.online.R;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.FullLayoutActivity;
+import org.lntu.online.ui.util.ActivityUtils;
 import org.lntu.online.util.HandlerUtils;
 
 public class LaunchActivity extends FullLayoutActivity implements Runnable {
@@ -20,8 +21,8 @@ public class LaunchActivity extends FullLayoutActivity implements Runnable {
 
     @Override
     public void run() {
-        if (!isFinishing()) {
-            if (TextUtils.isEmpty(LoginShared.getLoginToken(this)) || !LoginShared.isHoldOnline(this)) {
+        if (ActivityUtils.isAlive(this)) {
+            if (TextUtils.isEmpty(LoginShared.getLoginToken(this))) {
                 startActivity(new Intent(this, LoginActivity.class));
             } else {
                 startActivity(new Intent(this, MainActivity.class));

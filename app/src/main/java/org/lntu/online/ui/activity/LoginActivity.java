@@ -45,17 +45,17 @@ public class LoginActivity extends StatusBarActivity {
             edtPwd.setError("密码不能为空");
             edtPwd.requestFocus();
         } else {
-            loginAsyncTask(edtUserId.getText().toString(), edtPwd.getText().toString(), true);
+            loginAsyncTask(edtUserId.getText().toString(), edtPwd.getText().toString());
         }
     }
 
-    private void loginAsyncTask(String userId, String password, final boolean isHoldOnline) {
+    private void loginAsyncTask(String userId, String password) {
         ApiClient.service.login(userId, password, new DialogCallback<LoginInfo>(this) {
 
             @Override
             public void handleSuccess(LoginInfo loginInfo, Response response) {
                 if (loginInfo.getUserType() == UserType.STUDENT) {
-                    LoginShared.login(LoginActivity.this, loginInfo, isHoldOnline);
+                    LoginShared.login(LoginActivity.this, loginInfo);
                     ToastUtils.with(LoginActivity.this).show("登录成功");
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();
