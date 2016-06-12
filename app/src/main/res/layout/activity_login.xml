@@ -43,15 +43,6 @@
             android:inputType="textPassword"
             app:met_floatingLabel="highlight" />
 
-        <CheckBox
-            android:id="@+id/cb_hold_online"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/hold_online"
-            android:textColor="?android:attr/textColorPrimary"
-            android:checked="false" />
-
         <Button style="@style/AppWidget.Button"
             android:id="@+id/btn_login"
             android:layout_width="match_parent"

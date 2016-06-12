@@ -2,7 +2,6 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.CheckBox;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -29,9 +28,6 @@ public class LoginActivity extends StatusBarActivity {
     @BindView(R.id.edt_pwd)
     protected MaterialEditText edtPwd;
 
-    @BindView(R.id.cb_hold_online)
-    protected CheckBox cbHoldOnline;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +45,7 @@ public class LoginActivity extends StatusBarActivity {
             edtPwd.setError("密码不能为空");
             edtPwd.requestFocus();
         } else {
-            loginAsyncTask(edtUserId.getText().toString(), edtPwd.getText().toString(), cbHoldOnline.isChecked());
+            loginAsyncTask(edtUserId.getText().toString(), edtPwd.getText().toString(), true);
         }
     }
 
