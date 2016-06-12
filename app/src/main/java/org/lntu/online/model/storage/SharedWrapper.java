@@ -9,9 +9,9 @@ import android.util.Log;
 
 import com.google.gson.JsonParseException;
 
+import org.lntu.online.model.util.EntityUtils;
 import org.lntu.online.util.Crypto;
 import org.lntu.online.util.Digest;
-import org.lntu.online.model.util.EntityUtils;
 
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;

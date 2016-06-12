@@ -6,14 +6,14 @@ import android.os.Bundle;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.lntu.online.R;
+import org.lntu.online.display.base.StatusBarActivity;
+import org.lntu.online.display.util.ToastUtils;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DialogCallback;
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.UserType;
 import org.lntu.online.model.storage.LoginShared;
-import org.lntu.online.display.base.StatusBarActivity;
-import org.lntu.online.display.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

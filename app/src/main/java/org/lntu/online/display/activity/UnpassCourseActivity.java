@@ -10,13 +10,13 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import org.lntu.online.R;
+import org.lntu.online.display.adapter.UnpassCourseAdapter;
+import org.lntu.online.display.base.StatusBarActivity;
+import org.lntu.online.display.listener.NavigationFinishClickListener;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.UnpassCourse;
 import org.lntu.online.model.storage.LoginShared;
-import org.lntu.online.display.adapter.UnpassCourseAdapter;
-import org.lntu.online.display.base.StatusBarActivity;
-import org.lntu.online.display.listener.NavigationFinishClickListener;
 
 import java.util.List;
 

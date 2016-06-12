@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import org.lntu.online.R;
-import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.display.base.FullLayoutActivity;
 import org.lntu.online.display.util.ActivityUtils;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.util.HandlerUtils;
 
 public class LaunchActivity extends FullLayoutActivity implements Runnable {

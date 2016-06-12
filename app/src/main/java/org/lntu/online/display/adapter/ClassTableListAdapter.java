@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.display.activity.ClassTableCourseActivity;
+import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.util.EntityUtils;
 
 import butterknife.BindView;

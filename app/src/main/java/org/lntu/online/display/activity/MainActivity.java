@@ -18,15 +18,15 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 
 import org.lntu.online.R;
+import org.lntu.online.display.adapter.MainAdapter;
+import org.lntu.online.display.base.DrawerLayoutActivity;
+import org.lntu.online.display.dialog.DialogUtils;
+import org.lntu.online.display.listener.NavigationOpenClickListener;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.model.storage.CacheShared;
 import org.lntu.online.model.storage.LoginShared;
-import org.lntu.online.display.adapter.MainAdapter;
-import org.lntu.online.display.base.DrawerLayoutActivity;
-import org.lntu.online.display.dialog.DialogUtils;
-import org.lntu.online.display.listener.NavigationOpenClickListener;
 import org.lntu.online.util.ShipUtils;
 
 import butterknife.BindView;

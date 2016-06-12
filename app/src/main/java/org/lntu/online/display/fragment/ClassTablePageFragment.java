@@ -8,10 +8,10 @@ import android.view.ViewGroup;
 
 import org.joda.time.LocalDate;
 import org.lntu.online.R;
-import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.display.activity.ClassTableActivity;
 import org.lntu.online.display.adapter.ClassTablePageAdapter;
 import org.lntu.online.display.dialog.ClassTableTimeDialogHolder;
+import org.lntu.online.model.entity.ClassTable;
 
 import java.util.List;
 import java.util.Map;

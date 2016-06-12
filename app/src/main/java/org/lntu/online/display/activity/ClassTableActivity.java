@@ -15,14 +15,14 @@ import android.widget.TextView;
 
 import org.joda.time.LocalDate;
 import org.lntu.online.R;
+import org.lntu.online.display.base.StatusBarActivity;
+import org.lntu.online.display.fragment.ClassTablePageFragment;
+import org.lntu.online.display.listener.NavigationFinishClickListener;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.storage.CacheShared;
 import org.lntu.online.model.storage.LoginShared;
-import org.lntu.online.display.base.StatusBarActivity;
-import org.lntu.online.display.fragment.ClassTablePageFragment;
-import org.lntu.online.display.listener.NavigationFinishClickListener;
 
 import java.util.ArrayList;
 import java.util.List;

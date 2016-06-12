@@ -7,11 +7,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import org.lntu.online.R;
+import org.lntu.online.display.base.StatusBarActivity;
+import org.lntu.online.display.listener.NavigationFinishClickListener;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DialogCallback;
 import org.lntu.online.model.storage.LoginShared;
-import org.lntu.online.display.base.StatusBarActivity;
-import org.lntu.online.display.listener.NavigationFinishClickListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

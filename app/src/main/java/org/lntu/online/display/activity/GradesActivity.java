@@ -16,13 +16,13 @@ import android.widget.TextView;
 import com.melnykov.fab.FloatingActionButton;
 
 import org.lntu.online.R;
+import org.lntu.online.display.adapter.GradesAdapter;
+import org.lntu.online.display.base.StatusBarActivity;
+import org.lntu.online.display.listener.NavigationFinishClickListener;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Grades;
 import org.lntu.online.model.storage.LoginShared;
-import org.lntu.online.display.adapter.GradesAdapter;
-import org.lntu.online.display.base.StatusBarActivity;
-import org.lntu.online.display.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
 

@@ -10,15 +10,15 @@ import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
 import org.lntu.online.R;
+import org.lntu.online.display.adapter.StudentInfoAdapter;
+import org.lntu.online.display.base.StatusBarActivity;
+import org.lntu.online.display.listener.NavigationFinishClickListener;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.Student;
 import org.lntu.online.model.storage.CacheShared;
 import org.lntu.online.model.storage.LoginShared;
-import org.lntu.online.display.adapter.StudentInfoAdapter;
-import org.lntu.online.display.base.StatusBarActivity;
-import org.lntu.online.display.listener.NavigationFinishClickListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

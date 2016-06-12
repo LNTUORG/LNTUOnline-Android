@@ -17,10 +17,10 @@ import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
 import org.lntu.online.R;
+import org.lntu.online.display.activity.ClassTableCourseActivity;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.DayInWeek;
 import org.lntu.online.model.entity.WeekMode;
-import org.lntu.online.display.activity.ClassTableCourseActivity;
 import org.lntu.online.model.util.EntityUtils;
 
 import java.util.ArrayList;
