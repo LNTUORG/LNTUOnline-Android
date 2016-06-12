@@ -40,8 +40,7 @@ public class LoginActivity extends StatusBarActivity {
         if (edtUserId.getText().length() < 10) {
             edtUserId.setError("学号长度为10位");
             edtUserId.requestFocus();
-        } 
-        else if (edtPwd.getText().length() <= 0) {
+        } else if (edtPwd.getText().length() <= 0) {
             edtPwd.setError("密码不能为空");
             edtPwd.requestFocus();
         } else {

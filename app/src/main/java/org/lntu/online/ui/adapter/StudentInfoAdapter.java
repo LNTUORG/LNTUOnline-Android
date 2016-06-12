@@ -470,7 +470,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
         }
 
         public void update(int position) {
-            Object[] objs  = (Object[]) sourceMap.get(position);
+            Object[] objs = (Object[]) sourceMap.get(position);
             tvTitle.setText((String) objs[0]);
             tvTitle.setCompoundDrawablesWithIntrinsicBounds((int) objs[1], 0, 0, 0);
         }
