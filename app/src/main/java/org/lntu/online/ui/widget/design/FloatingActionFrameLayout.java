@@ -43,19 +43,19 @@ public class FloatingActionFrameLayout extends FrameLayout {
         @Override
         public boolean onDependentViewChanged(CoordinatorLayout parent, FloatingActionFrameLayout child, View dependency) {
             if (dependency instanceof AppBarLayout) { // app:layout_anchor 设定为 AppBarLayout的时候
-                AppBarLayout appBarLayout = (AppBarLayout)dependency;
-                if(mTmpRect == null) {
+                AppBarLayout appBarLayout = (AppBarLayout) dependency;
+                if (mTmpRect == null) {
                     mTmpRect = new Rect();
                 }
 
                 Rect rect = mTmpRect;
                 ViewGroupUtils.getDescendantRect(parent, dependency, rect);
                 //if(rect.bottom <= appBarLayout.getMinimumHeightForVisibleOverlappingContent()) { // TODO
-                if(rect.bottom <= appBarLayout.getResources().getDimension(R.dimen.floating_action_frame_layout_anim_height)) {
-                    if(!mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
+                if (rect.bottom <= appBarLayout.getResources().getDimension(R.dimen.floating_action_frame_layout_anim_height)) {
+                    if (!mIsAnimatingOut && child.getVisibility() == View.VISIBLE) {
                         animateOut(child);
                     }
-                } else if(child.getVisibility() != View.VISIBLE) {
+                } else if (child.getVisibility() != View.VISIBLE) {
                     animateIn(child);
                 }
             }

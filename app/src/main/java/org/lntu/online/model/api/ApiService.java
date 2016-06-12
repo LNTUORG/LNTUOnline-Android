@@ -20,7 +20,7 @@ import retrofit.http.POST;
 import retrofit.http.Query;
 
 public interface ApiService {
-    
+
     @FormUrlEncoded
     @POST("/account/login")
     void login(
@@ -72,7 +72,7 @@ public interface ApiService {
             @Header(ApiDefine.HEADER_AUTHORIZATION) String loginToken,
             Callback<List<CourseEvaInfo>> callback
     );
-    
+
     @FormUrlEncoded
     @POST("/course-eva-info/~self/do:eva")
     void doCourseEva(

@@ -8,13 +8,12 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-
 import org.lntu.online.model.entity.UnpassCourse;
 
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
@@ -77,7 +76,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         GroupViewHolder holder;
-        if (convertView == null)  {
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_unpass_course_item_group, parent, false);
             holder = new GroupViewHolder(convertView);
             convertView.setTag(holder);
@@ -95,7 +94,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ChildViewHolder holder;
-        if (convertView == null)  {
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_unpass_course_item_child, parent, false);
             holder = new ChildViewHolder(convertView);
             convertView.setTag(holder);
@@ -107,7 +106,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
         holder.tvExamType.setText(record.getExamType());
         holder.tvScore.setText(record.getScore());
         holder.tvRemarks.setText(record.getRemarks());
-        holder.iconFlag.setBackgroundResource(flagColorResId[childPosition%flagColorResId.length]);
+        holder.iconFlag.setBackgroundResource(flagColorResId[childPosition % flagColorResId.length]);
         holder.iconShadowTop.setVisibility(childPosition == 0 ? View.VISIBLE : View.GONE);
         holder.iconShadowBottom.setVisibility(childPosition == unpassCourseList.get(groupPosition).getRecords().size() - 1 ? View.VISIBLE : View.GONE);
         return convertView;

@@ -16,11 +16,10 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import org.lntu.online.R;
-
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
+import org.lntu.online.R;
 import org.lntu.online.ui.widget.ThemeUtils;
 
 import java.util.List;

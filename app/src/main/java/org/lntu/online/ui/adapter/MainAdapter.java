@@ -11,17 +11,17 @@ import android.widget.TextView;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.activity.ClassTableActivity;
-import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.ExamPlanActivity;
+import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.MottoActivity;
-import org.lntu.online.ui.activity.SenateNoticeActivity;
 import org.lntu.online.ui.activity.OneKeyEvaActivity;
+import org.lntu.online.ui.activity.SenateNoticeActivity;
 import org.lntu.online.ui.activity.SkillTestActivity;
 import org.lntu.online.ui.activity.StudentInfoActivity;
 import org.lntu.online.ui.activity.UnpassCourseActivity;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {

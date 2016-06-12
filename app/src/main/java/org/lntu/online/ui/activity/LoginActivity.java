@@ -2,7 +2,6 @@ package org.lntu.online.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.CheckBox;
 
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -29,9 +28,6 @@ public class LoginActivity extends StatusBarActivity {
     @BindView(R.id.edt_pwd)
     protected MaterialEditText edtPwd;
 
-    @BindView(R.id.cb_hold_online)
-    protected CheckBox cbHoldOnline;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,22 +40,21 @@ public class LoginActivity extends StatusBarActivity {
         if (edtUserId.getText().length() < 10) {
             edtUserId.setError("学号长度为10位");
             edtUserId.requestFocus();
-        } 
-        else if (edtPwd.getText().length() <= 0) {
+        } else if (edtPwd.getText().length() <= 0) {
             edtPwd.setError("密码不能为空");
             edtPwd.requestFocus();
         } else {
-            loginAsyncTask(edtUserId.getText().toString(), edtPwd.getText().toString(), cbHoldOnline.isChecked());
+            loginAsyncTask(edtUserId.getText().toString(), edtPwd.getText().toString());
         }
     }
 
-    private void loginAsyncTask(String userId, String password, final boolean isHoldOnline) {
+    private void loginAsyncTask(String userId, String password) {
         ApiClient.service.login(userId, password, new DialogCallback<LoginInfo>(this) {
 
             @Override
             public void handleSuccess(LoginInfo loginInfo, Response response) {
                 if (loginInfo.getUserType() == UserType.STUDENT) {
-                    LoginShared.login(LoginActivity.this, loginInfo, isHoldOnline);
+                    LoginShared.login(LoginActivity.this, loginInfo);
                     ToastUtils.with(LoginActivity.this).show("登录成功");
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     finish();

@@ -13,16 +13,15 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import org.lntu.online.R;
-
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
+import org.lntu.online.R;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.DayInWeek;
 import org.lntu.online.model.entity.WeekMode;
-import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
+import org.lntu.online.util.gson.GsonWrapper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -13,8 +13,8 @@ import org.lntu.online.model.entity.ExamPlan;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ExamPlanAdapter extends BaseAdapter {
 
@@ -83,10 +83,10 @@ public class ExamPlanAdapter extends BaseAdapter {
 
         @BindView(R.id.tv_course)
         protected TextView tvCourse;
-        
+
         @BindView(R.id.tv_time)
         protected TextView tvTime;
-        
+
         @BindView(R.id.tv_location)
         protected TextView tvLocation;
 
@@ -95,7 +95,7 @@ public class ExamPlanAdapter extends BaseAdapter {
 
         @BindView(R.id.icon_countdown)
         protected View iconCountdown;
-        
+
         @BindView(R.id.tv_day_left)
         protected TextView tvDayLeft;
 

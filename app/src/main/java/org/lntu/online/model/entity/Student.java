@@ -27,9 +27,9 @@ public class Student {
 
     private String foreignLanguage; // 外语语种
 
-    private Date   admissionTime; // 入学日期
+    private Date admissionTime; // 入学日期
 
-    private Date   graduationTime; // 毕业日期
+    private Date graduationTime; // 毕业日期
 
     private String homeAddress; // 家庭住址
 
@@ -43,7 +43,7 @@ public class Student {
 
     private String birthplace; // 籍贯
 
-    private Date   birthday; // 出生年月日
+    private Date birthday; // 出生年月日
 
     private String politicalAffiliation; // 政治面貌
 
