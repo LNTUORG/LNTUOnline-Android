@@ -8,13 +8,12 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-
 import org.lntu.online.model.entity.UnpassCourse;
 
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 

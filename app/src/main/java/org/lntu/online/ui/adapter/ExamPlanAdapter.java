@@ -13,8 +13,8 @@ import org.lntu.online.model.entity.ExamPlan;
 import java.util.Date;
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class ExamPlanAdapter extends BaseAdapter {
 

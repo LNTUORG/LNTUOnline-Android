@@ -9,13 +9,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-
 import org.lntu.online.model.entity.ClassTable;
-import org.lntu.online.util.gson.GsonWrapper;
 import org.lntu.online.ui.activity.ClassTableCourseActivity;
+import org.lntu.online.util.gson.GsonWrapper;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAdapter.ViewHolder> {

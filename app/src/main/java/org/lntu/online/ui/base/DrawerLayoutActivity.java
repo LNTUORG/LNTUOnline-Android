@@ -1,10 +1,8 @@
 package org.lntu.online.ui.base;
 
 import android.os.Build;
-import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 
 import org.lntu.online.ui.widget.ThemeUtils;
 

@@ -24,8 +24,8 @@ import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.dialog.DialogUtils;
 import org.lntu.online.ui.dialog.ProgressDialog;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
-import org.lntu.online.util.ShipUtils;
 import org.lntu.online.ui.widget.ToastUtils;
+import org.lntu.online.util.ShipUtils;
 
 import java.util.ArrayList;
 import java.util.List;

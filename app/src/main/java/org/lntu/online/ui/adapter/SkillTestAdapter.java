@@ -12,8 +12,8 @@ import org.lntu.online.model.entity.SkillTestScore;
 
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class SkillTestAdapter extends BaseAdapter {
 

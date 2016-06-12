@@ -8,13 +8,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-
 import org.lntu.online.model.entity.CourseEvaInfo;
 
 import java.util.List;
 
-import butterknife.ButterKnife;
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class OneKeyEvaAdapter extends RecyclerView.Adapter<OneKeyEvaAdapter.ViewHolder> {
 
