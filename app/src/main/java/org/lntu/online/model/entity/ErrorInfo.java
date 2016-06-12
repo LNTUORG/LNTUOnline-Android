@@ -2,7 +2,7 @@ package org.lntu.online.model.entity;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.lntu.online.util.gson.GsonWrapper;
+import org.lntu.online.model.util.EntityUtils;
 
 import retrofit.RetrofitError;
 
@@ -55,7 +55,7 @@ public class ErrorInfo {
 
     @Override
     public String toString() {
-        return GsonWrapper.gson.toJson(this);
+        return EntityUtils.gson.toJson(this);
     }
 
 }
