@@ -7,7 +7,10 @@ import android.widget.TextView;
 import org.lntu.online.R;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
-import org.lntu.online.util.ResRawUtils;
+import org.lntu.online.ui.widget.ToastUtils;
+import org.lntu.online.util.ResUtils;
+
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +31,12 @@ public class LicenseActivity extends StatusBarActivity {
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        tvLicense.setText(ResRawUtils.getString(this, R.raw.open_source));
+        try {
+            tvLicense.setText(ResUtils.getRawString(this, R.raw.open_source));
+        } catch (IOException e) {
+            tvLicense.setText(null);
+            ToastUtils.with(this).show("资源读取失败");
+        }
     }
 
 }
