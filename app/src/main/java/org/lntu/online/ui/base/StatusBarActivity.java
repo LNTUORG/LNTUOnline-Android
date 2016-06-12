@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import org.lntu.online.R;
-import org.lntu.online.ui.widget.ThemeUtils;
+import org.lntu.online.util.ResUtils;
 
 public abstract class StatusBarActivity extends BaseActivity {
 
@@ -32,8 +32,8 @@ public abstract class StatusBarActivity extends BaseActivity {
             rootView.addView(contentView);
 
             View statusBarView = new View(this);
-            statusBarView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ThemeUtils.getStatusBarHeight(this)));
-            statusBarView.setBackgroundColor(ThemeUtils.getThemeAttrColor(this, R.attr.colorPrimaryDark));
+            statusBarView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ResUtils.getStatusBarHeight(this)));
+            statusBarView.setBackgroundColor(ResUtils.getThemeAttrColor(this, R.attr.colorPrimaryDark));
             rootView.addView(statusBarView);
 
             super.setContentView(rootView);
