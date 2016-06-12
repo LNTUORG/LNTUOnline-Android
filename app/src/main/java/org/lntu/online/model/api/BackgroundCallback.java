@@ -6,10 +6,10 @@ import android.content.Intent;
 
 import org.lntu.online.R;
 import org.lntu.online.model.entity.ErrorInfo;
-import org.lntu.online.storage.LoginShared;
-import org.lntu.online.ui.activity.AuthErrorActivity;
-import org.lntu.online.ui.activity.OneKeyEvaActivity;
-import org.lntu.online.ui.dialog.DialogUtils;
+import org.lntu.online.model.storage.LoginShared;
+import org.lntu.online.display.activity.AuthErrorActivity;
+import org.lntu.online.display.activity.OneKeyEvaActivity;
+import org.lntu.online.display.dialog.DialogUtils;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
