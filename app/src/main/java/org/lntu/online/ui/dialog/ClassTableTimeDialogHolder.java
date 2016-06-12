@@ -20,7 +20,7 @@ import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import org.joda.time.PeriodType;
 import org.lntu.online.R;
-import org.lntu.online.ui.widget.ThemeUtils;
+import org.lntu.online.util.ResUtils;
 
 import java.util.List;
 
@@ -208,7 +208,7 @@ public class ClassTableTimeDialogHolder extends RecyclerView.Adapter<ClassTableT
                     break;
             }
             SpannableString spanString = new SpannableString(text);
-            ForegroundColorSpan span = new ForegroundColorSpan(ThemeUtils.getThemeAttrColor(context, android.R.attr.textColorSecondary));
+            ForegroundColorSpan span = new ForegroundColorSpan(ResUtils.getThemeAttrColor(context, android.R.attr.textColorSecondary));
             spanString.setSpan(span, 0, spanString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             holder.tv.setText(spanString);
             holder.tv.setChecked(false);

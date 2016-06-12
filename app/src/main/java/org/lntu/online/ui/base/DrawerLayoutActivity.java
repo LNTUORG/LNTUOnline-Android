@@ -4,7 +4,7 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.lntu.online.ui.widget.ThemeUtils;
+import org.lntu.online.util.ResUtils;
 
 public abstract class DrawerLayoutActivity extends FullLayoutActivity {
 
@@ -12,7 +12,7 @@ public abstract class DrawerLayoutActivity extends FullLayoutActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             ViewGroup.LayoutParams layoutParams = statusBar.getLayoutParams();
             layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
-            layoutParams.height = ThemeUtils.getStatusBarHeight(this);
+            layoutParams.height = ResUtils.getStatusBarHeight(this);
             statusBar.setLayoutParams(layoutParams);
         }
     }

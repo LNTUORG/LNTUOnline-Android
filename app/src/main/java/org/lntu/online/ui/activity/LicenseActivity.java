@@ -7,7 +7,7 @@ import android.widget.TextView;
 import org.lntu.online.R;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
-import org.lntu.online.ui.widget.ToastUtils;
+import org.lntu.online.ui.util.ToastUtils;
 import org.lntu.online.util.ResUtils;
 
 import java.io.IOException;

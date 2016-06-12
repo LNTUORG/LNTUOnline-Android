@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
-import org.lntu.online.ui.widget.ToastUtils;
+import org.lntu.online.ui.util.ToastUtils;
 
 public final class ShipUtils {
 

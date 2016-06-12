@@ -9,12 +9,12 @@ import android.view.ViewParent;
 
 public class ViewGroupUtilsHoneycomb {
 
-    private static final ThreadLocal<Matrix> sMatrix = new ThreadLocal();
-    private static final ThreadLocal<RectF> sRectF = new ThreadLocal();
+    private static final ThreadLocal<Matrix> sMatrix = new ThreadLocal<>();
+    private static final ThreadLocal<RectF> sRectF = new ThreadLocal<>();
     private static final Matrix IDENTITY = new Matrix();
 
     public static void offsetDescendantRect(ViewGroup group, View child, Rect rect) {
-        Matrix m = (Matrix) sMatrix.get();
+        Matrix m = sMatrix.get();
         if (m == null) {
             m = new Matrix();
             sMatrix.set(m);

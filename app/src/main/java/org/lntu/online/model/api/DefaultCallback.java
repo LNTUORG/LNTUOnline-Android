@@ -7,7 +7,7 @@ import org.lntu.online.R;
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.activity.AuthErrorActivity;
-import org.lntu.online.ui.widget.ToastUtils;
+import org.lntu.online.ui.util.ToastUtils;
 
 import retrofit.RetrofitError;
 

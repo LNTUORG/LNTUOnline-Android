@@ -6,8 +6,10 @@ import android.graphics.Rect;
 import android.os.Build;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CoordinatorLayout;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.animation.Interpolator;
 import android.widget.FrameLayout;
 
 import com.nineoldandroids.animation.Animator;
@@ -17,6 +19,8 @@ import org.lntu.online.R;
 
 @CoordinatorLayout.DefaultBehavior(FloatingActionFrameLayout.Behavior.class)
 public class FloatingActionFrameLayout extends FrameLayout {
+
+    private static final Interpolator FAST_OUT_SLOW_IN_INTERPOLATOR = new FastOutSlowInInterpolator();
 
     public FloatingActionFrameLayout(Context context) {
         super(context);
@@ -64,11 +68,11 @@ public class FloatingActionFrameLayout extends FrameLayout {
 
         private void animateIn(FloatingActionFrameLayout button) {
             button.setVisibility(View.VISIBLE);
-            ViewPropertyAnimator.animate(button).scaleX(1.0F).scaleY(1.0F).alpha(1.0F).setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR).setListener(null).start();
+            ViewPropertyAnimator.animate(button).scaleX(1.0F).scaleY(1.0F).alpha(1.0F).setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR).setListener(null).start();
         }
 
         private void animateOut(final FloatingActionFrameLayout button) {
-            ViewPropertyAnimator.animate(button).scaleX(0.0F).scaleY(0.0F).alpha(0.0F).setInterpolator(AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR).setListener(new Animator.AnimatorListener() {
+            ViewPropertyAnimator.animate(button).scaleX(0.0F).scaleY(0.0F).alpha(0.0F).setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR).setListener(new Animator.AnimatorListener() {
 
                 @Override
                 public void onAnimationStart(Animator animation) {
