@@ -13,7 +13,7 @@ import org.lntu.online.model.entity.LoginInfo;
 import org.lntu.online.model.entity.UserType;
 import org.lntu.online.storage.LoginShared;
 import org.lntu.online.ui.base.StatusBarActivity;
-import org.lntu.online.ui.widget.ToastUtils;
+import org.lntu.online.ui.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
