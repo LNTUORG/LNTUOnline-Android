@@ -11,7 +11,7 @@ import android.widget.TextView;
 import org.lntu.online.R;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.display.activity.ClassTableCourseActivity;
-import org.lntu.online.util.gson.GsonWrapper;
+import org.lntu.online.model.util.EntityUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,7 +79,7 @@ public class ClassTableListAdapter extends RecyclerView.Adapter<ClassTableListAd
         @OnClick(R.id.btn_card)
         public void onBtnCardClick() {
             Intent intent = new Intent(context, ClassTableCourseActivity.class);
-            intent.putExtra("course", GsonWrapper.gson.toJson(classTable.getCourses().get(getLayoutPosition())));
+            intent.putExtra("course", EntityUtils.gson.toJson(classTable.getCourses().get(getLayoutPosition())));
             intent.putExtra("year", classTable.getYear());
             intent.putExtra("term", classTable.getTerm());
             context.startActivity(intent);

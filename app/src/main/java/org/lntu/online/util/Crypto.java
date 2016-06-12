@@ -1,4 +1,4 @@
-package org.lntu.online.util.codec;
+package org.lntu.online.util;
 
 import android.support.annotation.NonNull;
 

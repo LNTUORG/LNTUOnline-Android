@@ -1,4 +1,4 @@
-package org.lntu.online.util.gson;
+package org.lntu.online.model.util;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;

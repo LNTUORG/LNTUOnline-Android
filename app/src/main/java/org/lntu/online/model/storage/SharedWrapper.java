@@ -9,9 +9,9 @@ import android.util.Log;
 
 import com.google.gson.JsonParseException;
 
-import org.lntu.online.util.codec.Crypto;
-import org.lntu.online.util.codec.Digest;
-import org.lntu.online.util.gson.GsonWrapper;
+import org.lntu.online.util.Crypto;
+import org.lntu.online.util.Digest;
+import org.lntu.online.model.util.EntityUtils;
 
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
@@ -168,7 +168,7 @@ public final class SharedWrapper {
             return null;
         } else {
             try {
-                return GsonWrapper.gson.fromJson(value, typeOfT);
+                return EntityUtils.gson.fromJson(value, typeOfT);
             } catch (JsonParseException e) {
                 Log.e(TAG, "parse object error -> " + key + " : " + value);
                 return null;
@@ -177,7 +177,7 @@ public final class SharedWrapper {
     }
 
     public void setObject(@NonNull String key, @Nullable Object value) {
-        set(key, value == null ? null : GsonWrapper.gson.toJson(value));
+        set(key, value == null ? null : EntityUtils.gson.toJson(value));
     }
 
 }

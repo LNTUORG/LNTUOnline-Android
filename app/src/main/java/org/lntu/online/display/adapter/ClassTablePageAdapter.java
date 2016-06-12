@@ -21,7 +21,7 @@ import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.DayInWeek;
 import org.lntu.online.model.entity.WeekMode;
 import org.lntu.online.display.activity.ClassTableCourseActivity;
-import org.lntu.online.util.gson.GsonWrapper;
+import org.lntu.online.model.util.EntityUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -354,7 +354,7 @@ public class ClassTablePageAdapter extends PagerAdapter {
         protected void onBtnCardClick() {
             if (courseWrapper != null) {
                 Intent intent = new Intent(context, ClassTableCourseActivity.class);
-                intent.putExtra("course", GsonWrapper.gson.toJson(courseWrapper.getCourse()));
+                intent.putExtra("course", EntityUtils.gson.toJson(courseWrapper.getCourse()));
                 intent.putExtra("year", classTable.getYear());
                 intent.putExtra("term", classTable.getTerm());
                 context.startActivity(intent);

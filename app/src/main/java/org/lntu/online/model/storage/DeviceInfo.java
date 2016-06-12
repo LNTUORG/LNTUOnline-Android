@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import org.lntu.online.util.codec.Digest;
+import org.lntu.online.util.Digest;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package org.lntu.online.util.gson;
+package org.lntu.online.model.util;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,9 +8,9 @@ import org.joda.time.LocalDate;
 
 import java.util.Date;
 
-public final class GsonWrapper {
+public final class EntityUtils {
 
-    private GsonWrapper() {}
+    private EntityUtils() {}
 
     public static final Gson gson = new GsonBuilder()
             .registerTypeAdapter(DateTime.class, new DateTimeTypeAdapter())

@@ -9,7 +9,7 @@ import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.WeekMode;
 import org.lntu.online.display.base.StatusBarActivity;
 import org.lntu.online.display.listener.NavigationFinishClickListener;
-import org.lntu.online.util.gson.GsonWrapper;
+import org.lntu.online.model.util.EntityUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -54,7 +54,7 @@ public class ClassTableCourseActivity extends StatusBarActivity {
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        ClassTable.Course course = GsonWrapper.gson.fromJson(getIntent().getStringExtra("course"), ClassTable.Course.class);
+        ClassTable.Course course = EntityUtils.gson.fromJson(getIntent().getStringExtra("course"), ClassTable.Course.class);
         tvName.setText(course.getName());
         tvNum.setText(course.getNum());
         tvCredit.setText(course.getCredit() + "");
