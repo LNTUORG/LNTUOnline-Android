@@ -2,10 +2,7 @@ package org.lntu.online.model.entity;
 
 import android.support.annotation.NonNull;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import org.joda.time.DateTime;
 
 public class ExamPlan implements Comparable<ExamPlan> {
 
@@ -13,9 +10,9 @@ public class ExamPlan implements Comparable<ExamPlan> {
 
     private String course;
 
-    private Date startTime;
+    private DateTime startTime;
 
-    private Date endTime;
+    private DateTime endTime;
 
     private String location;
 
@@ -35,19 +32,19 @@ public class ExamPlan implements Comparable<ExamPlan> {
         this.course = course;
     }
 
-    public Date getStartTime() {
+    public DateTime getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Date startTime) {
+    public void setStartTime(DateTime startTime) {
         this.startTime = startTime;
     }
 
-    public Date getEndTime() {
+    public DateTime getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(DateTime endTime) {
         this.endTime = endTime;
     }
 
@@ -61,17 +58,11 @@ public class ExamPlan implements Comparable<ExamPlan> {
 
     @Override
     public int compareTo(@NonNull ExamPlan another) {
-        return another.getStartTime().after(getStartTime()) ? -1 : 1;
+        return another.getStartTime().isAfter(getStartTime()) ? -1 : 1;
     }
 
-    private static final DateFormat dateFormat1 = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
-    private static final DateFormat dateFormat2 = new SimpleDateFormat("HH:mm", Locale.CHINA);
-
     public String getShowTime() {
-        String date = dateFormat1.format(getStartTime());
-        String start = dateFormat2.format(getStartTime());
-        String end = dateFormat2.format(getEndTime());
-        return date + " " + start + "-" + end;
+        return getStartTime().toString("yyyy-MM-dd HH:mm") + "-" + getEndTime().toString("HH:mm");
     }
 
 }

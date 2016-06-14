@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.joda.time.DateTime;
 import org.lntu.online.R;
 import org.lntu.online.model.entity.ExamPlan;
 
-import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -20,12 +20,12 @@ public class ExamPlanAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private List<ExamPlan> planList;
-    private Date nowDate;
+    private DateTime nowDate;
 
     public ExamPlanAdapter(Context context, List<ExamPlan> planList) {
         inflater = LayoutInflater.from(context);
         this.planList = planList;
-        nowDate = new Date();
+        nowDate = new DateTime();
     }
 
     @Override
@@ -57,13 +57,13 @@ public class ExamPlanAdapter extends BaseAdapter {
         holder.tvCourse.setText(plan.getCourse());
         holder.tvTime.setText(plan.getShowTime());
         holder.tvLocation.setText(plan.getLocation());
-        if (plan.getEndTime().before(nowDate)) {
+        if (plan.getEndTime().isBefore(nowDate)) {
             holder.iconFinish.setVisibility(View.VISIBLE);
             holder.iconCountdown.setVisibility(View.INVISIBLE);
         } else {
             holder.iconFinish.setVisibility(View.INVISIBLE);
             holder.iconCountdown.setVisibility(View.VISIBLE);
-            long diff = plan.getStartTime().getTime() - nowDate.getTime();
+            long diff = plan.getStartTime().getMillis() - nowDate.getMillis();
             long days = diff / (1000 * 60 * 60 * 24);
             if (days == 0) {
                 holder.tvDayLeft.setText("< 1");
