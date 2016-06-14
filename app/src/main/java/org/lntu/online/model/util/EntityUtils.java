@@ -6,8 +6,6 @@ import com.google.gson.GsonBuilder;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
-import java.util.Date;
-
 public final class EntityUtils {
 
     private EntityUtils() {}
@@ -15,7 +13,6 @@ public final class EntityUtils {
     public static final Gson gson = new GsonBuilder()
             .registerTypeAdapter(DateTime.class, new DateTimeTypeAdapter())
             .registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter())
-            .registerTypeAdapter(Date.class, new DateTypeAdapter())
             .create();
 
 }
