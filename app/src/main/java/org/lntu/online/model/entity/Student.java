@@ -1,6 +1,7 @@
 package org.lntu.online.model.entity;
 
-import java.util.Date;
+import org.joda.time.DateTime;
+
 import java.util.List;
 
 public class Student {
@@ -27,9 +28,9 @@ public class Student {
 
     private String foreignLanguage; // 外语语种
 
-    private Date admissionTime; // 入学日期
+    private DateTime admissionTime; // 入学日期
 
-    private Date graduationTime; // 毕业日期
+    private DateTime graduationTime; // 毕业日期
 
     private String homeAddress; // 家庭住址
 
@@ -43,7 +44,7 @@ public class Student {
 
     private String birthplace; // 籍贯
 
-    private Date birthday; // 出生年月日
+    private DateTime birthday; // 出生年月日
 
     private String politicalAffiliation; // 政治面貌
 
@@ -171,19 +172,19 @@ public class Student {
         this.foreignLanguage = foreignLanguage;
     }
 
-    public Date getAdmissionTime() {
+    public DateTime getAdmissionTime() {
         return admissionTime;
     }
 
-    public void setAdmissionTime(Date admissionTime) {
+    public void setAdmissionTime(DateTime admissionTime) {
         this.admissionTime = admissionTime;
     }
 
-    public Date getGraduationTime() {
+    public DateTime getGraduationTime() {
         return graduationTime;
     }
 
-    public void setGraduationTime(Date graduationTime) {
+    public void setGraduationTime(DateTime graduationTime) {
         this.graduationTime = graduationTime;
     }
 
@@ -235,11 +236,11 @@ public class Student {
         this.birthplace = birthplace;
     }
 
-    public Date getBirthday() {
+    public DateTime getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(DateTime birthday) {
         this.birthday = birthday;
     }
 
@@ -421,27 +422,27 @@ public class Student {
 
     public static class EducationExperience {
 
-        private Date startTime;
+        private DateTime startTime;
 
-        private Date endTime;
+        private DateTime endTime;
 
         private String schoolInfo;
 
         private String witness; // 证明人
 
-        public Date getStartTime() {
+        public DateTime getStartTime() {
             return startTime;
         }
 
-        public void setStartTime(Date startTime) {
+        public void setStartTime(DateTime startTime) {
             this.startTime = startTime;
         }
 
-        public Date getEndTime() {
+        public DateTime getEndTime() {
             return endTime;
         }
 
-        public void setEndTime(Date endTime) {
+        public void setEndTime(DateTime endTime) {
             this.endTime = endTime;
         }
 
@@ -541,11 +542,11 @@ public class Student {
 
         private String level; // 处分级别
 
-        private Date createTime; // 处分日期
+        private DateTime createTime; // 处分日期
 
         private String createReason; // 处分原因
 
-        private Date cancelTime; // 撤销时间
+        private DateTime cancelTime; // 撤销时间
 
         private String cancelReason; // 撤销原因
 
@@ -561,11 +562,11 @@ public class Student {
             this.level = level;
         }
 
-        public Date getCreateTime() {
+        public DateTime getCreateTime() {
             return createTime;
         }
 
-        public void setCreateTime(Date createTime) {
+        public void setCreateTime(DateTime createTime) {
             this.createTime = createTime;
         }
 
@@ -577,11 +578,11 @@ public class Student {
             this.createReason = createReason;
         }
 
-        public Date getCancelTime() {
+        public DateTime getCancelTime() {
             return cancelTime;
         }
 
-        public void setCancelTime(Date cancelTime) {
+        public void setCancelTime(DateTime cancelTime) {
             this.cancelTime = cancelTime;
         }
 

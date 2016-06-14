@@ -1,6 +1,6 @@
 package org.lntu.online.model.entity;
 
-import java.util.Date;
+import org.joda.time.DateTime;
 
 public class LoginInfo {
 
@@ -8,7 +8,7 @@ public class LoginInfo {
 
     private String loginToken;
 
-    private Date expiresAt;
+    private DateTime expiresAt;
 
     private UserType userType;
 
@@ -28,11 +28,11 @@ public class LoginInfo {
         this.loginToken = loginToken;
     }
 
-    public Date getExpiresAt() {
+    public DateTime getExpiresAt() {
         return expiresAt;
     }
 
-    public void setExpiresAt(Date expiresAt) {
+    public void setExpiresAt(DateTime expiresAt) {
         this.expiresAt = expiresAt;
     }
 

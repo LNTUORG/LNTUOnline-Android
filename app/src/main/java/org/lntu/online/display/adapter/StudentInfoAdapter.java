@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import org.lntu.online.R;
 import org.lntu.online.model.entity.Student;
-import org.lntu.online.util.TimeUtils;
+import org.lntu.online.util.FormatUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -88,7 +88,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
                         break;
                     case 9:
                         kv[0] = "出生日期";
-                        kv[1] = TimeUtils.getTimeFormat(student.getBirthday());
+                        kv[1] = FormatUtils.getTimeFormat(student.getBirthday());
                         break;
                     case 10:
                         kv[0] = "籍贯";
@@ -152,11 +152,11 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
                         break;
                     case 25:
                         kv[0] = "入学日期";
-                        kv[1] = TimeUtils.getTimeFormat(student.getAdmissionTime());
+                        kv[1] = FormatUtils.getTimeFormat(student.getAdmissionTime());
                         break;
                     case 26:
                         kv[0] = "毕业日期";
-                        kv[1] = TimeUtils.getTimeFormat(student.getGraduationTime());
+                        kv[1] = FormatUtils.getTimeFormat(student.getGraduationTime());
                         break;
                     case 27:
                         kv[0] = "毕业去向";
@@ -369,8 +369,8 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
         public void update(int position) {
             Student.EducationExperience ee = (Student.EducationExperience) sourceMap.get(position);
-            tvDateOfStart.setText(TimeUtils.getTimeFormat(ee.getStartTime()));
-            tvDateOfEnd.setText(TimeUtils.getTimeFormat(ee.getEndTime()));
+            tvDateOfStart.setText(FormatUtils.getTimeFormat(ee.getStartTime()));
+            tvDateOfEnd.setText(FormatUtils.getTimeFormat(ee.getEndTime()));
             tvSchoolName.setText(ee.getSchoolInfo());
             tvWitness.setText(ee.getWitness());
         }
@@ -449,9 +449,9 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
         public void update(int position) {
             Student.DisciplinaryAction action = (Student.DisciplinaryAction) sourceMap.get(position);
             tvLevel.setText(action.getLevel());
-            tvCreateTime.setText(TimeUtils.getTimeFormat(action.getCreateTime()));
+            tvCreateTime.setText(FormatUtils.getTimeFormat(action.getCreateTime()));
             tvCreateReason.setText(action.getCreateReason());
-            tvCancelTime.setText(TimeUtils.getTimeFormat(action.getCancelTime()));
+            tvCancelTime.setText(FormatUtils.getTimeFormat(action.getCancelTime()));
             tvCancelReason.setText(action.getCancelReason());
             tvState.setText(action.getState());
             tvRemarks.setText(action.getRemarks());

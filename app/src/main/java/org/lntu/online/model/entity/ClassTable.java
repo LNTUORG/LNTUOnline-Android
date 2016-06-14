@@ -1,9 +1,10 @@
 package org.lntu.online.model.entity;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +13,7 @@ public class ClassTable {
 
     private String studentId;
 
-    private Date firstWeekMondayAt;
+    private DateTime firstWeekMondayAt;
 
     private int year; // 2014
 
@@ -28,11 +29,11 @@ public class ClassTable {
         this.studentId = studentId;
     }
 
-    public Date getFirstWeekMondayAt() {
+    public DateTime getFirstWeekMondayAt() {
         return firstWeekMondayAt;
     }
 
-    public void setFirstWeekMondayAt(Date firstWeekMondayAt) {
+    public void setFirstWeekMondayAt(DateTime firstWeekMondayAt) {
         this.firstWeekMondayAt = firstWeekMondayAt;
     }
 
