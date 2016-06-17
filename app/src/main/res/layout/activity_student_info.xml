@@ -44,7 +44,7 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <org.lntu.online.display.widget.design.FloatingActionFrameLayout
+    <org.lntu.online.ui.widget.design.FloatingActionFrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -61,7 +61,7 @@
             app:siBorderWidth="3dp"
             app:siBorderColor="#ffdddddd" />
 
-    </org.lntu.online.display.widget.design.FloatingActionFrameLayout>
+    </org.lntu.online.ui.widget.design.FloatingActionFrameLayout>
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

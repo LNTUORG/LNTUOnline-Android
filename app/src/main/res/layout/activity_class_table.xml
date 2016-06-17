@@ -112,13 +112,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <fragment class="org.lntu.online.display.fragment.ClassTablePageFragment"
+            <fragment class="org.lntu.online.ui.fragment.ClassTablePageFragment"
                 android:id="@+id/fragement_page"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout="@layout/activity_class_table_page" />
 
-            <fragment class="org.lntu.online.display.fragment.ClassTableListFragment"
+            <fragment class="org.lntu.online.ui.fragment.ClassTableListFragment"
                 android:id="@+id/fragement_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="org.lntu.online.display.activity.LaunchActivity"
+            android:name="org.lntu.online.ui.activity.LaunchActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.TransStatusBar"
             android:screenOrientation="portrait"
@@ -29,121 +29,121 @@
         </activity>
 
         <activity
-            android:name="org.lntu.online.display.activity.AuthErrorActivity"
+            android:name="org.lntu.online.ui.activity.AuthErrorActivity"
             android:label="@string/auth_error"
             android:theme="@style/AppTheme.Translucent"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.LoginActivity"
+            android:name="org.lntu.online.ui.activity.LoginActivity"
             android:label="@string/user_login"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.TermsOfServiceActivity"
+            android:name="org.lntu.online.ui.activity.TermsOfServiceActivity"
             android:label="@string/term_of_service"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.FaqActivity"
+            android:name="org.lntu.online.ui.activity.FaqActivity"
             android:label="@string/faq"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.LicenseActivity"
+            android:name="org.lntu.online.ui.activity.LicenseActivity"
             android:label="@string/open_source_license"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.MainActivity"
+            android:name="org.lntu.online.ui.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.TransStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.StudentInfoActivity"
+            android:name="org.lntu.online.ui.activity.StudentInfoActivity"
             android:label="@string/student_info"
             android:theme="@style/AppTheme.TransStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.ClassTableActivity"
+            android:name="org.lntu.online.ui.activity.ClassTableActivity"
             android:label="@string/my_class_table"
             android:theme="@style/AppTheme.ClassTable"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.ClassTableCourseActivity"
+            android:name="org.lntu.online.ui.activity.ClassTableCourseActivity"
             android:label="@string/class_table_course_info"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.ExamPlanActivity"
+            android:name="org.lntu.online.ui.activity.ExamPlanActivity"
             android:label="@string/exam_plan"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.GradesActivity"
+            android:name="org.lntu.online.ui.activity.GradesActivity"
             android:label="@string/grades_query"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.OneKeyEvaActivity"
+            android:name="org.lntu.online.ui.activity.OneKeyEvaActivity"
             android:label="@string/one_key_eva"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.UnpassCourseActivity"
+            android:name="org.lntu.online.ui.activity.UnpassCourseActivity"
             android:label="@string/unpass_query"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.SkillTestActivity"
+            android:name="org.lntu.online.ui.activity.SkillTestActivity"
             android:label="@string/skill_test"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name=".display.activity.SenateNoticeActivity"
+            android:name=".ui.activity.SenateNoticeActivity"
             android:label="@string/senate_notice"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.MottoActivity"
+            android:name="org.lntu.online.ui.activity.MottoActivity"
             android:label="@string/remember_motto"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.FeedbackActivity"
+            android:name="org.lntu.online.ui.activity.FeedbackActivity"
             android:label="@string/feedback"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:windowSoftInputMode="stateVisible|adjustResize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.AboutActivity"
+            android:name="org.lntu.online.ui.activity.AboutActivity"
             android:label="@string/about"
             android:theme="@style/AppTheme.TransStatusBar"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="org.lntu.online.display.activity.CrashLogActivity"
+            android:name="org.lntu.online.ui.activity.CrashLogActivity"
             android:label="@string/app_crash"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|screenSize" />
