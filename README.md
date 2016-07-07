@@ -9,7 +9,7 @@
 # 辽工大教务在线-Android客户端 #
 
 [![Release](https://img.shields.io/github/release/LNTUORG/LNTUOnline-Android.svg?style=flat)](https://github.com/LNTUORG/LNTUOnline-Android/releases/latest)
-[![Platform](https://img.shields.io/badge/platform-Android-green.svg?style=flat)](http://developer.android.com/index.html)
+[![Platform](https://img.shields.io/badge/platform-Android-green.svg?style=flat)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=9)
 [![License](https://img.shields.io/github/license/LNTUORG/LNTUOnline-Android.svg?style=flat)](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
 
@@ -23,7 +23,7 @@ v2，Material Design 风格
 
 iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
-## Download ##
+## Downloads ##
 
 - [Google Play](https://play.google.com/store/apps/details?id=com.lntu.online)
 
@@ -43,7 +43,7 @@ iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
 - [木蚂蚁应用市场](http://www.mumayi.com/android-851065.html?1412616355)
 
-## Screenshot ##
+## Screenshots ##
 
 ![image](art/n_1.png) ![image](art/n_2.png)
 
@@ -53,7 +53,7 @@ iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
 ![image](art/n_7.png) ![image](art/n_8.png)
 
-## Credits ##
+## Dependencies ##
 
 - [Butter Knife](https://github.com/JakeWharton/butterknife)
 
