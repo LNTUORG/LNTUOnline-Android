@@ -8,6 +8,7 @@
 
 # 辽工大教务在线-Android客户端 #
 
+[![Build Status](https://travis-ci.org/LNTUORG/LNTUOnline-Android.svg?branch=master)](https://travis-ci.org/LNTUORG/LNTUOnline-Android)
 [![Release](https://img.shields.io/github/release/LNTUORG/LNTUOnline-Android.svg?style=flat)](https://github.com/LNTUORG/LNTUOnline-Android/releases/latest)
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg?style=flat)](https://www.android.com)
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=9)
