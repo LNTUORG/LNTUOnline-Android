@@ -1,9 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 
-// 读取local.properties文件
-def Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
+String umengAppKey = System.getenv('LNTUONLINE_UMENG_APP_KEY')
+File localPropertiesFile = project.rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    Properties properties = new Properties()
+    properties.load(localPropertiesFile.newDataInputStream())
+    umengAppKey = properties.getProperty("umeng.appkey", umengAppKey)
+}
 
 android {
 
@@ -19,7 +23,7 @@ android {
 
         manifestPlaceholders = [
                 UMENG_CHANNEL: "LntuOnline",
-                UMENG_APPKEY: properties.getProperty("umeng.appkey")
+                UMENG_APPKEY: umengAppKey
         ]
     }
 
