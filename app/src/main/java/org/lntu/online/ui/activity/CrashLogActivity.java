@@ -1,8 +1,10 @@
 package org.lntu.online.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
@@ -10,7 +12,7 @@ import org.joda.time.DateTime;
 import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.CallbackAdapter;
-import org.lntu.online.storage.LoginShared;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
@@ -18,15 +20,26 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.io.Writer;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CrashLogActivity extends StatusBarActivity {
 
-    @Bind(R.id.crash_log_toolbar)
+    private static final String EXTRA_E = "e";
+
+    public static void start(@NonNull Context context, @NonNull Throwable e) {
+        Intent intent = new Intent(context, CrashLogActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(EXTRA_E, e);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
+
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.crash_log_tv_info)
+    @BindView(R.id.tv_info)
     protected TextView tvInfo;
 
     private String crashLog;
@@ -39,11 +52,8 @@ public class CrashLogActivity extends StatusBarActivity {
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        //接收异常对象
-        Intent intent = getIntent();
-        Throwable e = (Throwable) intent.getSerializableExtra("e");
+        Throwable e = (Throwable) getIntent().getSerializableExtra(EXTRA_E);
 
-        //构建字符串
         StringBuilder sb = new StringBuilder();
         sb.append("生产厂商：\n");
         sb.append(Build.MANUFACTURER).append("\n\n");
@@ -57,7 +67,7 @@ public class CrashLogActivity extends StatusBarActivity {
         sb.append(e.getClass().getName()).append("\n\n");
         sb.append("异常信息：\n");
         sb.append(e.getMessage()).append("\n\n");
-        sb.append("异常堆栈：\n" );
+        sb.append("异常堆栈：\n");
         Writer writer = new StringWriter();
         PrintWriter printWriter = new PrintWriter(writer);
         e.printStackTrace(printWriter);
@@ -69,7 +79,7 @@ public class CrashLogActivity extends StatusBarActivity {
         printWriter.close();
         sb.append(writer.toString());
         crashLog = sb.toString();
-        //显示信息
+
         tvInfo.setText(crashLog);
 
         crashLogAsyncTask();

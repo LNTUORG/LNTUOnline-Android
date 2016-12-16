@@ -19,60 +19,60 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.Grades;
-import org.lntu.online.storage.LoginShared;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.ui.adapter.GradesAdapter;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.Collections;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class GradesActivity extends StatusBarActivity {
 
-    @Bind(R.id.grades_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.grades_layout_content)
+    @BindView(R.id.layout_content)
     protected ViewGroup layoutContent;
 
-    @Bind(R.id.grades_recycler_view)
+    @BindView(R.id.recycler_view)
     protected RecyclerView recyclerView;
 
-    @Bind(R.id.grades_icon_loading)
+    @BindView(R.id.icon_loading)
     protected View iconLoading;
 
-    @Bind(R.id.grades_icon_empty)
+    @BindView(R.id.icon_empty)
     protected View iconEmpty;
 
-    @Bind(R.id.grades_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.grades_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @Bind(R.id.grades_tv_ava_credit)
+    @BindView(R.id.tv_ava_credit)
     protected TextView tvAvaCredit;
 
-    @Bind(R.id.grades_fab)
+    @BindView(R.id.fab)
     protected FloatingActionButton fab;
 
-    @Bind(R.id.grades_layout_condition)
+    @BindView(R.id.layout_condition)
     protected ViewGroup layoutCondition;
 
-    @Bind(R.id.grades_spn_year)
+    @BindView(R.id.spn_year)
     protected Spinner spnYear;
 
-    @Bind(R.id.grades_spn_term)
+    @BindView(R.id.spn_term)
     protected Spinner spnTerm;
 
-    @Bind(R.id.grades_spn_level)
+    @BindView(R.id.spn_level)
     protected Spinner spnLevel;
 
-    @Bind(R.id.grades_spn_display)
+    @BindView(R.id.spn_display)
     protected Spinner spnDisplay;
 
     private GradesAdapter adapter;
@@ -153,14 +153,14 @@ public class GradesActivity extends StatusBarActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.grades_icon_empty)
+    @OnClick(R.id.icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
     }
 
-    @OnClick(R.id.grades_layout_condition_center)
+    @OnClick(R.id.layout_condition_center)
     protected void onBtnLayoutConditionCenterClick() {
         // 屏蔽条件面板中间事件
     }
@@ -176,8 +176,8 @@ public class GradesActivity extends StatusBarActivity {
     }
 
     @OnClick({
-            R.id.grades_fab,
-            R.id.grades_layout_condition
+            R.id.fab,
+            R.id.layout_condition
     })
     protected void onBtnFabClick() {
         if (layoutCondition.getVisibility() == View.GONE) {

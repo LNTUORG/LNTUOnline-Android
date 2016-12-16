@@ -9,20 +9,20 @@ import android.widget.Toast;
 import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DialogCallback;
-import org.lntu.online.storage.LoginShared;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit.client.Response;
 
 public class FeedbackActivity extends StatusBarActivity implements Toolbar.OnMenuItemClickListener {
 
-    @Bind(R.id.feedback_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.feedback_edt_content)
+    @BindView(R.id.edt_content)
     protected EditText editText;
 
     @Override

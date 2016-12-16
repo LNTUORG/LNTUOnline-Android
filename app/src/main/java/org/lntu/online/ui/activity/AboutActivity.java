@@ -12,9 +12,8 @@ import org.lntu.online.R;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import org.lntu.online.util.ShipUtils;
-import org.lntu.online.util.UpdateUtils;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -22,13 +21,13 @@ public class AboutActivity extends StatusBarActivity {
 
     public static final String VERSION_TEXT = BuildConfig.VERSION_NAME + "-build-" + BuildConfig.VERSION_CODE;
 
-    @Bind(R.id.about_layout_app_bar)
+    @BindView(R.id.layout_app_bar)
     protected AppBarLayout layoutAppBar;
 
-    @Bind(R.id.about_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.about_tv_version)
+    @BindView(R.id.tv_version)
     protected TextView tvVersion;
 
     @Override
@@ -52,37 +51,37 @@ public class AboutActivity extends StatusBarActivity {
         });
     }
 
-    @OnClick(R.id.about_btn_version)
+    @OnClick(R.id.btn_version)
     protected void onBtnVersionClick() {
-        UpdateUtils.forceUpdate(this);
+        // nothing to do
     }
 
-    @OnClick(R.id.about_btn_app_homepage)
+    @OnClick(R.id.btn_app_homepage)
     protected void onBtnAppHomepageClick() {
         ShipUtils.openInBrowser(this, getString(R.string.app_homepage_content));
     }
 
-    @OnClick(R.id.about_btn_lntu_online_homepage)
+    @OnClick(R.id.btn_lntu_online_homepage)
     protected void onBtnLntuOnlineHomepageClick() {
         ShipUtils.openInBrowser(this, getString(R.string.lntu_online_homepage_content));
     }
 
-    @OnClick(R.id.about_btn_open_source_url)
+    @OnClick(R.id.btn_open_source_url)
     protected void onBtnOpenSourceUrlClick() {
         ShipUtils.openInBrowser(this, getString(R.string.open_source_url_content));
     }
 
-    @OnClick(R.id.about_btn_about_author)
+    @OnClick(R.id.btn_about_author)
     protected void onBtnAboutAuthorClick() {
         ShipUtils.openInBrowser(this, getString(R.string.about_author_content));
     }
 
-    @OnClick(R.id.about_btn_term_of_service)
+    @OnClick(R.id.btn_term_of_service)
     protected void onBtnTermsOfServiceClick() {
         startActivity(new Intent(this, TermsOfServiceActivity.class));
     }
 
-    @OnClick(R.id.about_btn_open_source_license)
+    @OnClick(R.id.btn_open_source_license)
     protected void onBtnOpenSourceLicenseClick() {
         startActivity(new Intent(this, LicenseActivity.class));
     }

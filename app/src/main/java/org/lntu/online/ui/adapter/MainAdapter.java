@@ -11,17 +11,17 @@ import android.widget.TextView;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.activity.ClassTableActivity;
-import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.ExamPlanActivity;
+import org.lntu.online.ui.activity.GradesActivity;
 import org.lntu.online.ui.activity.MottoActivity;
-import org.lntu.online.ui.activity.SenateNoticeActivity;
 import org.lntu.online.ui.activity.OneKeyEvaActivity;
+import org.lntu.online.ui.activity.SenateNoticeActivity;
 import org.lntu.online.ui.activity.SkillTestActivity;
 import org.lntu.online.ui.activity.StudentInfoActivity;
 import org.lntu.online.ui.activity.UnpassCourseActivity;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Bind;
 import butterknife.OnClick;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
@@ -88,10 +88,10 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.main_item_img_icon)
+        @BindView(R.id.img_icon)
         protected ImageView imgIcon;
 
-        @Bind(R.id.main_item_tv_title)
+        @BindView(R.id.tv_title)
         protected TextView tvTitle;
 
         public ViewHolder(View itemView) {
@@ -99,7 +99,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             ButterKnife.bind(this, itemView);
         }
 
-        @OnClick(R.id.main_item_btn_item)
+        @OnClick(R.id.btn_item)
         public void onBtnItemClick() {
             context.startActivity(new Intent(context, clzs[getLayoutPosition()]));
         }

@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 import org.lntu.online.R;
 import org.lntu.online.model.entity.Student;
-import org.lntu.online.util.TimeUtils;
+import org.lntu.online.util.FormatUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.ViewHolder> {
@@ -88,7 +88,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
                         break;
                     case 9:
                         kv[0] = "出生日期";
-                        kv[1] = TimeUtils.getTimeFormat(student.getBirthday());
+                        kv[1] = FormatUtils.getTimeFormat(student.getBirthday());
                         break;
                     case 10:
                         kv[0] = "籍贯";
@@ -152,11 +152,11 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
                         break;
                     case 25:
                         kv[0] = "入学日期";
-                        kv[1] = TimeUtils.getTimeFormat(student.getAdmissionTime());
+                        kv[1] = FormatUtils.getTimeFormat(student.getAdmissionTime());
                         break;
                     case 26:
                         kv[0] = "毕业日期";
-                        kv[1] = TimeUtils.getTimeFormat(student.getGraduationTime());
+                        kv[1] = FormatUtils.getTimeFormat(student.getGraduationTime());
                         break;
                     case 27:
                         kv[0] = "毕业去向";
@@ -329,10 +329,10 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class NormalViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_normal_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.student_info_item_normal_tv_value)
+        @BindView(R.id.tv_value)
         protected TextView tvValue;
 
         public NormalViewHolder(View itemView) {
@@ -350,16 +350,16 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class EdexViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_edex_tv_date_of_start)
+        @BindView(R.id.tv_date_of_start)
         protected TextView tvDateOfStart;
 
-        @Bind(R.id.student_info_item_edex_tv_date_of_end)
+        @BindView(R.id.tv_date_of_end)
         protected TextView tvDateOfEnd;
 
-        @Bind(R.id.student_info_item_edex_tv_school_name)
+        @BindView(R.id.tv_school_name)
         protected TextView tvSchoolName;
 
-        @Bind(R.id.student_info_item_edex_tv_witness)
+        @BindView(R.id.tv_witness)
         protected TextView tvWitness;
 
         public EdexViewHolder(View itemView) {
@@ -369,8 +369,8 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
         public void update(int position) {
             Student.EducationExperience ee = (Student.EducationExperience) sourceMap.get(position);
-            tvDateOfStart.setText(TimeUtils.getTimeFormat(ee.getStartTime()));
-            tvDateOfEnd.setText(TimeUtils.getTimeFormat(ee.getEndTime()));
+            tvDateOfStart.setText(FormatUtils.getTimeFormat(ee.getStartTime()));
+            tvDateOfEnd.setText(FormatUtils.getTimeFormat(ee.getEndTime()));
             tvSchoolName.setText(ee.getSchoolInfo());
             tvWitness.setText(ee.getWitness());
         }
@@ -379,25 +379,25 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class FamilyViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_family_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.student_info_item_family_tv_relationship)
+        @BindView(R.id.tv_relationship)
         protected TextView tvRelationship;
 
-        @Bind(R.id.student_info_item_family_tv_political_affiliation)
+        @BindView(R.id.tv_political_affiliation)
         protected TextView tvPolAff;
 
-        @Bind(R.id.student_info_item_family_tv_job)
+        @BindView(R.id.tv_job)
         protected TextView tvJob;
 
-        @Bind(R.id.student_info_item_family_tv_post)
+        @BindView(R.id.tv_post)
         protected TextView tvPost;
 
-        @Bind(R.id.student_info_item_family_tv_work_location)
+        @BindView(R.id.tv_work_location)
         protected TextView tvWorkLocation;
 
-        @Bind(R.id.student_info_item_family_tv_tel)
+        @BindView(R.id.tv_tel)
         protected TextView tvTel;
 
         public FamilyViewHolder(View itemView) {
@@ -420,25 +420,25 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class ActionViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_action_tv_level)
+        @BindView(R.id.tv_level)
         protected TextView tvLevel;
 
-        @Bind(R.id.student_info_item_action_tv_create_time)
+        @BindView(R.id.tv_create_time)
         protected TextView tvCreateTime;
 
-        @Bind(R.id.student_info_item_action_tv_create_reason)
+        @BindView(R.id.tv_create_reason)
         protected TextView tvCreateReason;
 
-        @Bind(R.id.student_info_item_action_tv_cancel_time)
+        @BindView(R.id.tv_cancel_time)
         protected TextView tvCancelTime;
 
-        @Bind(R.id.student_info_item_action_tv_cancel_reason)
+        @BindView(R.id.tv_cancel_reason)
         protected TextView tvCancelReason;
 
-        @Bind(R.id.student_info_item_action_tv_state)
+        @BindView(R.id.tv_state)
         protected TextView tvState;
 
-        @Bind(R.id.student_info_item_action_tv_remarks)
+        @BindView(R.id.tv_remarks)
         protected TextView tvRemarks;
 
         public ActionViewHolder(View itemView) {
@@ -449,9 +449,9 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
         public void update(int position) {
             Student.DisciplinaryAction action = (Student.DisciplinaryAction) sourceMap.get(position);
             tvLevel.setText(action.getLevel());
-            tvCreateTime.setText(TimeUtils.getTimeFormat(action.getCreateTime()));
+            tvCreateTime.setText(FormatUtils.getTimeFormat(action.getCreateTime()));
             tvCreateReason.setText(action.getCreateReason());
-            tvCancelTime.setText(TimeUtils.getTimeFormat(action.getCancelTime()));
+            tvCancelTime.setText(FormatUtils.getTimeFormat(action.getCancelTime()));
             tvCancelReason.setText(action.getCancelReason());
             tvState.setText(action.getState());
             tvRemarks.setText(action.getRemarks());
@@ -461,7 +461,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
 
     public class TitleViewHolder extends ViewHolder {
 
-        @Bind(R.id.student_info_item_title_tv_title)
+        @BindView(R.id.tv_title)
         protected TextView tvTitle;
 
         public TitleViewHolder(View itemView) {
@@ -470,7 +470,7 @@ public class StudentInfoAdapter extends RecyclerView.Adapter<StudentInfoAdapter.
         }
 
         public void update(int position) {
-            Object[] objs  = (Object[]) sourceMap.get(position);
+            Object[] objs = (Object[]) sourceMap.get(position);
             tvTitle.setText((String) objs[0]);
             tvTitle.setCompoundDrawablesWithIntrinsicBounds((int) objs[1], 0, 0, 0);
         }

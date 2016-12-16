@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/feedback_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
@@ -21,7 +21,7 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/feedback_edt_content"
+            android:id="@+id/edt_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"

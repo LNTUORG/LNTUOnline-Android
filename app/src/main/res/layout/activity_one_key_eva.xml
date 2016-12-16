@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/one_key_eva_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_primary"
@@ -22,17 +22,17 @@
 
         <FrameLayout
             android:visibility="gone"
-            android:id="@+id/one_key_eva_layout_content"
+            android:id="@+id/layout_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/one_key_eva_recycler_view"
+                android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
             <com.melnykov.fab.FloatingActionButton
-                android:id="@+id/one_key_eva_fab"
+                android:id="@+id/fab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
@@ -45,7 +45,7 @@
         </FrameLayout>
 
         <LinearLayout
-            android:id="@+id/one_key_eva_icon_loading"
+            android:id="@+id/icon_loading"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/one_key_eva_icon_loading_anim"
+                    android:id="@+id/icon_loading_anim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
@@ -84,7 +84,7 @@
 
         <LinearLayout
             android:visibility="gone"
-            android:id="@+id/one_key_eva_icon_empty"
+            android:id="@+id/icon_empty"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -98,7 +98,7 @@
                 android:src="@drawable/ic_empty_search" />
 
             <TextView
-                android:id="@+id/one_key_eva_tv_load_failed"
+                android:id="@+id/tv_load_failed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

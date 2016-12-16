@@ -22,7 +22,6 @@
     <string name="user_login">用户登录</string>
     <string name="user_id_input_hint">学号：</string>
     <string name="pwd_input_hint">密码：</string>
-    <string name="hold_online">保持登录状态</string>
     <string name="login">登录</string>
     <string name="register_tips">点击“登录”即意味着您已阅读并同意</string>
     <string name="term_of_service">服务条款</string>

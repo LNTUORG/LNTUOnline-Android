@@ -8,13 +8,12 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import org.lntu.online.R;
-
 import org.lntu.online.model.entity.UnpassCourse;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Bind;
 
 public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
@@ -77,7 +76,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         GroupViewHolder holder;
-        if (convertView == null)  {
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_unpass_course_item_group, parent, false);
             holder = new GroupViewHolder(convertView);
             convertView.setTag(holder);
@@ -95,7 +94,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
         ChildViewHolder holder;
-        if (convertView == null)  {
+        if (convertView == null) {
             convertView = inflater.inflate(R.layout.activity_unpass_course_item_child, parent, false);
             holder = new ChildViewHolder(convertView);
             convertView.setTag(holder);
@@ -107,7 +106,7 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
         holder.tvExamType.setText(record.getExamType());
         holder.tvScore.setText(record.getScore());
         holder.tvRemarks.setText(record.getRemarks());
-        holder.iconFlag.setBackgroundResource(flagColorResId[childPosition%flagColorResId.length]);
+        holder.iconFlag.setBackgroundResource(flagColorResId[childPosition % flagColorResId.length]);
         holder.iconShadowTop.setVisibility(childPosition == 0 ? View.VISIBLE : View.GONE);
         holder.iconShadowBottom.setVisibility(childPosition == unpassCourseList.get(groupPosition).getRecords().size() - 1 ? View.VISIBLE : View.GONE);
         return convertView;
@@ -115,16 +114,16 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     protected static class GroupViewHolder {
 
-        @Bind(R.id.unpass_course_item_group_tv_name)
+        @BindView(R.id.tv_name)
         protected TextView tvName;
 
-        @Bind(R.id.unpass_course_item_group_tv_num)
+        @BindView(R.id.tv_num)
         protected TextView tvNum;
 
-        @Bind(R.id.unpass_course_item_group_tv_credit)
+        @BindView(R.id.tv_credit)
         protected TextView tvCredit;
 
-        @Bind(R.id.unpass_course_item_group_tv_select_type)
+        @BindView(R.id.tv_select_type)
         protected TextView tvSelectType;
 
         public GroupViewHolder(View convertView) {
@@ -135,25 +134,25 @@ public class UnpassCourseAdapter extends BaseExpandableListAdapter {
 
     protected static class ChildViewHolder {
 
-        @Bind(R.id.unpass_course_item_child_icon_flag)
+        @BindView(R.id.icon_flag)
         protected View iconFlag;
 
-        @Bind(R.id.unpass_course_item_child_icon_shadow_top)
+        @BindView(R.id.icon_shadow_top)
         protected View iconShadowTop;
 
-        @Bind(R.id.unpass_course_item_child_icon_shadow_bottom)
+        @BindView(R.id.icon_shadow_bottom)
         protected View iconShadowBottom;
 
-        @Bind(R.id.unpass_course_item_child_tv_semester)
+        @BindView(R.id.tv_semester)
         protected TextView tvSemester;
 
-        @Bind(R.id.unpass_course_item_child_tv_exam_type)
+        @BindView(R.id.tv_exam_type)
         protected TextView tvExamType;
 
-        @Bind(R.id.unpass_course_item_child_tv_score)
+        @BindView(R.id.tv_score)
         protected TextView tvScore;
 
-        @Bind(R.id.unpass_course_item_child_tv_remarks)
+        @BindView(R.id.tv_remarks)
         protected TextView tvRemarks;
 
         public ChildViewHolder(View convertView) {

@@ -3,21 +3,20 @@ package org.lntu.online.ui.activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import org.lntu.online.R;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FaqActivity extends StatusBarActivity {
 
-    @Bind(R.id.faq_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.faq_web_view)
+    @BindView(R.id.web_view)
     protected WebView webView;
 
     @Override

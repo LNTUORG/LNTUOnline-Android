@@ -13,7 +13,7 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.ExamPlan;
-import org.lntu.online.storage.LoginShared;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.ui.adapter.ExamPlanAdapter;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
@@ -21,29 +21,29 @@ import org.lntu.online.ui.listener.NavigationFinishClickListener;
 import java.util.Collections;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class ExamPlanActivity extends StatusBarActivity {
 
-    @Bind(R.id.exam_plan_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.exam_plan_list_view)
+    @BindView(R.id.list_view)
     protected ListView listView;
 
-    @Bind(R.id.exam_plan_icon_loading)
+    @BindView(R.id.icon_loading)
     protected View iconLoading;
 
-    @Bind(R.id.exam_plan_icon_empty)
+    @BindView(R.id.icon_empty)
     protected View iconEmpty;
 
-    @Bind(R.id.exam_plan_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.exam_plan_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
@@ -91,7 +91,7 @@ public class ExamPlanActivity extends StatusBarActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.exam_plan_icon_empty)
+    @OnClick(R.id.icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);

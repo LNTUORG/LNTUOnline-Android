@@ -16,12 +16,12 @@ import org.lntu.online.ui.adapter.ClassTableListAdapter;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ClassTableListFragment extends ClassTableActivity.BaseFragment {
 
-    @Bind(R.id.class_table_list_recycler_view)
+    @BindView(R.id.recycler_view)
     protected RecyclerView recyclerView;
 
     private ClassTableListAdapter adapter;

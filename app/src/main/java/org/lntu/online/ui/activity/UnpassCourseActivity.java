@@ -13,36 +13,36 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.UnpassCourse;
-import org.lntu.online.storage.LoginShared;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.ui.adapter.UnpassCourseAdapter;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.client.Response;
 
 public class UnpassCourseActivity extends StatusBarActivity {
 
-    @Bind(R.id.unpass_course_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.unpass_course_ex_list_view)
+    @BindView(R.id.ex_list_view)
     protected ExpandableListView exListView;
 
-    @Bind(R.id.unpass_course_icon_loading)
+    @BindView(R.id.icon_loading)
     protected View iconLoading;
 
-    @Bind(R.id.unpass_course_icon_empty)
+    @BindView(R.id.icon_empty)
     protected View iconEmpty;
 
-    @Bind(R.id.unpass_course_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.unpass_course_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
     @Override
@@ -89,7 +89,7 @@ public class UnpassCourseActivity extends StatusBarActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.unpass_course_icon_empty)
+    @OnClick(R.id.icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);

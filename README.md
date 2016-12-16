@@ -1,12 +1,20 @@
 ﻿# DEPRECATED #
 
-该项目已经过时，即将停止维护和提供服务。
+该项目即将停止维护和提供服务。
 
 请使用 **[辽宁工程技术大学官方教务在线](http://60.18.131.131)** 提供的服务。
 
 感谢支持！！
 
 # 辽工大教务在线-Android客户端 #
+
+[![Build Status](https://travis-ci.org/LNTUORG/LNTUOnline-Android.svg?branch=develop)](https://travis-ci.org/LNTUORG/LNTUOnline-Android)
+[![Release](https://img.shields.io/github/release/LNTUORG/LNTUOnline-Android.svg?style=flat)](https://github.com/LNTUORG/LNTUOnline-Android/releases/latest)
+[![Platform](https://img.shields.io/badge/platform-Android-green.svg?style=flat)](https://www.android.com)
+[![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=9)
+[![License](https://img.shields.io/github/license/LNTUORG/LNTUOnline-Android.svg?style=flat)](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
+![Logo](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 
 v2，Material Design 风格
 
@@ -16,7 +24,7 @@ v2，Material Design 风格
 
 iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
-## Download ##
+## Downloads ##
 
 - [Google Play](https://play.google.com/store/apps/details?id=com.lntu.online)
 
@@ -36,29 +44,31 @@ iOS客户端：[LNTUOnline-iOS](https://github.com/LNTUORG/LNTUOnline-iOS)
 
 - [木蚂蚁应用市场](http://www.mumayi.com/android-851065.html?1412616355)
 
-## Screenshot ##
+## Screenshots ##
 
-![image](/art/n_1.png) ![image](/art/n_2.png)
+![image](art/n_1.png) ![image](art/n_2.png)
 
-![image](/art/n_3.png) ![image](/art/n_4.png)
+![image](art/n_3.png) ![image](art/n_4.png)
 
-![image](/art/n_5.png) ![image](/art/n_6.png)
+![image](art/n_5.png) ![image](art/n_6.png)
 
-![image](/art/n_7.png) ![image](/art/n_8.png)
+![image](art/n_7.png) ![image](art/n_8.png)
 
-## Credits ##
+## Dependencies ##
 
 - [Butter Knife](https://github.com/JakeWharton/butterknife)
 
-- [Retrofit](http://square.github.io/retrofit)
-
 - [OkHttp](http://square.github.io/okhttp)
+
+- [Retrofit](http://square.github.io/retrofit)
 
 - [Picasso](http://square.github.io/picasso)
 
 - [Gson](https://github.com/google/gson)
 
 - [Joda-Time](http://www.joda.org/joda-time)
+
+- [Joda-Time-Android](https://github.com/dlew/joda-time-android)
 
 - [MaterialEditText](https://github.com/rengwuxian/MaterialEditText)
 

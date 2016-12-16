@@ -22,7 +22,7 @@
         android:orientation="vertical">
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/login_edt_user_id"
+            android:id="@+id/edt_user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="2dp"
@@ -33,7 +33,7 @@
             app:met_floatingLabel="highlight" />
 
         <com.rengwuxian.materialedittext.MaterialEditText
-            android:id="@+id/login_edt_pwd"
+            android:id="@+id/edt_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -43,17 +43,8 @@
             android:inputType="textPassword"
             app:met_floatingLabel="highlight" />
 
-        <CheckBox
-            android:id="@+id/login_cb_hold_online"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/hold_online"
-            android:textColor="?android:attr/textColorPrimary"
-            android:checked="false" />
-
         <Button style="@style/AppWidget.Button"
-            android:id="@+id/login_btn_login"
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -74,7 +65,7 @@
                 android:textSize="14sp" />
 
             <TextView
-                android:id="@+id/login_btn_tos"
+                android:id="@+id/btn_tos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"

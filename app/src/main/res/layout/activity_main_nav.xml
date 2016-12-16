@@ -24,7 +24,7 @@
                 android:layout_height="160dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignBottom="@+id/main_nav_layout_info"
+                android:layout_alignBottom="@+id/nav_layout_info"
                 android:layout_marginEnd="-16dp"
                 android:layout_marginRight="-16dp"
                 android:src="@drawable/main_nav_header_bg_image"
@@ -33,20 +33,20 @@
                 android:clickable="true" />
 
             <View
-                android:id="@+id/main_nav_adapt_status_bar"
+                android:id="@+id/nav_adapt_status_bar"
                 android:layout_width="match_parent"
                 android:layout_height="0dp" />
 
             <LinearLayout
-                android:id="@+id/main_nav_layout_info"
+                android:id="@+id/nav_layout_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/main_nav_adapt_status_bar"
+                android:layout_below="@+id/nav_adapt_status_bar"
                 android:padding="16dp"
                 android:orientation="vertical">
 
                 <com.github.siyamed.shapeimageview.CircularImageView
-                    android:id="@+id/main_nav_img_avatar"
+                    android:id="@+id/nav_img_avatar"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:src="@drawable/image_placeholder"
@@ -55,7 +55,7 @@
                     app:siBorderColor="@android:color/white" />
 
                 <TextView
-                    android:id="@+id/main_nav_tv_name"
+                    android:id="@+id/nav_tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -64,7 +64,7 @@
                     tools:text="张三" />
 
                 <TextView
-                    android:id="@+id/main_nav_tv_college"
+                    android:id="@+id/nav_tv_college"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -73,7 +73,7 @@
                     tools:text="电子与信息工程学院" />
 
                 <TextView
-                    android:id="@+id/main_nav_tv_class_info"
+                    android:id="@+id/nav_tv_class_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -88,7 +88,7 @@
         <View style="@style/AppWidget.ItemGap" />
 
         <TextView style="@style/AppWidget.NavigationItem"
-            android:id="@+id/main_nav_btn_lntu_online_by_browser"
+            android:id="@+id/nav_btn_lntu_online_by_browser"
             android:drawableStart="@drawable/ic_open_in_browser_grey600_24dp"
             android:drawableLeft="@drawable/ic_open_in_browser_grey600_24dp"
             android:text="@string/lntuonline_by_browser" />
@@ -96,25 +96,25 @@
         <View style="@style/AppWidget.NavigationItemDeepLineGap" />
 
         <TextView style="@style/AppWidget.NavigationItem"
-            android:id="@+id/main_nav_btn_open_in_play"
+            android:id="@+id/nav_btn_open_in_play"
             android:drawableStart="@drawable/ic_grade_grey600_24dp"
             android:drawableLeft="@drawable/ic_grade_grey600_24dp"
             android:text="@string/grade_in_play" />
 
         <TextView style="@style/AppWidget.NavigationItem"
-            android:id="@+id/main_nav_btn_share"
+            android:id="@+id/nav_btn_share"
             android:drawableStart="@drawable/ic_share_grey600_24dp"
             android:drawableLeft="@drawable/ic_share_grey600_24dp"
             android:text="@string/share_to_friends" />
 
         <TextView style="@style/AppWidget.NavigationItem"
-            android:id="@+id/main_nav_btn_feedback"
+            android:id="@+id/nav_btn_feedback"
             android:drawableStart="@drawable/ic_comment_grey600_24dp"
             android:drawableLeft="@drawable/ic_comment_grey600_24dp"
             android:text="@string/feedback" />
 
         <TextView style="@style/AppWidget.NavigationItem"
-            android:id="@+id/main_nav_btn_about"
+            android:id="@+id/nav_btn_about"
             android:drawableStart="@drawable/ic_info_grey600_24dp"
             android:drawableLeft="@drawable/ic_info_grey600_24dp"
             android:text="@string/about" />
@@ -122,7 +122,7 @@
         <View style="@style/AppWidget.NavigationItemDeepLineGap" />
 
         <TextView style="@style/AppWidget.NavigationItem"
-            android:id="@+id/main_nav_btn_logout"
+            android:id="@+id/nav_btn_logout"
             android:drawableStart="@drawable/ic_exit_to_app_grey600_24dp"
             android:drawableLeft="@drawable/ic_exit_to_app_grey600_24dp"
             android:text="@string/logout" />

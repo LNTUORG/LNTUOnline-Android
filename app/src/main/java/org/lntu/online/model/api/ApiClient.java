@@ -1,7 +1,7 @@
 package org.lntu.online.model.api;
 
 import org.lntu.online.BuildConfig;
-import org.lntu.online.util.gson.GsonWrapper;
+import org.lntu.online.model.util.EntityUtils;
 
 import retrofit.RestAdapter;
 import retrofit.converter.GsonConverter;
@@ -15,7 +15,7 @@ public final class ApiClient {
     static {
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(ApiDefine.API_HOST)
-                .setConverter(new GsonConverter(GsonWrapper.gson))
+                .setConverter(new GsonConverter(EntityUtils.gson))
                 .setRequestInterceptor(new ApiRequestInterceptor())
                 .setLogLevel(BuildConfig.DEBUG ? RestAdapter.LogLevel.FULL : RestAdapter.LogLevel.NONE)
                 .build();

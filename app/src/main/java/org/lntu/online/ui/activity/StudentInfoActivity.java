@@ -14,25 +14,25 @@ import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.DefaultCallback;
 import org.lntu.online.model.entity.ErrorInfo;
 import org.lntu.online.model.entity.Student;
-import org.lntu.online.storage.CacheShared;
-import org.lntu.online.storage.LoginShared;
+import org.lntu.online.model.storage.CacheShared;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.ui.adapter.StudentInfoAdapter;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import retrofit.client.Response;
 
 public class StudentInfoActivity extends StatusBarActivity {
 
-    @Bind(R.id.student_info_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.student_info_img_avatar)
+    @BindView(R.id.img_avatar)
     protected ImageView imgAvatar;
 
-    @Bind(R.id.student_info_recycler_view)
+    @BindView(R.id.recycler_view)
     protected RecyclerView recyclerView;
 
     private Student student;

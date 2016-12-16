@@ -7,25 +7,25 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.joda.time.DateTime;
 import org.lntu.online.R;
 import org.lntu.online.model.entity.ExamPlan;
 
-import java.util.Date;
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Bind;
 
 public class ExamPlanAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private List<ExamPlan> planList;
-    private Date nowDate;
+    private DateTime nowDate;
 
     public ExamPlanAdapter(Context context, List<ExamPlan> planList) {
         inflater = LayoutInflater.from(context);
         this.planList = planList;
-        nowDate = new Date();
+        nowDate = new DateTime();
     }
 
     @Override
@@ -57,13 +57,13 @@ public class ExamPlanAdapter extends BaseAdapter {
         holder.tvCourse.setText(plan.getCourse());
         holder.tvTime.setText(plan.getShowTime());
         holder.tvLocation.setText(plan.getLocation());
-        if (plan.getEndTime().before(nowDate)) {
+        if (plan.getEndTime().isBefore(nowDate)) {
             holder.iconFinish.setVisibility(View.VISIBLE);
             holder.iconCountdown.setVisibility(View.INVISIBLE);
         } else {
             holder.iconFinish.setVisibility(View.INVISIBLE);
             holder.iconCountdown.setVisibility(View.VISIBLE);
-            long diff = plan.getStartTime().getTime() - nowDate.getTime();
+            long diff = plan.getStartTime().getMillis() - nowDate.getMillis();
             long days = diff / (1000 * 60 * 60 * 24);
             if (days == 0) {
                 holder.tvDayLeft.setText("< 1");
@@ -81,22 +81,22 @@ public class ExamPlanAdapter extends BaseAdapter {
 
     protected class ViewHolder {
 
-        @Bind(R.id.exam_plan_item_tv_course)
+        @BindView(R.id.tv_course)
         protected TextView tvCourse;
-        
-        @Bind(R.id.exam_plan_item_tv_time)
+
+        @BindView(R.id.tv_time)
         protected TextView tvTime;
-        
-        @Bind(R.id.exam_plan_item_tv_location)
+
+        @BindView(R.id.tv_location)
         protected TextView tvLocation;
 
-        @Bind(R.id.exam_plan_item_icon_finish)
+        @BindView(R.id.icon_finish)
         protected View iconFinish;
 
-        @Bind(R.id.exam_plan_item_icon_countdown)
+        @BindView(R.id.icon_countdown)
         protected View iconCountdown;
-        
-        @Bind(R.id.exam_plan_item_tv_day_left)
+
+        @BindView(R.id.tv_day_left)
         protected TextView tvDayLeft;
 
         public ViewHolder(View convertView) {

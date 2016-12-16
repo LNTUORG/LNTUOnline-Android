@@ -8,7 +8,7 @@
     android:background="@android:color/white">
 
     <TextView
-        android:id="@+id/skill_test_item_tv_name"
+        android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="?android:attr/textColorPrimary"
@@ -16,7 +16,7 @@
         tools:text="大学英语4级" />
 
     <TextView
-        android:id="@+id/skill_test_item_tv_time"
+        android:id="@+id/tv_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -29,7 +29,7 @@
         tools:text="2015-1-1" />
 
     <TextView
-        android:id="@+id/skill_test_item_tv_score"
+        android:id="@+id/tv_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

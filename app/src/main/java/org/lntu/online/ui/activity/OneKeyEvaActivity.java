@@ -18,19 +18,19 @@ import org.lntu.online.R;
 import org.lntu.online.model.api.ApiClient;
 import org.lntu.online.model.api.BackgroundCallback;
 import org.lntu.online.model.entity.CourseEvaInfo;
-import org.lntu.online.storage.LoginShared;
+import org.lntu.online.model.storage.LoginShared;
 import org.lntu.online.ui.adapter.OneKeyEvaAdapter;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.dialog.DialogUtils;
 import org.lntu.online.ui.dialog.ProgressDialog;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
+import org.lntu.online.ui.util.ToastUtils;
 import org.lntu.online.util.ShipUtils;
-import org.lntu.online.ui.widget.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import retrofit.Callback;
@@ -39,28 +39,28 @@ import retrofit.client.Response;
 
 public class OneKeyEvaActivity extends StatusBarActivity {
 
-    @Bind(R.id.one_key_eva_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.one_key_eva_layout_content)
+    @BindView(R.id.layout_content)
     protected ViewGroup layoutContent;
 
-    @Bind(R.id.one_key_eva_icon_loading)
+    @BindView(R.id.icon_loading)
     protected View iconLoading;
 
-    @Bind(R.id.one_key_eva_icon_empty)
+    @BindView(R.id.icon_empty)
     protected View iconEmpty;
 
-    @Bind(R.id.one_key_eva_icon_loading_anim)
+    @BindView(R.id.icon_loading_anim)
     protected View iconLoadingAnim;
 
-    @Bind(R.id.one_key_eva_tv_load_failed)
+    @BindView(R.id.tv_load_failed)
     protected TextView tvLoadFailed;
 
-    @Bind(R.id.one_key_eva_recycler_view)
+    @BindView(R.id.recycler_view)
     protected RecyclerView recyclerView;
 
-    @Bind(R.id.one_key_eva_fab)
+    @BindView(R.id.fab)
     protected FloatingActionButton fab;
 
     private OneKeyEvaAdapter adapter;
@@ -119,14 +119,14 @@ public class OneKeyEvaActivity extends StatusBarActivity {
         tvLoadFailed.setText(message);
     }
 
-    @OnClick(R.id.one_key_eva_icon_empty)
+    @OnClick(R.id.icon_empty)
     protected void onBtnIconEmptyClick() {
         iconLoading.setVisibility(View.VISIBLE);
         iconEmpty.setVisibility(View.GONE);
         startNetwork();
     }
 
-    @OnClick(R.id.one_key_eva_fab)
+    @OnClick(R.id.fab)
     protected void onBtnFabClick() {
         int n = 0;
         for (CourseEvaInfo info : infoList) {

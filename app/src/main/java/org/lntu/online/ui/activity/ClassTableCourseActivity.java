@@ -7,43 +7,43 @@ import android.widget.TextView;
 import org.lntu.online.R;
 import org.lntu.online.model.entity.ClassTable;
 import org.lntu.online.model.entity.WeekMode;
+import org.lntu.online.model.util.EntityUtils;
 import org.lntu.online.ui.base.StatusBarActivity;
 import org.lntu.online.ui.listener.NavigationFinishClickListener;
-import org.lntu.online.util.gson.GsonWrapper;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ClassTableCourseActivity extends StatusBarActivity {
 
-    @Bind(R.id.class_table_course_toolbar)
+    @BindView(R.id.toolbar)
     protected Toolbar toolbar;
 
-    @Bind(R.id.class_table_course_tv_name)
+    @BindView(R.id.tv_name)
     protected TextView tvName;
 
-    @Bind(R.id.class_table_course_tv_num)
+    @BindView(R.id.tv_num)
     protected TextView tvNum;
 
-    @Bind(R.id.class_table_course_tv_credit)
+    @BindView(R.id.tv_credit)
     protected TextView tvCredit;
 
-    @Bind(R.id.class_table_course_tv_teacher)
+    @BindView(R.id.tv_teacher)
     protected TextView tvTeacher;
 
-    @Bind(R.id.class_table_course_tv_time)
+    @BindView(R.id.tv_time)
     protected TextView tvTime;
 
-    @Bind(R.id.class_table_course_tv_select_type)
+    @BindView(R.id.tv_select_type)
     protected TextView tvSelectType;
 
-    @Bind(R.id.class_table_course_tv_test_mode)
+    @BindView(R.id.tv_test_mode)
     protected TextView tvTestMode;
 
-    @Bind(R.id.class_table_course_tv_exam_type)
+    @BindView(R.id.tv_exam_type)
     protected TextView tvExamType;
 
-    @Bind(R.id.class_table_course_tv_times_and_places)
+    @BindView(R.id.tv_times_and_places)
     protected TextView tvTimesAndPlaces;
 
     @Override
@@ -54,7 +54,7 @@ public class ClassTableCourseActivity extends StatusBarActivity {
 
         toolbar.setNavigationOnClickListener(new NavigationFinishClickListener(this));
 
-        ClassTable.Course course = GsonWrapper.gson.fromJson(getIntent().getStringExtra("course"), ClassTable.Course.class);
+        ClassTable.Course course = EntityUtils.gson.fromJson(getIntent().getStringExtra("course"), ClassTable.Course.class);
         tvName.setText(course.getName());
         tvNum.setText(course.getNum());
         tvCredit.setText(course.getCredit() + "");
